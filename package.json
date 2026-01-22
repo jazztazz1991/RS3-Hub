@@ -1,0 +1,14 @@
+{
+  "name": "rs3-efficiency-hub",
+  "version": "1.0.0",
+  "description": "RS3 Efficiency Hub: Comprehensive Min-Maxing and Time-to-Goal Analytics",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "install-all": "cd client && npm install && cd ../server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

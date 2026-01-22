@@ -1,0 +1,49 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  /* Removed old header styles as we have a Navbar now */
+  /* padding: 2rem 0;
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  margin-bottom: 2rem; */
+  display: none;
+}
+
+header h1 {
+  margin: 0;
+  color: #f1c40f;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  color: #888;
+}
+
+.status-bar {
+  margin-top: auto;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+  border-top: 1px solid #333;
+}
