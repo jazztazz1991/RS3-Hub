@@ -5,6 +5,11 @@
     color: #e0e0e0;
     max-width: 1200px;
     margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.arch-calculator-container * {
+    box-sizing: border-box;
 }
 
 .arch-calculator-container h2 {
@@ -50,6 +55,7 @@
 
 .arch-search-input {
     width: 100%;
+    max-width: 100%;
     padding: 12px;
     background-color: #2c2c2c;
     border: 1px solid #444;

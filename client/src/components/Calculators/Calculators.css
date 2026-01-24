@@ -17,7 +17,7 @@
 
 .calculators-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
@@ -31,6 +31,8 @@
   color: inherit;
   transition: transform 0.2s, background-color 0.2s;
   border: 1px solid transparent;
+  box-sizing: border-box; 
+  /* Removed overflow: hidden to allow content to fit naturally */
 }
 
 .calculator-card:hover {
