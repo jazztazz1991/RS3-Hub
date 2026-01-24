@@ -1,0 +1,850 @@
+[
+  {
+    "name": "Mattock of Time and Space",
+    "id": "mattock_time_space",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 99,
+    "wikiLink": "https://runescape.wiki/w/Mattock_of_Time_and_Space"
+  },
+  {
+    "name": "Pickaxe of Earth and Song",
+    "id": "pickaxe_earth_song",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Pickaxe_of_Earth_and_Song"
+  },
+  {
+    "name": "Hatchet of Ember and Glade",
+    "id": "hatchet_ember_glade",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Hatchet_of_Ember_and_Glade"
+  },
+  {
+    "name": "Imcando Mattock",
+    "id": "imcando_mattock",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Imcando_mattock"
+  },
+  {
+    "name": "Imcando Pickaxe",
+    "id": "imcando_pickaxe",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Imcando_pickaxe"
+  },
+  {
+    "name": "Crystal Mattock",
+    "id": "crystal_mattock",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_mattock"
+  },
+  {
+    "name": "Crystal Pickaxe",
+    "id": "crystal_pickaxe",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_pickaxe"
+  },
+  {
+    "name": "Crystal Hatchet",
+    "id": "crystal_hatchet",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_hatchet"
+  },
+  {
+    "name": "Dragon Mattock",
+    "id": "dragon_mattock",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 60,
+    "wikiLink": "https://runescape.wiki/w/Dragon_mattock"
+  },
+  {
+    "name": "Dragon Pickaxe",
+    "id": "dragon_pickaxe",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 60,
+    "wikiLink": "https://runescape.wiki/w/Dragon_pickaxe"
+  },
+  {
+    "name": "Dragon Hatchet",
+    "id": "dragon_hatchet",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 60,
+    "wikiLink": "https://runescape.wiki/w/Dragon_hatchet"
+  },
+  {
+    "name": "Rod-o-matic",
+    "id": "rod_o_matic",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Rod-o-matic"
+  },
+  {
+    "name": "Hammer-tron",
+    "id": "hammer_tron",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Hammer-tron"
+  },
+  {
+    "name": "Pyro-matic",
+    "id": "pyro_matic",
+    "category": "Tool",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Pyro-matic"
+  },
+  {
+    "name": "Omni Guard",
+    "id": "omni_guard",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Omni_guard"
+  },
+  {
+    "name": "Soulbound Lantern",
+    "id": "soulbound_lantern",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Soulbound_lantern"
+  },
+  {
+    "name": "Bow of the Last Guardian",
+    "id": "bow_last_guardian",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Bow_of_the_Last_Guardian"
+  },
+  {
+    "name": "Ek-ZekKil",
+    "id": "ek_zekkil",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Ek-ZekKil"
+  },
+  {
+    "name": "Fractured Staff of Armadyl",
+    "id": "fractured_staff_armadyl",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Fractured_Staff_of_Armadyl"
+  },
+  {
+    "name": "Abyssal Scourge",
+    "id": "abyssal_scourge",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Abyssal_scourge"
+  },
+  {
+    "name": "Blightbound Crossbow",
+    "id": "blightbound_crossbow",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Blightbound_crossbow"
+  },
+  {
+    "name": "Off-hand Blightbound Crossbow",
+    "id": "off_blightbound_crossbow",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Off-hand_Blightbound_crossbow"
+  },
+  {
+    "name": "Wand of the Praesul",
+    "id": "wand_praesul",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Wand_of_the_Praesul"
+  },
+  {
+    "name": "Imperium Core",
+    "id": "imperium_core",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Imperium_Core"
+  },
+  {
+    "name": "Khopesh of Tumeken",
+    "id": "khopesh_tumeken",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Khopesh_of_Tumeken"
+  },
+  {
+    "name": "Khopesh of Elidinis",
+    "id": "khopesh_elidinis",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Khopesh_of_Elidinis"
+  },
+  {
+    "name": "Zaros Godsword",
+    "id": "zaros_godsword",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Zaros_godsword"
+  },
+  {
+    "name": "Staff of Sliske",
+    "id": "staff_sliske",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Staff_of_Sliske"
+  },
+  {
+    "name": "Seren Godbow",
+    "id": "seren_godbow",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Seren_godbow"
+  },
+  {
+    "name": "Eldritch Crossbow",
+    "id": "eldritch_crossbow",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Eldritch_crossbow"
+  },
+  {
+    "name": "Noxious Scythe",
+    "id": "noxious_scythe",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Noxious_scythe"
+  },
+  {
+    "name": "Noxious Longbow",
+    "id": "noxious_longbow",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Noxious_longbow"
+  },
+  {
+    "name": "Noxious Staff",
+    "id": "noxious_staff",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Noxious_staff"
+  },
+  {
+    "name": "Ascension Crossbow",
+    "id": "ascension_crossbow",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Ascension_crossbow"
+  },
+  {
+    "name": "Off-hand Ascension Crossbow",
+    "id": "off_ascension_crossbow",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Off-hand_Ascension_crossbow"
+  },
+  {
+    "name": "Seismic Wand",
+    "id": "seismic_wand",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Seismic_wand"
+  },
+  {
+    "name": "Seismic Singularity",
+    "id": "seismic_singularity",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Seismic_Singularity"
+  },
+  {
+    "name": "Drygore Rapier",
+    "id": "drygore_rapier",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Drygore_rapier"
+  },
+  {
+    "name": "Off-hand Drygore Rapier",
+    "id": "off_drygore_rapier",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Off-hand_Drygore_rapier"
+  },
+  {
+    "name": "Drygore Longsword",
+    "id": "drygore_longsword",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Drygore_longsword"
+  },
+  {
+    "name": "Off-hand Drygore Longsword",
+    "id": "off_drygore_longsword",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Off-hand_Drygore_longsword"
+  },
+  {
+    "name": "Drygore Mace",
+    "id": "drygore_mace",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Drygore_mace"
+  },
+  {
+    "name": "Off-hand Drygore Mace",
+    "id": "off_drygore_mace",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Off-hand_Drygore_mace"
+  },
+  {
+    "name": "Kalphite Defender",
+    "id": "kalphite_defender",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Kalphite_defender"
+  },
+  {
+    "name": "Kalphite Rebounder",
+    "id": "kalphite_rebounder",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Kalphite_rebounder"
+  },
+  {
+    "name": "Kalphite Repriser",
+    "id": "kalphite_repriser",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Kalphite_repriser"
+  },
+  {
+    "name": "Dragon Rider Lance",
+    "id": "dragon_rider_lance",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 85,
+    "wikiLink": "https://runescape.wiki/w/Dragon_Rider_lance"
+  },
+  {
+    "name": "Wand of the Cywir Elders",
+    "id": "wand_cywir",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 85,
+    "wikiLink": "https://runescape.wiki/w/Wand_of_the_Cywir_elders"
+  },
+  {
+    "name": "Orb of the Cywir Elders",
+    "id": "orb_cywir",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 85,
+    "wikiLink": "https://runescape.wiki/w/Orb_of_the_Cywir_elders"
+  },
+  {
+    "name": "Chaotic Rapier",
+    "id": "chaotic_rapier",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Chaotic_rapier"
+  },
+  {
+    "name": "Chaotic Staff",
+    "id": "chaotic_staff",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Chaotic_staff"
+  },
+  {
+    "name": "Chaotic Crossbow",
+    "id": "chaotic_crossbow",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Chaotic_crossbow"
+  },
+  {
+    "name": "Royal Crossbow",
+    "id": "royal_crossbow",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Royal_crossbow"
+  },
+  {
+    "name": "Crystal Bow",
+    "id": "crystal_bow",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_bow"
+  },
+  {
+    "name": "Crystal Halberd",
+    "id": "crystal_halberd",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_halberd"
+  },
+  {
+    "name": "Crystal Staff",
+    "id": "crystal_staff",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_staff"
+  },
+  {
+    "name": "Crystal Wand",
+    "id": "crystal_wand",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Crystal_wand"
+  },
+  {
+    "name": "Dharok's Greataxe",
+    "id": "dharok_greataxe",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Dharok%27s_greataxe"
+  },
+  {
+    "name": "Verac's Flail",
+    "id": "verac_flail",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Verac%27s_flail"
+  },
+  {
+    "name": "Karil's Crossbow",
+    "id": "karil_crossbow",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Karil%27s_crossbow"
+  },
+  {
+    "name": "Ahrim's Staff",
+    "id": "ahrim_staff",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Ahrim%27s_staff"
+  },
+  {
+    "name": "Godsword (Any)",
+    "id": "godsword",
+    "category": "Weapon",
+    "slot": "2H",
+    "tier": 75,
+    "wikiLink": "https://runescape.wiki/w/Godsword"
+  },
+  {
+    "name": "Vestments of Havoc Robe Top",
+    "id": "vestments_havoc_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Vestments_of_havoc_robe_top"
+  },
+  {
+    "name": "Vestments of Havoc Robe Bottom",
+    "id": "vestments_havoc_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Vestments_of_havoc_robe_bottom"
+  },
+  {
+    "name": "Robe Top of the First Necromancer",
+    "id": "first_necromancer_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Robe_top_of_the_First_Necromancer"
+  },
+  {
+    "name": "Robe Bottom of the First Necromancer",
+    "id": "first_necromancer_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 95,
+    "wikiLink": "https://runescape.wiki/w/Robe_bottom_of_the_First_Necromancer"
+  },
+  {
+    "name": "Elite Tectonic Robe Top",
+    "id": "elite_tectonic_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Elite_tectonic_robe_top"
+  },
+  {
+    "name": "Elite Tectonic Robe Bottom",
+    "id": "elite_tectonic_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Elite_tectonic_robe_bottom"
+  },
+  {
+    "name": "Elite Sirenic Hauberk",
+    "id": "elite_sirenic_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Elite_sirenic_hauberk"
+  },
+  {
+    "name": "Elite Sirenic Chaps",
+    "id": "elite_sirenic_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Elite_sirenic_chaps"
+  },
+  {
+    "name": "Trimmed Masterwork Platebody",
+    "id": "trimmed_masterwork_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Trimmed_masterwork_platebody"
+  },
+  {
+    "name": "Trimmed Masterwork Platelegs",
+    "id": "trimmed_masterwork_legs",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 92,
+    "wikiLink": "https://runescape.wiki/w/Trimmed_masterwork_platelegs"
+  },
+  {
+    "name": "Sirenic Hauberk",
+    "id": "sirenic_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Sirenic_hauberk"
+  },
+  {
+    "name": "Sirenic Chaps",
+    "id": "sirenic_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Sirenic_chaps"
+  },
+  {
+    "name": "Tectonic Robe Top",
+    "id": "tectonic_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Tectonic_robe_top"
+  },
+  {
+    "name": "Tectonic Robe Bottom",
+    "id": "tectonic_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Tectonic_robe_bottom"
+  },
+  {
+    "name": "Malevolent Cuirass",
+    "id": "malevolent_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Malevolent_cuirass"
+  },
+  {
+    "name": "Malevolent Greaves",
+    "id": "malevolent_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Malevolent_greaves"
+  },
+  {
+    "name": "Masterwork Platebody",
+    "id": "masterwork_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Masterwork_platebody"
+  },
+  {
+    "name": "Masterwork Platelegs",
+    "id": "masterwork_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Masterwork_platelegs"
+  },
+  {
+    "name": "Cryptbloom Top",
+    "id": "cryptbloom_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Cryptbloom_top"
+  },
+  {
+    "name": "Cryptbloom Bottoms",
+    "id": "cryptbloom_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Cryptbloom_bottoms"
+  },
+  {
+    "name": "Deathwarden Robe Top",
+    "id": "deathwarden_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Deathwarden_robe_top"
+  },
+  {
+    "name": "Deathwarden Robe Bottom",
+    "id": "deathwarden_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Deathwarden_robe_bottom"
+  },
+  {
+    "name": "Deathdealer Robe Top",
+    "id": "deathdealer_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Deathdealer_robe_top"
+  },
+  {
+    "name": "Deathdealer Robe Bottom",
+    "id": "deathdealer_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Deathdealer_robe_bottom"
+  },
+  {
+    "name": "Torva Platebody",
+    "id": "torva_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Torva_platebody"
+  },
+  {
+    "name": "Torva Platelegs",
+    "id": "torva_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Torva_platelegs"
+  },
+  {
+    "name": "Pernix Body",
+    "id": "pernix_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Pernix_body"
+  },
+  {
+    "name": "Pernix Chaps",
+    "id": "pernix_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Pernix_chaps"
+  },
+  {
+    "name": "Virtus Robe Top",
+    "id": "virtus_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Virtus_robe_top"
+  },
+  {
+    "name": "Virtus Robe Legs",
+    "id": "virtus_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Virtus_robe_legs"
+  },
+  {
+    "name": "Anima Core Body",
+    "id": "anima_core_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Anima_Core_body_of_Zaros"
+  },
+  {
+    "name": "Anima Core Legs",
+    "id": "anima_core_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Anima_Core_legs_of_Zaros"
+  },
+  {
+    "name": "Bandos Chestplate",
+    "id": "bandos_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Bandos_chestplate"
+  },
+  {
+    "name": "Bandos Tassets",
+    "id": "bandos_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Bandos_tassets"
+  },
+  {
+    "name": "Armadyl Chestplate",
+    "id": "armadyl_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Armadyl_chestplate"
+  },
+  {
+    "name": "Armadyl Chainskirt",
+    "id": "armadyl_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Armadyl_chainskirt"
+  },
+  {
+    "name": "Garb of Subjugation",
+    "id": "subjugation_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Garb_of_subjugation"
+  },
+  {
+    "name": "Gown of Subjugation",
+    "id": "subjugation_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Gown_of_subjugation"
+  },
+  {
+    "name": "Dharok's Platebody",
+    "id": "dharok_platebody",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Dharok%27s_platebody"
+  },
+  {
+    "name": "Dharok's Platelegs",
+    "id": "dharok_platelegs",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Dharok%27s_platelegs"
+  },
+  {
+    "name": "Ahrim's Robe Top",
+    "id": "ahrim_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Ahrim%27s_robe_top"
+  },
+  {
+    "name": "Ahrim's Robe Skirt",
+    "id": "ahrim_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Ahrim%27s_robe_skirt"
+  },
+  {
+    "name": "Karil's Top",
+    "id": "karil_top",
+    "category": "Armour",
+    "slot": "Body",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Karil%27s_top"
+  },
+  {
+    "name": "Karil's Skirt",
+    "id": "karil_bottom",
+    "category": "Armour",
+    "slot": "Legs",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Karil%27s_skirt"
+  }
+]

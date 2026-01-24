@@ -4,6 +4,7 @@ import './App.css'
 import Dashboard from './components/Dashboard/Dashboard';
 import Calculators from './components/Calculators/Calculators';
 import ArchaeologyCalculator from './components/Calculators/Archaeology/ArchaeologyCalculator';
+import InventionCalculator from './components/Calculators/Invention/InventionCalculator';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/calculators" element={<Calculators />} />
             <Route path="/calculators/archaeology" element={<ArchaeologyCalculator />} />
+            <Route path="/calculators/invention" element={<InventionCalculator />} />
             {/* Will implement Daily Tasks later */}
             <Route path="/daily-tasks" element={<div style={{padding: '2rem'}}>Daily Tasks Coming Soon</div>} />
           </Routes>
