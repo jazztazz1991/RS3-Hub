@@ -4,6 +4,7 @@
   max-width: 100%;
   margin: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 .dashboard-header {
@@ -15,6 +16,8 @@
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1.5rem;
 }
 
 .user-info h2 {
@@ -23,10 +26,14 @@
 }
 
 .user-rank {
-  color: #aaa;
-  font-size: 0.9rem;
+    color: #ffd700;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
 }
 
+
+/* Global Stats (Like before) */
 .global-stats {
   display: flex;
   gap: 2rem;
@@ -48,82 +55,173 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
+}
+/* ---------- */
+
+/* Character Controls (New Bar) */
+.character-selector {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.stat-box .highlight {
-  color: #e74c3c;
+.char-btn {
+  padding: 0.5rem 1rem;
+  background-color: #222;
+  border: 1px solid #444;
+  color: #aaa;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
 }
+
+.char-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+.char-btn.active {
+  background-color: #006400; /* Dark Green */
+  color: white;
+  border-color: #008000;
+}
+
+.delete-char-icon {
+  font-size: 0.8em;
+  color: #ff6666;
+  opacity: 0.7;
+}
+
+.delete-char-icon:hover {
+    color: red;
+    opacity: 1;
+}
+
+.add-char-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-char-input {
+  padding: 0.5rem;
+  background-color: #222;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 4px;
+}
+
+.add-char-btn {
+  padding: 0.5rem 1rem;
+  background-color: #2a2a2a;
+  color: #ffd700;
+  border: 1px solid #ffd700;
+  cursor: pointer;
+  border-radius: 4px;
+}
+/* ---------- */
+
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
 .skill-card {
-  background-color: #333;
+  background-color: #2a2a2a;
+  padding: 1.5rem;
   border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
   transition: transform 0.2s;
 }
 
 .skill-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
 }
 
 .skill-card.maxed {
-  border: 1px solid #f1c40f44;
-  background: linear-gradient(145deg, #333 0%, #3a3a2a 100%);
+  border-color: #ffd700;
+  background: linear-gradient(145deg, #2a2a2a, #332a00);
 }
 
 .skill-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .skill-name {
+  font-size: 1.2rem;
+  font-weight: bold;
   color: #fff;
 }
 
 .skill-level {
-  color: #f1c40f;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .progress-bar-container {
-  height: 6px;
+  width: 100%;
+  height: 8px;
   background-color: #1a1a1a;
-  border-radius: 3px;
+  border-radius: 4px;
   margin-bottom: 1rem;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background-color: #27ae60;
-  border-radius: 3px;
-  transition: width 0.5s ease-in-out;
+  background: linear-gradient(90deg, #ffd700, #ffed4a);
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
 }
 
 .skill-details {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #ccc;
 }
 
 .detail-item {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #333;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
 }
 
 .completed-badge {
   text-align: center;
-  color: #f1c40f;
+  color: #ffd700;
   font-weight: bold;
-  letter-spacing: 1px;
   padding: 0.5rem;
-  background-color: rgba(241, 196, 15, 0.1);
+  background-color: rgba(255, 215, 0, 0.1);
   border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.loading-container, .no-char-prompt {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.error-message {
+  color: #ff4444;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }

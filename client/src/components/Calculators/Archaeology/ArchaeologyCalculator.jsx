@@ -1,9 +1,14 @@
 // src/components/Calculators/Archaeology/ArchaeologyCalculator.jsx
 import React, { useState, useMemo } from 'react';
 import { artefacts } from '../../../data/artefacts';
+import { useCharacter } from '../../../context/CharacterContext';
+import { getTargetXp, XP_TABLE } from '../../../utils/rs3';
 import './ArchaeologyCalculator.css';
 
 const ArchaeologyCalculator = () => {
+    // Context
+    const { characterData, selectedCharacter } = useCharacter();
+
     // State for the user's "Restoration List"
     // Structure: [ { artefact: {...}, quantity: 1, id: timestamp } ]
     const [restorationList, setRestorationList] = useState([]);
@@ -74,6 +79,37 @@ const ArchaeologyCalculator = () => {
         // Sort alphabetically
         return Object.entries(totals).sort((a, b) => a[0].localeCompare(b[0]));
     }, [restorationList]);
+
+    // Character XP Calculations
+    const archStats = useMemo(() => {
+        if (!characterData || characterData.length === 0) return null;
+        const skill = characterData.find(s => s.name === 'Archaeology');
+        if (!skill) return null;
+
+        const currentXp = skill.xp;
+        
+        // Calculate Gain
+        const xpGain = restorationList.reduce((acc, item) => {
+            return acc + (item.artefact.xp || 0) * item.quantity;
+        }, 0);
+
+        const newXp = currentXp + xpGain;
+        
+        // Target (Generic 99 or 120)
+        const targetXp = getTargetXp('Archaeology', currentXp);
+        const remainingInitial = Math.max(0, targetXp - currentXp);
+        const remainingAfter = Math.max(0, targetXp - newXp);
+
+        return {
+            currentXp,
+            level: skill.level,
+            xpGain,
+            newXp,
+            targetXp,
+            remainingInitial,
+            remainingAfter
+        };
+    }, [characterData, restorationList]);
 
     return (
         <div className="arch-calculator-container">
@@ -156,6 +192,31 @@ const ArchaeologyCalculator = () => {
 
                 {/* RIGHT COLUMN: Results */}
                 <div className="arch-results-section">
+                    
+                    {/* XP Analysis Panel */}
+                    {archStats && (
+                        <div className="xp-analysis-card">
+                            <h3>XP Forecast: {selectedCharacter?.name}</h3>
+                            <div className="xp-stat-row">
+                                <span>Current XP:</span>
+                                <span>{archStats.currentXp.toLocaleString()}</span>
+                            </div>
+                            <div className="xp-stat-row gain">
+                                <span>+ XP Gain:</span>
+                                <span>{archStats.xpGain.toLocaleString()}</span>
+                            </div>
+                            <div className="xp-stat-divider"></div>
+                            <div className="xp-stat-row total">
+                                <span>Projected XP:</span>
+                                <span>{archStats.newXp.toLocaleString()}</span>
+                            </div>
+                            <div className="xp-stat-row remaining">
+                                <span>Remaining to Goal:</span>
+                                <span>{archStats.remainingAfter.toLocaleString()} (was {archStats.remainingInitial.toLocaleString()})</span>
+                            </div>
+                        </div>
+                    )}
+
                     <h3>Total Materials Required</h3>
                     {materialTotals.length === 0 ? (
                         <div className="empty-results">

@@ -34,3 +34,23 @@
 .navbar-links li a:hover {
   color: #fff;
 }
+.logout-btn {
+    background: none;
+    border: 1px solid #ff4444;
+    color: #ff4444;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #ff4444;
+    color: white;
+}
+
+.user-greeting {
+    color: #ffd700;
+    margin-right: 1rem;
+    font-weight: bold;
+}

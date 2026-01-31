@@ -1,12 +1,17 @@
 import React, { useState, useMemo } from 'react';
 import './InventionCalculator.css';
 import augmentableItems from '../../../data/augmentableItems.json';
+import { useCharacter } from '../../../context/CharacterContext';
+import { getTargetXp, XP_TABLE } from '../../../utils/rs3';
 
 const InventionCalculator = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedItemId, setSelectedItemId] = useState('');
   const [itemLevel, setItemLevel] = useState(12);
   const [action, setAction] = useState('siphon');
+
+  // List of added items to calculate total
+  const [addedItems, setAddedItems] = useState([]);
 
   // Tier 80 Base XP Values
   const BASE_XP_TABLE = {
@@ -35,33 +40,76 @@ const InventionCalculator = () => {
     return augmentableItems.find(item => item.id.toString() === selectedItemId);
   }, [selectedItemId]);
 
-  const calculateXP = () => {
-    if (!selectedItem) return 0;
+  const calculateXPVal = (item, level, act) => {
+    if (!item) return 0;
+    const itemLevelInt = parseInt(level);
+    if (isNaN(itemLevelInt) || itemLevelInt < 1) return 0;
 
-    const level = parseInt(itemLevel);
-    if (isNaN(level) || level < 1) return 0;
-
-    // Determine Base XP (Tier 80 equivalent)
     let baseXp = 0;
-
-    if (action === 'disassemble') {
-      if (level >= 10) baseXp = 540000;
-      else if (BASE_XP_TABLE[level]) baseXp = BASE_XP_TABLE[level].disassemble;
+    if (act === 'disassemble') {
+        if (itemLevelInt >= 10) baseXp = 540000;
+        else if (BASE_XP_TABLE[itemLevelInt]) baseXp = BASE_XP_TABLE[itemLevelInt].disassemble;
     } else {
-      // siphon
-      if (level >= 12) baseXp = 540000;
-      else if (BASE_XP_TABLE[level]) baseXp = BASE_XP_TABLE[level].siphon;
+        // siphon
+        if (itemLevelInt >= 12) baseXp = 540000;
+        else if (BASE_XP_TABLE[itemLevelInt]) baseXp = BASE_XP_TABLE[itemLevelInt].siphon;
     }
 
-    // Apply Tier Multiplier
-    // Formula: Base * (1 + 0.015 * (Tier - 80))
-    // Example T90: 1 + 0.015 * 10 = 1.15
-    const tierMultiplier = 1 + 0.015 * (selectedItem.tier - 80);
-    
+    const tierMultiplier = 1 + 0.015 * (item.tier - 80);
     return Math.floor(baseXp * tierMultiplier);
   };
 
-  const xp = calculateXP();
+  // XP for the currently selected item in the form
+  const currentPreviewXP = useMemo(() => {
+     return calculateXPVal(selectedItem, itemLevel, action);
+  }, [selectedItem, itemLevel, action]);
+
+  const handleAddItem = () => {
+    if (!selectedItem) return;
+    
+    const newItem = {
+        uniqueId: Date.now(),
+        item: selectedItem,
+        level: itemLevel,
+        action: action,
+        xp: currentPreviewXP
+    };
+
+    setAddedItems([...addedItems, newItem]);
+  };
+
+  const handleRemoveItem = (uniqueId) => {
+    setAddedItems(addedItems.filter(item => item.uniqueId !== uniqueId));
+  };
+
+  const totalXP = addedItems.reduce((acc, curr) => acc + curr.xp, 0);
+
+  // Character Data Integration
+  const { characterData, selectedCharacter } = useCharacter();
+  
+  const inventionStats = useMemo(() => {
+        if (!characterData || characterData.length === 0) return null;
+        const skill = characterData.find(s => s.name === 'Invention');
+        if (!skill) return null;
+
+        const currentXp = skill.xp;
+        const newXp = currentXp + totalXP;
+        
+        // Target (Generic 99 or 120 or 150)
+        const targetXp = getTargetXp('Invention', currentXp);
+        const remainingInitial = Math.max(0, targetXp - currentXp);
+        const remainingAfter = Math.max(0, targetXp - newXp);
+
+        return {
+            currentXp,
+            level: skill.level,
+            xpGain: totalXP,
+            newXp,
+            targetXp,
+            remainingInitial,
+            remainingAfter
+        };
+  }, [characterData, totalXP]);
 
   return (
     <div className="invention-calculator">
@@ -72,6 +120,7 @@ const InventionCalculator = () => {
 
       <div className="calc-grid">
         <div className="selection-panel">
+          <h3>Add Item</h3>
           <div className="form-group">
             <label>Category</label>
             <select 
@@ -137,45 +186,74 @@ const InventionCalculator = () => {
               onChange={(e) => setItemLevel(e.target.value)} 
             />
           </div>
+
+          <div className="preview-xp">
+            <span>Item XP: {currentPreviewXP.toLocaleString()}</span>
+          </div>
+          
+          <button 
+            className="add-btn" 
+            onClick={handleAddItem}
+            disabled={!selectedItem}
+          >
+            Add to List
+          </button>
         </div>
 
         <div className="results-panel">
-          <h3>Estimated XP Gain</h3>
+          {/* XP Analysis Panel */}
+          {inventionStats && (
+              <div className="xp-analysis-card">
+                  <h3>XP Forecast: {selectedCharacter?.name}</h3>
+                  <div className="xp-stat-row">
+                      <span>Current XP:</span>
+                      <span>{inventionStats.currentXp.toLocaleString()}</span>
+                  </div>
+                  <div className="xp-stat-row gain">
+                      <span>+ XP Gain:</span>
+                      <span>{inventionStats.xpGain.toLocaleString()}</span>
+                  </div>
+                  <div className="xp-stat-divider"></div>
+                  <div className="xp-stat-row total">
+                      <span>Projected XP:</span>
+                      <span>{inventionStats.newXp.toLocaleString()}</span>
+                  </div>
+                  <div className="xp-stat-row remaining">
+                      <span>Remaining to Goal:</span>
+                      <span>{inventionStats.remainingAfter.toLocaleString()} (was {inventionStats.remainingInitial.toLocaleString()})</span>
+                  </div>
+              </div>
+          )}
+
+          <h3>Total XP Gain</h3>
           <div className="xp-display">
-            {xp.toLocaleString()} XP
+            {totalXP.toLocaleString()} XP
           </div>
-          
-          {selectedItem && (
-            <div className="item-details">
-              <div className="detail-row">
-                <span>Item:</span>
-                <span>{selectedItem.name}</span>
-              </div>
-              <div className="detail-row">
-                <span>Tier:</span>
-                <span>{selectedItem.tier}</span>
-              </div>
-              <div className="detail-row">
-                <span>Category:</span>
-                <span>{selectedItem.category}</span>
-              </div>
-              <div className="detail-row">
-                <span>Wiki Link:</span>
-                <a 
-                  href={`https://runescape.wiki${selectedItem.wikiLink}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={{color: '#4CAF50'}}
-                >
-                  Open Wiki
-                </a>
-              </div>
-            </div>
-          )}
-          
-          {!selectedItem && (
-            <p className="xp-label">Please select an item to see details</p>
-          )}
+
+          <div className="added-items-list">
+             {addedItems.length === 0 ? (
+                 <p className="empty-list-msg">No items added to the list yet.</p>
+             ) : (
+                addedItems.map(entry => (
+                    <div key={entry.uniqueId} className="list-item">
+                        <div className="list-item-info">
+                            <span className="item-name">{entry.item.name}</span>
+                            <span className="item-action">
+                                {entry.action === 'siphon' ? 'Siphon' : 'DA'} @ Lvl {entry.level}
+                            </span>
+                            <span className="item-xp">{entry.xp.toLocaleString()} XP</span>
+                        </div>
+                        <button 
+                            className="remove-btn" 
+                            onClick={() => handleRemoveItem(entry.uniqueId)} 
+                            title="Remove"
+                        >
+                            &times;
+                        </button>
+                    </div>
+                ))
+             )}
+          </div>
         </div>
       </div>
     </div>

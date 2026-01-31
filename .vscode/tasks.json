@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "append_css",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"cat >> client/src/components/Calculators/Archaeology/ArchaeologyCalculator.css <<EOF\n\n/* XP Analysis Panel */\n.xp-analysis-card {\n    background-color: #1e272e;\n    padding: 15px;\n    border-radius: 8px;\n    border: 1px solid #485460;\n    margin-bottom: 20px;\n    box-shadow: 0 4px 6px rgba(0,0,0,0.1);\n}\n\n.xp-analysis-card h3 {\n    margin-top: 0;\n    color: #0fbcf9;\n    font-size: 1.1em;\n    border-bottom: 1px solid #485460;\n    padding-bottom: 8px;\n    margin-bottom: 12px;\n}\n\n.xp-stat-row {\n    display: flex;\n    justify-content: space-between;\n    margin-bottom: 8px;\n    font-size: 0.95em;\n    color: #d2dae2;\n}\n\n.xp-stat-row.gain {\n    color: #0be881;\n    font-weight: bold;\n}\n\n.xp-stat-divider {\n    height: 1px;\n    background-color: #485460;\n    margin: 10px 0;\n}\n\n.xp-stat-row.total {\n    color: #ffdd59;\n    font-weight: bold;\n}\n\n.xp-stat-row.remaining {\n    font-size: 0.85em;\n    color: #808e9b;\n}\nEOF\n"
+			],
+			"isBackground": false,
+			"group": "none"
+		},
+		{
+			"label": "append_css_inv",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-c",
+				"cat >> client/src/components/Calculators/Invention/InventionCalculator.css <<EOF\n\n/* XP Analysis Panel (Shared Style) */\n.xp-analysis-card {\n    background-color: #1e272e;\n    padding: 15px;\n    border-radius: 8px;\n    border: 1px solid #485460;\n    margin-bottom: 20px;\n    box-shadow: 0 4px 6px rgba(0,0,0,0.1);\n}\n\n.xp-analysis-card h3 {\n    margin-top: 0;\n    color: #0fbcf9;\n    font-size: 1.1em;\n    border-bottom: 1px solid #485460;\n    padding-bottom: 8px;\n    margin-bottom: 12px;\n}\n\n.xp-stat-row {\n    display: flex;\n    justify-content: space-between;\n    margin-bottom: 8px;\n    font-size: 0.95em;\n    color: #d2dae2;\n}\n\n.xp-stat-row.gain {\n    color: #0be881;\n    font-weight: bold;\n}\n\n.xp-stat-divider {\n    height: 1px;\n    background-color: #485460;\n    margin: 10px 0;\n}\n\n.xp-stat-row.total {\n    color: #ffdd59;\n    font-weight: bold;\n}\n\n.xp-stat-row.remaining {\n    font-size: 0.85em;\n    color: #808e9b;\n}\n\n/* Ensure results panel uses it nicely */\n.results-panel .xp-analysis-card {\n    margin-top: 0;\n}\nEOF\n"
+			],
+			"isBackground": false,
+			"group": "none"
+		}
+	]
+}

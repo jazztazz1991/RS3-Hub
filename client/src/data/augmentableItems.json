@@ -112,6 +112,54 @@
     "wikiLink": "https://runescape.wiki/w/Pyro-matic"
   },
   {
+    "name": "Death Guard (Tier 90)",
+    "id": "death_guard_t90",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Death_guard"
+  },
+  {
+    "name": "Skull Lantern (Tier 90)",
+    "id": "skull_lantern_t90",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 90,
+    "wikiLink": "https://runescape.wiki/w/Skull_lantern"
+  },
+  {
+    "name": "Death Guard (Tier 80)",
+    "id": "death_guard_t80",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Death_guard"
+  },
+  {
+    "name": "Skull Lantern (Tier 80)",
+    "id": "skull_lantern_t80",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 80,
+    "wikiLink": "https://runescape.wiki/w/Skull_lantern"
+  },
+  {
+    "name": "Death Guard (Tier 70)",
+    "id": "death_guard_t70",
+    "category": "Weapon",
+    "slot": "Main Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Death_guard"
+  },
+  {
+    "name": "Skull Lantern (Tier 70)",
+    "id": "skull_lantern_t70",
+    "category": "Weapon",
+    "slot": "Off Hand",
+    "tier": 70,
+    "wikiLink": "https://runescape.wiki/w/Skull_lantern"
+  },
+  {
     "name": "Omni Guard",
     "id": "omni_guard",
     "category": "Weapon",
