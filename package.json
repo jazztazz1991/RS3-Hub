@@ -4,9 +4,11 @@
   "description": "RS3 Efficiency Hub: Comprehensive Min-Maxing and Time-to-Goal Analytics",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start:prod": "cd server && npm start",
     "server": "cd server && npm run dev",
     "client": "cd client && npm run dev",
-    "install-all": "cd client && npm install && cd ../server && npm install"
+    "install-all": "cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

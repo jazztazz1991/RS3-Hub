@@ -13,7 +13,8 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Configure axios defaults
-  axios.defaults.baseURL = 'http://localhost:5000';
+  const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'production' ? '' : 'http://localhost:5000');
+  axios.defaults.baseURL = API_URL;
   axios.defaults.withCredentials = true; // Important for cookies/sessions
 
   // Check if user is logged in

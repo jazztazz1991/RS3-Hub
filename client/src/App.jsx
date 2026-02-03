@@ -22,9 +22,10 @@ import WildyNotification from './components/WildyEvents/WildyNotification';
 
 function App() {
   const [serverStatus, setServerStatus] = useState('Checking server...');
+  const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'production' ? '' : 'http://localhost:5000');
 
   useEffect(() => {
-    fetch('http://localhost:5000/')
+    fetch(`${API_URL}/`)
       .then(res => res.text())
       .then(data => setServerStatus(data))
       .catch(() => setServerStatus('Server is offline'));

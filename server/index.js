@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const axios = require('axios');
 const dotenv = require('dotenv');
@@ -17,13 +18,22 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Database Pool for Sessions
-const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',
-  host: process.env.DB_HOST || 'localhost',
-  database: process.env.DB_NAME || 'rs3hub',
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT || 5432,
-});
+const poolConfig = process.env.DATABASE_URL
+  ? {
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
+    }
+  : {
+      user: process.env.DB_USER || 'postgres',
+      host: process.env.DB_HOST || 'localhost',
+      database: process.env.DB_NAME || 'rs3hub',
+      password: process.env.DB_PASSWORD,
+      port: process.env.DB_PORT || 5432,
+    };
+
+const pool = new Pool(poolConfig);
 
 // Middleware
 app.use(cors({
@@ -57,10 +67,7 @@ app.use(passport.session());
 app.use('/auth', authRoutes);
 app.use('/api/characters', characterRoutes);
 
-// Basic health check route
-app.get('/', (req, res) => {
-  res.send('RS3 Efficiency Hub API is running');
-});
+
 
 // Proxy route for Jagex Hiscores (with Caching)
 // https://secure.runescape.com/m=hiscore/index_lite.ws?player=X
@@ -130,6 +137,19 @@ app.get('/api/hiscores/:player', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch hiscores and no cache available' });
   }
 });
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/dist')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.send('RS3 Efficiency Hub API is running (Dev Mode)');
+  });
+}
 
 // Sync Database and Start Server
 sequelize.sync({ alter: true })
