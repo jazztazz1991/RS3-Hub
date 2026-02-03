@@ -17,6 +17,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Trust Proxy for Render (Required for Secure Cookies over HTTPS)
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // Database Pool for Sessions
 const poolConfig = process.env.DATABASE_URL
   ? {
