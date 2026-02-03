@@ -11,6 +11,10 @@ const Character = sequelize.define('Character', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  last_known_stats: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
   userId: {
     type: DataTypes.UUID,
     allowNull: false,

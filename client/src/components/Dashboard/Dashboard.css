@@ -225,3 +225,40 @@
   margin-top: 0.5rem;
   font-size: 0.9rem;
 }
+
+
+/* Layout Update for Main Dashboard Content */
+.dashboard-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start; /* Align top so sidebar stays up */
+}
+
+.skills-section {
+  flex: 2; /* Takes up 2/3 of space relative to tracker's 1 */
+  width: 100%;
+}
+
+.tracker-section {
+  flex: 1; /* Takes up 1/3 of space */
+  min-width: 320px; /* Minimum width for the tracker to remain usable */
+  position: sticky;
+  top: 1rem; /* Sticky scroll for accessibility */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1200px) {
+  .dashboard-content {
+      flex-direction: column;
+  }
+  
+  .skills-section, .tracker-section {
+      width: 100%;
+      flex: none;
+  }
+  
+  .tracker-section {
+      position: static;
+      margin-top: 2rem;
+  }
+}

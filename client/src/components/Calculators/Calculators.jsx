@@ -10,7 +10,9 @@ const Calculators = () => {
       <p>Select a skill to optimize your efficiency.</p>
       
       <div className="calculators-grid">
-        {mockSkills.map(skill => (
+        {mockSkills
+          .filter(skill => !['Attack', 'Defence', 'Strength', 'Constitution', 'Ranged'].includes(skill.name))
+          .map(skill => (
           <Link to={`/calculators/${skill.name.toLowerCase()}`} key={skill.id} className="calculator-card">
             <div className="calculator-icon">
               {/* Placeholder for icon - using first letter for now */}

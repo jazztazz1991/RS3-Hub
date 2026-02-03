@@ -7,7 +7,7 @@ const pgSession = require('connect-pg-simple')(session);
 const { Pool } = require('pg');
 const passport = require('./config/passport');
 // Import sequelize and models from models/index to ensure associations are set
-const { sequelize } = require('./models');
+const { sequelize, Character } = require('./models');
 const authRoutes = require('./routes/auth');
 const characterRoutes = require('./routes/characters');
 
@@ -62,22 +62,77 @@ app.get('/', (req, res) => {
   res.send('RS3 Efficiency Hub API is running');
 });
 
-// Proxy route for Jagex Hiscores (Example)
+// Proxy route for Jagex Hiscores (with Caching)
 // https://secure.runescape.com/m=hiscore/index_lite.ws?player=X
 app.get('/api/hiscores/:player', async (req, res) => {
   const { player } = req.params;
+  
   try {
+    // 1. Try fetching live data
     const response = await axios.get(`https://secure.runescape.com/m=hiscore/index_lite.ws?player=${player}`);
-    // Parsing logic can be added here
+    
+    // 2. If successful, respond to client immediately
     res.send(response.data);
+
+    // 3. Background: Update specific character record if user is tracking it
+    // We only update if a user is logged in (req.user) OR we could search purely by name across all users,
+    // but usually we care about the authenticated user's context. 
+    // If the frontend is calling this, it probably means the user is looking at their "Dashboard".
+    if (req.user) {
+        // Find the character linked to this user (Case-insensitive search for robustness)
+        // Note: Postgres matches are case sensitive by default, but Sequelize findOne usually exact match.
+        // We'll rely on the frontend passing the exact name stored in DB, or use ILIKE if needed.
+        // For simplicity, we assume exact string match or we grab the one they "own".
+        
+        try {
+            // Find character by name and userId
+            const char = await Character.findOne({ 
+                where: { 
+                    userId: req.user.id,
+                    name: player 
+                } 
+            });
+
+            if (char) {
+                // Update the stats cache
+                char.last_known_stats = response.data;
+                await char.save();
+                console.log(`Updated cache for character: ${player}`);
+            }
+        } catch (dbErr) {
+            console.error("Failed to update character cache:", dbErr.message);
+        }
+    }
+
   } catch (error) {
-    console.error('Error fetching hiscores:', error.message);
-    res.status(500).json({ error: 'Failed to fetch hiscores' });
+    console.error('Error fetching live hiscores:', error.message);
+
+    // 4. Fallback: If live fetch fails, try to retrieve from DB cache
+    if (req.user) {
+        try {
+            const char = await Character.findOne({ 
+                where: { 
+                    userId: req.user.id,
+                    name: player
+                } 
+            });
+
+            if (char && char.last_known_stats) {
+                console.log(`Serving cached stats for: ${player}`);
+                return res.send(char.last_known_stats);
+            }
+        } catch (dbErr) {
+            console.error("Failed to retrieve cache:", dbErr.message);
+        }
+    }
+
+    // 5. If no cache available, fail
+    res.status(500).json({ error: 'Failed to fetch hiscores and no cache available' });
   }
 });
 
 // Sync Database and Start Server
-sequelize.sync({ force: false })
+sequelize.sync({ alter: true })
   .then(() => {
     console.log('Database synced');
     app.listen(PORT, () => {

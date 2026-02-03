@@ -1,0 +1,169 @@
+.firemaking-calculator-container {
+    padding: 2rem;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.firemaking-calculator-container h2 {
+    color: #ff5722; /* Fire Orange */
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+.calculator-layout {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.input-section {
+    flex: 1;
+    min-width: 300px;
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.results-section {
+    flex: 1;
+    min-width: 300px;
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ff5722;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #ff5722;
+    box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+}
+
+.selection-grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.grid-label {
+    grid-column: 1 / -1;
+    color: #ff5722;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #444;
+}
+
+.item-list, .method-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.selection-card {
+    background-color: #333;
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.selection-card:hover {
+    background-color: #444;
+}
+
+.selection-card.selected {
+    background-color: #5a2a1a;
+    border-color: #ff5722;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem;
+}
+
+.card-header h4 {
+    margin: 0;
+    color: #eee;
+}
+
+.level-req {
+    font-size: 0.8rem;
+    color: #aaa;
+    background-color: #222;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.xp-val {
+    font-size: 0.9rem;
+    color: #ff5722;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.result-card {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.result-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.result-card .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.result-card .sub-value {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.2rem;
+}
+
+.highlight .value {
+    color: #ff5722;
+}

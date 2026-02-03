@@ -1,3 +1,5 @@
+// No longer in use. Leaving in case needed for reference.
+
 export const mockUser = {
   username: "MaxingSoonTM",
   totalLevel: 2650,

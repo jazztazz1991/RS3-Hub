@@ -92,3 +92,25 @@ export const getTargetLevel = (skillName, currentXp = 0) => {
     return maxLevel;
 };
 
+export const getLevelAtXp = (xp) => {
+  let points = 0;
+  for (let lvl = 1; lvl < 127; lvl++) {
+    points += Math.floor(lvl + 300 * Math.pow(2, lvl / 7));
+    if (Math.floor(points / 4) > xp) {
+      return lvl;
+    }
+  }
+  return 126;
+};
+
+export const getXpAtLevel = (level) => {
+    if (level > 120) level = 120;
+    if (level < 1) level = 1;
+    
+    let points = 0;
+    for (let lvl = 1; lvl < level; lvl++) {
+      points += Math.floor(lvl + 300 * Math.pow(2, lvl / 7));
+    }
+    return Math.floor(points / 4);
+};
+

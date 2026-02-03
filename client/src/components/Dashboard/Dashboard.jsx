@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useCharacter } from '../../context/CharacterContext';
 import { getTargetXp, XP_TABLE } from '../../utils/rs3';
+import TaskTracker from './TaskTracker';
+import WildyTracker from '../WildyEvents/WildyTracker';
 import './Dashboard.css';
 
 const SkillCard = ({ skill }) => {
@@ -209,7 +211,6 @@ const Dashboard = () => {
              </div>
        </div>
 
-    
         {loadingChars ? (
              <div className="loading-container">Loading Characters...</div>
         ) : characters.length === 0 ? (
@@ -218,21 +219,29 @@ const Dashboard = () => {
                 <p>Add your RuneScape 3 character name above to view stats.</p>
             </div>
         ) : (
-            <>
-                {loadingData ? (
-                    <div className="loading-container">Fetching Hiscores from Jagex...</div>
-                ) : (
-                    <div className="skills-grid"> 
-                        {characterData.length > 0 ? (
-                            characterData.slice(1).map(skill => ( // Skip Overall if desired, or map all
-                                <SkillCard key={skill.id} skill={skill} />
-                            ))
-                        ) : (
-                            <div className="error-message">Could not load stats for this character. They may not be on the HiScores.</div>
-                        )}
+            <div className="dashboard-content">
+                <div className="skills-section">
+                    {loadingData ? (
+                        <div className="loading-container">Fetching Hiscores from Jagex...</div>
+                    ) : (
+                        <div className="skills-grid"> 
+                            {characterData.length > 0 ? (
+                                characterData.slice(1).map(skill => ( // Skip Overall if desired, or map all
+                                    <SkillCard key={skill.id} skill={skill} />
+                                ))
+                            ) : (
+                                <div className="error-message">Could not load stats for this character. They may not be on the HiScores.</div>
+                            )}
+                        </div>
+                    )}
+                </div>
+                {selectedCharacter && (
+                    <div className="tracker-section">
+                        <WildyTracker />
+                        <TaskTracker characterName={selectedCharacter.name} />
                     </div>
                 )}
-            </>
+            </div>
         )}
     </div>
   );
