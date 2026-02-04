@@ -1,0 +1,234 @@
+.necromancy-calculator {
+    padding: 1rem;
+    color: #b388ff; /* Light Lavender/Necro */
+}
+
+.necromancy-calculator h2 {
+    color: #d1c4e9;
+    border-bottom: 2px solid #7c4dff; /* Deep Purple Necro */
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.necromancy-calculator .card {
+    background-color: #12002b; /* Almost Black Purple */
+    border: 1px solid #4527a0;
+}
+
+/* Modifiers Section */
+.modifiers {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background-color: #1a1a2e; /* Dark Blue-Purple */
+    border-radius: 6px;
+    flex-wrap: wrap;
+    border-left: 4px solid #00e676; /* Necro Green Accent */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: #ede7f6;
+}
+
+.checkbox-container input {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    accent-color: #00e676;
+}
+
+/* Toggle Buttons */
+.mode-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 1rem;
+    background-color: #1a1a2e;
+    border: 2px solid #311b92;
+    color: #9575cd;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.mode-btn:hover {
+    background-color: #311b92;
+    border-color: #7c4dff;
+}
+
+.mode-btn.active {
+    background-color: #4527a0;
+    border-color: #00e676; /* Green Accent */
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+}
+
+.mode-btn .emoji {
+    font-size: 1.5rem;
+}
+
+/* Layout */
+.calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #d1c4e9;
+}
+
+.input-group input, .category-select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1a1a2e;
+    border: 1px solid #4527a0;
+    color: #ede7f6;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Selected Method Card - Underworld Theme */
+.selected-method-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #240b36; /* Dark Purple Reddish */
+    border-radius: 8px;
+    border: 1px solid #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
+}
+
+.selected-method-card h3 {
+    color: #00e676; /* Necro Green */
+    margin-top: 0;
+}
+
+.method-xp-actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b388ff;
+}
+
+.method-detail.highlight {
+    color: #69f0ae; /* Light Green */
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Results */
+.result-main {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: #1a1a2e;
+    padding: 1rem;
+    border-radius: 8px;
+    border-bottom: 4px solid #7c4dff;
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.action-count .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00e676; /* Necro Green */
+}
+
+.result-details p {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #311b92;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #b39ddb;
+}
+
+/* Grid */
+.methods-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-select {
+    width: auto;
+    padding: 0.5rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.method-btn {
+    background-color: #1a1a2e;
+    border: 1px solid #311b92;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    color: #d1c4e9;
+}
+
+.method-btn:hover {
+    background-color: #311b92;
+    border-color: #00e676;
+}
+
+.method-btn.active {
+    background-color: #4527a0;
+    border-color: #00e676;
+    color: #ffffff;
+}
+
+.method-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #00e676;
+}
+
+.method-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+}

@@ -1,0 +1,213 @@
+.runecrafting-calculator {
+    padding: 1rem;
+    color: #e0e0e0;
+}
+
+.runecrafting-calculator h2 {
+    color: #f1c40f; /* Yellow for Runecrafting */
+    border-bottom: 2px solid #d35400; /* Darker orange accent */
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.runecrafting-calculator .card {
+    background-color: #2c3e50;
+    border: 1px solid #34495e;
+}
+
+/* Modifiers Section */
+.modifiers {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background-color: #1a252f;
+    border-radius: 6px;
+    flex-wrap: wrap;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.checkbox-container input {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+/* Toggle Buttons */
+.mode-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 1rem;
+    background-color: #1a252f;
+    border: 2px solid #34495e;
+    color: #95a5a6;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.mode-btn:hover {
+    background-color: #2c3e50;
+    border-color: #7f8c8d;
+}
+
+.mode-btn.active {
+    background-color: #f39c12;
+    border-color: #f1c40f;
+    color: #2c3e50; /* Dark text on bright button */
+}
+
+.mode-btn .emoji {
+    font-size: 1.5rem;
+}
+
+/* Method Grid Styling */
+.method-btn {
+    background-color: #34495e;
+    border: 1px solid #4a627a;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    color: #bdc3c7;
+}
+
+.method-btn:hover {
+    background-color: #4a627a;
+}
+
+.method-btn.active {
+    background-color: #d35400; 
+    border-color: #e67e22;
+    color: white;
+}
+
+.method-btn.locked {
+    opacity: 0.5;
+    background-color: #222;
+}
+
+.calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #bdc3c7;
+}
+
+.input-group input, .category-select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1a252f;
+    border: 1px solid #34495e;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.helper-text {
+    display: block;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+.methods-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-select {
+    width: auto;
+    padding: 0.5rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.method-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.method-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.method-btn.active .method-details {
+    color: rgba(255,255,255,0.9);
+}
+
+.result-main {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Specific color for count */
+.action-count .number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+.result-details p {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #34495e;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}

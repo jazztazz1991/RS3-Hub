@@ -45,11 +45,20 @@ const SkillCard = ({ skill }) => {
   if (currentTargetXp === XP_TABLE[110]) headerTarget = 110;
   if (currentTargetXp === XP_TABLE[120]) headerTarget = 120;
 
+  const handleWikiClick = () => {
+    window.open(`https://runescape.wiki/w/${skill.name.replace(/\s+/g, '_')}`, '_blank');
+  };
 
   return (
     <div className={`skill-card ${isAtLeast99 ? 'maxed' : ''}`}>
       <div className="skill-header">
-        <span className="skill-name">{skill.name}</span>
+        <span 
+          className="skill-name clickable-skill" 
+          onClick={handleWikiClick}
+          title={`Open ${skill.name} on RS Wiki`}
+        >
+          {skill.name} 🔗
+        </span>
         <span className="skill-level">{skill.level} / {skill.name === 'Overall' ? '???' : headerTarget}</span>
       </div>
       <div className="progress-bar-container">
@@ -105,6 +114,12 @@ const Dashboard = () => {
   // Add Char State
   const [newCharName, setNewCharName] = useState('');
   const [addError, setAddError] = useState('');
+  
+  // Toggle for Maxed vs Comped stats
+  const [showCompStats, setShowCompStats] = useState(false);
+
+  // Sorting State
+  const [sortMethod, setSortMethod] = useState('default'); // default, level_desc, level_asc, percent_desc
 
   const handleAddCharacter = async (e) => {
     e.preventDefault();
@@ -136,15 +151,20 @@ const Dashboard = () => {
     const totalLevel = overall ? overall.level : 0;
     const totalXp = overall ? overall.xp : 0;
 
-    // Count Maxed (Using getTargetXp logic)
+    // Count Maxed (Skills >= 99)
     // Filter out Overall from maxed count
     const skillsList = characterData.filter(s => s.name !== 'Overall');
-    const maxedCount = skillsList.filter(s => {
-        const target = getTargetXp(s.name, s.xp);
-        return s.xp >= target;
+    
+    // Count True Max (120 for 120 skills, 99 for rest)
+    const trueMaxCount = skillsList.filter(s => {
+         const target = getTargetXp(s.name, s.xp);
+         return s.xp >= target;
     }).length;
 
-    return { totalLevel, totalXp, maxedCount, totalSkills: skillsList.length };
+    // Count pure 99s
+    const count99 = skillsList.filter(s => s.xp >= XP_TABLE[99]).length;
+
+    return { totalLevel, totalXp, maxedCount: trueMaxCount, count99, totalSkills: skillsList.length };
 
   }, [characterData]);
 
@@ -167,16 +187,25 @@ const Dashboard = () => {
                     <h3>Total XP</h3>
                     <p>{(globalStats.totalXp / 1000000).toFixed(1)}M</p>
                 </div>
-                <div className="stat-box">
-                    <h3>Maxed Skills</h3>
-                    <p>{globalStats.maxedCount} / {globalStats.totalSkills}</p>
+                <div 
+                    className="stat-box clickable" 
+                    onClick={() => setShowCompStats(!showCompStats)}
+                    title="Click to toggle between Maxed (99) and True Max (120/110)"
+                    style={{ cursor: 'pointer', userSelect: 'none', minWidth: '120px' }}
+                >
+                    <div key={showCompStats ? 'comp' : 'max'} className="stat-anim-container" style={{animation: 'fadeIn 0.4s ease-out'}}>
+                         <h3>{showCompStats ? 'Comped Skills' : 'Maxed Skills'}</h3>
+                         <p>
+                             {showCompStats ? globalStats.maxedCount : globalStats.count99} / {globalStats.totalSkills}
+                         </p>
+                    </div>
                 </div>
             </div>
          )}
       </header>
        
        {/* Character Controls Section */}
-       <div className="controls-section" style={{marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#333', padding: '1rem', borderRadius: '8px'}}> 
+       <div className="controls-section" style={{marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#333', padding: '1rem', borderRadius: '8px', flexWrap: 'wrap', gap: '1rem'}}> 
             <div className="character-selector">
                 {characters.map(char => (
                     <button 
@@ -196,19 +225,39 @@ const Dashboard = () => {
                 ))}
             </div>
 
-             <div className="add-char-wrapper">
-                <form onSubmit={handleAddCharacter} className="add-char-form">
-                    <input 
-                        type="text" 
-                        placeholder="Add RSN" 
-                        value={newCharName}
-                        onChange={(e) => setNewCharName(e.target.value)}
-                        className="add-char-input"
-                    />
-                    <button type="submit" className="add-char-btn">Add</button>
-                </form>
-                {addError && <span className="error-message" style={{position: 'absolute', fontSize: '0.8rem', marginTop: '5px'}}>{addError}</span>}
-             </div>
+            <div className="controls-right" style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
+                {/* Sorting Dropdown */}
+                 {characterData && characterData.length > 0 && (
+                     <div className="sort-wrapper">
+                         <label htmlFor="sort-skills" style={{marginRight: '0.5rem', color: '#ccc', fontSize: '0.9rem'}}>Sort:</label>
+                         <select 
+                            id="sort-skills"
+                            value={sortMethod}
+                            onChange={(e) => setSortMethod(e.target.value)}
+                            className="sort-dropdown"
+                         >
+                             <option value="default">Default Order</option>
+                             <option value="level_desc">Level (High to Low)</option>
+                             <option value="level_asc">Level (Low to High)</option>
+                             <option value="percent_desc">% to Goal</option>
+                         </select>
+                     </div>
+                 )}
+
+                 <div className="add-char-wrapper">
+                    <form onSubmit={handleAddCharacter} className="add-char-form">
+                        <input 
+                            type="text" 
+                            placeholder="Add RSN" 
+                            value={newCharName}
+                            onChange={(e) => setNewCharName(e.target.value)}
+                            className="add-char-input"
+                        />
+                        <button type="submit" className="add-char-btn">Add</button>
+                    </form>
+                    {addError && <span className="error-message" style={{position: 'absolute', fontSize: '0.8rem', marginTop: '5px'}}>{addError}</span>}
+                 </div>
+            </div>
        </div>
 
         {loadingChars ? (
@@ -226,9 +275,28 @@ const Dashboard = () => {
                     ) : (
                         <div className="skills-grid"> 
                             {characterData.length > 0 ? (
-                                characterData.slice(1).map(skill => ( // Skip Overall if desired, or map all
-                                    <SkillCard key={skill.id} skill={skill} />
-                                ))
+                                (() => {
+                                    // Make a copy to sort
+                                    let displayData = [...characterData.slice(1)];
+                                    
+                                    if (sortMethod === 'level_desc') {
+                                        displayData.sort((a,b) => b.xp - a.xp);
+                                    } else if (sortMethod === 'level_asc') {
+                                        displayData.sort((a,b) => a.xp - b.xp);
+                                    } else if (sortMethod === 'percent_desc') {
+                                        displayData.sort((a,b) => {
+                                            const getPercent = (skill) => {
+                                                const target = getTargetXp(skill.name, skill.xp);
+                                                return target > 0 ? skill.xp / target : 0;
+                                            };
+                                            return getPercent(b) - getPercent(a);
+                                        });
+                                    }
+
+                                    return displayData.map(skill => (
+                                        <SkillCard key={skill.id} skill={skill} />
+                                    ));
+                                })()
                             ) : (
                                 <div className="error-message">Could not load stats for this character. They may not be on the HiScores.</div>
                             )}

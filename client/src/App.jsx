@@ -14,6 +14,21 @@ import WoodcuttingCalculator from './components/Calculators/Woodcutting/Woodcutt
 import FletchingCalculator from './components/Calculators/Fletching/FletchingCalculator';
 import FishingCalculator from './components/Calculators/Fishing/FishingCalculator';
 import FiremakingCalculator from './components/Calculators/Firemaking/FiremakingCalculator';
+import MiningCalculator from './components/Calculators/Mining/MiningCalculator';
+import SmithingCalculator from './components/Calculators/Smithing/SmithingCalculator';
+import CraftingCalculator from './components/Calculators/Crafting/CraftingCalculator';
+import HerbloreCalculator from './components/Calculators/Herblore/HerbloreCalculator';
+import AgilityCalculator from './components/Calculators/Agility/AgilityCalculator';
+import ThievingCalculator from './components/Calculators/Thieving/ThievingCalculator';
+import SlayerCalculator from './components/Calculators/Slayer/SlayerCalculator';
+import FarmingCalculator from './components/Calculators/Farming/FarmingCalculator';
+import RunecraftingCalculator from './components/Calculators/Runecrafting/RunecraftingCalculator';
+import HunterCalculator from './components/Calculators/Hunter/HunterCalculator';
+import ConstructionCalculator from './components/Calculators/Construction/ConstructionCalculator';
+import SummoningCalculator from './components/Calculators/Summoning/SummoningCalculator';
+import DungeoneeringCalculator from './components/Calculators/Dungeoneering/DungeoneeringCalculator';
+import DivinationCalculator from './components/Calculators/Divination/DivinationCalculator';
+import NecromancyCalculator from './components/Calculators/Necromancy/NecromancyCalculator';
 import Navbar from './components/Navbar/Navbar';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
@@ -58,6 +73,21 @@ function App() {
                 <Route path="/calculators/fletching" element={<FletchingCalculator />} />
                 <Route path="/calculators/fishing" element={<FishingCalculator />} />
                 <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
+                <Route path="/calculators/mining" element={<MiningCalculator />} />
+                <Route path="/calculators/smithing" element={<SmithingCalculator />} />
+                <Route path="/calculators/crafting" element={<CraftingCalculator />} />
+                <Route path="/calculators/herblore" element={<HerbloreCalculator />} />
+                <Route path="/calculators/agility" element={<AgilityCalculator />} />
+                <Route path="/calculators/thieving" element={<ThievingCalculator />} />
+                <Route path="/calculators/slayer" element={<SlayerCalculator />} />
+                <Route path="/calculators/farming" element={<FarmingCalculator />} />
+                <Route path="/calculators/runecrafting" element={<RunecraftingCalculator />} />
+                <Route path="/calculators/hunter" element={<HunterCalculator />} />
+                <Route path="/calculators/construction" element={<ConstructionCalculator />} />
+                <Route path="/calculators/summoning" element={<SummoningCalculator />} />
+                <Route path="/calculators/dungeoneering" element={<DungeoneeringCalculator />} />
+                <Route path="/calculators/divination" element={<DivinationCalculator />} />
+                <Route path="/calculators/necromancy" element={<NecromancyCalculator />} />
                 <Route path="/daily-tasks" element={<div style={{padding: '2rem'}}>Daily Tasks Coming Soon</div>} />
               </Route>
             </Routes>

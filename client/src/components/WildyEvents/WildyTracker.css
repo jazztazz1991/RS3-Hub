@@ -19,8 +19,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 0;
+    padding: 0.8rem 0.5rem; /* Added Horizontal Padding */
     border-bottom: 1px solid #333;
+    transition: background-color 0.2s;
+    border-radius: 4px;
+}
+
+/* Active Event (Happening Now) */
+.flash-event-item.active-event {
+    background-color: rgba(220, 20, 60, 0.2);
+    border: 1px solid rgba(220, 20, 60, 0.5);
+    animation: pulseRed 2s infinite;
+}
+
+.flash-event-item.active-event .event-name {
+    color: #ff4444;
+}
+
+/* Next Event */
+.flash-event-item.next-event {
+    background-color: rgba(255, 215, 0, 0.1);
+    border-left: 3px solid #ffd700;
+}
+
+@keyframes pulseRed {
+    0% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(220, 20, 60, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); }
 }
 
 .flash-event-item:last-child {

@@ -41,6 +41,8 @@
 
 .stat-box {
   text-align: center;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
 
 .stat-box h3 {
@@ -57,6 +59,56 @@
   font-weight: bold;
   color: white;
 }
+
+.stat-box.clickable {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.stat-box.clickable:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.stat-box.clickable:active {
+  transform: scale(0.95);
+}
+
+/* Flip Animation classes */
+.stat-content-wrapper {
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.stat-content-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.stat-content-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-content-exit {
+  opacity: 1;
+  transform: translateY(0);
+  position: absolute; /* Take out of flow so new one can slide in */
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.stat-content-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* ---------- */
 
 /* Character Controls (New Bar) */
@@ -122,6 +174,34 @@
   border: 1px solid #ffd700;
   cursor: pointer;
   border-radius: 4px;
+}
+
+/* Sorting Dropdown */
+.sort-dropdown {
+    padding: 0.5rem;
+    background-color: #222;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sort-dropdown:focus {
+    outline: none;
+    border-color: #f1c40f;
+}
+
+/* Clickable Skill Name */
+.clickable-skill {
+    cursor: pointer;
+    transition: color 0.2s;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+}
+
+.clickable-skill:hover {
+    color: #f1c40f; /* Gold hover */
+    text-decoration-color: #f1c40f;
 }
 /* ---------- */
 

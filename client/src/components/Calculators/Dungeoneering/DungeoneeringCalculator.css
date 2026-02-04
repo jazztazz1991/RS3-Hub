@@ -1,0 +1,237 @@
+.dungeoneering-calculator {
+    padding: 1rem;
+    color: #bdbdbd; /* Light Grey */
+}
+
+.dungeoneering-calculator h2 {
+    color: #607d8b; /* Blue Grey */
+    border-bottom: 2px solid #455a64;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.dungeoneering-calculator .card {
+    background-color: #212121; /* Very Dark Grey */
+    border: 1px solid #424242;
+}
+
+/* Modifiers Section */
+.modifiers {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background-color: #263238; /* Dark Blue Grey */
+    border-radius: 6px;
+    flex-wrap: wrap;
+    border-left: 4px solid #78909c;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: #cfd8dc;
+}
+
+.checkbox-container input {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    accent-color: #607d8b;
+}
+
+/* Toggle Buttons */
+.mode-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 1rem;
+    background-color: #212121;
+    border: 2px solid #37474f;
+    color: #90a4ae;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.mode-btn:hover {
+    background-color: #37474f;
+    border-color: #78909c;
+}
+
+.mode-btn.active {
+    background-color: #455a64;
+    border-color: #b0bec5;
+    color: #ffffff;
+}
+
+.mode-btn .emoji {
+    font-size: 1.5rem;
+}
+
+/* Layout */
+.calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #b0bec5;
+}
+
+.input-group input, .category-select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #212121;
+    border: 1px solid #424242;
+    color: #eceff1;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Selected Method Card - Stone/Dungeon Theme */
+.selected-method-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #263238;
+    border-radius: 8px;
+    border: 1px solid #546e7a;
+}
+
+.selected-method-card h3 {
+    color: #eceff1;
+    margin-top: 0;
+}
+
+.method-xp-actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #81d4fa; /* Light Blue */
+}
+
+.method-detail {
+    font-style: italic;
+    color: #b0bec5;
+    margin-top: 0.5rem;
+}
+
+.highlight {
+    color: #ffb74d;
+    margin-left: 5px;
+}
+
+/* Results */
+.result-main {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: #212121;
+    padding: 1rem;
+    border-radius: 8px;
+    border-bottom: 4px solid #607d8b;
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.action-count .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #cfd8dc;
+}
+
+.result-details p {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #37474f;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #90a4ae;
+}
+
+/* Grid */
+.methods-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-select {
+    width: auto;
+    padding: 0.5rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.method-btn {
+    background-color: #263238;
+    border: 1px solid #37474f;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    color: #cfd8dc;
+}
+
+.method-btn:hover {
+    background-color: #37474f;
+    border-color: #78909c;
+}
+
+.method-btn.active {
+    background-color: #546e7a;
+    border-color: #81d4fa;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(129, 212, 250, 0.2);
+}
+
+.method-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.method-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}

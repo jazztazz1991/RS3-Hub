@@ -1,0 +1,261 @@
+.summoning-calculator {
+    padding: 1rem;
+    color: #e0e0e0;
+}
+
+.summoning-calculator h2 {
+    color: #ffd700; /* Gold */
+    border-bottom: 2px solid #00bcd4; /* Cyan/Spirit Blue */
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.summoning-calculator .card {
+    background-color: #2c3e50;
+    border: 1px solid #34495e;
+}
+
+/* Modifiers Section */
+.modifiers {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background-color: #1a252f;
+    border-radius: 6px;
+    flex-wrap: wrap;
+    border-left: 4px solid #00bcd4;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.checkbox-container input {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+/* Toggle Buttons */
+.mode-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 1rem;
+    background-color: #1a252f;
+    border: 2px solid #00acc1;
+    color: #b2ebf2; /* Light Cyan */
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.mode-btn:hover {
+    background-color: #2c3e50;
+    border-color: #ffd700;
+}
+
+.mode-btn.active {
+    background-color: #00bcd4;
+    border-color: #ffd700;
+    color: #2c3e50;
+}
+
+.mode-btn .emoji {
+    font-size: 1.5rem;
+}
+
+/* Layout */
+.calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #bdc3c7;
+}
+
+.input-group input, .category-select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1a252f;
+    border: 1px solid #4e342e;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Selected Method Card - Spirit Theme */
+.selected-method-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #006064; /* Dark Cyan/Teal */
+    border-radius: 8px;
+    border: 1px solid #ffd700;
+}
+
+.selected-method-card h3 {
+    color: #ffd700;
+    margin-top: 0;
+}
+
+.method-xp-actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4dd0e1; /* Bright Cyan */
+}
+
+.materials-req {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #ffd700;
+    font-size: 0.9rem;
+    color: #e0f7fa;
+}
+
+.materials-req p {
+    margin: 0.2rem 0;
+}
+
+/* Charm Colors */
+.charm-gold { color: #ffd700; font-weight: bold; }
+.charm-green { color: #69f0ae; font-weight: bold; }
+.charm-crimson { color: #ff5252; font-weight: bold; }
+.charm-blue { color: #448aff; font-weight: bold; }
+
+.charm-text-gold { color: #ffd700; }
+.charm-text-green { color: #69f0ae; }
+.charm-text-crimson { color: #ff5252; }
+.charm-text-blue { color: #448aff; }
+
+
+/* Results */
+.result-main {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: #1a252f;
+    padding: 1rem;
+    border-radius: 8px;
+    border-bottom: 4px solid #ffd700;
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.action-count .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.result-details p {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #00838f;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #bdc3c7;
+}
+
+/* Grid */
+.methods-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.category-select {
+    width: auto;
+    padding: 0.5rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.method-btn {
+    background-color: #34495e;
+    border: 1px solid #455a64;
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    color: #bdc3c7;
+}
+
+.method-btn:hover {
+    background-color: #455a64;
+    border-color: #ffd700;
+}
+
+.method-btn.active {
+    background-color: #ffd700;
+    border-color: #fbc02d;
+    color: #262626; /* Dark text on gold */
+}
+
+.method-btn.active .charm-text-gold,
+.method-btn.active .charm-text-green,
+.method-btn.active .charm-text-crimson,
+.method-btn.active .charm-text-blue {
+    color: #262626; /* Ensure charm text is readable on gold */
+    font-weight: bold;
+}
+
+
+.method-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.method-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.method-btn.active .method-details {
+    color: rgba(0,0,0,0.7);
+}
