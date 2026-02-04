@@ -1,48 +1,74 @@
 import React, { useState, useEffect } from 'react';
+import { useCharacter } from '../../context/CharacterContext';
+import { DAILY_TASKS, WEEKLY_TASKS, MONTHLY_TASKS } from '../../data/dailyTasksData';
 import './TaskTracker.css';
 
-const TaskTracker = ({ characterName }) => {
+const TaskTracker = () => {
+    const { selectedCharacter, updateCharacterTasks } = useCharacter();
+
+    // 1. Clock Timer for reset Checks
     const [currentTime, setCurrentTime] = useState(new Date());
 
-    // Task Definitions
-    const TASKS = {
-        daily: [
-            { id: 'slime_gathering', label: 'Gather Slime' }
-        ],
-        weekly: [
-            { id: 'tears_of_guthix', label: 'Tears of Guthix' }
-        ],
-        monthly: [
-            { id: 'giant_oyster', label: 'Giant Oyster' }
-        ]
-    };
-
-    // State for completed tasks
-    // Structure: { "slime_gathering": timestamp, ... }
     const [completedTasks, setCompletedTasks] = useState({});
+    const [pinnedTasks, setPinnedTasks] = useState([]);
 
-    // 1. Clock Timer
+    // Clock
     useEffect(() => {
         const timer = setInterval(() => setCurrentTime(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
 
-    // 2. Load Tasks on Mount or Character Change
+    // Load Data from Character
     useEffect(() => {
-        if (!characterName) return;
-        const saved = localStorage.getItem(`rs3hub_tasks_${characterName}`);
-        if (saved) {
-            setCompletedTasks(JSON.parse(saved));
+        if (selectedCharacter) {
+            try {
+                const pinned = selectedCharacter.pinned_tasks 
+                    ? (typeof selectedCharacter.pinned_tasks === 'string' 
+                        ? JSON.parse(selectedCharacter.pinned_tasks) 
+                        : selectedCharacter.pinned_tasks)
+                    : [];
+
+                const tasks = selectedCharacter.task_state 
+                    ? (typeof selectedCharacter.task_state === 'string' 
+                        ? JSON.parse(selectedCharacter.task_state) 
+                        : selectedCharacter.task_state)
+                    : {};
+
+                setPinnedTasks(pinned);
+                setCompletedTasks(tasks);
+            } catch (e) {
+                console.error("Failed to parse character tasks in tracker", e);
+            }
         } else {
-            setCompletedTasks({});
+             // Fallback or empty if no character selected
+             setPinnedTasks([]);
+             setCompletedTasks({});
         }
-    }, [characterName]);
+    }, [selectedCharacter]);
 
-    // 3. Reset Logic Validator (Runs every second roughly to uncheck items if reset time passed)
+    // Save Logic Helper
+    const saveToCharacter = (newCompleted) => {
+        if (selectedCharacter) {
+            updateCharacterTasks(selectedCharacter.id, pinnedTasks, newCompleted);
+        }
+    };
+
+    // Toggle Logic
+    const toggleTask = (taskId) => {
+        const newTasks = { ...completedTasks };
+        if (newTasks[taskId]) {
+            delete newTasks[taskId]; // Uncheck
+        } else {
+            newTasks[taskId] = Date.now(); // Check
+        }
+        setCompletedTasks(newTasks);
+        saveToCharacter(newTasks);
+    };
+
+    // --- RESET LOGIC ---
     useEffect(() => {
-        if (!characterName) return;
-
         const checkResets = () => {
+            if (!completedTasks) return;
             const now = new Date();
             let hasChanges = false;
             const newTasks = { ...completedTasks };
@@ -57,12 +83,10 @@ const TaskTracker = ({ characterName }) => {
             });
 
             // --- DAILY RESET CHECK ---
-            // Reset happens at 00:00 UTC Daily
-            // If task timestamp < Today 00:00 UTC, reset it.
             const nowUTC = getUTC(now);
-            const lastDailyReset = new Date(Date.UTC(nowUTC.year, nowUTC.month, nowUTC.date, 0, 0, 0)); // Today 00:00 UTC
+            const lastDailyReset = new Date(Date.UTC(nowUTC.year, nowUTC.month, nowUTC.date, 0, 0, 0)); 
 
-            TASKS.daily.forEach(task => {
+            DAILY_TASKS.forEach(task => {
                 const completedAt = newTasks[task.id];
                 if (completedAt && completedAt < lastDailyReset.getTime()) {
                     delete newTasks[task.id];
@@ -70,21 +94,12 @@ const TaskTracker = ({ characterName }) => {
                 }
             });
 
-            // --- WEEKLY RESET CHECK ---
-            // Reset happens Wednesday 00:00 UTC (Tuesday night in US)
-            // We need to find the "Most Recent Wednesday 00:00 UTC"
-            // JS Day: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
-            // If today is Wed (3) and hour >= 0, then Last Reset = Today 00:00
-            // If today is Thu-Sat (4-6) or Sun-Tue (0-2), we adjust accordingly.
-            
+            // --- WEEKLY RESET CHECK --- (Wednesdays)
             let daysSinceWed = nowUTC.day - 3; 
-            if (daysSinceWed < 0) daysSinceWed += 7; // e.g. Mon(1) - 3 = -2 => +7 = 5 days since Wed
-
-            // However, be careful. If today is Wed 00:00:01, daysSinceWed is 0. 
-            // Last reset was milliseconds ago. 
+            if (daysSinceWed < 0) daysSinceWed += 7; 
             const lastWeeklyReset = new Date(Date.UTC(nowUTC.year, nowUTC.month, nowUTC.date - daysSinceWed, 0, 0, 0));
 
-            TASKS.weekly.forEach(task => {
+            WEEKLY_TASKS.forEach(task => {
                 const completedAt = newTasks[task.id];
                 if (completedAt && completedAt < lastWeeklyReset.getTime()) {
                     delete newTasks[task.id];
@@ -92,11 +107,10 @@ const TaskTracker = ({ characterName }) => {
                 }
             });
 
-            // --- MONTHLY RESET CHECK ---
-            // Reset happens 1st of Month 00:00 UTC
-            const lastMonthlyReset = new Date(Date.UTC(nowUTC.year, nowUTC.month, 1, 0, 0, 0)); // 1st of current month
+            // --- MONTHLY RESET CHECK --- (1st of Month)
+            const lastMonthlyReset = new Date(Date.UTC(nowUTC.year, nowUTC.month, 1, 0, 0, 0));
 
-            TASKS.monthly.forEach(task => {
+            MONTHLY_TASKS.forEach(task => {
                 const completedAt = newTasks[task.id];
                 if (completedAt && completedAt < lastMonthlyReset.getTime()) {
                     delete newTasks[task.id];
@@ -106,117 +120,46 @@ const TaskTracker = ({ characterName }) => {
 
             if (hasChanges) {
                 setCompletedTasks(newTasks);
-                localStorage.setItem(`rs3hub_tasks_${characterName}`, JSON.stringify(newTasks));
+                saveToCharacter(newTasks);
             }
         };
 
-        checkResets(); // Check on mount/update
-        const interval = setInterval(checkResets, 60000); // Check every minute
-        return () => clearInterval(interval);
+        // Run check immediately and periodically
+        checkResets();
+    }, [currentTime]); // Check every second (could be optimized but fine for now)
 
-    }, [characterName, completedTasks]);
 
-    // Handle Toggle
-    const toggleTask = (taskId) => {
-        if (!characterName) return;
+    // Filter Display Tasks based on Pinned
+    const allTasks = [...DAILY_TASKS, ...WEEKLY_TASKS, ...MONTHLY_TASKS];
+    const displayTasks = allTasks.filter(t => pinnedTasks.includes(t.id));
 
-        const newTasks = { ...completedTasks };
-        
-        if (newTasks[taskId]) {
-            // Uncheck (remove)
-            delete newTasks[taskId];
-        } else {
-            // Check (add timestamp)
-            newTasks[taskId] = Date.now();
-        }
-
-        setCompletedTasks(newTasks);
-        localStorage.setItem(`rs3hub_tasks_${characterName}`, JSON.stringify(newTasks));
-    };
-
-    if (!characterName) return null;
+    if (pinnedTasks.length === 0) {
+        return (
+            <div className="task-tracker-container empty">
+                <h3>Daily Tasks</h3>
+                <p>No tasks pinned. Go to the Daily Tasks page to add some!</p>
+            </div>
+        );
+    }
 
     return (
-        <div className="task-tracker">
-            <div className="tracker-header">
-                <h2>Task Tracker</h2>
-                <div className="clock-display">
-                    <div>Local: {currentTime.toLocaleTimeString()}</div>
-                    <div>UTC: {currentTime.toLocaleTimeString('en-US', { timeZone: 'UTC' })}</div>
-                </div>
-            </div>
-
-            <div className="tasks-grid">
-                
-                {/* Daily Column */}
-                <div className="task-section">
-                    <h3>
-                        Daily
-                        <span className="reset-info">Resets 00:00 UTC</span>
-                    </h3>
-                    {TASKS.daily.map(task => (
-                        <div 
-                            key={task.id} 
-                            className={`task-item ${completedTasks[task.id] ? 'completed' : ''}`}
-                            onClick={() => toggleTask(task.id)}
-                        >
-                            <input 
-                                type="checkbox" 
-                                className="task-checkbox"
-                                checked={!!completedTasks[task.id]}
-                                readOnly
-                            />
-                            <span className="task-label">{task.label}</span>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Weekly Column */}
-                <div className="task-section">
-                    <h3>
-                        Weekly
-                        <span className="reset-info">Wed 00:00 UTC</span>
-                    </h3>
-                    {TASKS.weekly.map(task => (
-                        <div 
-                            key={task.id} 
-                            className={`task-item ${completedTasks[task.id] ? 'completed' : ''}`}
-                            onClick={() => toggleTask(task.id)}
-                        >
-                            <input 
-                                type="checkbox" 
-                                className="task-checkbox"
-                                checked={!!completedTasks[task.id]}
-                                readOnly
-                            />
-                            <span className="task-label">{task.label}</span>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Monthly Column */}
-                <div className="task-section">
-                    <h3>
-                        Monthly
-                        <span className="reset-info">1st of Month</span>
-                    </h3>
-                    {TASKS.monthly.map(task => (
-                        <div 
-                            key={task.id} 
-                            className={`task-item ${completedTasks[task.id] ? 'completed' : ''}`}
-                            onClick={() => toggleTask(task.id)}
-                        >
-                            <input 
-                                type="checkbox" 
-                                className="task-checkbox"
-                                checked={!!completedTasks[task.id]}
-                                readOnly
-                            />
-                            <span className="task-label">{task.label}</span>
-                        </div>
-                    ))}
-                </div>
-
+        <div className="task-tracker-container">
+            <h3>Daily Tasks</h3>
+            <div className="dashboard-task-list">
+                {displayTasks.map(task => (
+                    <div 
+                        key={task.id} 
+                        className={`dashboard-task-item ${completedTasks[task.id] ? 'completed' : ''}`}
+                        onClick={() => toggleTask(task.id)}
+                    >
+                        <input 
+                            type="checkbox" 
+                            checked={!!completedTasks[task.id]}
+                            readOnly 
+                        />
+                        <span>{task.name}</span>
+                    </div>
+                ))}
             </div>
         </div>
     );

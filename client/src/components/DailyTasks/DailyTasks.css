@@ -1,0 +1,172 @@
+.daily-tasks-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #e0e0e0;
+}
+
+.daily-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.clock-card {
+    background-color: #2a2a35;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    min-width: 250px;
+}
+
+.clock-title {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.clock-time {
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #4CAF50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.clock-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.2rem;
+}
+
+.task-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.task-group h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reset-btn {
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: 1px solid #ff5252;
+    color: #ff5252;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.reset-btn:hover {
+    background-color: #ff5252;
+    color: white;
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.task-card {
+    background-color: #1e1e24;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+}
+
+.task-card .pin-btn {
+    background: transparent;
+    border: none;
+    color: #555;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.task-card .pin-btn:hover,
+.task-card .pin-btn.pinned {
+    color: #FFD700; /* Gold */
+}
+
+.task-card:hover {
+    background-color: #25252c;
+    transform: translateY(-2px);
+}
+
+.task-card.completed {
+    background-color: #131316;
+    border-color: #222;
+    opacity: 0.7;
+}
+
+.task-card.completed .task-name {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.task-checkbox-container {
+    margin-top: 0.2rem;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.task-desc {
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .daily-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .clock-card {
+        width: 100%;
+    }
+    
+    .task-grid {
+        grid-template-columns: 1fr;
+    }
+}

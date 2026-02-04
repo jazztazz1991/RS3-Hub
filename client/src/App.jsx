@@ -4,6 +4,7 @@ import './App.css'
 import { AuthProvider } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
 import Dashboard from './components/Dashboard/Dashboard';
+import DailyTasks from './components/DailyTasks/DailyTasks';
 import Calculators from './components/Calculators/Calculators';
 import ArchaeologyCalculator from './components/Calculators/Archaeology/ArchaeologyCalculator';
 import InventionCalculator from './components/Calculators/Invention/InventionCalculator';
@@ -88,7 +89,7 @@ function App() {
                 <Route path="/calculators/dungeoneering" element={<DungeoneeringCalculator />} />
                 <Route path="/calculators/divination" element={<DivinationCalculator />} />
                 <Route path="/calculators/necromancy" element={<NecromancyCalculator />} />
-                <Route path="/daily-tasks" element={<div style={{padding: '2rem'}}>Daily Tasks Coming Soon</div>} />
+                <Route path="/daily-tasks" element={<DailyTasks />} />
               </Route>
             </Routes>
             

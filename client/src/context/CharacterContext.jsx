@@ -94,6 +94,34 @@ export const CharacterProvider = ({ children }) => {
         }
     };
 
+    const updateCharacterTasks = async (id, pinnedTasks, taskState) => {
+        try {
+            // Update local state immediately for UI responsiveness
+            const updatedChars = characters.map(c => {
+                if (c.id === id) {
+                    return { 
+                        ...c, 
+                        pinned_tasks: pinnedTasks !== undefined ? JSON.stringify(pinnedTasks) : c.pinned_tasks,
+                        task_state: taskState !== undefined ? JSON.stringify(taskState) : c.task_state 
+                    };
+                }
+                return c;
+            });
+            setCharacters(updatedChars);
+
+            // Send to DB
+            await axios.put(`/api/characters/${id}`, {
+                pinned_tasks: pinnedTasks !== undefined ? JSON.stringify(pinnedTasks) : undefined,
+                task_state: taskState !== undefined ? JSON.stringify(taskState) : undefined
+            });
+            return true;
+        } catch (err) {
+            console.error('Failed to update character tasks', err);
+            // Revert on failure? For now simpler to just log
+            return false;
+        }
+    };
+
     const value = {
         characters,
         selectedCharId,
@@ -104,7 +132,8 @@ export const CharacterProvider = ({ children }) => {
         loadingData,
         fetchCharacters,
         addCharacter,
-        deleteCharacter
+        deleteCharacter,
+        updateCharacterTasks
     };
 
     return (

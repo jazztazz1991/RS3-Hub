@@ -49,6 +49,30 @@ router.post('/', isAuthenticated, async (req, res) => {
   }
 });
 
+// Update character (e.g. tasks)
+router.put('/:id', isAuthenticated, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { pinned_tasks, task_state } = req.body;
+    
+    const character = await Character.findOne({
+      where: { id, userId: req.user.id }
+    });
+
+    if (!character) {
+      return res.status(404).json({ message: 'Character not found' });
+    }
+
+    if (pinned_tasks !== undefined) character.pinned_tasks = pinned_tasks;
+    if (task_state !== undefined) character.task_state = task_state;
+
+    await character.save();
+    res.json(character);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Delete a character
 router.delete('/:id', isAuthenticated, async (req, res) => {
   try {

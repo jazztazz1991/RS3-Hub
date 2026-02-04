@@ -15,6 +15,16 @@ const Character = sequelize.define('Character', {
     type: DataTypes.TEXT,
     allowNull: true,
   },
+  pinned_tasks: {
+    type: DataTypes.TEXT, // Stored as JSON string
+    allowNull: true,
+    defaultValue: '[]'
+  },
+  task_state: {
+    type: DataTypes.TEXT, // Stored as JSON string { taskId: timestamp }
+    allowNull: true,
+    defaultValue: '{}'
+  },
   userId: {
     type: DataTypes.UUID,
     allowNull: false,
