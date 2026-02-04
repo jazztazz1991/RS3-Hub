@@ -1,143 +1,186 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { COOKING_ITEMS, COOKING_METHODS } from '../../../data/cookingData';
-import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
+import { getXpAtLevel } from '../../../utils/rs3';
 import './CookingCalculator.css';
 
 const CookingCalculator = () => {
     const { characterData } = useCharacter();
-    
+
     // State
     const [currentXp, setCurrentXp] = useState(0);
     const [targetLevel, setTargetLevel] = useState(99);
-    const [targetXp, setTargetXp] = useState(XP_TABLE[99]);
-    const [selectedItemId, setSelectedItemId] = useState('shark');
-    const [selectedMethod, setSelectedMethod] = useState(COOKING_METHODS[1]);
+    const [targetXp, setTargetXp] = useState(13034431);
+    
+    // Modifiers
+    const [trainingMethod, setTrainingMethod] = useState(COOKING_METHODS[0]);
+    const [filterCategory, setFilterCategory] = useState('All');
+
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context
     useEffect(() => {
         if (characterData && characterData.length > 0) {
-            const cookingSkill = characterData.find(s => s.name === "Cooking");
-            if (cookingSkill) {
-                setCurrentXp(cookingSkill.xp);
-                // Auto-set next milestone
-                const lvl = cookingSkill.level;
-                if (lvl < 99) setTargetLevel(99);
-                else setTargetLevel(120); // Cap at 120 for now
+            const skill = characterData.find(s => s.name === "Cooking");
+            if (skill) {
+                setCurrentXp(skill.xp);
+                setTargetLevel(skill.level < 99 ? 99 : 120);
             }
         }
     }, [characterData]);
-
-    // Update Target XP when Level Changes
+    
+    // Update Target XP when Target Level changes
     useEffect(() => {
-        // Use formula for dynamic levels, fallback to table if needed (though formula is superior)
-        if (targetLevel >= 1 && targetLevel <= 120) {
-             setTargetXp(getXpAtLevel(targetLevel));
-        }
+        setTargetXp(getXpAtLevel(targetLevel));
     }, [targetLevel]);
 
-    const selectedItem = COOKING_ITEMS.find(i => i.id === selectedItemId) || COOKING_ITEMS[0];
-
-    // Calculations
-    const calculateResults = () => {
-        const remaining = Math.max(0, targetXp - currentXp);
-        const xpPerAction = selectedItem.xp * selectedMethod.multiplier;
-        const actionsNeeded = Math.ceil(remaining / xpPerAction);
-
-        return {
-            remaining,
-            xpPerAction: xpPerAction.toFixed(1), // Round to 1 decimal
-            actionsNeeded,
-            itemName: selectedItem.name,
-            methodName: selectedMethod.name
-        };
+    const handleLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setTargetLevel(lvl);
     };
 
-    const results = calculateResults();
+    // Filter Logic
+    const categories = ['All', ...new Set(COOKING_ITEMS.map(i => i.category))];
+    const filteredMethods = COOKING_ITEMS.filter(item => {
+        const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesCategory = filterCategory === 'All' || item.category === filterCategory;
+        return matchesSearch && matchesCategory;
+    }).sort((a,b) => a.level - b.level); 
+
+    // XP Calculation
+    const getXpPerAction = (baseXp) => {
+        return baseXp * (trainingMethod ? trainingMethod.multiplier : 1.0);
+    };
+
+    const remainingXp = Math.max(0, targetXp - currentXp);
+    const xpPerAction = selectedItem ? getXpPerAction(selectedItem.xp) : 0;
+    const actionsNeeded = selectedItem ? Math.ceil(remainingXp / xpPerAction) : 0;
+
+    const handleItemSelect = (item) => {
+        setSelectedItem(item);
+    };
 
     return (
-        <div className="cooking-calculator-container">
+        <div className="cooking-calculator">
             <h2>Cooking Calculator</h2>
-            
-            <div className="calculator-layout">
-                {/* Inputs Section */}
-                <div className="calc-panel inputs-panel">
+
+            <div className="calc-layout">
+                {/* Left Column: Inputs */}
+                <div className="calc-inputs">
                     <div className="input-group">
                         <label>Current XP</label>
                         <input 
                             type="number" 
                             value={currentXp} 
-                            onChange={(e) => setCurrentXp(parseInt(e.target.value) || 0)}
+                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
                         />
-                         <span className="helper-text">Level: {getLevelAtXp(currentXp)}</span>
                     </div>
-
                     <div className="input-group">
                         <label>Target Level</label>
                         <input 
                             type="number" 
                             value={targetLevel} 
-                            onChange={(e) => setTargetLevel(parseInt(e.target.value) || 1)}
-                            max={120}
+                            onChange={handleLevelChange} 
                         />
-                         <span className="helper-text">Target XP: {targetXp.toLocaleString()}</span>
                     </div>
-
+                     <div className="input-group">
+                        <label>Target XP</label>
+                        <input 
+                            type="number" 
+                            value={targetXp} 
+                            readOnly
+                            style={{opacity: 0.7}}
+                        />
+                    </div>
+                    
                     <div className="input-group">
-                        <label>Method</label>
+                        <label>Training Method</label>
                         <select 
-                            value={selectedMethod.id} 
-                            onChange={(e) => setSelectedMethod(COOKING_METHODS.find(m => m.id === e.target.value))}
+                            value={trainingMethod?.id} 
+                            onChange={(e) => setTrainingMethod(COOKING_METHODS.find(m => m.id === e.target.value))}
+                            className="method-select"
                         >
                             {COOKING_METHODS.map(m => (
-                                <option key={m.id} value={m.id}>
-                                    {m.name} (x{m.multiplier})
-                                </option>
+                                <option key={m.id} value={m.id}>{m.name} (x{m.multiplier})</option>
                             ))}
                         </select>
-                        <p className="method-desc">{selectedMethod.description}</p>
                     </div>
 
-                    <div className="input-group">
-                        <label>Select Food</label>
-                        <select 
-                            value={selectedItemId} 
-                            onChange={(e) => setSelectedItemId(e.target.value)}
-                            className="food-select"
+                    {selectedItem && (
+                        <div className="selected-method-card">
+                            <h3>{selectedItem.name}</h3>
+                            <p className="method-xp">Base XP: {selectedItem.xp}</p>
+                            <p className="method-xp-actual">
+                                Est. XP: {xpPerAction.toFixed(1)}
+                            </p>
+                            <p className="method-level">Level Req: {selectedItem.level}</p>
+                        </div>
+                    )}
+                </div>
+
+                {/* Middle Column: List (Methods) - WAS RIGHT, NOW MIDDLE */}
+                <div className="calc-methods">
+                    <div className="methods-header">
+                        <input 
+                            type="text" 
+                            placeholder="Search food..." 
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                         <select 
+                            value={filterCategory}
+                            onChange={(e) => setFilterCategory(e.target.value)}
+                            className="category-select"
                         >
-                            {COOKING_ITEMS.map(item => (
-                                <option key={item.id} value={item.id}>
-                                    {item.name} (Lvl {item.level}) - {item.xp} XP
-                                </option>
+                            {categories.map(cat => (
+                                <option key={cat} value={cat}>{cat}</option>
                             ))}
                         </select>
-                         <p className="method-desc">Category: {selectedItem.category}</p>
+                    </div>
+
+                    <div className="methods-grid">
+                        {filteredMethods.map(item => (
+                            <button
+                                key={item.id}
+                                className={`method-btn ${selectedItem?.id === item.id ? 'active' : ''}`}
+                                onClick={() => handleItemSelect(item)}
+                            >
+                                <div className="method-name">{item.name}</div>
+                                <div className="method-details">
+                                    <span>Lvl {item.level}</span>
+                                    <span>{item.xp} XP</span>
+                                </div>
+                            </button>
+                        ))}
                     </div>
                 </div>
 
-                {/* Results Section */}
-                <div className="calc-panel results-panel">
-                    <h3>Results</h3>
-                    
-                    <div className="result-row main-result">
-                        <span className="label">You Need To Cook:</span>
-                        <span className="value highlight">{results.actionsNeeded.toLocaleString()}</span>
-                        <span className="unit">{results.itemName}s</span>
+                {/* Right Column: Results - WAS MIDDLE, NOW RIGHT */}
+                <div className="calc-results">
+                    <div className="result-main">
+                        <div className="action-icon">
+                            🍳
+                        </div>
+                        <div className="action-count">
+                            <span className="number">
+                                {selectedItem 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">Cooks Needed</span>
+                        </div>
                     </div>
 
-                    <div className="stats-grid">
-                        <div className="stat-item">
-                            <span className="label">XP Remaining</span>
-                            <span className="value">{results.remaining.toLocaleString()}</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="label">XP Per Item</span>
-                            <span className="value">{results.xpPerAction}</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="label">Method</span>
-                            <span className="value">{results.methodName}</span>
-                        </div>
+                    <div className="result-details">
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Food:</span>
+                            <span>{selectedItem?.name || '-'}</span>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,6 @@ const Calculators = () => {
             </div>
             <div className="calculator-info">
               <h3>{skill.name}</h3>
-              <span className="calc-status">Calculator Ready</span>
             </div>
           </Link>
         ))}

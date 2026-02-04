@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { AGILITY_METHODS } from '../../../data/agilityData';
-import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
+import { getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './AgilityCalculator.css';
 
 const AgilityCalculator = () => {
     const { characterData } = useCharacter();
-    
+
     // State
     const [currentLevel, setCurrentLevel] = useState(1);
     const [currentXp, setCurrentXp] = useState(0);
@@ -47,7 +47,7 @@ const AgilityCalculator = () => {
 
     // Calculations
     const remainingXp = Math.max(0, targetXp - currentXp);
-    
+
     const categories = ['All', ...new Set(AGILITY_METHODS.map(m => m.category))];
 
     const filteredMethods = AGILITY_METHODS.filter(method => {
@@ -61,47 +61,49 @@ const AgilityCalculator = () => {
 
             <div className="calc-layout">
                 {/* Left Column: Stats Input */}
-                <div className="card input-section">
-                    <h3>Current Stats</h3>
+                <div className="calc-inputs">
                     <div className="input-group">
                         <label>Level</label>
-                        <input 
-                            type="number" 
-                            value={currentLevel} 
+                        <input
+                            type="number"
+                            value={currentLevel}
                             onChange={handleLevelChange}
                             min="1" max="120"
                         />
                     </div>
                     <div className="input-group">
                         <label>Experience</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
+                        <input
+                            type="number"
+                            value={currentXp}
                             onChange={handleXpChange}
                             min="0"
                         />
                     </div>
 
-                    <h3>Target</h3>
                     <div className="input-group">
-                        <label>Level</label>
-                        <input 
-                            type="number" 
-                            value={targetLevel} 
+                        <label>Target Level</label>
+                        <input
+                            type="number"
+                            value={targetLevel}
                             onChange={handleTargetLevelChange}
                             min="1" max="120"
                         />
                     </div>
-                    <div className="helper-text">
-                        XP needed: {remainingXp.toLocaleString()}
+
+                    {selectedMethod && (
+                    <div className="selected-method-card" style={{marginTop: '2rem', padding: '1.5rem', backgroundColor: '#1a252f', borderRadius: '8px', border: '1px solid #34495e'}}>
+                        <h3>{selectedMethod.name}</h3>
+                        <p style={{color: '#3498db', fontWeight: 'bold'}}>{selectedMethod.xp} XP</p>
+                        <p>Lvl {selectedMethod.level}</p>
                     </div>
+                    )}
                 </div>
 
                 {/* Middle Column: Methods Selection */}
-                <div className="card methods-section">
-                    <div className="methods-header">
-                        <h3>Training Methods</h3>
-                        <select 
+                <div className="calc-methods">
+                    <div className="methods-header" style={{marginBottom: '1rem'}}>
+                        <select
                             className="category-select"
                             value={selectedCategory}
                             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -112,64 +114,64 @@ const AgilityCalculator = () => {
                         </select>
                     </div>
 
-                    <div className="methods-grid">
+                    <div className="methods-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.8rem', maxHeight: '600px', overflowY: 'auto'}}>
                         {filteredMethods.map(method => (
-                            <div 
+                            <button
                                 key={method.id}
-                                className={`method-btn ${selectedMethod?.id === method.id ? 'active' : ''} ${method.level > currentLevel ? 'locked' : ''}`}
+                                className={`method-btn ${selectedMethod?.id === method.id ? 'active' : ''} ${method.level > currentLevel ? 'locked' : ''}`}                                                                                                                     
                                 onClick={() => setSelectedMethod(method)}
+                                style={{
+                                    width: '100%',
+                                    backgroundColor: selectedMethod?.id === method.id ? '#2980b9' : '#1a252f',
+                                    border: '1px solid #34495e',
+                                    padding: '0.8rem',
+                                    borderRadius: '6px',
+                                    textAlign: 'left',
+                                    cursor: 'pointer',
+                                    color: 'white'
+                                }}
                             >
-                                <div className="method-name">{method.name}</div>
-                                <div className="method-details">
+                                <div className="method-name" style={{fontWeight: 'bold', marginBottom: '0.3rem'}}>{method.name}</div>
+                                <div className="method-details" style={{fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)', display: 'flex', justifyContent: 'space-between'}}>
                                     <span>Lvl {method.level}</span>
                                     <span>{method.xp} XP</span>
                                 </div>
-                            </div>
+                            </button>
                         ))}
                     </div>
                 </div>
 
                 {/* Right Column: Results */}
-                <div className="card results-section">
-                    <h3>Results</h3>
-                    {selectedMethod ? (
-                        <div className="results-content">
-                            <div className="result-main">
-                                <div className="action-icon">
-                                    {selectedMethod.category === 'Passive' ? '🪶' : '🏃'}
-                                </div>
-                                <div className="action-count">
-                                    <span className="number">
-                                        {Math.ceil(remainingXp / selectedMethod.xp).toLocaleString()}
-                                    </span>
-                                    <span className="label">
-                                        {selectedMethod.category === 'Passive' ? 'Feathers' : 
-                                         selectedMethod.category === 'Shortcut' ? 'Uses' : 
-                                         selectedMethod.category === 'Activity' ? 'Actions' : 'Laps'}
-                                    </span>
-                                </div>
-                            </div>
-                            
-                            <div className="result-details">
-                                <p>
-                                    <span>Method:</span>
-                                    <strong>{selectedMethod.name}</strong>
-                                </p>
-                                <p>
-                                    <span>XP per Lap:</span>
-                                    <strong>{selectedMethod.xp}</strong>
-                                </p>
-                                <p>
-                                    <span>To Level {targetLevel}:</span>
-                                    <strong>{Math.ceil(remainingXp / selectedMethod.xp).toLocaleString()}</strong>
-                                </p>
-                            </div>
+                <div className="calc-results">
+                     <div className="result-main" style={{textAlign: 'center', marginBottom: '2rem'}}>
+                        <div className="action-icon" style={{fontSize: '3rem', marginBottom: '1rem'}}>
+                            {selectedMethod?.category === 'Passive' ? '🪶' : '🏃'}
                         </div>
-                    ) : (
-                        <div className="no-selection">
-                            <p>Select a course to see results</p>
+                        <div className="action-count">
+                            <span className="number" style={{display: 'block', fontSize: '2.5rem', fontWeight: 'bold', color: '#3498db'}}>
+                                {selectedMethod 
+                                    ? Math.ceil(remainingXp / selectedMethod.xp).toLocaleString()
+                                    : '---'
+                                }
+                            </span>
+                            <span className="label" style={{color: '#bdc3c7'}}>
+                                {selectedMethod?.category === 'Passive' ? 'Feathers' :
+                                 selectedMethod?.category === 'Shortcut' ? 'Uses' :
+                                 selectedMethod?.category === 'Activity' ? 'Actions' : 'Laps'}
+                            </span>
                         </div>
-                    )}
+                    </div>
+
+                    <div className="result-details">
+                        <p style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #34495e', paddingBottom: '0.5rem', marginBottom: '0.5rem'}}>
+                            <span>Selected:</span>
+                            <strong>{selectedMethod?.name || '-'}</strong>
+                        </p>
+                        <p style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #34495e', paddingBottom: '0.5rem', marginBottom: '0.5rem'}}>
+                            <span>XP Remaining:</span>
+                            <strong>{remainingXp.toLocaleString()}</strong>      
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,40 +1,56 @@
-.woodcutting-calculator-container {
-    padding: 2rem;
-    color: white;
-    max-width: 1200px;
-    margin: 0 auto;
+.woodcutting-calculator {
+    padding: 1rem;
+    color: #e0e0e0;
 }
 
-.woodcutting-calculator-container h2 {
-    color: #4CAF50; /* Woodcutting Green */
-    margin-bottom: 2rem;
-    border-bottom: 2px solid #444;
+.woodcutting-calculator h2 {
+    color: #81c784; /* Light Green */
+    border-bottom: 2px solid #2e7d32; /* Green */
     padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
 }
 
-.calculator-layout {
+/* Modifiers */
+.modifiers {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background-color: #1a252f;
+    border-radius: 6px;
     flex-wrap: wrap;
+    border-left: 4px solid #4caf50;
 }
 
-.input-section {
-    flex: 1;
-    min-width: 300px;
-    background-color: #2a2a2a;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: #bdc3c7;
 }
 
-.results-section {
-    flex: 1;
-    min-width: 300px;
-    background-color: #2a2a2a;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    border: 1px solid #4CAF50;
+.checkbox-container input {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    accent-color: #4caf50;
+}
+
+/* Layout */
+.calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .calc-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 .input-group {
@@ -44,126 +60,113 @@
 .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #ccc;
-    font-weight: bold;
+    color: #a5d6a7;
 }
 
-.input-group input,
-.input-group select {
+.input-group input, .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #333;
-    border: 1px solid #555;
-    border-radius: 4px;
+    background-color: #1a252f;
+    border: 1px solid #2e7d32;
     color: white;
+    border-radius: 4px;
     font-size: 1rem;
 }
 
-.input-group input:focus,
-.input-group select:focus {
-    outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+/* Selected Method Card - Forest Theme */
+.selected-method-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #1b5e20;
+    border-radius: 8px;
+    border: 1px solid #2e7d32;
 }
 
-.selection-grids {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1rem;
+.selected-method-card h3 {
+    color: #a5d6a7;
+    margin-top: 0;
 }
 
-.grid-label {
-    grid-column: 1 / -1;
-    color: #ffd700;
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #444;
+.method-xp-actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #69f0ae; /* Bright Green */
 }
 
-.item-list, .method-list {
+/* Results */
+.result-main {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.action-count .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #66bb6a; /* Green accent */
+}
+
+.result-details p {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-height: 400px;
+    justify-content: space-between;
+    border-bottom: 1px solid #33691e;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #c8e6c9;
+}
+
+/* Methods List */
+.methods-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    max-height: 600px;
     overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.selection-card {
-    background-color: #333;
+.method-btn {
+    background-color: #1a252f;
+    border: 1px solid #2e7d32;
     padding: 0.8rem;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+    text-align: left;
+    transition: all 0.2s;
+    color: #e8f5e9;
 }
 
-.selection-card:hover {
-    background-color: #444;
+.method-btn:hover {
+    background-color: #2e7d32;
 }
 
-.selection-card.selected {
-    background-color: #2e4a2e;
-    border-color: #4CAF50;
+.method-btn.active {
+    background-color: #1b5e20;
+    border-color: #69f0ae;
+    box-shadow: 0 0 10px rgba(105, 240, 174, 0.2);
 }
 
-.card-header {
+.method-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #a5d6a7;
+}
+
+.method-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.2rem;
-}
-
-.card-header h4 {
-    margin: 0;
-    color: #eee;
-}
-
-.level-req {
     font-size: 0.8rem;
-    color: #aaa;
-    background-color: #222;
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-.xp-val {
-    font-size: 0.9rem;
-    color: #4CAF50;
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-}
-
-.result-card {
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 6px;
-    text-align: center;
-}
-
-.result-card h4 {
-    margin: 0 0 0.5rem 0;
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-.result-card .value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.result-card .sub-value {
-    display: block;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 0.2rem;
-}
-
-.highlight .value {
-    color: #ffd700;
+    color: rgba(255,255,255,0.6);
 }

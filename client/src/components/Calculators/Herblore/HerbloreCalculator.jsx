@@ -11,12 +11,12 @@ const HerbloreCalculator = () => {
     const [currentXp, setCurrentXp] = useState(0);
     const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(XP_TABLE[99]);
-    const [selectedMethodId, setSelectedMethodId] = useState('overload');
+    const [selectedMethodId, setSelectedMethodId] = useState(HERBLORE_METHODS[0]?.id || 'attack_pot'); 
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Initialize from Character Context
     useEffect(() => {
-        if (characterData && characterData.length > 0) {
+        if (characterData) {
             const skill = characterData.find(s => s.name === "Herblore");
             if (skill) {
                 setCurrentXp(skill.xp);
@@ -33,16 +33,16 @@ const HerbloreCalculator = () => {
 
     const handleLevelChange = (e) => {
         const lvl = parseInt(e.target.value) || 1;
-        setTargetLevel(lvl);
+        setTargetLevel(Math.min(120, Math.max(1, lvl)));
     };
 
     const handleXpChange = (e) => {
         const val = parseInt(e.target.value) || 0;
-        setCurrentXp(val);
+        setCurrentXp(Math.max(0, val));
     };
 
     // Calculation
-    const selectedMethod = HERBLORE_METHODS.find(m => m.id === selectedMethodId);
+    const selectedMethod = HERBLORE_METHODS.find(m => m.id === selectedMethodId) || HERBLORE_METHODS[0];
     const xpRemaining = Math.max(0, targetXp - currentXp);
     const itemsNeeded = selectedMethod && selectedMethod.xp > 0 
         ? Math.ceil(xpRemaining / selectedMethod.xp) 
@@ -51,18 +51,18 @@ const HerbloreCalculator = () => {
     const currentLevel = getLevelAtXp(currentXp);
 
     // Filter
-    const filteredMethods = HERBLORE_METHODS.filter(m => {
-        if (categoryFilter === 'All') return true;
-        return m.category === categoryFilter;
-    });
+    const categories = ['All', ...new Set(HERBLORE_METHODS.map(m => m.category || 'Other'))];
+    const filteredMethods = categoryFilter === 'All'
+        ? HERBLORE_METHODS
+        : HERBLORE_METHODS.filter(m => (m.category || 'Other') === categoryFilter);
 
     return (
         <div className="herblore-calculator">
             <h2>Herblore Calculator</h2>
             
             <div className="calc-layout">
-                {/* Inputs */}
-                <div className="calc-inputs card">
+                {/* 1. Inputs */}
+                <div className="calc-inputs">
                     <h3>Current Status</h3>
                     <div className="input-group">
                         <label>Current XP</label>
@@ -84,10 +84,18 @@ const HerbloreCalculator = () => {
                         />
                         <span className="helper-text">Target XP: {targetXp.toLocaleString()}</span>
                     </div>
+
+                     {selectedMethod && (
+                        <div className="selected-method-card">
+                            <h3>{selectedMethod.name}</h3>
+                            <p style={{color: '#a5d6a7'}}>Lvl {selectedMethod.level}</p>
+                            <p className="method-xp-actual">{selectedMethod.xp} XP</p>
+                        </div>
+                    )}
                 </div>
 
-                {/* Methods */}
-                <div className="calc-methods card">
+                {/* 2. Methods (Was 3) */}
+                <div className="calc-methods">
                      <div className="methods-header">
                         <h3>Select Method</h3>
                         <select 
@@ -95,11 +103,9 @@ const HerbloreCalculator = () => {
                             onChange={(e) => setCategoryFilter(e.target.value)}
                             className="category-select"
                         >
-                            <option value="All">All Categories</option>
-                            <option value="Cleaning">Cleaning Herbs</option>
-                            <option value="Standard Potions">Standard Potions</option>
-                            <option value="Extremes">Extremes</option>
-                            <option value="Overloads">Overloads</option>
+                            {categories.map(cat => (
+                                <option key={cat} value={cat}>{cat}</option>
+                            ))}
                         </select>
                     </div>
 
@@ -120,20 +126,26 @@ const HerbloreCalculator = () => {
                     </div>
                 </div>
 
-                {/* Results */}
-                <div className="calc-results card">
+                {/* 3. Results (Was 2) */}
+                <div className="calc-results">
                     <h3>Results</h3>
                     <div className="result-main">
                         <div className="action-icon">🧪</div>
                         <div className="action-count">
                             <span className="number">{itemsNeeded.toLocaleString()}</span>
-                            <span className="label">Potions / Herbs Needed</span>
+                            <span className="label"> actions</span>
                         </div>
                     </div>
                     
                     <div className="result-details">
-                         <p>Method: <strong>{selectedMethod?.name}</strong></p>
-                         <p>XP Per Action: <strong>{selectedMethod?.xp}</strong></p>
+                         <p>
+                            <span>Method:</span>
+                            <strong>{selectedMethod?.name}</strong>
+                         </p>
+                         <p>
+                            <span>Remaining XP:</span>
+                            <strong>{xpRemaining.toLocaleString()}</strong>
+                         </p>
                     </div>
                 </div>
             </div>

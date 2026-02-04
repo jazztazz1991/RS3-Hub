@@ -1,164 +1,169 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { WOODCUTTING_ITEMS, WOODCUTTING_BOOSTS } from '../../../data/woodcuttingData';
-import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
+import { getXpAtLevel } from '../../../utils/rs3';
 import './WoodcuttingCalculator.css';
 
 const WoodcuttingCalculator = () => {
     const { characterData } = useCharacter();
-    
-    // State
     const [currentXp, setCurrentXp] = useState(0);
-    const [targetLevel, setTargetLevel] = useState(99);
-    const [targetXp, setTargetXp] = useState(XP_TABLE[99]);
-    const [selectedItemId, setSelectedItemId] = useState('willow');
+    const [targetXp, setTargetXp] = useState(13034431); // 99 default
+    
+    // Modifiers
     const [activeBoosts, setActiveBoosts] = useState([]);
 
-    // Initialize from Character Context
+    const [selectedMethod, setSelectedMethod] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Load character data
     useEffect(() => {
-        if (characterData && characterData.length > 0) {
-            const wcSkill = characterData.find(s => s.name === "Woodcutting");
-            if (wcSkill) {
-                setCurrentXp(wcSkill.xp);
-                // Auto-set next milestone
-                const lvl = wcSkill.level;
-                if (lvl < 99) setTargetLevel(99);
-                else setTargetLevel(120); 
+        if (characterData) {
+            const skill = characterData.find(s => s.name === "Woodcutting");
+            if (skill) {
+                setCurrentXp(skill.xp);
+                setTargetXp(skill.level < 99 ? 13034431 : 104273167);
             }
         }
     }, [characterData]);
 
-    // Update Target XP when Level Changes
-    useEffect(() => {
-        if (targetLevel >= 1 && targetLevel <= 120) {
-             setTargetXp(getXpAtLevel(targetLevel));
-        }
-    }, [targetLevel]);
+    // Filter Logic
+    const filteredMethods = WOODCUTTING_ITEMS.filter(method => {
+        const matchesSearch = method.name.toLowerCase().includes(searchTerm.toLowerCase());
+        return matchesSearch;
+    }).sort((a,b) => a.level - b.level); // Sort by level ascending
 
-    const handleBoostToggle = (boostId) => {
-        setActiveBoosts(prev => {
-            if (prev.includes(boostId)) {
-                return prev.filter(id => id !== boostId);
-            } else {
-                return [...prev, boostId];
-            }
-        });
-    };
-
-    const selectedItem = WOODCUTTING_ITEMS.find(i => i.id === selectedItemId) || WOODCUTTING_ITEMS[0];
-
-    // Calculations
-    const calculateResults = () => {
-        const remaining = Math.max(0, targetXp - currentXp);
-        
-        // Base Multiplier is 1.0. Add modifiers.
-        let totalMultiplier = 1.0;
+    // XP Calculation
+    const getXpPerAction = (baseXp) => {
+        let multiplier = 1.0;
         activeBoosts.forEach(boostId => {
             const boost = WOODCUTTING_BOOSTS.find(b => b.id === boostId);
-            if (boost) totalMultiplier += boost.multiplier;
+            if (boost) multiplier += boost.multiplier;
         });
-
-        const xpPerAction = selectedItem.xp * totalMultiplier;
-        const actionsNeeded = Math.ceil(remaining / xpPerAction);
-
-        return {
-            remaining,
-            xpPerAction: xpPerAction.toFixed(1),
-            actionsNeeded,
-            itemName: selectedItem.name,
-            totalBonus: ((totalMultiplier - 1) * 100).toFixed(1) + '%'
-        };
+        return baseXp * multiplier;
     };
 
-    const results = calculateResults();
+    const remainingXp = Math.max(0, targetXp - currentXp);
+    const xpPerAction = selectedMethod ? getXpPerAction(selectedMethod.xp) : 0;
+    const actionsNeeded = selectedMethod ? Math.ceil(remainingXp / xpPerAction) : 0;
+
+    const handleMethodSelect = (method) => {
+        setSelectedMethod(method);
+    };
+
+    const toggleBoost = (boostId) => {
+        setActiveBoosts(prev => {
+            if (prev.includes(boostId)) return prev.filter(id => id !== boostId);
+            return [...prev, boostId];
+        });
+    };
 
     return (
-        <div className="woodcutting-calculator-container">
+        <div className="woodcutting-calculator">
             <h2>Woodcutting Calculator</h2>
-            
-            <div className="calculator-layout">
-                {/* Inputs Section */}
-                <div className="input-section">
+
+            {/* Modifiers */}
+            <div className="modifiers">
+                {WOODCUTTING_BOOSTS.map(boost => (
+                    <label key={boost.id} className="checkbox-container" title={boost.description}>
+                        <input 
+                            type="checkbox" 
+                            checked={activeBoosts.includes(boost.id)} 
+                            onChange={() => toggleBoost(boost.id)} 
+                        />
+                        {boost.name} (+{(boost.multiplier * 100).toFixed(0)}%)
+                    </label>
+                ))}
+            </div>
+
+            <div className="calc-layout">
+                {/* Left Column: Inputs */}
+                <div className="calc-inputs">
                     <div className="input-group">
                         <label>Current XP</label>
                         <input 
                             type="number" 
                             value={currentXp} 
-                            onChange={(e) => setCurrentXp(parseInt(e.target.value) || 0)}
+                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
                         />
-                         <span className="helper-text lvl-helper">Level: {getLevelAtXp(currentXp)}</span>
                     </div>
-
                     <div className="input-group">
-                        <label>Target Level</label>
+                        <label>Target XP</label>
                         <input 
                             type="number" 
-                            value={targetLevel} 
-                            onChange={(e) => setTargetLevel(parseInt(e.target.value) || 1)}
-                            min="1" max="120"
+                            value={targetXp} 
+                            onChange={(e) => setTargetXp(Number(e.target.value))} 
                         />
-                        <span className="helper-text lvl-helper">XP: {targetXp.toLocaleString()}</span>
                     </div>
-
-                     <div className="selection-grids">
-                        <div className="grid-column">
-                            <h4 className="grid-label">Tree Type</h4>
-                            <div className="item-list">
-                                {WOODCUTTING_ITEMS.map(item => (
-                                    <div 
-                                        key={item.id} 
-                                        className={`selection-card ${selectedItemId === item.id ? 'selected' : ''}`}
-                                        onClick={() => setSelectedItemId(item.id)}
-                                    >
-                                        <div className="card-header">
-                                            <h4>{item.name}</h4>
-                                            <span className="level-req">Lvl {item.level}</span>
-                                        </div>
-                                        <span className="xp-val">{item.xp} XP</span>
-                                    </div>
-                                ))}
-                            </div>
+                    
+                    {selectedMethod && (
+                        <div className="selected-method-card">
+                            <h3>{selectedMethod.name}</h3>
+                            <p className="method-xp">Base XP: {selectedMethod.xp}</p>
+                            <p className="method-xp-actual">
+                                Est. XP: {xpPerAction.toFixed(1)}
+                            </p>
+                            <p className="method-level">Level Req: {selectedMethod.level}</p>
                         </div>
-                        
-                        <div className="grid-column">
-                             <h4 className="grid-label">Boosts (Stackable)</h4>
-                            <div className="method-list">
-                                {WOODCUTTING_BOOSTS.map(boost => (
-                                    <div 
-                                        key={boost.id} 
-                                        className={`selection-card ${activeBoosts.includes(boost.id) ? 'selected' : ''}`}
-                                        onClick={() => handleBoostToggle(boost.id)}
-                                    >
-                                        <div className="card-header">
-                                            <h4>{boost.name}</h4>
-                                        </div>
-                                        <span className="xp-val">+{boost.multiplier * 100}%</span>
-                                        <div style={{fontSize: '0.8rem', color: '#888'}}>{boost.description}</div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                     </div>
+                    )}
                 </div>
 
-                {/* Results Section */}
-                <div className="results-section">
-                    <h3>Projections</h3>
-                    <div className="results-grid">
-                        <div className="result-card">
-                            <h4>XP Remaining</h4>
-                            <span className="value">{results.remaining.toLocaleString()}</span>
+                {/* Middle Column: List (Methods) - WAS RIGHT, NOW MIDDLE */}
+                <div className="calc-methods">
+                    <div className="methods-header">
+                        <input 
+                            type="text" 
+                            placeholder="Search trees..." 
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+
+                    <div className="methods-grid">
+                        {filteredMethods.map(method => (
+                            <button
+                                key={method.id}
+                                className={`method-btn ${selectedMethod?.id === method.id ? 'active' : ''}`}
+                                onClick={() => handleMethodSelect(method)}
+                            >
+                                <div className="method-name">{method.name}</div>
+                                <div className="method-details">
+                                    <span>Lvl {method.level}</span>
+                                    <span>{method.xp} XP</span>
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right Column: Results - WAS MIDDLE, NOW RIGHT */}
+                <div className="calc-results">
+                    <div className="result-main">
+                        <div className="action-icon">
+                            🪓
                         </div>
-                        <div className="result-card">
-                            <h4>XP per Log</h4>
-                            <span className="value">{results.xpPerAction}</span>
-                            <span className="sub-value">Bonus: {results.totalBonus}</span>
+                        <div className="action-count">
+                            <span className="number">
+                                {selectedMethod 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">Logs Needed</span>
                         </div>
-                        <div className="result-card highlight">
-                            <h4>Logs Needed</h4>
-                            <span className="value">{results.actionsNeeded.toLocaleString()}</span>
-                            <span className="sub-value">{results.itemName}</span>
-                        </div>
+                    </div>
+
+                    <div className="result-details">
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Tree Type:</span>
+                            <span>{selectedMethod?.name || '-'}</span>
+                        </p>
+                        <p>
+                            <span>Base XP:</span>
+                            <span>{selectedMethod?.xp || 0}</span>
+                        </p>
                     </div>
                 </div>
             </div>

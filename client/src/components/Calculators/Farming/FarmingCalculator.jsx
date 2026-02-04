@@ -6,20 +6,20 @@ import './FarmingCalculator.css';
 
 const FarmingCalculator = () => {
     const { characterData } = useCharacter();
-    
+
     // State
     const [currentLevel, setCurrentLevel] = useState(1);
     const [currentXp, setCurrentXp] = useState(0);
     const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(getXpAtLevel(99));
-    
+
     // Mode Selection: 'crops' or 'pof'
     const [calcMode, setCalcMode] = useState('crops');
-    
+
     // Selections
     const [selectedCrop, setSelectedCrop] = useState(null);
     const [selectedAnimal, setSelectedAnimal] = useState(null);
-    
+
     // Category Filters
     const [cropCategory, setCropCategory] = useState('All');
     const [pofCategory, setPofCategory] = useState('All');
@@ -53,189 +53,213 @@ const FarmingCalculator = () => {
 
     // Derived
     const remainingXp = Math.max(0, targetXp - currentXp);
-    
+
     // Filter Lists
     const cropCategories = ['All', ...new Set(FARMING_CROPS.map(m => m.category))];
-    const filteredCrops = FARMING_CROPS.filter(c => 
+    const filteredCrops = FARMING_CROPS.filter(c =>
         cropCategory === 'All' || c.category === cropCategory
     ).sort((a,b) => b.level - a.level);
 
     const pofCategories = ['All', ...new Set(POF_ANIMALS.map(m => m.category))];
-    const filteredAnimals = POF_ANIMALS.filter(a => 
+    const filteredAnimals = POF_ANIMALS.filter(a =>
         pofCategory === 'All' || a.category === pofCategory
     ).sort((a,b) => b.xp - a.xp);
 
     return (
         <div className="farming-calculator">
             <h2>Farming Calculator</h2>
+            
+            <div className="mode-toggle" style={{display: 'flex', gap: '1rem', marginBottom: '1.5rem'}}>
+                <button
+                    className={`mode-btn ${calcMode === 'crops' ? 'active' : ''}`}
+                    onClick={() => setCalcMode('crops')}
+                    style={{
+                        flex: 1, padding: '1rem', 
+                        backgroundColor: calcMode === 'crops' ? '#43a047' : '#1a252f', 
+                        border: '2px solid #2e7d32', color: 'white', borderRadius: '8px', cursor: 'pointer'
+                    }}
+                >
+                    <span className="emoji">🌱</span> Crops & Trees
+                </button>
+                <button
+                    className={`mode-btn ${calcMode === 'pof' ? 'active' : ''}`}
+                    onClick={() => setCalcMode('pof')}
+                    style={{
+                        flex: 1, padding: '1rem', 
+                        backgroundColor: calcMode === 'pof' ? '#43a047' : '#1a252f', 
+                        border: '2px solid #2e7d32', color: 'white', borderRadius: '8px', cursor: 'pointer'
+                    }}
+                >
+                    <span className="emoji">🐄</span> POF (Animals)
+                </button>
+            </div>
 
-            <div className="calc-layout">
+            <div className="calc-layout" style={{display: 'grid', gridTemplateColumns: 'minmax(250px, 300px) 1fr minmax(250px, 300px)', gap: '1.5rem'}}>
                 {/* 1. Stats Column */}
-                <div className="card input-section">
-                    <h3>Current Stats</h3>
+                <div className="calc-inputs">
                     <div className="input-group">
                         <label>Level</label>
-                        <input 
-                            type="number" 
-                            value={currentLevel} 
+                        <input
+                            type="number"
+                            value={currentLevel}
                             onChange={handleLevelChange}
                             min="1" max="120"
+                            style={{width: '100%', padding: '0.8rem', backgroundColor: '#1a252f', border: '1px solid #2e7d32', borderRadius: '4px', color: 'white', marginBottom: '1rem'}}
                         />
                     </div>
                     <div className="input-group">
                         <label>Experience</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
+                        <input
+                            type="number"
+                            value={currentXp}
                             onChange={(e) => setCurrentXp(parseInt(e.target.value) || 0)}
                             min="0"
+                            style={{width: '100%', padding: '0.8rem', backgroundColor: '#1a252f', border: '1px solid #2e7d32', borderRadius: '4px', color: 'white', marginBottom: '1rem'}}
                         />
                     </div>
 
-                    <h3>Target</h3>
                     <div className="input-group">
-                        <label>Level</label>
-                        <input 
-                            type="number" 
-                            value={targetLevel} 
+                        <label>Target Level</label>
+                        <input
+                            type="number"
+                            value={targetLevel}
                             onChange={handleTargetLevelChange}
                             min="1" max="120"
+                            style={{width: '100%', padding: '0.8rem', backgroundColor: '#1a252f', border: '1px solid #2e7d32', borderRadius: '4px', color: 'white', marginBottom: '1rem'}}
                         />
                     </div>
-                    <div className="helper-text">
-                        XP needed: {remainingXp.toLocaleString()}
-                    </div>
+                    
+                    {/* Selected Card Preview */}
+                    {calcMode === 'crops' && selectedCrop && (
+                        <div className="selected-method-card" style={{marginTop: '2rem', padding: '1.5rem', backgroundColor: '#1b5e20', borderRadius: '8px', border: '1px solid #2e7d32'}}>
+                             <h3>{selectedCrop.name}</h3>
+                             <p>Lvl {selectedCrop.level}</p>
+                             <p>{selectedCrop.xp} XP</p>
+                        </div>
+                    )}
+                     {calcMode === 'pof' && selectedAnimal && (
+                        <div className="selected-method-card" style={{marginTop: '2rem', padding: '1.5rem', backgroundColor: '#1b5e20', borderRadius: '8px', border: '1px solid #2e7d32'}}>
+                             <h3>{selectedAnimal.name}</h3>
+                             <p>Lvl {selectedAnimal.level}</p>
+                             <p>{selectedAnimal.xp} XP</p>
+                        </div>
+                    )}
                 </div>
 
-                {/* 2. Middle Column - Dual Mode Switching */}
-                <div className="card methods-section">
-                    <div className="mode-toggle">
-                        <button 
-                            className={`mode-btn ${calcMode === 'crops' ? 'active' : ''}`}
-                            onClick={() => setCalcMode('crops')}
-                        >
-                            <span className="emoji">🌱</span> Crops & Trees
-                        </button>
-                        <button 
-                            className={`mode-btn ${calcMode === 'pof' ? 'active' : ''}`}
-                            onClick={() => setCalcMode('pof')}
-                        >
-                            <span className="emoji">🐄</span> POF (Animals)
-                        </button>
-                    </div>
-
-                    {calcMode === 'crops' ? (
+                {/* 2. Methods Column (Middle) - WAS RIGHT, NOW MIDDLE */}
+                <div className="calc-methods">
+                     {calcMode === 'crops' ? (
                         <div className="method-list">
-                            <div className="methods-header">
-                                <h3>Select Crop</h3>
-                                <select 
+                            <div className="methods-header" style={{marginBottom: '1rem'}}>
+                                <select
                                     className="category-select"
                                     value={cropCategory}
                                     onChange={(e) => setCropCategory(e.target.value)}
+                                    style={{width: '100%', padding: '0.8rem', backgroundColor: '#1a252f', border: '1px solid #2e7d32', borderRadius: '4px', color: 'white'}}
                                 >
                                     {cropCategories.map(cat => (
                                         <option key={cat} value={cat}>{cat}</option>
                                     ))}
                                 </select>
                             </div>
-                            <div className="methods-grid">
+                            <div className="methods-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.8rem', maxHeight: '600px', overflowY: 'auto'}}>
                                 {filteredCrops.map(crop => (
-                                    <div 
+                                    <button
                                         key={crop.id}
-                                        className={`method-btn ${selectedCrop?.id === crop.id ? 'active' : ''} ${crop.level > currentLevel ? 'locked' : ''}`}
+                                        className={`method-btn ${selectedCrop?.id === crop.id ? 'active' : ''}`}                                                                                                                           
                                         onClick={() => setSelectedCrop(crop)}
+                                        style={{
+                                            width: '100%',
+                                            backgroundColor: selectedCrop?.id === crop.id ? '#1b5e20' : '#1a252f',
+                                            border: '1px solid #2e7d32',
+                                            padding: '0.8rem',
+                                            borderRadius: '6px',
+                                            textAlign: 'left',
+                                            cursor: 'pointer',
+                                            color: 'white'
+                                        }}
                                     >
-                                        <div className="method-name">{crop.name}</div>
-                                        <div className="method-details">
+                                        <div className="method-name" style={{fontWeight: 'bold', color: '#a5d6a7'}}>{crop.name}</div>
+                                        <div className="method-details" style={{fontSize: '0.8rem', color: '#fff'}}>
                                             <span>Lvl {crop.level}</span>
-                                            <span>{Math.round(crop.xp).toLocaleString()} XP</span>
+                                            <span style={{float: 'right'}}>{Math.round(crop.xp)} XP</span>
                                         </div>
-                                    </div>
+                                    </button>
                                 ))}
                             </div>
                         </div>
                     ) : (
                         <div className="method-list">
-                            <div className="methods-header">
-                                <h3>Select Animal (Check Health)</h3>
-                                <select 
+                            <div className="methods-header" style={{marginBottom: '1rem'}}>
+                                <select
                                     className="category-select"
                                     value={pofCategory}
                                     onChange={(e) => setPofCategory(e.target.value)}
+                                    style={{width: '100%', padding: '0.8rem', backgroundColor: '#1a252f', border: '1px solid #2e7d32', borderRadius: '4px', color: 'white'}}
                                 >
                                     {pofCategories.map(cat => (
                                         <option key={cat} value={cat}>{cat}</option>
                                     ))}
                                 </select>
                             </div>
-                            <div className="methods-grid">
+                            <div className="methods-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.8rem', maxHeight: '600px', overflowY: 'auto'}}>
                                 {filteredAnimals.map(animal => (
-                                    <div 
+                                    <button
                                         key={animal.id}
-                                        className={`method-btn ${selectedAnimal?.id === animal.id ? 'active' : ''} ${animal.level > currentLevel ? 'locked' : ''}`}
+                                        className={`method-btn ${selectedAnimal?.id === animal.id ? 'active' : ''}`}                                                                                                                     
                                         onClick={() => setSelectedAnimal(animal)}
+                                        style={{
+                                            width: '100%',
+                                            backgroundColor: selectedAnimal?.id === animal.id ? '#1b5e20' : '#1a252f',
+                                            border: '1px solid #2e7d32',
+                                            padding: '0.8rem',
+                                            borderRadius: '6px',
+                                            textAlign: 'left',
+                                            cursor: 'pointer',
+                                            color: 'white'
+                                        }}
                                     >
-                                        <div className="method-name">{animal.name}</div>
-                                        <div className="method-details">
+                                        <div className="method-name" style={{fontWeight: 'bold', color: '#a5d6a7'}}>{animal.name}</div>
+                                        <div className="method-details" style={{fontSize: '0.8rem', color: '#fff'}}>
                                             <span>Lvl {animal.level}</span>
-                                            <span>{animal.xp.toLocaleString()} XP</span>
+                                            <span style={{float: 'right'}}>{animal.xp} XP</span>
                                         </div>
-                                    </div>
+                                    </button>
                                 ))}
                             </div>
                         </div>
                     )}
                 </div>
 
-                {/* 3. Results Column */}
-                <div className="card results-section">
-                    <h3>Results</h3>
-                    
-                    {calcMode === 'crops' && selectedCrop && (
-                        <div className="results-content">
-                            <div className="result-main">
-                                <div className="action-icon">🌿</div>
-                                <div className="action-count">
-                                    <span className="number">
-                                        {Math.ceil(remainingXp / selectedCrop.xp).toLocaleString()}
-                                    </span>
-                                    <span className="label">
-                                        {selectedCrop.category === 'Tree' || selectedCrop.category === 'Fruit Tree' || selectedCrop.category === 'Special' 
-                                            ? 'Trees/Saplings' 
-                                            : 'Seeds/Patches'}
-                                    </span>
-                                </div>
+                {/* 3. Results Column (Right) - WAS MIDDLE, NOW RIGHT */}
+                <div className="calc-results">
+                     <div className="result-main" style={{textAlign: 'center', marginBottom: '2rem'}}>
+                        {calcMode === 'crops' && selectedCrop && (
+                            <>
+                            <div className="action-icon" style={{fontSize: '3rem', marginBottom: '1rem'}}>🌿</div>
+                            <div className="action-count">
+                                <span className="number" style={{display: 'block', fontSize: '2.5rem', fontWeight: 'bold', color: '#66bb6a'}}>
+                                    {Math.ceil(remainingXp / selectedCrop.xp).toLocaleString()}
+                                </span>
+                                <span className="label">Actions Needed</span>
                             </div>
-                            <div className="result-details">
-                                <p><span>Crop:</span> <strong>{selectedCrop.name}</strong></p>
-                                <p><span>Category:</span> <strong>{selectedCrop.category}</strong></p>
-                                <p><span>XP Per Action:</span> <strong>{selectedCrop.xp.toLocaleString()}</strong></p>
+                            </>
+                        )}
+                        {calcMode === 'pof' && selectedAnimal && (
+                            <>
+                            <div className="action-icon" style={{fontSize: '3rem', marginBottom: '1rem'}}>🐾</div>
+                            <div className="action-count">
+                                <span className="number" style={{display: 'block', fontSize: '2.5rem', fontWeight: 'bold', color: '#66bb6a'}}>
+                                    {Math.ceil(remainingXp / selectedAnimal.xp).toLocaleString()}
+                                </span>
+                                <span className="label">Checks Needed</span>
                             </div>
-                        </div>
-                    )}
-
-                    {calcMode === 'pof' && selectedAnimal && (
-                        <div className="results-content">
-                            <div className="result-main">
-                                <div className="action-icon">🐾</div>
-                                <div className="action-count">
-                                    <span className="number">
-                                        {Math.ceil(remainingXp / selectedAnimal.xp).toLocaleString()}
-                                    </span>
-                                    <span className="label">Animals Checked</span>
-                                </div>
-                            </div>
-                            <div className="result-details">
-                                <p><span>Animal:</span> <strong>{selectedAnimal.name}</strong></p>
-                                <p><span>Pen Size:</span> <strong>{selectedAnimal.category}</strong></p>
-                                <p><span>XP (Elder Check):</span> <strong>{selectedAnimal.xp.toLocaleString()}</strong></p>
-                            </div>
-                        </div>
-                    )}
-                    
-                    {((calcMode === 'crops' && !selectedCrop) || (calcMode === 'pof' && !selectedAnimal)) && (
-                        <div className="no-selection"><p>Select a method</p></div>
-                    )}
+                            </>
+                        )}
+                        {((calcMode === 'crops' && !selectedCrop) || (calcMode === 'pof' && !selectedAnimal)) && (
+                            <p style={{color: '#aaa', marginTop: '2rem'}}>Select a method to see results</p>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

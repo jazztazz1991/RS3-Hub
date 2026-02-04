@@ -1,17 +1,22 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { MINING_ROCKS } from '../../../data/miningData';
-import { XP_TABLE, getLevelAtXp, getXpAtLevel, getTargetXp } from '../../../utils/rs3';
+import { getXpAtLevel } from '../../../utils/rs3';
 import './MiningCalculator.css';
 
 const MiningCalculator = () => {
     const { characterData } = useCharacter();
-    
+
     // State
     const [currentXp, setCurrentXp] = useState(0);
     const [targetLevel, setTargetLevel] = useState(99);
-    const [targetXp, setTargetXp] = useState(XP_TABLE[99]);
-    const [selectedRockId, setSelectedRockId] = useState('banite');
+    const [targetXp, setTargetXp] = useState(13034431);
+    
+    // Modifiers (Simplifying for layout consistency first, can add pickaxe/outfits later)
+    // const [activeBoosts, setActiveBoosts] = useState([]); 
+
+    const [selectedMethod, setSelectedMethod] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context
     useEffect(() => {
@@ -19,14 +24,11 @@ const MiningCalculator = () => {
             const skill = characterData.find(s => s.name === "Mining");
             if (skill) {
                 setCurrentXp(skill.xp);
-                // Smart target setting
-                if (skill.level < 99) setTargetLevel(99);
-                else if (skill.level < 110) setTargetLevel(110); // Mining goes to 110
-                else setTargetLevel(120);
+                setTargetLevel(skill.level < 99 ? 99 : 120);
             }
         }
     }, [characterData]);
-
+    
     // Update Target XP when Target Level changes
     useEffect(() => {
         setTargetXp(getXpAtLevel(targetLevel));
@@ -37,91 +39,134 @@ const MiningCalculator = () => {
         setTargetLevel(lvl);
     };
 
-    const handleXpChange = (e) => {
-        const val = parseInt(e.target.value) || 0;
-        setCurrentXp(val);
+    // Filter Logic
+    const filteredMethods = MINING_ROCKS.filter(method => {
+        const matchesSearch = method.name.toLowerCase().includes(searchTerm.toLowerCase());
+        return matchesSearch;
+    }).sort((a,b) => a.level - b.level); 
+
+    // XP Calculation
+    const getXpPerAction = (baseXp) => {
+        let multiplier = 1.0;
+        // Boosts would go here
+        return baseXp * multiplier;
     };
 
-    // Calculation
-    const selectedRock = MINING_ROCKS.find(m => m.id === selectedRockId);
-    const xpRemaining = Math.max(0, targetXp - currentXp);
-    const actionsNeeded = selectedRock && selectedRock.xp > 0 
-        ? Math.ceil(xpRemaining / selectedRock.xp) 
-        : 0;
+    const remainingXp = Math.max(0, targetXp - currentXp);
+    const xpPerAction = selectedMethod ? getXpPerAction(selectedMethod.xp) : 0;
+    const actionsNeeded = selectedMethod ? Math.ceil(remainingXp / xpPerAction) : 0;
 
-    // Progress
-    const currentLevel = getLevelAtXp(currentXp);
-    const progressPercent = Math.min(100, (currentLevel / targetLevel) * 100);
+    const handleMethodSelect = (method) => {
+        setSelectedMethod(method);
+    };
 
     return (
         <div className="mining-calculator">
             <h2>Mining Calculator</h2>
-            
+
+            {/* Modifiers placeholder */}
+            <div className="modifiers">
+               <span style={{color: '#90a4ae', fontSize: '0.9rem'}}>Boosts coming soon...</span>
+            </div>
+
             <div className="calc-layout">
-                {/* Inputs Info */}
-                <div className="calc-inputs card">
-                    <h3>Current Status</h3>
+                {/* Left Column: Inputs */}
+                <div className="calc-inputs">
                     <div className="input-group">
                         <label>Current XP</label>
                         <input 
                             type="number" 
                             value={currentXp} 
-                            onChange={handleXpChange} 
+                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
                         />
-                        <span className="helper-text">Level: {currentLevel}</span>
                     </div>
-
                     <div className="input-group">
                         <label>Target Level</label>
                         <input 
                             type="number" 
                             value={targetLevel} 
-                            onChange={handleLevelChange}
-                            max={120}
+                            onChange={handleLevelChange} 
                         />
-                        <span className="helper-text">Target XP: {targetXp.toLocaleString()}</span>
                     </div>
-
-                    <div className="xp-remaining-box">
-                        <span className="label">XP Remaining</span>
-                        <span className="value">{xpRemaining.toLocaleString()}</span>
+                     <div className="input-group">
+                        <label>Target XP</label>
+                        <input 
+                            type="number" 
+                            value={targetXp} 
+                            readOnly
+                            style={{opacity: 0.7}}
+                        />
                     </div>
+                    
+                    {selectedMethod && (
+                        <div className="selected-method-card">
+                            <h3>{selectedMethod.name}</h3>
+                            <p className="method-xp">Base XP: {selectedMethod.xp}</p>
+                            <p className="method-xp-actual">
+                                Est. XP: {xpPerAction.toFixed(1)}
+                            </p>
+                            <p className="method-level">Level Req: {selectedMethod.level}</p>
+                        </div>
+                    )}
                 </div>
 
-                {/* Rock Selector */}
-                <div className="calc-methods card">
-                    <h3>Select Rock</h3>
+                {/* Middle Column: List (Methods) */}
+                <div className="calc-methods">
+                    <div className="methods-header">
+                        <input 
+                            type="text" 
+                            placeholder="Search rocks..." 
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+
                     <div className="methods-grid">
-                        {MINING_ROCKS.map(rock => (
+                        {filteredMethods.map(method => (
                             <button
-                                key={rock.id}
-                                className={`method-btn ${selectedRockId === rock.id ? 'active' : ''} ${currentLevel < rock.level ? 'locked' : ''}`}
-                                onClick={() => setSelectedRockId(rock.id)}
+                                key={method.id}
+                                className={`method-btn ${selectedMethod?.id === method.id ? 'active' : ''}`}
+                                onClick={() => handleMethodSelect(method)}
                             >
-                                <div className="method-name">{rock.name}</div>
+                                <div className="method-name">{method.name}</div>
                                 <div className="method-details">
-                                    <span className="level-req">Lvl {rock.level}</span>
-                                    <span className="xp-val">{rock.xp} XP</span>
+                                    <span>Lvl {method.level}</span>
+                                    <span>{method.xp} XP</span>
                                 </div>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* Results */}
-                <div className="calc-results card">
-                    <h3>Results</h3>
+                {/* Right Column: Results */}
+                <div className="calc-results">
                     <div className="result-main">
-                        <div className="action-icon">⛏️</div>
+                        <div className="action-icon">
+                            ⛏️
+                        </div>
                         <div className="action-count">
-                            <span className="number">{actionsNeeded.toLocaleString()}</span>
-                            <span className="label">Ores/Actions Needed</span>
+                            <span className="number">
+                                {selectedMethod 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">Ores Needed</span>
                         </div>
                     </div>
-                    
+
                     <div className="result-details">
-                         <p>Method: <strong>{selectedRock?.name}</strong></p>
-                         <p>XP Per Action: <strong>{selectedRock?.xp}</strong></p>
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Rock Type:</span>
+                            <span>{selectedMethod?.name || '-'}</span>
+                        </p>
+                        <p>
+                            <span>Base XP:</span>
+                            <span>{selectedMethod?.xp || 0}</span>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -6,155 +6,137 @@ import './MagicCalculator.css';
 
 const MagicCalculator = () => {
     const { characterData } = useCharacter();
-    
+
     // State
     const [currentXp, setCurrentXp] = useState(0);
     const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(XP_TABLE[99]);
-    const [selectedSpellId, setSelectedSpellId] = useState('high_alchemy');
-    const [filterBook, setFilterBook] = useState('All'); 
+    const [selectedSpellId, setSelectedSpellId] = useState(MAGIC_SPELLS[0]?.id || 'high_alchemy');
+    const [spellbookFilter, setSpellbookFilter] = useState('All');
 
-    // Initialize from Character Context
+    // Initialize
     useEffect(() => {
-        if (characterData && characterData.length > 0) {
-            const magicSkill = characterData.find(s => s.name === "Magic");
-            if (magicSkill) {
-                setCurrentXp(magicSkill.xp);
-                // Auto-set next milestone
-                const lvl = magicSkill.level;
-                if (lvl < 99) setTargetLevel(99);
+        if (characterData) {
+            const skill = characterData.find(s => s.name === "Magic");
+            if (skill) {
+                setCurrentXp(skill.xp);
+                if (skill.level < 99) setTargetLevel(99);
                 else setTargetLevel(120);
             }
         }
     }, [characterData]);
 
-    // Update Target XP when Level Changes
+    // Target XP
     useEffect(() => {
-        if (targetLevel >= 1 && targetLevel <= 120) {
-             setTargetXp(getXpAtLevel(targetLevel));
-        }
+        setTargetXp(getXpAtLevel(targetLevel));
     }, [targetLevel]);
 
+    const handleLevelChange = (e) => setTargetLevel(Math.min(120, Math.max(1, parseInt(e.target.value) || 1)));
+    const handleXpChange = (e) => setCurrentXp(Math.max(0, parseInt(e.target.value) || 0));
+
+    // Derived
+    const currentLevel = getLevelAtXp(currentXp);
+    const remainingXp = Math.max(0, targetXp - currentXp);
     const selectedSpell = MAGIC_SPELLS.find(s => s.id === selectedSpellId) || MAGIC_SPELLS[0];
 
-    // Filter Logic
-    const filteredSpells = MAGIC_SPELLS.filter(spell => {
-        if (filterBook === 'All') return true;
-        return spell.book === filterBook;
-    });
-
-    // Calculations
-    const calculateResults = () => {
-        const remaining = Math.max(0, targetXp - currentXp);
-        const xpPerCast = selectedSpell.xp;
-        const castsNeeded = Math.ceil(remaining / xpPerCast);
-
-        return {
-            remaining,
-            xpPerCast,
-            castsNeeded,
-            spellName: selectedSpell.name,
-            book: selectedSpell.book
-        };
-    };
-
-    const results = calculateResults();
+    const xpPerCast = selectedSpell.xp;
+    const castsNeeded = xpPerCast > 0 ? Math.ceil(remainingXp / xpPerCast) : 0;
+    
+    // Filter
+    // SPELLBOOK_TYPES might be an object { STANDARD: 'Standard', ... }
+    const spellbooks = ['All', ...new Set(MAGIC_SPELLS.map(s => s.book))];
+    const filteredSpells = spellbookFilter === 'All' 
+        ? MAGIC_SPELLS 
+        : MAGIC_SPELLS.filter(s => s.book === spellbookFilter);
 
     return (
-        <div className="magic-calculator-container">
-            <h2>Non-Combat Magic Calculator</h2>
+        <div className="magic-calculator">
+            <h2>Magic Calculator (Non-Combat)</h2>
             
-            <div className="calculator-layout">
-                {/* Inputs Section */}
-                <div className="calc-panel inputs-panel">
+            <div className="calc-layout">
+                {/* 1. Inputs */}
+                <div className="calc-inputs">
+                    <h3>Current Status</h3>
                     <div className="input-group">
                         <label>Current XP</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
-                            onChange={(e) => setCurrentXp(parseInt(e.target.value) || 0)}
-                        />
-                         <span className="helper-text">Level: {getLevelAtXp(currentXp)}</span>
+                        <input type="number" value={currentXp} onChange={handleXpChange} />
+                        <span className="helper-text">Level: {currentLevel}</span>
                     </div>
 
                     <div className="input-group">
                         <label>Target Level</label>
-                        <input 
-                            type="number" 
-                            value={targetLevel} 
-                            onChange={(e) => setTargetLevel(parseInt(e.target.value) || 1)}
-                            max={120}
-                        />
-                         <span className="helper-text">Target XP: {targetXp.toLocaleString()}</span>
+                        <input type="number" value={targetLevel} onChange={handleLevelChange} />
+                        <span className="helper-text">Target XP: {targetXp.toLocaleString()}</span>
                     </div>
 
-                    <div className="filter-group">
-                        <label>Spellbook Filter</label>
-                        <div className="book-filters">
-                            <button 
-                                className={filterBook === 'All' ? 'active' : ''} 
-                                onClick={() => setFilterBook('All')}
+                    {selectedSpell && (
+                        <div className="selected-method-card">
+                            <h3>{selectedSpell.name}</h3>
+                            <p style={{color: '#90caf9'}}>Lvl {selectedSpell.level} - {selectedSpell.book}</p>
+                            <p className="method-xp-actual">{selectedSpell.xp} XP</p>
+                            <small>{selectedSpell.category}</small>
+                        </div>
+                    )}
+                </div>
+
+                {/* 2. Methods (Was 3) */}
+                <div className="calc-methods">
+                    <div className="methods-header">
+                        <h3>Select Spell</h3>
+                        <div className="filter-group">
+                            <select 
+                                value={spellbookFilter} 
+                                onChange={(e) => setSpellbookFilter(e.target.value)}
+                                className="category-select"
                             >
-                                All
-                            </button>
-                            <button 
-                                className={filterBook === SPELLBOOK_TYPES.STANDARD ? 'active' : ''} 
-                                onClick={() => setFilterBook(SPELLBOOK_TYPES.STANDARD)}
-                            >
-                                Standard
-                            </button>
-                            <button 
-                                className={filterBook === SPELLBOOK_TYPES.LUNAR ? 'active' : ''} 
-                                onClick={() => setFilterBook(SPELLBOOK_TYPES.LUNAR)}
-                            >
-                                Lunar
-                            </button>
+                                {spellbooks.map(book => (
+                                    <option key={book} value={book}>{book}</option>
+                                ))}
+                            </select>
                         </div>
                     </div>
 
-                    <div className="input-group">
-                        <label>Select Spell</label>
-                        <select 
-                            value={selectedSpellId} 
-                            onChange={(e) => setSelectedSpellId(e.target.value)}
-                            className="spell-select"
-                        >
-                            {filteredSpells.map(spell => (
-                                <option key={spell.id} value={spell.id}>
-                                    {spell.name} (Lvl {spell.level}) - {spell.xp} XP
-                                </option>
-                            ))}
-                        </select>
-                        <p className="spell-meta">
-                            Category: <span className="highlight">{selectedSpell.category}</span> • 
-                            Book: <span className="highlight">{selectedSpell.book}</span>
-                        </p>
+                    <div className="methods-grid">
+                        {filteredSpells.map(spell => (
+                            <button
+                                key={spell.id}
+                                className={`method-btn ${selectedSpellId === spell.id ? 'active' : ''} ${currentLevel < spell.level ? 'locked' : ''}`}
+                                onClick={() => setSelectedSpellId(spell.id)}
+                            >
+                                <div className="method-name">{spell.name}</div>
+                                <div className="method-details">
+                                    <span className="level-req">Lvl {spell.level}</span>
+                                    <span className="xp-val">{spell.xp} XP</span>
+                                </div>
+                            </button>
+                        ))}
                     </div>
                 </div>
 
-                {/* Results Section */}
-                <div className="calc-panel results-panel">
+                {/* 3. Results (Was 2) */}
+                <div className="calc-results">
                     <h3>Results</h3>
-                    
-                    <div className="result-row main-result">
-                        <span className="label">You Need:</span>
-                        <span className="value highlight">{results.castsNeeded.toLocaleString()}</span>
-                        <span className="unit">Casts</span>
+                    <div className="result-main">
+                        <div className="action-icon">🔮</div>
+                        <div className="action-count">
+                            <span className="number">{castsNeeded.toLocaleString()}</span>
+                            <span className="label">Casts Needed</span>
+                        </div>
                     </div>
-
-                    <div className="stats-grid">
-                        <div className="stat-item">
-                            <span className="label">XP Remaining</span>
-                            <span className="value">{results.remaining.toLocaleString()}</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="label">XP Per Cast</span>
-                            <span className="value">{results.xpPerCast}</span>
-                        </div>
-                        <div className="stat-item">
-                            <span className="label">Spell</span>
-                            <span className="value">{results.spellName}</span>
-                        </div>
+                    
+                    <div className="result-details">
+                         <p>
+                            <span>Spell:</span>
+                            <strong>{selectedSpell.name}</strong>
+                         </p>
+                         <p>
+                            <span>Remaining XP:</span>
+                            <strong>{remainingXp.toLocaleString()}</strong>
+                         </p>
+                         <p>
+                             <span>Book:</span>
+                             <strong>{selectedSpell.book}</strong>
+                         </p>
                     </div>
                 </div>
             </div>
