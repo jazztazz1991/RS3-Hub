@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { divinationData } from '../../../data/divinationData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './DivinationCalculator.css';
 
 const DivinationCalculator = () => {
-    const { character } = useCharacter();
+    const { characterData } = useCharacter();
     const [currentXp, setCurrentXp] = useState(0);
+    const [currentLevel, setCurrentLevel] = useState(1);
+    const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(13034431);
     const [calcMode, setCalcMode] = useState('wisps'); // 'wisps' | 'hall' | 'dailies'
     
@@ -20,11 +23,38 @@ const DivinationCalculator = () => {
 
     // Load character data
     useEffect(() => {
-        if (character?.skills?.Divination) {
-            setCurrentXp(character.skills.Divination.xp);
-            setTargetXp(character.skills.Divination.level < 99 ? 13034431 : 104273167);
+        if (characterData && characterData.length > 0) {
+            const skill = characterData.find(s => s.name === "Divination");
+            if (skill) {
+                setCurrentXp(skill.xp);
+                setCurrentLevel(skill.level);
+            }
         }
-    }, [character]);
+    }, [characterData]);
+
+    const handleCurrentLevelChange = (e) => {
+        const level = parseInt(e.target.value) || 1;
+        setCurrentLevel(level);
+        setCurrentXp(getXpAtLevel(level));
+    };
+
+    const handleCurrentXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setCurrentXp(xp);
+        setCurrentLevel(getLevelAtXp(xp));
+    };
+
+    const handleTargetLevelChange = (e) => {
+        const level = parseInt(e.target.value) || 1;
+        setTargetLevel(level);
+        setTargetXp(getXpAtLevel(level));
+    };
+
+    const handleTargetXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setTargetXp(xp);
+        setTargetLevel(getLevelAtXp(xp));
+    };
 
     const activeData = divinationData[calcMode] || [];
 
@@ -127,21 +157,43 @@ const DivinationCalculator = () => {
             <div className="calc-layout">
                 {/* Left Column: Inputs */}
                 <div className="calc-inputs">
-                    <div className="input-group">
-                        <label>Current XP</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
-                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Current Level</label>
+                            <input 
+                                type="number" 
+                                value={currentLevel} 
+                                onChange={handleCurrentLevelChange} 
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Current XP</label>
+                            <input 
+                                type="number" 
+                                value={currentXp} 
+                                onChange={handleCurrentXpChange} 
+                            />
+                        </div>
                     </div>
-                    <div className="input-group">
-                        <label>Target XP</label>
-                        <input 
-                            type="number" 
-                            value={targetXp} 
-                            onChange={(e) => setTargetXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Target Level</label>
+                            <input 
+                                type="number" 
+                                value={targetLevel} 
+                                onChange={handleTargetLevelChange}
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Target XP</label>
+                            <input 
+                                type="number" 
+                                value={targetXp} 
+                                onChange={handleTargetXpChange} 
+                            />
+                        </div>
                     </div>
                     
                     {selectedMethod && (
@@ -159,41 +211,7 @@ const DivinationCalculator = () => {
                     )}
                 </div>
 
-                {/* Middle Column: Results */}
-                <div className="calc-results">
-                    <div className="result-main">
-                        <div className="action-icon">
-                            🔮
-                        </div>
-                        <div className="action-count">
-                            <span className="number">
-                                {selectedMethod 
-                                    ? actionsNeeded.toLocaleString() 
-                                    : '---'}
-                            </span>
-                            <span className="label">
-                                {calcMode === 'dailies' ? 'Caches Needed' : 'Memories / Cores'}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="result-details">
-                        <p>
-                            <span>Staying Level:</span>
-                            <span>{character?.skills?.Divination?.level || 1}</span>
-                        </p>
-                        <p>
-                            <span>Remaining XP:</span>
-                            <span>{remainingXp.toLocaleString()}</span>
-                        </p>
-                        <p>
-                            <span>Est. XP/h:</span>
-                            <span>Variable</span>
-                        </p>
-                    </div>
-                </div>
-
-                {/* Right Column: List */}
+                {/* Middle Column: Methods */}
                 <div className="calc-methods">
                     <div className="methods-header">
                         <input 
@@ -227,6 +245,40 @@ const DivinationCalculator = () => {
                                 </div>
                             </button>
                         ))}
+                    </div>
+                </div>
+
+                {/* Right Column: Results */}
+                <div className="calc-results">
+                    <div className="result-main">
+                        <div className="action-icon">
+                            🔮
+                        </div>
+                        <div className="action-count">
+                            <span className="number">
+                                {selectedMethod 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">
+                                {calcMode === 'dailies' ? 'Caches Needed' : 'Memories / Cores'}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="result-details">
+                        <p>
+                            <span>Starting Level:</span>
+                            <span>{currentLevel}</span>
+                        </p>
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Est. XP/h:</span>
+                            <span>Variable</span>
+                        </p>
                     </div>
                 </div>
             </div>

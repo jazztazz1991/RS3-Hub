@@ -1,18 +1,35 @@
 .prayer-calculator {
+    --pray-text-main: #e0e0e0;
+    --pray-text-heading: #ffe082;
+    --pray-text-label: #fff59d;
+    --pray-text-input: white;
+    --pray-text-detail: #eceff1;
+    --pray-text-highlight: #ffca28;
+    --pray-text-sub-highlight: #fff176;
+
+    --pray-bg-dark: #37474f;
+    --pray-bg-medium: #263238;
+    --pray-bg-selected: #455a64;
+
+    --pray-border-main: #546e7a;
+    --pray-border-light: #78909c;
+    --pray-border-accent: #ffe082;
+    --pray-border-heading: #ffa000;
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--pray-text-main);
 }
 
 .prayer-calculator h2 {
-    color: #ffe082;
-    border-bottom: 2px solid #ffa000;
+    color: var(--pray-text-heading);
+    border-bottom: 2px solid var(--pray-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
-.calc-layout {
+.prayer-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -23,137 +40,128 @@
     }
 }
 
-.calc-inputs {
-    background-color: #37474f;
+.prayer-calculator .calc-inputs,
+.prayer-calculator .calc-methods,
+.prayer-calculator .calc-results {
+    color: var(--pray-text-label);
+    background-color: var(--pray-bg-dark);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid #546e7a;
+    border: 1px solid var(--pray-border-main);
 }
 
-.input-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #fff59d;
-}
-
-.input-group input, .method-select {
+.prayer-calculator .input-group input, .prayer-calculator .method-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #263238;
-    border: 1px solid #78909c;
-    color: white;
+    background-color: var(--pray-bg-medium);
+    border: 1px solid var(--pray-border-light);
+    color: var(--pray-text-input);
     border-radius: 4px;
     font-size: 1rem;
 }
 
-.mode-switch {
+.prayer-calculator .mode-switch {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
-.mode-btn {
+.prayer-calculator .mode-btn {
     flex: 1;
     padding: 0.8rem;
-    background-color: #263238;
-    border: 1px solid #78909c;
+    background-color: var(--pray-bg-medium);
+    border: 1px solid var(--pray-border-light);
     color: #ccc;
     cursor: pointer;
     border-radius: 4px;
 }
 
-.mode-btn.active {
-    background-color: #ffa000;
+.prayer-calculator .mode-btn.active {
+    background-color: var(--pray-border-heading);
     color: #3e2723;
     font-weight: bold;
-    border-color: #ffca28;
+    border-color: var(--pray-text-highlight);
 }
 
-.selected-method-card {
+.prayer-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #455a64;
+    background-color: var(--pray-bg-selected);
     border-radius: 8px;
-    border: 1px solid #ffe082;
+    border: 1px solid var(--pray-text-heading);
 }
 
-.selected-method-card h3 {
-    color: #ffe082;
+.prayer-calculator .selected-method-card h3 {
+    color: var(--pray-text-heading);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.prayer-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #fff176;
+    color: var(--pray-text-sub-highlight);
 }
 
 /* Results */
-.calc-results {
+.prayer-calculator .calc-results {
     text-align: center;
 }
 
-.result-main {
+.prayer-calculator .result-main {
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.prayer-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.prayer-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffca28;
+    color: var(--pray-text-highlight);
 }
 
-.result-details p {
+.prayer-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #546e7a;
+    border-bottom: 1px solid var(--pray-border-main);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #eceff1;
+    color: var(--pray-text-detail);
 }
 
 /* Methods */
-.methods-header {
+.prayer-calculator .methods-header {
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.prayer-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #37474f;
-    border: 1px solid #546e7a;
+.prayer-calculator .method-btn {
+    background-color: var(--pray-bg-dark);
+    border: 1px solid var(--pray-border-main);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #eceff1;
+    color: var(--pray-text-detail);
 }
 
-.method-btn:hover {
-    background-color: #546e7a;
+.prayer-calculator .method-btn:hover {
+    background-color: var(--pray-border-main);
 }
 
-.method-btn.active {
-    background-color: #ffa000;
+.prayer-calculator .method-btn.active {
+    background-color: var(--pray-border-heading);
     color: #3e2723;
-    border-color: #ffe082;
+    border-color: var(--pray-text-heading);
     font-weight: bold;
 }

@@ -1,18 +1,36 @@
 .smithing-calculator {
+    --smith-text-main: #e0e0e0;
+    --smith-text-heading: #cfd8dc;
+    --smith-text-label: #b0bec5;
+    --smith-text-input: white;
+    --smith-text-detail: #b0bec5;
+    --smith-text-method-detail: rgba(255, 255, 255, 0.6);
+    --smith-text-highlight: #eceff1;
+    --smith-text-result: #90a4ae;
+    --smith-text-count: #78909c;
+
+    --smith-bg-dark: #1a252f;
+    --smith-bg-medium: #37474f;
+    --smith-bg-selected: #455a64;
+
+    --smith-border-main: #607d8b;
+    --smith-border-sub: #455a64;
+    --smith-shadow: rgba(207, 216, 220, 0.2);
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--smith-text-main);
 }
 
 .smithing-calculator h2 {
-    color: #cfd8dc;
-    border-bottom: 2px solid #607d8b;
+    color: var(--smith-text-heading);
+    border-bottom: 2px solid var(--smith-border-main);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
-.calc-layout {
+.smithing-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -23,117 +41,131 @@
     }
 }
 
-.input-group {
+.smithing-calculator .calc-inputs,
+.smithing-calculator .calc-methods,
+.smithing-calculator .calc-results {
+    background-color: var(--smith-bg-medium);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--smith-border-main);
+}
+
+.smithing-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.smithing-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #b0bec5;
+    color: var(--smith-text-label);
 }
 
-.input-group input, .category-select {
+.smithing-calculator .input-group input, .smithing-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #607d8b;
-    color: white;
+    background-color: var(--smith-bg-dark);
+    border: 1px solid var(--smith-border-main);
+    color: var(--smith-text-input);
     border-radius: 4px;
     font-size: 1rem;
 }
 
-.selected-method-card {
+.smithing-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #37474f;
+    background-color: var(--smith-bg-medium);
     border-radius: 8px;
-    border: 1px solid #607d8b;
+    border: 1px solid var(--smith-border-main);
 }
 
-.selected-method-card h3 {
-    color: #eceff1;
+.smithing-calculator .selected-method-card h3 {
+    color: var(--smith-text-highlight);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.smithing-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #90a4ae;
+    color: var(--smith-text-result);
 }
 
-.result-main {
+.smithing-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.smithing-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.smithing-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #78909c;
+    color: var(--smith-text-count);
 }
 
-.result-details p {
+.smithing-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #455a64;
+    border-bottom: 1px solid var(--smith-border-sub);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #b0bec5;
+    color: var(--smith-text-detail);
 }
 
-.methods-header {
+.smithing-calculator .methods-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 10px;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.smithing-calculator .methods-header input {
+    width: 70%;
+}
+
+.smithing-calculator .methods-header .category-select {
+    width: 30%;
+}
+
+.smithing-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #607d8b;
+.smithing-calculator .method-btn {
+    background-color: var(--smith-bg-dark);
+    border: 1px solid var(--smith-border-main);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #eceff1;
+    color: var(--smith-text-highlight);
 }
 
-.method-btn:hover {
-    background-color: #37474f;
+.smithing-calculator .method-btn:hover {
+    background-color: var(--smith-bg-medium);
 }
 
-.method-btn.active {
-    background-color: #455a64;
-    border-color: #cfd8dc;
-    box-shadow: 0 0 10px rgba(207, 216, 220, 0.2);
+.smithing-calculator .method-btn.active {
+    background-color: var(--smith-bg-selected);
+    border-color: var(--smith-text-heading);
+    box-shadow: 0 0 10px var(--smith-shadow);
 }
 
-.method-name {
+.smithing-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #cfd8dc;
+    color: var(--smith-text-heading);
 }
 
-.method-details {
+.smithing-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--smith-text-method-detail);
 }

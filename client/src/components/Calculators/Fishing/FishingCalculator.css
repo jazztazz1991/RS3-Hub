@@ -1,48 +1,69 @@
 .fishing-calculator {
+    /* Variables */
+    --fish-text-main: #e0e0e0;
+    --fish-text-heading: #4fc3f7;
+    --fish-text-label: #b3e5fc;
+    --fish-text-method: #e1f5fe;
+    --fish-text-number: #29b6f6;
+    --fish-text-checkbox: #bdc3c7;
+    --fish-text-dim: rgba(255,255,255,0.6);
+    
+    --fish-bg-dark: #1a252f;
+    --fish-bg-card: #01579b;
+    --fish-bg-hover: #0277bd;
+    
+    --fish-border-heading: #0288d1;
+    --fish-border-accent: #039be5;
+    --fish-border-input: #0288d1;
+    --fish-border-active: #4fc3f7;
+    --fish-border-list: #0277bd;
+    
+    --fish-accent-primary: #039be5;
+    
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--fish-text-main);
 }
 
 .fishing-calculator h2 {
-    color: #4fc3f7; /* Light Blue */
-    border-bottom: 2px solid #0288d1;
+    color: var(--fish-text-heading);
+    border-bottom: 2px solid var(--fish-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 /* Modifiers */
-.modifiers {
+.fishing-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--fish-bg-dark);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #039be5;
+    border-left: 4px solid var(--fish-border-accent);
 }
 
-.checkbox-container {
+.fishing-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--fish-text-checkbox);
 }
 
-.checkbox-container input {
+.fishing-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    accent-color: #039be5;
+    accent-color: var(--fish-accent-primary);
 }
 
 /* Layout */
-.calc-layout {
+.fishing-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -53,120 +74,142 @@
     }
 }
 
-.input-group {
+.fishing-calculator .calc-inputs,
+.fishing-calculator .calc-methods,
+.fishing-calculator .calc-results {
+    background-color: var(--fish-bg-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--fish-border-input);
+}
+
+.fishing-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #b3e5fc;
+.fishing-calculator .methods-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
 }
 
-.input-group input, .category-select {
+.fishing-calculator .methods-header input {
+    width: 70%;
+}
+
+.fishing-calculator .methods-header select {
+    width: 30%;
+}
+
+
+.fishing-calculator .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--fish-text-label);
+}
+
+.fishing-calculator .input-group input, .fishing-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #0288d1;
+    background-color: var(--fish-bg-dark);
+    border: 1px solid var(--fish-border-input);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
 /* Selected Method Card - Ocean Theme */
-.selected-method-card {
+.fishing-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #01579b;
+    background-color: var(--fish-bg-card);
     border-radius: 8px;
-    border: 1px solid #0288d1;
+    border: 1px solid var(--fish-border-input);
 }
 
-.selected-method-card h3 {
-    color: #e1f5fe;
+.fishing-calculator .selected-method-card h3 {
+    color: var(--fish-text-method);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.fishing-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #4fc3f7;
+    color: var(--fish-text-heading);
 }
 
 /* Results */
-.result-main {
+.fishing-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.fishing-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.fishing-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #29b6f6;
+    color: var(--fish-text-number);
 }
 
-.result-details p {
+.fishing-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #0277bd;
+    border-bottom: 1px solid var(--fish-border-list);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #b3e5fc;
+    color: var(--fish-text-label);
 }
 
 /* Methods List */
-.methods-header {
+.fishing-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.fishing-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #0288d1;
+.fishing-calculator .method-btn {
+    background-color: var(--fish-bg-dark);
+    border: 1px solid var(--fish-border-input);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #e1f5fe;
+    color: var(--fish-text-method);
 }
 
-.method-btn:hover {
-    background-color: #0277bd;
+.fishing-calculator .method-btn:hover {
+    background-color: var(--fish-bg-hover);
 }
 
-.method-btn.active {
-    background-color: #01579b;
-    border-color: #4fc3f7;
+.fishing-calculator .method-btn.active {
+    background-color: var(--fish-bg-card);
+    border-color: var(--fish-border-active);
     box-shadow: 0 0 10px rgba(79, 195, 247, 0.2);
 }
 
-.method-name {
+.fishing-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #b3e5fc;
+    color: var(--fish-text-label);
 }
 
-.method-details {
+.fishing-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--fish-text-dim);
 }

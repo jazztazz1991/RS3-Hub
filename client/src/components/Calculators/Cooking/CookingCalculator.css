@@ -1,29 +1,49 @@
 .cooking-calculator {
+    /* Variables */
+    --cook-text-main: #e0e0e0;
+    --cook-text-heading: #ffab91;
+    --cook-text-label: #ffccbc;
+    --cook-text-xp: #ffd180;
+    --cook-text-number: #ff7043;
+    --cook-text-dim: rgba(255,255,255,0.6);
+    
+    --cook-bg-dark: #1a252f;
+    --cook-bg-panel: #2c3e50; /* Presumed default panel if used later */
+    --cook-bg-btn: #1a252f;
+    --cook-bg-card: #bf360c;
+    --cook-bg-hover: #d84315;
+    
+    --cook-border-heading: #e64a19;
+    --cook-border-accent: #e64a19;
+    --cook-border-input: #e64a19;
+    --cook-border-active: #ffd180;
+    --cook-border-list: #d84315;
+    
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--cook-text-main);
 }
 
 .cooking-calculator h2 {
-    color: #ffab91;
-    border-bottom: 2px solid #e64a19;
+    color: var(--cook-text-heading);
+    border-bottom: 2px solid var(--cook-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
-.modifiers {
+.cooking-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--cook-bg-dark);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #e64a19;
+    border-left: 4px solid var(--cook-border-accent);
 }
 
-.calc-layout {
+.cooking-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -34,117 +54,132 @@
     }
 }
 
-.input-group {
+.cooking-calculator .calc-inputs,
+.cooking-calculator .calc-methods,
+.cooking-calculator .calc-results {
+    background-color: var(--cook-bg-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--cook-border-input);
+}
+
+.cooking-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.cooking-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #ffccbc;
+    color: var(--cook-text-label);
 }
 
-.input-group input, .category-select {
+.cooking-calculator .input-group input, .cooking-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #e64a19;
+    background-color: var(--cook-bg-dark);
+    border: 1px solid var(--cook-border-input);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
-.selected-method-card {
+.cooking-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #bf360c;
+    background-color: var(--cook-bg-card);
     border-radius: 8px;
-    border: 1px solid #e64a19;
+    border: 1px solid var(--cook-border-input);
 }
 
-.selected-method-card h3 {
-    color: #ffab91;
+.cooking-calculator .selected-method-card h3 {
+    color: var(--cook-text-heading);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.cooking-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffd180;
+    color: var(--cook-text-xp);
 }
 
-.result-main {
+.cooking-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.cooking-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.cooking-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ff7043;
+    color: var(--cook-text-number);
 }
 
-.result-details p {
+.cooking-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #d84315;
+    border-bottom: 1px solid var(--cook-border-list);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #ffccbc;
+    color: var(--cook-text-label);
 }
 
-.methods-header {
+.cooking-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.cooking-calculator .methods-header input {
+    width: 60%;
+}
+
+.cooking-calculator .category-select {
+    width: 35%;
+}
+
+.cooking-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #e64a19;
+.cooking-calculator .method-btn {
+    background-color: var(--cook-bg-btn);
+    border: 1px solid var(--cook-border-input);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #ffccbc;
+    color: var(--cook-text-label);
 }
 
-.method-btn:hover {
-    background-color: #d84315;
+.cooking-calculator .method-btn:hover {
+    background-color: var(--cook-bg-hover);
 }
 
-.method-btn.active {
-    background-color: #bf360c;
-    border-color: #ffd180;
+.cooking-calculator .method-btn.active {
+    background-color: var(--cook-bg-card);
+    border-color: var(--cook-border-active);
     box-shadow: 0 0 10px rgba(255, 209, 128, 0.2);
 }
 
-.method-name {
+.cooking-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #ffccbc;
+    color: var(--cook-text-label);
 }
 
-.method-details {
+.cooking-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--cook-text-dim);
 }

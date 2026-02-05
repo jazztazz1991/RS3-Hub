@@ -1,33 +1,55 @@
 .farming-calculator {
+    /* Variables */
+    --farm-text-main: #e0e0e0;
+    --farm-text-heading: #2ecc71; /* Green */
+    --farm-text-label: #bdc3c7;
+    --farm-text-mode: #95a5a6;
+    --farm-text-helper: #7f8c8d;
+    --farm-text-dim: rgba(255,255,255,0.6);
+    --farm-text-active: rgba(255,255,255,0.9);
+    
+    --farm-bg-dark: #1a252f;
+    --farm-bg-panel: #2c3e50;
+    --farm-bg-element: #34495e;
+    --farm-bg-hover: #4a627a;
+    --farm-bg-active: #27ae60;
+    --farm-bg-locked: #222;
+    
+    --farm-border-heading: #27ae60;
+    --farm-border-panel: #34495e;
+    --farm-border-hover: #7f8c8d;
+    --farm-border-active: #2ecc71;
+    --farm-border-btn: #4a627a;
+    
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--farm-text-main);
 }
 
 .farming-calculator h2 {
-    color: #2ecc71; /* Green for Farming */
-    border-bottom: 2px solid #27ae60;
+    color: var(--farm-text-heading);
+    border-bottom: 2px solid var(--farm-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .farming-calculator .card {
-    background-color: #2c3e50;
-    border: 1px solid #34495e;
+    background-color: var(--farm-bg-panel);
+    border: 1px solid var(--farm-border-panel);
 }
 
 /* Toggle Buttons - Using a nature theme */
-.mode-toggle {
+.farming-calculator .mode-toggle {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.mode-btn {
+.farming-calculator .mode-btn {
     flex: 1;
     padding: 1rem;
-    background-color: #1a252f;
-    border: 2px solid #34495e;
-    color: #95a5a6;
+    background-color: var(--farm-bg-dark);
+    border: 2px solid var(--farm-bg-element); /* #34495e */
+    color: var(--farm-text-mode);
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
@@ -39,51 +61,51 @@
     gap: 0.5rem;
 }
 
-.mode-btn:hover {
-    background-color: #2c3e50;
-    border-color: #7f8c8d;
+.farming-calculator .mode-btn:hover {
+    background-color: var(--farm-bg-panel);
+    border-color: var(--farm-border-hover);
 }
 
-.mode-btn.active {
-    background-color: #27ae60;
-    border-color: #2ecc71;
+.farming-calculator .mode-btn.active {
+    background-color: var(--farm-bg-active);
+    border-color: var(--farm-border-active);
     color: white;
 }
 
-.mode-btn .emoji {
+.farming-calculator .mode-btn .emoji {
     font-size: 1.5rem;
 }
 
 /* Method Grid Styling */
-.method-btn {
-    background-color: #34495e;
-    border: 1px solid #4a627a;
+.farming-calculator .method-btn {
+    background-color: var(--farm-bg-element);
+    border: 1px solid var(--farm-border-btn);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #bdc3c7;
+    color: var(--farm-text-label);
 }
 
-.method-btn:hover {
-    background-color: #4a627a;
+.farming-calculator .method-btn:hover {
+    background-color: var(--farm-bg-hover);
 }
 
-.method-btn.active {
-    background-color: #27ae60; 
-    border-color: #2ecc71;
+.farming-calculator .method-btn.active {
+    background-color: var(--farm-bg-active);
+    border-color: var(--farm-border-active);
     color: white;
 }
 
-.method-btn.locked {
+.farming-calculator .method-btn.locked {
     opacity: 0.5;
-    background-color: #222;
+    background-color: var(--farm-bg-locked);
 }
 
-.calc-layout {
+.farming-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -94,93 +116,100 @@
     }
 }
 
-.input-group {
+.farming-calculator .calc-inputs,
+.farming-calculator .calc-methods,
+.farming-calculator .calc-results {
+    background-color: var(--farm-bg-panel);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--farm-border-panel);
+}
+
+.farming-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.farming-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #bdc3c7;
+    color: var(--farm-text-label);
 }
 
-.input-group input, .category-select {
+.farming-calculator .input-group input, .farming-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #34495e;
+    background-color: var(--farm-bg-dark);
+    border: 1px solid var(--farm-bg-element);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
-.helper-text {
+.farming-calculator .helper-text {
     display: block;
     font-size: 0.8rem;
-    color: #7f8c8d;
+    color: var(--farm-text-helper);
     margin-top: 0.3rem;
     text-align: right;
 }
 
-.methods-header {
+.farming-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.category-select {
+.farming-calculator .category-select {
     width: auto;
     padding: 0.5rem;
 }
 
-.methods-grid {
+.farming-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-name {
+.farming-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
 }
 
-.method-details {
+.farming-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--farm-text-dim);
 }
 
-.method-btn.active .method-details {
-    color: rgba(255,255,255,0.9);
+.farming-calculator .method-btn.active .method-details {
+    color: var(--farm-text-active);
 }
 
-.result-main {
+.farming-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.farming-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 /* Specific color for count */
-.action-count .number {
+.farming-calculator .action-count .number {
     display: block;
     font-size: 2rem;
     font-weight: bold;
-    color: #2ecc71;
+    color: var(--farm-text-heading);
 }
 
-.result-details p {
+.farming-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #34495e;
+    border-bottom: 1px solid var(--farm-bg-element);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
 }

@@ -1,48 +1,70 @@
 .firemaking-calculator {
+    /* Variables */
+    --fire-text-main: #e0e0e0;
+    --fire-text-heading: #ffab91;
+    --fire-text-label: #ffccbc;
+    --fire-text-xp: #ffd180;
+    --fire-text-number: #ff7043;
+    --fire-text-checkbox: #bdc3c7;
+    --fire-text-dim: rgba(255,255,255,0.6);
+    
+    --fire-bg-dark: #1a252f;
+    --fire-bg-card: #2b0c03;
+    --fire-bg-btn: #1a252f;
+    --fire-bg-hover: #e64a19;
+    
+    --fire-border-heading: #d84315;
+    --fire-border-accent: #d84315;
+    --fire-border-input: #d84315;
+    --fire-border-active: #ffd180;
+    --fire-border-list: #e64a19;
+    
+    --fire-accent-primary: #d84315;
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--fire-text-main);
 }
 
 .firemaking-calculator h2 {
-    color: #ffab91; /* Light Orange/Red */
-    border-bottom: 2px solid #d84315;
+    color: var(--fire-text-heading);
+    border-bottom: 2px solid var(--fire-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 /* Modifiers */
-.modifiers {
+.firemaking-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--fire-bg-dark);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #d84315;
+    border-left: 4px solid var(--fire-border-accent);
 }
 
-.checkbox-container {
+.firemaking-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--fire-text-checkbox);
 }
 
-.checkbox-container input {
+.firemaking-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    accent-color: #d84315;
+    accent-color: var(--fire-accent-primary);
 }
 
 /* Layout */
-.calc-layout {
+.firemaking-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -53,121 +75,128 @@
     }
 }
 
-.input-group {
+.firemaking-calculator .calc-inputs,
+.firemaking-calculator .calc-methods,
+.firemaking-calculator .calc-results {
+    background-color: var(--fire-bg-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--fire-border-input);
+}
+
+.firemaking-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.firemaking-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #ffccbc;
+    color: var(--fire-text-label); /* #ffccbc */
 }
 
-.input-group input, .category-select {
+.firemaking-calculator .input-group input, .firemaking-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #d84315;
+    background-color: var(--fire-bg-dark);
+    border: 1px solid var(--fire-border-input);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
 /* Selected Method Card - Fire Theme */
-.selected-method-card {
+.firemaking-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #bf360c;
+    background-color: var(--fire-bg-card);
     border-radius: 8px;
-    border: 1px solid #d84315;
+    border: 1px solid var(--fire-border-input);
 }
 
-.selected-method-card h3 {
-    color: #ffab91;
+.firemaking-calculator .selected-method-card h3 {
+    color: var(--fire-text-heading);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.firemaking-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffd180;
+    color: var(--fire-text-xp);
 }
 
 /* Results */
-.result-main {
+.firemaking-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.firemaking-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.firemaking-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ff7043;
+    color: var(--fire-text-number);
 }
 
-.result-details p {
+.firemaking-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #e64a19;
+    border-bottom: 1px solid var(--fire-border-list);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #ffab91;
+    color: var(--fire-text-heading);
 }
 
 /* Methods List */
-.methods-header {
+.firemaking-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.firemaking-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #d84315;
+.firemaking-calculator .method-btn {
+    background-color: var(--fire-bg-btn);
+    border: 1px solid var(--fire-border-input);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #ffccbc;
+    color: var(--fire-text-label);
 }
 
-.method-btn:hover {
-    background-color: #e64a19;
-    border-color: #ffab91;
+.firemaking-calculator .method-btn:hover {
+    background-color: var(--fire-bg-hover);
+    border-color: var(--fire-text-heading);
 }
 
-.method-btn.active {
-    background-color: #bf360c;
-    border-color: #ffd180;
+.firemaking-calculator .method-btn.active {
+    background-color: var(--fire-bg-card);
+    border-color: var(--fire-border-active);
     box-shadow: 0 0 10px rgba(255, 209, 128, 0.2);
 }
 
-.method-name {
+.firemaking-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #ffccbc;
+    color: var(--fire-text-label);
 }
 
-.method-details {
+.firemaking-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--fire-text-dim);
 }

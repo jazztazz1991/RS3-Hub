@@ -1,61 +1,88 @@
 .summoning-calculator {
+    --summ-text-main: #e0e0e0;
+    --summ-text-heading: #ffd700;
+    --summ-text-label: #bdc3c7;
+    --summ-text-input: white;
+    --summ-text-detail: #bdc3c7;
+    --summ-text-method-detail: rgba(255, 255, 255, 0.7);
+    --summ-text-accent: #00bcd4;
+    --summ-text-accent-light: #b2ebf2;
+    --summ-text-accent-bright: #4dd0e1;
+    --summ-text-gold: #ffd700;
+    
+    --summ-bg-dark: #1a252f;
+    --summ-bg-card: #2c3e50;
+    --summ-bg-method: #34495e;
+    --summ-bg-selected: #ffd700;
+
+    --summ-border-main: #34495e;
+    --summ-border-accent: #006064;
+    --summ-border-heading: #00bcd4;
+    --summ-border-active: #fbc02d;
+
+    /* Charm Colors */
+    --summ-charm-gold: #ffd700;
+    --summ-charm-green: #69f0ae;
+    --summ-charm-crimson: #ff5252;
+    --summ-charm-blue: #448aff;
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--summ-text-main);
 }
 
 .summoning-calculator h2 {
-    color: #ffd700; /* Gold */
-    border-bottom: 2px solid #00bcd4; /* Cyan/Spirit Blue */
+    color: var(--summ-text-heading);
+    border-bottom: 2px solid var(--summ-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .summoning-calculator .card {
-    background-color: #2c3e50;
-    border: 1px solid #34495e;
+    background-color: var(--summ-bg-card);
+    border: 1px solid var(--summ-border-main);
 }
 
 /* Modifiers Section */
-.modifiers {
+.summoning-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--summ-bg-dark);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #00bcd4;
+    border-left: 4px solid var(--summ-border-heading);
 }
 
-.checkbox-container {
+.summoning-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--summ-text-label);
 }
 
-.checkbox-container input {
+.summoning-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
 }
 
 /* Toggle Buttons */
-.mode-toggle {
+.summoning-calculator .mode-toggle {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.mode-btn {
+.summoning-calculator .mode-btn {
     flex: 1;
     padding: 1rem;
-    background-color: #1a252f;
-    border: 2px solid #00acc1;
-    color: #b2ebf2; /* Light Cyan */
+    background-color: var(--summ-bg-dark);
+    border: 2px solid var(--summ-text-accent);
+    color: var(--summ-text-accent-light);
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
@@ -67,27 +94,36 @@
     gap: 0.5rem;
 }
 
-.mode-btn:hover {
-    background-color: #2c3e50;
-    border-color: #ffd700;
+.summoning-calculator .mode-btn:hover {
+    background-color: var(--summ-bg-card);
+    border-color: var(--summ-text-gold);
 }
 
-.mode-btn.active {
-    background-color: #00bcd4;
-    border-color: #ffd700;
-    color: #2c3e50;
+.summoning-calculator .mode-btn.active {
+    background-color: var(--summ-text-accent);
+    border-color: var(--summ-text-gold);
+    color: var(--summ-bg-card);
 }
 
-.mode-btn .emoji {
+.summoning-calculator .mode-btn .emoji {
     font-size: 1.5rem;
 }
 
 /* Layout */
-.calc-layout {
+.summoning-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
+}
+
+.summoning-calculator .calc-inputs,
+.summoning-calculator .calc-methods,
+.summoning-calculator .calc-results {
+    background-color: var(--summ-bg-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--summ-border-main);
 }
 
 @media (max-width: 1024px) {
@@ -96,166 +132,177 @@
     }
 }
 
-.input-group {
+.summoning-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.summoning-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #bdc3c7;
+    color: var(--summ-text-label);
 }
 
-.input-group input, .category-select {
+.summoning-calculator .input-group input, .summoning-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #4e342e;
+    background-color: var(--summ-bg-dark);
+    border: 1px solid var(--summ-text-accent); /* Changed from 4e342e for visibility based on context */
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
 /* Selected Method Card - Spirit Theme */
-.selected-method-card {
+.summoning-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #006064; /* Dark Cyan/Teal */
+    background-color: var(--summ-border-accent);
     border-radius: 8px;
-    border: 1px solid #ffd700;
+    border: 1px solid var(--summ-text-gold);
 }
 
-.selected-method-card h3 {
-    color: #ffd700;
+.summoning-calculator .selected-method-card h3 {
+    color: var(--summ-text-gold);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.summoning-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #4dd0e1; /* Bright Cyan */
+    color: var(--summ-text-accent-bright);
 }
 
-.materials-req {
+.summoning-calculator .materials-req {
     margin-top: 1rem;
     padding-top: 0.5rem;
-    border-top: 1px dashed #ffd700;
+    border-top: 1px dashed var(--summ-text-gold);
     font-size: 0.9rem;
     color: #e0f7fa;
 }
 
-.materials-req p {
+.summoning-calculator .materials-req p {
     margin: 0.2rem 0;
 }
 
 /* Charm Colors */
-.charm-gold { color: #ffd700; font-weight: bold; }
-.charm-green { color: #69f0ae; font-weight: bold; }
-.charm-crimson { color: #ff5252; font-weight: bold; }
-.charm-blue { color: #448aff; font-weight: bold; }
+.charm-gold { color: var(--summ-charm-gold); font-weight: bold; }
+.charm-green { color: var(--summ-charm-green); font-weight: bold; }
+.charm-crimson { color: var(--summ-charm-crimson); font-weight: bold; }
+.charm-blue { color: var(--summ-charm-blue); font-weight: bold; }
 
-.charm-text-gold { color: #ffd700; }
-.charm-text-green { color: #69f0ae; }
-.charm-text-crimson { color: #ff5252; }
-.charm-text-blue { color: #448aff; }
-
+.charm-text-gold { color: var(--summ-charm-gold); }
+.charm-text-green { color: var(--summ-charm-green); }
+.charm-text-crimson { color: var(--summ-charm-crimson); }
+.charm-text-blue { color: var(--summ-charm-blue); }
 
 /* Results */
-.result-main {
+.summoning-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
-    background-color: #1a252f;
+    background-color: var(--summ-bg-dark);
     padding: 1rem;
     border-radius: 8px;
-    border-bottom: 4px solid #ffd700;
+    border-bottom: 4px solid var(--summ-text-gold);
 }
 
-.action-icon {
+.summoning-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.summoning-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffd700;
+    color: var(--summ-text-gold);
 }
 
-.result-details p {
+.summoning-calculator .result-details p {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #00838f;
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #bdc3c7;
+    color: var(--summ-text-detail);
 }
 
 /* Grid */
-.methods-header {
+.summoning-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.category-select {
+.summoning-calculator .category-select {
     width: auto;
     padding: 0.5rem;
 }
 
-.methods-grid {
+.summoning-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #34495e;
+.summoning-calculator .method-btn {
+    background-color: var(--summ-bg-method);
     border: 1px solid #455a64;
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #bdc3c7;
+    color: var(--summ-text-detail);
 }
 
-.method-btn:hover {
+.summoning-calculator .method-btn:hover {
     background-color: #455a64;
-    border-color: #ffd700;
+    border-color: var(--summ-text-gold);
 }
 
-.method-btn.active {
-    background-color: #ffd700;
-    border-color: #fbc02d;
+.summoning-calculator .method-btn.active {
+    background-color: var(--summ-bg-selected);
+    border-color: var(--summ-border-active);
     color: #262626; /* Dark text on gold */
+}
+
+.summoning-calculator .method-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.summoning-calculator .method-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--summ-text-method-detail);
+}
+
+.summoning-calculator .method-btn.active .method-details {
+    color: rgba(0,0,0,0.7);
 }
 
 .method-btn.active .charm-text-gold,
 .method-btn.active .charm-text-green,
 .method-btn.active .charm-text-crimson,
-.method-btn.active .charm-text-blue {
+.summoning-calculator .method-btn.active .charm-text-blue {
     color: #262626; /* Ensure charm text is readable on gold */
     font-weight: bold;
 }
 
-
-.method-name {
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-}
-
-.method-details {
+/* Input Row for Levels/XP */
+.summoning-calculator .input-row-flex {
     display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.7);
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.method-btn.active .method-details {
-    color: rgba(0,0,0,0.7);
+.summoning-calculator .input-row-flex .input-group {
+    flex: 1;
+}
+
+.summoning-calculator .input-row-flex .input-group input {
+    width: 100%;
 }

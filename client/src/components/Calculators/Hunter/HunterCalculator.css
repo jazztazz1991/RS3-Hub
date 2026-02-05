@@ -1,62 +1,87 @@
 .hunter-calculator {
+    /* Variables */
+    --hunter-text-main: #e0e0e0;
+    --hunter-text-heading: #a1887f;
+    --hunter-text-muted: #bdc3c7;
+    --hunter-text-label: #d7ccc8;
+    --hunter-text-mode: #bcaaa4;
+    --hunter-text-xp: #8bc34a;
+    --hunter-text-highlight: #ffb74d;
+    --hunter-text-accent-light: #ffecb3;
+    --hunter-text-dim: rgba(255,255,255,0.6);
+    
+    --hunter-bg-dark: #1a252f;
+    --hunter-bg-panel: #2c3e50;
+    --hunter-bg-card: #3e2723;
+    --hunter-bg-hover: #4e342e;
+
+    --hunter-border-heading: #5d4037;
+    --hunter-border-panel: #34495e;
+    --hunter-border-input: #4e342e;
+    --hunter-border-accent: #795548;
+    --hunter-border-active: #8bc34a;
+    --hunter-border-hover: #8d6e63;
+    
+    --hunter-accent: #8bc34a;
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--hunter-text-main);
 }
 
 .hunter-calculator h2 {
-    color: #a1887f; /* Lighter Brown */
-    border-bottom: 2px solid #5d4037; /* Dark Brown */
+    color: var(--hunter-text-heading);
+    border-bottom: 2px solid var(--hunter-border-heading); 
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .hunter-calculator .card {
-    background-color: #2c3e50;
-    border: 1px solid #34495e;
+    background-color: var(--hunter-bg-panel);
+    border: 1px solid var(--hunter-border-panel);
 }
 
 /* Modifiers Section */
-.modifiers {
+.hunter-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--hunter-bg-dark);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #795548;
+    border-left: 4px solid var(--hunter-border-accent);
 }
 
-.checkbox-container {
+.hunter-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--hunter-text-muted);
 }
 
-.checkbox-container input {
+.hunter-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    accent-color: #8bc34a; /* Green checkbox */
+    accent-color: var(--hunter-accent);
 }
 
 /* Toggle Buttons */
-.mode-toggle {
+.hunter-calculator .mode-toggle {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.mode-btn {
+.hunter-calculator .mode-btn {
     flex: 1;
     padding: 1rem;
-    background-color: #1a252f;
-    border: 2px solid #3e2723;
-    color: #bcaaa4;
+    background-color: var(--hunter-bg-dark);
+    border: 2px solid var(--hunter-bg-card);
+    color: var(--hunter-text-mode);
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
@@ -68,161 +93,173 @@
     gap: 0.5rem;
 }
 
-.mode-btn:hover {
-    background-color: #2c3e50;
-    border-color: #795548;
+.hunter-calculator .mode-btn:hover {
+    background-color: var(--hunter-bg-panel);
+    border-color: var(--hunter-border-accent);
 }
 
-.mode-btn.active {
-    background-color: #795548;
-    border-color: #a1887f;
+.hunter-calculator .mode-btn.active {
+    background-color: var(--hunter-border-accent);
+    border-color: var(--hunter-text-heading);
     color: #ffffff;
 }
 
-.mode-btn .emoji {
+.hunter-calculator .mode-btn .emoji {
     font-size: 1.5rem;
 }
 
 /* Layout */
-.calc-layout {
+.hunter-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: 280px 1fr 280px; 
     gap: 1.5rem;
     max-width: 100%;
+}
+
+.hunter-calculator .calc-inputs,
+.hunter-calculator .calc-methods,
+.hunter-calculator .calc-results {
+    background-color: var(--hunter-bg-panel);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--hunter-border-panel);
 }
 
 @media (max-width: 1024px) {
     .calc-layout {
         grid-template-columns: 1fr;
     }
+
+    .calc-inputs,
+    .calc-methods,
+    .calc-results {
+    }
 }
 
-.input-group {
+.hunter-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.hunter-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #d7ccc8;
+    color: var(--hunter-text-label);
 }
 
-.input-group input, .category-select {
+.hunter-calculator .input-group input, .hunter-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #4e342e;
+    background-color: var(--hunter-bg-dark);
+    border: 1px solid var(--hunter-border-input);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
 /* Selected Method Card - Jungle Theme */
-.selected-method-card {
+.hunter-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #3e2723;
+    background-color: var(--hunter-bg-card);
     border-radius: 8px;
-    border: 1px solid #5d4037;
+    border: 1px solid var(--hunter-border-heading);
 }
 
-.selected-method-card h3 {
-    color: #ffecb3;
+.hunter-calculator .selected-method-card h3 {
+    color: var(--hunter-text-accent-light);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.hunter-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #8bc34a; /* Light Green */
+    color: var(--hunter-text-xp); 
 }
 
-.highlight {
-    color: #ffb74d;
+.hunter-calculator .highlight {
+    color: var(--hunter-text-highlight);
     margin-left: 5px;
 }
 
 /* Results */
-.result-main {
+.hunter-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.hunter-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.hunter-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffb74d; /* Orange accent */
+    color: var(--hunter-text-highlight);
 }
 
-.result-details p {
+.hunter-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #4e342e;
+    border-bottom: 1px solid var(--hunter-border-input);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #d7ccc8;
+    color: var(--hunter-text-label);
 }
 
 /* Grid */
-.methods-header {
+.hunter-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.category-select {
+.hunter-calculator .category-select {
     width: auto;
     padding: 0.5rem;
 }
 
-.methods-grid {
+.hunter-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #3e2723; /* Dark Brown BG */
-    border: 1px solid #5d4037;
+.hunter-calculator .method-btn {
+    background-color: var(--hunter-bg-card);
+    border: 1px solid var(--hunter-border-heading);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #bcaaa4;
+    color: var(--hunter-text-mode);
 }
 
-.method-btn:hover {
-    background-color: #4e342e;
-    border-color: #8d6e63;
+.hunter-calculator .method-btn:hover {
+    background-color: var(--hunter-bg-hover);
+    border-color: var(--hunter-border-hover);
 }
 
-.method-btn.active {
-    background-color: #5d4037;
-    border-color: #8bc34a; /* Green border for active */
+.hunter-calculator .method-btn.active {
+    background-color: var(--hunter-border-heading);
+    border-color: var(--hunter-border-active);
     color: white;
     box-shadow: 0 0 10px rgba(139, 195, 74, 0.2);
 }
 
-.method-name {
+.hunter-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #ffecb3;
+    color: var(--hunter-text-accent-light);
 }
 
-.method-details {
+.hunter-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--hunter-text-dim);
 }

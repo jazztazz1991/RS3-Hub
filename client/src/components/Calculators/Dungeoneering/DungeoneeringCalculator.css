@@ -1,62 +1,85 @@
 .dungeoneering-calculator {
+    /* Variables */
+    --dung-text-main: #bdbdbd; /* Light Grey */
+    --dung-text-heading: #607d8b; /* Blue Grey */
+    --dung-text-label: #b0bec5;
+    --dung-text-detail: #cfd8dc;
+    --dung-text-mode: #90a4ae;
+    --dung-text-xp: #81d4fa; /* Light Blue */
+    --dung-text-highlight: #ffb74d;
+    --dung-text-dim: rgba(255,255,255,0.6);
+    
+    --dung-bg-dark: #212121; /* Very Dark Grey */
+    --dung-bg-panel: #263238; /* Dark Blue Grey */
+    --dung-bg-btn: #263238;
+    --dung-bg-hover: #37474f;
+    --dung-bg-active: #546e7a;
+    
+    --dung-border-heading: #455a64;
+    --dung-border-input: #424242;
+    --dung-border-accent: #78909c;
+    --dung-border-btn: #37474f;
+    --dung-border-highlight: #81d4fa;
+    --dung-border-result: #607d8b;
+
     padding: 1rem;
-    color: #bdbdbd; /* Light Grey */
+    color: var(--dung-text-main);
 }
 
 .dungeoneering-calculator h2 {
-    color: #607d8b; /* Blue Grey */
-    border-bottom: 2px solid #455a64;
+    color: var(--dung-text-heading);
+    border-bottom: 2px solid var(--dung-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 .dungeoneering-calculator .card {
-    background-color: #212121; /* Very Dark Grey */
-    border: 1px solid #424242;
+    background-color: var(--dung-bg-dark);
+    border: 1px solid var(--dung-border-input);
 }
 
 /* Modifiers Section */
-.modifiers {
+.dungeoneering-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #263238; /* Dark Blue Grey */
+    background-color: var(--dung-bg-panel);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #78909c;
+    border-left: 4px solid var(--dung-border-accent);
 }
 
-.checkbox-container {
+.dungeoneering-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #cfd8dc;
+    color: var(--dung-text-detail);
 }
 
-.checkbox-container input {
+.dungeoneering-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    accent-color: #607d8b;
+    accent-color: var(--dung-text-heading);
 }
 
 /* Toggle Buttons */
-.mode-toggle {
+.dungeoneering-calculator .mode-toggle {
     display: flex;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.mode-btn {
+.dungeoneering-calculator .mode-btn {
     flex: 1;
     padding: 1rem;
-    background-color: #212121;
-    border: 2px solid #37474f;
-    color: #90a4ae;
+    background-color: var(--dung-bg-dark);
+    border: 2px solid var(--dung-border-btn);
+    color: var(--dung-text-mode);
     cursor: pointer;
     font-weight: bold;
     border-radius: 8px;
@@ -68,27 +91,36 @@
     gap: 0.5rem;
 }
 
-.mode-btn:hover {
-    background-color: #37474f;
-    border-color: #78909c;
+.dungeoneering-calculator .mode-btn:hover {
+    background-color: var(--dung-bg-hover);
+    border-color: var(--dung-border-accent);
 }
 
-.mode-btn.active {
-    background-color: #455a64;
-    border-color: #b0bec5;
+.dungeoneering-calculator .mode-btn.active {
+    background-color: var(--dung-border-heading); /* #455a64 */
+    border-color: var(--dung-text-label); /* #b0bec5 */
     color: #ffffff;
 }
 
-.mode-btn .emoji {
+.dungeoneering-calculator .mode-btn .emoji {
     font-size: 1.5rem;
 }
 
 /* Layout */
-.calc-layout {
+.dungeoneering-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: 280px 1fr 280px; /* Inputs | Methods | Results */    
     gap: 1.5rem;
     max-width: 100%;
+}
+
+.dungeoneering-calculator .calc-inputs,
+.dungeoneering-calculator .calc-methods,
+.dungeoneering-calculator .calc-results {
+    background-color: var(--dung-bg-panel);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--dung-border-heading);
 }
 
 @media (max-width: 1024px) {
@@ -97,141 +129,164 @@
     }
 }
 
-.input-group {
+/* Input Row for Levels/XP */
+.dungeoneering-calculator .input-row-flex {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dungeoneering-calculator .input-row-flex .input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.dungeoneering-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.dungeoneering-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #b0bec5;
+    color: var(--dung-text-label);
 }
 
-.input-group input, .category-select {
+.dungeoneering-calculator .input-group input, .dungeoneering-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #212121;
-    border: 1px solid #424242;
+    background-color: var(--dung-bg-dark);
+    border: 1px solid var(--dung-border-input);
     color: #eceff1;
     border-radius: 4px;
     font-size: 1rem;
 }
 
-/* Selected Method Card - Stone/Dungeon Theme */
-.selected-method-card {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: #263238;
-    border-radius: 8px;
-    border: 1px solid #546e7a;
-}
-
-.selected-method-card h3 {
-    color: #eceff1;
-    margin-top: 0;
-}
-
-.method-xp-actual {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #81d4fa; /* Light Blue */
-}
-
-.method-detail {
-    font-style: italic;
-    color: #b0bec5;
-    margin-top: 0.5rem;
-}
-
-.highlight {
-    color: #ffb74d;
-    margin-left: 5px;
-}
-
-/* Results */
-.result-main {
-    text-align: center;
-    margin-bottom: 2rem;
-    background-color: #212121;
-    padding: 1rem;
-    border-radius: 8px;
-    border-bottom: 4px solid #607d8b;
-}
-
-.action-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.action-count .number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #cfd8dc;
-}
-
-.result-details p {
+/* Column Specifics */
+.dungeoneering-calculator .calc-methods {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #37474f;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: #90a4ae;
+    flex-direction: column;
 }
 
-/* Grid */
-.methods-header {
+.dungeoneering-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    gap: 1rem;
 }
 
-.category-select {
+.dungeoneering-calculator .methods-header input {
+   width: 100%;
+}
+
+.dungeoneering-calculator .category-select {
     width: auto;
     padding: 0.5rem;
 }
 
-.methods-grid {
+.dungeoneering-calculator .methods-grid {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #263238;
-    border: 1px solid #37474f;
+/* Selected Method Card - Stone/Dungeon Theme */
+.dungeoneering-calculator .selected-method-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--dung-bg-panel);
+    border-radius: 8px;
+    border: 1px solid var(--dung-bg-active); /* #546e7a */
+}
+
+.dungeoneering-calculator .selected-method-card h3 {
+    color: #eceff1;
+    margin-top: 0;
+}
+
+.dungeoneering-calculator .method-xp-actual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--dung-text-xp);
+}
+
+.dungeoneering-calculator .method-detail {
+    font-style: italic;
+    color: var(--dung-text-label);
+    margin-top: 0.5rem;
+}
+
+.dungeoneering-calculator .highlight {
+    color: var(--dung-text-highlight);
+    margin-left: 5px;
+}
+
+/* Results */
+.dungeoneering-calculator .result-main {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: var(--dung-bg-dark);
+    padding: 1rem;
+    border-radius: 8px;
+    border-bottom: 4px solid var(--dung-text-heading);
+}
+
+.dungeoneering-calculator .action-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.dungeoneering-calculator .action-count .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dung-text-detail);
+}
+
+.dungeoneering-calculator .result-details p {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--dung-border-btn);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dung-text-mode);
+}
+
+/* Grid elements handled in Column Specifics above */
+ 
+.dungeoneering-calculator .method-btn {
+    background-color: var(--dung-bg-panel);
+    border: 1px solid var(--dung-border-btn);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #cfd8dc;
+    color: var(--dung-text-detail);
 }
 
-.method-btn:hover {
-    background-color: #37474f;
-    border-color: #78909c;
+.dungeoneering-calculator .method-btn:hover {
+    background-color: var(--dung-bg-hover);
+    border-color: var(--dung-border-accent);
 }
 
-.method-btn.active {
-    background-color: #546e7a;
-    border-color: #81d4fa;
+.dungeoneering-calculator .method-btn.active {
+    background-color: var(--dung-bg-active);
+    border-color: var(--dung-border-highlight);
     color: #ffffff;
     box-shadow: 0 0 10px rgba(129, 212, 250, 0.2);
 }
 
-.method-name {
+.dungeoneering-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
 }
 
-.method-details {
+.dungeoneering-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--dung-text-dim);
 }

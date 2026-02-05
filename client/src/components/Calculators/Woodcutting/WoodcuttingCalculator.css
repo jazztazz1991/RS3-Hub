@@ -1,145 +1,193 @@
 .woodcutting-calculator {
+    /* Theme Variables */
+    --wc-text-main: #e0e0e0;
+    --wc-text-heading: #81c784;
+    --wc-text-label: #a5d6a7;
+    --wc-text-muted: #bdc3c7;
+    --wc-text-dim: rgba(255,255,255,0.6);
+    --wc-text-highlight: #69f0ae;
+    --wc-text-list: #c8e6c9;
+    --wc-text-number: #66bb6a;
+
+    /* Backgrounds - Brightened slightly for contrast against #242424 body */
+    --wc-bg-dark: #082c0f; 
+    --wc-bg-panel: #132e16; 
+    --wc-bg-active: #2e5c35;
+
+    --wc-border-heading: #2e7d32;
+    --wc-border-accent: #4caf50;
+    --wc-border-panel: #2e7d32;
+    --wc-border-input: #4caf50;
+    --wc-border-list: #33691e;
+
+    --wc-accent-primary: #4caf50;
+    --wc-accent-secondary: #2e7d32;
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--wc-text-main);
 }
 
 .woodcutting-calculator h2 {
-    color: #81c784; /* Light Green */
-    border-bottom: 2px solid #2e7d32; /* Green */
+    color: var(--wc-text-heading);
+    border-bottom: 2px solid var(--wc-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 /* Modifiers */
-.modifiers {
+.woodcutting-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--wc-bg-dark);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #4caf50;
+    border-left: 4px solid var(--wc-accent-primary);
 }
 
-.checkbox-container {
+.woodcutting-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--wc-text-muted);
 }
 
-.checkbox-container input {
+.woodcutting-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    accent-color: #4caf50;
+    accent-color: var(--wc-accent-primary);
 }
 
 /* Layout */
-.calc-layout {
+.woodcutting-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: 280px 1fr 280px; 
     gap: 1.5rem;
     max-width: 100%;
+}
+
+.woodcutting-calculator .calc-inputs,
+.woodcutting-calculator .calc-methods,
+.woodcutting-calculator .calc-results {
+    background-color: var(--wc-bg-panel);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--wc-border-panel);
 }
 
 @media (max-width: 1024px) {
     .calc-layout {
         grid-template-columns: 1fr;
     }
+
+    .calc-inputs,
+    .calc-methods,
+    .calc-results {
+    }
 }
 
-.input-group {
+/* Input Row for Levels/XP */
+.woodcutting-calculator .input-row-flex {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.woodcutting-calculator .input-row-flex .input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.woodcutting-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.woodcutting-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #a5d6a7;
+    color: var(--wc-text-label);
 }
 
-.input-group input, .category-select {
+.woodcutting-calculator .input-group input, .woodcutting-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #2e7d32;
+    background-color: var(--wc-bg-dark);
+    border: 1px solid var(--wc-border-input);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
 /* Selected Method Card - Forest Theme */
-.selected-method-card {
+.woodcutting-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #1b5e20;
+    background-color: var(--wc-bg-active);
     border-radius: 8px;
-    border: 1px solid #2e7d32;
+    border: 1px solid var(--wc-border-input);
 }
 
-.selected-method-card h3 {
-    color: #a5d6a7;
+.woodcutting-calculator .selected-method-card h3 {
+    color: var(--wc-text-label);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.woodcutting-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #69f0ae; /* Bright Green */
+    color: var(--wc-text-highlight);
 }
 
 /* Results */
-.result-main {
+.woodcutting-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.woodcutting-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.woodcutting-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #66bb6a; /* Green accent */
+    color: var(--wc-text-number);
 }
 
-.result-details p {
+.woodcutting-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #33691e;
+    border-bottom: 1px solid var(--wc-border-list);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #c8e6c9;
+    color: var(--wc-text-list);
 }
 
 /* Methods List */
-.methods-header {
+.woodcutting-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.woodcutting-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #2e7d32;
+.woodcutting-calculator .method-btn {
+    background-color: var(--wc-bg-dark);
+    border: 1px solid var(--wc-border-input);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
@@ -148,25 +196,26 @@
     color: #e8f5e9;
 }
 
-.method-btn:hover {
-    background-color: #2e7d32;
+.woodcutting-calculator .method-btn:hover {
+    background-color: var(--wc-accent-secondary);
 }
 
-.method-btn.active {
-    background-color: #1b5e20;
-    border-color: #69f0ae;
+.woodcutting-calculator .method-btn.active {
+    background-color: var(--wc-bg-active);
+    border-color: var(--wc-text-highlight);
     box-shadow: 0 0 10px rgba(105, 240, 174, 0.2);
 }
 
-.method-name {
+.woodcutting-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #a5d6a7;
+    color: var(--wc-text-label);
 }
 
-.method-details {
+.woodcutting-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--wc-text-dim);
 }
+

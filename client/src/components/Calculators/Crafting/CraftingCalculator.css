@@ -1,18 +1,36 @@
 .crafting-calculator {
+    /* Variables */
+    --craft-text-main: #e0e0e0;
+    --craft-text-heading: #bcaaa4;
+    --craft-text-label: #d7ccc8; /* Also used for method text */
+    --craft-text-xp: #ffb74d;
+    --craft-text-number: #8d6e63;
+    --craft-text-dim: rgba(255,255,255,0.6);
+    
+    --craft-bg-dark: #1a252f;
+    --craft-bg-card: #4e342e;
+    --craft-bg-active: #5d4037;
+    --craft-bg-hover: #4e342e;
+    
+    --craft-border-heading: #795548;
+    --craft-border-input: #795548;
+    --craft-border-active: #ffb74d;
+    --craft-border-list: #5d4037;
+    
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--craft-text-main);
 }
 
 .crafting-calculator h2 {
-    color: #bcaaa4;
-    border-bottom: 2px solid #795548;
+    color: var(--craft-text-heading);
+    border-bottom: 2px solid var(--craft-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
-.calc-layout {
+.crafting-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -23,117 +41,131 @@
     }
 }
 
-.input-group {
+.crafting-calculator .calc-inputs,
+.crafting-calculator .calc-methods,
+.crafting-calculator .calc-results {
+    background-color: var(--craft-bg-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--craft-border-input);
+}
+
+.crafting-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.crafting-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #d7ccc8;
+    color: var(--craft-text-label);
 }
 
-.input-group input, .category-select {
+.crafting-calculator .input-group input, .crafting-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #795548;
+    background-color: var(--craft-bg-dark);
+    border: 1px solid var(--craft-border-input);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
 }
 
-.selected-method-card {
+.crafting-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #4e342e;
+    background-color: var(--craft-bg-card);
     border-radius: 8px;
-    border: 1px solid #795548;
+    border: 1px solid var(--craft-border-input);
 }
 
-.selected-method-card h3 {
-    color: #bcaaa4;
+.crafting-calculator .selected-method-card h3 {
+    color: var(--craft-text-heading);
     margin-top: 0;
 }
 
-.method-xp-actual {
+.crafting-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ffb74d;
+    color: var(--craft-text-xp);
 }
 
-.result-main {
+.crafting-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.crafting-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.crafting-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #8d6e63;
+    color: var(--craft-text-number);
 }
 
-.result-details p {
+.crafting-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #5d4037;
+    border-bottom: 1px solid var(--craft-border-list);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #d7ccc8;
+    color: var(--craft-text-label);
 }
 
-.methods-header {
+.crafting-calculator .methods-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 10px;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.crafting-calculator .methods-header input {
+    width: 70%;
+}
+
+.crafting-calculator .methods-header .category-select {
+    width: 30%;
+}
+
+.crafting-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #795548;
+.crafting-calculator .method-btn {
+    background-color: var(--craft-bg-dark);
+    border: 1px solid var(--craft-border-input);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #d7ccc8;
+    color: var(--craft-text-label);
 }
 
-.method-btn:hover {
-    background-color: #4e342e;
+.crafting-calculator .method-btn:hover {
+    background-color: var(--craft-bg-hover);
 }
 
-.method-btn.active {
-    background-color: #5d4037;
-    border-color: #ffb74d;
+.crafting-calculator .method-btn.active {
+    background-color: var(--craft-bg-active);
+    border-color: var(--craft-border-active);
     box-shadow: 0 0 10px rgba(255, 183, 77, 0.2);
 }
 
-.method-name {
+.crafting-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #d7ccc8;
+    color: var(--craft-text-label);
 }
 
-.method-details {
+.crafting-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--craft-text-dim);
 }

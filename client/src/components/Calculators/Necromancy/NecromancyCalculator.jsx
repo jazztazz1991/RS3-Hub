@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { necromancyData } from '../../../data/necromancyData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './NecromancyCalculator.css';
 
 const NecromancyCalculator = () => {
-    const { character } = useCharacter();
+    const { characterData } = useCharacter();
     const [currentXp, setCurrentXp] = useState(0);
-    const [targetXp, setTargetXp] = useState(13034431); // 99 default
+    const [currentLevel, setCurrentLevel] = useState(1);
+    const [targetLevel, setTargetLevel] = useState(120);
+    const [targetXp, setTargetXp] = useState(104273167); // 120 default
     const [calcMode, setCalcMode] = useState('rituals'); // 'rituals' | 'combat'
     
     // Modifiers
@@ -21,11 +24,44 @@ const NecromancyCalculator = () => {
 
     // Load character data
     useEffect(() => {
-        if (character?.skills?.Necromancy) {
-            setCurrentXp(character.skills.Necromancy.xp);
-            setTargetXp(character.skills.Necromancy.level < 120 ? 104273167 : 200000000); // 120 Skill
+        if (characterData && characterData.length > 0) {
+            const necroHelper = characterData.find(s => s.name === 'Necromancy');
+            if (necroHelper) {
+                setCurrentXp(necroHelper.xp);
+                setCurrentLevel(necroHelper.level);
+                
+                // Smart target default (Necro goes to 120)
+                const nextTarget = necroHelper.level < 99 ? 99 : 120;
+                setTargetLevel(nextTarget);
+                setTargetXp(getXpAtLevel(nextTarget));
+            }
         }
-    }, [character]);
+    }, [characterData]);
+
+    // Handle XP/Level Changes
+    const handleCurrentLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setCurrentLevel(lvl);
+        setCurrentXp(getXpAtLevel(lvl));
+    };
+
+    const handleCurrentXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setCurrentXp(xp);
+        setCurrentLevel(getLevelAtXp(xp));
+    };
+
+    const handleTargetLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setTargetLevel(lvl);
+        setTargetXp(getXpAtLevel(lvl));
+    };
+
+    const handleTargetXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setTargetXp(xp);
+        setTargetLevel(getLevelAtXp(xp));
+    };
 
     const activeData = necromancyData[calcMode] || [];
 
@@ -132,21 +168,43 @@ const NecromancyCalculator = () => {
             <div className="calc-layout">
                 {/* Left Column: Inputs */}
                 <div className="calc-inputs">
-                    <div className="input-group">
-                        <label>Current XP</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
-                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Current Level</label>
+                            <input 
+                                type="number" 
+                                value={currentLevel} 
+                                onChange={handleCurrentLevelChange} 
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Current XP</label>
+                            <input 
+                                type="number" 
+                                value={currentXp} 
+                                onChange={handleCurrentXpChange} 
+                            />
+                        </div>
                     </div>
-                    <div className="input-group">
-                        <label>Target XP</label>
-                        <input 
-                            type="number" 
-                            value={targetXp} 
-                            onChange={(e) => setTargetXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Target Level</label>
+                            <input 
+                                type="number" 
+                                value={targetLevel} 
+                                onChange={handleTargetLevelChange}
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Target XP</label>
+                            <input 
+                                type="number" 
+                                value={targetXp} 
+                                onChange={handleTargetXpChange} 
+                            />
+                        </div>
                     </div>
                     
                     {selectedMethod && (
@@ -164,41 +222,7 @@ const NecromancyCalculator = () => {
                     )}
                 </div>
 
-                {/* Middle Column: Results */}
-                <div className="calc-results">
-                    <div className="result-main">
-                        <div className="action-icon">
-                            {calcMode === 'rituals' ? '🔮' : '⚔️'}
-                        </div>
-                        <div className="action-count">
-                            <span className="number">
-                                {selectedMethod 
-                                    ? actionsNeeded.toLocaleString() 
-                                    : '---'}
-                            </span>
-                            <span className="label">
-                                {calcMode === 'rituals' ? 'Rituals Needed' : 'Kills Needed'}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="result-details">
-                        <p>
-                            <span>Staying Level:</span>
-                            <span>{character?.skills?.Necromancy?.level || 1}</span>
-                        </p>
-                        <p>
-                            <span>Remaining XP:</span>
-                            <span>{remainingXp.toLocaleString()}</span>
-                        </p>
-                        <p>
-                            <span>Method Rate:</span>
-                            <span>{selectedMethod?.xp} XP</span>
-                        </p>
-                    </div>
-                </div>
-
-                {/* Right Column: List */}
+                {/* Middle Column: List (Methods) */}
                 <div className="calc-methods">
                     <div className="methods-header">
                         <input 
@@ -232,6 +256,40 @@ const NecromancyCalculator = () => {
                                 </div>
                             </button>
                         ))}
+                    </div>
+                </div>
+
+                {/* Right Column: Results */}
+                <div className="calc-results">
+                    <div className="result-main">
+                        <div className="action-icon">
+                            {calcMode === 'rituals' ? '🔮' : '⚔️'}
+                        </div>
+                        <div className="action-count">
+                            <span className="number">
+                                {selectedMethod 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">
+                                {calcMode === 'rituals' ? 'Rituals Needed' : 'Kills Needed'}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="result-details">
+                        <p>
+                            <span>Current Level:</span>
+                            <span>{currentLevel}</span>
+                        </p>
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Method Rate:</span>
+                            <span>{selectedMethod?.xp} XP</span>
+                        </p>
                     </div>
                 </div>
             </div>

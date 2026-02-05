@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { hunterData } from '../../../data/hunterData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './HunterCalculator.css';
 
 const HunterCalculator = () => {
-    const { character } = useCharacter();
+    const { characterData } = useCharacter();
     const [currentXp, setCurrentXp] = useState(0);
+    const [currentLevel, setCurrentLevel] = useState(1);
+    const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(13034431);
     const [calcMode, setCalcMode] = useState('standard'); // 'standard' | 'bgh'
     
@@ -19,12 +22,43 @@ const HunterCalculator = () => {
 
     // Load character data
     useEffect(() => {
-        if (character?.skills?.Hunter) {
-            setCurrentXp(character.skills.Hunter.xp);
-            // Default target: Next 99 or 120
-            setTargetXp(character.skills.Hunter.level < 99 ? 13034431 : 104273167);
+        if (characterData && characterData.length > 0) {
+            const hunterHelper = characterData.find(s => s.name === 'Hunter');
+            if (hunterHelper) {
+                setCurrentXp(hunterHelper.xp);
+                setCurrentLevel(hunterHelper.level);
+                // Default target: Next 99 or 120
+                const nextTarget = hunterHelper.level < 99 ? 99 : 120;
+                setTargetLevel(nextTarget);
+                setTargetXp(getXpAtLevel(nextTarget));
+            }
         }
-    }, [character]);
+    }, [characterData]);
+
+    // Handle XP/Level Changes
+    const handleCurrentLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setCurrentLevel(lvl);
+        setCurrentXp(getXpAtLevel(lvl));
+    };
+
+    const handleCurrentXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setCurrentXp(xp);
+        setCurrentLevel(getLevelAtXp(xp));
+    };
+
+    const handleTargetLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setTargetLevel(lvl);
+        setTargetXp(getXpAtLevel(lvl));
+    };
+
+    const handleTargetXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setTargetXp(xp);
+        setTargetLevel(getLevelAtXp(xp));
+    };
 
     const activeData = hunterData[calcMode] || [];
 
@@ -103,21 +137,43 @@ const HunterCalculator = () => {
             <div className="calc-layout">
                 {/* Left Column: Inputs */}
                 <div className="calc-inputs">
-                    <div className="input-group">
-                        <label>Current XP</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
-                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Current Level</label>
+                            <input 
+                                type="number" 
+                                value={currentLevel} 
+                                onChange={handleCurrentLevelChange} 
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Current XP</label>
+                            <input 
+                                type="number" 
+                                value={currentXp} 
+                                onChange={handleCurrentXpChange} 
+                            />
+                        </div>
                     </div>
-                    <div className="input-group">
-                        <label>Target XP</label>
-                        <input 
-                            type="number" 
-                            value={targetXp} 
-                            onChange={(e) => setTargetXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Target Level</label>
+                            <input 
+                                type="number" 
+                                value={targetLevel} 
+                                onChange={handleTargetLevelChange}
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Target XP</label>
+                            <input 
+                                type="number" 
+                                value={targetXp} 
+                                onChange={handleTargetXpChange} 
+                            />
+                        </div>
                     </div>
                     
                     {selectedMethod && (
@@ -134,41 +190,7 @@ const HunterCalculator = () => {
                     )}
                 </div>
 
-                {/* Middle Column: Results */}
-                <div className="calc-results">
-                    <div className="result-main">
-                        <div className="action-icon">
-                            {calcMode === 'standard' ? '🐾' : '🦕'}
-                        </div>
-                        <div className="action-count">
-                            <span className="number">
-                                {selectedMethod 
-                                    ? actionsNeeded.toLocaleString() 
-                                    : '---'}
-                            </span>
-                            <span className="label">
-                                {calcMode === 'standard' ? 'Catches Needed' : 'Kills Needed'}
-                            </span>
-                        </div>
-                    </div>
-
-                    <div className="result-details">
-                        <p>
-                            <span>Staying Level:</span>
-                            <span>{character?.skills?.Hunter?.level || 1}</span>
-                        </p>
-                        <p>
-                            <span>Remaining XP:</span>
-                            <span>{remainingXp.toLocaleString()}</span>
-                        </p>
-                        <p>
-                            <span>Method Rate:</span>
-                            <span>{selectedMethod?.xp} XP</span>
-                        </p>
-                    </div>
-                </div>
-
-                {/* Right Column: List */}
+                {/* Middle Column: Methods */}
                 <div className="calc-methods">
                     <div className="methods-header">
                         <input 
@@ -202,6 +224,40 @@ const HunterCalculator = () => {
                                 </div>
                             </button>
                         ))}
+                    </div>
+                </div>
+
+                {/* Right Column: Results */}
+                <div className="calc-results">
+                    <div className="result-main">
+                        <div className="action-icon">
+                            {calcMode === 'standard' ? '🐾' : '🦕'}
+                        </div>
+                        <div className="action-count">
+                            <span className="number">
+                                {selectedMethod 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">
+                                {calcMode === 'standard' ? 'Catches Needed' : 'Kills Needed'}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="result-details">
+                        <p>
+                            <span>Starting Level:</span>
+                            <span>{currentLevel}</span>
+                        </p>
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Method Rate:</span>
+                            <span>{selectedMethod?.xp} XP</span>
+                        </p>
                     </div>
                 </div>
             </div>

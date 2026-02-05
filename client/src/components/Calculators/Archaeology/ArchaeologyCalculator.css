@@ -1,16 +1,33 @@
 .archaeology-calculator {
+    /* Variables */
+    --arch-text-main: #e0e0e0;
+    --arch-text-label: #d7ccc8;
+    --arch-text-table-header: #bcaaa4;
+    --arch-text-danger: #ef5350;
+    --arch-text-highlight: #a1887f;
+    
+    --arch-bg-panel: #2d1b19;
+    --arch-bg-input: #3e2723;
+    --arch-bg-hover: #4e342e;
+    
+    --arch-border-heading: #8d6e63;
+    --arch-border-panel: #5d4037;
+    --arch-border-input: #5d4037;
+    --arch-border-list: #3e2723;
+    --arch-border-table-bottom: #5d4037;
+    
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--arch-text-main);
 }
 
 .archaeology-calculator h2 {
-    color: #d7ccc8;
-    border-bottom: 2px solid #8d6e63;
+    color: var(--arch-text-label);
+    border-bottom: 2px solid var(--arch-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
-.calc-layout {
+.archaeology-calculator .calc-layout {
     display: grid;
     grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
     gap: 1.5rem;
@@ -25,140 +42,138 @@
 }
 
 /* LEFT COLUMN */
-.calc-inputs {
-    background-color: #3e2723; /* Darker brown */
+.archaeology-calculator .calc-inputs,
+.archaeology-calculator .calc-methods,
+.archaeology-calculator .calc-results {
+    background-color: var(--arch-bg-panel);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid #8d6e63;
+    border: 1px solid var(--arch-border-panel);
 }
 
-.input-group {
+.archaeology-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.archaeology-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #d7ccc8;
+    color: var(--arch-text-label);
 }
 
-.input-group input {
+.archaeology-calculator .input-group input {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a1a1a;
-    border: 1px solid #5d4037;
+    background-color: var(--arch-bg-input);
+    border: 1px solid var(--arch-border-input);
     color: white;
     border-radius: 4px;
 }
 
-.search-results-list {
+.archaeology-calculator .search-results-list {
     margin-top: 1rem;
-    max-height: 300px;
-    overflow-y: auto;
-    background: #2d1b19;
-    border: 1px solid #5d4037;
+    background: var(--arch-bg-panel);
+    border: 1px solid var(--arch-border-panel);
     border-radius: 4px;
 }
 
-.search-item {
+.archaeology-calculator .search-item {
     padding: 0.8rem;
-    border-bottom: 1px solid #3e2723;
+    border-bottom: 1px solid var(--arch-border-list);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
 }
 
-.search-item:hover {
-    background-color: #4e342e;
+.archaeology-calculator .search-item:hover {
+    background-color: var(--arch-bg-hover);
 }
 
 /* CENTER COLUMN (Restoration List) */
-.calc-list {
-    background-color: #2d1b19; 
+.archaeology-calculator .calc-list {
+    background-color: var(--arch-bg-panel); 
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid #5d4037;
+    border: 1px solid var(--arch-border-panel);
     min-height: 400px;
 }
 
-.list-table {
+.archaeology-calculator .list-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.list-table th {
+.archaeology-calculator .list-table th {
     text-align: left;
     padding: 0.5rem;
-    color: #bcaaa4;
-    border-bottom: 1px solid #5d4037;
+    color: var(--arch-text-table-header);
+    border-bottom: 1px solid var(--arch-border-table-bottom);
 }
 
-.list-table td {
+.archaeology-calculator .list-table td {
     padding: 0.5rem;
-    border-bottom: 1px solid #3e2723;
+    border-bottom: 1px solid var(--arch-border-list);
 }
 
-.qty-input-small {
+.archaeology-calculator .qty-input-small {
     width: 60px;
-    background: #1a1a1a;
-    border: 1px solid #5d4037;
+    background: var(--arch-bg-input);
+    border: 1px solid var(--arch-border-input);
     color: white;
     padding: 0.3rem;
     border-radius: 3px;
 }
 
-.remove-btn {
+.archaeology-calculator .remove-btn {
     background: none;
     border: none;
-    color: #ef5350;
+    color: var(--arch-text-danger);
     cursor: pointer;
     font-size: 1.2rem;
 }
 
 /* RIGHT COLUMN (Results/Materials) */
-.calc-totals {
-    background-color: #3e2723;
+.archaeology-calculator .calc-totals {
+    background-color: var(--arch-bg-panel);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid #8d6e63;
+    border: 1px solid var(--arch-border-panel);
 }
 
-.xp-summary {
-    background-color: #2d1b19;
+.archaeology-calculator .xp-summary {
+    background-color: var(--arch-bg-panel);
     padding: 1rem;
     border-radius: 4px;
     margin-bottom: 1.5rem;
 }
 
-.xp-row {
+.archaeology-calculator .xp-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
 }
 
-.materials-list {
+.archaeology-calculator .materials-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    max-height: 400px;
-    overflow-y: auto;
 }
 
-.material-item {
+.archaeology-calculator .material-item {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
-    background-color: #2d1b19;
+    background-color: var(--arch-bg-panel);
     border-radius: 3px;
     font-size: 0.9rem;
 }
 
-.material-name {
-    color: #d7ccc8;
+.archaeology-calculator .material-name {
+    color: var(--arch-text-label);
 }
 
-.material-qty {
+.archaeology-calculator .material-qty {
     font-weight: bold;
-    color: #a1887f;
+    color: var(--arch-text-highlight);
 }

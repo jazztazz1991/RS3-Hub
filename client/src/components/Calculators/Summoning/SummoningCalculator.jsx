@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { summoningData } from '../../../data/summoningData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './SummoningCalculator.css';
 
 const SummoningCalculator = () => {
-    const { character } = useCharacter();
+    const { characterData } = useCharacter();
+    
+    // State
     const [currentXp, setCurrentXp] = useState(0);
+    const [currentLevel, setCurrentLevel] = useState(1);
+    const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(13034431);
     const [calcMode, setCalcMode] = useState('standard'); // 'standard' | 'ancient'
     
     // Modifiers
     const [useOutfit, setUseOutfit] = useState(false); // Shaman's Outfit +6%
     const [useVos, setUseVos] = useState(false); // Voice of Seren +20%
-    const [useIncense, setUseIncense] = useState(false); // Can be relevant, but maybe stick to major ones. Actually Torstol works? Let's just do outfit/vos.
 
     const [selectedMethod, setSelectedMethod] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
@@ -20,11 +24,44 @@ const SummoningCalculator = () => {
 
     // Load character data
     useEffect(() => {
-        if (character?.skills?.Summoning) {
-            setCurrentXp(character.skills.Summoning.xp);
-            setTargetXp(character.skills.Summoning.level < 99 ? 13034431 : 104273167);
+        if (characterData && characterData.length > 0) {
+            const summHelper = characterData.find(s => s.name === 'Summoning');
+            if (summHelper) {
+                setCurrentXp(summHelper.xp);
+                setCurrentLevel(summHelper.level);
+                
+                // Smart target default
+                const nextTarget = summHelper.level < 99 ? 99 : 120;
+                setTargetLevel(nextTarget);
+                setTargetXp(getXpAtLevel(nextTarget));
+            }
         }
-    }, [character]);
+    }, [characterData]);
+
+    // Handle XP/Level Changes
+    const handleCurrentLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setCurrentLevel(lvl);
+        setCurrentXp(getXpAtLevel(lvl));
+    };
+
+    const handleCurrentXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setCurrentXp(xp);
+        setCurrentLevel(getLevelAtXp(xp));
+    };
+
+    const handleTargetLevelChange = (e) => {
+        const lvl = parseInt(e.target.value) || 1;
+        setTargetLevel(lvl);
+        setTargetXp(getXpAtLevel(lvl));
+    };
+
+    const handleTargetXpChange = (e) => {
+        const xp = parseInt(e.target.value) || 0;
+        setTargetXp(xp);
+        setTargetLevel(getLevelAtXp(xp));
+    };
 
     const activeData = summoningData[calcMode] || [];
 
@@ -107,21 +144,44 @@ const SummoningCalculator = () => {
             <div className="calc-layout">
                 {/* Left Column: Inputs */}
                 <div className="calc-inputs">
-                    <div className="input-group">
-                        <label>Current XP</label>
-                        <input 
-                            type="number" 
-                            value={currentXp} 
-                            onChange={(e) => setCurrentXp(Number(e.target.value))} 
-                        />
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Current Level</label>
+                            <input 
+                                type="number" 
+                                value={currentLevel} 
+                                onChange={handleCurrentLevelChange}
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Current XP</label>
+                            <input 
+                                type="number" 
+                                value={currentXp} 
+                                onChange={handleCurrentXpChange} 
+                            />
+                        </div>
                     </div>
-                    <div className="input-group">
-                        <label>Target XP</label>
-                        <input 
-                            type="number" 
-                            value={targetXp} 
-                            onChange={(e) => setTargetXp(Number(e.target.value))} 
-                        />
+
+                    <div className="input-row-flex">
+                        <div className="input-group">
+                            <label>Target Level</label>
+                            <input 
+                                type="number" 
+                                value={targetLevel} 
+                                onChange={handleTargetLevelChange}
+                                min="1" max="120"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Target XP</label>
+                            <input 
+                                type="number" 
+                                value={targetXp} 
+                                onChange={handleTargetXpChange} 
+                            />
+                        </div>
                     </div>
                     
                     {selectedMethod && (
@@ -144,39 +204,7 @@ const SummoningCalculator = () => {
                     )}
                 </div>
 
-                {/* Middle Column: Results */}
-                <div className="calc-results">
-                    <div className="result-main">
-                        <div className="action-icon">
-                            🔮
-                        </div>
-                        <div className="action-count">
-                            <span className="number">
-                                {selectedMethod 
-                                    ? actionsNeeded.toLocaleString() 
-                                    : '---'}
-                            </span>
-                            <span className="label">Pouches Needed</span>
-                        </div>
-                    </div>
-
-                    <div className="result-details">
-                        <p>
-                            <span>Staying Level:</span>
-                            <span>{character?.skills?.Summoning?.level || 1}</span>
-                        </p>
-                        <p>
-                            <span>Remaining XP:</span>
-                            <span>{remainingXp.toLocaleString()}</span>
-                        </p>
-                        <p>
-                            <span>Total Shards:</span>
-                            <span>{shardsNeeded.toLocaleString()}</span>
-                        </p>
-                    </div>
-                </div>
-
-                {/* Right Column: List */}
+                {/* Middle Column: List */}
                 <div className="calc-methods">
                     <div className="methods-header">
                         <input 
@@ -210,6 +238,38 @@ const SummoningCalculator = () => {
                                 </div>
                             </button>
                         ))}
+                    </div>
+                </div>
+
+                {/* Right Column: Results */}
+                <div className="calc-results">
+                    <div className="result-main">
+                        <div className="action-icon">
+                            🔮
+                        </div>
+                        <div className="action-count">
+                            <span className="number">
+                                {selectedMethod 
+                                    ? actionsNeeded.toLocaleString() 
+                                    : '---'}
+                            </span>
+                            <span className="label">Pouches Needed</span>
+                        </div>
+                    </div>
+
+                    <div className="result-details">
+                        <p>
+                            <span>Current Level:</span>
+                            <span>{currentLevel}</span>
+                        </p>
+                        <p>
+                            <span>Remaining XP:</span>
+                            <span>{remainingXp.toLocaleString()}</span>
+                        </p>
+                        <p>
+                            <span>Total Shards:</span>
+                            <span>{shardsNeeded.toLocaleString()}</span>
+                        </p>
                     </div>
                 </div>
             </div>

@@ -1,48 +1,69 @@
 .mining-calculator {
+    --mine-text-main: #e0e0e0;
+    --mine-text-heading: #b0bec5;
+    --mine-text-label: #cfd8dc;
+    --mine-text-input: white;
+    --mine-text-checkbox: #bdc3c7;
+    --mine-text-detail: #b0bec5;
+    --mine-text-method-detail: rgba(255, 255, 255, 0.6);
+    --mine-text-highlight: #b0bec5;
+    --mine-text-result: #90a4ae;
+    
+    --mine-bg-darker: #1a252f;
+    --mine-bg-dark: #37474f;
+    --mine-bg-medium: #455a64;
+
+    --mine-border-main: #546e7a;
+    --mine-border-accent: #78909c;
+    --mine-border-light: #cfd8dc;
+    --mine-border-subtle: #455a64;
+
+    --mine-shadow: rgba(207, 216, 220, 0.2);
+
     padding: 1rem;
-    color: #e0e0e0;
+    color: var(--mine-text-main);
 }
 
 .mining-calculator h2 {
-    color: #b0bec5; /* Blue Grey */
-    border-bottom: 2px solid #546e7a;
+    color: var(--mine-text-heading);
+    border-bottom: 2px solid var(--mine-border-main);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 }
 
 /* Modifiers */
-.modifiers {
+.mining-calculator .modifiers {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    background-color: #1a252f;
+    background-color: var(--mine-bg-darker);
     border-radius: 6px;
     flex-wrap: wrap;
-    border-left: 4px solid #78909c;
+    border-left: 4px solid var(--mine-border-accent);
 }
 
-.checkbox-container {
+.mining-calculator .checkbox-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
     user-select: none;
     font-size: 0.9rem;
-    color: #bdc3c7;
+    color: var(--mine-text-checkbox);
 }
 
-.checkbox-container input {
+.mining-calculator .checkbox-container input {
     width: 1.2rem;
     height: 1.2rem;
     cursor: pointer;
-    accent-color: #78909c;
+    accent-color: var(--mine-border-accent);
 }
 
 /* Layout */
-.calc-layout {
+.mining-calculator .calc-layout {
     display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);       
     gap: 1.5rem;
     max-width: 100%;
 }
@@ -53,120 +74,127 @@
     }
 }
 
-.input-group {
+.mining-calculator .calc-inputs,
+.mining-calculator .calc-methods,
+.mining-calculator .calc-results {
+    background-color: var(--mine-bg-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--mine-border-main);
+}
+
+.mining-calculator .input-group {
     margin-bottom: 1.5rem;
 }
 
-.input-group label {
+.mining-calculator .input-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #cfd8dc;
+    color: var(--mine-text-label);
 }
 
-.input-group input, .category-select {
+.mining-calculator .input-group input, .mining-calculator .category-select {
     width: 100%;
     padding: 0.8rem;
-    background-color: #1a252f;
-    border: 1px solid #546e7a;
-    color: white;
+    background-color: var(--mine-bg-darker);
+    border: 1px solid var(--mine-border-main);
+    color: var(--mine-text-input);
     border-radius: 4px;
     font-size: 1rem;
 }
 
 /* Selected Method Card - Stone Theme */
-.selected-method-card {
+.mining-calculator .selected-method-card {
     margin-top: 2rem;
     padding: 1.5rem;
-    background-color: #37474f;
+    background-color: var(--mine-bg-dark);
     border-radius: 8px;
-    border: 1px solid #546e7a;
+    border: 1px solid var(--mine-border-main);
 }
 
-.selected-method-card h3 {
-    color: #eceff1;
+.mining-calculator .selected-method-card h3 {
+    color: var(--mine-text-heading); 
     margin-top: 0;
 }
 
-.method-xp-actual {
+.mining-calculator .method-xp-actual {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #90a4ae;
+    color: var(--mine-text-result);
 }
 
 /* Results */
-.result-main {
+.mining-calculator .result-main {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.action-icon {
+.mining-calculator .action-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.action-count .number {
+.mining-calculator .action-count .number {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: #b0bec5;
+    color: var(--mine-text-heading);
 }
 
-.result-details p {
+.mining-calculator .result-details p {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #455a64;
+    border-bottom: 1px solid var(--mine-border-subtle);
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    color: #b0bec5;
+    color: var(--mine-text-detail);
 }
 
 /* Methods List */
-.methods-header {
+.mining-calculator .methods-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.methods-grid {
+.mining-calculator .methods-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0.8rem;
-    max-height: 600px;
-    overflow-y: auto;
     padding-right: 0.5rem;
 }
 
-.method-btn {
-    background-color: #1a252f;
-    border: 1px solid #546e7a;
+.mining-calculator .method-btn {
+    background-color: var(--mine-bg-darker);
+    border: 1px solid var(--mine-border-main);
     padding: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
-    color: #eceff1;
+    color: var(--mine-text-detail);
 }
 
-.method-btn:hover {
-    background-color: #37474f;
+.mining-calculator .method-btn:hover {
+    background-color: var(--mine-bg-dark);
 }
 
-.method-btn.active {
-    background-color: #455a64;
-    border-color: #cfd8dc;
-    box-shadow: 0 0 10px rgba(207, 216, 220, 0.2);
+.mining-calculator .method-btn.active {
+    background-color: var(--mine-bg-medium);
+    border-color: var(--mine-border-light);
+    box-shadow: 0 0 10px var(--mine-shadow);
 }
 
-.method-name {
+.mining-calculator .method-name {
     font-weight: bold;
     margin-bottom: 0.3rem;
-    color: #cfd8dc;
+    color: var(--mine-text-label);
 }
 
-.method-details {
+.mining-calculator .method-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: var(--mine-text-method-detail);
 }
