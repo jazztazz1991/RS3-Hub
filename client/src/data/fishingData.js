@@ -1,48 +1,39 @@
 // Fishing Data - Fish and Boosts
 
 export const FISHING_ITEMS = [
-    // Low Level
-    { id: 'crayfish', name: 'Crayfish', level: 1, xp: 10, category: 'Net/Cage' },
-    { id: 'shrimp', name: 'Raw Shrimp', level: 1, xp: 10, category: 'Net/Cage' },
-    { id: 'sardine', name: 'Raw Sardine', level: 5, xp: 20, category: 'Bait' },
-    { id: 'herring', name: 'Raw Herring', level: 10, xp: 30, category: 'Bait' },
-    { id: 'anchovies', name: 'Raw Anchovies', level: 15, xp: 40, category: 'Net/Cage' },
-    { id: 'trout', name: 'Raw Trout', level: 20, xp: 50, category: 'Fly Fishing' },
-    { id: 'salmon', name: 'Raw Salmon', level: 30, xp: 70, category: 'Fly Fishing' },
-    { id: 'tuna', name: 'Raw Tuna', level: 35, xp: 80, category: 'Harpoon' },
-    { id: 'lobster', name: 'Raw Lobster', level: 40, xp: 90, category: 'Net/Cage' },
-    { id: 'swordfish', name: 'Raw Swordfish', level: 50, xp: 100, category: 'Harpoon' },
-    
-    // Barbarian Fishing (Leaping)
-    { id: 'leaping_trout', name: 'Leaping Trout', level: 48, xp: 50, category: 'Barbarian' },
-    { id: 'leaping_salmon', name: 'Leaping Salmon', level: 58, xp: 70, category: 'Barbarian' },
-    { id: 'leaping_sturgeon', name: 'Leaping Sturgeon', level: 70, xp: 80, category: 'Barbarian' },
-
-    // Mid-High Level
-    { id: 'monkfish', name: 'Raw Monkfish', level: 62, xp: 120, category: 'Net/Cage' },
-    { id: 'shark', name: 'Raw Shark', level: 76, xp: 110, category: 'Harpoon' }, // Shark is surprisingly low XP per catch compared to speed
-    { id: 'cavefish', name: 'Raw Cavefish', level: 85, xp: 300, category: 'Special' },
-    { id: 'rocktail', name: 'Raw Rocktail', level: 90, xp: 380, category: 'Special' },
-    
-    // Prifddinas Waterfall
-    { id: 'small_urchin', name: 'Small Crystal Urchin', level: 93, xp: 310, category: 'Waterfall' },
-    { id: 'medium_urchin', name: 'Medium Crystal Urchin', level: 95, xp: 330, category: 'Waterfall' },
-    { id: 'large_urchin', name: 'Large Crystal Urchin', level: 97, xp: 350, category: 'Waterfall' },
-
-    // Deep Sea Fishing
-    { id: 'blue_jelly', name: 'Blue Blubber Jellyfish', level: 91, xp: 390, category: 'Deep Sea' },
-    { id: 'sailfish', name: 'Raw Sailfish', level: 97, xp: 400, category: 'Deep Sea' },
-
-    // Menaphos
-    { id: 'desert_sole', name: 'Desert Sole', level: 52, xp: 22.5, category: 'Menaphos' },
-    { id: 'catfish', name: 'Catfish', level: 60, xp: 25, category: 'Menaphos' },
-    { id: 'beltfish', name: 'Beltfish', level: 72, xp: 45, category: 'Menaphos' },
-    
-    // The Arc
-    { id: 'wobbegong', name: 'Wobbegong', level: 96, xp: 682.5, category: 'Arc' },
-
-    // Croesus
-    { id: 'fungal_algae', name: 'Fungal Algae (Croesus)', level: 88, xp: 105, category: 'Boss' }, // Note: This is per tick/success, very rapid
+    { id: 'shrimp', name: 'Shrimp', level: 1, xp: 10.0, category: 'Net' },
+    { id: 'crayfish', name: 'Crayfish', level: 1, xp: 10.0, category: 'Cage' },
+    { id: 'sardine', name: 'Sardine', level: 5, xp: 20.0, category: 'Bait' },
+    { id: 'herring', name: 'Herring', level: 10, xp: 30.0, category: 'Bait' },
+    { id: 'anchovies', name: 'Anchovies', level: 15, xp: 40.0, category: 'Net' },
+    { id: 'mackerel', name: 'Mackerel', level: 16, xp: 20.0, category: 'Net' },
+    { id: 'trout', name: 'Trout', level: 20, xp: 50.0, category: 'Fly Fishing' },
+    { id: 'cod', name: 'Cod', level: 23, xp: 45.0, category: 'Net' },
+    { id: 'pike', name: 'Pike', level: 25, xp: 60.0, category: 'Bait' },
+    { id: 'salmon', name: 'Salmon', level: 30, xp: 70.0, category: 'Fly Fishing' },
+    { id: 'tuna', name: 'Tuna', level: 35, xp: 80.0, category: 'Harpoon' },
+    { id: 'rainbow_fish', name: 'Rainbow fish', level: 38, xp: 80.0, category: 'Fly Fishing' },
+    { id: 'lobster', name: 'Lobster', level: 40, xp: 90.0, category: 'Cage' },
+    { id: 'bass', name: 'Bass', level: 46, xp: 100.0, category: 'Net' },
+    { id: 'leaping_trout', name: 'Leaping trout', level: 48, xp: 60.0, category: 'Barbarian' },
+    { id: 'swordfish', name: 'Swordfish', level: 50, xp: 100.0, category: 'Harpoon' },
+    { id: 'desert_sole', name: 'Desert sole', level: 52, xp: 60.0, category: 'Bait' },
+    { id: 'leaping_salmon', name: 'Leaping salmon', level: 58, xp: 82.0, category: 'Barbarian' },
+    { id: 'catfish', name: 'Catfish', level: 60, xp: 85.0, category: 'Bait' },
+    { id: 'monkfish', name: 'Monkfish', level: 62, xp: 120.0, category: 'Net' },
+    { id: 'ghostly_sole', name: 'Ghostly sole', level: 66, xp: 130.0, category: 'Bait' },
+    { id: 'green_blubber_jellyfish', name: 'Green blubber jellyfish', level: 68, xp: 165.0, category: 'Bait' },
+    { id: 'leaping_sturgeon', name: 'Leaping sturgeon', level: 70, xp: 92.0, category: 'Barbarian' },
+    { id: 'beltfish', name: 'Beltfish', level: 72, xp: 92.0, category: 'Bait' },
+    { id: 'shark', name: 'Shark', level: 76, xp: 110.0, category: 'Harpoon' },
+    { id: 'sea_turtle', name: 'Sea turtle', level: 79, xp: 240.0, category: 'Bait' },
+    { id: 'manta_ray', name: 'Manta ray', level: 81, xp: 200.0, category: 'Bait' },
+    { id: 'cavefish', name: 'Cavefish', level: 85, xp: 300.0, category: 'Bait' },
+    { id: 'fungal_algae', name: 'Fungal algae', level: 88, xp: 105.0, category: 'Boss' },
+    { id: 'rocktail', name: 'Rocktail', level: 90, xp: 380.0, category: 'Other' },
+    { id: 'blue_blubber_jellyfish', name: 'Blue blubber jellyfish', level: 91, xp: 390.0, category: 'Bait' },
+    { id: 'enriched_fungal_algae', name: 'Enriched fungal algae', level: 92, xp: 145.0, category: 'Boss' },
+    { id: 'sailfish', name: 'Sailfish', level: 97, xp: 400.0, category: 'Bait' },
 ];
 
 export const FISHING_BOOSTS = [
