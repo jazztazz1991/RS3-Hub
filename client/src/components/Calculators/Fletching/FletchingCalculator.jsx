@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
-import { FLETCHING_DATA, FLETCHING_BOOSTS } from '../../../data/fletchingData';
+import { FLETCHING_ITEMS as FLETCHING_DATA, FLETCHING_BOOSTS } from '../../../data/fletchingData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './FletchingCalculator.css';
 

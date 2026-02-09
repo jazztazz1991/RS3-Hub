@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { constructionData } from '../../../data/constructionData';
+import constructionData from '../../../data/constructionData';
 import { useCharacter } from '../../../context/CharacterContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './ConstructionCalculator.css';

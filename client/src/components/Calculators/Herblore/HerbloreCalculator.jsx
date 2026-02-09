@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
-import { HERBLORE_METHODS } from '../../../data/herbloreData';
+import { HERBLORE_ITEMS as HERBLORE_METHODS } from '../../../data/herbloreData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './HerbloreCalculator.css';
 
