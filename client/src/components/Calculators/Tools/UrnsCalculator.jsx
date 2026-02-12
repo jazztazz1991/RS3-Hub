@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { URN_DATA, URN_ENHANCER_BONUS } from '../../../data/urnsData';
-import { useCharacter } from '../../../context/CharacterContext';
+import { useCharacter } from '../../../context/CharacterContext.jsx';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './UrnsCalculator.css';
 
