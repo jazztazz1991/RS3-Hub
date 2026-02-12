@@ -30,6 +30,7 @@ import SummoningCalculator from './components/Calculators/Summoning/SummoningCal
 import DungeoneeringCalculator from './components/Calculators/Dungeoneering/DungeoneeringCalculator';
 import DivinationCalculator from './components/Calculators/Divination/DivinationCalculator';
 import NecromancyCalculator from './components/Calculators/Necromancy/NecromancyCalculator';
+import UrnsCalculator from './components/Calculators/Tools/UrnsCalculator';
 import Navbar from './components/Navbar/Navbar';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
@@ -89,6 +90,7 @@ function App() {
                 <Route path="/calculators/dungeoneering" element={<DungeoneeringCalculator />} />
                 <Route path="/calculators/divination" element={<DivinationCalculator />} />
                 <Route path="/calculators/necromancy" element={<NecromancyCalculator />} />
+                <Route path="/calculators/urns" element={<UrnsCalculator />} />
                 <Route path="/daily-tasks" element={<DailyTasks />} />
               </Route>
             </Routes>

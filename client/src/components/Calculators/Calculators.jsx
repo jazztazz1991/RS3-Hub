@@ -24,6 +24,18 @@ const Calculators = () => {
           </Link>
         ))}
       </div>
+
+      <h2 style={{marginTop: '3rem'}}>Tools</h2>
+      <div className="calculators-grid">
+         <Link to="/calculators/urns" className="calculator-card">
+            <div className="calculator-icon">
+              U
+            </div>
+            <div className="calculator-info">
+              <h3>Urns Calculator</h3>
+            </div>
+          </Link>
+      </div>
     </div>
   );
 };
