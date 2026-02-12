@@ -77,3 +77,5 @@ export const URN_DATA = {
     { name: 'Exquisite woodcutting urn', level: 106, fillXp: 13015.0, bonusXp: 3253.7 },
   ],
 };
+
+export const URN_ENHANCER_BONUS = 0.25;
