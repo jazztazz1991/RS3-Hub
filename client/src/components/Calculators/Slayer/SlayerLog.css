@@ -1,0 +1,146 @@
+.slayer-log-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.monster-search {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+}
+
+.monster-select {
+    width: 100%;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+}
+
+.start-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: #2ecc71;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.start-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+.timer-display {
+    font-size: 2.5rem;
+    font-family: monospace;
+    text-align: center;
+    color: #e74c3c;
+    background: #000;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    border: 2px solid #333;
+}
+
+.task-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.task-controls button {
+    flex: 1;
+    padding: 0.8rem;
+    font-weight: bold;
+}
+
+.completion-form {
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 4px;
+    border-top: 2px solid #444;
+}
+
+.form-row {
+    margin-bottom: 0.8rem;
+}
+
+.form-row textarea {
+    width: 100%;
+    height: 60px;
+    background: #333;
+    color: #eee;
+    border: 1px solid #555;
+}
+
+.btn-success {
+    width: 100%;
+    padding: 0.8rem;
+    background: #27ae60;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.history-item {
+    background: #222;
+    padding: 0.8rem;
+    border-radius: 4px;
+    border-left: 3px solid #3498db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.h-monster {
+    font-weight: bold;
+    color: #fff;
+}
+
+.h-count {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.history-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.h-time {
+    color: #f1c40f;
+    font-family: monospace;
+}
+
+.h-xp {
+    font-size: 0.8rem;
+    color: #2ecc71;
+}
+
+.no-data {
+    color: #777;
+    text-align: center;
+    padding: 1rem;
+    font-style: italic;
+}

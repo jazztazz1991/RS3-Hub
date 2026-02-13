@@ -11,6 +11,7 @@ const passport = require('./config/passport');
 const { sequelize, Character } = require('./models');
 const authRoutes = require('./routes/auth');
 const characterRoutes = require('./routes/characters');
+const slayerRoutes = require('./routes/slayer');
 
 dotenv.config();
 
@@ -71,6 +72,7 @@ app.use(passport.session());
 // Routes
 app.use('/auth', authRoutes);
 app.use('/api/characters', characterRoutes);
+app.use('/api/slayer', slayerRoutes);
 
 
 
