@@ -70,7 +70,7 @@ const WildyTracker = () => {
         <div className="wildy-tracker">
             <div className="tracker-header">
                 <h2>Special Flash Events</h2>
-                <p>Removed from game</p>
+                <p>Removed from game 2/16/26</p>
             </div>
             <div className="events-list">
                 {sortedEvents.map(({ name, time }, index) => {
