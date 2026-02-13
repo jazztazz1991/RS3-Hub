@@ -12,6 +12,7 @@ const SlayerLog = ({ onStatsUpdate }) => {
         resumeTask, 
         completeTask, 
         cancelTask, 
+        deleteTask, // Added delete function
         getStatsForMonster 
     } = useSlayerLog();
 
@@ -188,18 +189,29 @@ const SlayerLog = ({ onStatsUpdate }) => {
                     <p className="no-data">No completed tasks yet.</p>
                 ) : (
                     <div className="history-list">
-                        {history.slice(0, 5).map(entry => (
+                        {history.slice(0, 10).map(entry => (
                             <div key={entry.id} className="history-item">
-                                <div className="history-main">
-                                    <span className="h-monster">{entry.monsterName}</span>
-                                    <span className="h-count">{entry.count} kills</span>
+                                <div className="history-info-wrapper">
+                                    <div className="history-main">
+                                        <span className="h-monster">{entry.monsterName}</span>
+                                        <span className="h-count">{entry.count} kills</span>
+                                    </div>
+                                    <div className="history-meta">
+                                        <span className="h-time">{formatTime(entry.duration)}</span>
+                                        <span className="h-xp">
+                                            {entry.duration > 0 ? Math.round((entry.count / (entry.duration/3600000))).toLocaleString() : 0} kills/hr
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="history-meta">
-                                    <span className="h-time">{formatTime(entry.duration)}</span>
-                                    <span className="h-xp">
-                                        {Math.round((entry.count / (entry.duration/3600000))).toLocaleString()} kills/hr
-                                    </span>
-                                </div>
+                                <button 
+                                    className="btn-delete" 
+                                    onClick={() => {
+                                        if(window.confirm('Delete this log entry?')) deleteTask(entry.id);
+                                    }}
+                                    title="Delete Entry"
+                                >
+                                    ×
+                                </button>
                             </div>
                         ))}
                     </div>

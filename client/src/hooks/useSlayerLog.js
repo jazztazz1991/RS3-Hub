@@ -121,6 +121,18 @@ export const useSlayerLog = () => {
         setActiveTask(null);
     };
 
+    const deleteTask = async (taskId) => {
+        if (!user) return;
+        
+        try {
+            await axios.delete(`/api/slayer/log/${taskId}`);
+            setHistory(prev => prev.filter(task => task.id !== taskId));
+        } catch (err) {
+            console.error("Failed to delete task", err);
+            alert("Failed to delete task.");
+        }
+    };
+
     const getStatsForMonster = (monsterId) => {
         const monsterTasks = history.filter(h => h.monsterId === monsterId && h.duration > 0 && h.count > 0);
         if (monsterTasks.length === 0) return null;
@@ -151,6 +163,7 @@ export const useSlayerLog = () => {
         resumeTask,
         completeTask,
         cancelTask,
+        deleteTask,
         getStatsForMonster,
         setActiveTask // Exposed for timer updates if needed, though mostly internal
     };
