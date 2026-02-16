@@ -14,7 +14,7 @@ services:
           property: connectionString
       - key: SESSION_SECRET
         generateValue: true
-    autoDeploy: false
+    autoDeploy: true
 
 databases:
   - name: rs3hub-db

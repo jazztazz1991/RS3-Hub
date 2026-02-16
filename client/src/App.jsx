@@ -36,6 +36,8 @@ import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 import WildyNotification from './components/WildyEvents/WildyNotification';
+import QuestTracker from './components/QuestTracker';
+import QuestDetails from './components/QuestTracker/QuestDetails';
 
 function App() {
   const [serverStatus, setServerStatus] = useState('Checking server...');
@@ -65,6 +67,8 @@ function App() {
               {/* Protected Routes */}
               <Route element={<ProtectedRoute />}>
                 <Route path="/" element={<Dashboard />} />
+                <Route path="/quests" element={<QuestTracker />} />
+                <Route path="/quests/:questTitle" element={<QuestDetails />} />
                 <Route path="/calculators" element={<Calculators />} />
                 <Route path="/calculators/archaeology" element={<ArchaeologyCalculator />} />
                 <Route path="/calculators/invention" element={<InventionCalculator />} />

@@ -1,0 +1,320 @@
+/* Overwrite all styles for new table layout */
+
+.quest-details-container {
+    padding: 2rem;
+    color: #e0e6ed;
+    max-width: 1400px; /* Reduced to fit wiki style content more naturally */
+    margin: 0 auto;
+    background: #0b1117; /* Very dark blue matching wiki background */
+}
+
+/* Header & Title - Wiki Style */
+.qd-page-title {
+    color: #f1c40f; 
+    border-bottom: 2px solid #5dade2; 
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qd-page-title h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.btn-toggle-main {
+    background: #34495e;
+    border: none;
+    color: #bdc3c7;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-toggle-main:hover {
+    background: #46607d;
+}
+
+.btn-toggle-main.completed {
+    background: #27ae60;
+    color: white;
+}
+
+/* Overview InfoBox Table */
+.qd-infobox {
+    float: right;
+    width: 320px;
+    background: #0f1821; 
+    border: 1px solid #233140;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.qd-infobox-header {
+    background: #1c2833;
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #233140;
+    color: #f39c12;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.qd-infobox-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.qd-infobox-table th, .qd-infobox-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #1a2632;
+    vertical-align: top;
+}
+
+.qd-infobox-table th {
+    text-align: left;
+    color: #5dade2;
+    width: 40%;
+    background: rgba(255,255,255,0.02);
+}
+
+.qd-infobox-table td {
+    color: #ddd;
+}
+
+/* Main Content Area (Left of Infobox) */
+.qd-main-body {
+    /* Uses remaining width */
+    overflow: hidden; /* Clears float if not wrapped */
+}
+
+/* Requirements Tree Section */
+.qd-section-header {
+    color: #5dade2;
+    border-bottom: 1px solid #233140;
+    padding-bottom: 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.req-tree-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.req-tree-ul, .req-tree-root {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin: 0; /* Remove default browser margin which causes double spacing in nested lists */
+    position: relative;
+}
+
+.req-tree-root {
+    padding-left: 0;
+}
+
+/* Tree Connectors */
+.req-tree-ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.75rem; /* Center the line better */
+    border-left: 1px solid #444; /* Thinner/darker line */
+}
+
+.req-tree-li {
+    position: relative;
+    padding-left: 1.5rem; /* Space for the connector */
+    margin: 0.1rem 0; /* Tiny vertical gap between items */
+    line-height: 1.4; /* Tighter line height */
+}
+
+.req-tree-li::before {
+    content: '';
+    position: absolute;
+    top: 0.7em; /* Align with text middle */
+    left: 0.75rem; /* Connect from the vertical line */
+    width: 0.6rem; /* Length of the horizontal dash */
+    border-top: 1px solid #444;
+}
+
+.req-tree-li:last-child {
+    background: transparent; /* Remove background hack if present, causes issues */
+}
+
+/* Instead of one long line on parent, do lines on children to handle last-child properly */
+/* Reset previous */
+.req-tree-ul::before {
+    display: none;
+}
+
+.req-tree-li::after {
+    /* Vertical line segment for this item */
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.75rem;
+    border-left: 1px solid #444;
+}
+
+.req-tree-li:last-child::after {
+    /* Stop line at the horizontal connector for last item */
+    bottom: auto;
+    height: 0.8em; /* Match 'top' of horizontal line + 1px */
+}
+
+/* Horizontal line */
+.req-tree-li::before {
+    content: '';
+    position: absolute;
+    top: 0.8em; /* Align to text center approximately */
+    left: 0.75rem; 
+    width: 0.8rem;
+    border-top: 1px solid #444;
+    z-index: 1;
+}
+
+/* Fix root spacing */
+.req-tree-root > .req-tree-li::after {
+    display: none; /* No vertical line for root items if desired, or keep it */
+}
+.req-tree-root > .req-tree-li::before {
+    display: none; /* No horizontal line for root items */
+}
+.req-tree-root > .req-tree-li {
+    padding-left: 0;
+}
+
+.req-item-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quest-tree-link {
+    color: #3498db;
+    text-decoration: none;
+    cursor: pointer;
+}
+.quest-tree-link:hover {
+    text-decoration: underline;
+}
+
+.status-icon {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.status-met { color: #2ecc71; }
+.status-missing { color: #e74c3c; }
+
+/* Skill Requirements List */
+.skill-req-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.skill-level {
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+.skill-name {
+    color: #3498db; 
+    /* Ideally add icon support later */
+}
+
+/* Guide Checkboxes (Blue Square Style) */
+.guide-step-row {
+    display: flex;
+    margin-bottom: 0.8rem;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+}
+
+.guide-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    background: #0f1821;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    transition: all 0.2s;
+    margin-top: 2px;
+}
+
+.guide-step-row.done .guide-checkbox {
+    background: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+.guide-text {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.guide-step-row.done .guide-text {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+@media (max-width: 900px) {
+    .qd-infobox {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Item Requirements Styling */
+.item-req-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+.item-req-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    color: #ecf0f1;
+}
+
+.item-bullet {
+    color: #f39c12; /* Orange accent */
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1;
+    /* make sure it aligns vertically */
+    margin-top: -0.1rem;
+}
+
+/* Make recommended items slightly different if needed, 
+   but reusing same styles is fine for consistency */
+.qd-section-header + .item-req-list {
+    margin-top: 0.5rem;
+}

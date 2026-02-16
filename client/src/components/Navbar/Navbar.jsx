@@ -16,6 +16,7 @@ const Navbar = () => {
           <>
             <li><Link to="/">Dashboard</Link></li>
             <li><Link to="/calculators">Calculators</Link></li>
+            <li><Link to="/quests">Quests</Link></li>
             <li><Link to="/daily-tasks">Daily Tasks</Link></li>
             <li><span className="user-greeting">Hi, {user.username || user.email}</span></li>
             <li><button onClick={logout} className="logout-btn">Logout</button></li>
