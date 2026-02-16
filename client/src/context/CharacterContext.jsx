@@ -12,7 +12,6 @@ export const CharacterProvider = ({ children }) => {
     const [characterData, setCharacterData] = useState([]); // Parsed skills
     const [loadingChars, setLoadingChars] = useState(true);
     const [loadingData, setLoadingData] = useState(false);
-    const [questSyncTime, setQuestSyncTime] = useState(0);
     const [questSyncTime, setQuestSyncTime] = useState(0); // Timestamp of last quest sync
 
     // Derived state for the currently selected character object
