@@ -17,18 +17,38 @@ RS3_SKILLS = [
     'Dungeoneering', 'Divination', 'Invention', 'Archaeology', 'Necromancy'
 ]
 
+BLACKLIST_REQS = [
+    "Morytania", "Kandarin", "Asgarnia", "Misthalin", "Wilderness", "Fremennik", "Tirannwn",
+    "Ability to", "Access to", "Enter", "The ability", "Total", "Combat", 
+    "started", "partially", "Partial"
+]
+
 def load_data():
     if not os.path.exists(DATA_FILE):
         return []
-    with open(DATA_FILE, 'r', encoding='utf-8') as f:
-        content = f.read()
-        json_str = content.replace("export const QUEST_DATA = ", "").replace(";", "").strip()
-        try:
+        
+    try:
+        with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            content = f.read()
+            # Remove JS export syntax
+            json_str = content.replace("export const QUEST_DATA = ", "").strip()
+            # Remove trailing semicolon
+            if json_str.endswith(";"):
+                json_str = json_str[:-1]
+            
+            # Remove trailing commas (simplified regex)
+            json_str = re.sub(r",\s*([\]}])", r"\1", json_str)
+            
             return json.loads(json_str)
-        except json.JSONDecodeError:
-            return []
+    except Exception as e:
+        print(f"CRITICAL ERROR loading data: {e}")
+        return []
 
 def save_data(data):
+    if not data:
+        print("Warning: Attempting to save empty data. Aborting to prevent data loss.")
+        return
+
     js_content = f"export const QUEST_DATA = {json.dumps(data, indent=4)};\n"
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         f.write(js_content)
@@ -258,10 +278,17 @@ def parse_requirements(soup):
             if title in RS3_SKILLS: continue
             if "Skill" in title or "Quest Points" in title: continue
             if "combat level" in text.lower(): continue
-            if title == "Morytania" or "Ability to enter Morytania" in title: continue
             if title == "Varrock": continue # Common mis-link
             if title == "Dig Site" and "The Dig Site" not in title: continue # "Dig Site" place vs "The Dig Site" quest
             
+            # Global Blacklist Check
+            is_blacklisted = False
+            for b in BLACKLIST_REQS:
+                if b.lower() in title.lower() or b.lower() in text.lower():
+                    is_blacklisted = True
+                    break
+            if is_blacklisted: continue
+
             # Avoid dupes
             if title not in req_data["questReqs"]:
                 req_data["questReqs"].append(title)
@@ -367,6 +394,15 @@ def main():
     print(f"Loaded {len(quests)} quests.")
     
     count = 0
+    FORCED_REFRESH_TITLES = [
+        "Plague's End", 
+        "Remains of the Necrolord", 
+        "Requiem for a Dragon", 
+        "The Great Brain Robbery", 
+        "The Spirit of War", 
+        "Tomes of the Warlock"
+    ]
+
     for q in quests:
         # Check for garbage in guide
         has_garbage_guide = False
@@ -377,12 +413,21 @@ def main():
             # New heuristic: Check for title in first step (common scraper fail) or "None"
             if q["title"] in first_step and "None" in first_step:
                 has_garbage_guide = True
+            if f"{q['title']} None" in first_step: # specific bad pattern [Title] None
+                has_garbage_guide = True
             if first_step == "None" or first_step == q["title"]:
                 has_garbage_guide = True
             if "Quest complete!" in first_step: # If the first step is completion, it's broken
                 has_garbage_guide = True
+            
+            # Check for requirement dump pattern (list of quests in first step)
+            # e.g. "Quest A Quest B Quest C"
+            if len(first_step) > 100 and q['title'] in first_step and "Ability to" in first_step:
+                 has_garbage_guide = True
 
         force_refresh = False 
+        if q['title'] in FORCED_REFRESH_TITLES:
+            force_refresh = True
 
         needs_reqs = (len(q.get("skillReqs", [])) == 0 and len(q.get("questReqs", [])) == 0)
         needs_items = "itemReqs" not in q or len(q.get("itemReqs", [])) == 0
