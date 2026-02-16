@@ -996,8 +996,7 @@ export const QUEST_DATA = [
         ],
         "questReqs": [
             "The Restless Ghost",
-            "Ernest the Chicken",
-            "Morytania"
+            "Ernest the Chicken"
         ],
         "requirements": [],
         "guide": [
@@ -3457,8 +3456,7 @@ export const QUEST_DATA = [
             }
         ],
         "questReqs": [
-            "The Restless Ghost",
-            "Morytania"
+            "The Restless Ghost"
         ],
         "requirements": [],
         "guide": [
@@ -4410,8 +4408,7 @@ export const QUEST_DATA = [
         ],
         "questReqs": [
             "The Dig Site",
-            "Troll Stronghold",
-            "Morytania"
+            "Troll Stronghold"
         ],
         "requirements": [],
         "guide": [
@@ -4826,8 +4823,7 @@ export const QUEST_DATA = [
         ],
         "questReqs": [
             "Recruitment Drive",
-            "What's Mine is Yours",
-            "Morytania"
+            "What's Mine is Yours"
         ],
         "requirements": [],
         "guide": [
@@ -4990,8 +4986,7 @@ export const QUEST_DATA = [
         ],
         "questReqs": [
             "Hazeel Cult",
-            "Missing, Presumed Death",
-            "Morytania"
+            "Missing, Presumed Death"
         ],
         "requirements": [],
         "guide": [
@@ -7392,8 +7387,7 @@ export const QUEST_DATA = [
             }
         ],
         "questReqs": [
-            "The Restless Ghost",
-            "Morytania"
+            "The Restless Ghost"
         ],
         "requirements": [],
         "guide": [
@@ -7922,9 +7916,7 @@ export const QUEST_DATA = [
                 "level": 15
             }
         ],
-        "questReqs": [
-            "Morytania"
-        ],
+        "questReqs": [],
         "requirements": [],
         "guide": [
             "Speak to the Zealot , north of the mine west of Burgh de Rott . ( 1 \u2022 1 \u2022 \u2713 \u2022 1 ) \u2026 1 I follow the path of Saradomin. 1 I come seeking challenges and quests. \u2713 [Accept Quest] 1 How can an abandoned mine be dangerous?",
@@ -8821,9 +8813,9 @@ export const QUEST_DATA = [
         "guide": [
             "Talk to Wizard Mizgog on the 1 st floor [ UK ] 2 nd floor [ US ] of the Wizards' Tower , just southeast of the beam. ( 1 \u2022 \u2713 ) \u2026 1 Can I help you? \u2713 [Accept Quest] Make a bowl of hot water if you haven't already, by filling a bowl at a water source, then using it on a Cooking range (all available in the Lumbridge Castle kitchen - If you have not done Cook's Assistant , you can use the range in the southeasternmost house in Lumbridge, south of Bob's Axes). You may also light a fire and use a bowl of water on it.",
             "Go to the Water ruins (west side of Lumbridge Swamp ) and talk to the Phlegmatic imp . ( 3 ) \u2026 3 Have you tried a bowl of hot water? Talk to the imp again, with a bowl of hot water in your inventory. Take the Phlegmatic bead it drops.",
-            "Go to the Fire ruins (north of Al Kharid ; outside Het's Oasis ), talk to and fight the Choleric imp . Take the Choleric bead it drops.",
-            "Go to the Earth ruins (north-east of Varrock ; south of Fort Forinthry ) and cheer up the Melancholic imp . ( 3 \u2022 2 \u2022 1 ) \u2026 3 Why would he be disappointed? 2 Some days you'll have setbacks. Tomorrow is new day. 1 Take your time. No one is rushing you to feel better. Take the Melancholic bead it drops.",
-            "Go to the Air ruins (west of Varrock ; southeast of Barbarian Village ) and talk to the Sanguine imp . Race the imp around the altar 4 times by clicking and running inside the four different checkpoints when they appear. Take the Sanguine bead it drops.",
+            "Go to the Fire ruins (north of Al Kharid  outside Het's Oasis ), talk to and fight the Choleric imp . Take the Choleric bead it drops.",
+            "Go to the Earth ruins (north-east of Varrock  south of Fort Forinthry ) and cheer up the Melancholic imp . ( 3 \u2022 2 \u2022 1 ) \u2026 3 Why would he be disappointed? 2 Some days you'll have setbacks. Tomorrow is new day. 1 Take your time. No one is rushing you to feel better. Take the Melancholic bead it drops.",
+            "Go to the Air ruins (west of Varrock  southeast of Barbarian Village ) and talk to the Sanguine imp . Race the imp around the altar 4 times by clicking and running inside the four different checkpoints when they appear. Take the Sanguine bead it drops.",
             "Return and talk to Wizard Mizgog. ( 1 ) \u2026 1 I've got all four beads.",
             "Quest complete!",
             "Make a bowl of hot water if you haven't already, by filling a bowl at a water source, then using it on a Cooking range (all available in the Lumbridge Castle kitchen - If you have not done Cook's Assistant , you can use the range in the southeasternmost house in Lumbridge, south of Bob's Axes). You may also light a fire and use a bowl of water on it.",
@@ -10365,8 +10357,7 @@ export const QUEST_DATA = [
             }
         ],
         "questReqs": [
-            "The Restless Ghost",
-            "Morytania"
+            "The Restless Ghost"
         ],
         "requirements": [],
         "guide": [
@@ -10728,7 +10719,7 @@ export const QUEST_DATA = [
             "Easy - Party Pooper ( 5) \u2013 Pop a balloon in the monastery south of Ardougne."
         ],
         "itemReqs": [
-            "A jug of water (you can buy a jug at the general stores in Port Khazard ; there is a sink in a house to the south of the monastery)",
+            "A jug of water (you can buy a jug at the general stores in Port Khazard  there is a sink in a house to the south of the monastery)",
             "Normal logs (there are plenty of trees nearby)"
         ],
         "recommendedItems": []
@@ -11478,8 +11469,7 @@ export const QUEST_DATA = [
         ],
         "questReqs": [
             "Priest in Peril",
-            "The Restless Ghost",
-            "Morytania"
+            "The Restless Ghost"
         ],
         "requirements": [],
         "guide": [
@@ -14355,9 +14345,7 @@ export const QUEST_DATA = [
                 "level": 40
             }
         ],
-        "questReqs": [
-            "Morytania"
-        ],
+        "questReqs": [],
         "requirements": [],
         "guide": [
             "Rum Deal Ability to enter Morytania",
@@ -14883,9 +14871,7 @@ export const QUEST_DATA = [
                 "level": 15
             }
         ],
-        "questReqs": [
-            "Morytania"
-        ],
+        "questReqs": [],
         "requirements": [],
         "guide": [
             "Shades of Mort'ton Ability to enter Morytania",
@@ -16245,7 +16231,7 @@ export const QUEST_DATA = [
             "Talk to Franklin.",
             "Right-click on Arnold Lydspor in the bank to talk to him.",
             "Catch at least five fresh monkfish to the northwest. You'll be attacked by sea trolls when fishing. This can take up to 10 minutes depending on your Fishing level. Use the call of the sea aura if you have it.",
-            "Cook the monkfish in the kitchen southwest. You will need to turn in five fresh monkfish; if any are burned, fish for more. To cook them, just use them on the range and don't proceed on Make-X interface.",
+            "Cook the monkfish in the kitchen southwest. You will need to turn in five fresh monkfish if any are burned, fish for more. To cook them, just use them on the range and don't proceed on Make-X interface.",
             "Talk to Arnold.",
             "Logs and iron ores can be obtained just outside of the colony. The firebox is the metal box on the east side of the metal press.",
             "Use the call of the sea aura if you have it.",
@@ -17282,7 +17268,7 @@ export const QUEST_DATA = [
             "Speak to an examiner in the Exam Centre . ( \u2713 ) \u2026 \u2713 [Accept Quest] Teleport to the Archaeology Campus by using the archaeology journal and run south-east.",
             "Talk to Seth Minas (site manager) in Archaeology Guild . ( 1 ) \u2026 1 The Dig Site quest. Make sure you have the unstamped letter otherwise the dialogue with Seth does not progress.",
             "Grab a cup of tea from the desk in the south side of the building. It is behind Acting Guildmaster Reiniger or Drew (depends on your progress). Not required if you have one.",
-            "Talk to an examiner in the Exam Centre; you will fail the exam. ( ~ \u2022 ~ \u2022 ~ ) \u2026 ~ [Any option] ~ [Any option] ~ [Any option]",
+            "Talk to an examiner in the Exam Centre you will fail the exam. ( ~ \u2022 ~ \u2022 ~ ) \u2026 ~ [Any option] ~ [Any option] ~ [Any option]",
             "Teleport to the Archaeology Campus by using the archaeology journal and run south-east.",
             "Teddy bear",
             "Panning tray",
@@ -17304,7 +17290,7 @@ export const QUEST_DATA = [
             "Pan until you find an uncut opal if you have not already.",
             "Return to an examiner. ( 1 \u2022 1 \u2022 3 \u2022 2 ) \u2026 1 Yes, I certainly am. 1 The study of the earth, its contents and history. 3 All that have passed the appropriate Earth Sciences exam. 2 Proper tools must be used.",
             "Talk to all 3 students again.",
-            "Return to an examiner. ( 1 \u2022 3 \u2022 1 \u2022 2 ) \u2026 1 I am ready for the next exam. 3 Samples taken in rough form; kept only in sealed containers. 1 Finds must be carefully handled. 2 Always handle with care; strike cleanly on its cleaving point.",
+            "Return to an examiner. ( 1 \u2022 3 \u2022 1 \u2022 2 ) \u2026 1 I am ready for the next exam. 3 Samples taken in rough form kept only in sealed containers. 1 Finds must be carefully handled. 2 Always handle with care strike cleanly on its cleaving point.",
             "Talk to all 3 students again. Katarina will demand an opal (talk to her again). You can obtain this by panning.",
             "Return to an examiner. ( 1 \u2022 1 \u2022 1 \u2022 3 ) \u2026 1 I am ready for the last exam... 1 Samples cleaned, and carried only in specimen jars. 1 Brush carefully and slowly using short strokes. 3 Handle bones very carefully and keep them away from other samples.",
             "Optional: Give Seth Minas (site manager) the level 1 , 2 and 3 certificates to receive a Fruit Blast or a chocolate cake . The Fruit Blast can be saved for the quest Recipe for Disaster: Another Cook's Quest .",
@@ -18117,7 +18103,7 @@ export const QUEST_DATA = [
         "requirements": [],
         "guide": [
             "Speak to King Narnode Shareen on the ground\u00a0floor [ UK ] 1 st floor [ US ] of the Grand Tree . ( 1 \u2022 \u2713 ) \u2026 1 You seem worried, what's up? \u2713 [Accept Quest]",
-            "Take the bark sample and book to Hazelmere ; he lives east of Yanille (pictured). If you have A Fairy Tale II - Cure a Queen completed, you can use code C L S , otherwise teleport to the Yanille lodestone.",
+            "Take the bark sample and book to Hazelmere  he lives east of Yanille (pictured). If you have A Fairy Tale II - Cure a Queen completed, you can use code C L S , otherwise teleport to the Yanille lodestone.",
             "Up the ladder, talk to Hazelmere.",
             "Take Hazelmere's scroll back to the King.",
             "Talk to the King. ( 1 \u2022 5 \u2022 5 \u2022 2 \u2022 1 \u2022 4 ) \u2026 1 I think so! 5 None of the above. 5 None of the above. 2 A man came to me with the King's seal. 1 I gave the man Daconia rocks. 4 And Daconia rocks will kill the tree!",
@@ -18733,15 +18719,15 @@ export const QUEST_DATA = [
         "requirements": [],
         "guide": [
             "Talk to Sigmund on the 1 st floor [ UK ] 2 nd floor [ US ] of Lumbridge castle. ( 1 \u2022 \u2713 ) \u2026 1 Do you have any quests for me? \u2713 [Accept Quest]",
-            "Talk to the following NPCs about Lumbridge cellar around the castle until one of them mentions a goblin: Duke Horacio , in the same room. ( 3 ) \u2026 3 What happened in the cellar? . ( 4 ) \u2026 4 What happened in the cellar? if Dragon Slayer has been started/completed. Cook , just downstairs. ( 4 ) \u2026 4 Do you know what happened in the castle cellar? ( 2 ) \u2026 2 Ask about what happened in the castle cellar if Recipe for Disaster has been started but not finished; or ( 5 ) \u2026 5 Do you know what happened in the castle cellar? if Cook's Assistant has not started. Hans , in the courtyard. ( 4 ) \u2026 4 Do you know what happened in the cellar? Father Aereck , in the church. If you have not previously spoken to him about gravestones, you must complete that dialogue, then speak to him again. ( 1 ) \u2026 1 Do you know what happened in the castle cellar? Bob the smith, in his axe shop. ( 4 ) \u2026 4 Do you know what happened in the castle cellar?",
+            "Talk to the following NPCs about Lumbridge cellar around the castle until one of them mentions a goblin: Duke Horacio , in the same room. ( 3 ) \u2026 3 What happened in the cellar? . ( 4 ) \u2026 4 What happened in the cellar? if Dragon Slayer has been started/completed. Cook , just downstairs. ( 4 ) \u2026 4 Do you know what happened in the castle cellar? ( 2 ) \u2026 2 Ask about what happened in the castle cellar if Recipe for Disaster has been started but not finished or ( 5 ) \u2026 5 Do you know what happened in the castle cellar? if Cook's Assistant has not started. Hans , in the courtyard. ( 4 ) \u2026 4 Do you know what happened in the cellar? Father Aereck , in the church. If you have not previously spoken to him about gravestones, you must complete that dialogue, then speak to him again. ( 1 ) \u2026 1 Do you know what happened in the castle cellar? Bob the smith, in his axe shop. ( 4 ) \u2026 4 Do you know what happened in the castle cellar?",
             "Talk to Duke Horacio. ( 3 ) \u2026 3 \"X\" says he saw something in the cellar. ( 4 ) \u2026 4 \"X\" says he saw something in the cellar. if Dragon Slayer has been started/completed.",
             "Duke Horacio , in the same room. ( 3 ) \u2026 3 What happened in the cellar? . ( 4 ) \u2026 4 What happened in the cellar? if Dragon Slayer has been started/completed.",
-            "Cook , just downstairs. ( 4 ) \u2026 4 Do you know what happened in the castle cellar? ( 2 ) \u2026 2 Ask about what happened in the castle cellar if Recipe for Disaster has been started but not finished; or ( 5 ) \u2026 5 Do you know what happened in the castle cellar? if Cook's Assistant has not started.",
+            "Cook , just downstairs. ( 4 ) \u2026 4 Do you know what happened in the castle cellar? ( 2 ) \u2026 2 Ask about what happened in the castle cellar if Recipe for Disaster has been started but not finished or ( 5 ) \u2026 5 Do you know what happened in the castle cellar? if Cook's Assistant has not started.",
             "Hans , in the courtyard. ( 4 ) \u2026 4 Do you know what happened in the cellar?",
             "Father Aereck , in the church. If you have not previously spoken to him about gravestones, you must complete that dialogue, then speak to him again. ( 1 ) \u2026 1 Do you know what happened in the castle cellar?",
             "Bob the smith, in his axe shop. ( 4 ) \u2026 4 Do you know what happened in the castle cellar?",
             "( 4 ) \u2026 4 What happened in the cellar? if Dragon Slayer has been started/completed.",
-            "( 2 ) \u2026 2 Ask about what happened in the castle cellar if Recipe for Disaster has been started but not finished; or",
+            "( 2 ) \u2026 2 Ask about what happened in the castle cellar if Recipe for Disaster has been started but not finished or",
             "( 5 ) \u2026 5 Do you know what happened in the castle cellar? if Cook's Assistant has not started.",
             "( 4 ) \u2026 4 \"X\" says he saw something in the cellar. if Dragon Slayer has been started/completed.",
             "Descend the trapdoor in the kitchen.",
@@ -19914,8 +19900,8 @@ export const QUEST_DATA = [
             "Jump over a barrier to safety near Juna and simply repair barriers as they slowly become half-broken.",
             "Alternatively, kill the enemies, which are fairly weak. Attacks that hit multiple enemies simultaneously are effective, such as Ancient Magicks .",
             "Talk to Azzanadra after the skippable cutscene. ( ~ \u2022 ~ ) \u2026 ~ [Any option] ~ [Any option]",
-            "Note: The next area does not require combat, but contains environmental hazards that can easily lead to unsafe death, and does not allow teleporting out. You may wish to bank now. Teleport out to bank all gear and items; bring high-healing food. Return via the Ardougne lodestone and run east to the entrance of the chamber.",
-            "Teleport out to bank all gear and items; bring high-healing food."
+            "Note: The next area does not require combat, but contains environmental hazards that can easily lead to unsafe death, and does not allow teleporting out. You may wish to bank now. Teleport out to bank all gear and items bring high-healing food. Return via the Ardougne lodestone and run east to the entrance of the chamber.",
+            "Teleport out to bank all gear and items bring high-healing food."
         ],
         "itemReqs": [
             "None"
@@ -21088,8 +21074,7 @@ export const QUEST_DATA = [
         "skillReqs": [],
         "questReqs": [
             "Recruitment Drive",
-            "Enter the Abyss (miniquest)",
-            "Morytania"
+            "Enter the Abyss (miniquest)"
         ],
         "requirements": [],
         "guide": [
@@ -21197,7 +21182,7 @@ export const QUEST_DATA = [
             "Return to the Watchtower Wizard. ( 1 \u2022 1 ) \u2026 1 What do you suggest I do? 1 So what do I do?",
             "Talk to Og , an ogre north-west of the Yanille lodestone. ( 1 ) \u2026 1 I seek entrance to the city of ogres.",
             "Walk south toward the lake's west side, use rope on the branch of a long-branched tree to swing over.",
-            "Talk to Grew . ( 1 ) \u2026 1 Don't eat me; I can help you.",
+            "Talk to Grew . ( 1 ) \u2026 1 Don't eat me I can help you.",
             "Pick up some jangerberries dropped on Grew's island.",
             "Head to and enter the cave entrance marked on the world map ( Show map ) southwest of Gu'Tanoth and southeast of Jiggig , and you will arrive at the island east of Gu'Tanoth. If you didn't bring a death rune , one spawns directly south of the tunnel entrance. Leave the island and head to south-east to the passage between Gu'Tanoth and the island south of Yanille , then head to south-west to the cave entrance. You can use fairy ring A K S and head north-west to reach there. If A Fairy Tale III - Battle at Ork's Rift is completed, you can use fairy ring A L P , head north to exit the tunnel, and head south-east for quicker access. If The Grand Tree quest is completed and partially completed the quest One Small Favour , you can use gnome glider to fly to the Feldip Hills ( 6 ) \u2026 6 Lemantolly Undri and head north-west for quicker access.",
             "Talk to Toban twice, he will take the dragon bones and give you relic part 3 . ( 1 \u2022 1 ) \u2026 1 I seek entrance to the city of ogres. 1 I could do something for you\u2026 If you didn't bring a second rope , take one now from the island.",
@@ -21387,7 +21372,7 @@ export const QUEST_DATA = [
             "Take all 5 Rat's papers that they drop.",
             "Use the 5 papers on an empty folder .",
             "Talk to Rat Burgiss. ( 2 ) \u2026 2 Hello there!",
-            "Go to the Varrock palace library, and talk to Surok Magis . ( 1 ) \u2026 1 Go on, then! Optional: search the bookcase south of the telescope in the north-east section of the room for the Dagon'hai History ; it can be turned in to Historian Minas after the quest for 5 kudos .",
+            "Go to the Varrock palace library, and talk to Surok Magis . ( 1 ) \u2026 1 Go on, then! Optional: search the bookcase south of the telescope in the north-east section of the room for the Dagon'hai History  it can be turned in to Historian Minas after the quest for 5 kudos .",
             "Use any method to enter the chaos altar .",
             "With 15 chaos runes, use the wand on the altar. If you brought essence instead, craft the runes now.",
             "Give Surok Magis a bowl and the infused wand. ( 1 ) \u2026 1 I have the things you wanted!",
@@ -21395,7 +21380,7 @@ export const QUEST_DATA = [
             "Talk to Zaff , in his shop north-west of Varrock Square. ( 4 ) \u2026 4 Rat Burgiss sent me.",
             "Talk to Surok Magis. ( 1 ) \u2026 1 Bring it on!",
             "Attack King Roald , and right-click summon with the beacon ring when he has 1 life point remaining.",
-            "Optional: search the bookcase south of the telescope in the north-east section of the room for the Dagon'hai History ; it can be turned in to Historian Minas after the quest for 5 kudos .",
+            "Optional: search the bookcase south of the telescope in the north-east section of the room for the Dagon'hai History  it can be turned in to Historian Minas after the quest for 5 kudos .",
             "If you brought essence instead, craft the runes now.",
             "After the cutscene, return to Rat Burgiss. ( 2 ) \u2026 2 Hello there!",
             "Quest complete!"
@@ -21641,12 +21626,12 @@ export const QUEST_DATA = [
             "Go to the room located on the south end of the house.",
             "Right-Click Use cheese on the mouse hole on the eastern wall. (If you accidentally eat it, it will respawn on the table.)",
             "Use the magnet on the mouse.",
-            "Exit the door and make your way to the fountain , being careful not to be seen by the witch. Strategically walk behind the shrubs to hide, being sure to stand in the middle space of each shrub. Surge can be used; timing is key.",
+            "Exit the door and make your way to the fountain , being careful not to be seen by the witch. Strategically walk behind the shrubs to hide, being sure to stand in the middle space of each shrub. Surge can be used timing is key.",
             "Check fountain for a shed key .",
             "Return east down the shrubs to the shed, being careful not to be caught by the witch, and open the door.",
             "Try to take the ball , the experiment will appear and attack you. Don't forget to actually take the ball after the experiment has been killed.",
             "Kill the Witch's experiment four times. (All forms of the experiment/shapeshifter are weak to Water Spells ).",
-            "Strategically walk behind the shrubs to hide, being sure to stand in the middle space of each shrub. Surge can be used; timing is key.",
+            "Strategically walk behind the shrubs to hide, being sure to stand in the middle space of each shrub. Surge can be used timing is key.",
             "Don't forget to actually take the ball after the experiment has been killed.",
             "(All forms of the experiment/shapeshifter are weak to Water Spells ).",
             "Take the ball.",

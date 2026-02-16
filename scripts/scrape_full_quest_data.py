@@ -258,6 +258,9 @@ def parse_requirements(soup):
             if title in RS3_SKILLS: continue
             if "Skill" in title or "Quest Points" in title: continue
             if "combat level" in text.lower(): continue
+            if title == "Morytania" or "Ability to enter Morytania" in title: continue
+            if title == "Varrock": continue # Common mis-link
+            if title == "Dig Site" and "The Dig Site" not in title: continue # "Dig Site" place vs "The Dig Site" quest
             
             # Avoid dupes
             if title not in req_data["questReqs"]:
