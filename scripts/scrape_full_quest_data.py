@@ -273,6 +273,14 @@ def parse_requirements(soup):
 def parse_quick_guide(title):
     url = f"https://runescape.wiki/w/{title.replace(' ', '_')}/Quick_guide"
     try:
+        # Check against cache (simple file check or length check if data exists)
+        # Assuming we just want to fetch fresh here
+        pass # always fetch for now
+
+    except Exception as e:
+        print(f"Error prepping fetch: {e}")
+
+    try:
         res = requests.get(url, headers={'User-Agent': USER_AGENT})
         if res.status_code != 200:
             return []
@@ -284,37 +292,71 @@ def parse_quick_guide(title):
 
         guide_steps = []
         
-        # We want all UL > LI elements that are direct children or in simple wrappers
-        # But we must exclude TOC
+        # Iterate all ULs in document order
+        all_uls = content_div.find_all('ul')
         
-        # Method: Find all 'ul' tags
-        uls = content_div.find_all('ul', recursive=True)
-        
-        for ul in uls:
-            # Check if inside TOC or Infobox or Navbox or tables
-            # Also exclude 'questreq' and 'questdetails' tables which contain the requirement tree
-            parent_table = ul.find_parent('table')
-            if parent_table:
-                classes = parent_table.get('class', [])
-                if any(c in classes for c in ['infobox', 'navbox', 'questreq', 'questdetails']):
+        for ul in all_uls:
+            # 1. Section Logic (Stop at Rewards)
+            # Find the immediately preceding H2
+            prev_h2 = ul.find_previous('h2')
+            if prev_h2:
+                h2_text = prev_h2.get_text().strip().lower()
+                # Stop processing if we are in these sections
+                if any(x in h2_text for x in ["rewards", "required for completing", "navigation menu", "see also", "references", "external links"]):
                     continue
-            
-            if ul.find_parent('div', {'class': 'toc'}) or \
-               ul.find_parent('div', {'class': 'navbox'}):
-                continue
-                
-            # Loop LIs
-            for li in ul.find_all('li', recursive=False):
-                # Clean text
-                text = li.get_text(" ", strip=True)
-                if text:
-                    guide_steps.append(text)
 
-        # Limit to first 50 steps to avoid grabbing footer links
-        return guide_steps[:50]
+            # 2. Parent Logic (Exclude Tables, TOC, Navboxes)
+            is_bad_parent = False
+            for p in ul.parents:
+                if p.name == 'table': # Steps should rarely be in tables for Quick Guides
+                    is_bad_parent = True
+                    break
+                if p.name == 'div':
+                    classes = p.get('class', [])
+                    if any(c in classes for c in ['toc', 'navbox', 'infobox', 'questdetails']):
+                        is_bad_parent = True
+                        break
+            
+            if is_bad_parent:
+                continue
+
+            # Process items
+            for li in ul.find_all('li', recursive=False): # Only direct children
+                text = li.get_text(" ", strip=True)
+                if not text: continue
+                
+                lower_text = text.lower()
+                
+                # 3. Content Heuristics
+                # Explicitly ignore "None"
+                if lower_text == "none": continue
+                # Ignore self-ref title (often in navbox lists that slipped through)
+                if lower_text == title.lower(): continue
+                # Ignore "Title None" pattern
+                if lower_text == f"{title.lower()} none": continue
+                
+                # Checkbox lists often have "check all" / "uncheck all"
+                if "check all" in lower_text: continue
+                if "uncheck all" in lower_text: continue
+                
+                # Metadata leakage
+                if "quest points" in lower_text and "lamp" in lower_text: continue 
+                if "start point" in lower_text and "speak to" not in lower_text: continue 
+
+                guide_steps.append(text)
+
+        # Deduplicate
+        clean_steps = []
+        if guide_steps:
+             clean_steps.append(guide_steps[0])
+             for i in range(1, len(guide_steps)):
+                 if guide_steps[i] != guide_steps[i-1]:
+                     clean_steps.append(guide_steps[i])
+
+        return clean_steps[:75]
         
     except Exception as e:
-        print(f"Error fetching guide for {title}: {e}")
+        print(f"Error scraping guide {title}: {e}")
         return []
 
 def main():
@@ -329,17 +371,22 @@ def main():
             first_step = q["guide"][0]
             if "Rocking Out The Great" in first_step or len(first_step) > 500: # Heuristic for dumping requirement tree
                 has_garbage_guide = True
-                print(f"[{q['title']}] Detected garbage guide. Forcing re-scrape.")
-                q["guide"] = [] # Clear it
+            # New heuristic: Check for title in first step (common scraper fail) or "None"
+            if q["title"] in first_step and "None" in first_step:
+                has_garbage_guide = True
+            if first_step == "None" or first_step == q["title"]:
+                has_garbage_guide = True
+            if "Quest complete!" in first_step: # If the first step is completion, it's broken
+                has_garbage_guide = True
 
-        # Only process if missing data
+        force_refresh = False 
+
         needs_reqs = (len(q.get("skillReqs", [])) == 0 and len(q.get("questReqs", [])) == 0)
-        # Check if item requirements are missing or empty
         needs_items = "itemReqs" not in q or len(q.get("itemReqs", [])) == 0
         
-        needs_guide = "guide" not in q or len(q["guide"]) == 0 or has_garbage_guide
+        needs_guide = "guide" not in q or len(q["guide"]) == 0 or has_garbage_guide or force_refresh
         
-        if not needs_reqs and not needs_guide and not needs_items:
+        if not needs_reqs and not needs_guide and not needs_items and not force_refresh:
             continue
             
         print(f"Processing {q['title']}...")
