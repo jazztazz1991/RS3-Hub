@@ -12,8 +12,11 @@ export const CharacterProvider = ({ children }) => {
     const [characterData, setCharacterData] = useState([]); // Parsed skills
     const [loadingChars, setLoadingChars] = useState(true);
     const [loadingData, setLoadingData] = useState(false);
+    const [questSyncTime, setQuestSyncTime] = useState(0);
+    const [questSyncTime, setQuestSyncTime] = useState(0); // Timestamp of last quest sync
 
     // Derived state for the currently selected character object
+
     const selectedCharacter = characters.find(c => c.id === selectedCharId);
 
     // Initial Fetch
@@ -21,12 +24,14 @@ export const CharacterProvider = ({ children }) => {
         fetchCharacters();
     }, []);
 
-    // Fetch Hiscores when selected character changes
+    // Fetch Hiscores & Quests when selected character changes
     useEffect(() => {
         if (selectedCharId) {
             const char = characters.find(c => c.id === selectedCharId);
             if (char) {
                 fetchHiscores(char.name);
+                // Auto-sync quests from RuneMetrics
+                syncQuests(char.name);
             }
         } else if (characters.length > 0) {
             // Auto select first if none selected
@@ -62,6 +67,21 @@ export const CharacterProvider = ({ children }) => {
             setLoadingData(false);
         }
     };
+
+    const syncQuests = async (rsn) => {
+        try {
+            // This endpoint imports RuneMetrics quest data for the user
+            // Since quests are currently tied to User (not Character), this syncs
+            // the active character's quests to the user's profile.
+            await axios.post('/api/quests/import', { username: rsn });
+            console.log(`Synced quests for ${rsn}`);
+            setQuestSyncTime(Date.now()); // Notify listeners
+        } catch (err) {
+            console.error('Failed to sync quests', err);
+        }
+    };
+
+
 
     const addCharacter = async (name) => {
         try {
@@ -133,8 +153,10 @@ export const CharacterProvider = ({ children }) => {
         fetchCharacters,
         addCharacter,
         deleteCharacter,
-        updateCharacterTasks
+        updateCharacterTasks,
+        questSyncTime
     };
+
 
     return (
         <CharacterContext.Provider value={value}>

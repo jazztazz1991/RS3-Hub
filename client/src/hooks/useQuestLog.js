@@ -1,10 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import { useCharacter } from '../context/CharacterContext';
 
 export const useQuestLog = () => {
     const { user } = useAuth();
+    const { questSyncTime } = useCharacter(); // Re-fetch on sync completion
     const [completedQuests, setCompletedQuests] = useState(new Set());
+
     const [loading, setLoading] = useState(false);
 
     const fetchQuests = useCallback(async () => {
@@ -24,11 +27,13 @@ export const useQuestLog = () => {
         } finally {
             setLoading(false);
         }
-    }, [user]);
+    }, [user, questSyncTime]); // Re-fetch when user or sync time changes
 
     useEffect(() => {
         fetchQuests();
     }, [fetchQuests]);
+
+
 
     const toggleQuest = async (title, status) => {
         if (!user) return; // Optimistic UI needs revert logic if failure, but keep simple for now
