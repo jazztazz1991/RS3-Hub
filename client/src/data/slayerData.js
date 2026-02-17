@@ -50,12 +50,12 @@ export const SLAYER_MASTERS = [
             { id: 'green_dragon', weight: 10, min: 100, max: 180 },
             { id: 'blue_dragon', weight: 10, min: 100, max: 180 },
             { id: 'black_dragon', weight: 10, min: 50, max: 100 },
-            { id: 'greater_demon', weight: 10, min: 130, max: 200 },
-            { id: 'black_demon', weight: 10, min: 130, max: 200 },
+            { id: 'greater_demons', weight: 10, min: 130, max: 200 },
+            { id: 'black_demons', weight: 10, min: 130, max: 200 },
             { id: 'hellhound', weight: 10, min: 100, max: 180 },
             { id: 'fire_giant', weight: 10, min: 150, max: 220 },
             { id: 'bloodveld', weight: 10, min: 100, max: 160 },
-            { id: 'gargoyle', weight: 10, min: 150, max: 220 },
+            { id: 'gargoyles', weight: 10, min: 150, max: 220 },
             { id: 'spiritual_warrior', weight: 10, min: 150, max: 220 },
             { id: 'spiritual_mage', weight: 10, min: 120, max: 180 },
             { id: 'dark_beast', weight: 8, min: 100, max: 160 },
@@ -63,7 +63,7 @@ export const SLAYER_MASTERS = [
             { id: 'abyssal_beast', weight: 8, min: 100, max: 150 },
             { id: 'abyssal_savage', weight: 8, min: 120, max: 180 },
             { id: 'revenants', weight: 10, min: 60, max: 100 },
-            { id: 'lava_strykewyrm', weight: 12, min: 60, max: 100 }
+            { id: 'lava_strykewyrms', weight: 12, min: 60, max: 100 }
         ]
     },
     {
@@ -192,25 +192,23 @@ export const SLAYER_MONSTERS = [
     { id: 'vinecrawler', name: 'Vinecrawler', xp: 2086.0, level: 104, category: 'Lost Grove' },
     { id: 'corrupted_worker', name: 'Corrupted worker', xp: 652.6, level: 103, category: 'Sophanem' },
     { id: 'lampenflora', name: 'Lampenflora', xp: 1331.8, level: 102, category: 'Anachronia' },
-    { id: 'hydrix_dragon', name: 'Hydrix dragon', xp: 4768.8, level: 101, category: 'Wilderness' },
+
     { id: 'corrupted_kalphite_marauder', name: 'Corrupted kalphite marauder', xp: 494.0, level: 100, category: 'Sophanem' },
     { id: 'brutish_dinosaur', name: 'Brutish dinosaur', xp: 3099.4, level: 99, category: 'Anachronia' },
     { id: 'soulgazer', name: 'Soulgazer', xp: 1950.0, level: 99, category: 'Dungeoneering' },
-    { id: 'onyx_dragon', name: 'Onyx dragon', xp: 1858.8, level: 98, category: 'Wilderness' },
+
     { id: 'corrupted_dust_devil', name: 'Corrupted dust devil', xp: 679.8, level: 97, category: 'Sophanem' },
-    { id: 'acheron_mammoth', name: 'Acheron mammoth', xp: 3628.8, level: 96, category: 'General' },
+
     { id: 'arhat', name: 'Arhat', xp: 0.0, level: 96, category: 'General' },
-    { id: 'camel_warrior', name: 'Camel Warrior', xp: 4768.8, level: 96, category: 'General' },
+
     { id: 'ripper_demon', name: 'Ripper Demon', xp: 2721.6, level: 96, category: 'General' },
-    { id: 'wyvern', name: 'Wyvern', xp: 1878.8, level: 96, category: 'Wilderness' },
+
     { id: 'abyssal_savage', name: 'Abyssal savage', xp: 423.2, level: 95, category: 'General' },
     { id: 'dragonstone_dragon', name: 'Dragonstone dragon', xp: 1448.4, level: 95, category: 'Wilderness' },
     { id: 'ganodermic_runt', name: 'Ganodermic runt', xp: 564.4, level: 95, category: 'Polypore' },
     { id: 'legiones', name: 'Legiones', xp: 1938.8, level: 95, category: 'Ascension' },
     { id: 'luminous_snaggler', name: 'Luminous snaggler', xp: 1664.8, level: 95, category: 'Anachronia' },
     { id: 'corrupted_lizard', name: 'Corrupted lizard', xp: 533.4, level: 94, category: 'Sophanem' },
-    { id: 'lava_strykewyrm', name: 'Lava strykewyrm', xp: 1896.8, level: 94, category: 'Wilderness' },
-    { id: 'ice_strykewyrm', name: 'Ice strykewyrm', xp: 693.2, level: 93, category: 'Wilderness' },
     { id: 'airut', name: 'Airut', xp: 800.2, level: 92, category: 'Kuradal' },
     { id: 'nodon_hunter', name: 'Nodon hunter', xp: 1858.8, level: 92, category: 'General' },
     { id: 'corrupted_scarab', name: 'Corrupted scarab', xp: 389.0, level: 91, category: 'Sophanem' },
@@ -229,11 +227,11 @@ export const SLAYER_MONSTERS = [
     { id: 'grifolaroo', name: 'Grifolaroo', xp: 323.2, level: 82, category: 'Polypore' },
     { id: 'rorarius', name: 'Rorarius', xp: 140.0, level: 81, category: 'Ascension' },
     { id: 'mutated_jadinko_baby', name: 'Mutated jadinko baby', xp: 98.6, level: 80, category: 'General' },
-    { id: 'nechryael', name: 'Nechryael', xp: 251.6, level: 80, category: 'Slayer Tower' },
+
     { id: 'nightmare', name: 'Nightmare', xp: 1540.0, level: 80, category: 'General' },
-    { id: 'aquanite', name: 'Aquanite', xp: 212.6, level: 78, category: 'Fremennik' },
+
     { id: 'desert_strykewyrm', name: 'Desert strykewyrm', xp: 376.6, level: 77, category: 'General' },
-    { id: 'gargoyle', name: 'Gargoyle', xp: 197.4, level: 75, category: 'Kuradal' },
+
     { id: 'jungle_strykewyrm', name: 'Jungle strykewyrm', xp: 249.8, level: 73, category: 'General' },
     { id: 'skeletal_wyvern', name: 'Skeletal Wyvern', xp: 510.8, level: 72, category: 'General' },
     { id: 'seeker', name: 'Seeker', xp: 440.4, level: 71, category: 'General' },
