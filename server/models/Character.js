@@ -25,6 +25,11 @@ const Character = sequelize.define('Character', {
     allowNull: true,
     defaultValue: '{}'
   },
+  block_list: {
+    type: DataTypes.TEXT, // Stored as JSON string [taskId1, taskId2]
+    allowNull: true,
+    defaultValue: '[]'
+  },
   userId: {
     type: DataTypes.UUID,
     allowNull: false,

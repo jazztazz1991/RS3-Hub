@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/slayerData';
 import { getXpAtLevel } from '../../../utils/rs3';
@@ -7,7 +7,7 @@ import SlayerLog from './SlayerLog';
 import './SlayerCalculator.css';
 
 const SlayerCalculator = () => {
-    const { characterData } = useCharacter();
+    const { characterData, selectedCharacter, updateBlockList } = useCharacter();
     const { getStatsForMonster } = useSlayerLog();
     
     // View Mode: 'calculator' or 'log'
@@ -21,6 +21,9 @@ const SlayerCalculator = () => {
     
     // Calc Mode Selection: 'master' or 'monster'
     const [calcMode, setCalcMode] = useState('master');
+    const [blockedTasks, setBlockedTasks] = useState([]);
+    const [taskSearchQuery, setTaskSearchQuery] = useState('');
+    const [showBlockList, setShowBlockList] = useState(false);
     
     // Selections
     const [selectedMaster, setSelectedMaster] = useState(SLAYER_MASTERS[0]);
@@ -29,6 +32,55 @@ const SlayerCalculator = () => {
     
     // User Overrides
     const [customTaskXp, setCustomTaskXp] = useState(SLAYER_MASTERS[0].avgXp);
+
+    // Calculate Average XP based on Block List
+    const effectiveAvgXp = useMemo(() => {
+        if (!selectedMaster || !selectedMaster.tasks) return selectedMaster.avgXp;
+
+        let totalWeight = 0;
+        let weightedXpSum = 0;
+
+        selectedMaster.tasks.forEach(task => {
+            if (blockedTasks.includes(task.id)) return;
+
+            const monster = SLAYER_MONSTERS.find(m => m.id === task.id);
+            // If monster not found, fallback to 0 or average?
+            // Assuming we have most, but let's use master.avgXp / 100 as a tiny fallback to avoid 0
+            const monsterXp = monster ? monster.xp : (task.xp || 500); 
+            
+            const avgKillCount = (task.min + task.max) / 2;
+            const taskXp = monsterXp * avgKillCount;
+
+            weightedXpSum += taskXp * task.weight;
+            totalWeight += task.weight;
+        });
+
+        return totalWeight > 0 ? Math.round(weightedXpSum / totalWeight) : 0;
+    }, [selectedMaster, blockedTasks]);
+
+    // Update custom XP when calculated changes
+    useEffect(() => {
+        setCustomTaskXp(effectiveAvgXp);
+    }, [effectiveAvgXp]);
+
+    const handleMasterChange = (master) => {
+        setSelectedMaster(master);
+        // blockedTasks are global for now, or per master? usually global but depends.
+        // Let's keep them global for simplicity or reset them? Resetting makes sense as lists differ.
+        setBlockedTasks([]); 
+    };
+
+    const toggleBlockTask = (taskId) => {
+        const newBlockList = blockedTasks.includes(taskId) 
+            ? blockedTasks.filter(id => id !== taskId)
+            : [...blockedTasks, taskId];
+
+        setBlockedTasks(newBlockList);
+
+        if (selectedCharacter && updateBlockList) {
+            updateBlockList(selectedCharacter.id, newBlockList);
+        }
+    };
 
     // Initialize from character data
     useEffect(() => {
@@ -45,10 +97,21 @@ const SlayerCalculator = () => {
         }
     }, [characterData]);
 
-    const handleMasterChange = (master) => {
-        setSelectedMaster(master);
-        setCustomTaskXp(master.avgXp);
-    };
+    // Initialize Block List from DB
+    useEffect(() => {
+        if (selectedCharacter && selectedCharacter.block_list) {
+            try {
+                const savedList = JSON.parse(selectedCharacter.block_list);
+                if (Array.isArray(savedList)) {
+                    setBlockedTasks(savedList);
+                }
+            } catch (e) {
+                console.error("Failed to parse block list", e);
+            }
+        }
+    }, [selectedCharacter]);
+
+
 
     const handleLevelChange = (e) => {
         const level = parseInt(e.target.value) || 1;
@@ -178,14 +241,75 @@ const SlayerCalculator = () => {
                                 </div>
                                 
                                 <div className="custom-xp-input">
-                                    <label>Adjust Average XP/Task:</label>
+                                    <label>Average XP/Task (Calculated):</label>
                                     <input 
                                         type="number" 
                                         value={customTaskXp} 
                                         onChange={(e) => setCustomTaskXp(parseInt(e.target.value) || 0)}
                                     />
-                                    <small>This varies heavily on your block/prefer list.</small>
+                                    <small>Based on your block list and average kills per task.</small>
                                 </div>
+
+                                {selectedMaster && selectedMaster.tasks && (
+                                    <div className="block-list-section">
+                                        <div className="section-header" onClick={() => setShowBlockList(!showBlockList)}>
+                                            <h4>Task Weighting & Block List {showBlockList ? '▼' : '▶'}</h4>
+                                        </div>
+                                        
+                                        {showBlockList && (
+                                            <div className="task-list-container">
+                                                <div className="task-search-container">
+                                                    <input 
+                                                        type="text" 
+                                                        className="task-search-input"
+                                                        placeholder="Search tasks..." 
+                                                        value={taskSearchQuery}
+                                                        onChange={(e) => setTaskSearchQuery(e.target.value)}
+                                                    />
+                                                </div>
+                                                <div className="task-list-header">
+                                                    <span>Block</span>
+                                                    <span>Task</span>
+                                                    <span>Weight</span>
+                                                    <span>XP/Task</span>
+                                                </div>
+                                                <div className="task-list-scroll">
+                                                    {[...selectedMaster.tasks]
+                                                        .filter(task => {
+                                                            const monster = SLAYER_MONSTERS.find(m => m.id === task.id);
+                                                            const taskName = monster ? monster.name : task.id.replace(/_/g, ' ');
+                                                            return taskName.toLowerCase().includes(taskSearchQuery.toLowerCase());
+                                                        })
+                                                        .sort((a,b) => b.weight - a.weight)
+                                                        .map((task) => {
+                                                        const monster = SLAYER_MONSTERS.find(m => m.id === task.id);
+                                                        const taskName = monster ? monster.name : task.id.replace(/_/g, ' ');
+                                                        let avgXp = 0;
+                                                        if (monster) {
+                                                            avgXp = Math.round(monster.xp * ((task.min + task.max)/2));
+                                                        }
+                                                        const isBlocked = blockedTasks.includes(task.id);
+                                                        
+                                                        return (
+                                                            <div key={task.id} className={`task-row ${isBlocked ? 'blocked' : ''}`}>
+                                                                <div className="task-check">
+                                                                    <input 
+                                                                        type="checkbox" 
+                                                                        checked={isBlocked}
+                                                                        onChange={() => toggleBlockTask(task.id)}
+                                                                    />
+                                                                </div>
+                                                                <div className="task-name" title={taskName}>{taskName}</div>
+                                                                <div className="task-weight">{task.weight}</div>
+                                                                <div className="task-xp">{avgXp.toLocaleString()}</div>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         ) : (
                             <div className="monster-list">

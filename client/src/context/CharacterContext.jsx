@@ -141,6 +141,30 @@ export const CharacterProvider = ({ children }) => {
         }
     };
 
+    const updateBlockList = async (id, blockList) => {
+        try {
+            const jsonString = JSON.stringify(blockList);
+            
+            // Optimistic update
+            const updatedChars = characters.map(c => {
+                if (c.id === id) {
+                    return { ...c, block_list: jsonString };
+                }
+                return c;
+            });
+            setCharacters(updatedChars);
+
+            // API Call
+            await axios.put(`/api/characters/${id}`, {
+                block_list: jsonString
+            });
+            return true;
+        } catch (err) {
+            console.error('Failed to update block list', err);
+            return false;
+        }
+    };
+
     const value = {
         characters,
         selectedCharId,
@@ -153,6 +177,7 @@ export const CharacterProvider = ({ children }) => {
         addCharacter,
         deleteCharacter,
         updateCharacterTasks,
+        updateBlockList,
         questSyncTime
     };
 
