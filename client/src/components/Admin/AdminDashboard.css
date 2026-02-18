@@ -56,6 +56,9 @@
 .stat-badge.open { background-color: #e74c3c; color: white; }
 .stat-badge.investigating { background-color: #f39c12; color: white; }
 .stat-badge.resolved { background-color: #27ae60; color: white; }
+.stat-badge.implemented { background-color: #27ae60; color: white; }
+.stat-badge.rejected { background-color: #7f8c8d; color: white; }
+.stat-badge.closed { background-color: #95a5a6; color: white; }
 .stat-badge.total { background-color: #34495e; color: white; }
 
 .refresh-btn {

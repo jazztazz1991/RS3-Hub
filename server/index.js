@@ -14,6 +14,7 @@ const characterRoutes = require('./routes/characters');
 const slayerRoutes = require('./routes/slayer');
 const questRoutes = require('./routes/quests');
 const reportRoutes = require('./routes/reports');
+const suggestionRoutes = require('./routes/suggestions');
 const userRoutes = require('./routes/users');
 
 dotenv.config();
@@ -78,6 +79,7 @@ app.use('/api/characters', characterRoutes);
 app.use('/api/slayer', slayerRoutes);
 app.use('/api/quests', questRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/suggestions', suggestionRoutes);
 app.use('/api/users', require('./routes/users'));
 
 // Proxy route for Jagex Hiscores (with Caching)

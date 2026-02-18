@@ -65,6 +65,22 @@
     background: #e74c3c;
 }
 
+.suggestion-btn {
+    background: #27ae60;
+    border: none;
+    color: white;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.suggestion-btn:hover {
+    background: #2ecc71;
+}
+
 .user-greeting {
     color: #ffd700;
     margin-right: 0.5rem;

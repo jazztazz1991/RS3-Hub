@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useReportCalls } from '../../context/ReportContext';
 import ReportModal from '../Common/ReportModal';
+import SuggestionModal from '../Common/SuggestionModal';
 import './Navbar.css';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { reportContext } = useReportCalls();
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [isSuggestionModalOpen, setIsSuggestionModalOpen] = useState(false);
 
   return (
     <>
@@ -20,6 +22,7 @@ const Navbar = () => {
           {user ? (
             <>
               <li><button onClick={() => setIsReportModalOpen(true)} className="report-btn">Report Issue</button></li>
+              <li><button onClick={() => setIsSuggestionModalOpen(true)} className="suggestion-btn">Suggestion</button></li>
               <li><Link to="/">Dashboard</Link></li>
               <li><Link to="/calculators">Calculators</Link></li>
               <li><Link to="/quests">Quests</Link></li>
@@ -42,6 +45,11 @@ const Navbar = () => {
         onClose={() => setIsReportModalOpen(false)} 
         contextData={reportContext}
         defaultType="bug"
+      />
+      <SuggestionModal 
+        isOpen={isSuggestionModalOpen} 
+        onClose={() => setIsSuggestionModalOpen(false)} 
+        contextData={reportContext}
       />
     </>
   );

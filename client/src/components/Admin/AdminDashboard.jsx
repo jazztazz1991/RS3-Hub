@@ -19,6 +19,12 @@ const AdminDashboard = () => {
     const [filterStatus, setFilterStatus] = useState('all');
     const [expandedRows, setExpandedRows] = useState({});
 
+    // Suggestions State
+    const [suggestions, setSuggestions] = useState([]);
+    const [loadingSuggestions, setLoadingSuggestions] = useState(true);
+    const [suggestionFilter, setSuggestionFilter] = useState('all');
+    const [expandedSuggestions, setExpandedSuggestions] = useState({});
+
     // Users State
     const [users, setUsers] = useState([]);
     const [loadingUsers, setLoadingUsers] = useState(true);
@@ -30,6 +36,7 @@ const AdminDashboard = () => {
 
     useEffect(() => {
         if (activeTab === 'reports') fetchReports();
+        if (activeTab === 'suggestions') fetchSuggestions();
         if (activeTab === 'users') fetchUsers();
     }, [activeTab]);
 
@@ -88,6 +95,47 @@ const AdminDashboard = () => {
         }
     };
 
+    // --- Suggestions Logic ---
+    const fetchSuggestions = async () => {
+        try {
+            setLoadingSuggestions(true);
+            const res = await axios.get(`${API_URL}/api/suggestions?timestamp=${Date.now()}`);
+            setSuggestions(res.data);
+            setError(null);
+        } catch (err) {
+            console.error('Error fetching suggestions:', err);
+            setError('Failed to load suggestions.');
+        } finally {
+            setLoadingSuggestions(false);
+        }
+    };
+
+    const updateSuggestionStatus = async (id, newStatus) => {
+        try {
+            await axios.patch(`${API_URL}/api/suggestions/${id}/status`, { status: newStatus });
+            setSuggestions(prev => prev.map(s => s.id === id ? { ...s, status: newStatus } : s));
+        } catch (err) {
+            console.error('Error updating status:', err);
+            alert('Failed to update status');
+        }
+    };
+
+    const toggleSuggestionRow = (id) => {
+        setExpandedSuggestions(prev => ({ ...prev, [id]: !prev[id] }));
+    };
+
+    const filteredSuggestions = suggestions.filter(s => 
+        suggestionFilter === 'all' ? true : s.status === suggestionFilter
+    );
+
+    const suggestionStats = {
+        open: suggestions.filter(s => s.status === 'open').length,
+        investigating: suggestions.filter(s => s.status === 'investigating').length,
+        implemented: suggestions.filter(s => s.status === 'implemented').length,
+        rejected: suggestions.filter(s => s.status === 'rejected').length,
+        total: suggestions.length
+    };
+
     const toggleUserStatus = async (id, currentStatus) => {
         try {
             if (!confirm(`Are you sure you want to ${currentStatus ? 'deactivate' : 'activate'} this user?`)) return;
@@ -113,13 +161,23 @@ const AdminDashboard = () => {
                         Bug Reports
                     </button>
                     <button 
+                        className={`tab-btn ${activeTab === 'suggestions' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('suggestions')}
+                    >
+                        Suggestions
+                    </button>
+                    <button 
                         className={`tab-btn ${activeTab === 'users' ? 'active' : ''}`}
                         onClick={() => setActiveTab('users')}
                     >
                         User Management
                     </button>
                 </div>
-                <button onClick={activeTab === 'reports' ? fetchReports : fetchUsers} className="refresh-btn">Refresh</button>
+                <button onClick={() => {
+                    if (activeTab === 'reports') fetchReports();
+                    else if (activeTab === 'suggestions') fetchSuggestions();
+                    else fetchUsers();
+                }} className="refresh-btn">Refresh</button>
             </header>
 
             {error && <div className="error-banner">{error}</div>}
@@ -216,6 +274,105 @@ const AdminDashboard = () => {
                                     {filteredReports.length === 0 && (
                                         <tr>
                                             <td colSpan="5" className="no-data">No reports found matching criteria.</td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
+                </>
+            )}
+
+            {activeTab === 'suggestions' && (
+                <>
+                    <div className="admin-stats">
+                        <span className="stat-badge open">Open: {suggestionStats.open}</span>
+                        <span className="stat-badge investigating">Investigating: {suggestionStats.investigating}</span>
+                        <span className="stat-badge resolved">Implemented: {suggestionStats.implemented}</span>
+                        <span className="stat-badge closed">Rejected: {suggestionStats.rejected}</span>
+                    </div>
+
+                    <div className="admin-controls">
+                        <label>Filter Status: </label>
+                        <select value={suggestionFilter} onChange={(e) => setSuggestionFilter(e.target.value)}>
+                            <option value="all">All</option>
+                            <option value="open">Open</option>
+                            <option value="investigating">Investigating</option>
+                            <option value="implemented">Implemented</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                    {loadingSuggestions ? <div className="admin-loading">Loading Suggestions...</div> : (
+                        <div className="reports-table-container">
+                            <table className="reports-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {filteredSuggestions.map(suggestion => (
+                                        <React.Fragment key={suggestion.id}>
+                                            <tr className={`report-row ${suggestion.status} ${expandedSuggestions[suggestion.id] ? 'expanded' : ''}`} onClick={() => toggleSuggestionRow(suggestion.id)}>
+                                                <td>{new Date(suggestion.createdAt).toLocaleDateString()} {new Date(suggestion.createdAt).toLocaleTimeString()}</td>
+                                                <td className="desc-cell">{suggestion.description.substring(0, 100)}{suggestion.description.length > 100 && '...'}</td>
+                                                <td>
+                                                    <select 
+                                                        value={suggestion.status} 
+                                                        onClick={(e) => e.stopPropagation()}
+                                                        onChange={(e) => updateSuggestionStatus(suggestion.id, e.target.value)}
+                                                        className={`status-select ${suggestion.status}`}
+                                                    >
+                                                        <option value="open">Open</option>
+                                                        <option value="investigating">Investigating</option>
+                                                        <option value="implemented">Implemented</option>
+                                                        <option value="rejected">Rejected</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <button className="expand-btn">{expandedSuggestions[suggestion.id] ? 'Hide' : 'View'}</button>
+                                                </td>
+                                            </tr>
+                                            {expandedSuggestions[suggestion.id] && (
+                                                <tr className="detail-row">
+                                                    <td colSpan="4">
+                                                        <div className="report-details">
+                                                            <div className="detail-section">
+                                                                <h4>Full Description</h4>
+                                                                <p>{suggestion.description}</p>
+                                                            </div>
+                                                            <div className="detail-grid">
+                                                                <div className="detail-item">
+                                                                    <strong>Path:</strong> {suggestion.path || suggestion.contextData?.path || '/'}
+                                                                </div>
+                                                                <div className="detail-item">
+                                                                    <strong>Browser:</strong> {suggestion.browser || suggestion.contextData?.browser || 'Unknown'}
+                                                                </div>
+                                                                <div className="detail-item">
+                                                                    <strong>User ID:</strong> {suggestion.userId || 'Anonymous'}
+                                                                </div>
+                                                            </div>
+                                                            {suggestion.contextData && (
+                                                                <div className="detail-section">
+                                                                    <h4>Context Data</h4>
+                                                                    <pre className="json-view">
+                                                                        {JSON.stringify(suggestion.contextData, null, 2)}
+                                                                    </pre>
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </React.Fragment>
+                                    ))}
+                                    {filteredSuggestions.length === 0 && (
+                                        <tr>
+                                            <td colSpan="4" className="no-data">No suggestions found matching criteria.</td>
                                         </tr>
                                     )}
                                 </tbody>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './ReportModal.css'; // We'll create this next
+import './ReportModal.css'; // Reusing the same styles for now
 
-const ReportModal = ({ isOpen, onClose, contextData = {}, defaultType = 'bug' }) => {
-    const [type, setType] = useState(defaultType);
+const SuggestionModal = ({ isOpen, onClose, contextData = {} }) => {
     const [description, setDescription] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState('idle'); // idle, success, error
@@ -37,12 +36,11 @@ const ReportModal = ({ isOpen, onClose, contextData = {}, defaultType = 'bug' })
         setStatus('idle');
 
         try {
-            await axios.post('/api/reports', {
-                type,
+            await axios.post('/api/suggestions', {
                 description,
                 contextData,
                 path: window.location.pathname,
-                browser: getBrowserInfo() // Send simplified browser name
+                browser: getBrowserInfo()
             });
             setStatus('success');
             setTimeout(() => {
@@ -62,42 +60,33 @@ const ReportModal = ({ isOpen, onClose, contextData = {}, defaultType = 'bug' })
         <div className="report-modal-overlay">
             <div className="report-modal">
                 <button className="close-btn" onClick={onClose}>&times;</button>
-                <h3>Report Issue</h3>
+                <h3>Make a Suggestion</h3>
                 
                 {status === 'success' ? (
                     <div className="success-message">
-                        ✅ Report submitted! Thank you.
+                        ✅ Suggestion submitted! Thank you.
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>Type</label>
-                            <select value={type} onChange={(e) => setType(e.target.value)}>
-                                <option value="bug">Bug</option>
-                                <option value="data_error">Data Error</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
                         <div className="form-group">
                             <label>Description</label>
                             <textarea 
                                 value={description} 
                                 onChange={(e) => setDescription(e.target.value)}
-                                placeholder="Describe the issue... (Current page data will be automatically included)"
+                                placeholder="What would you like to see added or changed?..."
                                 required
                                 rows="5"
                             />
                         </div>
 
                         {status === 'error' && (
-                            <p className="error-message">Failed to submit report. Please try again.</p>
+                            <p className="error-message">Failed to submit suggestion. Please try again.</p>
                         )}
 
                         <div className="modal-actions">
                             <button type="button" onClick={onClose} disabled={isSubmitting}>Cancel</button>
                             <button type="submit" className="submit-btn" disabled={isSubmitting}>
-                                {isSubmitting ? 'Sending...' : 'Submit Report'}
+                                {isSubmitting ? 'Sending...' : 'Submit Suggestion'}
                             </button>
                         </div>
                     </form>
@@ -107,4 +96,4 @@ const ReportModal = ({ isOpen, onClose, contextData = {}, defaultType = 'bug' })
     );
 };
 
-export default ReportModal;
+export default SuggestionModal;
