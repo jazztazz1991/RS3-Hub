@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { THIEVING_METHODS } from '../../../data/thievingData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './ThievingCalculator.css';
 
 const ThievingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     
     // State
     const [currentLevel, setCurrentLevel] = useState(1);
@@ -16,6 +18,19 @@ const ThievingCalculator = () => {
     const [selectedMethod, setSelectedMethod] = useState(null);
 
     // Initialize from character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Thieving Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                category: selectedCategory,
+                method: selectedMethod?.name
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, selectedCategory, selectedMethod]);
+
     useEffect(() => {
         if (characterData && Array.isArray(characterData)) {
             const skill = characterData.find(s => s.name === "Thieving");

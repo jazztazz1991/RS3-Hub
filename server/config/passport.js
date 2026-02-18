@@ -10,6 +10,9 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findByPk(id);
+    if (!user || user.isActive === false) {
+      return done(null, false); // Log out if user deleted or deactivated
+    }
     done(null, user);
   } catch (err) {
     done(err, null);
@@ -26,6 +29,12 @@ passport.use(new LocalStrategy({
     if (!user) {
       return done(null, false, { message: 'Incorrect email.' });
     }
+    
+    // Check if user is active
+    if (user.isActive === false) {
+      return done(null, false, { message: 'Your account has been deactivated.' });
+    }
+
     const isValid = await user.validPassword(password);
     if (!isValid) {
       return done(null, false, { message: 'Incorrect password.' });

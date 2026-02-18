@@ -47,8 +47,16 @@ export const useSlayerLog = () => {
     }, [activeTask]);
 
     const startTask = (monster, count, master) => {
+        // Fallback for ID generation if crypto not available
+        const generateId = () => {
+             if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                 return crypto.randomUUID();
+             }
+             return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        };
+
         const task = {
-            id: crypto.randomUUID(),
+            id: generateId(),
             monster, // full object { id, name, xp }
             master, // full object or string
             assignedCount: parseInt(count),
@@ -56,7 +64,7 @@ export const useSlayerLog = () => {
             accumulatedTime: 0, // ms
             isRunning: true,
             lastTick: Date.now(),
-            logs: [] // for notes or drops
+            logs: [] // for logs
         };
         setActiveTask(task);
     };

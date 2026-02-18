@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useCharacter } from '../../context/CharacterContext';
+import { useReportCalls } from '../../context/ReportContext';
 import { getTargetXp, XP_TABLE } from '../../utils/rs3';
 import TaskTracker from './TaskTracker';
 import WildyTracker from '../WildyEvents/WildyTracker';
@@ -97,6 +98,7 @@ const SkillCard = ({ skill }) => {
 };
 
 const Dashboard = () => {
+    const { updateReportContext, clearReportContext } = useReportCalls();
   const { user } = useAuth();
   const { 
     characters, 
@@ -110,6 +112,17 @@ const Dashboard = () => {
     deleteCharacter 
   } = useCharacter();
 
+  useEffect(() => {
+    updateReportContext({
+        tool: 'Dashboard',
+        state: {
+            view: 'Overview',
+            charactersCount: characters?.length,
+            selectedChar: selectedCharacter?.name
+        }
+    });
+    return () => clearReportContext();
+}, [characters, selectedCharacter]);
   
   // Add Char State
   const [newCharName, setNewCharName] = useState('');

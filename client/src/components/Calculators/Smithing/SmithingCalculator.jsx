@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { SMITHING_METHODS } from '../../../data/smithingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './SmithingCalculator.css';
 
 const SmithingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // Data - The data file exports SMITHING_METHODS which are the items themselves.
     const SMITHING_ITEMS_LIST = SMITHING_METHODS;
@@ -27,7 +29,21 @@ const SmithingCalculator = () => {
 
     const [selectedItem, setSelectedItem] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+useEffect(() => {
+        updateReportContext({
+           tool: 'Smithing Calculator',
+           state: {
+               xp: currentXp,
+               target: targetLevel,
+               method: trainingModifier?.name,
+               item: selectedItem?.name,
+               cat: filterCategory
+           }
+       });
+       return () => clearReportContext();
+   }, [currentXp, targetLevel, trainingModifier, selectedItem, filterCategory]);
 
+    
     // Initialize from Character Context
     useEffect(() => {
         if (characterData && characterData.length > 0) {

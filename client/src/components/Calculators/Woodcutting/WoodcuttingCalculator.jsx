@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { WOODCUTTING_ITEMS, WOODCUTTING_BOOSTS } from '../../../data/woodcuttingData';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './WoodcuttingCalculator.css';
 
 const WoodcuttingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(99);
@@ -18,6 +20,19 @@ const WoodcuttingCalculator = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // Load character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Woodcutting Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                method: selectedMethod?.name,
+                boosts: activeBoosts
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedMethod, activeBoosts]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const skill = characterData.find(s => s.name === "Woodcutting");

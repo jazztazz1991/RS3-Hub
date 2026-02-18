@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { AGILITY_METHODS } from '../../../data/agilityData';
 import { getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './AgilityCalculator.css';
 
 const AgilityCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentLevel, setCurrentLevel] = useState(1);
@@ -16,6 +18,19 @@ const AgilityCalculator = () => {
     const [selectedMethod, setSelectedMethod] = useState(null);
 
     // Initialize from character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Agility Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                category: selectedCategory,
+                method: selectedMethod?.name
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, selectedCategory, selectedMethod]);
+
     useEffect(() => {
         if (characterData && Array.isArray(characterData)) {
             const skill = characterData.find(s => s.name === "Agility");

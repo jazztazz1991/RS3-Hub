@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { artefacts } from '../../../data/artefacts';
 import { XP_TABLE, getLevelAtXp, getTargetXp } from '../../../utils/rs3';
 import './ArchaeologyCalculator.css';
 
 const ArchaeologyCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -14,6 +16,19 @@ const ArchaeologyCalculator = () => {
     const [restorationList, setRestorationList] = useState([]);
 
     // Initialize
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Archaeology Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                search: searchTerm,
+                restoring: restorationList.length
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, searchTerm, restorationList, updateReportContext, clearReportContext]);
+
     useEffect(() => {
         if (characterData) {
             const skill = characterData.find(s => s.name === "Archaeology");
@@ -67,7 +82,6 @@ const ArchaeologyCalculator = () => {
     const stats = useMemo(() => {
         const xpGain = restorationList.reduce((acc, item) => acc + (item.artefact.xp || 0) * item.quantity, 0);
         const newXp = currentXp + xpGain;
-        const targetXpVal = getTargetXp('Archaeology', currentXp); // Use utility for target
         // Or manual calculation based on targetLevel
         const manualTargetXp = XP_TABLE[targetLevel] || 0;
         

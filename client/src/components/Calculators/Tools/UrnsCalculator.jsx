@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { URN_DATA, URN_ENHANCER_BONUS } from '../../../data/urnsData';
 import { useCharacter } from '../../../context/CharacterContext.jsx';
-import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
+import { useReportCalls } from '../../../context/ReportContext';
+import { XP_TABLE, getXpAtLevel } from '../../../utils/rs3';
 import './UrnsCalculator.css';
 
 const UrnsCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const skills = Object.keys(URN_DATA);
 
     const [selectedSkill, setSelectedSkill] = useState(skills[0]);
@@ -16,6 +18,18 @@ const UrnsCalculator = () => {
     const [useEnhancer, setUseEnhancer] = useState(false);
 
     // Update XP when skill changes or character data loads
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Urns Calculator',
+            state: {
+                skill: selectedSkill,
+                urnIndex: selectedUrnIndex,
+                enhancer: useEnhancer
+            }
+        });
+        return () => clearReportContext();
+    }, [selectedSkill, selectedUrnIndex, useEnhancer, updateReportContext, clearReportContext]);
+
     useEffect(() => {
         if (characterData) {
             const skillData = characterData.find(s => s.name === selectedSkill) || 

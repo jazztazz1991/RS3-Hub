@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { HERBLORE_ITEMS as HERBLORE_METHODS } from '../../../data/herbloreData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './HerbloreCalculator.css';
 
 const HerbloreCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -15,6 +17,19 @@ const HerbloreCalculator = () => {
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Initialize from Character Context
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Herblore Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                method: selectedMethodId,
+                cat: categoryFilter
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedMethodId, categoryFilter]);
+
     useEffect(() => {
         if (characterData) {
             const skill = characterData.find(s => s.name === "Herblore");

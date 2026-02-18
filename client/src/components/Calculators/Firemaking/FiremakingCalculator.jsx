@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { FIREMAKING_ITEMS, FIREMAKING_BOOSTS } from '../../../data/firemakingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './FiremakingCalculator.css';
 
 const FiremakingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -20,6 +22,20 @@ const FiremakingCalculator = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Firemaking Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                method: selectedMethod?.name,
+                bonfire: usingBonfire,
+                boosts: activeBoosts
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedMethod, usingBonfire, activeBoosts]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const skill = characterData.find(s => s.name === "Firemaking");

@@ -1,0 +1,243 @@
+.admin-dashboard-container {
+    padding: 20px;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-btn {
+    background-color: #333;
+    color: #bbb;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.tab-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.admin-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.stat-badge.open { background-color: #e74c3c; color: white; }
+.stat-badge.investigating { background-color: #f39c12; color: white; }
+.stat-badge.resolved { background-color: #27ae60; color: white; }
+.stat-badge.total { background-color: #34495e; color: white; }
+
+.refresh-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.refresh-btn:hover { background-color: #2980b9; }
+
+.admin-controls {
+    margin-bottom: 20px;
+}
+
+.reports-table-container {
+    overflow-x: auto;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reports-table th, .reports-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+.reports-table th {
+    background-color: #333;
+    color: #ffd700;
+}
+
+.report-row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.report-row:hover { background-color: #383838; }
+.report-row.expanded { background-color: #404040; }
+
+.type-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+.type-badge.bug { background-color: #e74c3c; color: white; }
+.type-badge.suggestion { background-color: #2ecc71; color: white; }
+.type-badge.data_error { background-color: #e67e22; color: white; }
+.type-badge.other { background-color: #95a5a6; color: white; }
+
+.desc-cell {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status-select {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.expand-btn {
+    background-color: transparent;
+    border: 1px solid #666;
+    color: #bbb;
+    padding: 2px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Details Section */
+.detail-row {
+    background-color: #222;
+}
+
+.report-details {
+    padding: 20px;
+    border-top: 1px solid #444;
+}
+
+.detail-section {
+    margin-bottom: 15px;
+}
+.detail-section h4 {
+    color: #3498db;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 2px;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.json-view {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9em;
+    overflow-x: auto;
+    color: #aaddff;
+}
+
+.no-data {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+}
+
+.error-banner {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* User Management Styles */
+.user-row {
+    border-bottom: 1px solid #444;
+}
+.user-row:hover {
+    background-color: #383838;
+}
+
+.role-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+.role-badge.admin { background-color: #8e44ad; color: white; }
+.role-badge.user { background-color: #7f8c8d; color: white; }
+
+.status-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+.status-badge.active { background-color: #27ae60; color: white; }
+.status-badge.inactive { background-color: #c0392b; color: white; }
+
+.action-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85em;
+    transition: background 0.2s;
+}
+
+.action-btn.activate {
+    background-color: #27ae60;
+    color: white;
+}
+.action-btn.activate:hover {
+    background-color: #2ecc71;
+}
+
+.action-btn.deactivate {
+    background-color: #c0392b;
+    color: white;
+}
+.action-btn.deactivate:hover {
+    background-color: #e74c3c;
+}

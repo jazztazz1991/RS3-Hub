@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { PRAYER_ITEMS, PRAYER_METHODS, SPECIAL_ITEMS } from '../../../data/prayerData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './PrayerCalculator.css';
 
 const PrayerCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -21,6 +23,21 @@ const PrayerCalculator = () => {
     const [isVos, setIsVos] = useState(false);
 
     // Initialize
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Prayer Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                mode,
+                item: selectedItemId,
+                method: selectedMethodId,
+                vos: isVos
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, mode, selectedItemId, selectedMethodId, isVos]);
+
     useEffect(() => {
         if (characterData) {
             const skill = characterData.find(s => s.name === "Prayer");

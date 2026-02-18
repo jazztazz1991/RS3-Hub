@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './InventionCalculator.css';
 import augmentableItems from '../../../data/augmentableItems.json';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 // Note: Invention uses formatted elite skill XP. For UI consistency we interpret inputs, 
 // using generic curve for placeholders if needed, but here we define essential Elite milestones.
 // Ideally move to rs3.js.
@@ -9,6 +10,7 @@ import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 
 const InventionCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(99);
@@ -21,7 +23,21 @@ const InventionCalculator = () => {
     const [selectedMethod, setSelectedMethod] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [categoryFilter, setCategoryFilter] = useState('All');
+useEffect(() => {
+        updateReportContext({
+            tool: 'Invention Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                action,
+                itemLevel,
+                method: selectedMethod?.name
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, action, itemLevel, selectedMethod, updateReportContext, clearReportContext]);
 
+    
     // Elite Skill Curve Approximation or Hardcoded Milestones for UX
     // (Standard Utils return Standard XP, so we override for Invention context if possible, 
     // or just accept mismatch until global util update).

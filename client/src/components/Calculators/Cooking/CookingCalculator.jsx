@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { COOKING_ITEMS, COOKING_METHODS } from '../../../data/cookingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './CookingCalculator.css';
 
 const CookingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -20,6 +22,19 @@ const CookingCalculator = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Cooking Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                method: trainingMethod?.name,
+                item: selectedItem?.name
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, trainingMethod, selectedItem]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const skill = characterData.find(s => s.name === "Cooking");

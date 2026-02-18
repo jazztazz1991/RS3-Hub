@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { summoningData } from '../../../data/summoningData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './SummoningCalculator.css';
 
 const SummoningCalculator = () => {
     const { characterData } = useCharacter();
-    
+    const { updateReportContext, clearReportContext } = useReportCalls();
     // State
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
@@ -23,6 +24,20 @@ const SummoningCalculator = () => {
     const [charmFilter, setCharmFilter] = useState('All');
 
     // Load character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Summoning Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                mode: calcMode,
+                method: selectedMethod?.name,
+                modifiers: { outfit: useOutfit, vos: useVos }
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedMethod, useOutfit, useVos]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const summHelper = characterData.find(s => s.name === 'Summoning');

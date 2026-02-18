@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { FLETCHING_ITEMS as FLETCHING_DATA, FLETCHING_BOOSTS } from '../../../data/fletchingData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './FletchingCalculator.css';
 
 const FletchingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -15,6 +17,19 @@ const FletchingCalculator = () => {
     const [categoryFilter, setCategoryFilter] = useState('All');
     
     // Initialize
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Fletching Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                item: selectedItemId,
+                cat: categoryFilter
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedItemId, categoryFilter, updateReportContext, clearReportContext]);
+
     useEffect(() => {
         if (characterData) {
             const skill = characterData.find(s => s.name === "Fletching");

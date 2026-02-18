@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../context/CharacterContext';
+import { useReportCalls } from '../../context/ReportContext';
 import { DAILY_TASKS, WEEKLY_TASKS, MONTHLY_TASKS } from '../../data/dailyTasksData';
 import './DailyTasks.css';
 
 const DailyTasks = () => {
     const { selectedCharacter, updateCharacterTasks } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
+
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Daily Tasks',
+            state: {
+                pinned: pinnedTasks.length,
+                completed: Object.keys(completedTasks).length
+            }
+        });
+        return () => clearReportContext();
+    }, [pinnedTasks, completedTasks]);
 
     // Clock State
     const [currentTime, setCurrentTime] = useState(new Date());

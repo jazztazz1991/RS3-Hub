@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { divinationData } from '../../../data/divinationData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './DivinationCalculator.css';
 
 const DivinationCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(99);
@@ -22,6 +24,20 @@ const DivinationCalculator = () => {
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Load character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Divination Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                mode: calcMode,
+                method: selectedMethod?.name,
+                modifiers: { outfit: useOutfit, incense: useIncense, enhanced: useEnhanced }
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedMethod, useOutfit, useIncense, useEnhanced]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const skill = characterData.find(s => s.name === "Divination");

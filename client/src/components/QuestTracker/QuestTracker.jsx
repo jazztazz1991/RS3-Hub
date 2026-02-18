@@ -1,6 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCharacter } from '../../context/CharacterContext';
+import { useReportCalls } from '../../context/ReportContext';
 import { useQuestLog } from '../../hooks/useQuestLog';
 import { QUEST_DATA } from '../../data/questData';
 import './QuestTracker.css';
@@ -9,6 +10,7 @@ const QuestTracker = () => {
     const navigate = useNavigate();
     const { characterData } = useCharacter();
     const { completedQuests, toggleQuest, importQuests } = useQuestLog();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // Filters
     const [search, setSearch] = useState('');
@@ -91,7 +93,21 @@ const QuestTracker = () => {
         });
         return sum;
     }, [completedQuests]);
+useEffect(() => {
+        updateReportContext({
+            tool: 'Quest Tracker',
+            state: {
+                search,
+                hideCompleted,
+                filterCanDo,
+                completedCount: completedQuests.size,
+                totalQP
+            }
+        });
+        return () => clearReportContext();
+    }, [search, hideCompleted, filterCanDo, completedQuests, totalQP]);
 
+    
     const handleImport = async () => {
         if (!importUser) return;
         setImportMsg("Importing...");

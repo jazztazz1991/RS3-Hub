@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { dungeoneeringData } from '../../../data/dungeoneeringData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './DungeoneeringCalculator.css';
 
 const DungeoneeringCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(120);
@@ -22,6 +24,20 @@ const DungeoneeringCalculator = () => {
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Load character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Dungeoneering Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                mode: calcMode,
+                method: selectedMethod?.name,
+                modifiers: { outfit: useOutfit, wildcard: useWildcard }
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedMethod, useOutfit, useWildcard]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const dungHelper = characterData.find(s => s.name === 'Dungeoneering');

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { FISHING_ITEMS, FISHING_BOOSTS } from '../../../data/fishingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './FishingCalculator.css';
 
 const FishingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -20,6 +22,20 @@ const FishingCalculator = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Fishing Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                method: selectedMethod?.name,
+                cat: filterCategory,
+                boosts: activeBoosts
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedMethod, filterCategory, activeBoosts]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const skill = characterData.find(s => s.name === "Fishing");

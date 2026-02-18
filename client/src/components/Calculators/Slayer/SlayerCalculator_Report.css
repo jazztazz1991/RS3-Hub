@@ -1,0 +1,33 @@
+.report-flag {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0.2;
+    transition: opacity 0.2s;
+}
+
+.task-div:hover .report-flag,
+.task-row:hover .report-flag,
+.report-flag:hover {
+    opacity: 1;
+}
+
+.report-footer {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1rem;
+}
+
+.report-footer .btn-text {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.report-footer .btn-text:hover {
+    color: #888;
+}

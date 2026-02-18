@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { MAGIC_SPELLS, SPELLBOOK_TYPES } from '../../../data/magicData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './MagicCalculator.css';
 
 const MagicCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -15,6 +17,19 @@ const MagicCalculator = () => {
     const [spellbookFilter, setSpellbookFilter] = useState('All');
 
     // Initialize
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Magic Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                spell: selectedSpellId,
+                book: spellbookFilter
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedSpellId, spellbookFilter, updateReportContext, clearReportContext]);
+
     useEffect(() => {
         if (characterData) {
             const skill = characterData.find(s => s.name === "Magic");

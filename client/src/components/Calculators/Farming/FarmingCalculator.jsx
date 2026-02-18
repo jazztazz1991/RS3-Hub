@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { FARMING_CROPS, POF_ANIMALS } from '../../../data/farmingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './FarmingCalculator.css';
 
 const FarmingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentLevel, setCurrentLevel] = useState(1);
@@ -25,6 +27,22 @@ const FarmingCalculator = () => {
     const [pofCategory, setPofCategory] = useState('All');
 
     // Initialize from character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Farming Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                xp: currentXp,
+                mode: calcMode,
+                selection: calcMode === 'crops' ? selectedCrop : selectedAnimal,
+                category: calcMode === 'crops' ? cropCategory : pofCategory
+            }
+        });
+
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, currentXp, calcMode, selectedCrop, selectedAnimal, cropCategory, pofCategory]);
+
     useEffect(() => {
         if (characterData && Array.isArray(characterData)) {
             const skill = characterData.find(s => s.name === "Farming");

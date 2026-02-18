@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { CRAFTING_METHODS } from '../../../data/craftingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './CraftingCalculator.css';
 
 const CraftingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // Data Mapping
     const CRAFTING_ITEMS_LIST = CRAFTING_METHODS;
@@ -26,6 +28,21 @@ const CraftingCalculator = () => {
     const [filterCategory, setFilterCategory] = useState('All');
 
     const [selectedItem, setSelectedItem] = useState(null);
+
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Crafting Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                modifier: trainingModifier?.name,
+                item: selectedItem?.name,
+                cat: filterCategory
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, trainingModifier, selectedItem, filterCategory, updateReportContext, clearReportContext]);
+
     const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context

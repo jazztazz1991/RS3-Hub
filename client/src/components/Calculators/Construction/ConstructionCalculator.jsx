@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import constructionData from '../../../data/constructionData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './ConstructionCalculator.css';
 
 const ConstructionCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(99);
@@ -22,6 +24,20 @@ const ConstructionCalculator = () => {
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Load character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Construction Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                mode: calcMode,
+                method: selectedMethod?.name,
+                modifiers: { outfit: useOutfit, chisel: useChisel, stick: useStick }
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedMethod, useOutfit, useChisel, useStick]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const consHelper = characterData.find(s => s.name === 'Construction');

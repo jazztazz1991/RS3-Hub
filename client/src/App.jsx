@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 import { AuthProvider } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
+import { ReportProvider } from './context/ReportContext';
 import Dashboard from './components/Dashboard/Dashboard';
 import DailyTasks from './components/DailyTasks/DailyTasks';
 import Calculators from './components/Calculators/Calculators';
@@ -38,6 +39,7 @@ import ProtectedRoute from './components/Auth/ProtectedRoute';
 import WildyNotification from './components/WildyEvents/WildyNotification';
 import QuestTracker from './components/QuestTracker';
 import QuestDetails from './components/QuestTracker/QuestDetails';
+import AdminDashboard from './components/Admin/AdminDashboard';
 
 function App() {
   const [serverStatus, setServerStatus] = useState('Checking server...');
@@ -53,6 +55,7 @@ function App() {
   return (
     <AuthProvider>
       <CharacterProvider>
+        <ReportProvider>
         <Router>
           <div className="app-container">
             <WildyNotification />
@@ -67,6 +70,7 @@ function App() {
               {/* Protected Routes */}
               <Route element={<ProtectedRoute />}>
                 <Route path="/" element={<Dashboard />} />
+                <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/quests" element={<QuestTracker />} />
                 <Route path="/quests/:questTitle" element={<QuestDetails />} />
                 <Route path="/calculators" element={<Calculators />} />
@@ -104,7 +108,8 @@ function App() {
             </section>
           </main>
         </div>
-      </Router>
+        </Router>
+        </ReportProvider>
       </CharacterProvider>
     </AuthProvider>
   )

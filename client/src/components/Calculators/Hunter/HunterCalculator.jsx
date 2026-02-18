@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { hunterData } from '../../../data/hunterData';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './HunterCalculator.css';
 
 const HunterCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(99);
@@ -21,6 +23,20 @@ const HunterCalculator = () => {
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Load character data
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Hunter Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                mode: calcMode,
+                method: selectedMethod?.name,
+                modifiers: { outfit: useOutfit, yaktwee: useYaktwee }
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedMethod, useOutfit, useYaktwee]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const hunterHelper = characterData.find(s => s.name === 'Hunter');

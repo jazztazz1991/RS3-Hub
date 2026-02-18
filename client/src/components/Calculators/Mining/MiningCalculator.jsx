@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { MINING_ROCKS } from '../../../data/miningData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './MiningCalculator.css';
 
 const MiningCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -19,6 +21,18 @@ const MiningCalculator = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // Initialize from Character Context
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Mining Calculator',
+            state: {
+                xp: currentXp,
+                target: targetLevel,
+                method: selectedMethod?.name
+            }
+        });
+        return () => clearReportContext();
+    }, [currentXp, targetLevel, selectedMethod]);
+
     useEffect(() => {
         if (characterData && characterData.length > 0) {
             const skill = characterData.find(s => s.name === "Mining");

@@ -1,14 +1,18 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/slayerData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import { useSlayerLog } from '../../../hooks/useSlayerLog';
 import SlayerLog from './SlayerLog';
+import ReportModal from '../../Common/ReportModal';
 import './SlayerCalculator.css';
+import './SlayerCalculator_Report.css';
 
 const SlayerCalculator = () => {
     const { characterData, selectedCharacter, updateBlockList } = useCharacter();
     const { getStatsForMonster } = useSlayerLog();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     
     // View Mode: 'calculator' or 'log'
     const [viewMode, setViewMode] = useState('calculator');
@@ -32,6 +36,40 @@ const SlayerCalculator = () => {
     
     // User Overrides
     const [customTaskXp, setCustomTaskXp] = useState(SLAYER_MASTERS[0].avgXp);
+
+    // Sync to global report context
+    useEffect(() => {
+        updateReportContext({
+            tool: 'Slayer Calculator',
+            state: {
+                level: currentLevel,
+                target: targetLevel,
+                mode: calcMode,
+                master: selectedMaster?.name,
+                monster: selectedMonster?.name,
+                view: viewMode
+            }
+        });
+        return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedMaster, selectedMonster, viewMode]);
+
+    // Bug Reporting
+    const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+    const [reportContext, setReportContext] = useState({});
+
+    const handleOpenReport = (e, context = {}) => {
+        if (e) e.stopPropagation();
+        setReportContext({
+            ...context,
+            activeSelections: {
+                master: selectedMaster?.name,
+                monster: selectedMonster?.name,
+                calcMode,
+                blockedTasks
+            }
+        });
+        setIsReportModalOpen(true);
+    };
 
     // Calculate Average XP based on Block List
     const effectiveAvgXp = useMemo(() => {
@@ -299,7 +337,14 @@ const SlayerCalculator = () => {
                                                                         onChange={() => toggleBlockTask(task.id)}
                                                                     />
                                                                 </div>
-                                                                <div className="task-name" title={taskName}>{taskName}</div>
+                                                                <div className="task-name" title={taskName}>
+                                                                    {taskName}
+                                                                    <span 
+                                                                        className="report-flag" 
+                                                                        title="Report Data Error"
+                                                                        onClick={(e) => handleOpenReport(e, { taskData: task, monster })}
+                                                                    >🚩</span>
+                                                                </div>
                                                                 <div className="task-weight">{task.weight}</div>
                                                                 <div className="task-xp">{avgXp.toLocaleString()}</div>
                                                             </div>
@@ -332,7 +377,14 @@ const SlayerCalculator = () => {
                                             className={`method-btn ${selectedMonster?.id === mob.id ? 'active' : ''}`}
                                             onClick={() => setSelectedMonster(mob)}
                                         >
-                                            <div className="method-name">{mob.name}</div>
+                                            <div className="method-name">
+                                                {mob.name}
+                                                <span 
+                                                    className="report-flag" 
+                                                    title="Report Data Error"
+                                                    onClick={(e) => handleOpenReport(e, { monster: mob })}
+                                                >🚩</span>
+                                            </div>
                                             <div className="method-details">{mob.xp} XP / kill</div>
                                         </div>
                                     ))}
@@ -398,9 +450,21 @@ const SlayerCalculator = () => {
                         {calcMode === 'monster' && !selectedMonster && (
                             <div className="no-selection"><p>Select a monster</p></div>
                         )}
+                        
+                        <div className="report-footer">
+                            <button className="btn-text" onClick={(e) => handleOpenReport(e)}>
+                                Find a bug? Report it here.
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}
+            
+            <ReportModal 
+                isOpen={isReportModalOpen}
+                onClose={() => setIsReportModalOpen(false)}
+                contextData={reportContext}
+            />
         </div>
     );
 };

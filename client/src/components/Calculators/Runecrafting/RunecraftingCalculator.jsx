@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useReportCalls } from '../../../context/ReportContext';
 import { RC_ALTARS, RUNESPAN_NODES } from '../../../data/runecraftingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './RunecraftingCalculator.css';
 
 const RunecraftingCalculator = () => {
     const { characterData } = useCharacter();
+    const { updateReportContext, clearReportContext } = useReportCalls();
     
     // State
     const [currentLevel, setCurrentLevel] = useState(1);
@@ -29,6 +31,21 @@ const RunecraftingCalculator = () => {
     const [spanCategory, setSpanCategory] = useState('All');
 
     // Initialize from character data
+    useEffect(() => {
+        updateReportContext({
+           tool: 'Runecrafting Calculator',
+           state: {
+               level: currentLevel,
+               target: targetLevel,
+               mode: calcMode,
+               altar: selectedAltar?.name,
+               node: selectedNode?.name,
+               modifiers: { daeyalt: useDaeyalt, demonicSkull: useDemonicSkull }
+           }
+       });
+       return () => clearReportContext();
+    }, [currentLevel, targetLevel, calcMode, selectedAltar, selectedNode, useDaeyalt, useDemonicSkull]);
+
     useEffect(() => {
         if (characterData && Array.isArray(characterData)) {
             const skill = characterData.find(s => s.name === "Runecrafting");
