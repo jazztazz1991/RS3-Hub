@@ -190,10 +190,10 @@ const AdminDashboard = () => {
                                                             </div>
                                                             <div className="detail-grid">
                                                                 <div className="detail-item">
-                                                                    <strong>Path:</strong> {report.contextData?.path || '/'}
+                                                                    <strong>Path:</strong> {report.path || report.contextData?.path || '/'}
                                                                 </div>
                                                                 <div className="detail-item">
-                                                                    <strong>Browser:</strong> {report.contextData?.browser || 'Unknown'}
+                                                                    <strong>Browser:</strong> {report.browser || report.contextData?.browser || 'Unknown'}
                                                                 </div>
                                                                 <div className="detail-item">
                                                                     <strong>User ID:</strong> {report.userId || 'Anonymous'}
