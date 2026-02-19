@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { WOODCUTTING_ITEMS, WOODCUTTING_BOOSTS } from '../../../data/woodcuttingData';
+import { WOODCUTTING_ITEMS, WOODCUTTING_BOOSTS } from '../../../data/skills/woodcuttingData';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './WoodcuttingCalculator.css';
 

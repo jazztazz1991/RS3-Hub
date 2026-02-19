@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { CRAFTING_METHODS } from '../../../data/craftingData';
+import { CRAFTING_METHODS } from '../../../data/skills/craftingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './CraftingCalculator.css';
 

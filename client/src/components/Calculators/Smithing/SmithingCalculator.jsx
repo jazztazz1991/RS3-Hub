@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { SMITHING_METHODS } from '../../../data/smithingData';
+import { SMITHING_METHODS } from '../../../data/skills/smithingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './SmithingCalculator.css';
 

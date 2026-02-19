@@ -213,3 +213,23 @@
     font-size: 0.8rem;
     color: var(--fish-text-dim);
 }
+.guide-link-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.guide-link-btn:hover {
+    background-color: #2980b9;
+}
+
+.calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}

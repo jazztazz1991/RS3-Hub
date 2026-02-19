@@ -15,6 +15,9 @@ import CookingCalculator from './components/Calculators/Cooking/CookingCalculato
 import WoodcuttingCalculator from './components/Calculators/Woodcutting/WoodcuttingCalculator';
 import FletchingCalculator from './components/Calculators/Fletching/FletchingCalculator';
 import FishingCalculator from './components/Calculators/Fishing/FishingCalculator';
+import Guides from './components/Guides/Guides';
+import FishingGuide from './components/Guides/FishingGuide';
+import WoodcuttingGuide from './components/Guides/WoodcuttingGuide';
 import FiremakingCalculator from './components/Calculators/Firemaking/FiremakingCalculator';
 import MiningCalculator from './components/Calculators/Mining/MiningCalculator';
 import SmithingCalculator from './components/Calculators/Smithing/SmithingCalculator';
@@ -82,6 +85,9 @@ function App() {
                 <Route path="/calculators/woodcutting" element={<WoodcuttingCalculator />} />
                 <Route path="/calculators/fletching" element={<FletchingCalculator />} />
                 <Route path="/calculators/fishing" element={<FishingCalculator />} />
+                <Route path="/guides" element={<Guides />} />
+                <Route path="/guides/fishing" element={<FishingGuide />} />
+                <Route path="/guides/woodcutting" element={<WoodcuttingGuide />} />
                 <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
                 <Route path="/calculators/mining" element={<MiningCalculator />} />
                 <Route path="/calculators/smithing" element={<SmithingCalculator />} />

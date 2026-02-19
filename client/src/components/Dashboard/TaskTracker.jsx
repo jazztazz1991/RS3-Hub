@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../context/CharacterContext';
-import { DAILY_TASKS, WEEKLY_TASKS, MONTHLY_TASKS } from '../../data/dailyTasksData';
+import { DAILY_TASKS, WEEKLY_TASKS, MONTHLY_TASKS } from '../../data/common/dailyTasksData';
 import './TaskTracker.css';
 
 const TaskTracker = () => {

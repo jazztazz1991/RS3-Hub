@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSlayerLog } from '../../../hooks/useSlayerLog';
-import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/slayerData';
+import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/skills/slayerData';
 import './SlayerLog.css';
 
 const SlayerLog = ({ onStatsUpdate }) => {

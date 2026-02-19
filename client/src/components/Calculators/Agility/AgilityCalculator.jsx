@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { AGILITY_METHODS } from '../../../data/agilityData';
+import { AGILITY_METHODS } from '../../../data/skills/agilityData';
 import { getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './AgilityCalculator.css';
 

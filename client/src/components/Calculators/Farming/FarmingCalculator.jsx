@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { FARMING_CROPS, POF_ANIMALS } from '../../../data/farmingData';
+import { FARMING_CROPS, POF_ANIMALS } from '../../../data/skills/farmingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './FarmingCalculator.css';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './InventionCalculator.css';
-import augmentableItems from '../../../data/augmentableItems.json';
+import augmentableItems from '../../../data/skills/augmentableItems.json';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 // Note: Invention uses formatted elite skill XP. For UI consistency we interpret inputs, 

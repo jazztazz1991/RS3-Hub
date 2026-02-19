@@ -1,0 +1,114 @@
+{
+    "methods": [
+        {
+            "levels": "1-10",
+            "min_level": 1,
+            "max_level": 10,
+            "method": "Regular trees",
+            "xp_rate_raw": "14,500",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "10-20",
+            "min_level": 10,
+            "max_level": 20,
+            "method": "Oak trees",
+            "xp_rate_raw": "19,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "20-30",
+            "min_level": 20,
+            "max_level": 30,
+            "method": "Willow trees",
+            "xp_rate_raw": "27,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "30-40",
+            "min_level": 30,
+            "max_level": 40,
+            "method": "Teak trees",
+            "xp_rate_raw": "30,000\u201341,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "40-56",
+            "min_level": 40,
+            "max_level": 56,
+            "method": "Maple trees",
+            "xp_rate_raw": "40,000-55,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "56-58",
+            "min_level": 56,
+            "max_level": 58,
+            "method": "Arctic pines",
+            "xp_rate_raw": "60,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "58-60",
+            "min_level": 58,
+            "max_level": 60,
+            "method": "Eucalyptus trees",
+            "xp_rate_raw": "62,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "60-68/99",
+            "min_level": 60,
+            "max_level": 68,
+            "method": "Mahogany",
+            "xp_rate_raw": "63,000-109,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "68-94/99",
+            "min_level": 68,
+            "max_level": 94,
+            "method": "Ivy",
+            "xp_rate_raw": "86,000-126,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "94-100",
+            "min_level": 94,
+            "max_level": 100,
+            "method": "Crystal trees",
+            "xp_rate_raw": "130,000-133,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "100+",
+            "min_level": 100,
+            "max_level": 99,
+            "method": "Eternal magic trees",
+            "xp_rate_raw": "300k+ (with boosts)",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        }
+    ]
+}

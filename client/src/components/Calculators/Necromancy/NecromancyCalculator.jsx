@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { necromancyData } from '../../../data/necromancyData';
+import { necromancyData } from '../../../data/skills/necromancyData';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';

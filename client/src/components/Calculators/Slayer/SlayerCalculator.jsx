@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/slayerData';
+import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/skills/slayerData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import { useSlayerLog } from '../../../hooks/useSlayerLog';
 import SlayerLog from './SlayerLog';

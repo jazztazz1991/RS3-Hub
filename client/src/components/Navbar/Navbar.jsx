@@ -25,6 +25,7 @@ const Navbar = () => {
               <li><button onClick={() => setIsSuggestionModalOpen(true)} className="suggestion-btn">Suggestion</button></li>
               <li><Link to="/">Dashboard</Link></li>
               <li><Link to="/calculators">Calculators</Link></li>
+              <li><Link to="/guides">Guides</Link></li>
               <li><Link to="/quests">Quests</Link></li>
               <li><Link to="/daily-tasks">Daily Tasks</Link></li>
               {user.isAdmin && <li><Link to="/admin">Admin</Link></li>}

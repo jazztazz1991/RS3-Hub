@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { divinationData } from '../../../data/divinationData';
+import { divinationData } from '../../../data/skills/divinationData';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { summoningData } from '../../../data/summoningData';
+import { summoningData } from '../../../data/skills/summoningData';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';

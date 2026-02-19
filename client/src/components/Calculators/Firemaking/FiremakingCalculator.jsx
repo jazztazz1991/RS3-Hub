@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { FIREMAKING_ITEMS, FIREMAKING_BOOSTS } from '../../../data/firemakingData';
+import { FIREMAKING_ITEMS, FIREMAKING_BOOSTS } from '../../../data/skills/firemakingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './FiremakingCalculator.css';
 

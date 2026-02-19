@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react'; // Add
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCharacter } from '../../context/CharacterContext';
 import { useQuestLog } from '../../hooks/useQuestLog';
-import { QUEST_DATA } from '../../data/questData';
+import { QUEST_DATA } from '../../data/quests/questData';
 import QuestNode from './QuestNode'; // Import new component
 import './QuestDetails.css';
 

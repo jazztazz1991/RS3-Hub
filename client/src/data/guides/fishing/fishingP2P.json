@@ -1,0 +1,67 @@
+{
+    "methods": [
+        {
+            "levels": "1-20",
+            "min_level": 1,
+            "max_level": 20,
+            "method": "Crayfish",
+            "xp_rate_raw": "11,500",
+            "notes": "",
+            "type": "p2p"
+        },
+        {
+            "levels": "20-70",
+            "min_level": 20,
+            "max_level": 70,
+            "method": "Fly fishing",
+            "xp_rate_raw": "17,000-57,000",
+            "notes": "Players can gain equal experience rates through barbarian fishing between levels 58-70 Fishing.",
+            "type": "p2p"
+        },
+        {
+            "levels": "70-93",
+            "min_level": 70,
+            "max_level": 93,
+            "method": "Crystallise fly fishing",
+            "xp_rate_raw": "Up to 118,000 experience an hour with level 99",
+            "notes": "If they do not have access to crystallise, players can train using barbarian fishing to gain around 63,000 experience an hour, with level 70 Fishing.Start fishing in Menaphos at level 72 Fishing, for up to 85,000 experience an hour, at level 99 Fishing.",
+            "type": "p2p"
+        },
+        {
+            "levels": "66-99+",
+            "min_level": 66,
+            "max_level": 99,
+            "method": "Ghostly Sole",
+            "xp_rate_raw": "Up to 100,000 experience per hour with level 99 Fishing.",
+            "notes": "Ghostly Sole is slightly lower experience per hour, however it is the longest AFK of any Fishing training method.",
+            "type": "p2p"
+        },
+        {
+            "levels": "92-99+",
+            "min_level": 92,
+            "max_level": 99,
+            "method": "Croesus Front, Colonised Guards",
+            "xp_rate_raw": "Up to 200,000 experience per hour at level 99 Fishing with boosts",
+            "notes": "",
+            "type": "p2p"
+        },
+        {
+            "levels": "93-94",
+            "min_level": 93,
+            "max_level": 94,
+            "method": "Prifddinas waterfall fishing",
+            "xp_rate_raw": "Up to 119,000 experience an hour, at level 99 Fishing.",
+            "notes": "",
+            "type": "p2p"
+        },
+        {
+            "levels": "94-99+",
+            "min_level": 94,
+            "max_level": 99,
+            "method": "Fishing Frenzy",
+            "xp_rate_raw": "Over 285,000 experience an hour, at level 99 Fishing.",
+            "notes": "Continue fishing at Prifddinas waterfallStart fishing wobbegongs at level 96 Fishing for up to 137,000 experience an hour, at level 99 Fishing.",
+            "type": "p2p"
+        }
+    ]
+}

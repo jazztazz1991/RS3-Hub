@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCharacter } from '../../context/CharacterContext';
 import { useReportCalls } from '../../context/ReportContext';
 import { useQuestLog } from '../../hooks/useQuestLog';
-import { QUEST_DATA } from '../../data/questData';
+import { QUEST_DATA } from '../../data/quests/questData';
 import './QuestTracker.css';
 
 const QuestTracker = () => {

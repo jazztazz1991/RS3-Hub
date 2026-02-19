@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { MAGIC_SPELLS, SPELLBOOK_TYPES } from '../../../data/magicData';
+import { MAGIC_SPELLS, SPELLBOOK_TYPES } from '../../../data/skills/magicData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './MagicCalculator.css';
 

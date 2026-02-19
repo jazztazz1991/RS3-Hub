@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { THIEVING_METHODS } from '../../../data/thievingData';
+import { THIEVING_METHODS } from '../../../data/skills/thievingData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './ThievingCalculator.css';
 

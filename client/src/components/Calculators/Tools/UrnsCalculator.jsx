@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { URN_DATA, URN_ENHANCER_BONUS } from '../../../data/urnsData';
+import { URN_DATA, URN_ENHANCER_BONUS } from '../../../data/items/urnsData';
 import { useCharacter } from '../../../context/CharacterContext.jsx';
 import { useReportCalls } from '../../../context/ReportContext';
 import { XP_TABLE, getXpAtLevel } from '../../../utils/rs3';

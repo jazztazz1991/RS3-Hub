@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { artefacts } from '../../../data/artefacts';
+import { artefacts } from '../../../data/skills/artefacts';
 import { XP_TABLE, getLevelAtXp, getTargetXp } from '../../../utils/rs3';
 import './ArchaeologyCalculator.css';
 

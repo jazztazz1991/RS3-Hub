@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { FISHING_ITEMS, FISHING_BOOSTS } from '../../../data/fishingData';
+import { FISHING_ITEMS, FISHING_BOOSTS } from '../../../data/skills/fishingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './FishingCalculator.css';
 
 const FishingCalculator = () => {
     const { characterData } = useCharacter();
     const { updateReportContext, clearReportContext } = useReportCalls();
+    const location = useLocation();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -21,6 +23,28 @@ const FishingCalculator = () => {
     const [selectedMethod, setSelectedMethod] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Handle Guide Selection
+    useEffect(() => {
+        if (location.state) {
+            const { preSelectMethod, preSelectTarget } = location.state;
+            if (preSelectMethod) {
+                // Approximate match
+                const match = FISHING_ITEMS.find(item => 
+                    item.name.toLowerCase().includes(preSelectMethod.toLowerCase()) || 
+                    preSelectMethod.toLowerCase().includes(item.name.toLowerCase())
+                );
+                if (match) {
+                    setSelectedMethod(match);
+                    setSearchTerm(match.name);
+                }
+            }
+            if (preSelectTarget) {
+                setTargetLevel(Math.min(preSelectTarget, 120));
+            }
+        }
+    }, [location.state]);
+
+    // 
     // Initialize from Character Context
     useEffect(() => {
         updateReportContext({
@@ -91,7 +115,10 @@ const FishingCalculator = () => {
 
     return (
         <div className="fishing-calculator">
-            <h2>Fishing Calculator</h2>
+            <div className="calculator-header">
+                <h2>Fishing Calculator</h2>
+                <Link to="/guides/fishing" className="guide-link-btn">View Training Guide</Link>
+            </div>
 
             {/* Modifiers */}
             <div className="modifiers">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { MINING_ROCKS } from '../../../data/miningData';
+import { MINING_ROCKS } from '../../../data/skills/miningData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './MiningCalculator.css';
 

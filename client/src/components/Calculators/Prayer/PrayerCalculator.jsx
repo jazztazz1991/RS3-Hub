@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { PRAYER_ITEMS, PRAYER_METHODS, SPECIAL_ITEMS } from '../../../data/prayerData';
+import { PRAYER_ITEMS, PRAYER_METHODS, SPECIAL_ITEMS } from '../../../data/skills/prayerData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import './PrayerCalculator.css';
 

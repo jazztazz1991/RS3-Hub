@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
-import { COOKING_ITEMS, COOKING_METHODS } from '../../../data/cookingData';
+import { COOKING_ITEMS, COOKING_METHODS } from '../../../data/skills/cookingData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import './CookingCalculator.css';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { mockSkills } from '../../data/mockData';
+import { mockSkills } from '../../data/common/mockData';
 import './Calculators.css';
 
 const Calculators = () => {
