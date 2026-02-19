@@ -5,7 +5,7 @@
             "min_level": 1,
             "max_level": 20,
             "method": "Crayfish",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "11,500",
             "notes": "Raw crayfish can be caught in Lumbridge or Taverley . After completing Cook's Assistant the range in Lumbridge castle provides decreased burn chance for better cooking experience.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -15,7 +15,7 @@
             "min_level": 20,
             "max_level": 70,
             "method": "Fly fishing",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "17,000-57,000",
             "notes": "Raw trout and raw salmon can be caught in Lumbridge or Shilo Village . While these provide optimal experience up to barbarian fishing , the food provided from fly fishing does not heal much. As such, starting at level 58, some players opt to change methods to something providing better healing.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -25,7 +25,7 @@
             "min_level": 66,
             "max_level": 99,
             "method": "Ghostly soles (afk)",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Up to 100,000 experience per hour with level 99 Fishing.",
             "notes": "Ghostly soles never move, in conjunction with porters or the Fury shark outfit set to consume all fish, this spot can be used to fully AFK fish and train invention. Alternatively using a Passing bracelet makes returning from bank trips very fast.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -35,7 +35,7 @@
             "min_level": 70,
             "max_level": 93,
             "method": "Crystallise fly fishing",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Up to 118,000 experience an hour with level 99",
             "notes": "Crystallise combined with Light Form at the fly fishing spots provides optimal experience from level 70 to 93. However, this is an intense use of soul runes and requires The Light Within .",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -65,7 +65,7 @@
             "min_level": 93,
             "max_level": 99,
             "method": "94/99: Prifddinas Waterfall Fishing",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Up to 119,000 experience an hour, at level 99 Fishing.",
             "notes": "Prifddinas Waterfall Fishing provides high experience without much activity. It is recommended to stay here at least until getting the crystal fishing rod as it provides a 5% increased catch chance. This method is also the best experience to 99 without being as active as with the next method.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -75,7 +75,7 @@
             "min_level": 94,
             "max_level": 99,
             "method": "Fishing Frenzy",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Over 285,000 experience an hour, at level 99 Fishing.",
             "notes": "Fishing Frenzy provides an active but fast fishing training method.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -85,7 +85,7 @@
             "min_level": 1,
             "max_level": 52,
             "method": "Crayfish and fly fishing",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "11,500",
             "notes": "These methods should still be used to reach 52 quickly.",
             "category": "Fishing for food",
             "type": "ironman"
@@ -105,7 +105,7 @@
             "min_level": 66,
             "max_level": 99,
             "method": "Ghostly sole",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Up to 100,000 experience per hour with level 99 Fishing.",
             "notes": "Ghostly soles never move, in conjunction with porters or using a Passing bracelet for quick banking, these heal for 1650 making them appealing early-mid game food.",
             "category": "Fishing for food",
             "type": "ironman"
@@ -145,7 +145,7 @@
             "min_level": 93,
             "max_level": 99,
             "method": "Prifddinas Waterfall Fishing",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Up to 119,000 experience an hour, at level 99 Fishing.",
             "notes": "It is still recommended to do this for the crystal fishing rod . This rod can be used at swarm fishing, sailfish and jellyfish.",
             "category": "Fishing for food",
             "type": "ironman"

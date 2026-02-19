@@ -1,0 +1,134 @@
+{
+    "methods": [
+        {
+            "levels": "1-10",
+            "min_level": 1,
+            "max_level": 10,
+            "method": "Copper/Tin",
+            "xp_rate_raw": "5,000",
+            "notes": "Mine Copper ore and Tin Ore from Burthorpe 's mining cave, dumping ore at the furnace outside.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "10-20",
+            "min_level": 10,
+            "max_level": 20,
+            "method": "Iron",
+            "xp_rate_raw": "15,000",
+            "notes": "Mine Iron ore at the Lumbridge south-west mine , dumping ore at the Shattered Worlds Banker.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "20-30",
+            "min_level": 20,
+            "max_level": 30,
+            "method": "Coal",
+            "xp_rate_raw": "25,000",
+            "notes": "Mine Coal at the Lumbridge south-west mine , dumping ore at the Shattered Worlds Banker. Switch to Iron Ore occasionally if you haven't achieved 30 Smithing.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "30-40",
+            "min_level": 30,
+            "max_level": 40,
+            "method": "Mithril",
+            "xp_rate_raw": "40,000",
+            "notes": "Mine Mithril ore at the Varrock south-east mine , dumping ore at East Varrock Bank. Switch to Coal occasionally if you haven't achieved 40 Smithing.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "40-50",
+            "min_level": 40,
+            "max_level": 50,
+            "method": "Adamantite/Luminite",
+            "xp_rate_raw": "45,000",
+            "notes": "Mine adamantite ore at the Rimmington mine , banking at the Crafting Guild (requires 40 Crafting) or the Grand Exchange via clan vexillum (go back from Port Sarim lodestone ). Switch to luminite occasionally if you haven't achieved 50 Smithing.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "50-70",
+            "min_level": 50,
+            "max_level": 70,
+            "method": "Runite",
+            "xp_rate_raw": "60,000",
+            "notes": "Mine Runite ore at the Fight Arena South-east mine , dumping ore at Yanille Bank. Switch back to Luminite occasionally if you haven't achieved 60 Smithing. Acquire enough Orikalkite/Drakolith for an ore box and pickaxe upgrade then go back to runite/luminite. T50 ores and bars are more efficient for mining and smithing combined.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "70-75",
+            "min_level": 70,
+            "max_level": 75,
+            "method": "Runite",
+            "xp_rate_raw": "60,000",
+            "notes": "Optionally, keep mining and smithing runite until 75 to unlock crits on Necrite and Phasmatite",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "81-89",
+            "min_level": 81,
+            "max_level": 89,
+            "method": "Banite",
+            "xp_rate_raw": "105,000",
+            "notes": "Mine Banite ore at Pirates' Hideout in the Wilderness. It's possible to deposit ore at a forge or anvil right next to the rocks. Alternately, mine at the Arctic (azure) habitat mine , banking with a teleport of choice.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "90-97",
+            "min_level": 90,
+            "max_level": 97,
+            "method": "Light/Dark animica",
+            "xp_rate_raw": "100,000",
+            "notes": "Mine Light and Dark animica at Prifddinas during the Trahaearn District Voice of Seren . Levels 97-100 - Mine alaea crablets found in Uncharted Isles if you have already achieved 100 Smithing.",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "100",
+            "min_level": 100,
+            "max_level": 99,
+            "method": "110+: Primal rocks",
+            "xp_rate_raw": "250,000+",
+            "notes": "Mine primal ores around Daemonheim",
+            "category": "Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "1",
+            "min_level": 1,
+            "max_level": 99,
+            "method": "99",
+            "xp_rate_raw": "See Description",
+            "notes": "can be achieved from the Shooting Star D&D, utilising urns to speed up the process. Grants up to 50,002 coins, 52 astral runes, 152 cosmic runes, and 20 gold stone spirits per day.",
+            "category": "Alternative Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "60",
+            "min_level": 60,
+            "max_level": 99,
+            "method": "70",
+            "xp_rate_raw": "See Description",
+            "notes": "Orichalkum bars yield very poor smithing experience relative to their durability. Mine 16 for a +3 pickaxe, 2 for a hatchet, 2 for the ore box, and another 30 for the Everything Is Oresome achievement. The rest can be used for Unensouled bars or Masterwork armor . Mine Orichalcite ore at the Mining Guild , dumping ore at a furnace in the Artisan's Worshop . Switch to Drakolith occasionally if you haven't achieved 70 Smithing. Mine Seren stones in the Trahaearn Clan's district of Prifddinas.",
+            "category": "Alternative Methods",
+            "type": "ironman"
+        },
+        {
+            "levels": "97+",
+            "min_level": 97,
+            "max_level": 99,
+            "method": "Alaea crablets",
+            "xp_rate_raw": "190,000",
+            "notes": "Alaea crablets and corrupted ore.",
+            "category": "Alternative Methods",
+            "type": "ironman"
+        }
+    ]
+}

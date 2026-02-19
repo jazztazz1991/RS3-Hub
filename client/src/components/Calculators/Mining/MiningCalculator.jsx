@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { MINING_ROCKS } from '../../../data/skills/miningData';
@@ -8,6 +9,7 @@ import './MiningCalculator.css';
 const MiningCalculator = () => {
     const { characterData } = useCharacter();
     const { updateReportContext, clearReportContext } = useReportCalls();
+    const location = useLocation();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -19,6 +21,27 @@ const MiningCalculator = () => {
 
     const [selectedMethod, setSelectedMethod] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+
+    // Handle Guide Selection
+    useEffect(() => {
+        if (location.state) {
+            const { preSelectMethod, preSelectTarget } = location.state;
+            if (preSelectMethod) {
+                // Approximate match
+                const match = MINING_ROCKS.find(item => 
+                    item.name.toLowerCase().includes(preSelectMethod.toLowerCase()) || 
+                    preSelectMethod.toLowerCase().includes(item.name.toLowerCase())
+                );
+                if (match) {
+                    setSelectedMethod(match);
+                    setSearchTerm(match.name);
+                }
+            }
+            if (preSelectTarget) {
+                setTargetLevel(Math.min(preSelectTarget, 120));
+            }
+        }
+    }, [location.state]);
 
     // Initialize from Character Context
     useEffect(() => {
@@ -76,6 +99,12 @@ const MiningCalculator = () => {
 
     return (
         <div className="mining-calculator">
+            <div className="calculator-header">
+                <h2>Mining Calculator</h2>
+                <Link to="/guides/mining" className="guide-link-btn">View Training Guide</Link>
+            </div>
+            
+            <div className="calculator-content">
             <h2>Mining Calculator</h2>
 
             {/* Modifiers placeholder */}
@@ -185,6 +214,7 @@ const MiningCalculator = () => {
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 

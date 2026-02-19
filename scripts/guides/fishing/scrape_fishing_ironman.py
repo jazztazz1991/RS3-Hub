@@ -21,6 +21,9 @@ def parse_level_range(text):
             max_level = 99
     return min_level, max_level
 
+def _method_descriptor(text):
+    return text.lower().replace('fishing', '').replace('catch', '')
+
 def scrape_fishing_ironman():
     url = "https://runescape.wiki/w/Ironman_Mode/Strategies/Fishing"
     methods = []
@@ -103,13 +106,25 @@ def scrape_fishing_ironman():
                     # Clean up multiple spaces
                     notes = re.sub(r'\s+', ' ', notes).strip()
 
+                    # Attempt to extract XP rate from notes
+                    xp_rate = "See Description"
+                    xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)\s*(?:per|an)\s*(?:hour|hr)', notes, re.IGNORECASE)
+                    if xp_match:
+                        xp_rate = f"{xp_match.group(1)} XP/hr"
+                    
+                    # Fallback for ranges like "41,000 and 49,000 experience"
+                    if xp_rate == "See Description":
+                        range_xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:and|to)\s*(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)', notes, re.IGNORECASE)
+                        if range_xp_match:
+                            xp_rate = f"{range_xp_match.group(1)}-{range_xp_match.group(2)} XP/hr"
+
                     methods.append({
 
                         "levels": level_range,
                         "min_level": min_lvl,
                         "max_level": max_lvl,
                         "method": method_name,
-                        "xp_rate_raw": "See Description",
+                        "xp_rate_raw": xp_rate,
                         "notes": notes.strip(),
                         "category": current_category,
                         "type": "ironman"
@@ -119,6 +134,38 @@ def scrape_fishing_ironman():
 
     except Exception as e:
         print(f"Error scraping Ironman: {e}")
+
+    # Fallback to P2P rates if not found
+    try:
+        p2p_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'client', 'src', 'data', 'guides', 'fishing', 'fishingP2P.json')
+        if os.path.exists(p2p_path):
+            with open(p2p_path, 'r') as f:
+                p2p_data = json.load(f)
+                p2p_methods = p2p_data.get('methods', [])
+
+            for method in methods:
+                 # Check if XP rate is missing or generic
+                if method.get('xp_rate_raw') in ["See Description", None, ""]:
+                    # Create a set of keywords for the ironman method
+                    iron_words = set(re.findall(r'\w+',_method_descriptor(method['method'])))
+                    
+                    best_match = None
+                    max_overlap = 0
+                    
+                    for p2p in p2p_methods:
+                        p2p_words = set(re.findall(r'\w+', _method_descriptor(p2p['method'])))
+                        overlap = len(iron_words.intersection(p2p_words))
+                        
+                        # We need a decent overlap, or at least the main noun
+                        if overlap > max_overlap:
+                            max_overlap = overlap
+                            best_match = p2p
+                    
+                    if best_match and max_overlap > 0:
+                        method['xp_rate_raw'] = best_match['xp_rate_raw']
+
+    except Exception as e:
+         print(f"Error cross-referencing P2P data: {e}")
 
     # Output to distinct Ironman file
     output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'client', 'src', 'data', 'guides', 'fishing', 'fishingIronman.json')

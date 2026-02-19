@@ -21,8 +21,8 @@ def parse_level_range(text):
             max_level = 99
     return min_level, max_level
 
-def scrape_woodcutting_ironman():
-    url = "https://runescape.wiki/w/Ironman_Mode/Strategies/Woodcutting"
+def scrape_mining_ironman():
+    url = "https://runescape.wiki/w/Ironman_Mode/Strategies/Mining"
     methods = []
     
     try:
@@ -35,8 +35,6 @@ def scrape_woodcutting_ironman():
         if not content:
             return
 
-        # Find all potential start points (Categories and Methods)
-        # In Woodcutting guide, methods are often H3 (e.g. "Levels 1-10: Regular trees")
         all_headers = content.find_all(['h2', 'h3', 'h4'])
         
         current_category = "General"
@@ -44,13 +42,15 @@ def scrape_woodcutting_ironman():
         for i, header in enumerate(all_headers):
             text = header.get_text(strip=True).replace('[edit | edit source]', '')
             
-            # Woodcutting guide structure is flatter than Fishing
-            # Headers like "Levels 1-10: ..." are H3
+            # Check for header based methods (Levels X-Y: ...)
             
-            # Check if this header looks like a method (starts with Level...)
             is_method = False
             match = re.search(r'Level(?:s)?\s*(\d+(?:-\d+|\+)?)\s*[:|-]\s*(.*)', text, re.IGNORECASE)
             
+            # Also support just "1-10: Copper and Tin" format which some guides use
+            if not match:
+                 match = re.search(r'^(\d+(?:-\d+|\+)?)\s*[:|-]\s*(.*)', text)
+
             if match:
                 is_method = True
                 level_range = match.group(1)
@@ -62,9 +62,8 @@ def scrape_woodcutting_ironman():
                 current_element = header.next_sibling
                 
                 # Iterate until next header of same or higher level
-                # Since these are H3, we stop at H1, H2, H3
                 while current_element:
-                    if current_element.name in ['h1', 'h2', 'h3']:
+                    if current_element.name in ['h1', 'h2', 'h3', 'h4']:
                         break
                     
                     if current_element.name == 'p':
@@ -79,8 +78,8 @@ def scrape_woodcutting_ironman():
                 if not notes.strip() and header.parent.name == 'div':
                          current_element = header.parent.next_sibling
                          while current_element:
-                            if current_element.name in ['h1', 'h2', 'h3'] or \
-                               (current_element.name == 'div' and current_element.find(['h1', 'h2', 'h3'])):
+                            if current_element.name in ['h1', 'h2', 'h3', 'h4'] or \
+                               (current_element.name == 'div' and current_element.find(['h1', 'h2', 'h3', 'h4'])):
                                 break
                             
                             if current_element.name == 'p':
@@ -117,20 +116,46 @@ def scrape_woodcutting_ironman():
                     "type": "ironman"
                 })
             
-            # If it's not a method, maybe it's a category?
-            # But in this specific wiki page, there are no explicit categories like "Fishing for Food"
-            # So we keep "General" or update if we find H2s like "Tips"
             elif header.name == 'h2':
                  clean_text = text.strip()
                  if clean_text not in ["Contents", "Navigation menu", "See also", "References", "External links"]:
                      current_category = clean_text
 
+    except Exception as e:
+        print(f"Error scraping Ironman Mining: {e}")
+
+    # Fallback to P2P rates if not found
+    try:
+        p2p_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'client', 'src', 'data', 'guides', 'mining', 'miningP2P.json')
+        if os.path.exists(p2p_path):
+            with open(p2p_path, 'r') as f:
+                p2p_data = json.load(f)
+                p2p_methods = p2p_data.get('methods', [])
+
+            for method in methods:
+                if method['xp_rate_raw'] == "See Description":
+                    # Try to find match in P2P
+                    # Simple fuzzy match: check if key words overlap
+                    iron_words = set(re.findall(r'\w+', method['method'].lower()))
+                    
+                    best_match = None
+                    max_overlap = 0
+                    
+                    for p2p in p2p_methods:
+                        p2p_words = set(re.findall(r'\w+', p2p['method'].lower()))
+                        overlap = len(iron_words.intersection(p2p_words))
+                        if overlap > max_overlap:
+                            max_overlap = overlap
+                            best_match = p2p
+                    
+                    if best_match and max_overlap > 0:
+                        method['xp_rate_raw'] = best_match['xp_rate_raw']
 
     except Exception as e:
-        print(f"Error scraping Ironman Woodcutting: {e}")
+        print(f"Error cross-referencing P2P data: {e}")
 
     # Output to distinct Ironman file
-    output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'client', 'src', 'data', 'guides', 'woodcutting', 'woodcuttingIronman.json')
+    output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'client', 'src', 'data', 'guides', 'mining', 'miningIronman.json')
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     with open(output_path, 'w') as f:
@@ -138,4 +163,4 @@ def scrape_woodcutting_ironman():
     print(f"Saved {len(methods)} methods to {output_path}")
 
 if __name__ == "__main__":
-    scrape_woodcutting_ironman()
+    scrape_mining_ironman()

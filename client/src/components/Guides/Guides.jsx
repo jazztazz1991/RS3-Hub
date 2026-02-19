@@ -6,7 +6,8 @@ const Guides = () => {
     // Currently available guides
     const availableGuides = [
         { name: 'Fishing', path: '/guides/fishing',  icon: '🎣' },
-        { name: 'Woodcutting', path: '/guides/woodcutting', icon: '🪓' }
+        { name: 'Woodcutting', path: '/guides/woodcutting', icon: '🪓' },
+        { name: 'Mining', path: '/guides/mining', icon: '⛏️' }
     ];
 
     return (

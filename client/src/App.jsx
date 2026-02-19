@@ -18,6 +18,7 @@ import FishingCalculator from './components/Calculators/Fishing/FishingCalculato
 import Guides from './components/Guides/Guides';
 import FishingGuide from './components/Guides/FishingGuide';
 import WoodcuttingGuide from './components/Guides/WoodcuttingGuide';
+import MiningGuide from './components/Guides/MiningGuide';
 import FiremakingCalculator from './components/Calculators/Firemaking/FiremakingCalculator';
 import MiningCalculator from './components/Calculators/Mining/MiningCalculator';
 import SmithingCalculator from './components/Calculators/Smithing/SmithingCalculator';
@@ -88,6 +89,7 @@ function App() {
                 <Route path="/guides" element={<Guides />} />
                 <Route path="/guides/fishing" element={<FishingGuide />} />
                 <Route path="/guides/woodcutting" element={<WoodcuttingGuide />} />
+                <Route path="/guides/mining" element={<MiningGuide />} />
                 <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
                 <Route path="/calculators/mining" element={<MiningCalculator />} />
                 <Route path="/calculators/smithing" element={<SmithingCalculator />} />

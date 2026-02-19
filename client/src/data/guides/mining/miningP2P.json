@@ -1,0 +1,134 @@
+{
+    "methods": [
+        {
+            "levels": "1-10",
+            "min_level": 1,
+            "max_level": 10,
+            "method": "Copper/Tin",
+            "xp_rate_raw": "5,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "10-20",
+            "min_level": 10,
+            "max_level": 20,
+            "method": "Iron",
+            "xp_rate_raw": "15,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "20-30",
+            "min_level": 20,
+            "max_level": 30,
+            "method": "Coal",
+            "xp_rate_raw": "25,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "30-40",
+            "min_level": 30,
+            "max_level": 40,
+            "method": "Mithril",
+            "xp_rate_raw": "40,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "40-50",
+            "min_level": 40,
+            "max_level": 50,
+            "method": "Adamantite/Luminite",
+            "xp_rate_raw": "45,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "50-60",
+            "min_level": 50,
+            "max_level": 60,
+            "method": "Runite",
+            "xp_rate_raw": "60,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "60-70",
+            "min_level": 60,
+            "max_level": 70,
+            "method": "Orichalcite/Drakolith",
+            "xp_rate_raw": "70,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "70-80",
+            "min_level": 70,
+            "max_level": 80,
+            "method": "Phasmatite/Necrite",
+            "xp_rate_raw": "90,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "80-90",
+            "min_level": 80,
+            "max_level": 90,
+            "method": "Banite",
+            "xp_rate_raw": "105,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "89-97+",
+            "min_level": 89,
+            "max_level": 97,
+            "method": "Corrupted ore",
+            "xp_rate_raw": "180,000AFK",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "90-97",
+            "min_level": 90,
+            "max_level": 97,
+            "method": "Light animica/Dark animica",
+            "xp_rate_raw": "100,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "97-99+",
+            "min_level": 97,
+            "max_level": 99,
+            "method": "Alaea crablet",
+            "xp_rate_raw": "190,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "100+",
+            "min_level": 100,
+            "max_level": 99,
+            "method": "Primal ores",
+            "xp_rate_raw": "250,000+",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        }
+    ]
+}

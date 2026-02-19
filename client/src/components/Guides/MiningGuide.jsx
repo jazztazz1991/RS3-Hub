@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import p2pData from '../../data/guides/fishing/fishingP2P.json';
-import ironmanData from '../../data/guides/fishing/fishingIronman.json';
+import p2pData from '../../data/guides/mining/miningP2P.json';
+import ironmanData from '../../data/guides/mining/miningIronman.json';
 import './Guides.css';
 
-const FishingGuide = () => {
+const MiningGuide = () => {
     const [isIronman, setIsIronman] = useState(false);
     const navigate = useNavigate();
 
-    // The scrape format is consistent, but check if we need to access .methods
-    const guideData = isIronman ? ironmanData.methods : p2pData.methods;
+    const guideData = isIronman ? (ironmanData.methods || []) : (p2pData.methods || []);
 
-    const handleUseMethod = (item) => {
-        navigate('/calculators/fishing', { 
+    const handleUseMethod = (method) => {
+        // Navigate to calculator with pre-filled state
+        navigate('/calculators/mining', { 
             state: { 
-                preSelectMethod: item.method,
-                preSelectLevel: item.min_level,
-                preSelectTarget: item.max_level
+                preSelectMethod: method.method,
+                preSelectTarget: method.max_level
             } 
         });
     };
@@ -24,9 +23,10 @@ const FishingGuide = () => {
     return (
         <div className="guide-container">
             <div className="guide-header">
-                <h2>Fishing Training Guide</h2>
+                <h2>Mining Training Guide</h2>
+                
                 <div className="toggle-container">
-                    <span style={{color: !isIronman ? '#fff' : '#888'}}>P2P</span>
+                    <span>Main</span>
                     <label className="switch">
                         <input 
                             type="checkbox" 
@@ -50,7 +50,7 @@ const FishingGuide = () => {
                             <div className="guide-card-body">
                                 <p className="xp-rate">XP Rates: {item.xp_rate_raw || "Varies"}</p>
                                 <p>{item.notes}</p>
-                                {item.category && !['Main', 'General', 'Fishing for experience'].includes(item.category) && (
+                                {item.category && !['Main', 'General', 'Methods'].includes(item.category) && (
                                     <span className="method-badge" style={{backgroundColor: '#e67e22', color: 'white', fontSize: '0.8em', marginTop: '10px', display: 'inline-block'}}>
                                         {item.category}
                                     </span>
@@ -65,11 +65,11 @@ const FishingGuide = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No guide methods found for this category yet.</p>
+                    <p>No guide data available.</p>
                 )}
             </div>
         </div>
     );
 };
 
-export default FishingGuide;
+export default MiningGuide;
