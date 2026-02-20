@@ -41,6 +41,16 @@
             "type": "ironman"
         },
         {
+            "levels": "40-56",
+            "min_level": 40,
+            "max_level": 56,
+            "method": "Maple trees",
+            "xp_rate_raw": "40,000-55,000",
+            "notes": "Standard P2P training method (Standard method)",
+            "category": "Main",
+            "type": "p2p-backup"
+        },
+        {
             "levels": "50-68",
             "min_level": 50,
             "max_level": 68,
@@ -51,14 +61,64 @@
             "type": "ironman"
         },
         {
+            "levels": "56-58",
+            "min_level": 56,
+            "max_level": 58,
+            "method": "Arctic pines",
+            "xp_rate_raw": "60,000",
+            "notes": "Standard P2P training method (Standard method)",
+            "category": "Main",
+            "type": "p2p-backup"
+        },
+        {
+            "levels": "58-60",
+            "min_level": 58,
+            "max_level": 60,
+            "method": "Eucalyptus trees",
+            "xp_rate_raw": "62,000",
+            "notes": "Standard P2P training method (Standard method)",
+            "category": "Main",
+            "type": "p2p-backup"
+        },
+        {
+            "levels": "60-68/99",
+            "min_level": 60,
+            "max_level": 68,
+            "method": "Mahogany",
+            "xp_rate_raw": "63,000-109,000",
+            "notes": "Standard P2P training method (Standard method)",
+            "category": "Main",
+            "type": "p2p-backup"
+        },
+        {
             "levels": "68-99",
             "min_level": 68,
             "max_level": 99,
             "method": "Ivy",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "Up to 86,000 XP/hr",
             "notes": "At level 68 Woodcutting, players should begin chopping ivy , found growing on walls in multiple locations including Varrock Palace , Falador , Yanille , Woodcutters' Grove , and the Crwys Clan of Prifddinas . Starting at level 68, players can expect up to 86,000 base experience. This can increase to up to 126,000 base experience at level 99 Woodcutting. Cutting ivy requires less effort and attention than cutting most other trees and so proves popular with some players. Cutting ivy doesn't provide any logs but still gives a chance to find bird's nests . Ivy can be found in several locations in RuneScape, though players who have access to Prifddinas are recommended to train at the ivy located in the Crwys district to take advantage of the Voice of Seren effect. Ivy can be found on the walls inside the greenhouse where Coeden is located. When the Voice of Seren is active in the Crwys district, base experience gained from Woodcutting ivy there will be increased by 20%. Level 75 Woodcutting is required for Plague's End to unlock Prifddinas and chop ivy there.",
             "category": "General",
             "type": "ironman"
+        },
+        {
+            "levels": "94-100",
+            "min_level": 94,
+            "max_level": 100,
+            "method": "Crystal trees",
+            "xp_rate_raw": "130,000-133,000",
+            "notes": "Standard P2P training method (Standard method)",
+            "category": "Main",
+            "type": "p2p-backup"
+        },
+        {
+            "levels": "100+",
+            "min_level": 100,
+            "max_level": 99,
+            "method": "Eternal magic trees",
+            "xp_rate_raw": "300k+ (with boosts)",
+            "notes": "Standard P2P training method (Standard method)",
+            "category": "Main",
+            "type": "p2p-backup"
         }
     ]
 }

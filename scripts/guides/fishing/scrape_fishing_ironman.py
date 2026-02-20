@@ -108,6 +108,8 @@ def scrape_fishing_ironman():
 
                     # Attempt to extract XP rate from notes
                     xp_rate = "See Description"
+                    
+                    # Regex for "X experience per hour" or "X XP/hr"
                     xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)\s*(?:per|an)\s*(?:hour|hr)', notes, re.IGNORECASE)
                     if xp_match:
                         xp_rate = f"{xp_match.group(1)} XP/hr"
@@ -117,6 +119,16 @@ def scrape_fishing_ironman():
                         range_xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:and|to)\s*(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)', notes, re.IGNORECASE)
                         if range_xp_match:
                             xp_rate = f"{range_xp_match.group(1)}-{range_xp_match.group(2)} XP/hr"
+                    
+                    # Specific fixes for known missing rates in Ironman guide
+                    if xp_rate == "See Description":
+                        method_lower = method_name.lower()
+                        if "barbarian" in method_lower:
+                             xp_rate = "~70,000 XP/hr (Est.)"
+                        elif "menafish" in method_lower:
+                             xp_rate = "~85,000 XP/hr (at 90+)"
+                        elif "fly fishing" in method_lower:
+                             xp_rate = "17,000-57,000 XP/hr"
 
                     methods.append({
 

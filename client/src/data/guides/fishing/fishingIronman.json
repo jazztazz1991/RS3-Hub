@@ -15,7 +15,7 @@
             "min_level": 20,
             "max_level": 70,
             "method": "Fly fishing",
-            "xp_rate_raw": "17,000-57,000",
+            "xp_rate_raw": "17,000-57,000 XP/hr",
             "notes": "Raw trout and raw salmon can be caught in Lumbridge or Shilo Village . While these provide optimal experience up to barbarian fishing , the food provided from fly fishing does not heal much. As such, starting at level 58, some players opt to change methods to something providing better healing.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -35,7 +35,7 @@
             "min_level": 70,
             "max_level": 93,
             "method": "Crystallise fly fishing",
-            "xp_rate_raw": "Up to 118,000 experience an hour with level 99",
+            "xp_rate_raw": "17,000-57,000 XP/hr",
             "notes": "Crystallise combined with Light Form at the fly fishing spots provides optimal experience from level 70 to 93. However, this is an intense use of soul runes and requires The Light Within .",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -45,7 +45,7 @@
             "min_level": 70,
             "max_level": 72,
             "method": "Barbarian fishing",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "~70,000 XP/hr (Est.)",
             "notes": "Leaping trout , leaping salmon and leaping sturgeon cannot be eaten, but can be caught for experience. This is optimal between level 70 and 72 if not using crystallise.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -55,7 +55,7 @@
             "min_level": 72,
             "max_level": 93,
             "method": "Menafish",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "~85,000 XP/hr (at 90+)",
             "notes": "In the Menaphos Port district and VIP skilling area three types of fish can be caught: raw desert sole , raw catfish and raw beltfish . These heal a significant amount of health, and provide decent experience. It's advised to put Menaphos reputation onto the port district, as it can give bonuses to fishing there. Fishing in Menaphos provides optimal experience without crystallise between level 72 and 93.",
             "category": "Fishing for experience",
             "type": "ironman"
@@ -85,7 +85,7 @@
             "min_level": 1,
             "max_level": 52,
             "method": "Crayfish and fly fishing",
-            "xp_rate_raw": "11,500",
+            "xp_rate_raw": "17,000-57,000 XP/hr",
             "notes": "These methods should still be used to reach 52 quickly.",
             "category": "Fishing for food",
             "type": "ironman"
@@ -95,7 +95,7 @@
             "min_level": 52,
             "max_level": 68,
             "method": "Menafish",
-            "xp_rate_raw": "See Description",
+            "xp_rate_raw": "~85,000 XP/hr (at 90+)",
             "notes": "See above. This method gives a lot of decent food. If not supplementing cooking training with other methods, it is advised to go to green blubber jellyfish when at 72 . This method can be continued for low intensity decent Fishing experience.",
             "category": "Fishing for food",
             "type": "ironman"

@@ -96,15 +96,23 @@ def scrape_woodcutting_ironman():
 
                 # Attempt to extract XP rate from notes
                 xp_rate = "See Description"
-                xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)\s*(?:per|an)\s*(?:hour|hr)', notes, re.IGNORECASE)
+                
+                # Check for explicit "per hour"
+                xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:base\s+)?(?:experience|xp)\s*(?:per|an)\s*(?:hour|hr)', notes, re.IGNORECASE)
                 if xp_match:
                     xp_rate = f"{xp_match.group(1)} XP/hr"
                 
                 # Fallback for ranges like "41,000 and 49,000 experience"
                 if xp_rate == "See Description":
-                     range_xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:and|to)\s*(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)', notes, re.IGNORECASE)
+                     range_xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:and|to|-)\s*(\d{1,3}(?:,\d{3})*)\s*(?:base\s+)?(?:experience|xp)', notes, re.IGNORECASE)
                      if range_xp_match:
                          xp_rate = f"{range_xp_match.group(1)}-{range_xp_match.group(2)} XP/hr"
+                
+                # Fallback for "up to X base experience" (implies rate in this context)
+                if xp_rate == "See Description":
+                     base_match = re.search(r'up to\s+(\d{1,3}(?:,\d{3})*)\s*(?:base\s+)?(?:experience|xp)', notes, re.IGNORECASE)
+                     if base_match:
+                          xp_rate = f"Up to {base_match.group(1)} XP/hr"
 
                 methods.append({
                     "levels": level_range,
@@ -128,6 +136,48 @@ def scrape_woodcutting_ironman():
 
     except Exception as e:
         print(f"Error scraping Ironman Woodcutting: {e}")
+
+    # --- MERGE P2P METHODS (If missing) ---
+    try:
+        # Load P2P data
+        p2p_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 
+                              'client', 'src', 'data', 'guides', 'woodcutting', 'woodcuttingP2P.json')
+        
+        if os.path.exists(p2p_file):
+            print("Merging P2P Woodcutting methods...")
+            with open(p2p_file, 'r') as f:
+                p2p_data = json.load(f)
+                p2p_methods = p2p_data.get('methods', [])
+
+            # Get existing ironman method names
+            existing_names = {m['method'].lower().strip() for m in methods}
+
+            count_added = 0
+            for p2p_m in p2p_methods:
+                name = p2p_m.get('method', '').strip()
+                if not name: continue
+                
+                # Check duplication
+                if name.lower() in existing_names:
+                    continue
+                
+                # Filter clearly problematic ones
+                if 'Treasure Hunter' in name or 'Protean' in name:
+                    continue
+
+                # Add to list
+                p2p_m['type'] = 'p2p-backup'
+                p2p_m['notes'] = (p2p_m.get('notes', '') + " (Standard method)").strip()
+                methods.append(p2p_m)
+                count_added += 1
+            
+            # Sort by level
+            methods.sort(key=lambda x: x['min_level'])
+            print(f"Added {count_added} methods from P2P guide.")
+
+    except Exception as merge_err:
+        print(f"Error merging P2P data: {merge_err}")
+    # --------------------------------------
 
     # Output to distinct Ironman file
     output_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'client', 'src', 'data', 'guides', 'woodcutting', 'woodcuttingIronman.json')

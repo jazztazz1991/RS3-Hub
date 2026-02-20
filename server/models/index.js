@@ -11,10 +11,13 @@ const UserQuest = require('./UserQuest');
 User.hasMany(Character, { foreignKey: 'userId', as: 'characters' });
 Character.belongsTo(User, { foreignKey: 'userId' });
 
+Character.hasMany(UserQuest, { foreignKey: 'characterId', as: 'quests' });
+UserQuest.belongsTo(Character, { foreignKey: 'characterId' });
+
 User.hasMany(SlayerTask, { foreignKey: 'userId', as: 'slayerTasks' });
 SlayerTask.belongsTo(User, { foreignKey: 'userId' });
 
-User.hasMany(UserQuest, { foreignKey: 'userId', as: 'quests' });
+User.hasMany(UserQuest, { foreignKey: 'userId', as: 'userQuests' }); // Renamed alias to avoid confusion if needed
 UserQuest.belongsTo(User, { foreignKey: 'userId' });
 
 // Report association

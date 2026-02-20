@@ -5,9 +5,11 @@ import './Guides.css';
 const Guides = () => {
     // Currently available guides
     const availableGuides = [
+        { name: 'Archaeology', path: '/guides/archaeology',  icon: '🔍' },
         { name: 'Fishing', path: '/guides/fishing',  icon: '🎣' },
         { name: 'Woodcutting', path: '/guides/woodcutting', icon: '🪓' },
-        { name: 'Mining', path: '/guides/mining', icon: '⛏️' }
+        { name: 'Mining', path: '/guides/mining', icon: '⛏️' },
+        { name: 'Firemaking', path: '/guides/firemaking', icon: '🔥' }
     ];
 
     return (

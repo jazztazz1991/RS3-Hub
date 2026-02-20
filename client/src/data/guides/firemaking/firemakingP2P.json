@@ -1,0 +1,164 @@
+{
+    "methods": [
+        {
+            "levels": "1",
+            "min_level": 1,
+            "max_level": 99,
+            "method": "Logs",
+            "xp_rate_raw": "48,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "1",
+            "min_level": 1,
+            "max_level": 99,
+            "method": "Achey tree logs",
+            "xp_rate_raw": "48,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "15",
+            "min_level": 15,
+            "max_level": 99,
+            "method": "Oak logs",
+            "xp_rate_raw": "72,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "30",
+            "min_level": 30,
+            "max_level": 99,
+            "method": "Willow logs",
+            "xp_rate_raw": "108,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "35",
+            "min_level": 35,
+            "max_level": 99,
+            "method": "Teak logs",
+            "xp_rate_raw": "126,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "45",
+            "min_level": 45,
+            "max_level": 99,
+            "method": "Maple logs",
+            "xp_rate_raw": "162,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "47",
+            "min_level": 47,
+            "max_level": 99,
+            "method": "Acadia logs",
+            "xp_rate_raw": "168,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "50",
+            "min_level": 50,
+            "max_level": 99,
+            "method": "Mahogany logs",
+            "xp_rate_raw": "189,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "54",
+            "min_level": 54,
+            "max_level": 99,
+            "method": "Arctic pine logs",
+            "xp_rate_raw": "150,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "58",
+            "min_level": 58,
+            "max_level": 99,
+            "method": "Eucalyptus logs",
+            "xp_rate_raw": "231,600",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "60",
+            "min_level": 60,
+            "max_level": 99,
+            "method": "Yew logs",
+            "xp_rate_raw": "243,000",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "75",
+            "min_level": 75,
+            "max_level": 99,
+            "method": "Magic logs",
+            "xp_rate_raw": "364,560",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "75",
+            "min_level": 75,
+            "max_level": 99,
+            "method": "Corrupted magic logs",
+            "xp_rate_raw": "382,800",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "87",
+            "min_level": 87,
+            "max_level": 99,
+            "method": "Sharp shell shards",
+            "xp_rate_raw": "410,280",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "90",
+            "min_level": 90,
+            "max_level": 99,
+            "method": "Elder logs",
+            "xp_rate_raw": "521,160",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        },
+        {
+            "levels": "100",
+            "min_level": 100,
+            "max_level": 99,
+            "method": "Eternal magic logs",
+            "xp_rate_raw": "662,400",
+            "notes": "Standard P2P training method",
+            "category": "Main",
+            "type": "p2p"
+        }
+    ]
+}

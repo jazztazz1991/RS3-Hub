@@ -43,18 +43,52 @@ def scrape_mining_ironman():
             text = header.get_text(strip=True).replace('[edit | edit source]', '')
             
             # Check for header based methods (Levels X-Y: ...)
-            
             is_method = False
-            match = re.search(r'Level(?:s)?\s*(\d+(?:-\d+|\+)?)\s*[:|-]\s*(.*)', text, re.IGNORECASE)
+            level_range = None
+            match = None
+            method_name = ""
+
+            # Pattern 1: Explicit "Levels X-Y: Method Name" (Strict colon or spaced dash)
+            # Use strict separator to avoid matching "1-99" as "1" (level) "-" (sep) "99" (method)
+            match1 = re.search(r'Level(?:s)?\s*(\d+(?:-\d+|\+)?)\s*(?::| - )\s*(.*)', text, re.IGNORECASE)
+            if match1:
+                match = match1
+                level_range = match.group(1)
+                method_name = match.group(2).strip()
             
-            # Also support just "1-10: Copper and Tin" format which some guides use
+            # Pattern 2: Start with "X-Y: Method Name"
             if not match:
-                 match = re.search(r'^(\d+(?:-\d+|\+)?)\s*[:|-]\s*(.*)', text)
+                match2 = re.search(r'^(\d+(?:-\d+|\+)?)\s*(?::| - )\s*(.*)', text)
+                if match2:
+                    match = match2
+                    level_range = match.group(1)
+                    method_name = match.group(2).strip()
+
+            # Pattern 3: Just "Levels X-Y" with no method name (Common in Alternative Methods)
+            if not match:
+                match3 = re.search(r'^Level(?:s)?\s*(\d+(?:-\d+|\+)?)', text, re.IGNORECASE)
+                if match3 and len(text.strip().split()) <= 4: 
+                     match = match3
+                     level_range = match.group(1)
+                     method_name = ""
 
             if match:
                 is_method = True
-                level_range = match.group(1)
-                method_name = match.group(2)
+                
+                # Fix for "Levels 1-99" -> Shooting Stars
+                if level_range == "1-99" and not method_name.strip():
+                    method_name = "Shooting Stars"
+                
+                # Fix for "Levels 60-70" -> Mining Guild
+                if level_range == "60-70" and not method_name.strip():
+                     method_name = "Mining Guild (Orichalcite/Drakolith)"
+                
+                # If we still have no name, use the text but clean it
+                if not method_name:
+                     method_name = text.replace(f"Levels {level_range}", "").replace(f"Level {level_range}", "").replace(level_range, "").strip(": -")
+                     if not method_name:
+                         method_name = "Mining Method"
+
                 min_lvl, max_lvl = parse_level_range(level_range)
                 
                  # Extract content
@@ -104,6 +138,15 @@ def scrape_mining_ironman():
                      range_xp_match = re.search(r'(\d{1,3}(?:,\d{3})*)\s*(?:and|to)\s*(\d{1,3}(?:,\d{3})*)\s*(?:experience|xp)', notes, re.IGNORECASE)
                      if range_xp_match:
                          xp_rate = f"{range_xp_match.group(1)}-{range_xp_match.group(2)} XP/hr"
+                
+                # Specific overrides for known methods
+                if "Shooting Stars" in method_name:
+                    xp_rate = "Variable (D&D)"
+                elif "Mining Guild" in method_name:
+                    xp_rate = "Standard Mining XP"
+                elif "Primal rocks" in method_name: # Ensure we catch the 250k+ if not caught
+                     if "250,000+" in notes:
+                          xp_rate = "250,000+ XP/hr"
 
                 methods.append({
                     "levels": level_range,

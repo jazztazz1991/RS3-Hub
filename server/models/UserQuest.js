@@ -15,6 +15,14 @@ const UserQuest = sequelize.define('UserQuest', {
       key: 'id',
     }
   },
+  characterId: {
+    type: DataTypes.UUID,
+    allowNull: true,
+    references: {
+      model: 'Characters',
+      key: 'id'
+    }
+  },
   questTitle: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -31,7 +39,7 @@ const UserQuest = sequelize.define('UserQuest', {
   indexes: [
     {
       unique: true,
-      fields: ['userId', 'questTitle']
+      fields: ['userId', 'characterId', 'questTitle']
     }
   ]
 });

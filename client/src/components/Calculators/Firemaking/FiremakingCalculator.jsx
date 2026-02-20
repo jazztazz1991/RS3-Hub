@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { FIREMAKING_ITEMS, FIREMAKING_BOOSTS } from '../../../data/skills/firemakingData';
@@ -8,6 +9,7 @@ import './FiremakingCalculator.css';
 const FiremakingCalculator = () => {
     const { characterData } = useCharacter();
     const { updateReportContext, clearReportContext } = useReportCalls();
+    const location = useLocation();
 
     // State
     const [currentXp, setCurrentXp] = useState(0);
@@ -21,6 +23,28 @@ const FiremakingCalculator = () => {
     const [selectedMethod, setSelectedMethod] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
+    // Handle Guide Selection
+    useEffect(() => {
+        if (location.state) {
+            const { preSelectMethod, preSelectTarget } = location.state;
+            if (preSelectMethod) {
+                // Approximate match
+                const match = FIREMAKING_ITEMS.find(item => 
+                    item.name.toLowerCase().includes(preSelectMethod.toLowerCase()) || 
+                    preSelectMethod.toLowerCase().includes(item.name.toLowerCase())
+                );
+                if (match) {
+                    setSelectedMethod(match);
+                    setSearchTerm(match.name);
+                }
+            }
+            if (preSelectTarget) {
+                setTargetLevel(Math.min(preSelectTarget, 120));
+            }
+        }
+    }, [location.state]);
+
+    // 
     // Initialize from Character Context
     useEffect(() => {
         updateReportContext({
@@ -62,8 +86,16 @@ const FiremakingCalculator = () => {
         return matchesSearch;
     }).sort((a,b) => a.level - b.level); 
 
-    // XP Calculation
-    const getXpPerAction = (baseXp) => {
+    const getXpPerAction = () => {
+        if (!selectedMethod) return 0;
+           
+        let base = selectedMethod.xp;
+        if (usingBonfire && selectedMethod.bonfireXp) {
+            base = Number(selectedMethod.bonfireXp);
+        } else {
+            base = Number(selectedMethod.xp);
+        }
+
         let multiplier = 1.0;
         let bonus = 0;
 
@@ -72,23 +104,11 @@ const FiremakingCalculator = () => {
             if (boost) multiplier += boost.multiplier;
         });
 
-        // Bonfire logic (example: +X% if using bonfire over basic)
-        // Usually bonfires give extra HP boost but also raw XP variation
-        // We will assume it's just a raw XP mode for simpler calc logic
-        /* 
-           Simulating simple bonfire boost if checked.
-           Real RS3 Bonfire gives X% based on nearby players, etc.
-           Let's just apply a flat 10% for simplicity if checked + base method logic
-        */
-        if (usingBonfire) {
-             multiplier += 0.05; // 5% manual simplified bonfire boost
-        }
-
-        return (baseXp * multiplier) + bonus;
+        return (base * multiplier) + bonus;
     };
 
     const remainingXp = Math.max(0, targetXp - currentXp);
-    const xpPerAction = selectedMethod ? getXpPerAction(selectedMethod.xp) : 0;
+    const xpPerAction = getXpPerAction();
     const actionsNeeded = selectedMethod ? Math.ceil(remainingXp / xpPerAction) : 0;
 
     const handleMethodSelect = (method) => {
@@ -104,8 +124,12 @@ const FiremakingCalculator = () => {
 
     return (
         <div className="firemaking-calculator">
-            <h2>Firemaking Calculator</h2>
+            <div className="calculator-header">
+                <h2>Firemaking Calculator</h2>
+                <Link to="/guides/firemaking" className="guide-link-btn">View Training Guide</Link>
+            </div>
 
+            <div className="calculator-content">
             {/* Modifiers */}
             <div className="modifiers">
                 <label className="checkbox-container">
@@ -114,9 +138,9 @@ const FiremakingCalculator = () => {
                         checked={usingBonfire} 
                         onChange={() => setUsingBonfire(!usingBonfire)} 
                     />
-                    Bonfire Mode (+5% est)
+                    Bonfire Mode (Use Bonfire XP)
                 </label>
-                {FIREMAKING_BOOSTS.map(boost => (
+                {FIREMAKING_BOOSTS.filter(b => b.id !== 'bonfire').map(boost => (
                     <label key={boost.id} className="checkbox-container" title={boost.description}>
                         <input 
                             type="checkbox" 
@@ -229,6 +253,7 @@ const FiremakingCalculator = () => {
                     </div>
                 </div>
             </div>
+          </div>
         </div>
     );
 };
