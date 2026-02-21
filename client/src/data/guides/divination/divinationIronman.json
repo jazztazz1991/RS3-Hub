@@ -1,0 +1,32 @@
+[
+  {
+      "levels": "1-20",
+      "method": "**Pale & Flickering Wisps:** Same as P2P. Grind these quickly south of Draynor or Falador.",
+      "xp_rates": "Low",
+      "tips": "Start crafting basic urns if you have the Crafting level."
+  },
+  {
+      "levels": "Daily",
+      "method": "**Guthixian Cache:** MANDATORY for efficient Ironman training. Do not skip.",
+      "xp_rates": "Massive (Daily)",
+      "tips": "Provides the outfit without BXP."
+  },
+  {
+      "levels": "20-99",
+      "method": "**Highest Wisp Available:** Always move to the next tier immediately.",
+      "xp_rates": "Standard",
+      "tips": "Ironmen should prioritize unlocking the **Memorial to Guthix** perks early for free XP."
+  },
+  {
+      "levels": "70+",
+      "method": "**Hall of Memories:** Still viable for Ironmen, especially if you catch core parties.",
+      "xp_rates": "Good",
+      "tips": "Great for AFK if you can't be active for Caches."
+  },
+  {
+      "levels": "95-99",
+      "method": "**Incandescent Energy:** You will need tons of this for charges. Do not convert to XP unless 99 is the only goal.",
+      "xp_rates": "Standard",
+      "tips": "Prioritize Energy gathering for your Charge Pack."
+  }
+]

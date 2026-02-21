@@ -66,3 +66,9 @@
   font-size: 0.8rem;
   color: #27ae60;
 }
+
+.calculator-skill-img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}

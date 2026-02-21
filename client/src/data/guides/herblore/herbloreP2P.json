@@ -1,0 +1,264 @@
+[
+    {
+        "level": "1-3",
+        "method": "Druidic Ritual Quest",
+        "xp": "250",
+        "category": "Fastest"
+    },
+    {
+        "level": "3-5",
+        "method": "Attack Potion (Guam + Eye of Newt)",
+        "xp": "25",
+        "category": "Fastest"
+    },
+    {
+        "level": "5-12",
+        "method": "Anti-poison (Marrentill + Unicorn Horn Dust)",
+        "xp": "37.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "12-26",
+        "method": "Strength Potion (Tarromin + Limpwurt Root)",
+        "xp": "50",
+        "category": "Fastest"
+    },
+    {
+        "level": "26-38",
+        "method": "Energy Potion (Harralander + Chocolate Dust)",
+        "xp": "67.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "38-45",
+        "method": "Prayer Potion (Ranarr + Snape Grass)",
+        "xp": "87.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "45-52",
+        "method": "Super Attack (Irit + Eye of Newt)",
+        "xp": "100",
+        "category": "Fastest"
+    },
+    {
+        "level": "52-55",
+        "method": "Super Energy (Avantoe + Mort Myre Fungus)",
+        "xp": "117.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "55-63",
+        "method": "Super Strength (Kwuarm + Limpwurt Root)",
+        "xp": "125",
+        "category": "Fastest"
+    },
+    {
+        "level": "63-66",
+        "method": "Super Restore (Snapdragon + Red Spiders' Eggs)",
+        "xp": "142.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "66-69",
+        "method": "Super Defence (Cadantine + White Berries)",
+        "xp": "150",
+        "category": "Fastest"
+    },
+    {
+        "level": "69-72",
+        "method": "Antifire (Lantadyme + Dragon Scale Dust)",
+        "xp": "157.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "72-76",
+        "method": "Super Ranging (Dwarf Weed + Wine of Zamorak)",
+        "xp": "162.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "76-81",
+        "method": "Super Magic (Lantadyme + Potato Cactus)",
+        "xp": "172.5",
+        "category": "Fastest"
+    },
+    {
+        "level": "81-88",
+        "method": "Saradomin Brew (Toadflax + Crushed Nest)",
+        "xp": "180",
+        "category": "Fastest"
+    },
+    {
+        "level": "88-96",
+        "method": "Extreme Potions (Attack/Strength/Defence/Magic/Ranging)",
+        "xp": "220-260",
+        "category": "Fastest"
+    },
+    {
+        "level": "96-99",
+        "method": "Overloads",
+        "xp": "1,000",
+        "category": "Fastest"
+    },
+    {
+        "level": "99+",
+        "method": "Elder Overloads / Vuln Bombs",
+        "xp": "Varied",
+        "category": "Fastest"
+    },
+    {
+        "level": "3-dose",
+        "method": "4-dose",
+        "xp": "3-dose",
+        "profit": "4-dose",
+        "category": "Profitable"
+    },
+    {
+        "level": "38",
+        "method": "Prayer potion",
+        "xp": "87.5",
+        "profit": "844.15",
+        "category": "Profitable"
+    },
+    {
+        "level": "40",
+        "method": "Summoning potion",
+        "xp": "92",
+        "profit": "4,460.83",
+        "category": "Profitable"
+    },
+    {
+        "level": "43",
+        "method": "Divination potion",
+        "xp": "97.5",
+        "profit": "15,403.58",
+        "category": "Profitable"
+    },
+    {
+        "level": "45",
+        "method": "Super attack",
+        "xp": "100",
+        "profit": "1,956.09",
+        "category": "Profitable"
+    },
+    {
+        "level": "52",
+        "method": "Super energy",
+        "xp": "117.5",
+        "profit": "5,533.76",
+        "category": "Profitable"
+    },
+    {
+        "level": "55",
+        "method": "Super strength",
+        "xp": "125",
+        "profit": "4,581.77",
+        "category": "Profitable"
+    },
+    {
+        "level": "63",
+        "method": "Super restore",
+        "xp": "142.5",
+        "profit": "\u2212688.04",
+        "category": "Profitable"
+    },
+    {
+        "level": "66",
+        "method": "Super defence",
+        "xp": "150",
+        "profit": "4,000.99",
+        "category": "Profitable"
+    },
+    {
+        "level": "70",
+        "method": "Super divination",
+        "xp": "160",
+        "profit": "8,772.34",
+        "category": "Profitable"
+    },
+    {
+        "level": "72",
+        "method": "Super ranging potion",
+        "xp": "162.5",
+        "profit": "3,336.54",
+        "category": "Profitable"
+    },
+    {
+        "level": "75",
+        "method": "Super runecrafting",
+        "xp": "170",
+        "profit": "27,041.33",
+        "category": "Profitable"
+    },
+    {
+        "level": "76",
+        "method": "Super magic potion",
+        "xp": "172.5",
+        "profit": "4,320.39",
+        "category": "Profitable"
+    },
+    {
+        "level": "81",
+        "method": "Saradomin brew",
+        "xp": "180",
+        "profit": "309.33",
+        "category": "Profitable"
+    },
+    {
+        "level": "82",
+        "method": "Aggression potion",
+        "xp": "185",
+        "profit": "6,987.67",
+        "category": "Profitable"
+    },
+    {
+        "level": "88",
+        "method": "Extreme attack",
+        "xp": "220",
+        "profit": "1,598.56",
+        "category": "Profitable"
+    },
+    {
+        "level": "89",
+        "method": "Extreme strength",
+        "xp": "230",
+        "profit": "4,595.15",
+        "category": "Profitable"
+    },
+    {
+        "level": "90",
+        "method": "Extreme defence",
+        "xp": "240",
+        "profit": "4,424.48",
+        "category": "Profitable"
+    },
+    {
+        "level": "91",
+        "method": "Extreme magic",
+        "xp": "250",
+        "profit": "2,405.52",
+        "category": "Profitable"
+    },
+    {
+        "level": "92",
+        "method": "Extreme ranging",
+        "xp": "260",
+        "profit": "715.27",
+        "category": "Profitable"
+    },
+    {
+        "level": "93",
+        "method": "Extreme necromancy",
+        "xp": "265",
+        "profit": "1,911.32",
+        "category": "Profitable"
+    },
+    {
+        "level": "94",
+        "method": "Super prayer",
+        "xp": "270",
+        "profit": "6,734.73",
+        "category": "Profitable"
+    }
+]

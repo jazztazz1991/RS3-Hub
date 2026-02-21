@@ -3,6 +3,7 @@ import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { FARMING_CROPS, POF_ANIMALS } from '../../../data/skills/farmingData';
 import { getXpAtLevel } from '../../../utils/rs3';
+import SkillIcon from '../../Common/SkillIcon';
 import './FarmingCalculator.css';
 
 const FarmingCalculator = () => {
@@ -87,34 +88,34 @@ const FarmingCalculator = () => {
         <div className="farming-calculator">
             <h2>Farming Calculator</h2>
             
-            <div className="mode-toggle" style={{display: 'flex', gap: '1rem', marginBottom: '1.5rem'}}>
+            <div className="mode-toggle">
                 <button
                     className={`mode-btn ${calcMode === 'crops' ? 'active' : ''}`}
                     onClick={() => setCalcMode('crops')}
                     style={{
-                        flex: 1, padding: '1rem', 
                         backgroundColor: calcMode === 'crops' ? '#43a047' : '#1a252f', 
                         border: '2px solid #2e7d32', color: 'white', borderRadius: '8px', cursor: 'pointer'
                     }}
                 >
-                    <span className="emoji">🌱</span> Crops & Trees
+                    <SkillIcon skillName="Farming" className="skill-icon" style={{width: 24, height: 24, marginRight: 8}}/>
+                    Crops & Trees
                 </button>
                 <button
                     className={`mode-btn ${calcMode === 'pof' ? 'active' : ''}`}
                     onClick={() => setCalcMode('pof')}
                     style={{
-                        flex: 1, padding: '1rem', 
                         backgroundColor: calcMode === 'pof' ? '#43a047' : '#1a252f', 
                         border: '2px solid #2e7d32', color: 'white', borderRadius: '8px', cursor: 'pointer'
                     }}
                 >
-                    <span className="emoji">🐄</span> POF (Animals)
+                    <SkillIcon skillName="Farming" className="skill-icon" style={{width: 24, height: 24, marginRight: 8}}/>
+                    POF (Animals)
                 </button>
             </div>
 
-            <div className="calc-layout" style={{display: 'grid', gridTemplateColumns: 'minmax(250px, 300px) 1fr minmax(250px, 300px)', gap: '1.5rem'}}>
+            <div className="calc-layout">
                 {/* 1. Stats Column */}
-                <div className="calc-inputs">
+                <div className="calc-inputs" style={{backgroundColor: '#2c3e50', padding: '1.5rem', borderRadius: '8px', border: '1px solid #34495e'}}>
                     <div className="input-group">
                         <label>Level</label>
                         <input
@@ -164,8 +165,8 @@ const FarmingCalculator = () => {
                     )}
                 </div>
 
-                {/* 2. Methods Column (Middle) - WAS RIGHT, NOW MIDDLE */}
-                <div className="calc-methods">
+                {/* 2. Methods Column (Middle) */}
+                <div className="calc-methods" style={{backgroundColor: '#2c3e50', padding: '1.5rem', borderRadius: '8px', border: '1px solid #34495e'}}>
                      {calcMode === 'crops' ? (
                         <div className="method-list">
                             <div className="methods-header" style={{marginBottom: '1rem'}}>
@@ -249,12 +250,12 @@ const FarmingCalculator = () => {
                     )}
                 </div>
 
-                {/* 3. Results Column (Right) - WAS MIDDLE, NOW RIGHT */}
-                <div className="calc-results">
+                {/* 3. Results Column (Right) */}
+                <div className="calc-results" style={{backgroundColor: '#2c3e50', padding: '1.5rem', borderRadius: '8px', border: '1px solid #34495e'}}>
                      <div className="result-main" style={{textAlign: 'center', marginBottom: '2rem'}}>
                         {calcMode === 'crops' && selectedCrop && (
                             <>
-                            <div className="action-icon" style={{fontSize: '3rem', marginBottom: '1rem'}}>🌿</div>
+                            <SkillIcon skillName="Farming" className="action-icon-img" style={{width: 64, height: 64, marginBottom: '1rem'}}/>
                             <div className="action-count">
                                 <span className="number" style={{display: 'block', fontSize: '2.5rem', fontWeight: 'bold', color: '#66bb6a'}}>
                                     {Math.ceil(remainingXp / selectedCrop.xp).toLocaleString()}
@@ -265,7 +266,7 @@ const FarmingCalculator = () => {
                         )}
                         {calcMode === 'pof' && selectedAnimal && (
                             <>
-                            <div className="action-icon" style={{fontSize: '3rem', marginBottom: '1rem'}}>🐾</div>
+                            <SkillIcon skillName="Farming" className="action-icon-img" style={{width: 64, height: 64, marginBottom: '1rem'}}/>
                             <div className="action-count">
                                 <span className="number" style={{display: 'block', fontSize: '2.5rem', fontWeight: 'bold', color: '#66bb6a'}}>
                                     {Math.ceil(remainingXp / selectedAnimal.xp).toLocaleString()}

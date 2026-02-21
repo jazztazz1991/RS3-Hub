@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { mockSkills } from '../../data/common/mockData';
+import SkillIcon from '../Common/SkillIcon';
 import './Calculators.css';
 
 const Calculators = () => {
@@ -15,8 +16,7 @@ const Calculators = () => {
           .map(skill => (
           <Link to={`/calculators/${skill.name.toLowerCase()}`} key={skill.id} className="calculator-card">
             <div className="calculator-icon">
-              {/* Placeholder for icon - using first letter for now */}
-              {skill.name.charAt(0)}
+              <SkillIcon skillName={skill.name} className="calculator-skill-img" />
             </div>
             <div className="calculator-info">
               <h3>{skill.name}</h3>

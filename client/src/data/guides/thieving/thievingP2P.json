@@ -1,0 +1,38 @@
+[
+  {
+      "levels": "1-5",
+      "method": "**Pickpocketing Men/Women:** Start here. Use sticky fingers if you have them, but it's very quick.",
+      "xp_rates": "Low",
+      "tips": "Just get through these first few levels."
+  },
+  {
+      "levels": "5-62",
+      "method": "**Thieves' Guild Capers:** Complete the Buyers and Cellars quests as you level up. Use the Guild for safecracking preparation.",
+      "xp_rates": "Quest XP",
+      "tips": "Unlock the **Mastery** upgrades in the guild asap."
+  },
+  {
+      "levels": "15-62",
+      "method": "**Pickpocketing HAM Members:** Easy to thrive, decent XP for low levels.",
+      "xp_rates": "Standard",
+      "tips": "Wear HAM robes to decrease fail chance."
+  },
+  {
+      "levels": "62-99",
+      "method": "**Safecracking:** This is the meta. Rotate through safes in the Thieves' Guild and Wilderness (if brave/high level) or huge circuit.",
+      "xp_rates": "400k - 800k+/hr",
+      "tips": "Unlock the **Stethoscope** and **Clippers** from the Guild. No fail chance once you have the level. Highly AFK."
+  },
+  {
+      "levels": "90+",
+      "method": "**Crux Eqal Knights:** Pickpocket these outside Varrock Garden. requires Garden of Tranquillity.",
+      "xp_rates": "300k - 800k/hr (Active/AFK)",
+      "tips": "Use **Sticky Fingers** relic and **Master Camouflage Outfit** for 100% AFK for 5 mins at a time."
+  },
+  {
+      "levels": "93-99+",
+      "method": "**Prifddinas Elves:** Rotate between clans in Prifddinas. Very AFK, decent money/items.",
+      "xp_rates": "350k - 500k/hr",
+      "tips": "Requires **Plague's End**. Auto-pickpocket makes this very chill."
+  }
+]

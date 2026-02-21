@@ -1,0 +1,73 @@
+[
+    {
+        "title": "Training methods",
+        "content": [
+            "The player can choose how they wish to train this skill and swap methods at any time:"
+        ]
+    },
+    {
+        "title": "Method overview",
+        "content": [
+            "Making flatpacks is a fairly relaxed way to train Construction. They are made on a workbench or a portable workbench and can be dropped, sold, banked, disassembled for Invention materials , or used on the appropriate construction spot in a player-owned house .",
+            "- Portable workbenches can often be found on world 84 at the Lumbridge Market and Fort Forinthry Workshop , allowing players to make flatpacks directly next to a bank chest.\n- This method is fairly AFK (away from keyboard) and does not require click-intensive gameplay, unlike repeatedly constructing and destroying furniture in a player-owned house.\n- Portable workbenches give 10% more base experience compared to a workbench in a player-owned house.\n- They do not require a servant, or a player-owned house ."
+        ]
+    },
+    {
+        "title": "Training at a player-owned house",
+        "content": [
+            "This is the traditional manner to train Construction, by constructing and destroying furniture at a player-owned house . It requires a servant to minimise trips to the bank."
+        ]
+    },
+    {
+        "title": "Method overview",
+        "content": [
+            "Starting at level 40, players can begin training Construction through Contracts by talking to any estate agent . It's both much less expensive and intensive than building furniture for a player-owned-house or Flatpacks, but is slower. Contracts also award the player Contract credits , which can be used at the Estate Agents Shop to purchase master constructor's outfit pieces, as well as buy and upgrade the plank box , which can be used to hold 25, 50, or 100 of each type of plank.",
+            "Steps:",
+            "- Players must visit an Estate agent to obtain a new contract.\n- The player must visit an NPC's home and repair 5 pieces of furniture (depending on the contract). Each piece of furniture will require anywhere from 2-10 planks, 2-4 nails and possibly additional items (such as bolts of cloth for a bed, a white candle for lighting, or some steel bars for an organ). Any type of nail can be used, but lower tier nails will bend more often, slowing down construction of the furniture. Any type of plank can be used, assuming the player has the required level, but higher tier planks will award more Contract credits and will award more experience for building the furniture.\n- Each piece of furniture will require anywhere from 2-10 planks, 2-4 nails and possibly additional items (such as bolts of cloth for a bed, a white candle for lighting, or some steel bars for an organ).\n- Any type of nail can be used, but lower tier nails will bend more often, slowing down construction of the furniture.\n- Any type of plank can be used, assuming the player has the required level, but higher tier planks will award more Contract credits and will award more experience for building the furniture."
+        ]
+    },
+    {
+        "title": "Tips",
+        "content": [
+            "- It's highly recommended to purchase the plank box for 50 credits first as it will drastically cut down on trips to the bank, especially if not using a high level Beast of Burden .\n- Buying the master constructor's outfit before upgrading the plank box is also recommended, as teleporting directly to the contract location saves a lot of time, in addition to reducing build times.\n- Without completing the elite Varrock achievements , owning the full master constructor's outfit , or having completed the Plague's End quest and owning a Tirannwn quiver , the closest teleport to an estate agent is the Falador Teleport .\n- Though, the NPC Contact spell is still potentially faster than teleporting, but will cost more and take up inventory slots."
+        ]
+    },
+    {
+        "title": "Levels 40-50",
+        "content": [
+            "- At level 40, players can only use normal planks when building furniture for contracts.\n- It takes 6 contracts to get from level 40 to 50."
+        ]
+    },
+    {
+        "title": "Levels 50-60",
+        "content": [
+            "- At level 50, oak planks can be used which will double the credits earned, grant an extra 200 experience per hotspot on top of plank experience, and cut the build time per hotspot from 59 seconds down to 30.\n- Due to the price difference and build time, it's recommended to immediately switch to oak planks upon reaching level 50.\n- It takes 14 contracts using oak planks to get from level 50 to 60."
+        ]
+    },
+    {
+        "title": "Levels 60-70",
+        "content": [
+            "- Teak planks can be used for contracts starting at level 60, and will provide 90 experience per plank plus 500 experience per hotspot, reduce build time per hotspot to 20 seconds, and increase the credits awarded to three times normal planks.\n- It takes 31 contracts with teak planks to get from 60 to 70."
+        ]
+    },
+    {
+        "title": "Levels 70+",
+        "content": [
+            "- Mahogany planks can be used for contracts starting at level 70 and will provide 140 experience per plank plus 1,000 experience per hotspot, along with taking hotspot build time down to 15 seconds, and award 1 credit per hotspot (or 5 if the entire contract uses Mahogany)."
+        ]
+    },
+    {
+        "title": "Training at Fort Forinthry",
+        "content": [
+            "Training at Fort Forinthry is unlocked following completion of New Foundations , a novice difficulty quest with no level requirements that acts as a tutorial for training at the location. The Construction required to finish the quest is enough to rise from level 1 to level 39, or level 40 if fabricating the required materials yourself. Construction training in Fort Forinthry consists of two parts: Turning standard Construction materials into special, tradeable, materials that can only be used within the fort, and using said materials to build buildings within the fortress."
+        ]
+    },
+    {
+        "title": "Quests for Construction experience",
+        "content": [
+            "NewPP limit report\nParsed by mediawiki\u2010jobrunner\u201059bd97bc77\u2010hhgt8\nCached time: 20260221110118\nCache expiry: 172800\nReduced expiry: false\nComplications: \nCPU time usage: 2.566 seconds\nReal time usage: 4.159 seconds\nPreprocessor visited node count: 21995/1000000\nRevision size: 75862/8388608 bytes\nPost\u2010expand include size: 263319/8388608 bytes\nTemplate argument size: 45359/8388608 bytes\nHighest expansion depth: 14/100\nExpensive parser function count: 1/500\nUnstrip recursion depth: 1/20\nUnstrip post\u2010expand size: 276934/5000000 bytes\nBucket time usage: 0.000/10 seconds\nLua time usage: 0.738/10.000 seconds\nLua memory usage: 4156488/367001600 bytes",
+            "Transclusion expansion time report (%,ms,calls,template)\n100.00% 2567.552      1 -total\n 45.48% 1167.692    231 Template:Coins\n 22.79%  585.069    357 Template:GEP\n 17.14%  440.060      1 Template:Construction_Experience_Rewards_table\n  9.05%  232.345     75 Template:Plinkt\n  6.24%  160.157     94 Template:Skillreq\n  5.87%  150.839     13 Template:Training_guide\n  4.56%  116.960      1 Template:Generic_experience_boosts\n  3.96%  101.671     34 Template:QuestIcon\n  3.25%   83.472    300 Template:Yesno",
+            "Saved in parser cache with key en_rswiki:pcache:101737:|#|:idhash:canonical and timestamp 20260221110114 and revision id 36941786. Rendering was triggered because: edit-page"
+        ]
+    }
+]

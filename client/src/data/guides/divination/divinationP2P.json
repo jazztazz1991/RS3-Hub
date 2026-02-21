@@ -1,0 +1,62 @@
+[
+  {
+      "levels": "1-20",
+      "method": "**Pale & Flickering Wisps:** Grind these quickly south of Draynor or Falador.",
+      "xp_rates": "Low",
+      "tips": "Just power through these."
+  },
+  {
+      "levels": "20-30",
+      "method": "**Bright Wisps:** Located east of the Digsite / Varrock.",
+      "xp_rates": "Low-Mid",
+      "tips": "Consider doing **Guthixian Caches** daily from here on out."
+  },
+  {
+      "levels": "30-40",
+      "method": "**Glowing Wisps:** South of Seers' Village.",
+      "xp_rates": "Mid",
+      "tips": "Unlock the **Divination Outfit** pieces if doing Caches."
+  },
+  {
+      "levels": "40-50",
+      "method": "**Sparkling Wisps:** Golden Apple tree area (Rellekka) or near Tower of Life.",
+      "xp_rates": "Mid",
+      "tips": "Make sure to bring urns if you can craft/buy them."
+  },
+  {
+      "levels": "50-60",
+      "method": "**Gleaming Wisps:** Karamja (near Tai Bwo Wannai).",
+      "xp_rates": "Mid",
+      "tips": "Prepare for higher level content."
+  },
+  {
+      "levels": "60-70",
+      "method": "**Vibrant Wisps:** Mobilising Armies area (south of Feldip Hills).",
+      "xp_rates": "Mid-High",
+      "tips": "You are approaching the Hall of Memories unlock."
+  },
+  {
+      "levels": "70-80",
+      "method": "**Hall of Memories:** Located under the Memorial to Guthix. This is usually faster than Lustrous Wisps.",
+      "xp_rates": "150k/hr",
+      "tips": "Join a 'CoreHunting' FC to make this extremely fast."
+  },
+  {
+      "levels": "80-95",
+      "method": "**Hall of Memories / Radiant Wisps:** HoM is still best XP. Radiant (85) in Dragontrap is decent AFK.",
+      "xp_rates": "200k+/hr",
+      "tips": "Use the **Divine Conversion** relic (Arch 98) if you have it for AFK."
+  },
+  {
+      "levels": "95-99",
+      "method": "**Incandescent Wisps:** South of Tyras Camp. Best energy money making.",
+      "xp_rates": "300k+/hr (with Caches)",
+      "tips": "Use the **Elder Divination Outfit** and **Divine Conversion** relic to instantly convert entire inventory."
+  },
+  {
+      "levels": "Daily",
+      "method": "**Guthixian Cache:** Enter every hour on the hour. Get 200 points daily.",
+      "xp_rates": "Massive (Daily)",
+      "tips": "Prioritize depositing Memories of Guthix or subduing automatons as Cres."
+  }
+]

@@ -8,6 +8,13 @@ const DailyTasks = () => {
     const { selectedCharacter, updateCharacterTasks } = useCharacter();
     const { updateReportContext, clearReportContext } = useReportCalls();
 
+    // Clock State
+    const [currentTime, setCurrentTime] = useState(new Date());
+    
+    // Pinned & Task State
+    const [pinnedTasks, setPinnedTasks] = useState([]);
+    const [completedTasks, setCompletedTasks] = useState({});
+
     useEffect(() => {
         updateReportContext({
             tool: 'Daily Tasks',
@@ -18,13 +25,6 @@ const DailyTasks = () => {
         });
         return () => clearReportContext();
     }, [pinnedTasks, completedTasks]);
-
-    // Clock State
-    const [currentTime, setCurrentTime] = useState(new Date());
-    
-    // Pinned & Task State
-    const [pinnedTasks, setPinnedTasks] = useState([]);
-    const [completedTasks, setCompletedTasks] = useState({});
 
     // Load from Selected Character when it changes
     useEffect(() => {
@@ -169,6 +169,13 @@ const DailyTasks = () => {
                             <div className="task-content">
                                 <span className="task-name">{task.name}</span>
                                 <span className="task-desc">{task.description}</span>
+                                {task.checklist && (
+                                    <ul className="task-checklist">
+                                        {task.checklist.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                )}
                             </div>
                         </div>
                     );

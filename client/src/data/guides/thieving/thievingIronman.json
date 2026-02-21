@@ -1,0 +1,32 @@
+[
+  {
+      "levels": "1-62",
+      "method": "**Quest & Thieves Guild:** Do *Biohazard*, *Plague City*, *Tower of Life* early if you can. Get to 15 for HAM members.",
+      "xp_rates": "Standard",
+      "tips": "Ironmen need money, so early pickpocketing is good GP. Pickpocket *Men/Women* in Lumbridge for early cash."
+  },
+  {
+      "levels": "15-55",
+      "method": "**Pickpocketing HAM Members:** Easy to get clue scrolls and HAM robes/buttons for quests.",
+      "xp_rates": "Decent",
+      "tips": "Keep the buttons for later quests."
+  },
+  {
+      "levels": "62-92",
+      "method": "**Safecracking:** Just like mains, this is the XP meta. Safes drop huge singular XP drops + pilfer points.",
+      "xp_rates": "Massive (400k - 800k)",
+      "tips": "Unlock the **Loot Bag** upgrades first to hold more loot."
+  },
+  {
+      "levels": "90+",
+      "method": "**Crux Eqal Knights:** Great for GP/supplies.",
+      "xp_rates": "High",
+      "tips": "Use the **Five-finger discount** aura if you have loyalty points."
+  },
+  {
+      "levels": "93-99+",
+      "method": "**Prifddinas Elves:** Essential for diverse supplies (Potions, Runes, Seeds).",
+      "xp_rates": "High",
+      "tips": "Rotate clans efficiently. Provides Crystal Keys too."
+  }
+]

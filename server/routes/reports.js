@@ -45,12 +45,24 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET /api/reports - Get all reports (Admin Only)
-router.get('/', ensureAdmin, async (req, res) => {
+// GET /api/reports - Get reports (Admin gets all, User gets own)
+router.get('/', async (req, res) => {
+    // Check if authenticated
+    if (!req.isAuthenticated || !req.isAuthenticated()) {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+
     try {
-        const reports = await Report.findAll({
+        const queryOptions = {
             order: [['createdAt', 'DESC']]
-        });
+        };
+
+        // If not admin, filter by user ID
+        if (!req.user.isAdmin) {
+            queryOptions.where = { userId: req.user.id };
+        }
+
+        const reports = await Report.findAll(queryOptions);
         res.status(200).json(reports);
     } catch (err) {
         console.error('Error fetching reports:', err);

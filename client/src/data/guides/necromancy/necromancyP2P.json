@@ -1,0 +1,32 @@
+[
+  {
+      "levels": "1-20",
+      "method": "**Introduction:** Complete the Necromancy! quest. Perform rituals at the Well of Souls to construct your Tier 10 equipment.",
+      "xp_rates": "Variable",
+      "tips": "Focus on upgrading your gear as soon as possible via Kili's tasks."
+  },
+  {
+      "levels": "20-60",
+      "method": "**City of Um Rituals:** Perform the highest level communal ritual you can. Lesser Communion, then Greater Communion.",
+      "xp_rates": "Increasing with level",
+      "tips": "Always click the disturbances (moths, glittering glyphs, wandering souls) for massive bonus XP."
+  },
+  {
+      "levels": "60-90",
+      "method": "**Hermod (Boss):** At level 60, farm Hermod for plates needed for T70-90 armor upgrades. Rituals (Secure/Powerful Communion) are still top XP.",
+      "xp_rates": "Combat: 200k+ / Rituals: 400k+",
+      "tips": "Use **Multiply Glyphs** on your ritual site to drastically increase soul attraction and XP from disturbances."
+  },
+  {
+      "levels": "90-99",
+      "method": "**Abyssal Savages / Beasts:** Aggressive combat training in the Wilderness or Player Slayer Dungeon.",
+      "xp_rates": "900k+/hr (Combat)",
+      "tips": "Use Ghost, Skeleton, and Zombie conjures. Revolution bar makes this very AFK with T90 tank gear."
+  },
+  {
+      "levels": "99-120",
+      "method": "**Powerful Communion / Disturbances:** With full Multiply III glyphs, this is the best XP in the game (1.5m - 2m XP/hr actively).",
+      "xp_rates": "1.5m - 2.5m/hr",
+      "tips": "Join 'Necro Rituals' FC or world 84 (lag warning) for community buffs."
+  }
+]

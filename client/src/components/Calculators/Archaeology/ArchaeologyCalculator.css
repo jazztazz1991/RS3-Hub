@@ -177,3 +177,51 @@
     font-weight: bold;
     color: var(--arch-text-highlight);
 }
+
+/* XP Analysis Panel */
+.xp-analysis-card {
+    background-color: #1e272e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #485460;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.xp-analysis-card h3 {
+    margin-top: 0;
+    color: #0fbcf9;
+    font-size: 1.1em;
+    border-bottom: 1px solid #485460;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.xp-stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #d2dae2;
+}
+
+.xp-stat-row.gain {
+    color: #0be881;
+    font-weight: bold;
+}
+
+.xp-stat-divider {
+    height: 1px;
+    background-color: #485460;
+    margin: 10px 0;
+}
+
+.xp-stat-row.total {
+    color: #ffdd59;
+    font-weight: bold;
+}
+
+.xp-stat-row.remaining {
+    font-size: 0.85em;
+    color: #808e9b;
+}

@@ -1,0 +1,62 @@
+[
+  {
+      "levels": "15-17",
+      "method": "**Unlock POF:** Tutorial at Ardougne Farm (North of Lodestone).",
+      "xp_rates": "Start",
+      "tips": "Feed Rabbits woad leaves (buy from Wyson in Falador Park)."
+  },
+  {
+      "levels": "17-35",
+      "method": "**Small Pen:** Rabbits (17) -> Chickens (28).",
+      "xp_rates": "Training",
+      "tips": "Keep breeding rabbits for the totem perk (+breeding chance). Raise Chickens for better XP at 28."
+  },
+  {
+      "levels": "35-49",
+      "method": "**Medium Pen:** Sheep (35). Continue Small Pen.",
+      "xp_rates": "Medium",
+      "tips": "Sheep eat Woad Leaves (Cheap). Raise them in the Medium Pen."
+  },
+  {
+      "levels": "49-54",
+      "method": "**Large Pen:** Cows (49). Continue Med/Small.",
+      "xp_rates": "Heavy",
+      "tips": "Cows eat Woad Leaves. Very cheap XP."
+  },
+  {
+      "levels": "54-64",
+      "method": "**Small Pen Upgrade:** Chinchompas (54).",
+      "xp_rates": "High (Small Pen)",
+      "tips": "Chinchompas are the best Small Pen XP. Treat them as the meta for Small Pens until 120."
+  },
+  {
+      "levels": "64-81",
+      "method": "**Medium Pen Upgrade:** Spiders (64).",
+      "xp_rates": "High (Med Pen)",
+      "tips": "Spiders replace Sheep/Zygomites until 81. Feed them seeds or meat."
+  },
+  {
+      "levels": "71-92",
+      "method": "**Large Pen Upgrade:** Yaks (71).",
+      "xp_rates": "High (Large Pen)",
+      "tips": "Yaks replace Cows. Feed them Woad Leaves."
+  },
+  {
+      "levels": "81-92",
+      "method": "**Medium Pen Meta:** Zygomites (81).",
+      "xp_rates": "Best Med XP",
+      "tips": "Zygomites are the best Medium Pen XP. Feed them Mushrooms (Mort Myre Fungi)."
+  },
+  {
+      "levels": "92-99",
+      "method": "**Large Pen Meta:** Dragons (92).",
+      "xp_rates": "Best Large XP",
+      "tips": "Dragons are the best Large Pen XP. Green (92), Blue (94), Red (96), Black (99). Feed them Meat."
+  },
+  {
+      "levels": "92-120",
+      "method": "**Ranch Out of Time:** Frogs (42), Salamanders (54), Jadinkos (81), Varanusaur (99).",
+      "xp_rates": "Endgame",
+      "tips": "Use the Anachronia farm alongside Ardougne for maximum XP."
+  }
+]

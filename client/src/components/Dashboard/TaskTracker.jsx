@@ -130,8 +130,9 @@ const TaskTracker = () => {
 
 
     // Filter Display Tasks based on Pinned
-    const allTasks = [...DAILY_TASKS, ...WEEKLY_TASKS, ...MONTHLY_TASKS];
-    const displayTasks = allTasks.filter(t => pinnedTasks.includes(t.id));
+    const dailyDisplayed = DAILY_TASKS.filter(t => pinnedTasks.includes(t.id));
+    const weeklyDisplayed = WEEKLY_TASKS.filter(t => pinnedTasks.includes(t.id));
+    const monthlyDisplayed = MONTHLY_TASKS.filter(t => pinnedTasks.includes(t.id));
 
     if (pinnedTasks.length === 0) {
         return (
@@ -142,24 +143,38 @@ const TaskTracker = () => {
         );
     }
 
+    const renderTaskList = (title, tasks) => {
+        if (tasks.length === 0) return null;
+        return (
+            <div className="task-group">
+                <h4 className="task-group-title">{title} Tasks</h4>
+                <div className="dashboard-task-list">
+                    {tasks.map(task => (
+                        <div 
+                            key={task.id} 
+                            className={`dashboard-task-item ${completedTasks[task.id] ? 'completed' : ''}`}
+                            onClick={() => toggleTask(task.id)}
+                        >
+                            <input 
+                                type="checkbox" 
+                                checked={!!completedTasks[task.id]}
+                                readOnly 
+                            />
+                            <span>{task.name}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
     return (
         <div className="task-tracker-container">
-            <h3>Daily Tasks</h3>
-            <div className="dashboard-task-list">
-                {displayTasks.map(task => (
-                    <div 
-                        key={task.id} 
-                        className={`dashboard-task-item ${completedTasks[task.id] ? 'completed' : ''}`}
-                        onClick={() => toggleTask(task.id)}
-                    >
-                        <input 
-                            type="checkbox" 
-                            checked={!!completedTasks[task.id]}
-                            readOnly 
-                        />
-                        <span>{task.name}</span>
-                    </div>
-                ))}
+            <h3>Pinned Tasks</h3>
+            <div className="task-sections">
+                {renderTaskList('Daily', dailyDisplayed)}
+                {renderTaskList('Weekly', weeklyDisplayed)}
+                {renderTaskList('Monthly', monthlyDisplayed)}
             </div>
         </div>
     );

@@ -23,20 +23,26 @@ export const CharacterProvider = ({ children }) => {
         fetchCharacters();
     }, []);
 
+    // Auto-select first character if none selected
+    useEffect(() => {
+        if (!selectedCharId && characters.length > 0) {
+            setSelectedCharId(characters[0].id);
+        }
+    }, [characters, selectedCharId]);
+
     // Fetch Hiscores & Quests when selected character changes
     useEffect(() => {
         if (selectedCharId) {
+            // Find character in current state
             const char = characters.find(c => c.id === selectedCharId);
             if (char) {
+                // Only fetch if we have a valid character
                 fetchHiscores(char.name);
-                // Auto-sync quests from RuneMetrics
                 syncQuests(char.name);
             }
-        } else if (characters.length > 0) {
-            // Auto select first if none selected
-            setSelectedCharId(characters[0].id);
         }
-    }, [selectedCharId, characters]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedCharId]); // Only run when ID changes, not when tasks update (which updates 'characters' array)
 
     const fetchCharacters = async () => {
         try {

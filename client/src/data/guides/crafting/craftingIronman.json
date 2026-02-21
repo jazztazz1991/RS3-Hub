@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Levels 1-16: Quests",
+        "content": [
+            "Complete Goblin diplomacy , Sheep shearer , Gunnar's ground , and Murder Mystery ."
+        ]
+    },
+    {
+        "title": "Levels 16-20: Cutting common gems",
+        "content": [
+            "Mine uncut gems from common gem rocks and cut them."
+        ]
+    },
+    {
+        "title": "Levels 20-75: Cutting uncommon gems",
+        "content": [
+            "Mine uncut gems from uncommon gem rocks and cut them, using Mystical sand seed or Poor Locator you can reach the Al Kharid mine quickly, and you can extend your trips with a gem bag , and gem bag (upgraded) . Keep these gems to later make porters.\nSee Gem rocks for breakdown of XP per durability, showing it is never worth mining gems from higher tiers of rocks."
+        ]
+    },
+    {
+        "title": "Levels 22/40-75: Necklaces",
+        "content": [
+            "Mine gold ore at concentrated gold deposits ( 80 Mining ) with porters and any gold stone spirits you may have. Every 5 (or 10) ores only consumes 1 sign of the porter charge. \nSmelt and craft sapphire/emerald/ruby necklaces at Fort Forinthry , to benefit from rested xp ( smelting gauntlets recommended)"
+        ]
+    },
+    {
+        "title": "Levels 75-99: Harps",
+        "content": [
+            "Play harps in Prifddinas during Ithell Voice of Seren . Also requires 75 Construction."
+        ]
+    },
+    {
+        "title": "Levels 75-99:Dream of Iaiatannery",
+        "content": [
+            "Anachronia base camp workers assigned to gathering hides yield 720 xp per day each, 60/65/70 workers are equivalent to 43,200/46,800/50,400 xp/day (with tier 2, and with tier 3 Command center )\nThis method is significantly quicker than harps in terms of xp/hr for time played."
+        ]
+    }
+]

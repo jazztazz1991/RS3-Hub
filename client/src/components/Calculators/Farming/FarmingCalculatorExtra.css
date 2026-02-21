@@ -1,0 +1,44 @@
+.farming-calculator .mode-toggle button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.farming-calculator .mode-toggle button .skill-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Ensure Farming Calculator uses the full width efficiently */
+.farming-calculator .calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(250px, 300px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .farming-calculator .calc-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+    .farming-calculator .calc-inputs {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .farming-calculator .calc-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.farming-calculator .action-icon-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}

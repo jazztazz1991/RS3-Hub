@@ -6,7 +6,7 @@
 
 .guide-header {
     display: flex;
-    justify_content: space-between;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
     border-bottom: 1px solid #444;
@@ -28,8 +28,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 46px; /* Reduced from 60px */
+  height: 24px; /* Reduced from 34px */
 }
 
 .switch input { 
@@ -53,10 +53,10 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 18px; /* Reduced from 26px */
+  width: 18px; /* Reduced from 26px */
+  left: 3px; /* Adjusted positioning */
+  bottom: 3px; /* Adjusted positioning */
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -71,9 +71,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(22px); /* Adjusted translation for new width */
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
 }
 
 .slider.round {
@@ -90,6 +90,30 @@ input:checked + .slider:before {
     gap: 1.5rem;
 }
 
+/* Guide Selection Grid Cards (Main Page) */
+.guides-grid .guide-card {
+    background-color: #2f3542 !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    color: inherit;
+    transition: transform 0.2s, background-color 0.2s;
+    border: 1px solid #57606f !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 150px !important;
+    border-left: 1px solid #57606f !important; /* Reset the left border from generic .guide-card */
+}
+
+.guides-grid .guide-card:hover {
+    transform: translateY(-5px);
+    background-color: #57606f !important;
+}
+
+/* Generic Guide Content Card */
 .guide-card {
     background-color: #2c3e50;
     border-radius: 8px;
@@ -97,89 +121,7 @@ input:checked + .slider:before {
     border-left: 5px solid #3498db;
     display: flex;
     flex-direction: column;
-}
-
-.guide-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.guide-card-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #3498db;
-}
-
-.method-badge {
-    background-color: #34495e;
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    color: #bdc3c7;
-}
-
-.guide-card-body p {
-    margin: 0.5rem 0;
-    line-height: 1.5;
-}
-
-.xp-rate {
-    font-weight: bold;
-    color: #2ecc71;
-}
-
-.use-button {
-    align-self: flex-start;
-    margin-top: 1rem;
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s;
-}
-
-.use-button:hover {
-    background-color: #d35400;
-}
-
-.guides-container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #f1f2f6;
-}
-
-.guides-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 2rem;
-}
-
-.guide-card {
-    background-color: #2f3542;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, background-color 0.2s;
-    border: 1px solid #57606f;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 150px;
-}
-
-.guide-card:hover {
-    transform: translateY(-5px);
-    background-color: #57606f;
+    color: #ecf0f1; /* Ensure text is visible */
 }
 
 .guide-icon {
@@ -198,4 +140,209 @@ input:checked + .slider:before {
     text-align: center;
     color: #a4b0be;
     font-style: italic;
+}
+
+.guide-skill-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Guide Table Styles */
+.guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.guide-table th, .guide-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #444;
+    text-align: left;
+}
+
+.guide-table th {
+    background-color: #2c3e50;
+    color: #f1c40f;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.guide-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.guide-table td {
+    color: #ecf0f1;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Additional Guide Styles for New Components */
+
+.guide-intro.guide-card {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+    border-left: 5px solid #f1c40f;
+}
+
+.guide-section {
+    margin-bottom: 3rem;
+}
+
+.tier-header {
+    font-size: 1.5rem;
+    color: #e67e22;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.skill-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Method Card Specifics */
+.skill-methods-grid .method-card {
+    background-color: #34495e; /* Slightly lighter than main background */
+    border: 1px solid #486684;
+    padding: 1.2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: auto; /* Reset any inherit min-height */
+}
+
+/* Ensure global guide card styles don't conflict */
+.guides-grid .guide-card {
+    /* Existing overrides kept */
+    background-color: #2f3542 !important;
+    min-height: 150px !important;
+    /* ... rest of the file ... */
+}
+
+.method-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #486684;
+}
+
+.method-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #3498db;
+}
+
+.level-badge {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.method-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.method-stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.stat-label {
+    color: #95a5a6;
+}
+
+.stat-value {
+    color: #ecf0f1;
+    text-align: right;
+    font-weight: 500;
+}
+
+.stat-value.compact-text {
+    font-size: 0.85rem;
+    max-width: 60%;
+}
+
+.method-stat.highlight .stat-value {
+    color: #2ecc71; /* Green for XP */
+    font-weight: bold;
+}
+
+.guide-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.calculator-nav-button {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.calculator-nav-button:hover {
+    background-color: #2ecc71;
+    transform: translateY(-2px);
+}
+
+/* Guide Section Cards */
+.guide-section {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #ecf0f1;
+    border-left: 5px solid #e67e22; /* Different accent color */
+    margin-bottom: 20px;
+}
+
+.guide-section h3 {
+    margin-top: 0;
+    color: #f39c12;
+    border-bottom: 1px solid #7f8c8d;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.guide-text p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.guide-text ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.guide-text li {
+    margin-bottom: 5px;
+    color: #bdc3c7;
+}
+
+.info-banner {
+    border-radius: 4px;
 }

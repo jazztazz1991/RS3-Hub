@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Alternative methods of gaining experience",
+        "content": [
+            "Apart from general bonuses, such as Treasure Hunter lamps and stars, special event experience rewards, and Tears of Guthix , the following methods award Slayer XP:"
+        ]
+    },
+    {
+        "title": "Quests for Slayer experience",
+        "content": [
+            "NewPP limit report\nParsed by mediawiki\u2010jobrunner\u201059bd97bc77\u2010hhgt8\nCached time: 20260221102218\nCache expiry: 172800\nReduced expiry: false\nComplications: \nCPU time usage: 5.001 seconds\nReal time usage: 10.460 seconds\nPreprocessor visited node count: 37307/1000000\nRevision size: 138024/8388608 bytes\nPost\u2010expand include size: 523365/8388608 bytes\nTemplate argument size: 77720/8388608 bytes\nHighest expansion depth: 14/100\nExpensive parser function count: 3/500\nUnstrip recursion depth: 1/20\nUnstrip post\u2010expand size: 361892/5000000 bytes\nBucket time usage: 1.094/10 seconds\nLua time usage: 1.887/10.000 seconds\nLua memory usage: 9298885/367001600 bytes\nLua Profile:\n    MediaWiki\\Extension\\Scribunto\\Engines\\LuaSandbox\\LuaSandboxCallback::run      540 ms       24.1%\n    recursiveClone <mwInit.lua:68>                                   480 ms       21.4%\n    MediaWiki\\Extension\\Scribunto\\Engines\\LuaSandbox\\LuaSandboxCallback::getExpandedArgument      300 ms       13.4%\n    ?                                                                180 ms        8.0%\n    log <mw.lua:547>                                                 140 ms        6.2%\n    type                                                             120 ms        5.4%\n    <mwInit.lua:68>                                                   60 ms        2.7%\n    pairs                                                             40 ms        1.8%\n    <mw.lua:694>                                                      40 ms        1.8%\n    __getPrice <Module:Component_costs:76>                            40 ms        1.8%\n                                                             300 ms       13.4%",
+            "Transclusion expansion time report (%,ms,calls,template)\n100.00% 7566.010      1 -total\n 54.57% 4128.843     83 Template:Coins\n 35.12% 2657.193    114 Template:Matcost\n 15.48% 1171.409     28 Template:CVP\n 10.91%  825.279      1 Template:PvM_perks\n 10.35%  782.790     39 Template:GETotalqty\n  5.79%  438.377    123 Template:Plinkt\n  5.25%  397.456      1 Template:Slayer_Experience_Rewards_table\n  5.23%  395.892    235 Template:GETotal\n  4.38%  331.519      5 Template:Recommended_equipment",
+            "Saved in parser cache with key en_rswiki:pcache:43331:|#|:idhash:canonical and timestamp 20260221102207 and revision id 36934208. Rendering was triggered because: edit-page"
+        ]
+    }
+]

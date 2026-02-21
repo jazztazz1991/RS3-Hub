@@ -23,6 +23,7 @@
     
     padding: 1rem;
     color: var(--farm-text-main);
+    width: 100%;
 }
 
 .farming-calculator h2 {
@@ -30,6 +31,42 @@
     border-bottom: 2px solid var(--farm-border-heading);
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
+}
+
+.farming-calculator .mode-toggle button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.farming-calculator .mode-btn:hover {
+    filter: brightness(1.1);
+}
+
+.farming-calculator .calc-layout {
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr minmax(280px, 320px);
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .farming-calculator .calc-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+    .farming-calculator .calc-results {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .farming-calculator .calc-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 .farming-calculator .card {

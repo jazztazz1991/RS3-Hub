@@ -1,0 +1,69 @@
+[
+    {
+        "title": "Locations for training",
+        "content": [
+            "Most methods of training rely on having a bank nearby.",
+            "Non- Ironman Mode players should make use of portable crafters as often as possible. They function as a potter's wheel, pottery oven, and tannery, offer a 10% increased base experience, and a chance to save clay, leather, and gems when crafting. They can often be found on the dedicated \"Portable Skilling\" server, world 84, near the Lumbridge Market or in Fort Forinthry ."
+        ]
+    },
+    {
+        "title": "Training methods overview",
+        "content": [
+            "Crafting offers a wide range of training methods with various cost and experience rates."
+        ]
+    },
+    {
+        "title": "Level 1\u201346+",
+        "content": [
+            "Molten glass can be made in a furnace using a bucket of sand and soda ash (obtained by cooking seaweed on a range or in a fire ). Molten glass can then be made into several useful items with a glassblowing pipe (tool belt will work). Training this way is a good strategy for going from level 1\u201330 as glasswork offers decent experience rates.",
+            "Starting at level 46 Crafting, making orbs via glassblowing is an excellent method of training, granting 52.5 experience per orb and on average around 91,000 with no interruption and possibly up to 120,000 experience per hour. Molten glass can be bought for 225 coins each, and unpowered orbs sell back for 224 coins . Powering orbs is a good way of earning money as the charged orbs fetch much higher prices (air: 811 coins , water: 144 coins , earth: 150 coins , fire: 249 coins ).",
+            "At level 54, depending on GE prices, players will likely want to switch to making bomb vials , granting slightly higher XP and much higher GP per hour than orbs, as bomb vials are worth 1,731 coins .",
+            "Players who have completed the quest The Hand in the Sand can obtain 84 buckets of sand per day from Bert . Seaweed can either be purchased from the Grand Exchange or from Arhein in Catherby . Players with level 77 Magic who have completed the Lunar Diplomacy quest can use the Superglass Make spell, which can substitute soda ash with raw seaweed or swamp weed as well as producing about 30% more glass for free."
+        ]
+    },
+    {
+        "title": "Exquisite urns - level 102+",
+        "content": [
+            "Below are tables showing experience rates for the different types of urns. All experience per hour is an estimate and assumes 1,300 urns are made per hour for full urns from scratch, and 1,700 urns are made per hour for if not adding gems. This is base experience without any experience boosts."
+        ]
+    },
+    {
+        "title": "Platinum jewellery - level 104+",
+        "content": [
+            "Introduced as part of the 110 crafting update, platinum jewellery offers a new method for training crafting at high levels. Be aware that some items have a low volume of trades on the grand exchange, and training using these methods may involve considerable risk."
+        ]
+    },
+    {
+        "title": "Crafteneering - Level 9+",
+        "content": [
+            "With the artisan variant on your ring of kinship maxed, assuming you sell back crafted equipment to the Smuggler, crafting protoleather bodies grants 33.17 xp per hide on average. Assuming it takes ~3 minutes to acquire 80,000 and ~1.5 minutes to process bought hides fully, you can expect a rate of up to ~84k base crafting XP per hour. You only need Bladed Dive as well as double-surge charges to attain rates this high. Shadow's Grace may improve rates even further."
+        ]
+    },
+    {
+        "title": "Playing harps - level 75+",
+        "content": [
+            "Playing the harps located within the Ithell district in Prifddinas offers moderate rates (about 50,000 experience per hour as well as a little construction experience) with little attention required. Level 75 Crafting is required to play the harps, and the Plague's End quest is required to access the city. Playing the harps will yield small amounts of harmonic dust , which is used to craft crystal tools and equipment . Harps will gradually fall out of tune in increments of 10%, granting only half the harmonic dust at 50% and becoming totally unplayable at 100%; the harp can be tuned again at any time, granting 50 construction experience for every 10% tuned."
+        ]
+    },
+    {
+        "title": "Red and crystal sandstone - level 89+",
+        "content": [
+            "Players who have level 81 Mining can mine up to 50 blocks of red sandstone a day from the Oo'glog red sandstone and a further 25 from the Sophanem red sandstone after completing the elite Desert achievements . The red sandstone can then be made into robust glass (there is no requirement for this step as it grants no experience) on a robust glass machine . Players with level 89 Crafting can then blow the glass into potion flasks , granting 100 experience per flask. This is also a good source of money, since each flask sells for 7,537 on the Grand Exchange.",
+            "Players with level 81 Mining who have completed the Plague's End quest can mine up to 50 crystal-flecked sandstone each day in the Ithell crystal sandstone mine in the Ithell district of Prifddinas . They are crafted in an identical fashion to regular flasks and give 150 experience each. Crafting Crystal glass or Robust glass requires the completion of the quest As a First Resort . Crafting in Ithell when the Voice of Seren is active will grant 20% more base Crafting XP from crafting crystal flasks. Players with level 115 Dungeoneering can mine an extra 25 per day in the Edimmu resource dungeon . While they offer more experience than regular flasks, they are considerably lower in price at 900 each.",
+            "Players often keep the molten glass until Double XP to maximise the experience gained. However, this is not recommended due to other methods such as black dragonhide shields being much faster."
+        ]
+    },
+    {
+        "title": "Player-owned port - level 90+",
+        "content": [
+            "While this is not a consistent method of training, players who have acquired Lacquer from voyages can craft both tradeable and untradeable tier-85 ranged armour , yielding 10,000 experience for the hood, 20,000 for the legs, and 30,000 for the body. Players can also make a Reefwalker's cape and a Leviathan ring from koi scales and pearls respectively, each granting 10,000 experience. Note that this experience is gained in the normal way, so things like bonus experience , skill outfits , the wisdom aura , and other such items will increase the experience gained. Both superior and regular gear grant the same experience, and the tradeable armour is also an excellent source of money. Since it has a high XP rate with strictly limited inputs, it is an excellent candidate for double XP events."
+        ]
+    },
+    {
+        "title": "Quests for Crafting experience",
+        "content": [
+            "NewPP limit report\nParsed by mediawiki\u20107bc56cf4f9\u2010zjckd\nCached time: 20260221155928\nCache expiry: 172800\nReduced expiry: false\nComplications: \nCPU time usage: 0.887 seconds\nReal time usage: 0.895 seconds\nPreprocessor visited node count: 24232/1000000\nRevision size: 74825/8388608 bytes\nPost\u2010expand include size: 291927/8388608 bytes\nTemplate argument size: 26733/8388608 bytes\nHighest expansion depth: 14/100\nExpensive parser function count: 1/500\nUnstrip recursion depth: 1/20\nUnstrip post\u2010expand size: 423298/5000000 bytes\nBucket time usage: 0.000/10 seconds\nLua time usage: 0.363/10.000 seconds\nLua memory usage: 4260226/367001600 bytes",
+            "Transclusion expansion time report (%,ms,calls,template)\n100.00%  656.610      1 -total\n 65.09%  427.374    366 Template:Coins\n 41.21%  270.566   1047 Template:GEP\n 15.63%  102.643      1 Template:Crafting_Experience_Rewards_table\n  7.12%   46.739    117 Template:Skillreq\n  2.70%   17.745     51 Template:Fe\n  2.56%   16.792      1 Template:Training_guides\n  2.50%   16.441    126 Template:Plink\n  2.43%   15.955     43 Template:Skill_clickpic\n  2.15%   14.150      1 Template:Navbox"
+        ]
+    }
+]

@@ -1,0 +1,68 @@
+[
+  {
+      "levels": "15-17",
+      "method": "**Unlock POF:** Tutorial. Buy Woad Leaves from Wyson (25gp).",
+      "xp_rates": "Start",
+      "tips": "Woad Leaves are the MVP food for Ironmen (Rabbits, Sheep, Cows, Yaks)."
+  },
+  {
+      "levels": "17-28",
+      "method": "**Small Pen:** Rabbits (17).",
+      "xp_rates": "Low",
+      "tips": "Breed them for the totem perk. Easy to feed."
+  },
+  {
+      "levels": "28-35",
+      "method": "**Chickens (28):** Replaces Rabbits for XP.",
+      "xp_rates": "Okay",
+      "tips": "Get seeds from Master Farmers to feed them. Can be tedious to gather seeds."
+  },
+  {
+      "levels": "35-49",
+      "method": "**Medium Pen:** Sheep (35).",
+      "xp_rates": "Solid",
+      "tips": "Feed Woad Leaves. Very sustainable for Ironmen."
+  },
+  {
+      "levels": "49-54",
+      "method": "**Large Pen:** Cows (49).",
+      "xp_rates": "Good",
+      "tips": "Feed Woad Leaves. Excellent mid-level XP source."
+  },
+  {
+      "levels": "54-64",
+      "method": "**Chinchompas (54):** Replaces Chickens.",
+      "xp_rates": "Great",
+      "tips": "Hunt them at 53 Hunter. Feed them Woad Leaves (easiest food)."
+  },
+  {
+      "levels": "64-81",
+      "method": "**Spiders (64):** Replaces Sheep.",
+      "xp_rates": "High",
+      "tips": "Get eggs from killing Spiders. Feed them Meat (Ooglog meat packs) or Seeds."
+  },
+  {
+      "levels": "71-92",
+      "method": "**Yaks (71):** Replaces Cows.",
+      "xp_rates": "Great",
+      "tips": "Kill Yaks for eggs. Feed Woad Leaves (very cheap)."
+  },
+  {
+      "levels": "81-92",
+      "method": "**Zygomites (81):** Replaces Spiders.",
+      "xp_rates": "Very High",
+      "tips": "Feed Mushrooms. Arc Mushrooms or Mort Myre Fungi (use Bloom)."
+  },
+  {
+      "levels": "92-99",
+      "method": "**Dragons (92):** Replaces Yaks.",
+      "xp_rates": "Meta",
+      "tips": "Kill Green/Blue/Red/Black dragons for eggs. Feed Meat (Ooglog bird meat packs)."
+  },
+  {
+      "levels": "Daily",
+      "method": "**Nemi Forest & Beehives:** Daily Nemi Forest.",
+      "xp_rates": "Daily",
+      "tips": "Beehives can be filled with Woad Leaves for passive XP."
+  }
+]

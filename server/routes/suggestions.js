@@ -38,8 +38,13 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET /api/suggestions - Get all suggestions (Admin Only)
-router.get('/', ensureAdmin, async (req, res) => {
+// GET /api/suggestions - Get all suggestions
+router.get('/', async (req, res) => {
+    // Check if authenticated
+    if (!req.isAuthenticated || !req.isAuthenticated()) {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+
     try {
         const suggestions = await Suggestion.findAll({
             order: [['createdAt', 'DESC']]

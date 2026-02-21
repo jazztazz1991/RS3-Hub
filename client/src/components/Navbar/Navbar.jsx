@@ -28,7 +28,11 @@ const Navbar = () => {
               <li><Link to="/guides">Guides</Link></li>
               <li><Link to="/quests">Quests</Link></li>
               <li><Link to="/daily-tasks">Daily Tasks</Link></li>
-              {user.isAdmin && <li><Link to="/admin">Admin</Link></li>}
+              {user.isAdmin ? (
+                <li><Link to="/admin">Admin</Link></li>
+              ) : (
+                <li><Link to="/support">Support</Link></li>
+              )}
               <li><span className="user-greeting">Hi, {user.username || user.email}</span></li>
               <li><button onClick={logout} className="logout-btn">Logout</button></li>
             </>

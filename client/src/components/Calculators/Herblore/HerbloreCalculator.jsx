@@ -3,6 +3,7 @@ import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { HERBLORE_ITEMS as HERBLORE_METHODS } from '../../../data/skills/herbloreData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
+import SkillIcon from '../../Common/SkillIcon';
 import './HerbloreCalculator.css';
 
 const HerbloreCalculator = () => {
@@ -109,7 +110,7 @@ const HerbloreCalculator = () => {
                     )}
                 </div>
 
-                {/* 2. Methods (Was 3) */}
+                {/* 2. Methods */}
                 <div className="calc-methods">
                      <div className="methods-header">
                         <h3>Select Method</h3>
@@ -141,11 +142,11 @@ const HerbloreCalculator = () => {
                     </div>
                 </div>
 
-                {/* 3. Results (Was 2) */}
+                {/* 3. Results */}
                 <div className="calc-results">
                     <h3>Results</h3>
                     <div className="result-main">
-                        <div className="action-icon">🧪</div>
+                        <SkillIcon skillName="Herblore" className="action-icon-img" style={{width: 64, height: 64, margin: '0 auto 1rem'}}/>
                         <div className="action-count">
                             <span className="number">{itemsNeeded.toLocaleString()}</span>
                             <span className="label"> actions</span>

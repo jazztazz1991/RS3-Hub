@@ -1,0 +1,53 @@
+[
+    {
+        "title": "Training",
+        "content": [
+            "- Level 1-10: Use the sawmill . Make 385 planks . No requirements, no preparation and low intensity, only input is logs to turn into planks you will need later, and it is next to a bank chest. You may also make refined planks (also at sawmill) and wooden frames (at Woodworking bench next to it) from the planks for more xp. You need 16 wooden frames for Fort Forinthry , which is more than enough to get to level 10.\n- Level 10-19: Use the sawmill to make 627 oak planks . Similarly, you can make oak frames (20 will be needed).\n- Level 19-32: Build a Workshop and a wooden workbench in the Player-owned house near the entrance and make 105 Oak chair (flatpack) with oak planks. You will now need a fast way to go between a bank and your house.\n- Level 32-35: Upgrade to an oak workbench and make Carved oak table (flatpack) . ( Carved oak bench (flatpack) may be made if you want to make 7 in one run.)\n- Level 35-38: Teak armchair (flatpack) can be made at level 35, Teak table (flatpack) and Teak dining bench (flatpack) at level 38.\n- Level 40-46: Visit a sawmill operator such as Bill to pay for them to process mahogany logs into mahogany planks without needing level 60 Construction. This allows Mahogany bookcase (flatpack) to be made at level 40. If the Deadliest Catch and Monkey Madness quests are complete, one of the bank deposit boxes unlocked by completing Deadliest Catch allows easier cutting of teak and mahogany on Ape Atoll ( 3 ).\n- If the Deadliest Catch and Monkey Madness quests are complete, one of the bank deposit boxes unlocked by completing Deadliest Catch allows easier cutting of teak and mahogany on Ape Atoll ( 3 ).\n- Level 46-52: Upgrade to a steel framed bench and keep making Mahogany bookcase (flatpack).\n- Level 52-63: Visit a sawmill operator again to pay for them to process mahogany logs into mahogany planks and make Mahogany table (flatpack) . Alternatively, once at level 60 Construction, it is advised to switch to Construction Contracts (see below).\n- Alternatively, once at level 60 Construction, it is advised to switch to Construction Contracts (see below).\n- Levels 63-99 Construct Driftwood prawnbrokers .\n- Levels 73-99 Construct Flotsam prawnbrokers ."
+        ]
+    },
+    {
+        "title": "Levels 1-41: New Foundations",
+        "content": [
+            "- Buy 352 limestone bricks from Razmire Builders' Merchants or Keldagrim Stonemason . This quest unlocks a shop that sells further bricks much closer to a bank.\n- Make 96 regular planks into refined planks and then into frames.\n- Complete the quest"
+        ]
+    },
+    {
+        "title": "Levels 41-70",
+        "content": [
+            "- Build each tier of the different buildings once, prioritise the Workshop first for the extra experience, followed by the Town Hall for the rested experience accumulated.\n- Complete the Fort Forinthry quest series to unlock more buildings, construct and upgrade them.\n- Boosting can be used to start blueprints and do not need to be maintained further.",
+            "Following this order and including quest rewards, you should easily get to level 70 without making any duplicate buildings."
+        ]
+    },
+    {
+        "title": "Levels 70-75/80: Maple Buildings",
+        "content": [
+            "Repeating buildings that require maple is recommended due to the large output from Managing Miscellania ,"
+        ]
+    },
+    {
+        "title": "Levels 75-80: Harps",
+        "content": [
+            "- Build the new tier of Workshop.\n- After completing Plague's end , significant construction xp is incidentally gained while playing harps, as a side benefit from Harmonic dust gathering. Most players will want to gather around 15,000 dust for all the crystal tools."
+        ]
+    },
+    {
+        "title": "Levels 80+: Magic Buildings",
+        "content": [
+            "- Build new buildings\n- Repeat building magic-log based structures, as these can easily be sourced from Wilderness Flash Events , and other PVM activities."
+        ]
+    },
+    {
+        "title": "Levels 60-70: Teak contracts",
+        "content": [
+            "- 70+: Mahogany furniture. See preset to the right after all plank box upgrades are purchased, can use Beast of Burden prior to all upgrades. Can achieve over 625,000 exp per hour.",
+            "Setup tips:",
+            "- Obtain the plank box as soon as possible and upgrade this to its maximum capacity A beast of burden may be useful for plank storage before obtaining the plank box\n- A beast of burden may be useful for plank storage before obtaining the plank box\n- Bolts of cloth are obtainable from construction shops - Varrock sawmill or Prifddinas\n- White candles are obtainable from the candle maker in Catherby\n- NPC Contact (requiring 67 magic and Lunar spells) is highly recommended to obtain new contracts quickly\n- Alternatively, the player can choose to teleport to the Ithell District using an Attuned crystal teleport seed , which teleports the player next to a bank for restocking as well as closeby an Estate Agent\n- Nails (any tier), steel bars and either mithril bars (teak planks) or adamant bars (mahogany planks) are also required",
+            "Miscellaneous:",
+            "Extend construction daily challenges.",
+            "For a full list of possible experience boosting and teleport items to consider, see the main Construction Contracts page. Of particular note is the constructor's outfit obtained through Temple Trekking .",
+            "NewPP limit report\nParsed by mediawiki\u2010jobrunner\u2010685b6cb46\u2010hpc5c\nCached time: 20260215105914\nCache expiry: 172800\nReduced expiry: false\nComplications: \nCPU time usage: 0.117 seconds\nReal time usage: 0.247 seconds\nPreprocessor visited node count: 176/1000000\nRevision size: 7579/8388608 bytes\nPost\u2010expand include size: 5383/8388608 bytes\nTemplate argument size: 40/8388608 bytes\nHighest expansion depth: 6/100\nExpensive parser function count: 1/500\nUnstrip recursion depth: 0/20\nUnstrip post\u2010expand size: 618/5000000 bytes\nBucket time usage: 0.000/10 seconds\nLua time usage: 0.022/10.000 seconds\nLua memory usage: 730714/367001600 bytes",
+            "Transclusion expansion time report (%,ms,calls,template)\n100.00%   96.264      1 -total\n 58.67%   56.474      1 Template:Maplink\n 24.99%   24.054      1 Template:Construction\n 15.58%   14.994      1 Template:Inventory\n  8.18%    7.876      1 Template:Mainonly\n  5.07%    4.876      1 Template:PageType",
+            "Saved in parser cache with key en_rswiki:pcache:865711:|#|:idhash:canonical and timestamp 20260215105914 and revision id 36762472. Rendering was triggered because: edit-page"
+        ]
+    }
+]

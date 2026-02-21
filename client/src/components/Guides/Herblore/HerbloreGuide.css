@@ -1,0 +1,107 @@
+.herblore-guide-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #ecf0f1;
+}
+
+.guide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 15px;
+}
+
+.guide-header h2 {
+    color: #2ecc71; /* Herblore Greenish */
+    margin: 0;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.mode-btn {
+    padding: 8px 16px;
+    border: 1px solid #27ae60;
+    background: transparent;
+    color: #27ae60;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.mode-btn:hover {
+    background: rgba(39, 174, 96, 0.1);
+}
+
+.mode-btn.active {
+    background: #27ae60;
+    color: white;
+}
+
+.info-card {
+    background: #2c3e50;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #34495e;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: #2ecc71;
+    margin-top: 0;
+    border-bottom: 1px solid #34495e;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+.guide-table th,
+.guide-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #34495e;
+}
+
+.guide-table th {
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+.guide-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.guide-table td {
+    color: #bdc3c7;
+    line-height: 1.4;
+}
+
+/* Specific styling for Herb/Secondary items */
+.item-name {
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+.item-source {
+    font-style: italic;
+    color: #95a5a6;
+}

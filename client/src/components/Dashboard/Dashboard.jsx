@@ -318,8 +318,8 @@ const Dashboard = () => {
                 </div>
                 {selectedCharacter && (
                     <div className="tracker-section">
-                        <WildyTracker />
                         <TaskTracker characterName={selectedCharacter.name} />
+                        <WildyTracker />
                     </div>
                 )}
             </div>

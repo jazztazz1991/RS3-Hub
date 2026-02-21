@@ -1,0 +1,44 @@
+[
+    {
+        "animals": "Rabbits, sheep, chinchompas, cows, yaks, salamanders",
+        "food_type": "Flowers",
+        "sources": "Unlimited quantities of woad leaves can be purchased from Wyson the gardener in Falador Park.",
+        "ease": "Very easy"
+    },
+    {
+        "animals": "Spiders, jadinkos",
+        "food_type": "Seeds",
+        "sources": "With high Thieving, pickpocking Master Farmers yield a lot of seeds. Seeds can be bought from Head Farmer Jones in Taverley and Olivia in Draynor Village. Their shop stock replenishes quickly, having a combined total quantity of 183 seeds (15 unique seeds) at a time.",
+        "ease": "3000+ seeds per hour with 90+ Thieving and Sticky Fingers alone."
+    },
+    {
+        "animals": "Frogs",
+        "food_type": "Insects",
+        "sources": "Flies can be purchased from pet shops in Taverley and Yanille.",
+        "ease": "Only 200 available a day (shared stock) - daily runs required whilst raising frogs."
+    },
+    {
+        "animals": "Dragons",
+        "food_type": "Fish",
+        "sources": "Raw tuna and raw swordfish can be obtained from Managing Miscellania. Ghotistix can be pickpocketed for raw fish, noted with Thieving cape perk.",
+        "ease": "Easy (max 572 a day from Miscellania)"
+    },
+    {
+        "animals": "Dinosaurs",
+        "food_type": "Meat",
+        "sources": "Raw rabbit, raw beef and raw bird meat can be obtained from Fresh Meat after completion of As a First Resort.",
+        "ease": "Limited shop quantities relative to demand (700 in packs and 60 unnoted items per day), especially in the late game as dinosaurs are crucial at higher levels - buying out the shop from early on is strongly advised"
+    },
+    {
+        "animals": "Zygomites",
+        "food_type": "Mushrooms",
+        "sources": "Croesus drops 45-55 noted mort myre fungus commonly. Fungal spores can be gathered relatively quickly from Decaying Lumbridge guards using sign of the porter at 88+ Hunter.",
+        "ease": "~1000 fungal spores per hour with porters. Slow without 88+ Hunter. Food is not required to breed animals; it merely speeds up the process. Sufficient produce can be obtained without feeding zygomites."
+    },
+    {
+        "animals": "Chickens",
+        "food_type": "Seeds or fruit",
+        "sources": "40 pineapples can be purchased a day from Arhein in Catherby. After completing Easy Karamja achievements (15 agility/40 mining, no quests), 40 pineapples can be claimed a day from Dell Monti. Cooking apples can be purchased from the Culinaromancer's Chest - base stock of 50. 50 apples also sold at Rodney's Independent Trading Co.",
+        "ease": "Seeds should be used if possible. Fruit is not recommended due to low quantities."
+    }
+]

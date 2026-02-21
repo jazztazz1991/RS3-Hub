@@ -10,7 +10,22 @@ export const DAILY_TASKS = [
     { id: 'nemi', name: 'Nemi Forest', category: 'Daily', description: 'Mazcab reputation and XP.' },
     { id: 'wicked_hood', name: 'Wicked Hood', category: 'Daily', description: 'Claim free runes/essence.' },
     { id: 'ports', name: 'Player Owned Ports', category: 'Daily', description: 'Send out ships and check visitors.' },
-    { id: 'shop_run', name: 'Shop Run (Runes/Meat)', category: 'Daily', description: 'Buy runes, meat, feathers from shops.' },
+    { 
+        id: 'shop_run', 
+        name: 'Daily Shop Run', 
+        category: 'Daily', 
+        description: 'Purchase essential daily supplies from various shops.',
+        checklist: [
+            'Runes (Elemental/ Combination/ Nature/ Law/ Death/ Blood/ Soul)',
+            'Flies (Pet Shops)',
+            'Raw Meat Packs (Oo\'glog)',
+            'Broader Arrowheads / Insulated Boots (Slayer Masters)',
+            'Feathers (Fishing Shops)',
+            'Vials of Water Packs',
+            'Eye of Newt Packs',
+            'Pineapples (Arhein - Catherby)'
+        ]
+    },
 ];
 
 export const WEEKLY_TASKS = [

@@ -1,0 +1,32 @@
+[
+  {
+      "levels": "1-60",
+      "method": "**Ritual Progression:** Ironmen ***must*** prioritize upgrading the Well of Souls and getting lesser/greater materials.",
+      "xp_rates": "Standard",
+      "tips": "Farm Imps or Chickens for early bones. Hermod is critical at level 60 for armor plates."
+  },
+  {
+      "levels": "60-70",
+      "method": "**Hermod farming:** You will need ~30 Hermod Plates for full T70-T90 power/tank gear. Do this now for XP and supplies.",
+      "xp_rates": "Good combat XP",
+      "tips": "Bank all the Lesser/Greater ensouled bars, you will need thousands for T90/95 upgrades."
+  },
+  {
+      "levels": "70-90",
+      "method": "**Slayer / Fetid Zombies:** Train Slayer alongside Necromancy. Use T70 Weapon/Armor.",
+      "xp_rates": "Combat: 300k+",
+      "tips": "Fetid Zombies drop ashes needed for Ink making. Do not skip them."
+  },
+  {
+      "levels": "90+",
+      "method": "**Rasial, The First Necromancer:** Start learning Rasial at 90+ for T95 drops.",
+      "xp_rates": "Best Gear Progression",
+      "tips": "T95 gear is a massive DPS increase. Camp Rasial until log completion."
+  },
+  {
+      "levels": "99-120",
+      "method": "**Rituals (Ink Farming):** You will likely need to do rituals for ink upkeep anyway.",
+      "xp_rates": "Very High",
+      "tips": "Maintain a surplus of Ectoplasm from rituals."
+  }
+]

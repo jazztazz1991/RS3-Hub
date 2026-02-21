@@ -162,3 +162,17 @@
     font-size: 0.8rem;
     color: var(--herb-text-dim);
 }
+
+.herblore-calculator {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.herblore-calculator .calc-layout {
+    max-width: 100%;
+}
+
+.herblore-calculator .action-icon-img {
+    display: block;
+    margin: 0 auto 1rem auto;
+}

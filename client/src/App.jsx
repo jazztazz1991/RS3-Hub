@@ -16,7 +16,11 @@ import WoodcuttingCalculator from './components/Calculators/Woodcutting/Woodcutt
 import FletchingCalculator from './components/Calculators/Fletching/FletchingCalculator';
 import FishingCalculator from './components/Calculators/Fishing/FishingCalculator';
 import Guides from './components/Guides/Guides';
+import NecromancyGuide from './components/Guides/NecromancyGuide';
+import ThievingGuide from './components/Guides/ThievingGuide';
+import FarmingGuide from './components/Guides/Farming/FarmingGuide';
 import ArchaeologyGuide from './components/Guides/ArchaeologyGuide';
+import DivinationGuide from './components/Guides/DivinationGuide';
 import FishingGuide from './components/Guides/FishingGuide';
 import WoodcuttingGuide from './components/Guides/WoodcuttingGuide';
 import MiningGuide from './components/Guides/MiningGuide';
@@ -26,6 +30,13 @@ import MiningCalculator from './components/Calculators/Mining/MiningCalculator';
 import SmithingCalculator from './components/Calculators/Smithing/SmithingCalculator';
 import CraftingCalculator from './components/Calculators/Crafting/CraftingCalculator';
 import HerbloreCalculator from './components/Calculators/Herblore/HerbloreCalculator';
+import HerbloreGuide from './components/Guides/Herblore/HerbloreGuide';
+import AgilityGuide from './components/Guides/Agility/AgilityGuide';
+import ConstructionGuide from './components/Guides/Construction/ConstructionGuide';
+import CookingGuide from './components/Guides/Cooking/CookingGuide';
+import CraftingGuide from './components/Guides/Crafting/CraftingGuide';
+import FletchingGuide from './components/Guides/Fletching/FletchingGuide';
+import SlayerGuide from './components/Guides/Slayer/SlayerGuide';
 import AgilityCalculator from './components/Calculators/Agility/AgilityCalculator';
 import ThievingCalculator from './components/Calculators/Thieving/ThievingCalculator';
 import SlayerCalculator from './components/Calculators/Slayer/SlayerCalculator';
@@ -46,6 +57,7 @@ import WildyNotification from './components/WildyEvents/WildyNotification';
 import QuestTracker from './components/QuestTracker';
 import QuestDetails from './components/QuestTracker/QuestDetails';
 import AdminDashboard from './components/Admin/AdminDashboard';
+import SupportDashboard from './components/Support/SupportDashboard';
 
 function App() {
   const [serverStatus, setServerStatus] = useState('Checking server...');
@@ -77,6 +89,7 @@ function App() {
               <Route element={<ProtectedRoute />}>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/support" element={<SupportDashboard />} />
                 <Route path="/quests" element={<QuestTracker />} />
                 <Route path="/quests/:questTitle" element={<QuestDetails />} />
                 <Route path="/calculators" element={<Calculators />} />
@@ -89,11 +102,22 @@ function App() {
                 <Route path="/calculators/fletching" element={<FletchingCalculator />} />
                 <Route path="/calculators/fishing" element={<FishingCalculator />} />
                 <Route path="/guides" element={<Guides />} />
+                <Route path="/guides/necromancy" element={<NecromancyGuide />} />
+                <Route path="/guides/thieving" element={<ThievingGuide />} />
+                <Route path="/guides/farming" element={<FarmingGuide />} />
                 <Route path="/guides/archaeology" element={<ArchaeologyGuide />} />
+                <Route path="/guides/divination" element={<DivinationGuide />} />
                 <Route path="/guides/fishing" element={<FishingGuide />} />
                 <Route path="/guides/woodcutting" element={<WoodcuttingGuide />} />
                 <Route path="/guides/mining" element={<MiningGuide />} />
                 <Route path="/guides/firemaking" element={<FiremakingGuide />} />
+                <Route path="/guides/herblore" element={<HerbloreGuide />} />
+                <Route path="/guides/agility" element={<AgilityGuide />} />
+                <Route path="/guides/construction" element={<ConstructionGuide />} />
+                <Route path="/guides/cooking" element={<CookingGuide />} />
+                <Route path="/guides/crafting" element={<CraftingGuide />} />
+                <Route path="/guides/fletching" element={<FletchingGuide />} />
+                <Route path="/guides/slayer" element={<SlayerGuide />} />
                 <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
                 <Route path="/calculators/mining" element={<MiningCalculator />} />
                 <Route path="/calculators/smithing" element={<SmithingCalculator />} />
