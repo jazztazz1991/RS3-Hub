@@ -1,18 +1,66 @@
 [
     {
-        "levels": "1-76",
-        "method": "Train using the best available excavation hotspot . Only do this if you have no mysteries/collections available to complete."
+        "title": "Overview",
+        "content": [
+            "Archaeology is largely self-contained — all materials are gathered from excavation rather than traded, making it one of the more ironman-friendly skills in RS3. The training experience is essentially identical to regular play, with a few nuances around Chronotes and collection rewards.",
+            "The skill cap is level 120. Begin by completing the Archaeology Tutorial north of the Exam Center in Varrock, which takes you to level 5 and teaches the basics of excavation and artefact restoration.",
+            "Key concept: you excavate soil to uncover artefacts, restore them using materials you also excavate, then donate them to the Museum of the Archaeologists for Chronotes and XP rewards."
+        ]
     },
     {
-        "levels": "76-83",
-        "method": "Complete 46 Green Gobbo Goodies I collections."
+        "title": "Getting Started (Levels 1–20): Kharid-et",
+        "content": [
+            "After the tutorial, head to Kharid-et (east of Al Kharid, accessible from the Archaeology Guild) for your first dig site.",
+            "- Level 1–5: Tutorial excavation spots. You'll learn the basic mechanics here.",
+            "- Level 5–20: Kharid-et — Castra debris and other spots in the Praetorium area. Excavate Roman Legion artefacts and restore them for XP.",
+            "Materials needed at Kharid-et: leather scraps, animal furs, gold leaf, and terracotta. All gathered on-site.",
+            "- Tip: Restore artefacts in batches. You can stockpile damaged artefacts, then restore them all at the Archaeologist's bench.",
+            "- Complete the Kharid-et collection sets — donating full collections multiplies your Chronote reward.",
+            "Chronotes are the currency of Archaeology. Use them to buy materials, teleports, and other perks."
+        ]
     },
     {
-        "levels": "83+",
-        "method": "Complete 7 Armadylean I collections. This will give you enough torn blueprint fragments (Howl's workshop) to unlock all of the Ancient Invention blueprints."
+        "title": "Levels 20–70: Everlight and Stormguard",
+        "content": [
+            "At level 20, unlock the Everlight dig site (south-east of Draynor Village, past the Saradomin statue). This site has much higher XP rates than Kharid-et.",
+            "- Level 20–42: Everlight — Icyenic debris. Stained glass, marble, and silver are the main materials here.",
+            "- Level 42–70: Stormguard Citadel (accessed via a portal near Armadyl's tower, Feldip Hills region). Aviation debris and various Aviansie artefacts.",
+            "Stormguard is a major XP milestone. The site has excellent artefact density and the collections here give strong Chronote rewards.",
+            "- Tip: As you go higher in level, switch to higher-tier excavation spots within each site. At Stormguard, move from Aviation debris to Command centre debris (level 55) and War table debris (level 65).",
+            "Keep your materials stocked. If you run out, simply excavate more from the associated hotspot — materials always come from the same sites as the artefacts that need them."
+        ]
     },
     {
-        "levels": "83-99",
-        "method": "Complete 100 Red Rum Relics I collections."
+        "title": "Levels 70–99: Warforge and Orthen",
+        "content": [
+            "Level 70 unlocks Warforge, the Bandosian dig site located in the Feldip Hills. It contains some of the densest artefact hotspots in the game.",
+            "- Level 70–83: Warforge — various spots including Goblin dye vats and Small goebie burial grounds.",
+            "- Level 83–99: Orthen (Anachronia). The Orthen site is home to Dragonkin artefacts and has the best XP per hour at this range.",
+            "At Orthen, focus on the Varanus cage (level 83) and Orthen furnace core spots as you level up.",
+            "- Unlocking mattocks: Better mattocks dramatically increase excavation speed. Craft or commission them as your level allows. The Elder Rune Mattock (level 80) and Ikovian Mattock (level 90) are key upgrades.",
+            "- Orthenglass: A special material from Orthen used to make the best mattocks and unlockable tools. Farm it as you dig here."
+        ]
+    },
+    {
+        "title": "Levels 99–120: Senntisten and Endgame",
+        "content": [
+            "Level 99 unlocks Senntisten (under Varrock, accessed through the Archaeology skill portal). This is the highest-level site and contains Zarosian artefacts.",
+            "- Level 99–107: Senntisten — various spots including Infernal Source overflow.",
+            "- Level 107–120: The highest-XP spots at Senntisten and continued Orthen rotations.",
+            "At this point, the XP rates are very high if you use optimal mattocks and research boosts.",
+            "- Research projects: Unlocked at the Archaeology Guild. Complete research to gain passive boosts (faster excavation, more soil per action, etc.). This is important throughout training but especially at high levels.",
+            "- Mysteries: Archaeology has a questline of mysteries — complete them for XP rewards, story, and access to powerful relics."
+        ]
+    },
+    {
+        "title": "Ironman Tips",
+        "content": [
+            "Archaeology has almost no ironman-specific restrictions — all materials are obtained through excavation and cannot be traded. This makes it a truly self-contained skill.",
+            "- Chronotes: Earned by donating artefact collections to the museum. Use them to buy Archaeology teleports (very convenient), mattock restoration, and research boosts.",
+            "- Cache of Ithell: Every 2 hours, a special cache spawns at an active dig site. Excavating it gives large XP bonuses — check your location and prioritise these.",
+            "- Museum of the Archaeologists: Donate full collections rather than individual artefacts. Full-set donations give significantly more Chronotes.",
+            "- Soil box: Unlocked early in the skill. Lets you store soil without dropping it, saving significant bank time.",
+            "- Tetracompass: Assembled from compass pieces found during excavation. Points to a special buried cache with high-value loot. Worth tracking as an ironman."
+        ]
     }
 ]

@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Runecrafting converts Rune Essence or Pure Essence into runes at Runecrafting Altars around Gielinor, or trains in the Runespan — a dedicated training area. The skill cap is level 99.",
+            "The two primary training methods are: Runespan (relaxed, AFK-friendly, gives Runespan points for useful rewards) and Altar Runecrafting (active, faster XP but more click-intensive, produces actual runes you can use or sell).",
+            "The Wicked Hood, claimed for free from Tam McGrubor in Burthorpe, can store rune talismans and tiara items and provides free daily teleports to any altar you have attuned. Always have this equipped."
+        ]
+    },
+    {
+        "title": "Levels 1–33: Runespan (Lower Floors)",
+        "content": [
+            "The Runespan is a floating island accessed via a portal on the 2nd floor of the Wizards' Tower. You harvest nodes (Wisps, Nodes, and Creatures) to produce runes passively without needing essence or talisman travel.",
+            "Lower Runespan floors are suitable from level 1-33. Hover between nodes on the same platform and always siphon the highest-level node available to you for the best XP. Move between platforms freely.",
+            "Runespan points earned here can be exchanged in the reward shop for items including the Runic Staff, Ethereal armour pieces, and Runecrafting Pouches (which increase your pure essence capacity per altar run)."
+        ]
+    },
+    {
+        "title": "Levels 33–90: Runespan (Upper Floors) and ZMI Altar",
+        "content": [
+            "At level 33 you unlock the upper Runespan floors, which contain higher-level nodes and provide significantly better XP rates. Remain in the Runespan until you reach the level requirements for the altars you want to use, or until you have the rewards you need.",
+            "The ZMI Altar (Ourania Altar, level 71 Runecrafting) gives randomised runes and is one of the best active Runecrafting methods. It requires rune essence and a path through level 20+ Wilderness (use the fairy ring to mitigate risk). It gives roughly 30,000-40,000 XP/hr at its baseline.",
+            "Abyss Runecrafting bypasses altar level requirements and allows crafting at any altar without a talisman. The Abyss is in level 5 Wilderness and can be accessed via the Mage of Zamorak. Always wear a Glory amulet or other teleport for quick escape. Each trip through the Abyss gives a small amount of bonus XP."
+        ]
+    },
+    {
+        "title": "Levels 77–99: Blood and Soul Altars",
+        "content": [
+            "The Blood Altar (level 77) in Morytania gives 10.5 XP per pure essence and is accessible via the Abyss or by walking from Burgh de Rott. Blood runes are valuable and useful — this method earns GP while training.",
+            "The Soul Altar (level 90) in Great Kourend gives 29.7 XP per pure essence when using the special Soul Rune Altar mechanic: mine souls essence from the altar surrounds, fill the altar, and craft Soul runes for high XP rates.",
+            "At high levels, Armadyl Runes can be created at Armadyl's Eyrie on the Storm of Armadyl quest chest, giving very high XP rates. This requires completion of The Temple at Senntisten."
+        ]
+    },
+    {
+        "title": "Tips and Pouches",
+        "content": [
+            "Runecrafting Pouches (Small, Medium, Large, Giant — earned from Runespan) increase the essence you can carry per altar run and dramatically improve XP per hour for altar methods. Always use the largest pouches available.",
+            "The Abyssal Familiar (Summoning, level 64) can carry additional essence in its special storage. Combined with maximum-size pouches, this allows very large altar loads per trip.",
+            "Use the Wicked Hood's free daily altar teleports to reduce travel time. Attuning it to the altar you use most reduces trips to near-zero running distance."
+        ]
+    }
+]

@@ -231,6 +231,57 @@
   background: linear-gradient(145deg, #2a2a2a, #332a00);
 }
 
+.skill-card.expanded {
+  border-color: #3498db;
+}
+
+/* Expanded skill card action buttons */
+.skill-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #333;
+  flex-wrap: wrap;
+}
+
+.skill-action-btn {
+  flex: 1;
+  min-width: 70px;
+  padding: 0.35rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.skill-action-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.skill-action-btn:active {
+  transform: translateY(0);
+}
+
+.skill-action-btn.guide {
+  background: #e67e22;
+  color: #fff;
+}
+
+.skill-action-btn.calc {
+  background: #27ae60;
+  color: #fff;
+}
+
+.skill-action-btn.wiki {
+  background: #34495e;
+  color: #bdc3c7;
+}
+
 .skill-header {
   display: flex;
   justify-content: space-between;
@@ -331,14 +382,45 @@
   .dashboard-content {
       flex-direction: column;
   }
-  
+
   .skills-section, .tracker-section {
       width: 100%;
       flex: none;
   }
-  
+
   .tracker-section {
       position: static;
       margin-top: 2rem;
+      min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+      padding: 0 1rem;
+  }
+
+  .global-stats {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+  }
+
+  .stat-box {
+      flex: 1 1 45%;
+  }
+
+  .skills-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+      padding: 1rem;
   }
 }

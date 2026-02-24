@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Smithing as an ironman requires mining your own ores — you cannot buy bars or ores from the Grand Exchange. This creates a natural pairing with Mining: mine ore, smelt into bars, and smith into items or burial armour.",
+            "The Artisan's Workshop Burial Armour method is still the XP-efficient choice once you have bars, but progress is gated by how quickly you can mine and smelt. Superheat Item is useful for mining and smelting simultaneously without needing furnace trips.",
+            "Plan ahead: higher-tier ores require higher Mining levels. Work toward level 60+ Mining for Adamantite and level 85 for Runite, which gate significant Smithing XP jumps."
+        ]
+    },
+    {
+        "title": "Levels 1–40: Early Mining and Smelting",
+        "content": [
+            "Mine Bronze (Copper + Tin) and Iron ores from any mine. The Edgeville furnace is conveniently close to a bank for early smelting. Use a Ring of Forging to guarantee Iron bar smelts (otherwise 50% failure rate).",
+            "Quest XP from The Knight's Sword, Elemental Workshop I, and Doric's Quest provides a meaningful head start — complete these early to skip grinding Bronze/Iron Smithing.",
+            "Superheat Item (Magic level 43) can smelt bars wherever you are mining, saving furnace trips and giving simultaneous Magic XP."
+        ]
+    },
+    {
+        "title": "Levels 40–70: Mid-Tier Ores and Burial Armour",
+        "content": [
+            "Mithril ore (level 55 Mining), Adamantite ore (level 70 Mining), and Runite ore (level 85 Mining) are your primary smithing resources as an ironman. Mine these from resource-rich areas such as the Mining Guild (requires 60 Mining for the enhanced area) and the Living Rock Caverns (Runite).",
+            "Once you have a bar stockpile, use the Artisan's Workshop Burial Armour method for XP-efficient consumption. You will never profit from the items, but the XP rate is unmatched.",
+            "Blast Furnace in Keldagrim reduces coal requirements and speeds up smelting. Using it with a Coal Bag (from Dungeoneering) doubles smelting efficiency."
+        ]
+    },
+    {
+        "title": "Levels 70–99: Elder Rune and Artisan's Workshop",
+        "content": [
+            "Elder Rune ore (level 90 Mining) is the highest tier and is located in the Anachronia Agility Course dungeon and other high-level mines. Mining and smelting Elder Rune bars for burial armour at the Artisan's Workshop is the endgame ironman method.",
+            "Build Artisan's Workshop respect to 100% for the full 20% XP bonus — this is especially valuable when processing hard-won ores.",
+            "Giants' Foundry is a viable alternative that provides Foundry points, which can be exchanged for the Smithing Catalyst and other useful smithing rewards unavailable through the GE."
+        ]
+    }
+]

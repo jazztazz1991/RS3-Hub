@@ -50,13 +50,5 @@
             "Serenity posts are an Agility training activity which can be completed to gain a maximum of 20,000 Agility experience once per day. Level 75 Agility is required to participate in the activity, as well as completion of the Plague's End quest. To begin the activity use the \"balance on\" option on any of the 6 serenity posts in the Hefin district training area, and choose a pose in the minigame interface.",
             "Experience is gained once per second while balanced on a serenity post. Maximum experience is gained when imitating Lady Hefin 's pose. Doing the same pose as her grants between 30-58 Agility experience each second, depending on the player's Agility level, while doing a different pose to Lady Hefin grants 10% of this amount of experience. Only base experience gains count towards the daily limit. Upon reaching the limit the player's character will automatically leave the serenity post, and they will be unable to stand on the post again until the next day. A player with level 99 Agility can obtain the 20,000 experience limit in around 10 minutes, giving an experience rate equivalent to 120,000 experience an hour."
         ]
-    },
-    {
-        "title": "Quests for Agility experience",
-        "content": [
-            "NewPP limit report\nParsed by mediawiki\u2010jobrunner\u2010685b6cb46\u2010mnrpd\nCached time: 20260216182300\nCache expiry: 172800\nReduced expiry: false\nComplications: \nCPU time usage: 1.073 seconds\nReal time usage: 1.555 seconds\nPreprocessor visited node count: 9233/1000000\nRevision size: 18012/8388608 bytes\nPost\u2010expand include size: 184281/8388608 bytes\nTemplate argument size: 15498/8388608 bytes\nHighest expansion depth: 14/100\nExpensive parser function count: 2/500\nUnstrip recursion depth: 0/20\nUnstrip post\u2010expand size: 6749/5000000 bytes\nBucket time usage: 0.000/10 seconds\nLua time usage: 0.185/10.000 seconds\nLua memory usage: 2287363/367001600 bytes",
-            "Transclusion expansion time report (%,ms,calls,template)\n100.00%  718.804      1 -total\n 39.55%  284.255      1 Template:Agility_Experience_Rewards_table\n 15.51%  111.501    114 Template:Skillreq\n 12.98%   93.320      2 Template:Object_map\n  9.94%   71.446      1 Template:Generic_experience_boosts\n  8.74%   62.849      1 Template:Training_guides\n  8.20%   58.948     47 Template:Fe\n  6.22%   44.679      1 Template:External\n  5.95%   42.774      1 Template:Navbox\n  5.28%   37.968      1 Template:Sc",
-            "Saved in parser cache with key en_rswiki:pcache:263776:|#|:idhash:canonical and timestamp 20260216182258 and revision id 36939922. Rendering was triggered because: edit-page"
-        ]
     }
 ]

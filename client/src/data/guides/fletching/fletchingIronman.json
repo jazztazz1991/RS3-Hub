@@ -1,8 +1,51 @@
 [
     {
-        "title": "Training methods",
+        "title": "Overview",
         "content": [
-            "- Levels 1-5: Fletch arrow shafts from normal logs. Level 1-25 alternative: Make headless arrows . Buying arrow shafts and feathers is however very expensive, costing ~300,000 gp to reach level 25, hence early game ironmen would be advised to initially follow the below progression instead.\n- Level 1-25 alternative: Make headless arrows . Buying arrow shafts and feathers is however very expensive, costing ~300,000 gp to reach level 25, hence early game ironmen would be advised to initially follow the below progression instead.\n- Level 5-10: Fletch shortbow (u) .\n- Level 10-20: Fletch shieldbow (u) .\n- Level 20-25: Fletch Oak shortbow (u) .\n- Level 25-35: Fletch Oak shieldbow (u) .\n- Level 35-40: Fletch Willow shortbow (u) .\n- Level 40-50: Fletch Willow shieldbow (u) . Free to play players should continue making the highest tier of bow available to them until level 99.\n- Free to play players should continue making the highest tier of bow available to them until level 99.\n- Level 50-52: Fletch Maple shortbow (u) by cutting maple trees at Daemonheim Peninsula resource dungeon . Managing Miscellania can provide large quantities of maple logs.\n- 52+: Broad arrows are the most time efficient method. 9000 arrowheads can be purchased a day for a total of 135,000 xp and 450,000gp. This translates to ~860,718 arrows/43,035,903gp to achieve level 99. Buying the maximum amount of arrowheads each day, this would take a minimum of 96 days.\n- Alternatives: Given that maple logs are available in very large quantities, it is reasonable (although not efficient) to simply craft maple shieldbow (u ) until zygomite carestyling is unlocked. Consider fletching any yew and magic logs  obtained through PVM into the highest tier of bow available. Consider banking all unstrung bows. Bowstrings can be acquired quickly and in large numbers from Temple Trekking once unlocked. This roughly doubles xp gained per log. 75+: Dream of Iaia is good xp, however this is likely better used to train herblore/hunter/construction or crafting 82+: Zygomite Carestyling is a relatively AFK and free method, giving ~200k+ xp per hour. 90+:  If intending to make ascension crossbows , the player will obtain a large surplus of ascension shards whilst grinding for the keystones. If attempting to obtain two crossbows, assuming average luck and farming capsarii for keystones, the player will receive ~150,000 ascension shards equalling 3,000,000 xp in the process.\n- Given that maple logs are available in very large quantities, it is reasonable (although not efficient) to simply craft maple shieldbow (u ) until zygomite carestyling is unlocked.\n- Consider fletching any yew and magic logs  obtained through PVM into the highest tier of bow available.\n- Consider banking all unstrung bows. Bowstrings can be acquired quickly and in large numbers from Temple Trekking once unlocked. This roughly doubles xp gained per log.\n- 75+: Dream of Iaia is good xp, however this is likely better used to train herblore/hunter/construction or crafting\n- 82+: Zygomite Carestyling is a relatively AFK and free method, giving ~200k+ xp per hour.\n- 90+:  If intending to make ascension crossbows , the player will obtain a large surplus of ascension shards whilst grinding for the keystones. If attempting to obtain two crossbows, assuming average luck and farming capsarii for keystones, the player will receive ~150,000 ascension shards equalling 3,000,000 xp in the process."
+            "Fletching is one of the most self-sufficient skills for ironmen. Logs come from Woodcutting, bowstrings from spinning flax or Temple Trekking, and dart/arrow tips from Smithing or Slayer rewards. The skill progresses naturally alongside Woodcutting.",
+            "The main bottleneck at mid-levels is bowstrings — spinning flax yourself is slow, but Temple Trekking provides a reliable bulk source once unlocked. At higher levels, broad arrows from the Slayer reward shop become the fastest and most cost-effective method."
+        ]
+    },
+    {
+        "title": "Levels 1–50: Bows from Woodcutting",
+        "content": [
+            "Cut logs and fletch them into unstrung bows, then string them. This gives double XP per log and keeps supplies fully self-sufficient.",
+            "- Levels 1–10: Shortbow (u) then Shortbow.",
+            "- Levels 10–20: Shieldbow (u) then Shieldbow.",
+            "- Levels 20–25: Oak shortbow (u) then Oak shortbow.",
+            "- Levels 25–35: Oak shieldbow (u) then Oak shieldbow.",
+            "- Levels 35–40: Willow shortbow (u) then Willow shortbow.",
+            "- Levels 40–50: Willow shieldbow (u) then Willow shieldbow.",
+            "Bowstring source: spin flax at a spinning wheel (Lumbridge, Seers' Village). Flax grows on the ground near Seers' Village or can be farmed at level 1. Unlock Temple Trekking as soon as possible — completing routes rewards large stacks of bowstrings far faster than spinning by hand."
+        ]
+    },
+    {
+        "title": "Levels 50–52: Maple Bows",
+        "content": [
+            "- Levels 50–52: Maple shortbow (u) then Maple shortbow.",
+            "Maple logs are available at the Daemonheim Peninsula resource dungeon. Managing Miscellania set to Maples provides a large passive daily supply of maple logs throughout this and later levels.",
+            "By now Temple Trekking should cover bowstring supply. If not, continue spinning flax in bulk."
+        ]
+    },
+    {
+        "title": "Levels 52–99: Broad Arrows (Recommended)",
+        "content": [
+            "Broad arrows are the fastest XP method for ironmen from level 52 and are fully obtainable without the Grand Exchange.",
+            "- Buy broad arrowheads from any Slayer master's reward shop (up to 9,000 per day for coins, or spend Slayer points).",
+            "- Combine with arrow shafts (cut from any logs) and feathers (dropped by chickens, birds, and seagulls).",
+            "- Each action produces 15 broad arrows for 225 XP — very fast click rate.",
+            "At 9,000 arrowheads per day, this yields 135,000 XP/day and is the primary daily driver toward level 99.",
+            "Feather tip: kill chickens at a farm (Lumbridge, Falador), or buy feathers from fishing shops in Catherby and Port Sarim for a small coin cost."
+        ]
+    },
+    {
+        "title": "Alternative and Endgame Methods",
+        "content": [
+            "- Zygomite carestyling (level 82+, Player-Owned Farm): very AFK, giving 200,000+ XP/hour once unlocked via POF.",
+            "- Bakriminel bolts (levels 89–99): fletched from blisterwood logs cut in Darkmeyer (requires Branches of Darkmeyer). Good XP and useful combat ammunition.",
+            "- Ascension bolts (level 90+): if farming Ascension Crossbows, each full grind yields roughly 150,000 Ascension shards — 3,000,000 Fletching XP as a side effect.",
+            "- Dream of Iaia (level 75+): decent XP but the materials are often better spent on Herblore, Hunter, or Construction.",
+            "- Elder shieldbow (u) / Elder shieldbow (levels 90/95): high XP per bow if elder logs are available from Woodcutting."
         ]
     }
 ]

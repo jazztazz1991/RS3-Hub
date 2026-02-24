@@ -1,1 +1,70 @@
-[]
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Slayer is one of the most important skills for Ironmen. It gates access to many BiS weapons (abyssal whip, whip vine, hexcrest, Focus sight), provides a steady flow of combat supplies (herbs, ores, gems), and gives consistent combat XP alongside Slayer XP.",
+            "Always use the highest-tier Slayer master your combat level allows. The better the master, the better the tasks, drops, and Slayer XP per hour."
+        ]
+    },
+    {
+        "title": "Choosing Your Slayer Master",
+        "content": [
+            "Unlock higher-tier masters as your combat level grows. Higher masters offer better tasks and more Slayer points per assignment.",
+            "- Turael (Burthorpe): Combat level 3 — use only to skip bad tasks from other masters",
+            "- Mazchna (Morytania): Combat level 20 — beginner assignments",
+            "- Vannaka (Edgeville Dungeon): Combat level 40 — useful early tasks",
+            "- Chaeldar (Lost City): Combat level 75 — requires Lost City quest; good mid-level tasks",
+            "- Sumona (Pollnivneach): Combat level 90 — requires Smoking Kills quest",
+            "- Kuradal (Ancient Cavern): Combat level 110 — excellent high-value tasks; recommended from 110+",
+            "- Morvran (Prifddinas): Combat level 120 — best tasks; requires Plague's End"
+        ]
+    },
+    {
+        "title": "Points Management",
+        "content": [
+            "Slayer points are crucial for Ironmen. Earn them by completing tasks (bonus points every 10th, 50th, 100th, 250th, and 1000th task).",
+            "Priority unlocks for Ironmen:",
+            "- Broader Fletching: Allows crafting broad bolts — essential for Fletching and Ranged training",
+            "- Slayer Helmet (components): Purchase Hexcrest, Focus Sight, and Black mask upgrades",
+            "- Block list: Block low-value tasks (e.g., Banshees, Desert Lizards, Cave Bugs) permanently",
+            "- Extend list: Extend high-value tasks (e.g., Abyssal Demons, Gargoyles, Nechryaels)",
+            "- Turael skip: Use Turael to skip one bad task per day at the cost of resetting your streak"
+        ]
+    },
+    {
+        "title": "Recommended Tasks for Ironmen",
+        "content": [
+            "These tasks offer high XP and drops essential for an Ironman account:",
+            "- Abyssal Demons (level 85 Slayer): Abyssal whip, orb, and wand — core mid-game weapons",
+            "- Gargoyles (level 75 Slayer): Consistent herb, ore, and gem drops; granite maul",
+            "- Nechryaels (level 80 Slayer): Excellent herb drop table — invaluable for Herblore training",
+            "- Dark Beasts (level 90 Slayer): Dark bow, death talisman; decent combat XP",
+            "- Automatons (level 67 Slayer): Chance at Pneumatic gloves, Tracking gloves, Sparkling gloves",
+            "- Glacors (level 96 Slayer): Glacyte boots, armadyl battlestaff components",
+            "- Airuts (level 92 Slayer): Strong combat XP, useful charm drops"
+        ]
+    },
+    {
+        "title": "Bossing as Slayer Tasks",
+        "content": [
+            "Assigning bosses as Slayer tasks (unlocked via Slayer points) grants bonus Slayer XP and is highly recommended for Ironmen.",
+            "- GWD1 Bosses (Bandos, Armadyl, Saradomin, Zamorak): Great mid-game boss tasks for armour pieces",
+            "- Araxxor/Araxxi (level 92 Slayer): Spider silk and Noxious weapons; high Slayer XP",
+            "- Kalphite King: Drygore weapons; requires 80+ combat and a good understanding of the fight",
+            "- Vorago: Group boss; log book items and seismic weapons",
+            "Boss Slayer tasks offer significantly higher XP per hour than regular tasks at endgame."
+        ]
+    },
+    {
+        "title": "Useful Items and Unlocks",
+        "content": [
+            "Key items every Ironman Slayer trainer should prioritise:",
+            "- Full Slayer Helmet: Combines Black mask, Hexcrest, and Focus Sight; +15% melee and +12.5% range/magic damage on task",
+            "- Enchanted gem: Free teleports to Slayer masters after purchasing the unlock",
+            "- Herbicide: Automatically destroys herbs for passive XP — useful on herb-heavy tasks",
+            "- Bonecrusher: Auto-buries bones for passive Prayer XP; combine with Demon horn necklace for Prayer restoration",
+            "- Aggression potion: Forces nearby monsters to attack you — great for semi-AFK tasks",
+            "- Sign of the Porter: Automatically banks common drops during tasks — extremely valuable for Ironmen"
+        ]
+    }
+]

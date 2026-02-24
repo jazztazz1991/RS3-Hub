@@ -1,164 +1,66 @@
-{
-    "methods": [
-        {
-            "levels": "1",
-            "min_level": 1,
-            "max_level": 99,
-            "method": "Logs",
-            "xp_rate_raw": "48,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "1",
-            "min_level": 1,
-            "max_level": 99,
-            "method": "Achey tree logs",
-            "xp_rate_raw": "48,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "15",
-            "min_level": 15,
-            "max_level": 99,
-            "method": "Oak logs",
-            "xp_rate_raw": "72,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "30",
-            "min_level": 30,
-            "max_level": 99,
-            "method": "Willow logs",
-            "xp_rate_raw": "108,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "35",
-            "min_level": 35,
-            "max_level": 99,
-            "method": "Teak logs",
-            "xp_rate_raw": "126,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "45",
-            "min_level": 45,
-            "max_level": 99,
-            "method": "Maple logs",
-            "xp_rate_raw": "162,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "47",
-            "min_level": 47,
-            "max_level": 99,
-            "method": "Acadia logs",
-            "xp_rate_raw": "168,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "50",
-            "min_level": 50,
-            "max_level": 99,
-            "method": "Mahogany logs",
-            "xp_rate_raw": "189,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "54",
-            "min_level": 54,
-            "max_level": 99,
-            "method": "Arctic pine logs",
-            "xp_rate_raw": "150,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "58",
-            "min_level": 58,
-            "max_level": 99,
-            "method": "Eucalyptus logs",
-            "xp_rate_raw": "231,600",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "60",
-            "min_level": 60,
-            "max_level": 99,
-            "method": "Yew logs",
-            "xp_rate_raw": "243,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "75",
-            "min_level": 75,
-            "max_level": 99,
-            "method": "Magic logs",
-            "xp_rate_raw": "364,560",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "75",
-            "min_level": 75,
-            "max_level": 99,
-            "method": "Corrupted magic logs",
-            "xp_rate_raw": "382,800",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "87",
-            "min_level": 87,
-            "max_level": 99,
-            "method": "Sharp shell shards",
-            "xp_rate_raw": "410,280",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "90",
-            "min_level": 90,
-            "max_level": 99,
-            "method": "Elder logs",
-            "xp_rate_raw": "521,160",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "100",
-            "min_level": 100,
-            "max_level": 99,
-            "method": "Eternal magic logs",
-            "xp_rate_raw": "662,400",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        }
-    ]
-}
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Firemaking is primarily trained by burning logs at bonfires or in a line on the ground. Bonfires are more XP-efficient than line fires and benefit from a group XP bonus when other players join.",
+            "All logs can be bought from the Grand Exchange. Firemaking is largely a buyable skill, and many players choose to train it during Double XP events to reduce cost."
+        ]
+    },
+    {
+        "title": "Levels 1-30: Normal and Oak Logs",
+        "content": [
+            "Start by burning the cheapest logs available on a bonfire.",
+            "- Levels 1-15: Normal logs (40 XP each) — very cheap, widely available",
+            "- Levels 15-30: Oak logs (60 XP each) — slight upgrade, still low cost",
+            "Purchase logs from the Grand Exchange. Light a fire and continue adding logs to build a bonfire."
+        ]
+    },
+    {
+        "title": "Levels 30-60: Willow, Teak, and Maple Logs",
+        "content": [
+            "Mid-level Firemaking uses readily available logs. Teak gives more XP than willow and is often similarly priced.",
+            "- Levels 30-45: Willow logs (90 XP each)",
+            "- Levels 35-47: Teak logs (105 XP each) — better XP if available cheaply",
+            "- Levels 45-60: Maple logs (135 XP each) — standard mid-level log",
+            "Always use a bonfire rather than line fires for the group bonus when possible."
+        ]
+    },
+    {
+        "title": "Levels 60-90: Yew and Magic Logs",
+        "content": [
+            "Yew and magic logs are the primary training logs from 60 onwards. Both are commonly available on the Grand Exchange.",
+            "- Levels 60-75: Yew logs (202.5 XP each)",
+            "- Levels 75-90: Magic logs (303.8 XP each) — good XP per log, affordable in bulk",
+            "At high-traffic worlds, joining an existing bonfire group significantly boosts XP rates. Aim to burn at popular bonfire locations such as Edgeville or Burthorpe."
+        ]
+    },
+    {
+        "title": "Levels 83-90: Curly Roots (Alternative)",
+        "content": [
+            "Curly roots from the Jadinko Lair require 83 Woodcutting and 83 Firemaking, but give simultaneous XP in both skills with no supply cost — you chop curly jade roots from the ceiling and burn them in the nearby firepits.",
+            "- ~250,000 Firemaking XP/hr with Nature's Sentinel outfit and Ring of Fire",
+            "- ~70,000 Woodcutting XP/hr as a bonus",
+            "This is slower than bulk-buying magic or elder logs but costs nothing and is semi-AFK. A good option if you want to avoid Grand Exchange purchases or train Woodcutting at the same time."
+        ]
+    },
+    {
+        "title": "Levels 90-110: Elder Logs",
+        "content": [
+            "Elder logs provide the highest Firemaking XP per log in the game and are the go-to method from 90 to 110.",
+            "- Levels 90-110: Elder logs (506.3 XP each) — approximately 250,000–300,000 XP/hour at a group bonfire",
+            "Elder logs are expensive but significantly faster than magic logs. They can also be cut at an elder tree if you have 90 Woodcutting.",
+            "At a busy bonfire with group bonus stacked, elder logs reach peak efficiency."
+        ]
+    },
+    {
+        "title": "Boosts and Tips",
+        "content": [
+            "- Bonfire group bonus: Up to 10% bonus XP when multiple players join the same bonfire (up to ~5 players)",
+            "- Inferno Adze: Automatically burns some logs while cutting trees — useful for Woodcutting + Firemaking training together",
+            "- Pyre logs: Burning specific logs on funeral pyres in Shades of Mort'ton gives bonus XP and useful drops; slower but Ironman-friendly",
+            "- Beacons: Lighting all 14 beacons simultaneously unlocks the Ring of Fire and Flame gloves for XP bonuses",
+            "- Modified pyre costume: Full set grants bonus Firemaking XP — useful if obtainable from Treasure Hunter",
+            "- Double XP events: Train heavily during DXP to reduce the cost of elder logs significantly"
+        ]
+    }
+]

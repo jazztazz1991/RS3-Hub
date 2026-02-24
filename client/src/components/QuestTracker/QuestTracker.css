@@ -95,184 +95,176 @@
     letter-spacing: 1px;
 }
 
-/* Quest List */
-.qt-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-}
-
-.quest-card {
-    background: #1e272e; /* Dark card */
-    border: 1px solid #34495e;
+/* Quest Table */
+.qt-table-wrapper {
+    overflow-x: auto;
     border-radius: 6px;
-    padding: 1rem;
-    position: relative;
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
+    border: 1px solid #2c3e50;
 }
 
-.quest-card:hover {
-    transform: translateY(-2px);
-    border-color: #7f8c8d;
+.qt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
 }
 
-.quest-card.completed {
-    background: #141a1f; /* Darker for done */
-    border-color: #27ae60;
-    opacity: 0.8;
-}
-
-.quest-card.can-do {
-    border-left: 4px solid #27ae60; /* Green stripe */
-}
-
-.quest-card.cannot-do {
-    border-left: 4px solid #c0392b; /* Red stripe */
-}
-
-.btn-details {
-    background: #3498db;
-    border: none;
-    color: white;
-    font-size: 0.8rem;
-    cursor: pointer;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-weight: bold;
-    margin-right: 0.5rem;
-    transition: background 0.2s;
-}
-
-.btn-details:hover {
-    background: #2980b9;
-}
-
-.qc-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Changed from flex-start */
-    margin-bottom: 0.5rem;
-}
-
-.qc-guide {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    border-left: 3px solid #3498db;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.qc-guide h4 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #3498db;
-    font-size: 0.95rem;
+.qt-table thead th {
+    background: #1a252f;
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 2px solid #2c3e50;
+    text-align: left;
+    white-space: nowrap;
 }
 
-.qc-guide ol {
-    margin: 0;
-    padding-left: 1.5rem;
+.qt-table tbody tr {
+    border-bottom: 1px solid #1e272e;
+    transition: background 0.15s;
 }
 
-.qc-guide li {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: #bdc3c7;
-    line-height: 1.4;
+.qt-table tbody tr:last-child {
+    border-bottom: none;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+.qt-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
 }
 
-.qc-title {
-    font-weight: bold;
-    color: #ecf0f1;
-    font-size: 1.1rem;
+.qt-table td {
+    padding: 0.6rem 0.8rem;
+    color: #e0e0e0;
+    vertical-align: middle;
 }
 
-.qc-wiki-link {
-    color: #3498db;
-    text-decoration: none;
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
+/* Row status tinting */
+.row-can-do {
+    background: rgba(39, 174, 96, 0.05);
+    border-left: 3px solid #27ae60;
 }
 
-.qc-meta {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    margin-bottom: 1rem;
+.row-cannot-do {
+    background: transparent;
+    border-left: 3px solid #34495e;
 }
 
+.row-completed {
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0.65;
+    border-left: 3px solid #27ae60;
+}
+
+.row-completed .qt-quest-name {
+    text-decoration: line-through;
+    color: #7f8c8d;
+}
+
+/* Column sizing */
+.qt-col-status { width: 28px; text-align: center; padding-left: 0.5rem !important; }
+.qt-col-name   { font-weight: 500; }
+.qt-col-diff   { white-space: nowrap; color: #bdc3c7; }
+.qt-col-length { white-space: nowrap; color: #bdc3c7; }
+.qt-col-type   { width: 60px; text-align: center; }
+.qt-col-action { width: 70px; text-align: right; }
+
+/* Status dot */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-done { background: #27ae60; }
+.dot-can  { background: #2ecc71; opacity: 0.7; }
+.dot-cant { background: #34495e; }
+
+/* Tags */
 .tag {
     padding: 2px 6px;
     border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 600;
     background: #34495e;
     color: #bdc3c7;
 }
 
 .tag.members {
-    background: #f1c40f;
-    color: #2c3e50;
-    font-weight: bold;
+    background: rgba(241, 196, 15, 0.15);
+    color: #f1c40f;
+    border: 1px solid rgba(241, 196, 15, 0.3);
 }
 
 .tag.f2p {
-    background: #95a5a6;
-    color: #2c3e50;
+    background: rgba(149, 165, 166, 0.1);
+    color: #95a5a6;
+    border: 1px solid #34495e;
 }
 
-.qc-reqs {
-    margin-top: auto; /* Push to bottom */
-    background: #2c3e50;
-    padding: 0.5rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-}
-
-.req-item {
-    display: block;
-    margin-bottom: 0.2rem;
-}
-
-.req-item.met {
-    color: #2ecc71; /* Green check */
-}
-
-.req-item.missing {
-    color: #e74c3c; /* Red x */
-}
-
-.qc-actions {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: flex-end;
-}
-
+/* Toggle button */
 .btn-toggle {
-    background: #34495e;
-    border: none;
-    color: white;
-    padding: 0.4rem 0.8rem;
+    background: #2c3e50;
+    border: 1px solid #34495e;
+    color: #bdc3c7;
+    padding: 0.3rem 0.7rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition: all 0.15s;
 }
 
-.quest-card.completed .btn-toggle {
-    background: #27ae60;
+.btn-toggle:hover {
+    background: #34495e;
+    color: #ecf0f1;
+}
+
+.btn-toggle.done {
+    background: rgba(39, 174, 96, 0.15);
+    border-color: #27ae60;
+    color: #27ae60;
 }
 
 .qc-empty-state {
-    grid-column: 1 / -1;
     text-align: center;
     padding: 3rem;
     color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .qt-tools {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .qt-search {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .qt-filter-group {
+        width: 100%;
+    }
+
+    .qt-filter-btn {
+        flex: 1;
+    }
+
+    .qt-import-section {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .btn-import {
+        width: 100%;
+    }
+
+    /* Hide Difficulty and Length columns on mobile — show on quest detail page instead */
+    .qt-col-diff,
+    .qt-col-length {
+        display: none;
+    }
 }

@@ -1,0 +1,33 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Magic training as an ironman relies on methods that do not require the Grand Exchange for runes or items. The good news: runes are obtained through Runecrafting, monster drops, rune shops (Aubury in Varrock), and the Mage of Zamorak. Combat Magic training is the most natural method for ironmen.",
+            "The key early bottleneck is rune supply. Build up stocks of Air, Water, Earth, Fire, Mind, Chaos, Death, Blood, and Soul runes through Runecrafting or monster drops before planning bulk training sessions."
+        ]
+    },
+    {
+        "title": "Levels 1–55: Teleportation and Combat",
+        "content": [
+            "Combat training with Magic is the most natural early method — you gain Magic XP while killing monsters for drops. Use the highest-damage spell available with your current rune supply.",
+            "Teleportation spells give XP per cast regardless of destination. Use Varrock, Falador, and Camelot teleports to spend rune stockpiles for XP.",
+            "Completing Imp Catcher and other early quests rewards Magic XP. The Witch's Potion quest also gives early Magic XP."
+        ]
+    },
+    {
+        "title": "Levels 55–80: Alchemy and Combat Spells",
+        "content": [
+            "High Level Alchemy (level 55) is useful for ironmen who have accumulated alchable items from drops and skilling. Nature runes must be Runecrafted (level 44) or obtained from drops — stock them up before alching sessions.",
+            "Combat with standard spells at popular Slayer targets gives consistent Magic XP alongside combat drops. Monsters that drop noted runes (such as Bloodvelds and Nechryael) help sustain your rune supply.",
+            "After completing Lunar Diplomacy, String Jewellery becomes available. If you have accumulated unstrung amulets through Crafting, this is a fast AFK method that self-sustains through your own crafting production."
+        ]
+    },
+    {
+        "title": "Levels 80–99: Ancient Magicks and Late Game",
+        "content": [
+            "After completing Desert Treasure, Ancient Magicks become available. Barraging at the Abyss or Daemonheim is very fast XP and also provides useful combat drops. Blood runes must be Runecrafted (level 77) or obtained from high-level drops.",
+            "Blood Barrage and Ice Barrage are the strongest combat spells. Shadow Barrage has the same rune cost profile but slightly less damage. Use whichever you can sustain runes for.",
+            "Enchanting bolts is viable for ironmen who have trained Ranged and accumulated bolt tips through Crafting and Mining. Dragonstone bolt tips require Crafting of dragonstones, which must be cut from gems obtained in-game."
+        ]
+    }
+]

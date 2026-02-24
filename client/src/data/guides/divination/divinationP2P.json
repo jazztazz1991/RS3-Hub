@@ -1,62 +1,64 @@
 [
-  {
-      "levels": "1-20",
-      "method": "**Pale & Flickering Wisps:** Grind these quickly south of Draynor or Falador.",
-      "xp_rates": "Low",
-      "tips": "Just power through these."
-  },
-  {
-      "levels": "20-30",
-      "method": "**Bright Wisps:** Located east of the Digsite / Varrock.",
-      "xp_rates": "Low-Mid",
-      "tips": "Consider doing **Guthixian Caches** daily from here on out."
-  },
-  {
-      "levels": "30-40",
-      "method": "**Glowing Wisps:** South of Seers' Village.",
-      "xp_rates": "Mid",
-      "tips": "Unlock the **Divination Outfit** pieces if doing Caches."
-  },
-  {
-      "levels": "40-50",
-      "method": "**Sparkling Wisps:** Golden Apple tree area (Rellekka) or near Tower of Life.",
-      "xp_rates": "Mid",
-      "tips": "Make sure to bring urns if you can craft/buy them."
-  },
-  {
-      "levels": "50-60",
-      "method": "**Gleaming Wisps:** Karamja (near Tai Bwo Wannai).",
-      "xp_rates": "Mid",
-      "tips": "Prepare for higher level content."
-  },
-  {
-      "levels": "60-70",
-      "method": "**Vibrant Wisps:** Mobilising Armies area (south of Feldip Hills).",
-      "xp_rates": "Mid-High",
-      "tips": "You are approaching the Hall of Memories unlock."
-  },
-  {
-      "levels": "70-80",
-      "method": "**Hall of Memories:** Located under the Memorial to Guthix. This is usually faster than Lustrous Wisps.",
-      "xp_rates": "150k/hr",
-      "tips": "Join a 'CoreHunting' FC to make this extremely fast."
-  },
-  {
-      "levels": "80-95",
-      "method": "**Hall of Memories / Radiant Wisps:** HoM is still best XP. Radiant (85) in Dragontrap is decent AFK.",
-      "xp_rates": "200k+/hr",
-      "tips": "Use the **Divine Conversion** relic (Arch 98) if you have it for AFK."
-  },
-  {
-      "levels": "95-99",
-      "method": "**Incandescent Wisps:** South of Tyras Camp. Best energy money making.",
-      "xp_rates": "300k+/hr (with Caches)",
-      "tips": "Use the **Elder Divination Outfit** and **Divine Conversion** relic to instantly convert entire inventory."
-  },
-  {
-      "levels": "Daily",
-      "method": "**Guthixian Cache:** Enter every hour on the hour. Get 200 points daily.",
-      "xp_rates": "Massive (Daily)",
-      "tips": "Prioritize depositing Memories of Guthix or subduing automatons as Cres."
-  }
+    {
+        "title": "Levels 1–60: Wisp Progression",
+        "content": [
+            "Divination is trained by harvesting wisps and converting the memories you collect into experience. Each wisp tier is tied to a level range — move to the next tier as soon as it unlocks. Creating boons from surplus energy is strongly recommended at each tier; boons permanently increase XP and energy gain at that colony.",
+            "- Levels 1–10: Pale wisps — south-east of Draynor Village, near the Lumbridge Crater (~4,000–5,000 XP/hr)",
+            "- Levels 10–20: Flickering wisps — east of the Falador lodestone (~8,000–10,000 XP/hr)",
+            "- Levels 20–30: Bright wisps — east of Varrock, near the Archaeology Guild (~12,000–14,000 XP/hr)",
+            "- Levels 30–40: Glowing wisps — south of Seers' Village, east of the Sorcerer's Tower (~17,500–19,000 XP/hr)",
+            "- Levels 40–50: Sparkling wisps — south-west of the Fremennik Slayer Dungeon (fairy ring AJR) (~23,000–28,000 XP/hr)",
+            "- Levels 50–60: Gleaming wisps — centre of Karamja jungle, north-east of Shilo Village (~27,000–33,000 XP/hr)",
+            "Buying additional energy from other players increases XP rates at every location. Enriched wisps spawn periodically and give a short burst of bonus experience — always harvest them when available. Hand in Chronicle fragments to May Stormbrewer for bonus XP at early levels."
+        ]
+    },
+    {
+        "title": "Levels 60–75: Vibrant Wisps and Empty Throne Room",
+        "content": [
+            "At level 60, move to the vibrant wisp colony, located north-west of South Feldip Hills (spirit tree right next to the colony, ring of duelling to the Warforge Dig Site, or run west from Oo'glog lodestone). Vibrant wisps give around 35,000 XP/hr without buying extra energy.",
+            "From level 65, the Empty Throne Room is significantly faster. Located south-east of the Varrock Dig Site, players transmute empowered Senntisten crystals for around 65,000 XP/hr — nearly double the rate of vibrant wisps. This activity is strongly recommended from 65 to 75."
+        ]
+    },
+    {
+        "title": "Levels 70–80: Lustrous and Elder Wisps",
+        "content": [
+            "At level 70 you can move to lustrous wisps, located east of the Slayer Tower. Training worlds with many other players allow consistent enriched wisp spawns, giving around 43,000 XP/hr without buying extra energy.",
+            "From level 75, players who have completed Fate of the Gods can access elder wisps in the Elder Halls. Elder wisps give slightly better rates (up to 66,000 XP/hr with bought energy) but require the quest. Players without quest access should remain on lustrous wisps until 80."
+        ]
+    },
+    {
+        "title": "Levels 70–99+: Hall of Memories (Best AFK/Mid-Level Method)",
+        "content": [
+            "Starting at level 70, the Hall of Memories beneath the Memorial to Guthix is the best sustained training method outside of buying energy in bulk. Collect empty jars from the east chamber, fill them by harvesting memories from the best type you can access, then deposit filled jars into the unstable rift to the north for bonus XP.",
+            "Base experience rates range from 110,000 to 225,000 XP/hr depending on the memory tier. Advanced players using 2-tick divination (re-clicking after every collection at roughly 50bpm) can push this to 400,000+ XP/hr at level 99 with the elite skilling outfit and energy-gathering scrimshaw.",
+            "Knowledge fragment events occur periodically inside the hall — clicking fragments gives additional XP with no extra effort. The Hall of Memories is particularly good if you want to avoid buying energy from the Grand Exchange."
+        ]
+    },
+    {
+        "title": "Levels 80–95: Brilliant, Radiant, and Luminous Wisps",
+        "content": [
+            "For players who prefer standard wisp training over the Hall of Memories:",
+            "- Levels 80–85: Brilliant wisps — east of the Mage Training Arena (60,000–73,000 XP/hr). Fairy ring BIP teleports just north of the colony. Max Guild portal available with 99 in any skill.",
+            "- Levels 85–90: Radiant wisps — Dragontooth Island (65,000–79,000 XP/hr). Special agent penguins spawn here regularly for Penguin Hide and Seek points. Max Guild portal available.",
+            "- Levels 90–95: Luminous wisps — south of Sophanem, requires partial completion of Icthlarin's Little Helper (60,000–83,000 XP/hr). Max Guild portal available.",
+            "At level 81, players with 89 Herblore can use extreme divination potions to boost to 95 and train at incandescent wisps early, saving significant time. This is highly recommended if you have the Herblore level."
+        ]
+    },
+    {
+        "title": "Levels 90–95: Arc Alternative (Ancestral/Positive/Negative Energy)",
+        "content": [
+            "Players with access to The Arc can harvest positive energy on Cyclosis and negative energy on Goshima for around 68,000 XP/hr, earning roughly 660 chimes/hr alongside. Combining both energy types at the appropriate spring creates ancestral energy.",
+            "This method earns less XP than luminous wisps but is excellent for players who need chimes for Arc progression. Be cautious on Goshima — a Malignant entity roams the island dealing damage unless Final Destination has been completed."
+        ]
+    },
+    {
+        "title": "Levels 95–99+: Incandescent Wisps",
+        "content": [
+            "Incandescent wisps are the highest-tier colony, located west of Castle Wars and Yanille. World 79 is the community Divination training world and consistently has enriched wisps spawning, which significantly boosts rates.",
+            "- Converting without bought energy: ~290,000 XP/hr with Divine Conversion active",
+            "- Buying energy + energy-gathering scrimshaw: ~398,000 XP/hr",
+            "- Buying energy in bulk: ~500,000 XP/hr using 9,000–10,000 energy per hour",
+            "The energy-gathering scrimshaw (15–20% chance of doubling energy gathered) is a strong boost here. Superior scrimshaws are untradeable but craftable with 90 Fletching via a scroll purchased from Boni on Waiko for 5,000 chimes."
+        ]
+    }
 ]

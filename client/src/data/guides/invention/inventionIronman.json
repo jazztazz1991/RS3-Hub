@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Invention as an ironman follows the same core training loop as P2P — augment items, use them, siphon or disassemble for XP — but you must gather all materials through gameplay rather than the Grand Exchange.",
+            "The key sources of disassembly materials as an ironman: Slayer drops (armour, weapons, and noted items from monsters), Smithing (make and disassemble your own metal items), Crafting (leather items, jewelry), and Dungeoneering rewards.",
+            "Divine charges require Divine energy from Divination — build your Divination level alongside Invention to ensure a steady supply of charges."
+        ]
+    },
+    {
+        "title": "Material Gathering",
+        "content": [
+            "Slayer is the best passive source of disassembly items as an ironman. Monsters drop a huge variety of equipment that can be disassembled — do not alch everything. Prioritise saving items whose disassembly gives components you need for perks.",
+            "Smelt and smith your own metal items for Metallic and other component types. Iron and Steel items are cheap to produce in bulk and disassemble well for base components.",
+            "Dungeoneering provides Crackers and other oddments that disassemble for unique components. The Invention store in Daemonheim can sell some useful items."
+        ]
+    },
+    {
+        "title": "Training Progression",
+        "content": [
+            "Complete the full Invention tutorial after meeting the requirements (80 Attack, 80 Defence, 80 Smithing). The tutorial walks you through creating your first Divine charges and Augmentor.",
+            "Early levels: disassemble the equipment gathered from Slayer tasks for XP and materials. Supplement with any Smithed items you produce from ores mined during Mining training.",
+            "From level 27 onwards, augment your most-used weapons and tools. These level up passively during your normal combat and skilling, making Invention very manageable as a side activity."
+        ]
+    },
+    {
+        "title": "Key Priorities for Ironmen",
+        "content": [
+            "Honed perks on tools (Pickaxe, Hatchet, Fishing rod) are exceptionally valuable for ironmen — they increase resource yield and significantly reduce the grind of gathering skills. Reach level 60+ Invention to research Honed 3 as soon as possible.",
+            "Efficient perk on armour and weapons reduces Divine charge consumption, extending the time between recharges. This reduces the Divination/energy burden.",
+            "Crackling and Relentless perks on combat gear improve DPS, making boss kills faster — critical for an ironman who needs drops for other skills. Prioritise strong combat perks early."
+        ]
+    }
+]

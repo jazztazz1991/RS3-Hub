@@ -1,134 +1,92 @@
-{
-    "methods": [
-        {
-            "levels": "1-10",
-            "min_level": 1,
-            "max_level": 10,
-            "method": "Copper/Tin",
-            "xp_rate_raw": "5,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "10-20",
-            "min_level": 10,
-            "max_level": 20,
-            "method": "Iron",
-            "xp_rate_raw": "15,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "20-30",
-            "min_level": 20,
-            "max_level": 30,
-            "method": "Coal",
-            "xp_rate_raw": "25,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "30-40",
-            "min_level": 30,
-            "max_level": 40,
-            "method": "Mithril",
-            "xp_rate_raw": "40,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "40-50",
-            "min_level": 40,
-            "max_level": 50,
-            "method": "Adamantite/Luminite",
-            "xp_rate_raw": "45,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "50-60",
-            "min_level": 50,
-            "max_level": 60,
-            "method": "Runite",
-            "xp_rate_raw": "60,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "60-70",
-            "min_level": 60,
-            "max_level": 70,
-            "method": "Orichalcite/Drakolith",
-            "xp_rate_raw": "70,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "70-80",
-            "min_level": 70,
-            "max_level": 80,
-            "method": "Phasmatite/Necrite",
-            "xp_rate_raw": "90,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "80-90",
-            "min_level": 80,
-            "max_level": 90,
-            "method": "Banite",
-            "xp_rate_raw": "105,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "89-97+",
-            "min_level": 89,
-            "max_level": 97,
-            "method": "Corrupted ore",
-            "xp_rate_raw": "180,000AFK",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "90-97",
-            "min_level": 90,
-            "max_level": 97,
-            "method": "Light animica/Dark animica",
-            "xp_rate_raw": "100,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "97-99+",
-            "min_level": 97,
-            "max_level": 99,
-            "method": "Alaea crablet",
-            "xp_rate_raw": "190,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "100+",
-            "min_level": 100,
-            "max_level": 99,
-            "method": "Primal ores",
-            "xp_rate_raw": "250,000+",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        }
-    ]
-}
+[
+    {
+        "title": "Levels 1-10: Copper/Tin",
+        "content": [
+            "Players should begin by mining copper rocks and tin rocks . Mines containing these rocks include the Lumbridge south-east mine , Burthorpe mine , and the Varrock south-east mine . With level 1-10 Mining, players should gain an experience rate equivalent to around 5,000 experience an hour, and should achieve level 10 Mining after around 10 minutes.",
+            "Players can choose to continually mine from the same rock, but should switch to rocks with rockertunities when these spawn for maximal experience."
+        ]
+    },
+    {
+        "title": "Levels 10-20: Iron",
+        "content": [
+            "At level 10, players can start mining from iron rocks ; these can be found in the Lumbridge south-west mine , Varrock south-west mine , and Piscatoris south mine . Players should gain around 15,000 experience an hour at these levels.",
+            "At level 15, players unlock the \"energetic mining\" mechanic which slows down mining while not actively paying attention. Players deal 100% damage at full stamina, 90% damage at 1 or higher stamina, and 20% damage at 0 stamina. This means that fully AFK players will mine ores and gain experience approximately 5 times more slowly. This guide assumes that from level 15 onwards the player is maintaining a moderate level of activity (between 1-99 stamina, and clicking rockertunities as they arise); players who maintain 100 stamina by clicking after every swing may be able to gain approximately 10% higher experience rates."
+        ]
+    },
+    {
+        "title": "Levels 20-30: Coal",
+        "content": [
+            "From level 20-30 Mining, players should mine coal rocks . The Lumbridge south-west mine , Falador west mine , and Gunnarsgrunn mine contain coal rocks. At these levels players should be able to gain around 25,000 experience an hour."
+        ]
+    },
+    {
+        "title": "Levels 30-40: Mithril",
+        "content": [
+            "With level 30 Mining, players can begin mining mithril rocks for around 40,000 experience an hour. Mithril rocks can be found at the Varrock south-east mine , Varrock south-west mine , and Karamja Volcano mine ."
+        ]
+    },
+    {
+        "title": "Levels 40-50: Adamantite/Luminite",
+        "content": [
+            "At level 40, players may choose to mine adamantite rocks or luminite rocks . Both ores give around 45,000 experience an hour. Luminite rocks are located at the Ourania Battlefield mine , Dwarven luminite mine , Anachronia Western Ruins mine , and the Mining Guild resource dungeon . Adamantite rocks can be found at the Rimmington mine , Anachronia Western Ruins mine, and Varrock south-east mine ."
+        ]
+    },
+    {
+        "title": "Levels 50-60: Runite",
+        "content": [
+            "Runite rocks can be mined with at least level 50 Mining. The rocks can be mined in the Fight Arena south-east mine and south and north Crandor mining sites . It can also be mined in the Mining Guild but only with level 60 mining. This gives around 60,000 experience an hour. Fight Arena offers the better per hour rate."
+        ]
+    },
+    {
+        "title": "Levels 60-70: Orichalcite/Drakolith",
+        "content": [
+            "At level 60, players may mine either orichalcite rocks or drakolith rocks . Orichalcite ore rocks may only be found in the Mining Guild , Wilderness (level 9) south-west mine and Anachronia canyon mine . Drakolith rocks can be found at the Tai Bwo Wannai mine , Heroes' Guild mine , Mining Guild resource dungeon , Wilderness (level 14) volcano mine , Anachronia canyon mine and Al Kharid resource dungeon . By mining either type of rock the player will gain around 70,000 experience an hour."
+        ]
+    },
+    {
+        "title": "Levels 70-81: Phasmatite/Necrite",
+        "content": [
+            "At level 70, players can mine either phasmatite rocks or necrite rocks for around 90,000 experience an hour. Necrite rocks can be found in the Uzer mine , Wilderness (level 35) hobgoblin mine and Al Kharid resource dungeon ; phasmatite rocks are located in the Port Phasmatys south mine , Haunted Mine - Level 2 , Haunted Mine - Level 6 , and Dwarven Mine resource dungeon after completion of the hard Daemonheim achievements .",
+            "With low quest points , only the level 35 wilderness hobgoblin mine may be accessible. It can be reached using the wilderness lodestone , and has a bank nearby at the forgotten cemetery (and with higher combat, the lava maze).",
+            "Due to the mechanics behind rockertunities , mining from the southern-most rock shown (A) will only produce rockertunities in rocks 1, 2, and 3. This allows lower-level players to avoid aggression from dark beasts on the west side of the mines, abyssal creatures do not wander this far north, and overall allows a more compact and safer experience for most players.",
+            "Rockertunities on rock 1 may be difficult to see depending on graphics settings. If no opportunities are seen, a quick hit to check rock 1 is an effective reset.",
+            "Banking in this location is quite easy. Ian is directly to the west, with good protection from dark beasts. Edmond occasionally wanders from the east into the mining area, and Darren is the closest directly to the north, however there are aggressive glacors ."
+        ]
+    },
+    {
+        "title": "Levels 80-89: Banite",
+        "content": [
+            "From level 80, players can mine banite rocks for around 105,000 experience an hour. It can be mined from the Wilderness (Level 54) Pirates' Hideout mine west of the Mage Arena , from the Arctic (azure) habitat mine , from the Glacor cavern mine after Ritual of the Mahjarrat , from the Tarshak's sanctum (Abomination mine) after Hero's Welcome , or from the Jatizso dungeon elite mine after completing the elite Fremennik achievements .",
+            "The Pirates' Hideout mine is next to a forge and anvil to deposit ores into the metal bank and has no requirements to access, making it the most convenient location for training. Hallvar in the last location can note banite ore. For players with a Dungeoneering cape , the Brimhaven metal dragons teleport can be used to quickly access the Abomination mine."
+        ]
+    },
+    {
+        "title": "Levels 89-97+: Corrupted ore",
+        "content": [
+            "Starting at level 89, players who have completed Plague's End can mine corrupted ore for around 180,000 experience an hour. Corrupted ore is mined from Seren stones in the Trahaearn Clan 's district of Prifddinas . Although corrupted ore is not a core rock and thus is ineligible for rockertunities or levelling bonuses, it has a 1.2 experience multiplier. This means that it will generally grant better experience per hour than banite or animica, which have multipliers of 0.82 and 0.84, respectively. Up to 270,000 experience an hour or more can be achieved at level 110 Mining with buffs.",
+            "Corrupted ore stacks and uses no stamina, which makes it an excellent choice for AFK mining. Corrupted ore is untradeable, but can be smelted for fairly quick Smithing experience ."
+        ]
+    },
+    {
+        "title": "Levels 90-97: Light/Dark animica",
+        "content": [
+            "From level 90-97, players can mine either light or dark animica rocks for around 100,000 experience per hour. This jumps to around 160,000 experience per hour with level 99 Mining. Light animica rocks can be found in the Anachronia south-west mine , the Lletya mine , and at the entrance to the Smoke Dungeon . Dark animica rocks are found in the Anachronia Swamp mine and the Empty Throne Room mine .",
+            "During the Voice of Seren in Trahaearn district , rocks in the Trahaearn runite mine , Trahaearn adamantite mine , Trahaearn mithril mine , and Trahaearn coal mine can randomly harmonise into a mixture of light and dark animica, potentially creating better arrangements for rockertunities, and giving 20% extra ores."
+        ]
+    },
+    {
+        "title": "Levels 97-99+: Alaea crablets",
+        "content": [
+            "At level 97 Mining, players can begin mining alaea crablets. Alaea crablets are a rare Mining resource that can be found randomly on Uncharted Isles . Each day the player may mine for around 35 minutes at each colony of alaea crablets, gaining around 90,000 experience per colony before it is depleted. The daily cap resets at 00:00 UTC.",
+            "Uncharted Isles can be explored from The Arc region, which requires completion of the Impressing the Locals quest to access. Completion of the Flag Fall miniquest, which allows the player to claim an uncharted isle and return to it, is also recommended to hunt alaea crablets effectively. To find alaea crablets, the player must first gain some chimes from skilling in The Arc so that they can purchase the supplies required to voyage to Uncharted Isles. Supplies can be purchased from Rosie . When the player finds an Uncharted Isle inhabited by colonies of alaea crablets then they can claim the island using a claim island flag . Once an uncharted isle is claimed the player may return to it for the price of three supplies per voyage: five supplies per day can be claimed for free from the box next to Rosie. Up to three colonies of alaea crablets may be present on an Uncharted Isle, if the player opts to go on a long voyage.",
+            "Alaea crablets yield alaea sea salt . When selling the alaea sea salt gained from mining alaea crablets players can expect to gain enough chimes to cover the cost of purchasing supplies to go on additional long voyages to find more alaea crablets and thus mine from them indefinitely. Purchasing the supplies cost reductions and commodity sell price increases unlocks from the Waiko Reward Shop , in addition to having a claimed island with as many alaea crablet colonies as possible, will further increase the viability of searching for crablets to mine continuously. At level 99 mining alaea crablets gives an experience rate of around 190,000 Mining experience an hour.",
+            "The experience from mining alaea crablets can further be bolstered by completing contracts given by Sojobo on Waiko or via a contract contact on an uncharted isle. Players may complete up to three contracts daily and may purchase upgrades from Boni for a maximum of seven daily contracts. Doing contracts, however, requires chimes to be able to re-roll contracts until satisfactory alaea crablet ones are assigned."
+        ]
+    },
+    {
+        "title": "Level 100+: Primal rocks",
+        "content": [
+            "At level 100, players can begin mining for primal ores found all around Daemonheim . If not using a primal ore box , a useful spot for training is at the promethium rocks on Daemonheim Peninsula Island due to the bank deposit box located on the island (the deposit box requires completion of the medium Daemonheim achievements to access). From level 105 mining onwards, experience rates here are at least 250,000 XP per hour using the aforementioned items and boosts. It is recommended to start mining these ores at level 103 Mining for the double ore chance."
+        ]
+    }
+]

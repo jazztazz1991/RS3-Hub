@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Dungeoneering is trained by completing floors of the Daemonheim dungeon, located on the peninsula north-east of Al Kharid. The skill cap is 120. Each floor has a variety of monsters, puzzles, and a boss to defeat.",
+            "Dungeoneering is unique in that it uses a Prestige system: completing all available floors then resetting (Prestiging) is the key to maximising XP per floor. Always Prestige after completing every floor available to you.",
+            "The core advice: always run floors on Complexity 6 (the highest complexity), clear the entire floor including all rooms and puzzles before killing the boss, and use the largest floor size (Large) whenever available."
+        ]
+    },
+    {
+        "title": "The Prestige Mechanic",
+        "content": [
+            "Your Dungeoneering XP per floor is multiplied by (Prestige + Floor) / 2. Prestige resets to 0 when you reset your progress. This means the first floor after a reset is worth very little, but later floors in a cycle are worth progressively more.",
+            "To maximise XP: complete every available floor (1 through your max) each Prestige cycle. Never skip floors. Reset Prestige by speaking to the Dungeoneering tutor and selecting 'reset' after all floors have a tick.",
+            "Solo rushing vs group completion: solo rushing (rushing to the boss as fast as possible) gives less XP per floor than full clears, but lets you complete more floors per hour. Group play with 5 players gives a team bonus and significantly higher XP per floor. The optimal approach is group large floors."
+        ]
+    },
+    {
+        "title": "Levels 1–60: Early Floors and Floor Types",
+        "content": [
+            "Floors 1-11 are the Frozen floors (white theme). Floors 12-30 are Abandoned (grey). Floors 31-35 are Furnished (brown). Floors 36-47 are Occult (purple). Floors 48-60 are Warped (red). Each theme introduces new monsters, puzzles, and mechanics.",
+            "From level 1, focus on completing every floor at Complexity 6 and resetting after each full cycle. Even solo, completing all floors before resetting is more XP-efficient than rushing one floor repeatedly.",
+            "Sinkholes is a daily Dungeoneering activity (3 rounds, around 15 minutes) that gives significant bonus XP via Dungeoneering tokens. Access it via the portal at Daemonheim. Always complete your daily Sinkholes."
+        ]
+    },
+    {
+        "title": "Levels 60–99: Large Floors and Group Play",
+        "content": [
+            "From the mid-levels, prioritise large floors with a full group of 5 for maximum XP. Groups receive a multiplier on XP rewards based on team size.",
+            "Use a Dungeoneering Friends Chat or the RS3 Discord to find group floor partners. 5-man groups on large Warped floors (highest available) can give 500,000+ XP per hour at high levels.",
+            "Resource dungeons scattered around Gielinor (Edgeville dungeon, Brimhaven Dungeon, etc.) award a one-time Dungeoneering XP bonus on first entry. Visit all of them for free XP as you encounter them.",
+            "Daily Challenges for Dungeoneering give substantial XP rewards. Complete these whenever they appear."
+        ]
+    },
+    {
+        "title": "Dungeoneering Rewards",
+        "content": [
+            "Dungeoneering tokens (the currency) are earned from floor completions and can be spent at the Rewards Trader in Daemonheim. Key purchases: Chaotic weapons and armour (powerful gear unlocked at level 80-99), Scroll of Life (Farming), Scroll of Efficiency (Smithing), and Ring of Kinship upgrades.",
+            "The Bonecrusher (level 21) automatically buries bones during combat, granting Prayer XP passively. The Herbicide (level 21) automatically destroys grimy herbs for Herblore XP. The Charming Imp (level 21) automatically picks up charms for Summoning.",
+            "Chaotic weapons at level 80 (Chaotic rapier, Longsword, Maul, Crossbow, Staff) are among the best in-game weapons accessible without Slayer drops, making high Dungeoneering a major combat power spike."
+        ]
+    }
+]

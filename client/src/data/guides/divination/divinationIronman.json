@@ -1,32 +1,43 @@
 [
-  {
-      "levels": "1-20",
-      "method": "**Pale & Flickering Wisps:** Same as P2P. Grind these quickly south of Draynor or Falador.",
-      "xp_rates": "Low",
-      "tips": "Start crafting basic urns if you have the Crafting level."
-  },
-  {
-      "levels": "Daily",
-      "method": "**Guthixian Cache:** MANDATORY for efficient Ironman training. Do not skip.",
-      "xp_rates": "Massive (Daily)",
-      "tips": "Provides the outfit without BXP."
-  },
-  {
-      "levels": "20-99",
-      "method": "**Highest Wisp Available:** Always move to the next tier immediately.",
-      "xp_rates": "Standard",
-      "tips": "Ironmen should prioritize unlocking the **Memorial to Guthix** perks early for free XP."
-  },
-  {
-      "levels": "70+",
-      "method": "**Hall of Memories:** Still viable for Ironmen, especially if you catch core parties.",
-      "xp_rates": "Good",
-      "tips": "Great for AFK if you can't be active for Caches."
-  },
-  {
-      "levels": "95-99",
-      "method": "**Incandescent Energy:** You will need tons of this for charges. Do not convert to XP unless 99 is the only goal.",
-      "xp_rates": "Standard",
-      "tips": "Prioritize Energy gathering for your Charge Pack."
-  }
+    {
+        "title": "Overview: Boons and the Memorial to Guthix",
+        "content": [
+            "Two mechanics make a huge difference for ironman Divination: boons and the Memorial to Guthix. Boons are created from surplus energy of the previous wisp tier and permanently increase both XP and energy gain at that colony. Whenever you move to a new wisp tier, gather enough energy to create the boon for it before progressing further.",
+            "The Memorial to Guthix is a D&D activity located beneath the Guthix Memorial in the Wilderness. Each month you can donate memories to unlock permanent passive bonuses including a 5–20% XP boost to Divination. Prioritise completing the first few memories as early as possible.",
+            "Guthixian Cache is also available daily and rewards large amounts of XP for minimal time. Participating once per day provides a consistent free XP boost throughout all levels."
+        ]
+    },
+    {
+        "title": "Levels 1–10: Getting Started",
+        "content": [
+            "Begin at pale wisps south-east of Draynor Village, near the Lumbridge Crater. These take only around 20 minutes to pass at level 1 Divination. As an ironman, do not worry about buying energy at this stage — harvest and convert normally.",
+            "Participate in the Guthixian Cache D&D if it is available; the XP reward at low levels can speed through these first tiers quickly. Hand in Chronicle fragments to May Stormbrewer nearby for bonus XP when they appear."
+        ]
+    },
+    {
+        "title": "Levels 10–70: Wisp Progression and Daemonheim Divination",
+        "content": [
+            "Progress through each wisp tier in order, creating a boon at each new tier before moving on. The boon for a tier is created from the energy of the previous tier — for example, the Flickering boon requires Pale energy. This single habit significantly increases both XP and energy gain throughout all levels.",
+            "From level 10, Daemonheim Divination is one of the strongest ironman methods and remains relevant all the way to level 85. Divination springs inside Daemonheim dungeons stack memories in your inventory rather than converting immediately, and at level 10 you can unlock the Time-Worn Memories boon by turning in the Elder Sword Engram — this quadruples all Divination XP from converting in Daemonheim. With the Gatherer Ring of Kinship improvement and 2-tick spring clicking, Daemonheim Divination is consistently faster than regular wisp training.",
+            "Outside of Daemonheim, follow the standard wisp progression: Flickering (10), Bright (20), Glowing (30), Sparkling (40), Gleaming (50), Vibrant (60), Lustrous (70). Create the boon at each tier. Save surplus energy — it's used for boons and Memorial to Guthix donations."
+        ]
+    },
+    {
+        "title": "Levels 70–99: Hall of Memories",
+        "content": [
+            "The Hall of Memories, accessed beneath the Memorial to Guthix, is the primary training method for ironmen from level 70 to 99. It requires no energy purchases and rewards strong XP rates through gameplay rather than GP.",
+            "Collect empty jars from the east chamber, fill them by harvesting from the best available memory springs in the main hall, then deposit full jars into the unstable rift to the north for bonus XP. Knowledge fragment events periodically spawn — click them for free additional XP.",
+            "Base XP rates range from 110,000 to 225,000 XP/hr depending on memory tier. Advanced players re-clicking after every harvest (2-tick divination) can push rates significantly higher. Combine the elite Divination outfit and an energy-gathering scrimshaw for maximum efficiency at high levels.",
+            "Continue filling Memorial to Guthix memories as you train here — donating memories of each tier unlocks passive bonuses that stack. Complete the full Memorial to Guthix activity when possible for a permanent 20% Divination XP boost."
+        ]
+    },
+    {
+        "title": "Levels 95+: Incandescent Wisps",
+        "content": [
+            "At level 95, incandescent wisps west of Castle Wars become available. As an ironman you cannot bulk-buy energy, but you can still achieve very solid rates by harvesting and converting with the Divine Conversion power — around 290,000 XP/hr.",
+            "World 79 is the community Divination training world and reliably has near-constant enriched wisp spawns, which meaningfully boost your energy and XP rates. Train here over a dead world whenever possible.",
+            "The energy-gathering scrimshaw gives a 15–20% chance of doubling harvested energy and is useful here. Ironmen can craft a superior scrimshaw with 90 Fletching using 2 ancient bones and a scroll purchased from Boni on Waiko for 5,000 chimes and 5 taijitu.",
+            "Players with access to Uncharted Isles in The Arc can supplement training by harvesting ancestral energy from dead moai (~107,000 XP/hr). Up to 7 daily Divination contracts from Sojobo can add roughly 168,000 bonus XP per day on top of training, making The Arc a strong supplement at 95+ if you are also working on Arc content."
+        ]
+    }
 ]

@@ -71,7 +71,6 @@ export const COOKING_ITEMS = [
     {"id": "garden_pie", "name": "Garden pie", "level": 34, "xp": 138.0, "category": "Bakery"},
     {"id": "rainbow_fish", "name": "Rainbow fish", "level": 35, "xp": 110.0, "category": "Fish"},
     {"id": "jug_of_wine", "name": "Jug of wine", "level": 35, "xp": 200.0, "category": "Drink"},
-    {"id": "jug_of_bad_wine", "name": "Jug of bad wine", "level": 35, "xp": 0.0, "category": "Drink"},
     {"id": "veg_ball", "name": "Veg ball", "level": 35, "xp": 175.0, "category": "Fish"},
     {"id": "vanilla_cheesecake", "name": "Vanilla cheesecake", "level": 37, "xp": 180.0, "category": "Bakery"},
     {"id": "blurberry_special", "name": "Blurberry Special", "level": 37, "xp": 180.0, "category": "Fish"},

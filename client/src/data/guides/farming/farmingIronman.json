@@ -1,68 +1,63 @@
 [
-  {
-      "levels": "15-17",
-      "method": "**Unlock POF:** Tutorial. Buy Woad Leaves from Wyson (25gp).",
-      "xp_rates": "Start",
-      "tips": "Woad Leaves are the MVP food for Ironmen (Rabbits, Sheep, Cows, Yaks)."
-  },
-  {
-      "levels": "17-28",
-      "method": "**Small Pen:** Rabbits (17).",
-      "xp_rates": "Low",
-      "tips": "Breed them for the totem perk. Easy to feed."
-  },
-  {
-      "levels": "28-35",
-      "method": "**Chickens (28):** Replaces Rabbits for XP.",
-      "xp_rates": "Okay",
-      "tips": "Get seeds from Master Farmers to feed them. Can be tedious to gather seeds."
-  },
-  {
-      "levels": "35-49",
-      "method": "**Medium Pen:** Sheep (35).",
-      "xp_rates": "Solid",
-      "tips": "Feed Woad Leaves. Very sustainable for Ironmen."
-  },
-  {
-      "levels": "49-54",
-      "method": "**Large Pen:** Cows (49).",
-      "xp_rates": "Good",
-      "tips": "Feed Woad Leaves. Excellent mid-level XP source."
-  },
-  {
-      "levels": "54-64",
-      "method": "**Chinchompas (54):** Replaces Chickens.",
-      "xp_rates": "Great",
-      "tips": "Hunt them at 53 Hunter. Feed them Woad Leaves (easiest food)."
-  },
-  {
-      "levels": "64-81",
-      "method": "**Spiders (64):** Replaces Sheep.",
-      "xp_rates": "High",
-      "tips": "Get eggs from killing Spiders. Feed them Meat (Ooglog meat packs) or Seeds."
-  },
-  {
-      "levels": "71-92",
-      "method": "**Yaks (71):** Replaces Cows.",
-      "xp_rates": "Great",
-      "tips": "Kill Yaks for eggs. Feed Woad Leaves (very cheap)."
-  },
-  {
-      "levels": "81-92",
-      "method": "**Zygomites (81):** Replaces Spiders.",
-      "xp_rates": "Very High",
-      "tips": "Feed Mushrooms. Arc Mushrooms or Mort Myre Fungi (use Bloom)."
-  },
-  {
-      "levels": "92-99",
-      "method": "**Dragons (92):** Replaces Yaks.",
-      "xp_rates": "Meta",
-      "tips": "Kill Green/Blue/Red/Black dragons for eggs. Feed Meat (Ooglog bird meat packs)."
-  },
-  {
-      "levels": "Daily",
-      "method": "**Nemi Forest & Beehives:** Daily Nemi Forest.",
-      "xp_rates": "Daily",
-      "tips": "Beehives can be filled with Woad Leaves for passive XP."
-  }
+    {
+        "title": "Overview",
+        "content": [
+            "Farming is one of the most ironman-friendly skills in RS3 — almost everything is self-sufficient once seeds are flowing. The skill combines herb patches (which feed Herblore), tree runs (passive high XP), and the Player-Owned Farm (POF) for consistent daily XP.",
+            "The biggest early challenge is seed acquisition. Focus on unlocking multiple seed sources and establishing a daily farm run habit. Once herb patches and POF are both running, Farming levels come naturally alongside your other skills."
+        ]
+    },
+    {
+        "title": "Seed Sources",
+        "content": [
+            "Seeds cannot be bought from the Grand Exchange as an ironman. Key sources:",
+            "- Master Farmers (level 38 Thieving): best early seed source, yields herb seeds, allotment seeds, and tree seeds per pickpocket.",
+            "- Slayer: Aberrant Spectres, Turoth, and Aquanites are top herb seed droppers. Many other monsters drop allotment and flower seeds.",
+            "- Managing Miscellania: set workers to Farming for a passive daily supply of seeds.",
+            "- Wilderness Flash Events (Surprising Seedlings, Evil Bloodwood Tree): free early Farming XP at levels 1–30.",
+            "- Quests: My Arm's Big Adventure (+5,000 XP), Fairytale I (+3,500 XP), Grim Tales (+6,000 XP at level 45)."
+        ]
+    },
+    {
+        "title": "Levels 1–30: Events and Early Patches",
+        "content": [
+            "Seeds are scarce early on. Use free XP sources while establishing your supply.",
+            "- Nemi Forest: gathering activities give passive Farming XP.",
+            "- Wilderness Flash Events: available from level 1, completely free XP.",
+            "- Plant whatever allotment and flower seeds you receive from early Slayer tasks.",
+            "Unlock all available herb patches as soon as possible: Falador, Catherby, Ardougne, Canifis, Trollheim (level 29), Morytania, Harmony Island, and the Farming Guild (level 45)."
+        ]
+    },
+    {
+        "title": "Levels 17+: Player-Owned Farm",
+        "content": [
+            "The Player-Owned Farm unlocks at level 17 and is the cornerstone of ironman Farming XP — free daily XP from raising and selling animals.",
+            "- Start with the tutorial rabbits. Age them to elder stage (250 XP each) and sell to Myfi.",
+            "- Level 28: buy 12 chicken eggs daily from the Farmers' Market, grow to elder, sell to Henrietta (~15,000 XP/day).",
+            "- Levels 28, 35, 49: unlock chickens, sheep, and cows. Each pen adds to your daily XP total.",
+            "- Level 54+: unlock breeding for all pens. Breed, age to elder, and sell the best animals each day.",
+            "- Add woad leaves to all 7 beehives (behind the large pen) for ~14,000 passive XP/day with zero effort.",
+            "- Hire farmhand Adam Antite (5,000 beans) as soon as possible to automate animal collection."
+        ]
+    },
+    {
+        "title": "Mid Levels (30–75): Tree Runs",
+        "content": [
+            "Tree runs are the main source of large Farming XP per day alongside POF. Check-health XP is awarded when a fully grown tree is inspected.",
+            "- Regular trees: Oak (15), Willow (25), Maple (45), Yew (60), Magic (75). Plant saplings at tree patches across the game world.",
+            "- Fruit trees: Apple (27) through Dragonfruit (81). Each mature fruit tree gives very high check-health XP.",
+            "- Het's Oasis bushes: available at levels 30, 50, 70, and 90. Passive XP every few days.",
+            "- Farming Guild (level 45): herb, bush, tree, flower, allotment, and cactus patches all in one location — essential for fast farm runs.",
+            "Tip: Teleport tablets and the Farm Teleport from the Farming Guild significantly reduce farm run time."
+        ]
+    },
+    {
+        "title": "High Levels (75–120): Seedicide and Endgame",
+        "content": [
+            "At high levels, Slayer seed income becomes large enough to plant all patches consistently.",
+            "- Seedicide (from Cabbage Facepunch Bonanza): destroys seed drops from monsters for double their planted XP. Best used with Morchella mushroom spores and Snape Grass seeds from Turoth, Aquanites, and Vyrewatch.",
+            "- Maple seeds: obtainable from Mutated Bloodvelds (level 91). Requires partial completion of Legacy of Seergaze to access.",
+            "- Dragonfruit trees (level 81): very high check-health XP. Seeds from Zygomites or Slayer.",
+            "- Farming Guild contracts: daily contracts reward bonus XP, herbs, and other farming rewards — always complete these."
+        ]
+    }
 ]

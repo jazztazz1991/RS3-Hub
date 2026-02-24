@@ -3,11 +3,34 @@ import { useAuth } from '../../context/AuthContext';
 import { useCharacter } from '../../context/CharacterContext';
 import { useReportCalls } from '../../context/ReportContext';
 import { getTargetXp, XP_TABLE } from '../../utils/rs3';
+import { useNavigate } from 'react-router-dom';
 import TaskTracker from './TaskTracker';
 import WildyTracker from '../WildyEvents/WildyTracker';
 import './Dashboard.css';
 
-const SkillCard = ({ skill }) => {
+const GUIDE_SLUGS = {
+    Agility: 'agility', Archaeology: 'archaeology', Construction: 'construction',
+    Cooking: 'cooking', Crafting: 'crafting', Divination: 'divination',
+    Dungeoneering: 'dungeoneering', Farming: 'farming', Firemaking: 'firemaking',
+    Fishing: 'fishing', Fletching: 'fletching', Herblore: 'herblore',
+    Hunter: 'hunter', Invention: 'invention', Magic: 'magic', Mining: 'mining',
+    Necromancy: 'necromancy', Prayer: 'prayer', Runecrafting: 'runecrafting',
+    Slayer: 'slayer', Smithing: 'smithing', Summoning: 'summoning',
+    Thieving: 'thieving', Woodcutting: 'woodcutting'
+};
+
+const CALC_SLUGS = {
+    Agility: 'agility', Archaeology: 'archaeology', Construction: 'construction',
+    Cooking: 'cooking', Crafting: 'crafting', Divination: 'divination',
+    Dungeoneering: 'dungeoneering', Farming: 'farming', Firemaking: 'firemaking',
+    Fishing: 'fishing', Fletching: 'fletching', Herblore: 'herblore',
+    Hunter: 'hunter', Invention: 'invention', Magic: 'magic', Mining: 'mining',
+    Necromancy: 'necromancy', Prayer: 'prayer', Runecrafting: 'runecrafting',
+    Slayer: 'slayer', Smithing: 'smithing', Summoning: 'summoning',
+    Thieving: 'thieving', Woodcutting: 'woodcutting'
+};
+
+const SkillCard = ({ skill, isExpanded, onToggle }) => {
   if (!skill) return null;
   
   // Calculate Targets
@@ -46,20 +69,18 @@ const SkillCard = ({ skill }) => {
   if (currentTargetXp === XP_TABLE[110]) headerTarget = 110;
   if (currentTargetXp === XP_TABLE[120]) headerTarget = 120;
 
-  const handleWikiClick = () => {
-    window.open(`https://runescape.wiki/w/${skill.name.replace(/\s+/g, '_')}`, '_blank');
-  };
+  const navigate = useNavigate();
+  const guideSlug = GUIDE_SLUGS[skill.name];
+  const calcSlug = CALC_SLUGS[skill.name];
 
   return (
-    <div className={`skill-card ${isAtLeast99 ? 'maxed' : ''}`}>
+    <div
+      className={`skill-card ${isAtLeast99 ? 'maxed' : ''} ${isExpanded ? 'expanded' : ''}`}
+      onClick={onToggle}
+      style={{ cursor: 'pointer' }}
+    >
       <div className="skill-header">
-        <span 
-          className="skill-name clickable-skill" 
-          onClick={handleWikiClick}
-          title={`Open ${skill.name} on RS Wiki`}
-        >
-          {skill.name} 🔗
-        </span>
+        <span className="skill-name">{skill.name}</span>
         <span className="skill-level">{skill.level} / {skill.name === 'Overall' ? '???' : headerTarget}</span>
       </div>
       <div className="progress-bar-container">
@@ -85,7 +106,7 @@ const SkillCard = ({ skill }) => {
           <>
             {/* If Maxed (99) but chasing Comp (110/120), show mini badge or indicator? */}
             {isAtLeast99 && <div className="completed-badge" style={{padding: '0.2rem', marginBottom: '0.3rem', fontSize: '0.8rem'}}>MAXED</div>}
-            
+
             <div className="detail-item">
                 <span className="label">{isAtLeast99 ? 'To Comp:' : 'To Go:'}</span>
                 <span className="value">{xpRemaining.toLocaleString()}</span>
@@ -93,6 +114,36 @@ const SkillCard = ({ skill }) => {
           </>
         )}
       </div>
+
+      {isExpanded && (
+        <div className="skill-card-actions" onClick={e => e.stopPropagation()}>
+          {guideSlug && (
+            <button
+              className="skill-action-btn guide"
+              onClick={() => navigate(`/guides/${guideSlug}`)}
+              title={`${skill.name} Training Guide`}
+            >
+              Guide
+            </button>
+          )}
+          {calcSlug && (
+            <button
+              className="skill-action-btn calc"
+              onClick={() => navigate(`/calculators/${calcSlug}`)}
+              title={`${skill.name} XP Calculator`}
+            >
+              Calculator
+            </button>
+          )}
+          <button
+            className="skill-action-btn wiki"
+            onClick={() => window.open(`https://runescape.wiki/w/${skill.name.replace(/\s+/g, '_')}`, '_blank')}
+            title={`${skill.name} on RS Wiki`}
+          >
+            Wiki ↗
+          </button>
+        </div>
+      )}
     </div>
   );
 };
@@ -130,6 +181,9 @@ const Dashboard = () => {
   
   // Toggle for Maxed vs Comped stats
   const [showCompStats, setShowCompStats] = useState(false);
+
+  // Expanded skill card (only one open at a time)
+  const [expandedSkill, setExpandedSkill] = useState(null);
 
   // Sorting State
   const [sortMethod, setSortMethod] = useState('default'); // default, level_desc, level_asc, percent_desc
@@ -307,7 +361,12 @@ const Dashboard = () => {
                                     }
 
                                     return displayData.map(skill => (
-                                        <SkillCard key={skill.id} skill={skill} />
+                                        <SkillCard
+                                            key={skill.id}
+                                            skill={skill}
+                                            isExpanded={expandedSkill === skill.name}
+                                            onToggle={() => setExpandedSkill(prev => prev === skill.name ? null : skill.name)}
+                                        />
                                     ));
                                 })()
                             ) : (

@@ -1,32 +1,56 @@
 [
     {
-        "title": "Recommended method (1-99+)",
+        "title": "Overview",
         "content": [
-            "This is a fast but more expensive way to advance the Cooking skill level. Note that the money needed until next step column accounts for the money that will be earned back from selling the cooked fish. Fishing them yourself will give a sizeable amount of fishing experience along with a greater profit because it reduces the cost of ingredients to 0 (minus any cost for lures, e.g. feathers).",
-            "Remember that burning a piece of food does not yield experience, so it is always better to plan on having extra money.",
-            "A slower, but more reliable way to train cooking is to check out the food chart under the cooking skill page to see what the best food you can cook without burning is, then cook that food. That means there's a certain number of items you must cook, without leaving things to chance or burning. The XP/hour below assumes around 1400 cooks per hour with no bonuses.",
-            "At level 85, some players switch to cooking pies with the lunar spell so that they gain experience comparable to shark or better, but also gain Magic experience (at the expense of runes). This requires 65 Magic. As the quest Lunar Diplomacy requires 65 Magic to complete, temporary skill boosts will not work. Lunar spell-cooked pies will never burn.",
-            "Training with meat may be done by going to Neitiznot 's yak pen where people leave the meat on the ground. There is a range and bank near to make easily cooking banking and collecting."
+            "Cooking is one of the fastest skills to train in RuneScape 3. P2P players have access to Portable ranges, which give a 5% XP bonus and reduce burn chance significantly. The Cooking cape eliminates burn chance entirely for most fish once equipped.",
+            "The most efficient setup is using a Portable range placed next to a bank or bank chest, buying raw fish from the Grand Exchange, cooking in bulk, and dropping or banking the cooked product."
         ]
     },
     {
-        "title": "Alternative method (cooking gauntlets)",
+        "title": "Levels 1-30: Basic Meats and Trout",
         "content": [
-            "Sharks can be cooked as an alternative to rocktails and monkfish . At 90 Cooking, you will burn roughly 7% of your sharks  , which still works out at a higher xp/h rate than monkfish and will probably be more profitable. If you're using a Master flameproof aura and cooking gauntlets , you no longer burn sharks at level 90 Cooking. The table above does not account for burning either type of fish."
+            "At very low levels, cook basic meats to build up XP quickly. These are cheap and widely available.",
+            "- Levels 1-10: Raw beef or raw chicken (30 XP each) — kill cows or chickens nearby or buy from GE",
+            "- Levels 10-20: Trout (70 XP each) — buyable from the Grand Exchange cheaply",
+            "- Levels 20-30: Salmon (90 XP each) — a slight upgrade over trout"
         ]
     },
     {
-        "title": "Alternative methods",
+        "title": "Levels 30-68: Salmon and Lobsters",
         "content": [
-            "Below are some alternate methods to level Cooking without burning fish; however, it will most likely be slower than the method above. It is recommended to use the above method to attain level 50 Cooking before beginning. It is possible to get 1,960 Cooking xp with 1 inventory of trout."
+            "Salmon and lobsters are the standard mid-level Cooking training fish. Both are cheap and widely available on the Grand Exchange.",
+            "- Levels 30-50: Salmon (90 XP each)",
+            "- Levels 50-68: Lobsters (120 XP each) — very common, low cost",
+            "Use a Portable range for a 5% XP bonus. A bank chest nearby (e.g., at the Cooking Guild) makes this highly efficient."
         ]
     },
     {
-        "title": "Quests for Cooking experience",
+        "title": "Levels 68-90: Monkfish and Sharks",
         "content": [
-            "NewPP limit report\nParsed by mediawiki\u2010jobrunner\u201059bd97bc77\u2010zz5ds\nCached time: 20260221110103\nCache expiry: 172800\nReduced expiry: false\nComplications: \nCPU time usage: 1.164 seconds\nReal time usage: 2.350 seconds\nPreprocessor visited node count: 9022/1000000\nRevision size: 34971/8388608 bytes\nPost\u2010expand include size: 130106/8388608 bytes\nTemplate argument size: 16617/8388608 bytes\nHighest expansion depth: 14/100\nExpensive parser function count: 20/500\nUnstrip recursion depth: 0/20\nUnstrip post\u2010expand size: 114732/5000000 bytes\nBucket time usage: 0.000/10 seconds\nLua time usage: 0.328/10.000 seconds\nLua memory usage: 4162393/367001600 bytes",
-            "Transclusion expansion time report (%,ms,calls,template)\n100.00% 1252.652      1 -total\n 21.45%  268.672     79 Template:Coins\n 16.88%  211.400      1 Template:Cooking_Experience_Rewards_table\n 14.57%  182.494     24 Template:Map\n 10.13%  126.832      1 Template:Generic_experience_boosts\n  9.12%  114.298     73 Template:GEP\n  7.85%   98.291      1 Template:Training_guides\n  5.37%   67.287      1 Template:Navbox\n  5.11%   64.054     13 Template:Plinkt\n  4.90%   61.318      9 Template:Sc",
-            "Saved in parser cache with key en_rswiki:pcache:92275:|#|:idhash:canonical and timestamp 20260221110101 and revision id 36918921. Rendering was triggered because: edit-page"
+            "From level 68 onwards, higher-tier fish provide better XP rates.",
+            "- Levels 68-80: Monkfish (150 XP each) — accessible P2P fish, moderate cost",
+            "- Levels 80-90: Sharks (210 XP each) — high XP per fish, widely available",
+            "With a Portable range and fast banking, expect 300,000–400,000 XP/hour at this stage."
+        ]
+    },
+    {
+        "title": "Levels 90-99/120: Rocktails and Sailfish",
+        "content": [
+            "Rocktails and Sailfish are the top-tier cooking targets. Sailfish provides the highest Cooking XP per action in the game.",
+            "- Levels 90-99: Rocktails (225 XP each) or Sailfish (270 XP each)",
+            "- Levels 99-120: Sailfish (270 XP each) — peak XP rate of 400,000–500,000 XP/hour with portables and all bonuses",
+            "The Cooking cape eliminates burn chance for all standard fish once worn, making burn-free cooking trivial."
+        ]
+    },
+    {
+        "title": "Boosts and Tips",
+        "content": [
+            "Several bonuses stack to greatly increase Cooking XP rates:",
+            "- Portable ranges: 5% XP bonus, reduced burn chance; obtain from Treasure Hunter or other players",
+            "- Cooking gauntlets: Drastically reduce burn rate for lobsters, swordfish, monkfish, sharks, rocktails, and sailfish",
+            "- Modified sous chef's outfit: Up to 6% bonus XP from the full set",
+            "- Pulse cores: 10% bonus XP for a limited time; very effective during high-rate cooking",
+            "- Double XP events: Greatly reduce the fish needed; stock up on raw fish before events"
         ]
     }
 ]

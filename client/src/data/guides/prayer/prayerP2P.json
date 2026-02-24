@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Prayer is trained by offering bones or ashes at a powered altar, or by using special methods such as the Cleansing Crystal in Prifddinas. The skill cap is level 99.",
+            "The core mechanic: every bone and ash has a base XP value that is multiplied by the method you use. A Gilded Altar in a Player-Owned House with two lit burners, the Chaos Altar in the Wilderness, and Powder of Burials all grant 3.5x (350%) base XP — the standard efficient rate.",
+            "You rarely need to grind low-quality bones. Dragon Bones (72 base XP) at a Gilded Altar give 252 XP each, letting you skip most early content if cost is not a concern."
+        ]
+    },
+    {
+        "title": "Levels 1–30: Early Options",
+        "content": [
+            "Completing The Restless Ghost quest grants 1,125 Prayer XP and skips the very early grind. Bury regular Bones (4.5 XP) or Big Bones (15 XP) until you can access better methods.",
+            "There is no minimum level to use a Gilded Altar — if one is available, start offering Dragon Bones immediately from level 1."
+        ]
+    },
+    {
+        "title": "Levels 30–70: Dragon Bones at Gilded Altar",
+        "content": [
+            "Dragon Bones (72 base XP) at a Gilded Altar with two lit burners give 252 XP each. This is the standard method from level 30 and remains competitive all the way to 99.",
+            "To use a Gilded Altar: build one in your POH Chapel room (level 75 Construction required), or use another player's house. Active POH altar hosts are advertised in the 'house parties' friends chat and various RS3 Discord servers.",
+            "The Chaos Altar in level 12 Wilderness (east of Edgeville) also gives 3.5x XP with no Construction requirement. Beware of player killers — only bring a small number of bones at a time.",
+            "Powder of Burials, obtainable from Dungeoneering reward shops, gives 3.5x XP and can be used anywhere without a POH. It is useful before you have altar access."
+        ]
+    },
+    {
+        "title": "Levels 70–99: Superior Bones and Ashes",
+        "content": [
+            "Frost Dragon Bones (180 base XP) give 630 XP at a Gilded Altar — 2.5x the rate of Dragon Bones. They are significantly more expensive but considerably reduce the time to 99.",
+            "Searing Ashes (200 base XP) are the highest-XP offering available, giving 700 XP at an altar. Check Grand Exchange prices to compare cost-per-XP versus other high-tier bones.",
+            "Dragonkin Bones (160 XP) and Dinosaur Bones (170 XP) sit between Dragon and Frost Dragon in both XP and price. Always buy whichever offers the best XP per gold at the time.",
+            "Vyrewatch Sentinels in Meiyerditch can be cremated on a burning pyre log after completing Branches of Darkmeyer, granting Prayer XP without using the altar. This is a slower but alternative method for ironman-style players."
+        ]
+    },
+    {
+        "title": "Cleansing Crystal Method (Level 75+, Prifddinas)",
+        "content": [
+            "The Cleansing Crystal at the Hefin Clan in Prifddinas gives 9,800 XP per crystal (11,760 XP during the Voice of Seren hour for Hefin). Requires completion of Plague's End to access Prifddinas.",
+            "Cleansing Crystals can be purchased with Harmonic Dust from the Ilfeen/Coeden crystal shop or collected through the Hefin agility course. Always use crystals during the Voice of Seren for a 20% bonus.",
+            "At high levels this method can be significantly cheaper per XP than buying expensive bones, making it the preferred method for cost-conscious players post-Plague's End."
+        ]
+    }
+]

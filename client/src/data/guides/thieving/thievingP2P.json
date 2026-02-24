@@ -1,38 +1,161 @@
 [
-  {
-      "levels": "1-5",
-      "method": "**Pickpocketing Men/Women:** Start here. Use sticky fingers if you have them, but it's very quick.",
-      "xp_rates": "Low",
-      "tips": "Just get through these first few levels."
-  },
-  {
-      "levels": "5-62",
-      "method": "**Thieves' Guild Capers:** Complete the Buyers and Cellars quests as you level up. Use the Guild for safecracking preparation.",
-      "xp_rates": "Quest XP",
-      "tips": "Unlock the **Mastery** upgrades in the guild asap."
-  },
-  {
-      "levels": "15-62",
-      "method": "**Pickpocketing HAM Members:** Easy to thrive, decent XP for low levels.",
-      "xp_rates": "Standard",
-      "tips": "Wear HAM robes to decrease fail chance."
-  },
-  {
-      "levels": "62-99",
-      "method": "**Safecracking:** This is the meta. Rotate through safes in the Thieves' Guild and Wilderness (if brave/high level) or huge circuit.",
-      "xp_rates": "400k - 800k+/hr",
-      "tips": "Unlock the **Stethoscope** and **Clippers** from the Guild. No fail chance once you have the level. Highly AFK."
-  },
-  {
-      "levels": "90+",
-      "method": "**Crux Eqal Knights:** Pickpocket these outside Varrock Garden. requires Garden of Tranquillity.",
-      "xp_rates": "300k - 800k/hr (Active/AFK)",
-      "tips": "Use **Sticky Fingers** relic and **Master Camouflage Outfit** for 100% AFK for 5 mins at a time."
-  },
-  {
-      "levels": "93-99+",
-      "method": "**Prifddinas Elves:** Rotate between clans in Prifddinas. Very AFK, decent money/items.",
-      "xp_rates": "350k - 500k/hr",
-      "tips": "Requires **Plague's End**. Auto-pickpocket makes this very chill."
-  }
+    {
+        "title": "Levels 1-5: Pickpocketing pompous merchants",
+        "content": [
+            "Players should begin their Thieving training by pickpocketing pompous merchants . Around 6,000 experience an hour can be gained from this method with level 1-5 Thieving. However, as only 388 experience is needed to achieve level 5 Thieving, players with no previous experience of the skill should achieve level 5 in approximately 4 minutes.",
+            "Pompous merchants are found in Taverley , just east of the lodestone . Players will gain a few coins each time that they successfully pickpocket a merchant but will lose some life points and be stunned for several seconds if their pickpocketing attempt is unsuccessful."
+        ]
+    },
+    {
+        "title": "Levels 5-15: Stealing from bakery stalls",
+        "content": [
+            "At level 5 Thieving players can begin stealing from bakery stalls to gain approximately 11,000 experience an hour (up to 36,000 when alternating with nearby stalls). As only 2,300 experience is needed to reach level 15 Thieving it should take players around 11 minutes to reach level 15 Thieving. When stealing from stalls in general, players should stand on the opposite side of the bakery stall to any market guards or guards present in the area or they will attack the player when they attempt to steal. If not spotted, attempts to steal from the stalls are always successful and gives items depending on the type of stall. Each successful theft from bakery stalls will randomly yield bread , cake , or a chocolate slice . After an item has been stolen from the stall, the player must wait for the shop stall's stock to replenish before they can steal from the stall again (merely a couple of seconds for Bakery Stalls).",
+            "The best bakery stall location for training is in Catherby . It is very close to a bank chest and there is a spot where players can alternate between the Bakery Stall and Vegetable Stalls , resulting in faster experience than a Bakery Stall alone. Moreover, there is a spot behind the three candlestands where you'll never be spotted by guards. The same cannot be said for Lumbridge 's stalls anymore, as you will often be attacked by guards and can only steal from the bakery stall and not both on the same tile."
+        ]
+    },
+    {
+        "title": "Levels 15-62: Lockpicking Thieves' Guild doors",
+        "content": [
+            "With at least level 15 Thieving players should start training by opening doors in the practice chest area of the Thieves' Guild . To access this area of the Thieves' Guild the player must have completed the Buyers and Cellars quest. The practice chest area is located south-east of the main training room within the guild; it is composed of 6 jail cells containing practice chests. Players should train their Thieving by opening the jail cell doors within this area. Once a door has been opened it will remain open for around 5.5 minutes, so players should change worlds (using the \"hop worlds\" option in the options menu) to find a world where the doors are closed after having opened all the doors on their current world.",
+            "At level 15 Thieving, players will only be able to open the 3 doors on the northern side of the corridor for approximately 61,000 experience per hour. At level 35 Thieving, players will also be able to open the 3 doors on the southern side of the corridor. A lockpick is required in order to open the doors on the southern side of the corridor. By rotating clockwise around the room, players can open doors efficiently (the doors impede counterclockwise movement when open). Opening all six doors also reduces time spent switching worlds. Using this method, players will gain 83,500-150,000 experience per hour, depending on thieving level.",
+            "The time interval between each lockpick attempt is 1.2 second, although casual players may choose to miss the precise timing and re-attempt at earliest 1 tick later than possible. Players may queue up the next lockpick attempt as their character animation is reaching for the door. When done efficiently, each door will have at least two click attempt interaction, the first, and the second queue which may be cancelled if the first attempt succeeds. When queued correctly, a player may attempt to lockpick every 1.2 second."
+        ]
+    },
+    {
+        "title": "Overview",
+        "content": [
+            "At level 62 Thieving, and with the Thieves' Guild capers completed, players can begin safecracking .",
+            "First, players should speak to the safe-cracking trainer in the Thieves' Guild if they haven't already to receive a stethoscope and a small loot bag (requires completion of A Guild of Our Own (miniquest) ), and then begin looting from chests in Misthalin .",
+            "When your loot bag is full, turn it in to Chief Thief Robin at the Thieves' Guild for even more experience.",
+            "Safecracking provides between 300,000 experience an hour at level 62, to 500,000 experience per hour at level 90. At higher levels, Thieving proficiency and success (RNG) may, on your route, take you back to a safe that has not been reset yet. In this case, to maximize experience, have a selection of low-level safes to crack in case you encounter this situation."
+        ]
+    },
+    {
+        "title": "Levels 62-76: Safecracking in Misthalin",
+        "content": [
+            "This can provide up to 300,000 experience an hour.",
+            "- Clicking on the safes when they flash blue (for quicker experience), the player can gain up to 400,000 experience an hour. - You need to make a round of many of these locations, as a safe once cracked cannot be cracked again for 5 minutes. - Hop between locations and keep cracking safes for maximum XP, rather than waiting at an opened safe for it to close."
+        ]
+    },
+    {
+        "title": "Levels 90-99+: Safecracking hidden safes",
+        "content": [
+            "At level 90 Thieving, players should incorporate hidden safes into their route, most notably the safes in the Rogues' Castle in the Wilderness . This is up to around 950,000 experience per hour if the player has completed the hard Wilderness achievements . Staying at the Rogue's Castle safes and pickpocketing rogue captains during safe cooldown provides around 500,000 experience per hour. Bringing an Enhanced Excalibur negates the need to bring food to heal from pickpocketing stuns.",
+            "This provides 950,000 base experience per hour. For faster trips, Double Surge and Dive or Bladed Dive are helpful for getting around faster. The armoured zombie at Zemouregal's fort and rogues in their castle can often be Barged as another movement ability. The Slayer cape teleport to Chaeldar is a closer teleport to the Zanaris safes than the fairy ring. The Quest Cape teleport is closer to the Glacor Cave exit than D K Q , but this is a very high requirement.",
+            "Instead of bringing a portable fairy ring , which has limited charges, players can also bring a cape of legends , which is an unlimited teleport that is very close to a fairy ring. Another alternative for players who are maxed is to set their Max guild Teleport to the garden, and then use a skill portal that is attuned to the fairy ring.",
+            "Bringing some Thieves' Guild teleport tablets will allow players to quick empty their loot bag without losing much XP. With the medium loot bag , the bag will be filled roughly every two cycles.",
+            "The Wilderness safes are prioritised because they give the most experience. The safes in the Wilderness and in Zemouregal's fort have a cooldown of 10 minutes, as opposed to the usual 5 minutes of other safes. Zanaris and Camelot are included to fill out the rotation because all of the special safes would otherwise still be on cooldown. With this, the Wilderness safes and the Zemouregal's fort's safes should be looted every 10 minutes."
+        ]
+    },
+    {
+        "title": "Optimal hidden safes route",
+        "content": [
+            "With 92 or higher Thieving, Abyssal Lurker scrolls can be used to get a +4 boost that will allow the player to loot all four safes in Zemouregal's fort."
+        ]
+    },
+    {
+        "title": "Overview",
+        "content": [
+            "At level 95 Thieving, players can begin Heists . Heists are active, route- and timing-focused content where players build up loot by stealing from chests/safes and other sources while avoiding guards, traps, and hazards. Experience rates vary depending on completion speed, route choice, and mistakes.",
+            "Logging out within a heist resets progress and deletes any loot. In Asuran Arsenal , logging out or dying will reset progress and delete any loot; deaths there are unsafe."
+        ]
+    },
+    {
+        "title": "Levels 95+: Vault of Hereditas",
+        "content": [
+            "The Vault of Hereditas is a heist requiring level 95 Thieving to access; the requirement is not boostable. It is located within a sealed wing of the Kharid-et Dig Site and requires completion of the Breaking the Seal mystery. Players must speak to Liara outside the entrance before entering."
+        ]
+    },
+    {
+        "title": "Training notes",
+        "content": [
+            "- Base experience is 400 per loot. - Loot point penalties for being caught/expelled are reduced by the Thieving master cape perk. - Safes require 102 ; the Stethoscope or Master thief's stethoscope increases safe opening speed. - Crevices require 72 and are required for some loot sources/shortcuts. - Total loot points available is 535 (with slightly more possible via multiple loot procs); reaching the 500-point cap does not require looting every source. - Rewards are halved if exiting without looting the rare chest . - See Vault of Hereditas/Strategies for route details and recommended setups."
+        ]
+    },
+    {
+        "title": "Levels 108+: Asuran Arsenal",
+        "content": [
+            "The Asuran Arsenal is a heist requiring level 108 Thieving to access; the requirement is not boostable. Players must speak to Liara outside the entrance to unlock it. It contains traps and hazards that can deal heavy damage in addition to reducing loot; deaths here are unsafe."
+        ]
+    },
+    {
+        "title": "Training notes",
+        "content": [
+            "- Base experience is 450 per loot. - Loot point penalties for being caught are reduced by the Thieving master cape perk. - Safes require 114 ; the Stethoscope increases safe opening speed. - Total loot points available is 625; omitting the optional 1 st floor 2 nd floor and 2 nd floor 3 rd floor side rooms can still reach 505 points (cap with minimal additional looting/backtracking). - Rewards are halved if exiting without looting the rare chest . - See Asuran Arsenal/Strategies for route details and recommended setups."
+        ]
+    },
+    {
+        "title": "Levels 1–16: Quests",
+        "content": [
+            "Sorting Quests for Thieving experience by Thieving requirement column in descending order, and look at the quests up to Buyers and Cellars , excluding perhaps Dimension of Disaster , The Jack of Spades and Diamond in the Rough as these are the lengthier quests.",
+            "There are 9 quests , 3 of which are free-to-play and 2 requiring 5 as well as the following skills:",
+            "- 5 Farming - 5 Hunter - 5 Construction (10 for Tower of Life)",
+            "A total of 2775 XP may be obtained by completing these quests.",
+            "From levels 1-5, Let Them Eat Pie may be completed with Stolen Hearts (recommended) or Diamond in the Rough (long) for at least 400 XP (388 XP required).",
+            "From there, 2411 XP takes you to 15 . Quests may also be supplemented with traditional Thieving training, as outlined here."
+        ]
+    },
+    {
+        "title": "AFK pickpocketing",
+        "content": [
+            "Various boosts may be utilised to increase the pickpocketing success rate. The following are applied in this order:",
+            "- Magpie familiar +3% and optional scroll (+2 temporary visible levels) - Abyssal lurker familiar scroll (+4 temporary visible levels) - Gloves of silence +5% Or, equivalently, the Trahaearn exoskeleton set with 75 Hunter and 75 Thieving, or the master camouflage outfit after completing Plague's End - Or, equivalently, the Trahaearn exoskeleton set with 75 Hunter and 75 Thieving, or the master camouflage outfit after completing Plague's End - Soul-in-a-box +2% - Ardougne cloak 3 +10% Five-finger discount aura +15% Crystal Mask spell +15% Light Form prayer +15% - Five-finger discount aura +15% - Crystal Mask spell +15% - Light Form prayer +15%",
+            "Super prayer renewal potions , grace of the elves , the Dark Facet of Grace , and the ancient elven ritual shard can help reduce prayer drain. The holy scarab familiar also reduces prayer drain by half.",
+            "The Oblivious perk increases the fresh target pickpocket boost by 5 additional pickpockets, meaning slightly longer AFK periods.",
+            "Damage from being caught pickpocketing is based on a percentage of base life points , meaning that wearing Life point boosting gear in combination with max life point heraling items such as the enhanced excalibur and a bunyip familiar (2% of max LP every 15s), is good combo. Bunyips are competing with a magpie 's 3% increase to success chance. Magpies are more effective when prioritizing longer AFK periods over fewer banking trips.",
+            "Wearing the Thieving cape automatically notes any loot from pickpocketing, preventing the inventory from getting full and interrupting the pickpocketing action."
+        ]
+    },
+    {
+        "title": "Levels 46–55+: Pickpocketing Menaphite marketeers",
+        "content": [
+            "Starting at level 46 Thieving, players can pickpocket Menaphite marketeers in the Menaphos Merchant district after partial completion of The Jack of Spades quest. This yields lower experience per pickpocket, but they have an unusually high success rate.",
+            "With high enough success rate, players can pickpocket without interaction for up to 15 minutes before being logged out. Notable thresholds to achieve 100% success include:",
+            "- Level 46 Thieving with legendary five-finger discount aura - Level 57 Thieving with tier 8 reputation and gloves of silence - Level 78 Thieving with tier 8 reputation - Level 79 Thieving with Ardougne Cloak 3 unlocked and gloves of silence - Level 94 Thieving with gloves of silence",
+            "With 100% success rate, players can expect 59,000 base experience per hour. It is recommended to pickpocket the north-easternmost marketeer, by the lamp stall , as they have a much smaller roaming area than other marketeers."
+        ]
+    },
+    {
+        "title": "Levels 55–90+: Pickpocketing Knights of Ardougne",
+        "content": [
+            "Starting at level 55 Thieving, players can pickpocket Knights of Ardougne . As compared to Crux Eqal Druids in the Garden of Kharid , Knights of Ardougne are only slightly more difficult to pickpocket but provide significantly more experience per pickpocket, and their location within Ardougne makes the Ardougne cloak unlock more accessible (requiring only tier 2 instead of 3). The four knights in the town square have a large wander radius which can slow down pickpocketing; the single, westernmost knight in the castle courtyard is much more constrained.",
+            "With high enough success rate, players can pickpocket without interaction for up to 15 minutes before being logged out. Notable thresholds to achieve 100% success include:",
+            "- Level 55 Thieving with legendary five-finger discount aura , Crystal Mask spell, Light Form prayer, and gloves of silence - Level 80 Thieving with legendary five-finger discount aura, gloves of silence, and Ardougne cloak 2 unlocked - Level 91 Thieving with gloves of silence and Ardougne cloak 2 unlocked",
+            "With 100% success rate, players can expect 169,000 base experience per hour."
+        ]
+    },
+    {
+        "title": "Levels 90–99+: Pickpocketing traders",
+        "content": [
+            "At level 90 Thieving, players can pickpocket traders in Keldagrim .",
+            "With high enough success rate, players can pickpocket without interaction for up to 15 minutes before being logged out. 100% success is not currently achievable at traders. Notable other thresholds include:",
+            "- Approximately 30% success rate at level 90 Thieving without boosts. - Approximately 65% success rate at level 99 Thieving with Crystal Mask spell, Light Form prayer, gloves of silence , and Ardougne cloak 3 unlocked. - Approximately 75% success rate at level 99 Thieving with Crystal Mask spell, Light Form prayer, gloves of silence, Ardougne cloak 3 unlocked, and legendary five-finger discount aura . - Approximately 65% success rate at level 120 Thieving with gloves of silence, Ardougne cloak 3 unlocked, and legendary five-finger discount aura.",
+            "With 100% success rate, players can expect 1,113,000 base experience per hour. Even with relatively low success rates, traders can provide more experience per hour than alternatives (such as Paladins in Ardougne or Crux Eqal Knights at the Garden of Kharid). Traders also deal less damage per unsuccessful pickpocket than most alternatives.",
+            "If a player fails to pickpocket a dwarf trader, they will be stunned for 4.8 seconds and dealt 10 damage + 3% of current life points . There are several trade floor guards who will attack if the player fails to pickpocket. The guards can be bribed for 10 minutes by completing a task from the director the player aligned themselves with during The Giant Dwarf , though they are more commonly lured into specific rooms with the door shut, as this allows for uninterrupted pickpocketing.",
+            "There are 8 total guards, and one guard spawns on each of the 8 outside corners of the octagon design on the floor; the room a guard is lured into must be near that guard's spawn point otherwise they will despawn after exactly 5 minutes. The south-east and north-west offices work well for this; the north-east and south-west rooms have obstacles next to the door which prevent guards from wandering while locked in the room, so these rooms will only keep the guards away for 5 minutes before they despawn. Typically a player will attack all 8 guards simultaneously, lure them all into one office, then 5 minutes later, attack the 4 guards that despawned and lure them into the opposite office; after this, the guards are permanently out of the way unless a door is accidentally opened.",
+            "The master camouflage outfit offers unlimited teleports directly to the traders. There is a stationary trader north of centre who does not wander. Bunyips are commonly used due to the high pickpocketing failure rate at traders, but keep in mind that as a 2x2 size familiar, bunyips are too big to summon if the player stands north or east of the stationary trader. Players must stand west or south of this trader in order to reliably make use of a bunyip's passive healing."
+        ]
+    },
+    {
+        "title": "Levels 96–99+: Pickpocketing Elven clan workers",
+        "content": [
+            "Players who are unable to use the Crystal Mask spell should begin training at Elven clan workers at around level 96 Thieving. Eight different types of elven clan workers are found in Prifddinas ; with each clan's district containing a different kind of worker. Completion of the Plague's End quest is required in order to access Prifddinas.",
+            "The Thieving level required to pickpocket from an elven clan worker varies, depending on the clan that the worker belongs to. As it typically takes around 4 minutes to reach 3/3 strikes for a particular clan (5–6 minutes with Crystal Mask ) and the cooldown is 20 minutes (15 minutes with an active Totem of Crystal ), it is recommended to pickpocket workers when the player can pickpocket from at least four clans at any given time.",
+            "Boosts can be used to pickpocket elves, and it is possible to start pickpocketing them at level 90 Thieving as long as Crystal Mask is being used.",
+            "Elven clan workers follow a different pickpocketing mechanic compared to many other pickpocket targets in RuneScape ; when failing a pickpocket, you are not damaged. Instead, there are three \"strikes\". During the first two strikes, the player's chances of getting caught will increase drastically. A will appear over the pickpocketed worker, and will persist for a short period of time; the worker cannot be pickpocketed from again until this icon disappears. When the third strike occurs, all workers of that clan will be on alert and cannot be pickpocketed for 20 minutes.",
+            "Having an active Totem of crystal in Anachronia will reduce the cooldown for a given clan to 15 minutes. An elf thieving reset token can be purchased for 200 pilfer points from Dodgy Derek in the Thieves Guild in Lumbridge. This will reset the 20 minute timer preventing you from pickpocketing Elven clan workers.",
+            "It is possible to gain around 373,000 experience an hour by pickpocketing from elven clan workers while wearing a Trahaearn exoskeleton set at level 99 Thieving (with Meilyr and Ithell clans being affected by the Voice of Seren). The amount of experience that can be gained per hour while pickpocketing elven clan workers depends on which clans are currently affected by the Voice of Seren, as well as the player's ability to access clans which give a greater amount of Thieving experience upon successful pickpocket. A Thieving cape can completely remove the need to bank, however it is not required as there are Bank chests all over Prifddinas .",
+            "To gain the most Thieving experience per hour players should prioritise thieving from elven clan workers within the 2 districts that are currently affected by the Voice of Seren as often as possible, as base experience obtained from pickpocketing clan's workers is increased by 20% while the Voice of Seren is active. In between stealing from these clans, the player should steal from the other clans that they are able to access in order of descending level requirement, as elven clan workers with a higher Thieving level requirement award more Thieving experience per successful pickpocket. Crystal teleport seeds can be useful for teleporting between districts.",
+            "A good route for Ironman Mode players with level 99 Thieving is to rotate Meilyr , Hefin , Amlodd , Cadarn and Iorwerth districts , as this yields many useful items for Ironman accounts such as doses of super attack , super strength , super defence , super ranging potion , super magic potion , super energy potion , and sign of the porter IVs , as well as various useful Herblore supplies like crushed nest and dragon scale dust ."
+        ]
+    },
+    {
+        "title": "Levels 108+: Pickpocketing archaeology professors",
+        "content": [
+            "At level 108 Thieving, players can pickpocket archaeology professors who are present at all dig sites .",
+            "Players can get upwards of 1,486,800 Thieving experience per hour by utilising Crystal Mask and Light Form in combination with the master camouflage outfit .",
+            "At level 110, the success rate is 100% with Crystal Mask, the master camouflage outfit, completion of the hard Ardougne achievements , and legendary five-finger discount aura . If the aura is on cooldown, the player can use a Ring of Vitur in its place, but this alternative setup does not have a 100% success rate. Therefore, it is also recommended to bring an Enhanced Excalibur and a mushroomy pickpocketing bag with the Oblivious perk for minimising effort, maximising efficiency, and maintaining adequate life points.",
+            "At level 111, the success rate is 100% with only Crystal Mask, Light Form, and the master camouflage outfit. This is completely AFK except for needing to refresh Crystal Mask every 5 minutes and maintaining prayer points , which can be done with either the Dark Facet of Grace (no prayer points drain from Seren spells ) or the ancient elven ritual shard ."
+        ]
+    }
 ]

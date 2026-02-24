@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Invention is RS3's most complex skill and the only elite skill, with a virtual level cap of 150 and a standard cap of 99 (with Invention experience continuing beyond). To unlock Invention you must have level 80 Attack, level 80 Defence, and level 80 Smithing, then speak to Doc in the Invention Guild east of Falador.",
+            "The core training loop involves augmenting weapons and armour with an Augmentor, using those augmented items in combat or skilling until they reach item level 10 (or 12 for maximum XP on disassemble), then disassembling or siphoning them for Invention XP.",
+            "Separately, disassembling large quantities of cheap items from the Grand Exchange gives materials and XP used early on. Invention is expensive to train but provides powerful permanent perks on your gear."
+        ]
+    },
+    {
+        "title": "Getting Started: The Tutorial",
+        "content": [
+            "After speaking to Doc in the Invention Guild, complete the full tutorial. It walks you through: discovering basic devices, creating Divine charges (the power source for augmented items), making an Augmentor, and augmenting your first item.",
+            "Divine charges are required to power all augmented items. They are created from Divine energy (from Divination) and can also be purchased on the Grand Exchange. Keep a stock of Divine charges at all times.",
+            "The Invention Tutorial rewards enough XP to reach approximately level 4. From here, begin the material-gathering and augmenting loop."
+        ]
+    },
+    {
+        "title": "Levels 1–27: Disassembly for Materials and XP",
+        "content": [
+            "Disassembling items gives both Invention XP and crafting materials. Buy large quantities of cheap, disassembly-efficient items from the Grand Exchange: Adamant items (for Metallic parts), Leather (for Organic parts), Magic logs (for Organic parts), and Junk items.",
+            "The best low-cost disassembly XP items change with the Grand Exchange — check the RS3 wiki's Invention disassembly table for current best-value items. Adamant daggers and Steel platebodies are consistently cheap options.",
+            "Collect components through disassembly to fuel your first Gizmo Shells at level 16, which let you add perks to equipment."
+        ]
+    },
+    {
+        "title": "Levels 27–99: Augmenting and Siphoning",
+        "content": [
+            "From level 27, augment your best weapons and armour with an Augmentor. Use these augmented items normally in combat or skilling — they accumulate item XP as you use them.",
+            "At item level 10, disassemble the augmented item for a large Invention XP reward. At item level 12, the XP is even higher but takes longer to reach. At item level 9, use a Siphon device instead of disassembling — this removes the XP at a slightly lower rate but preserves the item for re-augmentation.",
+            "The most efficient loop: augment crystal tools or high-use weapons → use normally → siphon at item level 9 → re-augment → repeat. For gear you do not need back, disassemble at item level 10 or 12 for maximum XP per item.",
+            "Crystal tools (Hatchet, Pickaxe, Fishing rod) are popular for this loop because they are actively used while skilling, passively levelling the item as you train other skills."
+        ]
+    },
+    {
+        "title": "Perks and Key Discoveries",
+        "content": [
+            "At level 16 you can add perks to equipment using Gizmo Shells. Key early perks: Honed (increased resource gathering), Furnace (chance of double bars), Efficient (reduced divine charge use), and Lucky/Venomblood (combat utility).",
+            "Key Invention milestones: level 27 (augment tools), level 45 (augment armour), level 55 (create Divine charges from materials), level 60 (research Honed 3 and Furnace 2), level 70 (access to Machine workshop), level 99 (elite skill milestones).",
+            "Machines in the Invention Guild (level 70+) can automate tasks like disassembly, material converting, and divine charge creation, providing passive XP and resources over time."
+        ]
+    }
+]

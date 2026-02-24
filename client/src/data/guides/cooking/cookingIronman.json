@@ -1,1 +1,57 @@
-[]
+[
+    {
+        "title": "Overview",
+        "content": [
+            "As an Ironman, you cannot buy food from the Grand Exchange, so Cooking XP is a natural byproduct of Fishing training. Cook your caught fish as you go rather than hoarding them raw.",
+            "Focus on levelling Fishing alongside Cooking. The Cooking cape, once earned, eliminates burn chance for most fish. Portable ranges created by other players can still be used by Ironmen."
+        ]
+    },
+    {
+        "title": "Levels 1-30: Early Fish",
+        "content": [
+            "Begin with whatever you can catch or obtain early in your Ironman journey.",
+            "- Levels 1-15: Shrimp and anchovies from net fishing spots (30–34 XP)",
+            "- Levels 15-30: Trout (70 XP) and Salmon (90 XP) from fly fishing at Barbarian Village or Lumbridge",
+            "Use the fire at the Barbarian Village or any range nearby to cook your catches immediately."
+        ]
+    },
+    {
+        "title": "Levels 30-68: Lobsters and Swordfish",
+        "content": [
+            "Fish at members' fishing spots for mid-level supplies. Catherby and the Fishing Guild are popular Ironman fishing locations.",
+            "- Levels 30-50: Tuna (100 XP) and Lobsters (120 XP) from harpoon fishing spots",
+            "- Levels 50-68: Swordfish (140 XP) for slightly higher XP per cook",
+            "- Levels 62-68: Monkfish (150 XP) at Piscatoris Fishing Colony — requires Swan Song quest",
+            "Stockpile cooked food for combat training, as Ironmen rely entirely on self-sourced supplies."
+        ]
+    },
+    {
+        "title": "Levels 68-90: Monkfish and Sharks",
+        "content": [
+            "From 68 onwards, focus on sharks for their combination of high Cooking XP and usefulness in combat.",
+            "- Levels 68-76: Monkfish (150 XP) — caught at Piscatoris Fishing Colony",
+            "- Levels 76-90: Sharks (210 XP) — caught at Fishing Guild or Catherby harpoon spots (requires 76 Fishing)",
+            "Cook at the Fishing Guild range, which is close to the bank, for efficient turnaround."
+        ]
+    },
+    {
+        "title": "Levels 90-99/120: Rocktails and Sailfish",
+        "content": [
+            "End-game Ironman Cooking is largely a byproduct of levelling Fishing to 86+ for Rocktails and 97+ for Sailfish.",
+            "- Levels 86-97 Fishing: Rocktails (225 XP each) from Living Rock Caverns",
+            "- Levels 97+ Fishing: Sailfish (270 XP each) — highest Cooking XP available",
+            "The Cooking cape eliminates burn chance once worn at level 99. Rocktails and Sailfish require 93 and 99 Cooking to stop burning without gauntlets."
+        ]
+    },
+    {
+        "title": "Quest XP Rewards",
+        "content": [
+            "Several quests grant Cooking XP and are worth doing early to skip tedious low-level training:",
+            "- Cooks' Assistant: 300 Cooking XP — one of the first quests available",
+            "- Ratcatchers: 2,500 Cooking XP",
+            "- Evil Dave's Big Day Out: 5,000 Cooking XP",
+            "- Recipe for Disaster subquests: Various XP rewards across multiple subquests",
+            "Complete available cooking quests as early as possible to jump past the slowest levels."
+        ]
+    }
+]

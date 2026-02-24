@@ -123,7 +123,7 @@
     border: 1px solid var(--div-border-panel);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .calc-layout {
         grid-template-columns: 1fr;
     }

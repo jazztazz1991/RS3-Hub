@@ -1,33 +1,59 @@
 [
     {
-        "title": "Levels 100-110: Eternal magic bows and primal crossbows",
+        "title": "Overview",
         "content": [
-            "Note that the described methods end with the Mk. 5 version of the bow, rather than the 'martial' version, which would result in the bow being sacrificed for further experience, but would also result in the item being fully destroyed."
+            "Fletching is one of the fastest skills to train in RuneScape 3 and can be maxed very quickly. It is almost entirely buyable from the Grand Exchange. The most efficient methods involve bulk-making arrows or bow strings rather than cutting bows.",
+            "Portable crafters provide a 10% XP bonus to all Fletching actions and should be used throughout training."
         ]
     },
     {
-        "title": "Level 81+ Rune and Dragon Darts (fastest)",
+        "title": "Levels 1-40: Arrow Shafts and Unstrung Bows",
         "content": [
-            "Darts are made twice as fast as bolts and arrows, making them a very fast method."
+            "Early Fletching training uses a knife on logs to make unstrung bows, or feathers on shafts to make headless arrows.",
+            "- Levels 1-5: Arrow shafts from normal logs (15 XP per 15 shafts)",
+            "- Levels 5-20: Normal shortbow (u) (5 XP) and longbow (u) (10 XP)",
+            "- Levels 20-30: Oak shortbow (u) (16.5 XP) then oak longbow (u) (25 XP)",
+            "- Levels 30-40: Willow shortbow (u) (33.3 XP) then willow longbow (u) (41.5 XP)",
+            "Purchase logs from the Grand Exchange. Low cost at this stage."
         ]
     },
     {
-        "title": "Level 82+ Zygomite Carestyling",
+        "title": "Levels 40-55: Headless Arrows",
         "content": [
-            "After completing the Extinction quest, players with at least level 82 Fletching can participate in the Zygomite Carestyling activity as part of 'Accidental' Fletching and Firemaking . There, players can style scruffy zygomites ' cuticles for around 200,000 Fletching experience per hour. Carestyling zygomites is fairly laid-back and can generate a profit from the tempered fungal shafts gathered and occasional unchecked zygomites found while taking part in the activity.",
-            "The use of a crystal knife is recommended as it provides a 5% chance of double shafts and experience, and does not degrade when carestyling."
+            "Making headless arrows (attaching feathers to arrow shafts) is the fastest XP for the cost at this level range.",
+            "- Levels 40+: Headless arrows — 1 XP each but extremely fast to make in bulk",
+            "Buy arrow shafts and feathers from the Grand Exchange separately and combine them. This is one of the cheapest Fletching training methods in the game.",
+            "Portable crafters give an extra 10% XP here as well."
         ]
     },
     {
-        "title": "Level 83+ Making Sagaies",
+        "title": "Levels 55-80: Broad Bolts and Maple Bows",
         "content": [
-            "Another alternative is making Sagaie at the Jadinko lair at level 83 Fletching, although this also requires 83 Woodcutting and 83 Firemaking, and it can be a lot slower than making Dragon darts or arrows due to the time spent collecting supplies. However, it is completely free."
+            "Broad bolts are a popular mid-level method, especially for players training Slayer who need the Broad Fletching unlock.",
+            "- Levels 55+: Broad bolts (3 XP each) — purchase unfinished broad bolts via Slayer points or from the GE; very fast to make",
+            "- Levels 50-65: Maple shortbow (u) (58.3 XP) and maple longbow (u) (82.5 XP)",
+            "- Levels 65-80: Magic shortbow (u) (83.3 XP) — moderate cost, decent XP",
+            "Broad bolts require the Broad Fletching Slayer unlock but offer excellent XP/coin ratio."
         ]
     },
     {
-        "title": "Level 96+ Bundling bamboo",
+        "title": "Levels 80-99/120: Rune and Dragon Arrows",
         "content": [
-            "Bundling bamboo gives 100 experience per bundle, can be done with 2 golden bamboo or 5 bamboo obtained from the Arc region."
+            "High-level Fletching is most efficiently done by attaching metal arrowtips to headless arrows, which can be done incredibly fast.",
+            "- Levels 80-90: Rune arrows — attach rune arrowtips to headless arrows (75 XP per 15 arrows)",
+            "- Levels 90-99: Dragon arrows — attach dragon arrowtips to headless arrows (150 XP per 15 arrows); best XP per action",
+            "- Levels 95-120: Dragon arrows remain the fastest method; supplement with elder bows for variety",
+            "With fast clicking and portables, rates exceed 1,000,000 XP/hour at peak efficiency."
+        ]
+    },
+    {
+        "title": "Boosts and Tips",
+        "content": [
+            "- Portable crafters: 10% bonus XP on all Fletching actions — most impactful boost available",
+            "- Modified fletcher's outfit: Up to 6% bonus XP from the full set",
+            "- Double XP events: Fletching's low material cost makes it ideal to train heavily during DXP weekends",
+            "- Crystallise spell: Enhances logs cut during Woodcutting training to grant bonus Fletching XP when used",
+            "- Fletching is often used as a money-making method at high levels by stringing magic or elder bows"
         ]
     }
 ]

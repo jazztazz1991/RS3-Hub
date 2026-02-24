@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Magic can be trained through combat (casting offensive spells on monsters), skilling spells (Superheat Item, String Jewellery, Tan Leather), and utility spells (High Level Alchemy, Teleportation). The skill cap is level 99.",
+            "Unlike most skills, Magic XP is gained per spell cast or per item processed — not per damage dealt. This means some of the fastest methods involve bulk-processing items with skilling spells rather than combat.",
+            "The three spellbooks are Standard (available from the start), Ancient Magicks (unlocked via Desert Treasure), and Lunar (unlocked via Lunar Diplomacy). Each offers different training options."
+        ]
+    },
+    {
+        "title": "Levels 1–55: Teleportation and Enchanting",
+        "content": [
+            "The fastest early training method is casting Teleportation spells repeatedly. Each cast gives a small amount of XP regardless of whether you actually travel — you can spam-click the same teleport. Varrock Teleport (level 25) and Camelot Teleport (level 45) are popular choices.",
+            "Enchanting jewelry is a reliable AFK method throughout the early-mid levels. Each enchant cast gives fixed XP and uses very cheap runes. Enchant Level 1 Jewellery (level 7), Enchant Level 2 (level 27), and Enchant Level 3 (level 49) are all worthwhile.",
+            "Completing early quests such as Imp Catcher and Witch's Potion reward Magic XP and help skip the first few levels entirely."
+        ]
+    },
+    {
+        "title": "Levels 55–75: High Alchemy and Skilling Spells",
+        "content": [
+            "High Level Alchemy (level 55) is the most popular semi-AFK Magic training method in RS3. It converts items into coins at 65 XP per cast. Alching can be done anywhere and stacks well with other activities — many players alch while doing Slayer or agility courses.",
+            "String Jewellery (Lunar, level 80 Magic required) is a fast AFK method that strings unstrung amulets. It requires completion of Lunar Diplomacy and gives strong XP rates while being almost entirely click-free.",
+            "Superheat Item (level 43) processes metal ores into bars while giving both Smithing and Magic XP. It is useful if you need to train both skills simultaneously and have a stock of ores."
+        ]
+    },
+    {
+        "title": "Levels 75–99: Bolt Enchanting and Barraging",
+        "content": [
+            "Enchant Crossbow Bolts (level 4 through level 87) is one of the fastest Magic training methods in the game. Enchanting bolt tips in bulk can give well over 1,000,000 XP per hour at high levels. The runes are cheap and bolt tips are affordable — check the Grand Exchange for the most cost-effective tier to enchant.",
+            "Barraging (Ice Barrage / Shadow Barrage, level 94/88, Ancient Magicks) at Daemonheim or the Abyss is both fast XP and useful for combat training. It requires runes obtainable from the Grand Exchange and gives very high XP per hour.",
+            "Tan Leather (Lunar, level 78) processes cowhide into leather at a high rate and gives strong Magic XP. It requires Lunar Diplomacy completion.",
+            "For the fastest possible XP to 99: Enchant Dragon Bolts (level 68) or Enchant Ascendri Bolts (level 90) with optimal rune setup typically outperforms combat methods in raw XP rate."
+        ]
+    },
+    {
+        "title": "Combat Magic Training",
+        "content": [
+            "Magic can be trained through combat using all three spellbooks. The Standard spellbook's Wind/Water/Earth/Fire series provides XP at lower levels. Ancient Magicks (Smoke, Shadow, Blood, Ice spells) are the strongest combat spells at high levels.",
+            "Popular combat Magic training locations: Abyss creatures (multi-combat, good for barraging), Nechryael and Abyssal demons (Slayer), Daemonheim (accessible floors), Armoured zombies in the God Wars Dungeon for AFK Barrage training.",
+            "Note: using combat Magic gives both Magic XP and combat XP simultaneously — this is useful if you need combat level alongside Magic."
+        ]
+    }
+]

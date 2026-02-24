@@ -1,164 +1,104 @@
-{
-    "methods": [
-        {
-            "levels": "1-20",
-            "min_level": 1,
-            "max_level": 20,
-            "method": "Crayfish",
-            "xp_rate_raw": "11,500",
-            "notes": "Raw crayfish can be caught in Lumbridge or Taverley . After completing Cook's Assistant the range in Lumbridge castle provides decreased burn chance for better cooking experience.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "20-70",
-            "min_level": 20,
-            "max_level": 70,
-            "method": "Fly fishing",
-            "xp_rate_raw": "17,000-57,000 XP/hr",
-            "notes": "Raw trout and raw salmon can be caught in Lumbridge or Shilo Village . While these provide optimal experience up to barbarian fishing , the food provided from fly fishing does not heal much. As such, starting at level 58, some players opt to change methods to something providing better healing.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "66+",
-            "min_level": 66,
-            "max_level": 99,
-            "method": "Ghostly soles (afk)",
-            "xp_rate_raw": "Up to 100,000 experience per hour with level 99 Fishing.",
-            "notes": "Ghostly soles never move, in conjunction with porters or the Fury shark outfit set to consume all fish, this spot can be used to fully AFK fish and train invention. Alternatively using a Passing bracelet makes returning from bank trips very fast.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "70-93",
-            "min_level": 70,
-            "max_level": 93,
-            "method": "Crystallise fly fishing",
-            "xp_rate_raw": "17,000-57,000 XP/hr",
-            "notes": "Crystallise combined with Light Form at the fly fishing spots provides optimal experience from level 70 to 93. However, this is an intense use of soul runes and requires The Light Within .",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "70-72",
-            "min_level": 70,
-            "max_level": 72,
-            "method": "Barbarian fishing",
-            "xp_rate_raw": "~70,000 XP/hr (Est.)",
-            "notes": "Leaping trout , leaping salmon and leaping sturgeon cannot be eaten, but can be caught for experience. This is optimal between level 70 and 72 if not using crystallise.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "72-93",
-            "min_level": 72,
-            "max_level": 93,
-            "method": "Menafish",
-            "xp_rate_raw": "~85,000 XP/hr (at 90+)",
-            "notes": "In the Menaphos Port district and VIP skilling area three types of fish can be caught: raw desert sole , raw catfish and raw beltfish . These heal a significant amount of health, and provide decent experience. It's advised to put Menaphos reputation onto the port district, as it can give bonuses to fishing there. Fishing in Menaphos provides optimal experience without crystallise between level 72 and 93.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "93",
-            "min_level": 93,
-            "max_level": 99,
-            "method": "94/99: Prifddinas Waterfall Fishing",
-            "xp_rate_raw": "Up to 119,000 experience an hour, at level 99 Fishing.",
-            "notes": "Prifddinas Waterfall Fishing provides high experience without much activity. It is recommended to stay here at least until getting the crystal fishing rod as it provides a 5% increased catch chance. This method is also the best experience to 99 without being as active as with the next method.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "94-99",
-            "min_level": 94,
-            "max_level": 99,
-            "method": "Fishing Frenzy",
-            "xp_rate_raw": "Over 285,000 experience an hour, at level 99 Fishing.",
-            "notes": "Fishing Frenzy provides an active but fast fishing training method.",
-            "category": "Fishing for experience",
-            "type": "ironman"
-        },
-        {
-            "levels": "1-52",
-            "min_level": 1,
-            "max_level": 52,
-            "method": "Crayfish and fly fishing",
-            "xp_rate_raw": "17,000-57,000 XP/hr",
-            "notes": "These methods should still be used to reach 52 quickly.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "52-68",
-            "min_level": 52,
-            "max_level": 68,
-            "method": "Menafish",
-            "xp_rate_raw": "~85,000 XP/hr (at 90+)",
-            "notes": "See above. This method gives a lot of decent food. If not supplementing cooking training with other methods, it is advised to go to green blubber jellyfish when at 72 . This method can be continued for low intensity decent Fishing experience.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "66+",
-            "min_level": 66,
-            "max_level": 99,
-            "method": "Ghostly sole",
-            "xp_rate_raw": "Up to 100,000 experience per hour with level 99 Fishing.",
-            "notes": "Ghostly soles never move, in conjunction with porters or using a Passing bracelet for quick banking, these heal for 1650 making them appealing early-mid game food.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "68",
-            "min_level": 68,
-            "max_level": 99,
-            "method": "91/99: Green blubber jellyfish",
-            "xp_rate_raw": "See Description",
-            "notes": "Raw green blubber jellyfish can be caught at the Deep Sea Fishing hub and provide efficient food that does not cost adrenaline , particularly effective when combined with expensive spices . They require 72 . They require some attention to catch.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "91-99",
-            "min_level": 91,
-            "max_level": 99,
-            "method": "Blue blubber jellyfish",
-            "xp_rate_raw": "See Description",
-            "notes": "Raw blue blubber jellyfish are the upgraded version of green blubber jellyfish, healing 750 life points per bite, or 800 with expensive spices. They require 95 . Green blubber jellyfish provide more effective life points fished per hour than blue blubber jellyfish, but heal less in one bite and less healed overall than blue blubber jellyfish .",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "97-99",
-            "min_level": 97,
-            "max_level": 99,
-            "method": "Sailfish",
-            "xp_rate_raw": "See Description",
-            "notes": "Swift sailfish provide raw sailfish at a moderately fast rate. Sailfish are good burst food, allowing quick recovery from low health, but drain adrenaline, making them inferior to jellyfish for sustained healing.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "93",
-            "min_level": 93,
-            "max_level": 99,
-            "method": "Prifddinas Waterfall Fishing",
-            "xp_rate_raw": "Up to 119,000 experience an hour, at level 99 Fishing.",
-            "notes": "It is still recommended to do this for the crystal fishing rod . This rod can be used at swarm fishing, sailfish and jellyfish.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        },
-        {
-            "levels": "68-99",
-            "min_level": 68,
-            "max_level": 99,
-            "method": "Swarm fishing (afk)",
-            "xp_rate_raw": "See Description",
-            "notes": "Swarm fishing provides a large variety of high level fish and is very laid-back compared to other methods. The primary drawback is that the fish caught can be too high level to cook. As such, if not supplementing cooking training with methods not reliant on fishing (such as churning butter, events or clan citadel), it's recommended to wait with fishing here until 80 to cook the sharks received here and in other places (this is not necessary with the Bait and Switch relic, which requires 99 ). Note that the rate of raw sailfish, raw green blubber jellyfish, and raw blue blubber jellyfish at this spot is significantly slower than when catching them individually at their own spots, but swarm fishing is very afk. Swarm fishing is also a good way to get sharks, manta rays and sailfish for big game hunter early.",
-            "category": "Fishing for food",
-            "type": "ironman"
-        }
-    ]
-}
+[
+    {
+        "title": "Training methods",
+        "content": [
+            "See also pay-to-play Fishing training#Methods ."
+        ]
+    },
+    {
+        "title": "1-20: Crayfish",
+        "content": [
+            "Raw crayfish can be caught in Lumbridge or Taverley . After completing Cook's Assistant the range in Lumbridge castle provides decreased burn chance for better cooking experience."
+        ]
+    },
+    {
+        "title": "20-70: Fly fishing",
+        "content": [
+            "Raw trout and raw salmon can be caught in Lumbridge or Shilo Village . While these provide optimal experience up to barbarian fishing , the food provided from fly fishing does not heal much. As such, starting at level 58, some players opt to change methods to something providing better healing."
+        ]
+    },
+    {
+        "title": "66+: Ghostly soles (afk)",
+        "content": [
+            "Ghostly soles never move, in conjunction with porters or the Fury shark outfit set to consume all fish, this spot can be used to fully AFK fish and train invention. Alternatively using a Passing bracelet makes returning from bank trips very fast."
+        ]
+    },
+    {
+        "title": "70-93: Crystallise fly fishing",
+        "content": [
+            "Crystallise combined with Light Form at the fly fishing spots provides optimal experience from level 70 to 93. However, this is an intense use of soul runes and requires The Light Within ."
+        ]
+    },
+    {
+        "title": "70-72: Barbarian fishing",
+        "content": [
+            "Leaping trout , leaping salmon and leaping sturgeon cannot be eaten, but can be caught for experience. This is optimal between level 70 and 72 if not using crystallise."
+        ]
+    },
+    {
+        "title": "72-93: Menafish",
+        "content": [
+            "In the Menaphos Port district and VIP skilling area three types of fish can be caught: raw desert sole , raw catfish and raw beltfish . These heal a significant amount of health, and provide decent experience. It's advised to put Menaphos reputation onto the port district, as it can give bonuses to fishing there. Fishing in Menaphos provides optimal experience without crystallise between level 72 and 93."
+        ]
+    },
+    {
+        "title": "93-94/99: Prifddinas Waterfall Fishing",
+        "content": [
+            "Prifddinas Waterfall Fishing provides high experience without much activity. It is recommended to stay here at least until getting the crystal fishing rod as it provides a 5% increased catch chance. This method is also the best experience to 99 without being as active as with the next method."
+        ]
+    },
+    {
+        "title": "94-99: Fishing Frenzy",
+        "content": [
+            "Fishing Frenzy provides an active but fast fishing training method."
+        ]
+    },
+    {
+        "title": "1-52: Crayfish and fly fishing",
+        "content": [
+            "These methods should still be used to reach 52 quickly."
+        ]
+    },
+    {
+        "title": "52-68: Menafish",
+        "content": [
+            "See above. This method gives a lot of decent food. If not supplementing cooking training with other methods, it is advised to go to green blubber jellyfish when at 72 . This method can be continued for low intensity decent Fishing experience."
+        ]
+    },
+    {
+        "title": "66+: Ghostly sole",
+        "content": [
+            "Ghostly soles never move, in conjunction with porters or using a Passing bracelet for quick banking, these heal for 1650 making them appealing early-mid game food."
+        ]
+    },
+    {
+        "title": "68-91/99: Green blubber jellyfish",
+        "content": [
+            "Raw green blubber jellyfish can be caught at the Deep Sea Fishing hub and provide efficient food that does not cost adrenaline , particularly effective when combined with expensive spices . They require 72 . They require some attention to catch."
+        ]
+    },
+    {
+        "title": "91-99: Blue blubber jellyfish",
+        "content": [
+            "Raw blue blubber jellyfish are the upgraded version of green blubber jellyfish, healing 750 life points per bite, or 800 with expensive spices. They require 95 . Green blubber jellyfish provide more effective life points fished per hour than blue blubber jellyfish, but heal less in one bite and less healed overall than blue blubber jellyfish ."
+        ]
+    },
+    {
+        "title": "97-99: Sailfish",
+        "content": [
+            "Swift sailfish provide raw sailfish at a moderately fast rate. Sailfish are good burst food, allowing quick recovery from low health, but drain adrenaline, making them inferior to jellyfish for sustained healing."
+        ]
+    },
+    {
+        "title": "93: Prifddinas Waterfall Fishing",
+        "content": [
+            "It is still recommended to do this for the crystal fishing rod . This rod can be used at swarm fishing, sailfish and jellyfish."
+        ]
+    },
+    {
+        "title": "68-99: Swarm fishing (afk)",
+        "content": [
+            "Swarm fishing provides a large variety of high level fish and is very laid-back compared to other methods. The primary drawback is that the fish caught can be too high level to cook. As such, if not supplementing cooking training with methods not reliant on fishing (such as churning butter, events or clan citadel), it's recommended to wait with fishing here until 80 to cook the sharks received here and in other places (this is not necessary with the Bait and Switch relic, which requires 99 ). Note that the rate of raw sailfish, raw green blubber jellyfish, and raw blue blubber jellyfish at this spot is significantly slower than when catching them individually at their own spots, but swarm fishing is very afk. Swarm fishing is also a good way to get sharks, manta rays and sailfish for big game hunter early."
+        ]
+    }
+]

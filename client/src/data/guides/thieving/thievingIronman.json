@@ -1,32 +1,87 @@
 [
-  {
-      "levels": "1-62",
-      "method": "**Quest & Thieves Guild:** Do *Biohazard*, *Plague City*, *Tower of Life* early if you can. Get to 15 for HAM members.",
-      "xp_rates": "Standard",
-      "tips": "Ironmen need money, so early pickpocketing is good GP. Pickpocket *Men/Women* in Lumbridge for early cash."
-  },
-  {
-      "levels": "15-55",
-      "method": "**Pickpocketing HAM Members:** Easy to get clue scrolls and HAM robes/buttons for quests.",
-      "xp_rates": "Decent",
-      "tips": "Keep the buttons for later quests."
-  },
-  {
-      "levels": "62-92",
-      "method": "**Safecracking:** Just like mains, this is the XP meta. Safes drop huge singular XP drops + pilfer points.",
-      "xp_rates": "Massive (400k - 800k)",
-      "tips": "Unlock the **Loot Bag** upgrades first to hold more loot."
-  },
-  {
-      "levels": "90+",
-      "method": "**Crux Eqal Knights:** Great for GP/supplies.",
-      "xp_rates": "High",
-      "tips": "Use the **Five-finger discount** aura if you have loyalty points."
-  },
-  {
-      "levels": "93-99+",
-      "method": "**Prifddinas Elves:** Essential for diverse supplies (Potions, Runes, Seeds).",
-      "xp_rates": "High",
-      "tips": "Rotate clans efficiently. Provides Crystal Keys too."
-  }
+    {
+        "title": "Early training: quests",
+        "content": [
+            "Early levels can be skipped by completing quests rewarding Thieving experience. Hazeel Cult has no requirements and no combat if you side with Hazeel . Completing this along with Buyers and Cellars , Biohazard , and Fight Arena will boost the player to level 21 Thieving immediately.",
+            "- Hazeel Cult rewards 1,500 Thieving experience - Fight Arena rewards 2,175 Thieving experience - Tower of Life requires 10 , rewards 500 Thieving experience - Biohazard requires Plague City , rewards 1,250 Thieving experience - The Feud requires 30 , rewards 15,000 Thieving experience, bringing the player from 30 to 37 thieving. - Buyers and Cellars requires 5 , rewards 525 Thieving experience and unlocks the Thieves' Guild."
+        ]
+    },
+    {
+        "title": "1-4: Pompous merchants",
+        "content": [
+            "If opting not to use quests for the early levels, pompous merchants provide the fastest experience from levels 1–4, at around 6,000 experience an hour. However, as only 388 experience is needed to achieve level 5 Thieving, players with no previous experience of the skill should achieve level 5 in approximately 4 minutes."
+        ]
+    },
+    {
+        "title": "5-15: Bakery stalls",
+        "content": [
+            "At level 5 Thieving players can begin stealing from bakery stalls to gain approximately 11,000 experience an hour, while also banking a large supply of early game food. As only 2,300 experience is needed to reach level 15 Thieving it should take players around 11 minutes to reach level 15 Thieving.",
+            "The best bakery stall location for training is in Lumbridge . It is very close to a bank chest and there is a spot where players can alternate between the Bakery Stall and Vegetable Stalls , resulting in faster experience than a Bakery Stall alone. The same can be said for Catherby 's stalls although they are slightly further from a bank."
+        ]
+    },
+    {
+        "title": "Levels 15-62: Thieves' Guild doors",
+        "content": [
+            "With at least level 15 Thieving, players should start training by opening doors in the practice chest area of the Thieves' Guild . To access this area of the Thieves' Guild the player must have completed the Buyers and Cellars quest. The practice chest area is located south-east of the main training room within the guild; it is composed of 6 jail cells containing practice chests. Players should train their Thieving by opening the jail cell doors within this area. Once a door has been opened it will remain open for around 5.5 minutes, so players should change worlds (using the \"hop worlds\" option in the options menu) to find a world where the doors are closed after having opened all the doors on their current world.*",
+            "From level 15-35 Thieving, players will only be able to open the 3 doors on the northern side of the corridor for approximately 61,000 experience per hour. At level 35 Thieving, players will also be able to open the 3 doors on the southern side of the corridor, however these doors require use of a lockpick . With 41 Thieving and completion of the Lost Her Marbles caper, players can buy one from Dodgy Derek's Dirty Deals in the Thieves' Guild. Alternatively, with 22 , players can catch young implings for a 1/10 chance to obtain a lockpick.",
+            "From 35/41-62 Thieving, players should open all 6 doors, ranging from 83,500 experience per hour up to 150,000 at level 50+. By rotating clockwise around the room, players can open doors efficiently, as the doors impede anticlockwise movement when open."
+        ]
+    },
+    {
+        "title": "Overview",
+        "content": [
+            "At level 62 Thieving, and with the last Thieves' Guild caper completed, players can begin safecracking . This additionally requires, 40 , 46 , as well as an irit potion (unfinished) , which can be mixed by a vial of water and clean irit obtained relatively commonly from cave bugs , chaos druids , and banshees .",
+            "First, players should speak to the safe-cracking trainer in the Thieves' Guild if they haven't already to receive a stethoscope and a small loot bag , and then begin looting from chests in Misthalin .",
+            "When your loot bag is full, turn it in to Chief Thief Robin at the Thieves' Guild for even more experience. Players should consider selling their items for pilfer points in order to upgrade their loot bag, as well as to buy Thieves' Guild teleport and elf thieving reset tokens .",
+            "Safecracking provides between 300,000 experience an hour at level 62, to 500,000 experience per hour at level 90."
+        ]
+    },
+    {
+        "title": "Levels 62-76: Safecracking in Misthalin",
+        "content": [
+            "This can provide up to 300,000 experience an hour.",
+            "- Crack open the safes when they flash blue (for quicker experience), the player can gain up to 400,000 experience an hour. - You need to make a round of many of these locations, as a safe once cracked cannot be cracked again for 5 minutes. - Hop between locations and keep cracking safes for maximum XP, rather than waiting at an opened safe for it to close.",
+            "A good rotation is:",
+            "If you have extra time, consider also looting the safes in Lumbridge or Edgeville . From 69 to 76, the player can also loot safes in the Kharidian Desert for a slight increase in experience rates. The safes in Al Kharid and Menaphos Merchant district are easy to reach, and if the player has quick access to Pollnivneach , the safes in Hakeem the Mayor 's house are efficient."
+        ]
+    },
+    {
+        "title": "Levels 90-99+: Safecracking hidden safes",
+        "content": [
+            "At level 90 Thieving, players should incorporate hidden safes into their route, most notably the safes in the Rogues' Castle in the Wilderness . This is up to around 950,000 experience per hour if the player has completed the hard Wilderness achievements . Staying at the Rogue's Castle safes and pickpocketing rogue captains during safe cooldown provides around 500,000 experience per hour. Bringing an Enhanced Excalibur negates the need to bring food to heal from pickpocketing stuns.",
+            "This provides 950,000 base experience per hour. For faster trips, Double Surge and Dive or Bladed Dive are helpful for getting around faster. The skeleton at Zemouregal's fort and rogues in their castle can often be Barged as another movement ability. The Slayer cape teleport to Chaeldar is a closer teleport to the Zanaris safes than the fairy ring. The Quest Cape teleport is closer to the Glacor Cave exit than D K Q , but this is a very high requirement.",
+            "Instead of bringing a portable fairy ring , which has limited charges, players can also bring a cape of legends , which is an unlimited teleport that is very close to a fairy ring. Another alternative for players who are maxed is to set their Max guild Teleport to the garden, and then use a skill portal that is attuned to the fairy ring.",
+            "Bringing some Thieves' Guild teleport tablets will allow players to quick empty their loot bag without losing much XP. With the medium loot bag , the bag will be filled roughly every two cycles.",
+            "The Wilderness safes are prioritised because they give the most experience. The safes in the Wilderness and in Zemouregal's fort have a cooldown of 10 minutes, as opposed to the usual 5 minutes of other safes. Zanaris and Camelot are included to fill out the rotation because all of the special safes would otherwise still be on cooldown. With this, the Wilderness safes and the Zemouregal's fort's safes should be looted every 10 minutes."
+        ]
+    },
+    {
+        "title": "Optimal hidden safes route",
+        "content": [
+            "Items required: obelisk shards or portable obelisk ; portable fairy rings , Slayer cape , or quick access to a fairy ring ; Camelot Teleport runes or tablets or a cape of legends Items recommended: Mobile perk for Surge and either Dive or Bladed Dive With 92 or higher Thieving, Abyssal Lurker scrolls can be used to get a +4 boost that will allow the player to loot all four safes in Zemouregal's fort."
+        ]
+    },
+    {
+        "title": "Alternate Training Method: AFK Pickpocketing",
+        "content": [
+            "While safecracking offers the best experience per hour, it also requires constant attention to both crack the safes and to travel from each safe to the next one. The loot available is also limited to coins and rewards from the Thieves' Guild shop. Pickpocketing is a much less click-intensive way of gaining Thieving experience, as on a successful pickpocket you will automatically attempt to pickpocket again. Once you reach a 100% success rate, it's possible to auto-pickpocket for a full 15 minutes with no interaction whatsoever, until the logout timer activates. Assuming no failures or banking, you can normally achieve 2000 pickpockets per hour (one every 3 ticks), increasing to 3000 per hour with the Sticky Fingers relic power (requiring 84 Archaeology , boostable). Various effects can give extra loot, such as the various camouflage outfits , or a sufficiently high Thieving and Agility level, but these don't give extra experience. This means that once you hit 100% success rate, your experience per hour no longer increases as your thieving level goes up.",
+            "The exoskeleton bracers , gloves of silence and master camouflage outfit all give the same +5% boost to pickpocketing success rate, though the master camouflage outfit and its components also give other benefits and have a 75 Hunter requirement in order to get the success rate boost. The gloves do not decay if you don't fail any pickpocket attempts. A Magpie familiar , requiring 47 Summoning , gives an invisible +3 boost to Thieving and can be used to reach 100% success rate a few levels early. Each pouch lasts 32 minutes.",
+            "Pickpocketing also gives a variety of useful loot, from coins to seeds to runes to menaphite gift offerings .",
+            "An incomplete list of suggested targets for pickpocketing are:",
+            "- Menaphite marketeer , requiring the Jack of Spades quest These give menaphite gift offerings , as well as a chance to spawn various kinds of implings and also Guthixian butterflies . They also provide a small amount of Menaphos reputation . You can reach 100% success rate in the following ways, for 59k xp/hour: 46 Thieving and Legendary Five-Finger Discount aura 57 Thieving with tier 8 faction reputation and gloves of silence or equivalent 78 Thieving with tier 8 faction reputation 94 Thieving with gloves of silence or equivalent - These give menaphite gift offerings , as well as a chance to spawn various kinds of implings and also Guthixian butterflies . They also provide a small amount of Menaphos reputation . - You can reach 100% success rate in the following ways, for 59k xp/hour: 46 Thieving and Legendary Five-Finger Discount aura 57 Thieving with tier 8 faction reputation and gloves of silence or equivalent 78 Thieving with tier 8 faction reputation 94 Thieving with gloves of silence or equivalent - 46 Thieving and Legendary Five-Finger Discount aura - 57 Thieving with tier 8 faction reputation and gloves of silence or equivalent - 78 Thieving with tier 8 faction reputation - 94 Thieving with gloves of silence or equivalent - Druid (Garden of Kharid) These have a reward table full of herb seeds of every kind except Arbuck seeds . They also give elemental anima stone and catalytic anima stone for faster runecrafting, as well as teleports to the Garden of Kharid which are useful for herb runs and (at a very low rate) Supreme growth potion (universal) . You can reach 100% success rate in the following ways, for 116k xp/hour: 85 Thieving, Gloves of Silence or equivalent, and the Legendary Five-finger Discount aura. 96 Thieving, Gloves of Silence or equivalent, and Ardougne cloak 3 or higher. - These have a reward table full of herb seeds of every kind except Arbuck seeds . They also give elemental anima stone and catalytic anima stone for faster runecrafting, as well as teleports to the Garden of Kharid which are useful for herb runs and (at a very low rate) Supreme growth potion (universal) . - You can reach 100% success rate in the following ways, for 116k xp/hour: 85 Thieving, Gloves of Silence or equivalent, and the Legendary Five-finger Discount aura. 96 Thieving, Gloves of Silence or equivalent, and Ardougne cloak 3 or higher. - 85 Thieving, Gloves of Silence or equivalent, and the Legendary Five-finger Discount aura. - 96 Thieving, Gloves of Silence or equivalent, and Ardougne cloak 3 or higher. - Paladin Paladins are a good source of chaos runes , which are needed for vulnerability bombs among other uses. You can reach 100% success rate in the following ways, for 303k xp/hour: 99 Thieving, Gloves of Silence or equivalent, Ardougne cloak 2 or higher, a magpie summoned, Crystal Mask and Light Form . This should also be possible at a lower level with the Legendary Five-finger Discount aura. - Paladins are a good source of chaos runes , which are needed for vulnerability bombs among other uses. - You can reach 100% success rate in the following ways, for 303k xp/hour: 99 Thieving, Gloves of Silence or equivalent, Ardougne cloak 2 or higher, a magpie summoned, Crystal Mask and Light Form . This should also be possible at a lower level with the Legendary Five-finger Discount aura. - 99 Thieving, Gloves of Silence or equivalent, Ardougne cloak 2 or higher, a magpie summoned, Crystal Mask and Light Form . - This should also be possible at a lower level with the Legendary Five-finger Discount aura. - Crux eqal knight These have a similar reward table to the nearby druids, but with much higher rates of seeds and other useful drops. You can reach 100% success rate in the following ways, for 555k xp/hour: 96 Thieving, a magpie summoned, Gloves of Silence or equivalent, Ardougne cloak 3 or higher, Legendary Five-finger Discount aura, Crystal Mask and Light Form . 99 Thieving, Gloves of Silence or equivalent, Ardougne cloak 3 or higher, Legendary Five-finger Discount aura, Crystal Mask and Light Form . The lack of magpie means a different familiar can be used, either a Beast of Burden to carry prayer restoring potions or a Holy scarab familiar to reduce prayer drain. - These have a similar reward table to the nearby druids, but with much higher rates of seeds and other useful drops. - You can reach 100% success rate in the following ways, for 555k xp/hour: 96 Thieving, a magpie summoned, Gloves of Silence or equivalent, Ardougne cloak 3 or higher, Legendary Five-finger Discount aura, Crystal Mask and Light Form . 99 Thieving, Gloves of Silence or equivalent, Ardougne cloak 3 or higher, Legendary Five-finger Discount aura, Crystal Mask and Light Form . The lack of magpie means a different familiar can be used, either a Beast of Burden to carry prayer restoring potions or a Holy scarab familiar to reduce prayer drain. - 96 Thieving, a magpie summoned, Gloves of Silence or equivalent, Ardougne cloak 3 or higher, Legendary Five-finger Discount aura, Crystal Mask and Light Form . - 99 Thieving, Gloves of Silence or equivalent, Ardougne cloak 3 or higher, Legendary Five-finger Discount aura, Crystal Mask and Light Form . The lack of magpie means a different familiar can be used, either a Beast of Burden to carry prayer restoring potions or a Holy scarab familiar to reduce prayer drain.",
+            "(Experience rates given in each case are base rates, without Sticky Fingers, the Wise perk, or any other experience boosts.)"
+        ]
+    },
+    {
+        "title": "94+: Keldagrim multi-step chests",
+        "content": [
+            "At level 94, with the Master thief's lockpick and partial completion of The Giant Dwarf , players can open the chests in Keldagrim for about 575,000 experience per hour with moderate attention, which is faster than only cracking safes in the rogue's castle and will provide around 180 of both orikalkum and necronium bars , plus around 1000 of each stone spirit, if done to level 99. This will comfortably enough stone spirits to mine all ore for the rest of the required bars for 80 smithing if doing burial equipment, plus enough spirits to later upgrade a pickaxe. It is not recommended to do this without the lockpick, as it is considerably slower than simply continuing to safecrack in the rogue's castle."
+        ]
+    },
+    {
+        "title": "96+: Elven clan workers",
+        "content": [
+            "To gain the most Thieving experience per hour players should prioritise thieving from elven clan workers within two districts that are currently affected by the Voice of Seren as often as possible, as base experience obtained from pickpocketing elven clan workers is increased by 20% while the Voice of Seren is active. In between stealing from these clans, the player should steal from the other clans that they are able to access in order of descending level requirement, as elven clan workers with a higher Thieving level requirement award more Thieving experience per successful pickpocket. Crystal teleport seeds can be useful for teleporting between districts. It is possible to gain around 373,000 experience an hour by pickpocketing from elven clan workers while wearing a Trahaearn exoskeleton set at level 99 Thieving (with Meilyr and Ithell Clan being affected by the Voice of Seren). The amount of experience that can be gained per hour while pickpocketing elven clan workers depends on which clans are currently affected by the Voice of Seren, as well as the player's ability to access clans which give a greater amount of Thieving experience upon successful pickpocket. A Thieving cape can completely remove the need to bank unless doing Amlodd workers , however it is not required as there are bank chests all over Prifddinas . A good route with level 99 Thieving is to rotate Meilyr , Hefin , Amlodd , Cadarn and Iorwerth workers , as this yields many useful items for Ironman accounts such as doses of super attack , super strength , super defence , super ranging potion , super magic potion , super energy potion , and Signs of the porter IV , as well as various useful Herblore supplies like crushed nest and dragon scale dust . Players may also make use of elf thieving reset tokens , which can be purchased for 200 pilfer points from Dodgy Derek's Dirty Deals in the Thieves' Guild. This will reset the 20 minute timer preventing you from pickpocketing elven clan workers."
+        ]
+    }
 ]

@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Hunter is trained by tracking and trapping creatures around Gielinor using Box traps, Deadfall traps, Bird snares, and other equipment. The skill cap is level 99.",
+            "The skill is largely self-contained — no secondary resources are required to set traps. The number of traps you can set simultaneously increases with your Hunter level (up to 5 traps at level 80).",
+            "High-level Hunter (chinchompas) also earns significant GP through selling Carnivorous Chinchompas (red chins) on the Grand Exchange, making it one of the few skills with a strong profit motive at high levels."
+        ]
+    },
+    {
+        "title": "Levels 1–9: Varrock Museum Quiz",
+        "content": [
+            "Before placing any traps, visit the Varrock Museum and complete the Natural History Quiz by speaking to Orlando Smith on the basement level. Answering questions about creatures in the exhibits correctly grants 1,000 Hunter XP and 1,000 Slayer XP — enough to reach level 9 instantly from level 1.",
+            "This is a mandatory first step for any efficient Hunter training plan and takes approximately 10 minutes."
+        ]
+    },
+    {
+        "title": "Levels 9–43: Kebbits and Lizards",
+        "content": [
+            "Polar Kebbits (level 1, north of Rellekka) can be caught with a single deadfall trap. Crimson Swifts and Common Kebbit (level 3) are also available for bird snaring in Feldip Hills.",
+            "Swamp Lizards (level 29, south of Canifis) are a popular training method in this range. They require a rope and a small fishing net as trap supplies and give decent XP.",
+            "Ruby Harvest butterflies (level 15, Feldip Hills) can be caught with a butterfly net and jar — they are modest XP but easy to obtain.",
+            "At level 37 you can catch Spotted Kebbits in the Piscatoris Hunting Area for Spotted Fur, useful for the Fletching skill. Level 43 unlocks Carnivorous Chinchompas."
+        ]
+    },
+    {
+        "title": "Levels 43–80: Carnivorous Chinchompas",
+        "content": [
+            "Carnivorous Chinchompas (level 63, Feldip Hills — the red variant) are the primary training method from level 63 to 80 and one of the most popular Hunter methods in the game. They use Box traps baited with Spicy Kebabs.",
+            "From level 43 you can catch the lower-tier Chinchompas in the Piscatoris Hunting Area. Red Chinchompas at level 63 are substantially better XP and sell well on the Grand Exchange.",
+            "At level 55 you can set 3 traps simultaneously (improving to 4 at level 60 and 5 at level 80). Always set the maximum number of traps available to you.",
+            "The Hunter area in the Piscatoris Hunting Area can be accessed via Fairy Ring AKQ or by sailing from Port Sarim. Always equip a Butterfly Net to allow catching stray creatures."
+        ]
+    },
+    {
+        "title": "Levels 80–99: Grenwalls and Herbiboar",
+        "content": [
+            "Grenwalls (level 77, Feldip Hills) are the best Hunter trap method available before level 90 options. They use Box traps and are found south of Jiggig.",
+            "Herbiboar on Anachronia (level 80 Hunter and level 31 Herblore required) offers a high-XP alternative. You track the Herbiboar using Hunter skill by following its trail and stunning it, receiving Herblore XP and grimy herbs as a reward alongside Hunter XP. It is one of the best combined-skill activities in RS3.",
+            "Dinosaur hunting on Anachronia at higher levels (Horned Graahk level 41, Draconic Jadinkos level 80+) provides strong XP rates and valuable drops.",
+            "At level 99 the Hunter cape passive perk prevents traps from degrading, saving money on trap maintenance."
+        ]
+    }
+]

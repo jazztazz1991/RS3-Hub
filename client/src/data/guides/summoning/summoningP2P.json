@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Summoning is trained by creating Summoning pouches at Obelisks scattered around Gielinor. Each pouch requires a charm, spirit shards, and a tertiary ingredient specific to the familiar.",
+            "There are four charm types in ascending rarity: Gold (most common), Green (uncommon), Crimson (common at mid-high levels from combat), and Blue (rare). Always create the highest-level pouch available for each charm type.",
+            "Key mechanic: Bogrog in Gu'Tanoth exchanges filled pouches back for 70% of the spirit shards used. This means you can create pouches purely for XP, then exchange them back immediately to recoup most of the shard cost. Spirit shards are very cheap on the Grand Exchange — charms are the main bottleneck."
+        ]
+    },
+    {
+        "title": "Getting Charms",
+        "content": [
+            "Charms are dropped by the majority of monsters in RS3. The fastest way to accumulate them is through Slayer tasks, as Slayer monsters have high charm drop rates and you kill them in large quantities.",
+            "Gold charms are used for early pouches and are by far the most common. Crimson charms become the primary training charm from around level 40. Blue charms are rare and reserved for the highest-level pouches.",
+            "God Wars Dungeon bosses, Waterfiends, and most mid-to-high level combat monsters have strong charm drop rates. Accumulating a large charm bank before training Summoning in one sitting is the most efficient approach."
+        ]
+    },
+    {
+        "title": "Levels 1–40: Gold Charm Pouches",
+        "content": [
+            "Train using Gold charms, always making the highest-level pouch available. Key milestones: Spirit Wolf (1), Dreadfowl (4), Spirit Spider (10), Thorny Snail (16), Granite Crab (19), Spirit Tz-Kih (23), Compost Mound (25), Stranger Plant (28), Spirit Scorpion (31), Spirit Terrorbird (32).",
+            "The Spirit Terrorbird at level 32 is a popular early familiar for its run energy restore scroll (raw bird meat is the tertiary ingredient, very cheap on the GE).",
+            "Exchange all created pouches with Bogrog after each session to recover spirit shards. The only pouches worth keeping are ones you will actually use in combat or skilling."
+        ]
+    },
+    {
+        "title": "Levels 40–67: Crimson Charm Pouches",
+        "content": [
+            "From level 40, Crimson charms should be your primary training charm as they give significantly more XP per pouch than Gold. Make Spirit Kalphite (40), Macaw (43), Ibis (46), Spirit Cobra (52), and Fruit Bat (57).",
+            "The Fruit Bat at level 57 is a very useful familiar — its foraging scroll can generate noted fruit passively. The War Tortoise at level 63 carries 18 extra inventory slots and is popular for skilling.",
+            "Level 67 unlocks the Bunyip, one of the most valuable combat familiars in the game, passively healing the player every 15 seconds using raw fish as the tertiary ingredient."
+        ]
+    },
+    {
+        "title": "Levels 67–99: Pack Yak and Endgame Pouches",
+        "content": [
+            "Level 79 unlocks the Ravenous Locust and level 80 the Pack Yak — arguably the most useful familiar in RS3. The Pack Yak carries 30 extra inventory slots and can note items via scrolls, making it invaluable for bossing and skilling. Spend Blue charms on Pack Yaks whenever possible.",
+            "Level 83 unlocks the Steel Titan and level 88 the Geyser Titan, both powerful combat familiars. Level 89 unlocks the Hydra.",
+            "Level 99 unlocks the Wolpertinger and the Nihil familiars. Continue the training loop: create pouches with all charm types → exchange with Bogrog → repeat. Keep only pouches you intend to actively use."
+        ]
+    }
+]

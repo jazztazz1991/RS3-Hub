@@ -3,49 +3,53 @@ import { Link } from 'react-router-dom';
 import SkillIcon from '../Common/SkillIcon';
 import './Guides.css';
 
-const Guides = () => {
-    // Currently available guides
-    const availableGuides = [
-        { name: 'Necromancy', path: '/guides/necromancy' },
-        { name: 'Thieving', path: '/guides/thieving' },
-        { name: 'Archaeology', path: '/guides/archaeology' },
-        { name: 'Divination', path: '/guides/divination' },
-        { name: 'Farming', path: '/guides/farming' },
-        { name: 'Fishing', path: '/guides/fishing' },
-        { name: 'Woodcutting', path: '/guides/woodcutting' },
-        { name: 'Mining', path: '/guides/mining' },
-        { name: 'Firemaking', path: '/guides/firemaking' },
-        { name: 'Herblore', path: '/guides/herblore' },
-        { name: 'Agility', path: '/guides/agility' },
-        { name: 'Construction', path: '/guides/construction' },
-        { name: 'Cooking', path: '/guides/cooking' },
-        { name: 'Crafting', path: '/guides/crafting' },
-        { name: 'Fletching', path: '/guides/fletching' },
-        { name: 'Slayer', path: '/guides/slayer' }
-    ];
+const GUIDES = [
+    { name: 'Agility',       path: '/guides/agility' },
+    { name: 'Archaeology',   path: '/guides/archaeology' },
+    { name: 'Construction',  path: '/guides/construction' },
+    { name: 'Cooking',       path: '/guides/cooking' },
+    { name: 'Crafting',      path: '/guides/crafting' },
+    { name: 'Divination',    path: '/guides/divination' },
+    { name: 'Dungeoneering', path: '/guides/dungeoneering' },
+    { name: 'Farming',       path: '/guides/farming' },
+    { name: 'Firemaking',    path: '/guides/firemaking' },
+    { name: 'Fishing',       path: '/guides/fishing' },
+    { name: 'Fletching',     path: '/guides/fletching' },
+    { name: 'Herblore',      path: '/guides/herblore' },
+    { name: 'Hunter',        path: '/guides/hunter' },
+    { name: 'Invention',     path: '/guides/invention' },
+    { name: 'Magic',         path: '/guides/magic' },
+    { name: 'Mining',        path: '/guides/mining' },
+    { name: 'Necromancy',    path: '/guides/necromancy' },
+    { name: 'Prayer',        path: '/guides/prayer' },
+    { name: 'Runecrafting',  path: '/guides/runecrafting' },
+    { name: 'Slayer',        path: '/guides/slayer' },
+    { name: 'Smithing',      path: '/guides/smithing' },
+    { name: 'Summoning',     path: '/guides/summoning' },
+    { name: 'Thieving',      path: '/guides/thieving' },
+    { name: 'Woodcutting',   path: '/guides/woodcutting' },
+];
 
-    return (
-        <div className="guides-container">
+const Guides = () => (
+    <div className="guides-hub">
+        <div className="guides-hub-header">
             <h2>Training Guides</h2>
-            <p>Select a skill to view optimal training methods for P2P and Ironman.</p>
-
-            <div className="guides-grid">
-                {availableGuides.map(guide => (
-                    <Link to={guide.path} key={guide.name} className="guide-card">
-                        <div className="guide-icon">
-                            <SkillIcon skillName={guide.name} className="guide-skill-img" />
-                        </div>
-                        <div className="guide-info">
-                            <h3>{guide.name}</h3>
-                        </div>
-                    </Link>
-                ))}
-            </div>
-             <div className="coming-soon">
-                <p>More guides coming soon...</p>
-            </div>
+            <p>Step-by-step methods for P2P and Ironman. Select a skill to get started.</p>
+            <span className="guides-count">{GUIDES.length} guides available</span>
         </div>
-    );
-};
+
+        <div className="guides-hub-grid">
+            {GUIDES.map(guide => (
+                <Link to={guide.path} key={guide.name} className="guides-hub-card">
+                    <SkillIcon skillName={guide.name} className="hub-skill-icon" />
+                    <div className="hub-card-body">
+                        <span className="hub-card-name">{guide.name}</span>
+                        <span className="hub-card-tags">P2P &amp; Ironman</span>
+                    </div>
+                </Link>
+            ))}
+        </div>
+    </div>
+);
 
 export default Guides;

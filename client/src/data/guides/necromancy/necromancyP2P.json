@@ -1,32 +1,150 @@
 [
-  {
-      "levels": "1-20",
-      "method": "**Introduction:** Complete the Necromancy! quest. Perform rituals at the Well of Souls to construct your Tier 10 equipment.",
-      "xp_rates": "Variable",
-      "tips": "Focus on upgrading your gear as soon as possible via Kili's tasks."
-  },
-  {
-      "levels": "20-60",
-      "method": "**City of Um Rituals:** Perform the highest level communal ritual you can. Lesser Communion, then Greater Communion.",
-      "xp_rates": "Increasing with level",
-      "tips": "Always click the disturbances (moths, glittering glyphs, wandering souls) for massive bonus XP."
-  },
-  {
-      "levels": "60-90",
-      "method": "**Hermod (Boss):** At level 60, farm Hermod for plates needed for T70-90 armor upgrades. Rituals (Secure/Powerful Communion) are still top XP.",
-      "xp_rates": "Combat: 200k+ / Rituals: 400k+",
-      "tips": "Use **Multiply Glyphs** on your ritual site to drastically increase soul attraction and XP from disturbances."
-  },
-  {
-      "levels": "90-99",
-      "method": "**Abyssal Savages / Beasts:** Aggressive combat training in the Wilderness or Player Slayer Dungeon.",
-      "xp_rates": "900k+/hr (Combat)",
-      "tips": "Use Ghost, Skeleton, and Zombie conjures. Revolution bar makes this very AFK with T90 tank gear."
-  },
-  {
-      "levels": "99-120",
-      "method": "**Powerful Communion / Disturbances:** With full Multiply III glyphs, this is the best XP in the game (1.5m - 2m XP/hr actively).",
-      "xp_rates": "1.5m - 2.5m/hr",
-      "tips": "Join 'Necro Rituals' FC or world 84 (lag warning) for community buffs."
-  }
+    {
+        "title": "Levels 1–60",
+        "content": [
+            "At lower levels (1–60 Necromancy), players should train using hybrid tank armour, such as the Dragon Rider armour , which provides a T55 armour rating and costs 2,883,416 coins for the head, body, and legs. A slightly more expensive augmentable alternative is Akrisae the Doomed's equipment , which provides a T55 armour rating and costs 3,022,445 coins for the three pieces. A more expensive augmentable alternative is the Anima core of Sliske armour , costing 85,177,100 coins for the three pieces and providing a T65 armour rating.",
+            "After reaching level 60, players should train with Necromancy armour. Deathwarden robe armour are tier 10 Necromancy robes that can be purchased from Buried Bargains . Similar to the weapons, the robes can be upgraded up to tier 90, with an upgrade available every 10 levels. Each upgrade must be crafted by players before they can be equipped; they cannot simply be purchased from the Grand Exchange. Upon reaching level 60 the player can craft the deathwarden nexus , which acts similarly to a rune pouch. The nexus can hold a maximum stack (2,147,483,647) of each necrotic rune and ectoplasm."
+        ]
+    },
+    {
+        "title": "Levels above 70",
+        "content": [
+            "At level 70, players may choose between two different task sets to upgrade their equipment from Kili, resulting in either tank or power armour . Either task set will allow the weapons to be upgraded to tier 70. If players remain on the tank route, their Deathwarden robe armour will now provide a small chance to dodge incoming attacks for each piece worn. Apart from having the piece and souls, players will also need to kill various bosses, albeit easy ones. Tier 70 Deathwarden robe armour provides more health and better survivability at the cost of less damage.",
+            "If players choose the power route, they will craft Deathdealer robe armour instead. In addition to increasing outgoing Necromancy damage, tier 70 Deathdealer robe armour provides a small chance per piece to apply Death Mark on every Necromancy attack. The Death Mark debuff instantly kills the affected enemy if they fall below 20% of their max health or 30,000 total health, whichever is lower. However, the power route is harder than the tank route; while no pieces or souls are needed, players must kill much stronger bosses. In addition, creating Deathdealer robe armour requires the player to acquire hermodic plates from Hermod , which are dropped at a 1/10 rate. 30 total hermodic plates are required for the tier 90 set.",
+            "Bossing requirements can be either completed in a solo or group encounter if available. In a solo encounter, the player has to deal the majority of their damage as Necromancy. In a group encounter, dealing any amount of damage with Necromancy will satisfy the requirement, even if other players use other combat styles or other options such as deathtouched darts .",
+            "It is recommended to eventually create both sets of armour (unless the player already owns the First Necromancer's equipment ), however the second set can be created at a later time. If not planning on rushing bossing or the tier 80/90 gear right away, players should craft the power armour set first, otherwise they should craft the tank set first. It is important to note, however, that the tank set is easier to craft than the power set, and it will provide access to tier 80/90 weapons which can then be used to complete the power tasks more easily.",
+            "Players should not upgrade their armour to tier 80 until they have access to a full ritual site with 11 glyph slots. This is at level 90 Necromancy for the Um ritual site or at least level 80 Necromancy if the Ungael ritual site is unlocked. Tier 80 and 90 armour variants require greater ensouled cloth and greater ensouled thread which is created from expensive subjugation robe armour and algarum thread . The player can boost to level 103 to draw six Multiply III . Some suggested boosts:",
+            "- An elder overload potion to boost from level 84, the absolute lowest level. - An overload or extreme necromancy to boost from level 87. - A super necromancy to boost from level 91",
+            "With these six Multiply III glyphs and an alteration necklace , the rituals will have a +400% output bonus. Each ritual will yield five materials, saving players a massive amount of money in the process.",
+            "Crafting an alteration necklace requires level 77 Crafting and level 68 Magic, but non-Ironman mode players can buy it on the Grand Exchange. Without one, the rituals can only reach +300% output boost before level 99. An extreme necromancy flask can be bought from Thalmund's Wares without the level 93 Herblore requirement, but it is also tradeable.",
+            "Players who wish to train to level 103 can be even more conservative. With the Necromancy cape perk, players can draw six Multiply III and put one onto the cape. With an alteration necklace, this results in a +500% output bonus and six materials per ritual.",
+            "If crafting the tank armour, 19 cloth and 15 thread are required; for the power armour, 20 cloth and 15 thread is needed (the tier 90 power task requires one). In total, you will need 39 cloth and 30 thread. If performing rituals at level 90, you will need 10 pieces of subjugation armour and 8 pieces of algarum thread. If performing rituals at level 99, you will need 8 pieces of subjugation armour and 6 pieces of algarum thread."
+        ]
+    },
+    {
+        "title": "Combat training",
+        "content": [
+            "Combat experience is proportional to the monster's life points. The following methods are recommended, mostly comprising undead and demons :"
+        ]
+    },
+    {
+        "title": "Levels 1–30",
+        "content": [
+            "You can kill these monsters to level up:"
+        ]
+    },
+    {
+        "title": "Tier 20 to 50 gear upgrades",
+        "content": [
+            "After you advanced Necromancy to 20, you may start using rituals to upgrade your gear from tier 10 to tier 50. Make sure to have completed Kili Row , and craft a tier 20 death guard and skull lantern , or better."
+        ]
+    },
+    {
+        "title": "Levels 30–40",
+        "content": [
+            "At level 30, you can complete the Kili's Knowledge I task to craft a tier 30 death guard and skull lantern , requiring 2 total lesser ensouled bars .",
+            "You can kill these monsters to level up:"
+        ]
+    },
+    {
+        "title": "Levels 40–50",
+        "content": [
+            "At level 40, you can complete the Kili's Knowledge II task to craft a tier 40 death guard and skull lantern , requiring 4 total lesser ensouled bars . You can unlock the Threads of Fate incantation from the Well of Souls . Threads of Fate can be very helpful for levelling due to its effectiveness in AoE combat, but using it requires an active playstyle and is not particularly beneficial for the rune cost while training.",
+            "You can also unlock Conjure Vengeful Ghost and Conjure Putrid Zombie abilities from the Well of Souls. However, you can only control one conjure at a time until level 52 Necromancy."
+        ]
+    },
+    {
+        "title": "Levels 50–60",
+        "content": [
+            "At level 50, you can complete the Kili's Knowledge III task to craft a tier 50 death guard and skull lantern , requiring 6 total lesser ensouled bars . At level 52, you can control two conjures at once."
+        ]
+    },
+    {
+        "title": "Levels 60–70",
+        "content": [
+            "At level 60, you unlock greater rituals. This is a good time to go back to the ritual site to complete greater communion rituals using spirit mementos . By placing two Multiply II glyphs (requires level 66, therefore you may have to keep drinking necromancy potions to place/repair the glyphs), you can obtain 43 souls per ritual. Spectral Scythe is an extremely powerful ability for levelling Necromancy; it can be unlocked at 2,000 souls, with further upgrades at 4,500 and 8,500 souls, requiring level 70 and 80 Necromancy respectively. To unlock the basic Spectral Scythe, you will need to do 38 greater communion rituals. It may be prudent to prepare an additional 58+93 greater communion rituals to make the most use of Spectral Scythe upgrades before level 90, where a faster method of obtaining souls would be made available."
+        ]
+    },
+    {
+        "title": "Tier 60 gear upgrades",
+        "content": [
+            "You should acquire the Underworld Grimoire 2 , which provides a 6% increase to disturbance experience when worn. The grimoire also provides various benefits and free teleports to the ritual site and smithy. Another unlock which will help greatly is the deathwarden nexus , this acts similarly to a rune pouch. The nexus can hold a maximum stack (2,147,483,647) of each necrotic rune and ectoplasm. The nexus can be crafted in the soul forge with one ensouled bar , one silver bar , and one cut sapphire , and then attuned at the dark portal directly north-east of the smithy.",
+            "You can also complete the Kili's Knowledge IV task to craft a tier 60 death guard and skull lantern , requiring 6 total ensouled bars . At this level, the tier 60 deathwarden robe armour will outperform the hybrid Dragon Rider armour. Crafting it will require several more rituals, but this process can be sped up by using three Multiply II glyphs to double the output of lesser ensoul material rituals for the tiers below 60, if you haven't crafted those already.",
+            "You will need the following materials and rituals to upgrade your gear to tier 60:"
+        ]
+    },
+    {
+        "title": "Levels 70–80",
+        "content": [
+            "To reach 4,500 souls, 58 more greater communion rituals are needed. Upon reaching 4,500 souls, unlock Spectral Scythe II. Along with Spectral Scythe, you will also need 3,000 souls in order to start The Spirit of War quest, which is required in order for the tier 70 upgrades. The tier 70 armour will outperform anima core of Sliske armour as well as any variant of the Slayer helmet .",
+            "You can kill these to level up:"
+        ]
+    },
+    {
+        "title": "Tier 70 gear upgrades",
+        "content": [
+            "At level 70, you have a choice on whether to continue the Deathwarden line, or branch into the Deathdealer line. Tier 70 Deathwarden armour, apart from increasing overall health total by 500, provides a 1% chance per piece to dodge an incoming attack. Deathdealer armour on the other hand, is the skill's power armour. This provides extra damage at the cost of survivability, as it will not provide the life points bonus that Deathwarden provides. Deathdealer armour also has a set effect that provides a 1% chance to passively apply Death Mark onto an enemy, instantly killing it if it falls below 20% of its maximum health or 30,000 health, whichever is lower.",
+            "Regardless of your choice, you must first complete the quest The Spirit of War . After the quest, talk to Kili to choose your armour upgrade. The tank tasks are still the same as normal, while the power armour requires killing particularly strong bosses (for their levels). To craft tank armour, complete Kili's Knowledge V , requiring a kill of The Barrows Brothers and 100 dragon souls or 20 greater communion rituals. To craft power armour, complete Kili's Knowledge V (power) , requiring 5 kills of the giant mole and 5 kills of the Kalphite Queen . As a component for power armour, you additionally need 5 hermodic plates , which are obtained as a 1/10 drop from Hermod, the Spirit of War .",
+            "Be sure to upgrade your weapons, requiring 8 ensouled bars and completion of either Kili task."
+        ]
+    },
+    {
+        "title": "Levels 80–90",
+        "content": [
+            "To reach 8,500 souls, 93 more greater communion rituals are needed. Upon reaching 8,500 souls, unlock Spectral Scythe (Cast 3) and Darkness . The latter adds a 20% chance to dodge incoming attacks, which can be used to increase survival rates while training.",
+            "You can kill these to level up:"
+        ]
+    },
+    {
+        "title": "Tier 80 gear upgrades",
+        "content": [
+            "Complete Kili's Knowledge VI or Kili's Knowledge VI (power) depending on your armour path.",
+            "- The tank path will require players to kill the original God Wars Dungeon generals (GWD1 bosses), then use the uncharged spiritbound hammer on each general's respective altar as soon as they die to charge it. - 150 slayer souls or 30 greater communion rituals are also required for this task. - This route is recommended for all players, even those who have tier 70 power armour, as it allows players to easily upgrade their weapons (not armour) to tier 80 and then 90. - This selection is non-exclusive and players who have completed the tank path can always return and complete the power path as well.",
+            "- The power path requires players to kill the Queen Black Dragon and Nex 5 times each; as Nex will be very daunting at such a point, it is recommended to find other players to assist in the task, as the required items will still drop as long as the player's damage was dealt via Necromancy. - If you want to complete it solo, then you can attempt killing Nex in practice mode, as the shards will still drop in practice mode. - A recommended route is to complete the tank armour path so you can upgrade your weapons (not armour) to tier 80 and then tier 90 (while keeping tier 70 power armour), and then return back to complete the Nex task, as it will be challenging with tier 70 weapons.",
+            "Upgrade your weapons as soon as you can, but it is highly recommended to wait till level 90 to upgrade your armour. Upgrading now would cost approximately 32,684,178 coins but waiting until level 90 would allow using the full ritual site and Multiply III glyphs (with the help of extreme necromancy potions) to reduce the cost to approximately 9,114,723 coins .",
+            "You will need the following materials and rituals to upgrade only your weapons to tier 80:"
+        ]
+    },
+    {
+        "title": "Levels 90–120",
+        "content": [
+            "Upon reaching level 90, the fastest training method is to exclusively train via rituals (see next section ). However, players who wish for a completely AFK training method may still want to train via combat. 30,000 souls is a requirement to start Alpha vs Omega (and access Rasial's boss fight) and 35,000 souls unlocks Split Soul and Conjure Undead Army , both of which are extremely useful against bosses.",
+            "You can kill these to level up:"
+        ]
+    },
+    {
+        "title": "Tier 90 gear upgrades",
+        "content": [
+            "Unlock the Sorrow curse from Selene , requiring 95 Prayer . If the player can afford a praesul codex , 95 Necromancy and 99 Prayer, unlock the Ruination curse. If you are using tank armour, you should now swap to power armour instead. Complete Kili's Knowledge VII (power) , which requires killing several difficult bosses - this is much faster compared to the tank task. Deathdealer armour is the most efficient for training due to the increased frequency of applying Death Mark, even outperforming the tier 95 First Necromancer's equipment when fighting groups of enemies.",
+            "You will need the following materials and rituals to upgrade your weapons to tier 90, and your armour to tier 80 and then tier 90:"
+        ]
+    },
+    {
+        "title": "High-level rituals (levels 90–120)",
+        "content": [
+            "Upon reaching level 90 Necromancy, you are able to remove all dust blocking the ritual site, which allows rituals to reach their maximum potential. You will unlock powerful (tier 3) rituals, which yield the highest experience rates. At this stage, rituals will outperform combat, with the downside of being less AFK.",
+            "The bulk of the experience gained during a ritual comes from ritual disturbances . The experience earned from completing the actual ritual is only less than 10% of the total experience. Therefore, completing disturbances is required for this method. Experience is granted upon successful completion of a disturbance, and the experience gained by rituals increases as you level up. If you do not have one already, you should acquire the highest Underworld Grimoire you can, for a maximum experience bonus of 12% per ritual disturbance.",
+            "The mechanics of soul attraction are very important. Soul attraction determines which types of ritual disturbances you get, with a higher attraction value yielding more and better disturbances. Soul attraction is affected by alteration glyphs ; you should fill every empty glyph slot with an alteration glyph. Suggested alteration glyphs can be found in the tables below. Multiply glyphs will yield higher output, while Attraction will give higher soul attraction and experience.",
+            "At 301% soul attraction, the soul storm disturbance can spawn, which is the disturbance that yields the second-most experience. At 501% soul attraction, for powerful rituals only, the Defile disturbance can spawn, which yields the most experience.",
+            "Most players should focus on obtaining 35,000 souls so that Split Soul, the highest tier talent, can be unlocked from the talent tree. Once the desired amount of souls are acquired, the player should then swap to a more profitable ritual."
+        ]
+    },
+    {
+        "title": "Ritual training tips",
+        "content": [
+            "- There is a repair all option available on the pedestal in the centre, saving you time from repairing each tile. - On the Defile disturbance, the purple smoke can be countered by clicking the miasma once (as soon as possible) after the player hears the smoke's sound. This results in a delay in siphoning that precisely avoids the time that the player would have been penalised. - It is possible that disturbances can appear with a significant delay (and rarely not appear at all) on lower frame rates. If you experience this, try to lower your graphics settings. - Turning on your game audio can help to hear ritual disturbances. - Wandering souls and shambling horrors appear as a yellow dot on the minimap. - Leaving your camera fixed may help with wandering soul visibility. - Dive and Bladed Dive can be helpful for reaching disturbances quickly. Having either the Shadow's Grace active or having an augmented item with the Mobile perk equipped will allow diving more frequently."
+        ]
+    },
+    {
+        "title": "Levels 90–99",
+        "content": [
+            "Starting at level 90, you should use Necromancy boosts to draw tier III glyphs for maximum efficiency. To draw an Attraction III glyph at level 90, a +17 level boost is needed, which can be obtained with either a supreme or elder overload potion . If your level is above 90, it is cheaper to instead use a regular , super , or extreme necromancy potion, or even a super Zamorak brew , depending on your level. To draw Multiply III , an extreme necromancy potion is sufficient at level 90. From level 98 onwards, a god banner 's 30 min static +5 Necromancy boost may be used in place of a potion. The following rituals are recommended:"
+        ]
+    },
+    {
+        "title": "Levels 99–120",
+        "content": [
+            "At level 99, you can claim the Necromancy cape . This cape gives the effect of a single Alteration glyph for free. However, you must be the required level to draw the glyph without boosts. You should always put a tier III glyph in the cape whenever possible; if you do not have the required levels, you can use a tier II glyph instead. You should perform the following rituals:"
+        ]
+    }
 ]

@@ -1,0 +1,71 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Herblore is one of the most resource-intensive skills for ironmen since herbs and secondaries cannot be bought from the Grand Exchange. Your herb supply comes entirely from farming, Slayer drops, boss drops, and a few specific activities. Progress is slower than for regular players, but sustainable with good planning.",
+            "The key insight for ironman Herblore is that the skill is completely gated by herb acquisition. Focus on maximising your herb income through farming runs and choosing Slayer tasks and bosses that drop good herbs. Once herbs are flowing, Herblore levels will follow."
+        ]
+    },
+    {
+        "title": "Herb Sources",
+        "content": [
+            "These are the main ways ironmen obtain herbs:",
+            "- Farming: The most reliable long-term source. Grow herbs on every available patch. Ranarr, Toadflax, and Snapdragon are the most valuable for Herblore training.",
+            "- Slayer: Many monsters drop herbs. Aberrant Spectres, Nechryaels, and Bloodvelds are notable herb droppers. At high Slayer levels, Slayer is a primary herb source.",
+            "- Boss drops: Barrows gives Avantoe and Torstol. Dagannoth Kings, GWD bosses, and Kalphite Queen all drop noted herbs at high rates.",
+            "- Managing Miscellania: Set kingdom to herbs for a passive supply of mid-tier herbs. Costs ~50,000 coins per day, yields 60–70 random herbs (Tarromin to Dwarf Weed range).",
+            "- Temple Trekking: Easy runs yield 10–30 low-level herbs. Good early source for getting started.",
+            "- Dungeoneering: Herb boxes from Rewards trader give herbs for Dungeoneering tokens."
+        ]
+    },
+    {
+        "title": "Early Levels (1–38)",
+        "content": [
+            "Early Herblore as an ironman is mainly about using whatever herbs you have. Don't try to rush — focus on unlocking farming and getting herb patches going.",
+            "- Start: Complete Druidic Ritual (required for Herblore). The quest itself gives no XP, but unlocks the skill.",
+            "- Use quest XP early: Jungle Potion (+1,500 XP), Recruitment Drive (+1,000 XP), and many other quests reward Herblore XP. Check a quest XP guide and claim these before grinding.",
+            "- Levels 3–22: Make Attack potions (Guam + Eye of Newt) from Guam farming and Slayer drops.",
+            "- Levels 12–22: Strength potions (Tarromin + Limpwurt Root). Limpwurt drops from goblins and other monsters.",
+            "- Levels 22–38: Restore potions (Harralander + Red Spider Eggs). Red spider eggs drop from many monsters and are found on the ground in certain dungeons.",
+            "Prioritise unlocking herb patches: Falador, Catherby, Ardougne, Port Phasmatys. Each patch adds significantly to your daily herb income."
+        ]
+    },
+    {
+        "title": "Mid Levels (38–70): Establishing a Routine",
+        "content": [
+            "By level 38 you should be doing regular herb runs. This is the key habit that drives ironman Herblore progress.",
+            "- Prayer potions (level 38): Ranarr + Snape Grass. Essential for bossing. Grow Ranarr in all herb patches and gather Snape Grass on Waterbirth Island or buy from the Fremennik market.",
+            "- Super attack/strength (levels 45/55): Irit or Kwuarm with secondaries from monster drops.",
+            "- Super restore (level 63): Snapdragon + Red Spider Eggs. Snapdragons are extremely valuable — farm every patch run.",
+            "Use Portable wells on World 84 if you can access them (they work for ironmen). The +10% XP bonus still applies.",
+            "Aberrant Spectres (Slayer): among the best herb droppers in the game. With a nosepeg and decent combat, you can receive 10–15 herb drops per trip.",
+            "At this point, Slayer should be your main driver of herb income. Choose tasks that drop herbs frequently."
+        ]
+    },
+    {
+        "title": "High Levels (70–99+)",
+        "content": [
+            "High-level Herblore opens up Extremes and Overloads, but these require large quantities of high-tier herbs (Avantoe, Dwarf Weed, Lantadyme, Torstol).",
+            "- Focus your farming on the herbs needed for your target potions. At high levels: Dwarf Weed, Lantadyme, Torstol.",
+            "- Barrows chest: great source of Avantoe and Torstol (noted drops). Run Barrows regularly for noted herb stacks.",
+            "- Elite dungeon 3 (Shadow Reef): drops large quantities of high-tier herbs.",
+            "- God Wars Dungeon bosses: all four factions drop noted herbs commonly.",
+            "- Overloads (level 96): Game-changing for ironman combat. Prioritise unlocking these — the sustained stats boost reduces supplies consumed at bosses dramatically.",
+            "- Livid Farm: grants Herblore XP through produce cleaning. Reasonable mid-level AFK XP source."
+        ]
+    },
+    {
+        "title": "Secondaries and Other Ingredients",
+        "content": [
+            "Secondary ingredients are often overlooked but are equally important. Key sources for ironmen:",
+            "- Limpwurt Root: drops from goblins, zombies, and many Slayer monsters. Also grown in Farming (level 26).",
+            "- Eye of Newt: sold by Betty in Port Sarim's magic shop and other magic shops. Very cheap.",
+            "- Snape Grass: found on Waterbirth Island (or Hobgoblin Peninsula). Respawns on the ground.",
+            "- Red Spider Eggs: found on the ground in Varrock Sewers. Also drops from various spiders.",
+            "- Dragon Scale Dust: crush blue dragon scales (dropped by blue dragons). One scale = one dust.",
+            "- White Berries: drop from Black Dragons, found in Lava Maze. Also grown in Farming (level 59).",
+            "- Crushed Bird's Nest: crush bird's nests (from Woodcutting) in a mortar and pestle.",
+            "- Potato Cactus: grows in the Kalphite cave or bought from NPC shops. Drops from Kalphites."
+        ]
+    }
+]

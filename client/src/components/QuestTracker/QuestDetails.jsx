@@ -97,10 +97,6 @@ const QuestDetails = () => {
                 <table className="qd-infobox-table">
                     <tbody>
                         <tr>
-                            <th>Start point</th>
-                            <td>See Guide</td>
-                        </tr>
-                        <tr>
                             <th>Members</th>
                             <td>{quest.isMembers ? 'Yes' : 'No'}</td>
                         </tr>
@@ -112,17 +108,15 @@ const QuestDetails = () => {
                             <th>Difficulty</th>
                             <td>{quest.difficulty}</td>
                         </tr>
+                        {quest.series && (
+                            <tr>
+                                <th>Series</th>
+                                <td>{quest.series}</td>
+                            </tr>
+                        )}
                         <tr>
-                            <th>Series</th>
-                            <td>{quest.series || '-'}</td>
-                        </tr>
-                        <tr>
-                            <th>Points</th>
+                            <th>Quest Points</th>
                             <td>{quest.questPoints}</td>
-                        </tr>
-                        <tr>
-                            <th>Release Date</th>
-                            <td>-</td>
                         </tr>
                     </tbody>
                 </table>
@@ -202,10 +196,10 @@ const QuestDetails = () => {
                 )}
 
                 {/* Guide Section */}
-                <div className="qd-guide-panel" style={{ marginTop: '2rem', border: 'none', padding: 0, background: 'none' }}>
-                    <div className="guide-header" style={{ borderColor: '#233140' }}>
-                        <h3 style={{ color: '#5dade2' }}>Quick Guide</h3>
-                        <button className="btn-reset" onClick={() => setCheckedSteps(new Set())}>Reset</button>
+                <div className="qd-guide-panel">
+                    <div className="qd-guide-header">
+                        <h2 className="qd-section-header" style={{ marginTop: 0, borderBottom: 'none' }}>Quick Guide</h2>
+                        <button className="btn-reset" onClick={() => setCheckedSteps(new Set())}>Reset Progress</button>
                     </div>
                     
                     {quest.guide && quest.guide.length > 0 ? (

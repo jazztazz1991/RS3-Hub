@@ -326,10 +326,4 @@ export const CRAFTING_METHODS = [
     {"id": "exquisite_divination_urn", "name": "Exquisite divination urn", "level": 108, "xp": 92.4, "category": "Urns"},
     {"id": "exquisite_hunter_urn", "name": "Exquisite hunter urn", "level": 109, "xp": 96.0, "category": "Urns"},
     {"id": "exquisite_farming_urn", "name": "Exquisite farming urn", "level": 110, "xp": 99.0, "category": "Urns"},
-    {"id": "onyx", "name": "Onyx", "level": 180, "xp": 115.0, "category": "Gems"},
-    {"id": "emerald", "name": "Emerald", "level": 675, "xp": 55.0, "category": "Gems"},
-    {"id": "diamond", "name": "Diamond", "level": 1075, "xp": 85.0, "category": "Gems"},
-    {"id": "dragonstone", "name": "Dragonstone", "level": 1375, "xp": 100.0, "category": "Gems"},
-    {"id": "moonstone", "name": "Moonstone", "level": 1675, "xp": 130.0, "category": "Other"},
-    {"id": "hydrix", "name": "Hydrix", "level": 1975, "xp": 130.0, "category": "Gems"},
 ];

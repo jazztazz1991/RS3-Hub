@@ -1,124 +1,53 @@
-{
-    "methods": [
-        {
-            "levels": "1-10",
-            "min_level": 1,
-            "max_level": 10,
-            "method": "Regular trees",
-            "xp_rate_raw": "14,500 XP/hr",
-            "notes": "At level 1 Woodcutting, players should begin training on regular trees . Between level 1 and 15 Woodcutting, players can gain experience at a rate equivalent to 14,500 experience per hour cutting regular trees. A player starting with no Woodcutting experience can expect to achieve level 10 after around 10 minutes of training. This experience rate assumes the player is using a Dwarven army axe to gain additional Woodcutting experience. Regular trees are located throughout RuneScape, but they are one of the few types of tree that are cut down after only one log has been obtained from them. To avoid having to wait for trees to respawn while training, players should train in locations with many regular trees available (such as south-west of the Grand Exchange in Varrock, west of the Cooks' Guild). Players wishing to obtain more logs could use a Seers' headband 1 (or better) which gives a chance of obtaining two logs at once when cutting regular trees, though this does not give any additional experience. The Seers' headband is obtained from completing the easy Seers' Village achievements .",
-            "category": "General",
-            "type": "ironman"
-        },
-        {
-            "levels": "10-20",
-            "min_level": 10,
-            "max_level": 20,
-            "method": "Oak trees",
-            "xp_rate_raw": "19,000 XP/hr",
-            "notes": "At level 10 Woodcutting players can start training on oak trees . Between level 15 and 30 Woodcutting, players can gain experience at a rate equivalent to 19,000 experience per hour at oak trees. This experience rate assumes that the player is using a Dwarven army axe between levels 10-30 and then using a mithril hatchet at level 30 onwards. Oak trees are found in many locations throughout RuneScape. Examples for good locations include east of Draynor Village bank, south-west of Varrock's west bank and north of the Yanille lodestone.",
-            "category": "General",
-            "type": "ironman"
-        },
-        {
-            "levels": "20-30",
-            "min_level": 20,
-            "max_level": 30,
-            "method": "Willow trees",
-            "xp_rate_raw": "27,000 XP/hr",
-            "notes": "At level 20 Woodcutting players should begin training on willow trees . Between level 30 and 35 Woodcutting players can gain around 27,000 experience per hour cutting willow trees. One of the best locations to cut willow trees is just south-west of the bank in Draynor Village , where a large group of willow trees can be found on the coastline.",
-            "category": "General",
-            "type": "ironman"
-        },
-        {
-            "levels": "30-50",
-            "min_level": 30,
-            "max_level": 50,
-            "method": "Teak trees",
-            "xp_rate_raw": "41,000-49,000 XP/hr",
-            "notes": "At level 30 Woodcutting players are able to start training on teak trees . Between 41,000 and 49,000 experience can be gained per hour training at teak trees with level 35-48 Woodcutting. The best place to cut teak trees is the Hardwood Grove near Tai Bwo Wannai on Karamja . The hardwood grove contains 9 teak trees and has no requirements to access, except a payment of 100 trading sticks each time the grove is entered. Players with a combat level of 10 or less will be attacked by level 5 snakes within the grove while woodcutting here. Players not able or not wanting to use trading sticks can train at the four Teak trees at Musa point ; these have no requirements to access. Players can drop teak logs as they are cut by adding teak logs to their action bar and then right-clicking the icon to drop the logs. As opposed to dropping logs directly from the inventory, dropping logs via the action bar does not interrupt woodcutting. While woodcutting teak logs players have a 2.5% chance of obtaining a special teak log , granting the same amount of experience as woodcutting regular teak logs . Special teak logs are untradeable items that can be used in the Construction skill to convert teak logs into teak planks in place of the usual fee or traded to the Sawmill Operator for 1,300 coins each. Special teak logs have a right-click option to destroy the logs rather than to drop them and so they cannot be removed from the player's inventory in this way. Instead, players can right click special teak logs in their inventory to destroy them using the \"destroy all\" option. Players with at least level 6 Divination could alternatively use signs of the porter to bank their teak logs (see this calculator to calculate the cost of using signs of porter to send teak logs to the bank). Signs of the porter cannot be used to bank special teak logs but will send bird's nests to a player's bank if the player picks them up. Players should be aware that, as logs are obtained at a frequent rate when woodcutting teak trees, they may need to often leave the hardwood grove to get more signs of the porter. This is especially the case if the player has a high Woodcutting level, is using a low tier of sign of the porter or has reduced inventory space due to using items such as woodcutting urns. Additionally, players cannot use log-splitting scrimshaws at the same time as using signs of the porter, as both items must be equipped in the pocket slot . Players who are wishing to bank teak logs should cut teak logs on Ape Atoll as completion of Deadliest Catch unlocks a deposit box near to the group of three teak trees on the south-eastern part of Ape Atoll, which players can use to bank teak logs more efficiently than it is possible at the hardwood grove. Starting the Monkey Madness quest is a requirement to access Ape Atoll.",
-            "category": "General",
-            "type": "ironman"
-        },
-        {
-            "levels": "40-56",
-            "min_level": 40,
-            "max_level": 56,
-            "method": "Maple trees",
-            "xp_rate_raw": "40,000-55,000",
-            "notes": "Standard P2P training method (Standard method)",
-            "category": "Main",
-            "type": "p2p-backup"
-        },
-        {
-            "levels": "50-68",
-            "min_level": 50,
-            "max_level": 68,
-            "method": "Acadia trees",
-            "xp_rate_raw": "55,000 XP/hr",
-            "notes": "With at least level 50 Woodcutting, players may begin to cut acadia trees . This gives between 55,000 experience an hour at level 50 and 92,000 experience an hour at level 99. While cutting acadia trees, players will gain Menaphos reputation , which unlocks rewards within the city. At rank 2 reputation for the Imperial District, you can use a nearby bank deposit box. Until rank 2 has been achieved, it is advised to place the acadia logs in the action bar and drop them from there (you must still right click the action bar slot, but dropping them in this fashion does not interrupt cutting the tree, even if the animation pauses momentarily). The VIP skilling area is unlocked at tier 7 overall reputation; acadia trees in this area deplete at half the rate of trees within the imperial district. At tier 8 Imperial District reputation, the player's success chance while cutting acadia trees is increased. Crystallise and Light Form can be used on acadia trees after unlocking them through completing The Light Within quest, which has level 80 Woodcutting as a requirement. Be sure to wear prayer-boosting gear to lengthen Light Form, and to have a full inventory so you don't accidentally deplete the acadia tree resource. Note that a log-splitting scrimshaw will not provide a bonus while using this method given that you are not actually receiving any logs. Players with level 83 Archaeology should consider using the Always Adze relic power while cutting acadia trees. This offers fast Firemaking XP and eliminates the need to bank/drop acquired logs.",
-            "category": "General",
-            "type": "ironman"
-        },
-        {
-            "levels": "56-58",
-            "min_level": 56,
-            "max_level": 58,
-            "method": "Arctic pines",
-            "xp_rate_raw": "60,000",
-            "notes": "Standard P2P training method (Standard method)",
-            "category": "Main",
-            "type": "p2p-backup"
-        },
-        {
-            "levels": "58-60",
-            "min_level": 58,
-            "max_level": 60,
-            "method": "Eucalyptus trees",
-            "xp_rate_raw": "62,000",
-            "notes": "Standard P2P training method (Standard method)",
-            "category": "Main",
-            "type": "p2p-backup"
-        },
-        {
-            "levels": "60-68/99",
-            "min_level": 60,
-            "max_level": 68,
-            "method": "Mahogany",
-            "xp_rate_raw": "63,000-109,000",
-            "notes": "Standard P2P training method (Standard method)",
-            "category": "Main",
-            "type": "p2p-backup"
-        },
-        {
-            "levels": "68-99",
-            "min_level": 68,
-            "max_level": 99,
-            "method": "Ivy",
-            "xp_rate_raw": "Up to 86,000 XP/hr",
-            "notes": "At level 68 Woodcutting, players should begin chopping ivy , found growing on walls in multiple locations including Varrock Palace , Falador , Yanille , Woodcutters' Grove , and the Crwys Clan of Prifddinas . Starting at level 68, players can expect up to 86,000 base experience. This can increase to up to 126,000 base experience at level 99 Woodcutting. Cutting ivy requires less effort and attention than cutting most other trees and so proves popular with some players. Cutting ivy doesn't provide any logs but still gives a chance to find bird's nests . Ivy can be found in several locations in RuneScape, though players who have access to Prifddinas are recommended to train at the ivy located in the Crwys district to take advantage of the Voice of Seren effect. Ivy can be found on the walls inside the greenhouse where Coeden is located. When the Voice of Seren is active in the Crwys district, base experience gained from Woodcutting ivy there will be increased by 20%. Level 75 Woodcutting is required for Plague's End to unlock Prifddinas and chop ivy there.",
-            "category": "General",
-            "type": "ironman"
-        },
-        {
-            "levels": "94-100",
-            "min_level": 94,
-            "max_level": 100,
-            "method": "Crystal trees",
-            "xp_rate_raw": "130,000-133,000",
-            "notes": "Standard P2P training method (Standard method)",
-            "category": "Main",
-            "type": "p2p-backup"
-        },
-        {
-            "levels": "100+",
-            "min_level": 100,
-            "max_level": 99,
-            "method": "Eternal magic trees",
-            "xp_rate_raw": "300k+ (with boosts)",
-            "notes": "Standard P2P training method (Standard method)",
-            "category": "Main",
-            "type": "p2p-backup"
-        }
-    ]
-}
+[
+    {
+        "title": "Levels 1-10: Regular trees",
+        "content": [
+            "At level 1 Woodcutting, players should begin training on regular trees . Between level 1 and 15 Woodcutting, players can gain experience at a rate equivalent to 14,500 experience per hour cutting regular trees. A player starting with no Woodcutting experience can expect to achieve level 10 after around 10 minutes of training. This experience rate assumes the player is using a Dwarven army axe to gain additional Woodcutting experience. Regular trees are located throughout RuneScape, but they are one of the few types of tree that are cut down after only one log has been obtained from them. To avoid having to wait for trees to respawn while training, players should train in locations with many regular trees available (such as south-west of the Grand Exchange in Varrock, west of the Cooks' Guild). Players wishing to obtain more logs could use a Seers' headband 1 (or better) which gives a chance of obtaining two logs at once when cutting regular trees, though this does not give any additional experience. The Seers' headband is obtained from completing the easy Seers' Village achievements ."
+        ]
+    },
+    {
+        "title": "Levels 10-20: Oak trees",
+        "content": [
+            "At level 10 Woodcutting players can start training on oak trees . Between level 15 and 30 Woodcutting, players can gain experience at a rate equivalent to 19,000 experience per hour at oak trees. This experience rate assumes that the player is using a Dwarven army axe between levels 10-30 and then using a mithril hatchet at level 30 onwards. Oak trees are found in many locations throughout RuneScape. Examples for good locations include east of Draynor Village bank, south-west of Varrock's west bank and north of the Yanille lodestone."
+        ]
+    },
+    {
+        "title": "Levels 20-30: Willow trees",
+        "content": [
+            "At level 20 Woodcutting players should begin training on willow trees . Between level 30 and 35 Woodcutting players can gain around 27,000 experience per hour cutting willow trees. One of the best locations to cut willow trees is just south-west of the bank in Draynor Village , where a large group of willow trees can be found on the coastline."
+        ]
+    },
+    {
+        "title": "Levels 30-50: Teak trees",
+        "content": [
+            "At level 30 Woodcutting players are able to start training on teak trees . Between 41,000 and 49,000 experience can be gained per hour training at teak trees with level 35-48 Woodcutting. The best place to cut teak trees is the Hardwood Grove near Tai Bwo Wannai on Karamja . The hardwood grove contains 9 teak trees and has no requirements to access, except a payment of 100 trading sticks each time the grove is entered. Players with a combat level of 10 or less will be attacked by level 5 snakes within the grove while woodcutting here. Players not able or not wanting to use trading sticks can train at the four Teak trees at Musa point ; these have no requirements to access.",
+            "Players can drop teak logs as they are cut by adding teak logs to their action bar and then right-clicking the icon to drop the logs. As opposed to dropping logs directly from the inventory, dropping logs via the action bar does not interrupt woodcutting. While woodcutting teak logs players have a 2.5% chance of obtaining a special teak log , granting the same amount of experience as woodcutting regular teak logs . Special teak logs are untradeable items that can be used in the Construction skill to convert teak logs into teak planks in place of the usual fee or traded to the Sawmill Operator for 1,300 coins each. Special teak logs have a right-click option to destroy the logs rather than to drop them and so they cannot be removed from the player's inventory in this way. Instead, players can right click special teak logs in their inventory to destroy them using the \"destroy all\" option.",
+            "Players with at least level 6 Divination could alternatively use signs of the porter to bank their teak logs (see this calculator to calculate the cost of using signs of porter to send teak logs to the bank). Signs of the porter cannot be used to bank special teak logs but will send bird's nests to a player's bank if the player picks them up. Players should be aware that, as logs are obtained at a frequent rate when woodcutting teak trees, they may need to often leave the hardwood grove to get more signs of the porter. This is especially the case if the player has a high Woodcutting level, is using a low tier of sign of the porter or has reduced inventory space due to using items such as woodcutting urns. Additionally, players cannot use log-splitting scrimshaws at the same time as using signs of the porter, as both items must be equipped in the pocket slot .",
+            "Players who are wishing to bank teak logs should cut teak logs on Ape Atoll as completion of Deadliest Catch unlocks a deposit box near to the group of three teak trees on the south-eastern part of Ape Atoll, which players can use to bank teak logs more efficiently than it is possible at the hardwood grove. Starting the Monkey Madness quest is a requirement to access Ape Atoll."
+        ]
+    },
+    {
+        "title": "Levels 50-68: Acadia trees",
+        "content": [
+            "With at least level 50 Woodcutting, players may begin to cut acadia trees . This gives between 55,000 experience an hour at level 50 and 92,000 experience an hour at level 99.",
+            "While cutting acadia trees, players will gain Menaphos reputation , which unlocks rewards within the city. At rank 2 reputation for the Imperial District, you can use a nearby bank deposit box. Until rank 2 has been achieved, it is advised to place the acadia logs in the action bar and drop them from there (you must still right click the action bar slot, but dropping them in this fashion does not interrupt cutting the tree, even if the animation pauses momentarily).",
+            "The VIP skilling area is unlocked at tier 7 overall reputation; acadia trees in this area deplete at half the rate of trees within the imperial district. At tier 8 Imperial District reputation, the player's success chance while cutting acadia trees is increased.",
+            "Crystallise and Light Form can be used on acadia trees after unlocking them through completing The Light Within quest, which has level 80 Woodcutting as a requirement. Be sure to wear prayer-boosting gear to lengthen Light Form, and to have a full inventory so you don't accidentally deplete the acadia tree resource. Note that a log-splitting scrimshaw will not provide a bonus while using this method given that you are not actually receiving any logs.",
+            "Players with level 83 Archaeology should consider using the Always Adze relic power while cutting acadia trees. This offers fast Firemaking XP and eliminates the need to bank/drop acquired logs."
+        ]
+    },
+    {
+        "title": "Level 68-99: Ivy",
+        "content": [
+            "At level 68 Woodcutting, players should begin chopping ivy , found growing on walls in multiple locations including Varrock Palace , Falador , Yanille , Woodcutters' Grove , and the Crwys Clan of Prifddinas . Starting at level 68, players can expect up to 86,000 base experience. This can increase to up to 126,000 base experience at level 99 Woodcutting.",
+            "Cutting ivy requires less effort and attention than cutting most other trees and so proves popular with some players. Cutting ivy doesn't provide any logs but still gives a chance to find bird's nests .",
+            "Ivy can be found in several locations in RuneScape, though players who have access to Prifddinas are recommended to train at the ivy located in the Crwys district to take advantage of the Voice of Seren effect. Ivy can be found on the walls inside the greenhouse where Coeden is located. When the Voice of Seren is active in the Crwys district, base experience gained from Woodcutting ivy there will be increased by 20%. Level 75 Woodcutting is required for Plague's End to unlock Prifddinas and chop ivy there."
+        ]
+    },
+    {
+        "title": "Tips",
+        "content": [
+            "- Woodcutting urns provide +20% XP. - A wood box can store hundreds of logs per trip. - The player should use the highest tier hatchet they can smith. Augmentable hatchets are 3 tiers higher than their equivalent smithable hatchet and can have tool perks added to them, but are harder to obtain. These should be used when possible. - Augmentable hatchets are 3 tiers higher than their equivalent smithable hatchet and can have tool perks added to them, but are harder to obtain. These should be used when possible."
+        ]
+    }
+]

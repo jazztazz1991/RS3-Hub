@@ -1,62 +1,56 @@
 [
-  {
-      "levels": "15-17",
-      "method": "**Unlock POF:** Tutorial at Ardougne Farm (North of Lodestone).",
-      "xp_rates": "Start",
-      "tips": "Feed Rabbits woad leaves (buy from Wyson in Falador Park)."
-  },
-  {
-      "levels": "17-35",
-      "method": "**Small Pen:** Rabbits (17) -> Chickens (28).",
-      "xp_rates": "Training",
-      "tips": "Keep breeding rabbits for the totem perk (+breeding chance). Raise Chickens for better XP at 28."
-  },
-  {
-      "levels": "35-49",
-      "method": "**Medium Pen:** Sheep (35). Continue Small Pen.",
-      "xp_rates": "Medium",
-      "tips": "Sheep eat Woad Leaves (Cheap). Raise them in the Medium Pen."
-  },
-  {
-      "levels": "49-54",
-      "method": "**Large Pen:** Cows (49). Continue Med/Small.",
-      "xp_rates": "Heavy",
-      "tips": "Cows eat Woad Leaves. Very cheap XP."
-  },
-  {
-      "levels": "54-64",
-      "method": "**Small Pen Upgrade:** Chinchompas (54).",
-      "xp_rates": "High (Small Pen)",
-      "tips": "Chinchompas are the best Small Pen XP. Treat them as the meta for Small Pens until 120."
-  },
-  {
-      "levels": "64-81",
-      "method": "**Medium Pen Upgrade:** Spiders (64).",
-      "xp_rates": "High (Med Pen)",
-      "tips": "Spiders replace Sheep/Zygomites until 81. Feed them seeds or meat."
-  },
-  {
-      "levels": "71-92",
-      "method": "**Large Pen Upgrade:** Yaks (71).",
-      "xp_rates": "High (Large Pen)",
-      "tips": "Yaks replace Cows. Feed them Woad Leaves."
-  },
-  {
-      "levels": "81-92",
-      "method": "**Medium Pen Meta:** Zygomites (81).",
-      "xp_rates": "Best Med XP",
-      "tips": "Zygomites are the best Medium Pen XP. Feed them Mushrooms (Mort Myre Fungi)."
-  },
-  {
-      "levels": "92-99",
-      "method": "**Large Pen Meta:** Dragons (92).",
-      "xp_rates": "Best Large XP",
-      "tips": "Dragons are the best Large Pen XP. Green (92), Blue (94), Red (96), Black (99). Feed them Meat."
-  },
-  {
-      "levels": "92-120",
-      "method": "**Ranch Out of Time:** Frogs (42), Salamanders (54), Jadinkos (81), Varanusaur (99).",
-      "xp_rates": "Endgame",
-      "tips": "Use the Anachronia farm alongside Ardougne for maximum XP."
-  }
+    {
+        "title": "Manure mound (level 1 - 3,750 XP/hr)",
+        "content": [
+            "The manure mounds at the north-east corner of Granny Potterington's house at the Manor Farm and at Anachronia Dinosaur Farm can be continuously dug for 2.5 XP every 2.4 seconds. This is the fastest training method to level 15 (unlocking trees) taking 39 minutes 20 seconds to go from 1-15."
+        ]
+    },
+    {
+        "title": "Seedicide (level 7 - 20,000 XP/hr | Level 74 - 250,000 XP/hr)",
+        "content": [
+            "Seedicide is an item which automatically destroys selected seeds dropped by monsters, in exchange for double the experience the player would gain from planting the seeds in a Farming patch. If the player does not have the level required to plant the seeds, however, no Farming experience will be awarded. It can be obtained through playing Cabbage Facepunch Bonanza , buying it from Stanley Limelight for 360 Thaler or purchasing from the Farmers' Market for 10,000 beans.",
+            "The seedicide is a good way to passively gain Farming experience without waiting for timed runs, and make some profit on the side.",
+            "There are several monsters that yield significant Farming experience gain through the use of seedicide. The most notable ones are:",
+            "- Aquanites which can yield up to 160,000 experience an hour at level 91 Farming. - Vyrelords which are able to drop seeds worth approximately 90,000 to 120,000 experience an hour at level 74 Farming. - Turoths which can yield up to 130,000-250,000 Farming experience an hour at level 74 Farming.",
+            "For lower levels, killing tortoises in the northern part of the Tree Gnome Stronghold can yield approximately 20,000 experience an hour at level 7 Farming and higher."
+        ]
+    },
+    {
+        "title": "Het's Oasis (level 30-86 alternative)",
+        "content": [
+            "Het's Oasis is the easiest levelling method requiring no special items or unlocks and is more profitable yielding several Golden roses per hour from:",
+            "- Rose bush level 30 - Iris bush level 50 - Hydrangea bush level 70",
+            "Roses can then be used to train hunter and subsequently into various powders such as Powder of penance . You may also use Ultracompost or lower to increase the chance for golden roses and thus profit."
+        ]
+    },
+    {
+        "title": "Foraging rumberry bushes (level 86 - 30,000 XP/hr)",
+        "content": [
+            "There are several rumberry bushes on the south-western part of Tuai Leit in The Arc. The Arc can be accessed after completing the Impressing the Locals quest. Rumberry bushes can be harvested at level 86 Farming and give around 30,000 experience an hour. While harvesting from them players will gain rumberries and, on rare occasions, a rumberry seed. Players can be pricked by a thorn while foraging from the bushes: this interrupts the harvesting and causes the players to have to re-click the bushes."
+        ]
+    },
+    {
+        "title": "Foraging mushroom clusters (level 94 - 50,000 XP/hr)",
+        "content": [
+            "Mushroom clusters are a Farming resource that can be found in The Arc region after completing the Impressing the Locals quest:",
+            "- The Islands That Once Were Turtles and Goshima : at level 90 Farming, 30,000 experience an hour at level 99 Farming with 700 chimes an hour. Yields 25-30 every 4-5 minutes with 1 minute replenish wait time. - at level 90 Farming, 30,000 experience an hour - at level 99 Farming with 700 chimes an hour. Yields 25-30 every 4-5 minutes with 1 minute replenish wait time. - Randomly on some Uncharted Isles : at level 94 Farming, 50,000 experience an hour at level 99 Farming with 1200 chimes an hour. Limit is 100 a day for each cluster. - at level 94 Farming, 50,000 experience an hour - at level 99 Farming with 1200 chimes an hour. Limit is 100 a day for each cluster.",
+            "Completion of the Flag Fall miniquest allows the player to claim an uncharted isle and return to it; is also required to hunt clusters effectively. To find mushroom clusters on Uncharted Isles, the player must first gain some chimes from skilling in The Arc so that they can purchase the supplies required to voyage to Uncharted Isles. Supplies can be purchased from Rosie. When the player finds an Uncharted Isle with mushroom clusters then they can claim the island using a claim island flag. Once an uncharted isle is claimed the player may return to it for the price of 3 supplies per voyage: 5 supplies per day can be claimed for free from the box next to Rosie, capped at 10 days' worth of missed claims.",
+            "The mushroom clusters on Uncharted Isles can be harvested at level 94 Farming and yield 100 mushrooms before depleting. While harvesting the clusters players may be pricked by a thorn which deals damage and interrupts their foraging. Having a higher Farming level and using level boosts may reduce the chance of this occurring. At level 99 harvesting mushrooms grants an experience rate equivalent to 50,000 experience an hour. The harvested mushrooms can be sliced into sliced mushrooms and sold for more chimes, or be used as food for player-owned farm zygomites, and players have a 1/400 rate of finding zygomites while picking the clusters. The experience from harvesting mushroom clusters can further be bolstered by completing contracts given by Sojobo (contracts) on Waiko or via a Contract contact on an uncharted isle. Players may complete up to 3 contracts daily, and may purchase upgrades from Boni for a maximum of 7 daily contracts. Doing contracts, however, requires chimes to be able to reroll contracts until satisfactory Farming ones are assigned."
+        ]
+    },
+    {
+        "title": "Tombshrooms (level 109)",
+        "content": [
+            "At level 109 Farming players can begin planting tombshrooms . All tombshrooms are harvested in one tick and are stackable, hence not much inventory space is required. With harvesting all at once, the base experience received is 9,032.4 regardless of how many are harvested since it is not received per item like other farming methods.",
+            "Steps to take",
+            "- Master farmer's outfit - Benefits listed above. - Decorated farming urns + urn enhancer - Extra 1,750 xp per 7,000 base xp gained."
+        ]
+    },
+    {
+        "title": "Guarana trees (level 107) and carambola trees (level 113)",
+        "content": [
+            "The candidate fruit trees used for this method is guarana trees and carambola trees , as they are the second highest and highest level fruit tree, grant plenty of experience and their seeds cost 1,640 coins and 7,589 coins respectively.",
+            "Steps to take, carambola trees as an example:"
+        ]
+    }
 ]

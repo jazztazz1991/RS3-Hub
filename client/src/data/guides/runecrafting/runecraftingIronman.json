@@ -1,0 +1,33 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Runecrafting is one of the most ironman-friendly skills in RS3. Pure Essence is obtained by mining from the Rune Essence mine (accessed via various NPCs) or from drops — it does not need to be purchased. The Runespan requires no essence at all.",
+            "As an ironman, Runecrafting is also your primary rune supply for Magic and other rune-consuming activities. Prioritise unlocking the altars for the rune types you use most in combat."
+        ]
+    },
+    {
+        "title": "Levels 1–33: Runespan",
+        "content": [
+            "Start in the lower Runespan floors. No essence or talisman is needed — you harvest nodes directly for XP and Runespan points. This is 100% self-contained and perfect for ironmen.",
+            "Claim the Wicked Hood from Tam McGrubor in Burthorpe at the earliest opportunity. It provides free daily teleports to attuned altars and stores talismans, saving significant travel time.",
+            "Use Runespan points to unlock Runecrafting Pouches (Small, Medium, Large) from the reward shop — these increase the essence you can carry per altar run and are essential for efficient altar training."
+        ]
+    },
+    {
+        "title": "Levels 33–77: Runespan and Essence Altars",
+        "content": [
+            "Move to the upper Runespan floors at level 33 for better XP rates. Continue here until you have unlocked the altars relevant to your rune needs.",
+            "Mine Pure Essence from the Rune Essence mine (accessed via Aubury in Varrock, Wizard Cromperty in East Ardougne, or others). Craft the rune types you need for Magic training at the appropriate altars — Nature Runes (level 44) are particularly useful for High Alchemy.",
+            "Chaos Runes (level 35), Death Runes (level 65), and Blood Runes (level 77) are commonly used in combat. Prioritise these altars as you level."
+        ]
+    },
+    {
+        "title": "Levels 77–99: Blood and Soul Altars",
+        "content": [
+            "The Blood Altar at level 77 in Morytania is excellent for ironmen — Blood runes are consumed by Blood Barrage and other powerful spells, and you produce them yourself rather than relying on drops.",
+            "The Soul Altar at level 90 in Great Kourend gives high XP rates and produces Soul runes used in Ancient Curses and Necromancy rituals. Mining soul essence from around the altar and depositing it is the intended mechanic.",
+            "Use the Abyssal Familiar (Summoning level 64) to carry extra essence per trip. Combined with all available pouches, this significantly increases XP per hour at altars."
+        ]
+    }
+]

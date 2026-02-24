@@ -111,28 +111,113 @@ export const SLAYER_MASTERS = [
         name: 'Kuradal',
         level: 75,
         avgXp: 45000,
-        description: 'Ancient Cavern dungeon tasks.'
+        description: 'Ancient Cavern dungeon tasks. Requires While Guthix Sleeps.',
+        tasks: [
+            { id: 'abyssal_demon',        weight: 12, min: 150, max: 250 },
+            { id: 'aquanites',            weight: 9,  min: 130, max: 180 },
+            { id: 'aviansies',            weight: 8,  min: 120, max: 170 },
+            { id: 'black_demons',         weight: 9,  min: 120, max: 200 },
+            { id: 'blue_dragon',          weight: 5,  min: 80,  max: 130 },
+            { id: 'dagannoth',            weight: 9,  min: 120, max: 200 },
+            { id: 'dark_beast',           weight: 11, min: 100, max: 150 },
+            { id: 'desert_strykewyrms',   weight: 9,  min: 80,  max: 130 },
+            { id: 'dust_devils',          weight: 8,  min: 80,  max: 130 },
+            { id: 'fire_giant',           weight: 7,  min: 100, max: 160 },
+            { id: 'gargoyles',            weight: 8,  min: 100, max: 170 },
+            { id: 'greater_demons',       weight: 9,  min: 120, max: 200 },
+            { id: 'hellhound',            weight: 8,  min: 80,  max: 130 },
+            { id: 'iron_dragons',         weight: 5,  min: 30,  max: 60  },
+            { id: 'jungle_strykewyrms',   weight: 9,  min: 80,  max: 130 },
+            { id: 'kalphite',             weight: 7,  min: 120, max: 180 },
+            { id: 'kurasks',              weight: 8,  min: 100, max: 160 },
+            { id: 'mithril_dragons',      weight: 4,  min: 15,  max: 30  },
+            { id: 'mutated_jadinkos',     weight: 7,  min: 120, max: 180 },
+            { id: 'nechryael',            weight: 10, min: 100, max: 160 },
+            { id: 'steel_dragons',        weight: 5,  min: 25,  max: 40  },
+            { id: 'suqahs',               weight: 8,  min: 80,  max: 120 },
+            { id: 'waterfiends',          weight: 9,  min: 100, max: 160 },
+            { id: 'living_wyverns',       weight: 7,  min: 50,  max: 80  }
+        ]
     },
     {
         id: 'sumona',
         name: 'Sumona',
         level: 35,
         avgXp: 25000,
-        description: 'Pollnivneach specialized tasks.'
+        description: 'Pollnivneach. Requires Smoking Kills quest.',
+        tasks: [
+            { id: 'aberrant_spectre',     weight: 8,  min: 80,  max: 130 },
+            { id: 'banshees',             weight: 8,  min: 60,  max: 120 },
+            { id: 'black_demons',         weight: 9,  min: 80,  max: 140 },
+            { id: 'bloodveld',            weight: 10, min: 80,  max: 140 },
+            { id: 'cave_crawlers',        weight: 8,  min: 60,  max: 110 },
+            { id: 'desert_strykewyrms',   weight: 9,  min: 60,  max: 100 },
+            { id: 'dust_devils',          weight: 10, min: 80,  max: 130 },
+            { id: 'fire_giant',           weight: 7,  min: 80,  max: 130 },
+            { id: 'gargoyles',            weight: 8,  min: 60,  max: 100 },
+            { id: 'greater_demons',       weight: 9,  min: 80,  max: 140 },
+            { id: 'hellhound',            weight: 8,  min: 60,  max: 110 },
+            { id: 'infernal_mages',       weight: 8,  min: 60,  max: 110 },
+            { id: 'jungle_strykewyrms',   weight: 9,  min: 60,  max: 100 },
+            { id: 'kalphite',             weight: 7,  min: 80,  max: 130 },
+            { id: 'kurasks',              weight: 8,  min: 80,  max: 130 },
+            { id: 'nechryael',            weight: 10, min: 60,  max: 100 },
+            { id: 'suqahs',               weight: 7,  min: 60,  max: 100 },
+            { id: 'turoth',               weight: 8,  min: 60,  max: 100 },
+            { id: 'waterfiends',          weight: 9,  min: 60,  max: 100 },
+            { id: 'living_wyverns',       weight: 7,  min: 40,  max: 65  }
+        ]
     },
     {
         id: 'vannaka',
         name: 'Vannaka',
-        level: 30, // combat lvl rq
+        level: 40, // combat level requirement
         avgXp: 8000,
-        description: 'Mid-level training.'
+        description: 'Edgeville Dungeon. Combat level 40 required.',
+        tasks: [
+            { id: 'bloodveld',            weight: 7,  min: 80,  max: 120 },
+            { id: 'cave_crawlers',        weight: 7,  min: 60,  max: 110 },
+            { id: 'crocodiles',           weight: 5,  min: 80,  max: 120 },
+            { id: 'desert_strykewyrms',   weight: 7,  min: 60,  max: 100 },
+            { id: 'dust_devils',          weight: 7,  min: 60,  max: 100 },
+            { id: 'earth_warriors',       weight: 5,  min: 60,  max: 100 },
+            { id: 'fever_spiders',        weight: 7,  min: 50,  max: 80  },
+            { id: 'fire_giant',           weight: 7,  min: 80,  max: 130 },
+            { id: 'gargoyles',            weight: 7,  min: 60,  max: 100 },
+            { id: 'greater_demons',       weight: 7,  min: 80,  max: 130 },
+            { id: 'hellhound',            weight: 7,  min: 60,  max: 100 },
+            { id: 'hobgoblins',           weight: 6,  min: 80,  max: 130 },
+            { id: 'ice_giants',           weight: 6,  min: 80,  max: 120 },
+            { id: 'ice_warriors',         weight: 5,  min: 80,  max: 120 },
+            { id: 'jungle_strykewyrms',   weight: 7,  min: 60,  max: 100 },
+            { id: 'kalphite',             weight: 7,  min: 80,  max: 120 },
+            { id: 'kurasks',              weight: 7,  min: 60,  max: 100 },
+            { id: 'nechryael',            weight: 7,  min: 60,  max: 100 },
+            { id: 'ogres',                weight: 5,  min: 80,  max: 120 },
+            { id: 'pyrefiends',           weight: 7,  min: 50,  max: 80  },
+            { id: 'turoth',               weight: 7,  min: 60,  max: 100 },
+            { id: 'vampyres',             weight: 5,  min: 40,  max: 70  },
+            { id: 'waterfiends',          weight: 7,  min: 60,  max: 100 }
+        ]
     },
     {
         id: 'jacquelyn',
         name: 'Jacquelyn',
         level: 1,
         avgXp: 200,
-        description: 'Point boosting (Tasks take ~1 min).'
+        description: 'Burthorpe. Point boosting — quick easy tasks.',
+        tasks: [
+            { id: 'brine_rats',           weight: 12, min: 10,  max: 20  },
+            { id: 'cave_bugs',            weight: 12, min: 8,   max: 15  },
+            { id: 'cave_crawlers',        weight: 10, min: 15,  max: 25  },
+            { id: 'cave_slimes',          weight: 12, min: 8,   max: 15  },
+            { id: 'crawling_hands',       weight: 15, min: 10,  max: 20  },
+            { id: 'desert_lizards',       weight: 12, min: 15,  max: 25  },
+            { id: 'molanisks',            weight: 10, min: 15,  max: 25  },
+            { id: 'mogres',               weight: 10, min: 10,  max: 20  },
+            { id: 'pyrefiends',           weight: 10, min: 15,  max: 25  },
+            { id: 'rockslugs',            weight: 10, min: 15,  max: 25  }
+        ]
     }
 ];
 
@@ -199,8 +284,6 @@ export const SLAYER_MONSTERS = [
 
     { id: 'corrupted_dust_devil', name: 'Corrupted dust devil', xp: 679.8, level: 97, category: 'Sophanem' },
 
-    { id: 'arhat', name: 'Arhat', xp: 0.0, level: 96, category: 'General' },
-
     { id: 'ripper_demon', name: 'Ripper Demon', xp: 2721.6, level: 96, category: 'General' },
 
     { id: 'abyssal_savage', name: 'Abyssal savage', xp: 423.2, level: 95, category: 'General' },
@@ -241,7 +324,6 @@ export const SLAYER_MONSTERS = [
     { id: 'dust_devil', name: 'Dust devil', xp: 192.8, level: 65, category: 'General' },
     { id: 'spiritual_guardian', name: 'Spiritual guardian', xp: 239.8, level: 63, category: 'Dungeoneering' },
     { id: 'spiritual_ranger', name: 'Spiritual ranger', xp: 229.0, level: 63, category: 'God Wars 1' },
-    { id: '_rum__pumped_crab', name: '\'Rum\'-pumped crab', xp: 0.0, level: 61, category: 'General' },
     { id: 'aberrant_spectre', name: 'Aberrant spectre', xp: 109.4, level: 60, category: 'Slayer Tower' },
     { id: 'wild_jade_vine', name: 'Wild jade vine', xp: 2500.0, level: 59, category: 'General' },
     { id: 'cave_horror', name: 'Cave horror', xp: 99.4, level: 58, category: 'General' },

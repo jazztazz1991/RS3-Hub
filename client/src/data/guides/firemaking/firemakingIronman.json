@@ -1,114 +1,60 @@
-{
-    "methods": [
-        {
-            "levels": "1-15",
-            "min_level": 1,
-            "max_level": 15,
-            "method": "Normal logs",
-            "xp_rate_raw": "48,000",
-            "notes": "Woodcut or buy from Construction Supplies (Fort Forinthry) and burn on a bonfire.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "15-30",
-            "min_level": 15,
-            "max_level": 30,
-            "method": "Oak logs",
-            "xp_rate_raw": "72,000",
-            "notes": "Woodcut and burn on a bonfire.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "30-35",
-            "min_level": 30,
-            "max_level": 35,
-            "method": "Willow logs",
-            "xp_rate_raw": "108,000",
-            "notes": "Woodcut and burn on a bonfire.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "35-45",
-            "min_level": 35,
-            "max_level": 45,
-            "method": "Teak logs",
-            "xp_rate_raw": "126,000",
-            "notes": "Woodcut or acquire from Managing Miscellania and burn on a bonfire.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "45",
-            "min_level": 45,
-            "max_level": 99,
-            "method": "75/110: Maple logs",
-            "xp_rate_raw": "162,000",
-            "notes": "Woodcut or acquire from Managing Miscellania and burn on a bonfire. Your Kingdom can fairly easily get you enough maple logs passively have some spare.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "47-75",
-            "min_level": 47,
-            "max_level": 75,
-            "method": "Acadia logs",
-            "xp_rate_raw": "168,000",
-            "notes": "Disassembling Acadia logs for Simple components is recommended as they only have a ~4% junk chance.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "50-75",
-            "min_level": 50,
-            "max_level": 75,
-            "method": "Mahogany logs",
-            "xp_rate_raw": "189,000",
-            "notes": "Woodcut or acquire from Managing Miscellania and burn on a bonfire.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "75-82",
-            "min_level": 75,
-            "max_level": 82,
-            "method": "Magic logs",
-            "xp_rate_raw": "364,560",
-            "notes": "Woodcut or acquire from boss drops like Croesus , Nex and Wilderness Flash Events , and burn on a bonfire. This can also be continued until later levels if you no longer have uses for them in fletching and construction .",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "82-110",
-            "min_level": 82,
-            "max_level": 110,
-            "method": "'Accidental' Firemaking",
-            "xp_rate_raw": "See Description",
-            "notes": "'Accidental' Firemaking methods are excellent especially for ironmen as they allow them to train Firemaking while producing useful items ( sharp shell shard , tempered fungal shaft , and dinosaur 'propellant' ) without requiring resource input. The only hurdle is the grandmaster quest Extinction requirement.",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "83-110",
-            "min_level": 83,
-            "max_level": 110,
-            "method": "Curly Roots",
-            "xp_rate_raw": "250,000 - 305,000",
-            "notes": "- Location: Jadinko Lair - 83 Woodcutting Requirement - 378.5 Firemaking xp per Curly Root - Chop from curly jade roots hanging from the ceiling. - Burn the roots in the nearby firepits. At minimum 83 woodcutting level, Nature's Sentinel with a Ring of Fire: - 250,000 Firemaking xp/h - 70,000 Woodcutting xp/h At high levels with full Nature's Sentinel, and the Ring of Fire: - 305,000 Firemaking xp/h - 90,000 Woodcutting xp/h - Additional Rewards: ~1,100 Jadinko favor/h",
-            "category": "Methods",
-            "type": "ironman"
-        },
-        {
-            "levels": "83-110",
-            "min_level": 83,
-            "max_level": 110,
-            "method": "Curly Roots Superheat form",
-            "xp_rate_raw": "670,000",
-            "notes": "At high levels once you reach it's beneficial to stop using the Nature's sentinel outfit in favor or the Flame gloves , and Ring of Fire , and either use Superheat form or the Always adze relic: - 670,000 Firemaking xp/h - 120,000 Woodcutting xp/h - No Jadinko favor",
-            "category": "Methods",
-            "type": "ironman"
-        }
-    ]
-}
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Firemaking is a buyable skill for P2P players but ironmen must source all logs themselves through Woodcutting or passive income methods. The key ironman strategy is to align Firemaking progression with Woodcutting — cut logs and burn them as you go rather than stockpiling.",
+            "Managing Miscellania is a critical passive income source from mid-levels. Set your kingdom to collect Maples or Mahogany for a steady supply of logs without active Woodcutting. From level 83, Curly Roots in the Jadinko Lair become the best method — simultaneous Woodcutting and Firemaking XP with no resource input required."
+        ]
+    },
+    {
+        "title": "Levels 1–45: Early Log Burning",
+        "content": [
+            "Cut and burn logs in parallel with your Woodcutting training. All early wood types can be burned on a bonfire — starting a bonfire and adding logs is more XP-efficient than dropping a line of fires, and you benefit from a group XP bonus if other players join.",
+            "- Levels 1–15: Normal logs (40 XP each) — cut from any tree, or purchase from the Fort Forinthry Construction Supplies for a small coin cost.",
+            "- Levels 15–30: Oak logs (60 XP each) — plentiful around Lumbridge and Draynor. Cut and burn at a nearby bonfire.",
+            "- Levels 30–35: Willow logs (90 XP each) — Draynor Village riverbank has a dense cluster of willow trees.",
+            "- Levels 35–45: Teak logs (105 XP each) — Tai Bwo Wannai jungle and Castle Wars area. Managing Miscellania can also supply teaks passively once unlocked."
+        ]
+    },
+    {
+        "title": "Levels 45–75: Maple and Mahogany",
+        "content": [
+            "Maple and mahogany logs are the core ironman mid-level burning material. Both can be collected passively from Managing Miscellania, reducing the need for active Woodcutting during this phase.",
+            "- Levels 45–75: Maple logs (135 XP each) — Seers' Village maple trees or Miscellania kingdom (set kingdom to Maples). The Daemonheim Peninsula resource dungeon also has dense maples for active cutting.",
+            "- Levels 50–75: Mahogany logs (157.5 XP each) — Miscellania kingdom (set to Mahogany) or cut in Tai Bwo Wannai or Ape Atoll. Slightly better XP than maples but the same level range.",
+            "- Levels 75–82: Magic logs (303.8 XP each) — require level 75 Woodcutting. Also obtainable from boss drops (Croesus, Nex, Wilderness Flash Events). Magic logs are valuable for Fletching and Construction, so consider whether burning them or saving them is more efficient for your current goals."
+        ]
+    },
+    {
+        "title": "Levels 83–110: Curly Roots (Recommended)",
+        "content": [
+            "Curly Roots in the Jadinko Lair are the best ironman Firemaking method and remain viable all the way to level 110. They require 83 Woodcutting and 83 Firemaking to access, and provide simultaneous XP in both skills with no resource input — you chop curly jade roots from the ceiling and burn them in the nearby firepits.",
+            "XP rates at 83 with Nature's Sentinel outfit and Ring of Fire:",
+            "- ~250,000 Firemaking XP/hr",
+            "- ~70,000 Woodcutting XP/hr",
+            "- ~1,100 Jadinko favour/hr (useful for Herblore secondaries)",
+            "At higher levels with full Nature's Sentinel, Ring of Fire, and Flame Gloves: ~305,000 Firemaking XP/hr and ~90,000 Woodcutting XP/hr. This method is semi-AFK and provides consistent dual-skill XP with no supply cost — it is the ironman Firemaking method of choice."
+        ]
+    },
+    {
+        "title": "Levels 83–110: Curly Roots Superheat Form (Endgame)",
+        "content": [
+            "Once you have unlocked Superheat Form (via the Lunar spellbook) or the Always Adze relic power (via the Archaeology Anachronia base camp), it is worth switching away from the Nature's Sentinel outfit in favour of Flame Gloves and Ring of Fire for maximum Firemaking XP at the Jadinko Lair.",
+            "With Superheat Form or Always Adze active, Flame Gloves, and Ring of Fire:",
+            "- ~670,000 Firemaking XP/hr",
+            "- ~120,000 Woodcutting XP/hr",
+            "- No Jadinko favour (the outfit bonus is lost when switching to gloves)",
+            "This is one of the highest Firemaking XP rates in the game and is fully ironman-achievable. Note that Superheat Form requires access to the Lunar spellbook and the Superglass Make unlockable, while the Always Adze relic requires significant Archaeology progress."
+        ]
+    },
+    {
+        "title": "Useful Items and Tips",
+        "content": [
+            "- Inferno Adze (unlocked from the Firemaking Shattered Worlds reward shop or similar): automatically burns some logs while Woodcutting, passively gaining Firemaking XP during tree cutting.",
+            "- Ring of Fire + Flame Gloves: acquired from the All Fired Up beacon minigame (light all 14 beacons simultaneously). Together they provide a 2% XP boost each to Firemaking.",
+            "- Pyre logs: burn specific logs at the funeral pyres in Shades of Mort'ton for bonus XP and Shade keys — a slow but useful method if you are completing the Mort'ton area.",
+            "- Bonfire group bonus: other players joining your bonfire grant up to ~10% bonus Firemaking XP. Use popular bonfire spots like Edgeville, Burthorpe, or Prifddinas when training on logs.",
+            "- Portable brazier (if obtainable from Travelling Merchant): provides a 10% XP boost and works as a personal bonfire — useful during Double XP events if you obtain one."
+        ]
+    }
+]

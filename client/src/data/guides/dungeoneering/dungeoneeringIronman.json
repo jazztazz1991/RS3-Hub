@@ -1,0 +1,33 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Dungeoneering is completely self-contained — no Grand Exchange items are used inside floors, and XP is earned purely through completing dungeon content. Training is essentially identical for ironmen and regular players.",
+            "The Prestige system, floor mechanics, and reward priorities are all the same. The main ironman advantage is that Dungeoneering rewards (Chaotic weapons, Bonecrusher, Charming Imp, Herbicide) are extremely valuable since they cannot be obtained from the GE."
+        ]
+    },
+    {
+        "title": "Prestige and Floor Completion",
+        "content": [
+            "Always complete every available floor at Complexity 6 before resetting Prestige. Never skip floors. The Prestige multiplier is the single most important mechanic — ignoring it loses the majority of your potential XP.",
+            "Solo rushing floors is acceptable early on when you cannot find groups. As soon as you can reliably form a group of 5, switch to group large floors for the team bonus XP multiplier.",
+            "Sinkholes (daily activity at Daemonheim) give significant bonus XP and tokens each day. Always do these."
+        ]
+    },
+    {
+        "title": "Key Ironman Priorities",
+        "content": [
+            "Chaotic weapons at level 80 are a major goal — they represent the best non-Slayer-drop weapons available to ironmen and will carry you through much of the mid-game combat. Prioritise tokens for Chaotic rapier, Maul, or Crossbow depending on your preferred combat style.",
+            "The Charming Imp (level 21 Dungeoneering) automatically collects charms during combat — an invaluable passive tool for Summoning training as an ironman. Get this early.",
+            "The Bonecrusher (level 21) auto-buries bones for Prayer XP. The Herbicide (level 21) auto-destroys grimy herbs for Herblore XP. Both are passive quality-of-life improvements that cost relatively few tokens."
+        ]
+    },
+    {
+        "title": "Resource Dungeons and Daily Challenges",
+        "content": [
+            "Resource dungeons throughout Gielinor give a one-time Dungeoneering XP reward on first entry. Many also contain high-value training spots (Living Rock Caverns for Mining, Frost Dragon resource dungeon for Prayer bones). Visit these as you encounter them — the XP and resource access are both valuable.",
+            "Daily Challenges for Dungeoneering should always be completed for the generous XP rewards.",
+            "At higher Dungeoneering levels, the floors in Daemonheim unlock Elite Dungeons (Temple of Aminishi, Dragonkin Laboratory, The Shadow Reef) — endgame group content with excellent drops and substantial XP per run."
+        ]
+    }
+]

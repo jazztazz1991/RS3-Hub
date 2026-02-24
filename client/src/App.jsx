@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import { AuthProvider } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
@@ -58,6 +58,16 @@ import QuestTracker from './components/QuestTracker';
 import QuestDetails from './components/QuestTracker/QuestDetails';
 import AdminDashboard from './components/Admin/AdminDashboard';
 import SupportDashboard from './components/Support/SupportDashboard';
+import Landing from './components/Landing/Landing';
+import NotFound from './components/NotFound/NotFound';
+import PrayerGuide from './components/Guides/PrayerGuide';
+import SummoningGuide from './components/Guides/SummoningGuide';
+import MagicGuide from './components/Guides/MagicGuide';
+import SmithingGuide from './components/Guides/SmithingGuide';
+import RunecraftingGuide from './components/Guides/RunecraftingGuide';
+import HunterGuide from './components/Guides/HunterGuide';
+import InventionGuide from './components/Guides/InventionGuide';
+import DungeoneeringGuide from './components/Guides/DungeoneeringGuide';
 
 function App() {
   const [serverStatus, setServerStatus] = useState('Checking server...');
@@ -82,12 +92,13 @@ function App() {
             <main>
               <Routes>
               {/* Public Routes */}
+              <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
 
               {/* Protected Routes */}
               <Route element={<ProtectedRoute />}>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/support" element={<SupportDashboard />} />
                 <Route path="/quests" element={<QuestTracker />} />
@@ -118,6 +129,14 @@ function App() {
                 <Route path="/guides/crafting" element={<CraftingGuide />} />
                 <Route path="/guides/fletching" element={<FletchingGuide />} />
                 <Route path="/guides/slayer" element={<SlayerGuide />} />
+                <Route path="/guides/prayer" element={<PrayerGuide />} />
+                <Route path="/guides/summoning" element={<SummoningGuide />} />
+                <Route path="/guides/magic" element={<MagicGuide />} />
+                <Route path="/guides/smithing" element={<SmithingGuide />} />
+                <Route path="/guides/runecrafting" element={<RunecraftingGuide />} />
+                <Route path="/guides/hunter" element={<HunterGuide />} />
+                <Route path="/guides/invention" element={<InventionGuide />} />
+                <Route path="/guides/dungeoneering" element={<DungeoneeringGuide />} />
                 <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
                 <Route path="/calculators/mining" element={<MiningCalculator />} />
                 <Route path="/calculators/smithing" element={<SmithingCalculator />} />
@@ -137,6 +156,9 @@ function App() {
                 <Route path="/calculators/urns" element={<UrnsCalculator />} />
                 <Route path="/daily-tasks" element={<DailyTasks />} />
               </Route>
+
+              {/* 404 */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
             
             <section className="status-bar">

@@ -1,0 +1,43 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Smithing is trained by smelting ores into bars and smithing bars into items. The skill cap is level 99. The single most important method from level 40 onwards is Burial Armour — creating armour sets that are sunk into burial chambers for massive XP with no profit.",
+            "The Artisan's Workshop in Falador (east of the east bank) is where Burial Armour is created. It has its own XP bonus system — speak to Egil to check your bonus percentage and work toward increasing it through repeated visits.",
+            "Alternatively, Smelting using the Superheat Item spell or a furnace, and the Giants' Foundry minigame (Kourend), provide good XP with different trade-offs."
+        ]
+    },
+    {
+        "title": "Levels 1–40: Smelting Early Bars",
+        "content": [
+            "Smelt Bronze bars (level 1) and Iron bars (level 15) at any furnace. The Edgeville furnace is popular due to its proximity to the bank. Iron bars have a 50% chance of failing the smelt — this is removed by wearing a Ring of Forging or by smelting at the Artisan's Workshop.",
+            "Steel bars (level 30) are a significant improvement. Each requires 1 coal and 1 iron ore. At level 35 you can smith Steel platebodies, which give good XP per bar.",
+            "Quests that reward Smithing XP: The Knight's Sword, Elemental Workshop I & II, and Between a Rock... Skip early levels efficiently with quest XP lampson instead of grinding low-tier bars."
+        ]
+    },
+    {
+        "title": "Levels 40–70: Mithril, Adamant, and Rune",
+        "content": [
+            "Mithril bars (level 50 to smelt, level 40 to use), Adamantite bars (level 70), and Rune bars (level 85) can all be purchased from the Grand Exchange and smithed into items for XP at the Artisan's Workshop.",
+            "At the Artisan's Workshop, select 'burial' smithing to convert the items into burial armour. The XP rate scales with metal tier — Rune burial armour gives significantly better XP per bar than Mithril.",
+            "From level 40, focus on Burial Armour: buy the highest-tier bars you can afford and work your way up through the tiers as your level increases."
+        ]
+    },
+    {
+        "title": "Levels 70–99: Burial Armour (Main Method)",
+        "content": [
+            "Burial Armour at the Artisan's Workshop is the fastest Smithing XP in the game. The process: obtain bars → go to the Artisan's Workshop burial forge → smelt helmets, platebodies, platelegs, gauntlets, and boots into burial armour sets.",
+            "Rune burial armour gives approximately 15,000 XP per full set at level 70. Elder rune armour (from level 90) gives substantially higher XP. The items are deposited into burial chambers and cannot be retrieved — pure XP sinks.",
+            "Artisan's Workshop reputation increases your XP bonus (up to 20% at 100% respect). Work toward this by repeatedly visiting and smithing. The bonus applies to all smithing done there.",
+            "From level 90, Elder Rune +5 burial armour gives the best XP rates in the game. Each piece requires Elder rune bars, which can be purchased from the Grand Exchange or smelted from Elder rune ore."
+        ]
+    },
+    {
+        "title": "Giants' Foundry (Alternative)",
+        "content": [
+            "Giants' Foundry is a Smithing minigame in Kourend where you combine metal bars into swords to fulfil commissions. It gives competitive XP rates with Burial Armour at similar levels and also rewards Foundry reputation points, which can be exchanged for useful Smithing rewards including the Smithing Catalyst.",
+            "The Smithing Catalyst increases XP gained while smelting bars at a furnace. It is worth obtaining if you plan to do significant smelting.",
+            "Giants' Foundry is also a more engaging alternative for players who find Burial Armour too click-heavy."
+        ]
+    }
+]

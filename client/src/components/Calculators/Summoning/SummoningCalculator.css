@@ -126,7 +126,7 @@
     border: 1px solid var(--summ-border-main);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .calc-layout {
         grid-template-columns: 1fr;
     }

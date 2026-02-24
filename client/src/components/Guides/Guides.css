@@ -90,27 +90,110 @@ input:checked + .slider:before {
     gap: 1.5rem;
 }
 
-/* Guide Selection Grid Cards (Main Page) */
-.guides-grid .guide-card {
-    background-color: #2f3542 !important;
-    border-radius: 8px !important;
-    padding: 20px !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    color: inherit;
-    transition: transform 0.2s, background-color 0.2s;
-    border: 1px solid #57606f !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 150px !important;
-    border-left: 1px solid #57606f !important; /* Reset the left border from generic .guide-card */
+/* ===== Guides Hub Page ===== */
+.guides-hub {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.guides-grid .guide-card:hover {
-    transform: translateY(-5px);
-    background-color: #57606f !important;
+.guides-hub-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.guides-hub-header h2 {
+    font-size: 2rem;
+    color: #ffd700;
+    margin: 0 0 0.5rem;
+}
+
+.guides-hub-header p {
+    color: #a0a0a0;
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+}
+
+.guides-count {
+    display: inline-block;
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.28);
+    padding: 0.25rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.guides-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 0.85rem;
+}
+
+.guides-hub-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.18s, background 0.18s, transform 0.15s, box-shadow 0.18s;
+}
+
+.guides-hub-card:hover {
+    background: #222;
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(255, 215, 0, 0.07);
+}
+
+.hub-skill-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.hub-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+    min-width: 0;
+}
+
+.hub-card-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hub-card-tags {
+    font-size: 0.72rem;
+    color: #777;
+    letter-spacing: 0.2px;
+}
+
+@media (max-width: 600px) {
+    .guides-hub {
+        padding: 1rem;
+    }
+
+    .guides-hub-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+    }
+
+    .guides-hub-header h2 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Generic Guide Content Card */
@@ -124,23 +207,6 @@ input:checked + .slider:before {
     color: #ecf0f1; /* Ensure text is visible */
 }
 
-.guide-icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.guide-info h3 {
-    margin: 0;
-    color: #ffa502;
-    font-size: 1.2rem;
-}
-
-.coming-soon {
-    margin-top: 3rem;
-    text-align: center;
-    color: #a4b0be;
-    font-style: italic;
-}
 
 .guide-skill-img {
     width: 48px;
@@ -220,13 +286,6 @@ input:checked + .slider:before {
     min-height: auto; /* Reset any inherit min-height */
 }
 
-/* Ensure global guide card styles don't conflict */
-.guides-grid .guide-card {
-    /* Existing overrides kept */
-    background-color: #2f3542 !important;
-    min-height: 150px !important;
-    /* ... rest of the file ... */
-}
 
 .method-header {
     display: flex;
@@ -345,4 +404,93 @@ input:checked + .slider:before {
 
 .info-banner {
     border-radius: 4px;
+}
+
+/* Guide Template additions */
+.guide-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.guide-header-left h2 {
+    margin: 0;
+    color: #f1c40f;
+}
+
+.ironman-label {
+    color: #888;
+}
+
+.ironman-label.active {
+    color: #e74c3c;
+}
+
+.guide-empty {
+    padding: 2rem;
+    text-align: center;
+    color: #7f8c8d;
+    background: #1e272e;
+    border-radius: 8px;
+    border: 1px solid #34495e;
+}
+
+.guide-empty p {
+    margin: 0.5rem 0;
+}
+
+.wiki-link {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.wiki-link:hover {
+    text-decoration: underline;
+}
+
+.guide-nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #34495e;
+}
+
+.nav-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: #2980b9;
+}
+
+.nav-btn.secondary {
+    background: #34495e;
+}
+
+.nav-btn.secondary:hover {
+    background: #46607d;
+}
+
+.use-button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-top: auto;
+    transition: background 0.2s;
+}
+
+.use-button:hover {
+    background: #2ecc71;
 }

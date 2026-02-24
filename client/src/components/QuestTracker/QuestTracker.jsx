@@ -35,22 +35,23 @@ const QuestTracker = () => {
     }, [characterData]);
 
     const checkRequirements = (quest) => {
-        if (!quest.skillReqs || quest.skillReqs.length === 0) return { met: true, missing: [] };
-        
         const missing = [];
-        quest.skillReqs.forEach(req => {
-            const myLevel = statsMap[req.skill] || 0;
-            if (myLevel < req.level) {
-                missing.push(req);
-            }
-        });
 
-        // Check quest reqs (simplified: check if title is in completedQuests)
-        // (Note: questData might list prerequisite quests strings)
+        // Check skill requirements
+        if (quest.skillReqs) {
+            quest.skillReqs.forEach(req => {
+                const myLevel = statsMap[req.skill] || 0;
+                if (myLevel < req.level) {
+                    missing.push(req);
+                }
+            });
+        }
+
+        // Check quest prerequisites
         if (quest.questReqs) {
             quest.questReqs.forEach(qTitle => {
                 if (!completedQuests.has(qTitle)) {
-                    missing.push({ skill: "Quest", level: qTitle }); // Hacky representation
+                    missing.push({ skill: 'Quest', level: qTitle });
                 }
             });
         }
@@ -189,92 +190,60 @@ useEffect(() => {
                 </div>
             )}
 
-            {/* Quest Grid */}
-            <div className="qt-list">
-                {filteredQuests.map(q => {
-                    const isCompleted = completedQuests.has(q.title);
-                    const { met, missing } = checkRequirements(q);
-                    const statusClass = isCompleted ? 'completed' : (met ? 'can-do' : 'cannot-do');
+            {/* Quest Table */}
+            <div className="qt-table-wrapper">
+                <table className="qt-table">
+                    <thead>
+                        <tr>
+                            <th className="qt-col-status" title="Availability status"></th>
+                            <th className="qt-col-name">Quest</th>
+                            <th className="qt-col-diff">Difficulty</th>
+                            <th className="qt-col-length">Length</th>
+                            <th className="qt-col-type">Type</th>
+                            <th className="qt-col-action"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {filteredQuests.map(q => {
+                            const isCompleted = completedQuests.has(q.title);
+                            const { met } = checkRequirements(q);
+                            const rowClass = isCompleted ? 'row-completed' : (met ? 'row-can-do' : 'row-cannot-do');
 
-                    return (
-                        <div key={q.title} className={`quest-card ${statusClass}`}>
-                            <div className="qc-header">
-                                <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
-                                    <button 
-                                        className="btn-details" 
-                                        onClick={() => navigate(`/quests/${encodeURIComponent(q.title.replace(/ /g, '_'))}`)}
-                                        title="Open Guide"
-                                    >
-                                        Details →
-                                    </button>
-                                    <span 
-                                        className="qc-title"
-                                        style={{ cursor: 'pointer' }}
-                                        onClick={() => navigate(`/quests/${encodeURIComponent(q.title.replace(/ /g, '_'))}`)}
-                                    >
-                                        {q.title}
-                                    </span>
-                                    <a 
-                                        href={`https://runescape.wiki/w/${q.title.replace(/ /g, '_')}`} 
-                                        target="_blank" 
-                                        rel="noreferrer"
-                                        className="qc-wiki-link"
-                                    >
-                                        Wiki ↗
-                                    </a>
-                                </div>
-                                <button 
-                                    className="btn-toggle"
-                                    onClick={() => toggleQuest(q.title, !isCompleted)}
+                            return (
+                                <tr
+                                    key={q.title}
+                                    className={rowClass}
+                                    onClick={() => navigate(`/quests/${encodeURIComponent(q.title.replace(/ /g, '_'))}`)}
+                                    style={{ cursor: 'pointer' }}
                                 >
-                                    {isCompleted ? '✓ Done' : 'Mark Done'}
-                                </button>
-                            </div>
+                                    <td className="qt-col-status">
+                                        <span
+                                            className={`status-dot ${isCompleted ? 'dot-done' : (met ? 'dot-can' : 'dot-cant')}`}
+                                            title={isCompleted ? 'Completed' : (met ? 'Requirements met' : 'Missing requirements')}
+                                        />
+                                    </td>
+                                    <td className="qt-col-name qt-quest-name">{q.title}</td>
+                                    <td className="qt-col-diff">{q.difficulty}</td>
+                                    <td className="qt-col-length">{q.length}</td>
+                                    <td className="qt-col-type">
+                                        <span className={`tag ${q.isMembers ? 'members' : 'f2p'}`}>
+                                            {q.isMembers ? 'M' : 'F2P'}
+                                        </span>
+                                    </td>
+                                    <td className="qt-col-action" onClick={e => e.stopPropagation()}>
+                                        <button
+                                            className={`btn-toggle ${isCompleted ? 'done' : ''}`}
+                                            onClick={() => toggleQuest(q.title, !isCompleted)}
+                                        >
+                                            {isCompleted ? '✓' : 'Done'}
+                                        </button>
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
 
-                            <div className="qc-meta">
-                                <span className={`tag ${q.members ? 'members' : 'f2p'}`}>
-                                    {q.members ? 'Members' : 'Free'}
-                                </span>
-                                <span className="tag">{q.difficulty}</span>
-                                <span className="tag">{q.length}</span>
-                                {q.series && <span className="tag">{q.series}</span>}
-                            </div>
-
-                            {/* Requirements Display */}
-                            {!isCompleted && (q.skillReqs?.length > 0 || q.questReqs?.length > 0) && (
-                                <div className="qc-reqs">
-                                    <strong>Requirements:</strong>
-                                    {q.skillReqs?.map((req, i) => {
-                                        const myLvl = statsMap[req.skill] || 0;
-                                        const isMet = myLvl >= req.level;
-                                        return (
-                                            <span 
-                                                key={i} 
-                                                className={`req-item ${isMet ? 'met' : 'missing'}`}
-                                            >
-                                                {isMet ? '✓' : '✗'} {req.level} {req.skill}
-                                            </span>
-                                        );
-                                    })}
-                                    {q.questReqs?.map((reqTitle, i) => {
-                                        const isMet = completedQuests.has(reqTitle);
-                                        return (
-                                            <span 
-                                                key={`q-${i}`} 
-                                                className={`req-item ${isMet ? 'met' : 'missing'}`}
-                                            >
-                                                {isMet ? '✓' : '✗'} Quest: {reqTitle}
-                                            </span>
-                                        );
-                                    })}
-                                </div>
-                            )}
-
-                            {/* Guide Display removed - Moved to details page */}
-                        </div>
-                    );
-                })}
-                
                 {filteredQuests.length === 0 && (
                     <div className="qc-empty-state">
                         <h4>No quests found</h4>

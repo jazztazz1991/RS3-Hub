@@ -1,32 +1,72 @@
 [
-  {
-      "levels": "1-60",
-      "method": "**Ritual Progression:** Ironmen ***must*** prioritize upgrading the Well of Souls and getting lesser/greater materials.",
-      "xp_rates": "Standard",
-      "tips": "Farm Imps or Chickens for early bones. Hermod is critical at level 60 for armor plates."
-  },
-  {
-      "levels": "60-70",
-      "method": "**Hermod farming:** You will need ~30 Hermod Plates for full T70-T90 power/tank gear. Do this now for XP and supplies.",
-      "xp_rates": "Good combat XP",
-      "tips": "Bank all the Lesser/Greater ensouled bars, you will need thousands for T90/95 upgrades."
-  },
-  {
-      "levels": "70-90",
-      "method": "**Slayer / Fetid Zombies:** Train Slayer alongside Necromancy. Use T70 Weapon/Armor.",
-      "xp_rates": "Combat: 300k+",
-      "tips": "Fetid Zombies drop ashes needed for Ink making. Do not skip them."
-  },
-  {
-      "levels": "90+",
-      "method": "**Rasial, The First Necromancer:** Start learning Rasial at 90+ for T95 drops.",
-      "xp_rates": "Best Gear Progression",
-      "tips": "T95 gear is a massive DPS increase. Camp Rasial until log completion."
-  },
-  {
-      "levels": "99-120",
-      "method": "**Rituals (Ink Farming):** You will likely need to do rituals for ink upkeep anyway.",
-      "xp_rates": "Very High",
-      "tips": "Maintain a surplus of Ectoplasm from rituals."
-  }
+    {
+        "title": "Overview",
+        "content": [
+            "Necromancy is a combat skill with a maximum level of 120. It combines combat training with a ritual-based skilling system, making it one of the most unique skills in RS3. For ironmen, the key challenge is crafting your own equipment — robes, weapons, and tools — since none can be traded.",
+            "Necromancy is very ironman-friendly in terms of progression: virtually all materials are gathered through combat and skilling. The Necromancy questline (City of Senntisten and related quests) unlocks the skill and provides early guidance.",
+            "Core loop: kill undead for soul runes and necrotic runes, perform rituals to summon conjures and charge your abilities, and keep up with Kili's equipment crafting tasks every 10 levels."
+        ]
+    },
+    {
+        "title": "Getting Started and Kili's Tasks",
+        "content": [
+            "Necromancy is unlocked through the Necromancy tutorial quest. Follow it fully — it teaches rituals, conjuration, and the basic combat rotation.",
+            "Kili's tasks are the backbone of Necromancy progression. At every 10th level (20, 30, 40, 50, 60, 70, 80, 90, 100, 110), speak to Kili in the City of Um to receive a task. Completing each task rewards substantial XP and allows you to craft the next tier of equipment.",
+            "- Always complete Kili's task as soon as you hit the required level — the XP reward is large and the new equipment substantially improves your damage output.",
+            "- Equipment tiers: T20 (level 20), T30 (level 30), T40 (level 40), T50 (level 50), T60 (level 60), T70 (level 70), T80 (level 80), T90 (level 90).",
+            "Note: Tier 70 and above equipment requires completion of the quest The Spirit of War."
+        ]
+    },
+    {
+        "title": "Levels 1–60: Rituals and Early Combat",
+        "content": [
+            "Early Necromancy splits XP between rituals (skilling) and combat. Both count toward the same skill level.",
+            "Rituals: performed at the Ritual Site in the City of Um. Place ritual candles and catalysts on the ground, then perform the ritual to gain XP and create conjure materials. Higher-tier rituals give more XP but require more materials.",
+            "- Ritual components (candles, catalysts, glyphs) are crafted from resources: soul rune cloth, necrotic runes, and various inks. Gather silk to make cloth, and buy inks from the Soul Obelisk shop.",
+            "Combat: fight undead monsters for Necromancy XP. Early targets:",
+            "- Zombies and skeletons in the Taverley Dungeon or Varrock Sewers (low level).",
+            "- Shades in Mort'ton (mid-low level, drops Mort ton remains useful for rituals).",
+            "- Experiment cave monsters (good mid-level XP, accessible after Creature of Fenkenstrain quest).",
+            "Tip: Combat and rituals complement each other well. Do a ritual session, then use the conjures in combat, then gather more materials for the next ritual."
+        ]
+    },
+    {
+        "title": "Levels 60–90: Mid-Level Combat",
+        "content": [
+            "By level 60 you have access to T60 Necromancer robes and a T60 Death Guard and Skull Lantern. This is a significant power spike.",
+            "Recommended combat targets at this range:",
+            "- Armoured phantoms in the City of Um (good XP, drops ritual materials).",
+            "- Slayer assignments with undead monsters: Bloodvelds, Abyssal Demons (not undead but assigned by Sumona), Nechryaels, Shades.",
+            "- Glacors in the Glacor Cave (level 80 combat recommended, very good XP).",
+            "At level 70, complete The Spirit of War quest to unlock T70+ equipment crafting. This quest is required — without it you cannot upgrade beyond T60.",
+            "Important: Undead Slayer is a strong damage boost perk. Prioritise undead Slayer tasks for the combat XP bonus.",
+            "The four death prayers unlock progressively. These boost combat effectiveness significantly — keep Soul Runes stocked to maintain them."
+        ]
+    },
+    {
+        "title": "Levels 90–120: Endgame",
+        "content": [
+            "At level 90, you unlock T90 Necromancy gear and access to high-level bosses using the style.",
+            "Recommended training methods for 90–120:",
+            "- Rasial (The First Necromancer boss): major boss of the Necromancy skill. Drops Ancient bones used to craft T95 equipment. Worth farming as an ironman for endgame gear.",
+            "- Zamorak, Lord of Chaos: excellent Necromancy boss. Drops Chaotic spikes and other materials. Best in class for drops per hour.",
+            "- Arch-Glacor: strong Necromancy training option. Can adjust modifiers for difficulty/rewards.",
+            "- Elite Dungeon 3 (Shadow Reef): good XP per hour and valuable drops including herbs and materials.",
+            "- GWD2 bosses: all four bosses are very killable with high-level Necromancy.",
+            "For pure skilling XP: high-tier rituals give competitive XP/hr if you have materials stockpiled from combat. Some players alternate combat and ritual sessions.",
+            "Level 120: Requires approximately 104M XP from level 99. The fastest methods involve boss grinding at high enrage or continuous ritual training with max materials."
+        ]
+    },
+    {
+        "title": "Ironman Crafting: Robes and Weapons",
+        "content": [
+            "Ironmen must craft all Necromancy equipment themselves. Here is what you need:",
+            "- Necromancer Robes: crafted from soul rune cloth (weave with a loom) and ectoplasm (from spectral creatures). Each tier requires more materials than the last.",
+            "- Death Guard / Skull Lantern: crafted from ancient bones (dropped by Rasial and other endgame bosses), ritual materials, and bars.",
+            "- Ancient bones (for T95 weapons): obtained exclusively from Rasial and the Necromancy Dungeon. Farm Rasial regularly once combat stats allow.",
+            "- Ectoplasm: gathered from Ectofungus or as drops from ghostly/spectral monsters.",
+            "- Soul rune cloth: crafted at a Spinning wheel from silk, then enchanted at the Soul Obelisk.",
+            "Key tip: Do not fall behind on equipment tiers. Each upgrade is a significant DPS increase. Complete Kili's task immediately every 10 levels to stay on the optimal gear curve."
+        ]
+    }
 ]

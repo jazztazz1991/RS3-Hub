@@ -124,7 +124,7 @@
     padding: 1.5rem;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .calc-layout {
         grid-template-columns: 1fr;
     }

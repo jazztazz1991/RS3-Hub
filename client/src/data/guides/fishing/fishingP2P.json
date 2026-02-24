@@ -1,67 +1,72 @@
-{
-    "methods": [
-        {
-            "levels": "1-20",
-            "min_level": 1,
-            "max_level": 20,
-            "method": "Crayfish",
-            "xp_rate_raw": "11,500",
-            "notes": "",
-            "type": "p2p"
-        },
-        {
-            "levels": "20-70",
-            "min_level": 20,
-            "max_level": 70,
-            "method": "Fly fishing",
-            "xp_rate_raw": "17,000-57,000",
-            "notes": "Players can gain equal experience rates through barbarian fishing between levels 58-70 Fishing.",
-            "type": "p2p"
-        },
-        {
-            "levels": "70-93",
-            "min_level": 70,
-            "max_level": 93,
-            "method": "Crystallise fly fishing",
-            "xp_rate_raw": "Up to 118,000 experience an hour with level 99",
-            "notes": "If they do not have access to crystallise, players can train using barbarian fishing to gain around 63,000 experience an hour, with level 70 Fishing.Start fishing in Menaphos at level 72 Fishing, for up to 85,000 experience an hour, at level 99 Fishing.",
-            "type": "p2p"
-        },
-        {
-            "levels": "66-99+",
-            "min_level": 66,
-            "max_level": 99,
-            "method": "Ghostly Sole",
-            "xp_rate_raw": "Up to 100,000 experience per hour with level 99 Fishing.",
-            "notes": "Ghostly Sole is slightly lower experience per hour, however it is the longest AFK of any Fishing training method.",
-            "type": "p2p"
-        },
-        {
-            "levels": "92-99+",
-            "min_level": 92,
-            "max_level": 99,
-            "method": "Croesus Front, Colonised Guards",
-            "xp_rate_raw": "Up to 200,000 experience per hour at level 99 Fishing with boosts",
-            "notes": "",
-            "type": "p2p"
-        },
-        {
-            "levels": "93-94",
-            "min_level": 93,
-            "max_level": 94,
-            "method": "Prifddinas waterfall fishing",
-            "xp_rate_raw": "Up to 119,000 experience an hour, at level 99 Fishing.",
-            "notes": "",
-            "type": "p2p"
-        },
-        {
-            "levels": "94-99+",
-            "min_level": 94,
-            "max_level": 99,
-            "method": "Fishing Frenzy",
-            "xp_rate_raw": "Over 285,000 experience an hour, at level 99 Fishing.",
-            "notes": "Continue fishing at Prifddinas waterfallStart fishing wobbegongs at level 96 Fishing for up to 137,000 experience an hour, at level 99 Fishing.",
-            "type": "p2p"
-        }
-    ]
-}
+[
+    {
+        "title": "Levels 1-20",
+        "content": [
+            "At level 1 Fishing players should begin catching raw crayfish . Fishing crayfish gives around 11,500 Fishing experience an hour between levels 1 and 20 Fishing. Assuming a player has no previous experience in the Fishing skill, they should be able to achieve these levels in around 23 minutes. Locations to catch crayfish include east of Lumbridge Church and along the northern shore of the lake in Taverley , near Nicholas Angle . No bait is required when catching crayfish."
+        ]
+    },
+    {
+        "title": "Levels 20-70",
+        "content": [
+            "At level 20 Fishing players should start training by fly fishing raw trout . At level 30 Fishing players gain the ability to catch raw salmon and will begin to catch a mix of both trout and salmon while fly fishing. This gives between 17,000 and 57,000 Fishing experience per hour, with level 20-70 Fishing. Feathers are the required bait for fly fishing. Up to 1,000 feathers per day can be purchased from many fishing shops for 6 coins each. Vendors also stock 5 feather packs , each containing 2,000 feathers at a cost of 15,000 coins each (7.5 per feather). There are several locations where players can fly fish trout and salmon, including east of Gunnarsgrunn , at the River Lum in Lumbridge , and in Shilo Village (if the Shilo Village quest has been completed). To fly fish, players must use the \"lure\" option, as opposed to the \"bait\", on fishing spots found in these locations.",
+            "From level 58 Fishing onward players may begin to catch both leaping trout and leaping salmon using barbarian fishing techniques. Catching these fish gives the same amount of Fishing experience per fish caught as catching raw trout and raw salmon. Also, fish are caught at a similar rate using both barbarian fishing techniques and through fly fishing. This means that the two methods give a similar experience rates between levels 58 and 70 Fishing. Barbarian fishing requires level 30 in both Strength and Agility and grants small amounts of Strength and Agility experience for each fish caught. This method also allows the use of bait in place of feathers which works out cheaper when purchasing from the Grand Exchange.",
+            "Note: Using strong fishing urns at 70 Fishing can yield up to 70,000 experience an hour."
+        ]
+    },
+    {
+        "title": "Levels 66-99+",
+        "content": [
+            "At level 66 Fishing, players gain the ability to catch ghostly sole ( Necromancy! quest required). Found in the City of Um , there is one ghostly sole spot located at the Reflection Pool on the southern side of the map. This ghostly sole spot does not change location, or disappear, so players can use this as full \"lobby timer AFK\" method when paired with signs of the porter or the fury shark outfit 's consume option. For players that do not wish to use porters or don't have the fury shark outfit unlocked, there is a bank close to the west. If you map a fish to a hotbar keybind you can drop the fish. Holding this key down does not stop the fishing interaction even after dropping the fish. Players can also use the 3rd teleport option on the passing bracelet \"City of Um: Reflection Pool\" to teleport a few steps from the fishing spot. At level 99 players can expect between 90,000 to 100,000 base experience."
+        ]
+    },
+    {
+        "title": "Levels 70-93",
+        "content": [
+            "At level 70 Fishing, players should continue to train by fly fishing raw trout and salmon if they are able to use the Crystallise spell and Light Form prayer to increase the experience gained from Fishing spots. This gives up to 118,000 experience an hour, with level 99 Fishing. Players wishing to reduce the need for prayer potions could fish at the River Lum and build the nearby god statue and use it as an altar to recharge prayer points. If you use the Crystallise spell every 30 seconds, you can expect a maximum of 11,400 Magic experience per hour on top of the Fishing experience."
+        ]
+    },
+    {
+        "title": "Levels 70-72",
+        "content": [
+            "At level 70 players gain the ability to catch leaping sturgeon and should begin training by barbarian fishing leaping trout , leaping salmon and leaping sturgeon if they are unable to use Crystallise and Light Form. This gives around 63,000 experience an hour at level 70 Fishing. Players are also awarded 5, 6 or 7 experience each in both Strength and Agility each time they catch a leaping trout, leaping salmon or leaping sturgeon respectively. Barbarian fishing requires completion of the part of barbarian training which allows players to use a heavy fishing rod . Additionally level 45 Strength and Agility is required in order to catch all three types of fish. Feathers (costing 24 ) or fishing bait (costing 20 ) are required to catch these fish. The only location where these fish can be caught is the lake near the hut of Otto Godblessed at the top of Baxtorian Falls ."
+        ]
+    },
+    {
+        "title": "Levels 72-93",
+        "content": [
+            "At level 72 Fishing players can fish desert sole , catfish , and beltfish from fishing spots in Menaphos ' Port District or VIP skilling area . Partial completion of The Jack of Spades quest is required to be able to access Menaphos. Although fishing here is not as fast as fly fishing with Crystallise and doesn't give bonus Strength and Agility experience like Barbarian fishing, the player can gain reputation and the fishing spots are very close to a bank or deposit box (unlocked at tier 2 Ports reputation). The VIP skilling area is unlocked at tier 7 overall reputation: the fishing spots within this area deplete at half the rate of the fishing spots in the port district. At tier 8 reputation within the Port District the player's success chance while fishing is increased. Fishing in Menaphos yields around 85,000 experience an hour at level 99 Fishing without the reputation effects unlocked, and 120,000 with a full Fury Shark outfit and tier 8 reputation in the Port district."
+        ]
+    },
+    {
+        "title": "Levels 88-99+",
+        "content": [
+            "With at least 88, but preferably 92 Fishing for all nodes, players can begin training at the Croesus Front in Senntisten , where colonised guards can be found and fished. While not the fastest experience per hour, if the player owns a full shark outfit (to consume the caught fungal algae and enriched fungal algae ) and the upgraded Pontifex shadow ring (for various benefits) this method can be fairly relaxed and profitable. Depending on the level of attention paid, and luck with enriched spawns, the player can expect between 120,000 and 200,000 experience per hour at level 99 Fishing with boosts. With the Pontifex Shadow ring either worn or in the bank (requires the player to overcharge the ring with 5000 resonant anima of each Elder God Wars faction), the player will receive an Elder Trove in their inventory every 6 to 12 minutes, which can contain various rewards. Additionally the player will receive Resonant anima of Bik while fishing.",
+            "This method is also useful for players, especially ironmen, who are looking to obtain a Pernix's quiver (be aware: you need to wear the fully upgraded Pontifex ring, unless the passive effect is unlocked, when opening the Troves)."
+        ]
+    },
+    {
+        "title": "Levels 93-94",
+        "content": [
+            "With at least level 93 Fishing players can begin training by Prifddinas Waterfall Fishing . As the waterfall is located within Prifddinas , between the Crwys and Meilyr districts, completion of Plague's End is required to access it. Level 90 Ranged , Agility and Strength are also required to use the grapple shortcut to get to the top of the waterfall. Players will need to bring a mithril grapple and a crossbow in order to use the grapple shortcut, if they have not previously built a hidey-hole at the waterfall. Alternatively, a player may use an enhanced grappling hook from their tool belt .",
+            "With level 93 Fishing players can fish at the low-level area to obtain small crystal urchins . At level 95 players can fish at the mid-level area to gain medium crystal urchins . With 97 Fishing players can fish at the high-level area to obtain large crystal urchins .",
+            "The crystal urchins that are obtained from fishing at the waterfall can be exchanged for crystal urchin points to spend on rewards at the Prifddinas Waterfall Fishing Shop . With level 99 Fishing, a player can obtain a base rate of around 130,000 experience an hour from fishing at the high-level area. With buffs this can go up to 200,000 experience an hour. Additionally the player will obtain 317 large crystal urchins which would give them 951 crystal urchin points. 3,000 Fishing experience can be purchased for 300 crystal urchin points, so players can gain an additional 9,000 experience an hour, for a total of 139,000 base experience an hour."
+        ]
+    },
+    {
+        "title": "Levels 94-99+",
+        "content": [
+            "With level 94 Fishing players can fish at Fishing Frenzy spots at the Deep Sea Fishing hub . This gives over 285,000 experience an hour at level 99 Fishing. The hub can be accessed by talking to Goomah at the Fishing Guild . Fishing Frenzy grants no fish. It has a streak mechanic where players must continually click on the rapidly moving spots in order to increase and maintain their streak. Streak is increased when experience is gained from the fishing spots and gives an experience bonus while participating in fishing frenzy. 1% experience boost is gained for every 10 streak; up to a maximum of 20% experience boost at 200 streak. The streak will be halved if the player is inactive for 6 seconds, and lost if the player logs out or leaves the area.",
+            "While participating in Fishing Frenzy players may encounter NPCs that award fishing experience including: seagulls , seasingers , Captain Deathbeard , fishermen , and pelicans . These can be interacted with to gain a small amount of Fishing experience; up to 1,940 at level 99. It is not advised that players engage in the area's random events, as doing so will cause them to lose their streak. Players may also randomly find helpful items while fishing, including:",
+            "- Barrel of bait , granting a 5-10% chance to gain an extra catch for 3 minutes. - Broken fishing rod , granting a 5-10% bonus catch rate for 3-30 minutes. - Tangled fishbowl , granting 5% extra fishing experience for 3-30 minutes. - Fishing notes , grants up to 9,703 experience when used at level 99 Fishing."
+        ]
+    },
+    {
+        "title": "Levels 96-99+",
+        "content": [
+            "For a less intensive training method players could continue fishing at Prifddinas waterfall. At level 96 Fishing players may also choose to fish wobbegongs.",
+            "Raw wobbegongs are a rare Fishing resource that can be found randomly on Uncharted Isles . Uncharted Isles can be explored from the The Arc region, which requires completion of the Impressing the Locals quest to access. Completion of the Flag Fall miniquest, which allows the player to claim an uncharted isle and return to it, is also required to fish wobbegongs effectively. To find wobbegongs, the player must first gain some chimes from skilling in The Arc so that they can purchase the supplies required to voyage to Uncharted Isles. Supplies can be purchased from Rosie (supplies) . When the player finds an Uncharted Isle with wobbegong fishing spots then they can claim the island using a claim island flag . Once an uncharted isle is claimed the player may return to it for the price of 3 supplies per voyage: 5 supplies can be claimed per day for free from the box next to Rosie. Up to 3 wobbegong fishing spots may be present on an Uncharted Isle, if the player opts to go on a long voyage.",
+            "Raw wobbegongs can be fished using a fishing rod with level 96 Fishing. Each day the player may catch approximately 100 raw wobbegongs per fishing spot before it is depleted. The daily cap resets at 00:00 UTC. Depleting one wobbegong fishing spot takes around 30 minutes and gives around 68,500 experience. It is recommended to have 96 Cooking to convert the wobbegongs into oil which sells more compared to the raw wobbegong themselves. Purchasing the supplies cost reductions and commodity sell price increases unlocks from the Waiko Reward Shop , in addition to having a claimed island with as many fishing spots as possible, will further increase the viability of searching for wobbegong fishing spots to fish continuously. However, wobbegong spots are fairly rare among other resources, with the chance of two wobbegong nodes being extremely low compared to two alaea or bamboo nodes.",
+            "At level 99, fishing wobbegongs gives an experience rate equivalent to around 137,000 Fishing experience an hour. The experience from fishing raw wobbegongs can further be bolstered by completing contracts given by Sojobo (contracts) on Waiko or Hubbub (contracts) on Whale's Maw or via a contract contact on an uncharted isle. Players may complete up to 3 contracts daily, and may purchase upgrades from Boni for a maximum of 7 daily contracts. Doing contracts, however, requires chimes to be able to reroll contracts until satisfactory wobbegong ones are assigned."
+        ]
+    }
+]

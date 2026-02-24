@@ -26,7 +26,6 @@ export const RC_ALTARS = [
     { id: 'lava', name: 'Lava Rune', level: 23, xp: 10, category: 'Combination', description: 'Earth + Fire' },
     
     // --- Special ---
-    { id: 'abyss', name: 'Abyss Runecrafting (Any)', level: 1, xp: 0, category: 'Special', description: 'Use with demonic skull for 3.5x XP' }, // Placeholder for toggle logic maybe
     { id: 'necro', name: 'Necrotic Rune (Bone)', level: 1, xp: 2.5, category: 'Necromancy', description: 'Low Tier' },
     { id: 'flesh', name: 'Flesh Rune', level: 20, xp: 4.5, category: 'Necromancy', description: 'Mid Tier' },
     { id: 'miasma', name: 'Miasma Rune', level: 60, xp: 9.5, category: 'Necromancy', description: 'High Tier' }

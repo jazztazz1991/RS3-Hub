@@ -1,114 +1,114 @@
-{
-    "methods": [
-        {
-            "levels": "1-10",
-            "min_level": 1,
-            "max_level": 10,
-            "method": "Regular trees",
-            "xp_rate_raw": "14,500",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "10-20",
-            "min_level": 10,
-            "max_level": 20,
-            "method": "Oak trees",
-            "xp_rate_raw": "19,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "20-30",
-            "min_level": 20,
-            "max_level": 30,
-            "method": "Willow trees",
-            "xp_rate_raw": "27,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "30-40",
-            "min_level": 30,
-            "max_level": 40,
-            "method": "Teak trees",
-            "xp_rate_raw": "30,000\u201341,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "40-56",
-            "min_level": 40,
-            "max_level": 56,
-            "method": "Maple trees",
-            "xp_rate_raw": "40,000-55,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "56-58",
-            "min_level": 56,
-            "max_level": 58,
-            "method": "Arctic pines",
-            "xp_rate_raw": "60,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "58-60",
-            "min_level": 58,
-            "max_level": 60,
-            "method": "Eucalyptus trees",
-            "xp_rate_raw": "62,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "60-68/99",
-            "min_level": 60,
-            "max_level": 68,
-            "method": "Mahogany",
-            "xp_rate_raw": "63,000-109,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "68-94/99",
-            "min_level": 68,
-            "max_level": 94,
-            "method": "Ivy",
-            "xp_rate_raw": "86,000-126,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "94-100",
-            "min_level": 94,
-            "max_level": 100,
-            "method": "Crystal trees",
-            "xp_rate_raw": "130,000-133,000",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        },
-        {
-            "levels": "100+",
-            "min_level": 100,
-            "max_level": 99,
-            "method": "Eternal magic trees",
-            "xp_rate_raw": "300k+ (with boosts)",
-            "notes": "Standard P2P training method",
-            "category": "Main",
-            "type": "p2p"
-        }
-    ]
-}
+[
+    {
+        "title": "Levels 1–10: Regular trees",
+        "content": [
+            "At level 1 Woodcutting, players should begin training on regular trees . Between level 1 and 10 Woodcutting, players can gain up to 14,500 base experience per hour cutting regular trees. This experience rate assumes the player is using a dwarven army axe to gain additional Woodcutting experience. Regular trees are located just about everywhere throughout RuneScape. To avoid having to wait for trees to respawn while training, players should train in locations with many regular trees available (such as south-west of the Grand Exchange in Varrock, west of the Cooks' Guild). Players wishing to obtain more logs could use a Seers' headband 1 (or better) which gives a chance of obtaining two logs at once when cutting regular trees, though this does not give any additional experience. The Seers' headband is obtained from completing the easy Seers' Village achievements ."
+        ]
+    },
+    {
+        "title": "Levels 10–20: Oak trees",
+        "content": [
+            "At level 10 Woodcutting players can start training on oak trees. Between level 10 and 20 Woodcutting, players can gain up to 19,000 base experience per hour cutting oak trees. Oak trees are found in many locations throughout RuneScape. Examples for good locations include east of Draynor Village bank, south-west of Varrock's west bank and north of the Yanille lodestone."
+        ]
+    },
+    {
+        "title": "Levels 20–30: Willow trees",
+        "content": [
+            "At level 20 Woodcutting players should begin training on willow trees. Between level 20 and 30 Woodcutting players can gain up to 27,000 base experience per hour cutting willow trees. One of the best locations to cut willow trees is just south-west of the bank in Draynor Village , where a large group of willow trees can be found on the coastline."
+        ]
+    },
+    {
+        "title": "Levels 30–40: Teak trees",
+        "content": [
+            "At level 30 Woodcutting, players can train on teak trees. Cutting teak trees at the Hardwood Grove near Tai Bwo Wannai on Karamja (accessible for a payment of 100 trading sticks ) yields between 30,000 and 41,000 base experience per hour for Woodcutting levels 30-40. While cutting teak logs, there is a 2.5% chance of obtaining special teak logs , which can be used in Construction to convert teak logs into teak planks for free or traded to a Sawmill Operator for 1,300 each. Players with a combat level of 10 or less will be attacked by level 5 snakes in the grove. Players with at least level 6 Divination can use signs of the porter to bank teak logs, except for special teak logs. A deposit box near the teak trees on Ape Atoll , accessible after completing Deadliest Catch and starting Monkey Madness , is useful for efficient teak log banking."
+        ]
+    },
+    {
+        "title": "Levels 40–56/58: Maple trees",
+        "content": [
+            "At level 40 Woodcutting, players should begin chopping maple trees . Between level 40 and 56 Woodcutting, players can gain from 40,000 to 55,000 base experience per hour cutting maple trees. One of the best locations to cut maple trees is in Seers' Village , where several maple trees are found close to a bank."
+        ]
+    },
+    {
+        "title": "Levels 56–58: Arctic pines",
+        "content": [
+            "At level 56 Woodcutting, players should begin chopping arctic pines on Neitiznot , requiring starting The Fremennik Isles to access the island. Completing the quest is not required. Between level 56 and 58 Woodcutting, players can gain around 60,000 base experience per hour cutting arctic pines. If you don't have the Fremennik Isles unlocked, it may be faster to stick with maple until 58."
+        ]
+    },
+    {
+        "title": "Levels 58–60: Eucalyptus trees",
+        "content": [
+            "At level 58 Woodcutting, players should begin chopping eucalyptus trees around Oo'glog . Between level 58 and 60 Woodcutting, players can gain up to 62,000 base experience per hour cutting eucalyptus trees."
+        ]
+    },
+    {
+        "title": "Levels 60–68/99+: Mahogany",
+        "content": [
+            "At level 60 Woodcutting, players should begin chopping mahogany , found in tropical areas across southern Karamja, Ape Atoll , and Mos Le'Harmless . From level 60 Woodcutting, players can gain around 63,000 experience per hour cutting mahogany. At 99 Woodcutting, players can gain 109,000 base experience per hour.",
+            "Players who have completed The Light Within (requires 80 Woodcutting) may want to continue cutting mahogany while using the Crystallise spell and the Light Form prayer. This requires level 88 Magic and 80 Prayer but provides the best Woodcutting experience rates all the way to level 99."
+        ]
+    },
+    {
+        "title": "Level 68–94: Ivy",
+        "content": [
+            "At level 68 Woodcutting, players should begin chopping ivy , found growing on walls in multiple locations including Varrock Palace , Falador , Yanille , Woodcutters' Grove , and the Crwys district of Prifddinas . Woodcutters' Grove will have six clumps of ivy available with the Grove upgraded to tier 2. Players can expect up to 86,000 base experience per hour. This can increase to up to 126,000 base experience per hour at level 99 Woodcutting.",
+            "Cutting ivy requires less effort and attention than cutting most other trees and so proves popular with some players. Cutting ivy doesn't provide any logs but still gives a chance to find bird's nests .",
+            "Ivy can be found in several locations in RuneScape, though players who have access to Prifddinas are recommended to train at the ivy located in the Crwys district to take advantage of the Voice of Seren effect. Ivy can be found on the walls inside the greenhouse where Coeden is located. When the Voice of Seren is active in the Crwys district, base experience gained from Woodcutting ivy there will be increased by 20%. Level 75 Woodcutting is required for Plague's End to unlock Prifddinas and chop ivy there."
+        ]
+    },
+    {
+        "title": "Level 94-100: Crystal trees",
+        "content": [
+            "At level 94 Woodcutting, players can cut crystal trees . Cutting crystal trees gives up to 130,000 base experience per hour at level 94 Woodcutting, and up to 133,000 base Woodcutting experience per hour at level 99 Woodcutting. Rates of over 200,000 Woodcutting experience per hour can be achieved at level 99 Woodcutting with the following boosts:",
+            "- an augmented imcando hatchet with Honed 6 and Refined 4 in combination with an off-hand weapon with Wise 4 - the Nature's sentinel outfit - the Ring of Whispers - the Legendary lumberjack aura - Decorated woodcutting urns in combination with an urn enhancer - Perfect juju woodcutting potions - the Inspire Effort relic power - a Beaver familiar - the Clan avatar 6% experience boost",
+            "There are 7 crystal trees in RuneScape, of which one at a time is active and can be cut. Players may locate the active crystal tree by travelling to any of the crystal trees and using the right-click option \"Look at Crystal tree\". This will inform the player of the direction that they need to travel in to find the active tree. Alternatively, players who have access to the Max Guild garden in Prifddinas (requiring at least one level 99 skill or ownership of a Quest Cape ) may attune one of the skill portals found there to transport them directly to the active crystal tree (this is recommended in order to save time). The Nature's sentinel outfit can also teleport directly to the active crystal tree (up to 20 times per day, shared with the outfit's other teleports). The active crystal tree can be identified by it having a square of crystal shards around its base: these shards are chopped by the player to gain experience. As with ivy, crystal trees require little attention to train on and give no products to the player. The location of the active crystal tree changes every 2 hours."
+        ]
+    },
+    {
+        "title": "Level 100+: Eternal magic trees",
+        "content": [
+            "At level 100 woodcutting players should begin cutting Eternal magic trees . These can be found in the middle of the Piscatoris Hunter area north of Eagle's Peak . Utilising the aforementioned boosts and equipment, upwards of 375k xp per hour can be gained from chopping these trees.",
+            "They behave quite differently from the majority of trees in the game:",
+            "- Similar to elder trees , they remain standing for a set amount of time, with a minimum of 5 minutes until they are felled. The amount of time to felling is indicated by a green bar over the tree. When nobody is chopping the tree, the time to felling will slowly replenish back up to 5 minutes. Activations of the Refined perk, Resourceful aura and cadantine incense sticks will extend the felling time by 30 seconds up to a maximum of 5 times, which can extend the felling time by up to 2 minutes and 30 seconds. - There is a chance when cutting them to perform a Perfect Cut , which grants 5% extra experience and guarantees a log. - Periodically when cutting them they have a call to action mechanic where a ray of light and falling leaves will fall on one side of the tree. Chopping the tree on this side of the tree will grant Lumberjack's Intuition for 30 seconds, which provides multiple benefits (see the page for a full breakdown). - Between level 101 and 110 Woodcutting there are multiple levelling benefits that improve cutting eternal magic trees, including Lumberjack Intuition being more frequent and powerful, better base cutting rate, and increased chances of receiving enchanted bird's nests . - At level 110 Woodcutting, there is a small chance to receive a perfect eternal magic branch when cutting eternal magic trees. Two of these are used in the creation of the masterwork bow , but additional branches can be given to Heedi in exchange for Woodcutting experience equivalent to a medium prismatic lamp . - The Cheapskate perk provides a chance to transmute logs cut from these trees into elder logs , which may be more profitable, depending on market prices."
+        ]
+    },
+    {
+        "title": "Tai Bwo Wannai Cleanup (10+)",
+        "content": [
+            "In the Tai Bwo Wannai Cleanup minigame, a machete is used to hack jungle, with various densities of being unlocked at levels 10, 20, and 35, giving experience similar to chopping trees at those levels. Thatch spars can be made into skewer sticks or used to repair rotten village fences for additional Woodcutting experience. Players also have a chance at receiving gems , three unique tribal masks , and the extremely valuable gout tuber . Playing the minigame awards Tai Bwo Favour, which can be used to enter the hardwood Grove to chop teak trees and mahogany in a safe location without challenging quest requirements."
+        ]
+    },
+    {
+        "title": "Acadia trees (50+)",
+        "content": [
+            "With at least level 50 Woodcutting, players may begin to cut acadia trees . This gives between 55,000 base experience an hour at level 50 and 117,000 base experience an hour at level 99. Acadia trees are found in west of Het's Oasis , Menaphos Imperial district or VIP skilling area , or north of Uzer . Partial completion of The Jack of Spades quest is required to access acadia trees located within Menaphos.",
+            "While cutting acadia trees in Menaphos, players will gain Menaphos reputation , which unlocks rewards within the city. At rank 2 reputation for the Imperial District, players can use a nearby bank deposit box. Until rank 2 has been achieved, it is advised to place the acadia logs in the action bar and drop them from there (players must still right click the action bar slot, but dropping them in this fashion does not interrupt cutting the tree, even if the animation pauses momentarily).",
+            "The VIP skilling area is unlocked at tier 7 overall reputation; acadia trees in this area deplete at half the rate of other acadia trees. At tier 8 Imperial District reputation, the player's success chance while cutting acadia trees is increased by up to 10%.",
+            "Crystallise and Light Form can be used on acadia trees after unlocking them through completing The Light Within quest, which has level 80 Woodcutting as a requirement. Be sure to wear prayer-boosting gear to lengthen Light Form, and to have a full inventory so you don't accidentally deplete the acadia tree resource. Note that a log-splitting scrimshaw will not provide a bonus while using this method given that you are not actually receiving any logs.",
+            "Players with level 83 Archaeology should consider using the Always Adze relic power while cutting acadia trees. This offers fast Firemaking XP and eliminates the need to bank or drop acquired logs.",
+            "Using the following items can net experience of around 250,000 experience an hour at level 90; Nature's sentinel outfit , perfect juju woodcutting potion#(4) , decorated woodcutting urns , Light Form alongside Crystallise , torstol incense sticks , and crystal skillchompas ."
+        ]
+    },
+    {
+        "title": "Overgrown idols (81+)",
+        "content": [
+            "At level 81, players can train woodcutting at the overgrown idols on Karamja and Anachronia . An idol is a statue surrounded by around 20 vines. Chopping vines gives XP for about 10 minutes until the vine has been cleared.",
+            "Idols provide around 100,000 XP an hour at level 81 woodcutting. Idols are an AFK method of training woodcutting, unlike using Crystallise and Light Form which requires attention every few seconds.",
+            "The fastest way to navigate to the idols is to tune the Prifddinas Max Guild portal to \"Overgrown Idols\". Players may enter this guild if they have 99 in any one skill. The same portal teleports players interchangeably between the two idols present in Karamja. One idol can be found south-west of the Shipyard entrance and another north of the Jadinko Lair ."
+        ]
+    },
+    {
+        "title": "Elder trees (90+)",
+        "content": [
+            "Elder trees require much less attention as, unlike other trees, they run off of a 5 minute timer once the player starts chopping them. This timer is instanced for the player and is independent from others cutting the same tree. Once an elder tree has been depleted after the 5 minutes, players may use a superior locator to teleport to another elder tree (including the current tree that the player is at or ones that are still depleted). The Always Adze relic power or Superheat Form curse may be used to automatically burn the elder logs as they are chopped, eliminating the need for banking or porters, as well as granting Firemaking experience. If Superheat Form is used, the player should bring prayer potions and an ancient elven ritual shard to upkeep prayer points. Alternatively, an Orthen furnace core may be equipped to use Superheat Form without draining prayer points, although the player will lose the benefits of Sana's fyrtorch if they own one. A grace of the elves enchanted with the Dark Facet of Grace may also be used to eliminate the prayer drain of Superheat Form, allowing the use of Sana's fyrtorch."
+        ]
+    },
+    {
+        "title": "Golden bamboo (96+)",
+        "content": [
+            "Golden bamboo trees are a rare Woodcutting resource that can be found randomly on Uncharted Isles . Uncharted Isles can be explored from the The Arc region, which requires completion of the Impressing the Locals quest to access. Completion of the Flag Fall miniquest, which allows the player to claim an uncharted isle and return to it, is also required to woodcut golden bamboo effectively. To find golden bamboo trees, the player must first gain some chimes from skilling in The Arc so that they can purchase the supplies required to voyage to Uncharted Isles. Supplies can be purchased from Rosie (supplies) . When the player finds an Uncharted Isle with golden bamboo trees then they can claim the island using a claim island flag . Once an uncharted isle is claimed the player may return to it for the price of 3 supplies per voyage: 5 supplies can be claimed per day for free from the box next to Rosie. Up to 3 golden bamboo trees may be present on an Uncharted Isle, if the player opts to go on a long voyage.",
+            "Golden bamboo can be cut with level 96 Woodcutting. Each day the player may cut approximately 100 golden bamboo per tree before it is depleted. The daily cap resets at 00:00 UTC. Depleting one tree takes around 30 minutes. When selling the golden bamboo gained from woodcutting players can expect to gain enough chimes to cover the cost of purchasing supplies to go on additional long voyages to find more golden bamboo trees and thus woodcut from them indefinitely. Purchasing the supplies cost reductions and commodity sell price increases unlocks from the Waiko Reward Shop , in addition to having a claimed island with as many golden bamboo trees as possible, will further increase the viability of searching for more trees to woodcut continuously. At level 99, woodcutting golden bamboo gives an experience rate equivalent to around 300,000 Woodcutting experience an hour with golden bamboo if cutting continuously and not accounting for the time spent finding 2+ golden bamboos on an island per hour. This is also assuming that it takes about 30 minutes to deplete each golden bamboo plant. It should be noted that a single golden bamboo plant can take anywhere from 30 minutes to an hour to be depleted which may affect experience rates. At 110 Woodcutting, using urns, perfect juju woodcutting potions, lumberjack aura, beaver familiars, a log splitting scrimshaw and the best hatchet, the experience rate can exceed 776,000 Woodcutting experience per hour, not accounting for island hopping.",
+            "The experience from woodcutting golden bamboo can further be bolstered by completing contracts given by Sojobo (contracts) on Waiko or via a contract contact on an Uncharted Isle. Players may complete up to 3 contracts daily, and may purchase upgrades from Boni for a maximum of 7 daily contracts. Doing contracts, however, requires chimes to be able to reroll contracts until satisfactory golden bamboo ones are assigned."
+        ]
+    }
+]
