@@ -60,6 +60,8 @@ import AdminDashboard from './components/Admin/AdminDashboard';
 import SupportDashboard from './components/Support/SupportDashboard';
 import Landing from './components/Landing/Landing';
 import NotFound from './components/NotFound/NotFound';
+import Changelog from './components/Changelog/Changelog';
+import Footer from './components/Footer/Footer';
 import PrayerGuide from './components/Guides/PrayerGuide';
 import SummoningGuide from './components/Guides/SummoningGuide';
 import MagicGuide from './components/Guides/MagicGuide';
@@ -95,6 +97,7 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/changelog" element={<Changelog />} />
 
               {/* Protected Routes */}
               <Route element={<ProtectedRoute />}>
@@ -165,6 +168,7 @@ function App() {
               <p>Backend Status: {serverStatus}</p>
             </section>
           </main>
+          <Footer />
         </div>
         </Router>
         </ReportProvider>
