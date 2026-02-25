@@ -1,372 +1,371 @@
-/* Overwrite all styles for new table layout */
-
 .quest-details-container {
     padding: 2rem;
     color: #e0e6ed;
-    max-width: 1400px; /* Reduced to fit wiki style content more naturally */
+    max-width: 1100px;
     margin: 0 auto;
-    background: #0b1117; /* Very dark blue matching wiki background */
+    background: #0b1117;
 }
 
-/* Header & Title - Wiki Style */
+/* ── Back button ── */
+.btn-back {
+    background: none;
+    border: none;
+    color: #5dade2;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+}
+.btn-back:hover { text-decoration: underline; }
+
+/* ── Title bar ── */
 .qd-page-title {
-    color: #f1c40f; 
-    border-bottom: 2px solid #5dade2; 
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid #1e3a50;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
-
 .qd-page-title h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: normal;
-    text-transform: capitalize;
+    color: #f1c40f;
 }
+.qd-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+.btn-wiki {
+    color: #5dade2;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid #1e3a50;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+.btn-wiki:hover { background: #0f2030; }
 
 .btn-toggle-main {
-    background: #34495e;
-    border: none;
+    background: #1c2c3a;
+    border: 1px solid #2e4a5e;
     color: #bdc3c7;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     cursor: pointer;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: background 0.2s;
 }
+.btn-toggle-main:hover { background: #253d52; }
+.btn-toggle-main.completed { background: #1e5c37; border-color: #27ae60; color: #2ecc71; }
 
-.btn-toggle-main:hover {
-    background: #46607d;
-}
-
-.btn-toggle-main.completed {
-    background: #27ae60;
-    color: white;
-}
-
-/* Overview InfoBox Table */
+/* ── Infobox ── */
 .qd-infobox {
     float: right;
-    width: 320px;
-    background: #0f1821; 
-    border: 1px solid #233140;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    width: 280px;
+    background: #0f1821;
+    border: 1px solid #1e3a50;
+    margin: 0 0 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-
 .qd-infobox-header {
-    background: #1c2833;
-    padding: 0.75rem;
+    background: #132030;
+    padding: 0.6rem 0.75rem;
     text-align: center;
-    border-bottom: 1px solid #233140;
+    border-bottom: 1px solid #1e3a50;
     color: #f39c12;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
-
 .qd-infobox-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
-
-.qd-infobox-table th, .qd-infobox-table td {
-    padding: 0.5rem;
-    border-bottom: 1px solid #1a2632;
+.qd-infobox-table th,
+.qd-infobox-table td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid #132030;
     vertical-align: top;
 }
-
 .qd-infobox-table th {
-    text-align: left;
     color: #5dade2;
-    width: 40%;
+    width: 42%;
+    font-weight: normal;
     background: rgba(255,255,255,0.02);
 }
+.qd-infobox-table td { color: #ddd; }
 
-.qd-infobox-table td {
-    color: #ddd;
-}
+/* ── Main body ── */
+.qd-main-body { overflow: hidden; }
 
-/* Main Content Area (Left of Infobox) */
-.qd-main-body {
-    /* Uses remaining width */
-    overflow: hidden; /* Clears float if not wrapped */
-}
-
-/* Requirements Tree Section */
 .qd-section-header {
     color: #5dade2;
-    border-bottom: 1px solid #233140;
+    border-bottom: 1px solid #1e3a50;
     padding-bottom: 0.3rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin: 1.8rem 0 1rem;
+    font-size: 1.3rem;
     font-weight: normal;
 }
 
-.req-tree-container {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+/* ── Requirements ── */
+.req-none {
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 0.5rem 0 1rem;
 }
 
-.req-tree-ul, .req-tree-root {
-    list-style-type: none;
-    padding-left: 1.5rem;
-    margin: 0; /* Remove default browser margin which causes double spacing in nested lists */
-    position: relative;
+.req-columns {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
-.req-tree-root {
-    padding-left: 0;
+.req-block { min-width: 180px; }
+
+.req-subheader {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #7f8c8d;
+    margin: 0 0 0.6rem;
+    padding: 0;
+    border: none;
 }
 
-/* Tree Connectors */
-.req-tree-ul::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0.75rem; /* Center the line better */
-    border-left: 1px solid #444; /* Thinner/darker line */
+/* Skill chips */
+.skill-req-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
 }
 
-.req-tree-li {
-    position: relative;
-    padding-left: 1.5rem; /* Space for the connector */
-    margin: 0.1rem 0; /* Tiny vertical gap between items */
-    line-height: 1.4; /* Tighter line height */
-}
-
-.req-tree-li::before {
-    content: '';
-    position: absolute;
-    top: 0.7em; /* Align with text middle */
-    left: 0.75rem; /* Connect from the vertical line */
-    width: 0.6rem; /* Length of the horizontal dash */
-    border-top: 1px solid #444;
-}
-
-.req-tree-li:last-child {
-    background: transparent; /* Remove background hack if present, causes issues */
-}
-
-/* Instead of one long line on parent, do lines on children to handle last-child properly */
-/* Reset previous */
-.req-tree-ul::before {
-    display: none;
-}
-
-.req-tree-li::after {
-    /* Vertical line segment for this item */
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0.75rem;
-    border-left: 1px solid #444;
-}
-
-.req-tree-li:last-child::after {
-    /* Stop line at the horizontal connector for last item */
-    bottom: auto;
-    height: 0.8em; /* Match 'top' of horizontal line + 1px */
-}
-
-/* Horizontal line */
-.req-tree-li::before {
-    content: '';
-    position: absolute;
-    top: 0.8em; /* Align to text center approximately */
-    left: 0.75rem; 
-    width: 0.8rem;
-    border-top: 1px solid #444;
-    z-index: 1;
-}
-
-/* Fix root spacing */
-.req-tree-root > .req-tree-li::after {
-    display: none; /* No vertical line for root items if desired, or keep it */
-}
-.req-tree-root > .req-tree-li::before {
-    display: none; /* No horizontal line for root items */
-}
-.req-tree-root > .req-tree-li {
-    padding-left: 0;
-}
-
-.req-item-content {
+.skill-chip {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    padding: 0.2rem 0.55rem 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.82rem;
+    border: 1px solid transparent;
 }
-
-.quest-tree-link {
-    color: #3498db;
-    text-decoration: none;
-    cursor: pointer;
+.skill-chip.met {
+    background: rgba(39, 174, 96, 0.15);
+    border-color: rgba(39, 174, 96, 0.35);
+    color: #2ecc71;
 }
-.quest-tree-link:hover {
-    text-decoration: underline;
+.skill-chip.unmet {
+    background: rgba(231, 76, 60, 0.12);
+    border-color: rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
 }
-
-.status-icon {
-    font-size: 0.8rem;
+.skill-chip-level {
     font-weight: bold;
+    font-size: 0.88rem;
 }
-.status-met { color: #2ecc71; }
-.status-missing { color: #e74c3c; }
+.skill-chip-name { color: inherit; }
 
-/* Skill Requirements List */
-.skill-req-row {
-    display: flex;
-    gap: 0.5rem;
+/* Quest req list */
+.qreq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.qreq-children {
+    list-style: none;
+    padding: 0 0 0 1.2rem;
+    margin: 0.2rem 0 0;
+    border-left: 1px solid #1e3a50;
+}
+
+.qreq-item { margin-bottom: 0.35rem; }
+
+.qreq-link {
+    display: inline-flex;
     align-items: center;
-    margin-bottom: 0.4rem;
-}
-
-.skill-level {
-    font-weight: bold;
-    color: #f1c40f;
-}
-
-.skill-name {
-    color: #3498db; 
-    /* Ideally add icon support later */
-}
-
-/* Reset button */
-.btn-reset {
-    background: transparent;
-    border: 1px solid #34495e;
-    color: #7f8c8d;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
+    gap: 0.4rem;
     cursor: pointer;
-    font-size: 0.8rem;
-    transition: all 0.15s;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: opacity 0.15s;
 }
+.qreq-link:hover { text-decoration: underline; }
+.qreq-link.done { color: #2ecc71; }
+.qreq-link.missing { color: #e74c3c; }
+.qreq-icon { font-size: 0.75rem; }
 
-.btn-reset:hover {
-    background: #1c2833;
-    color: #ecf0f1;
+/* Item lists */
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
 }
+.item-list li {
+    color: #dde;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    position: relative;
+}
+.item-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #5dade2;
+}
+.item-list.recommended li::before { color: #f39c12; }
 
-/* Guide Panel */
+/* ── Guide panel ── */
 .qd-guide-panel {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #1c2833;
+    margin-top: 2rem;
+    padding-top: 0.5rem;
 }
-
 .qd-guide-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.75rem;
 }
-
-/* Guide Checkboxes (Blue Square Style) */
-.guide-step-row {
-    display: flex;
-    margin-bottom: 0.6rem;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.7rem 0.9rem;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
+.btn-reset {
+    background: transparent;
+    border: 1px solid #2e4a5e;
+    color: #7f8c8d;
+    padding: 0.25rem 0.7rem;
     border-radius: 4px;
-    transition: background 0.15s;
     cursor: pointer;
+    font-size: 0.78rem;
+    transition: all 0.15s;
+}
+.btn-reset:hover { background: #132030; color: #ecf0f1; }
+
+/* Guide list — wiki style numbered */
+.guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: guide-counter;
 }
 
-.guide-step-row:hover {
-    background: rgba(255,255,255,0.06);
+.guide-item {
+    counter-increment: guide-counter;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    border-bottom: 1px solid #0f1e2b;
+    cursor: pointer;
+    transition: background 0.12s;
+    position: relative;
 }
+.guide-item:hover { background: rgba(255,255,255,0.03); }
+.guide-item:last-child { border-bottom: none; }
 
-.guide-checkbox {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #555;
-    background: #0f1821;
+.guide-item::before {
+    content: counter(guide-counter);
     flex-shrink: 0;
-    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: transparent;
-    transition: all 0.2s;
-    margin-top: 2px;
+    border-radius: 50%;
+    background: #132030;
+    border: 1px solid #1e3a50;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #5dade2;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    margin-top: 1px;
+}
+.guide-item.done::before {
+    background: #1e5c37;
+    border-color: #27ae60;
+    color: #2ecc71;
+    content: '✓';
 }
 
-.guide-step-row.done .guide-checkbox {
-    background: #3498db;
-    border-color: #3498db;
-    color: white;
+.guide-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
 
-.guide-text {
+.guide-item-text {
     color: #ccc;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.55;
 }
-
-.guide-step-row.done .guide-text {
-    opacity: 0.6;
+.guide-item.done .guide-item-text {
+    color: #5a6e7a;
     text-decoration: line-through;
 }
 
+.guide-step-image {
+    display: block;
+    margin-top: 0.6rem;
+    max-width: 380px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #1e3a50;
+    cursor: zoom-in;
+    opacity: 0.9;
+    transition: opacity 0.15s;
+}
+.guide-step-image:hover { opacity: 1; }
+
+/* ── Lightbox ── */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: zoom-out;
+    padding: 2rem;
+}
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+    cursor: default;
+    object-fit: contain;
+}
+.lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: #ccc;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.15s;
+}
+.lightbox-close:hover { color: #fff; }
+
+/* ── Responsive ── */
 @media (max-width: 768px) {
-    .quest-details-container {
-        padding: 1rem;
-    }
-
-    .qd-page-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-    }
-
-    .qd-page-title h1 {
-        font-size: 1.4rem;
-    }
-
-    .qd-infobox {
-        float: none;
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 1.5rem;
-    }
-}
-
-/* Item Requirements Styling */
-.item-req-list {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0.5rem;
-    margin-top: 1rem;
-}
-
-.item-req-row {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
-    color: #ecf0f1;
-}
-
-.item-bullet {
-    color: #f39c12; /* Orange accent */
-    margin-right: 0.8rem;
-    font-size: 1.2rem;
-    line-height: 1;
-    /* make sure it aligns vertically */
-    margin-top: -0.1rem;
-}
-
-/* Make recommended items slightly different if needed, 
-   but reusing same styles is fine for consistency */
-.qd-section-header + .item-req-list {
-    margin-top: 0.5rem;
+    .quest-details-container { padding: 1rem; }
+    .qd-page-title { flex-direction: column; align-items: flex-start; }
+    .qd-page-title h1 { font-size: 1.3rem; }
+    .qd-infobox { float: none; width: 100%; margin-left: 0; margin-bottom: 1.5rem; }
+    .req-columns { flex-direction: column; gap: 1.2rem; }
+    .guide-step-image { max-width: 100%; }
 }

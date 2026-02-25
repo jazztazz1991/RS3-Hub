@@ -3,16 +3,15 @@ import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 import './AdminDashboard.css';
 
+const ROLE_HIERARCHY = { user: 0, admin: 1, manager: 2, 'co-owner': 3, owner: 4 };
+const hasRole = (userRole, minRole) =>
+    (ROLE_HIERARCHY[userRole] ?? 0) >= (ROLE_HIERARCHY[minRole] ?? 0);
+
 const AdminDashboard = () => {
     const { user } = useAuth();
-    
-    // Admin Check
-    if (!user || user.isAdmin === false) {
-        return <div className="admin-loading">Access Denied. Admins only.</div>;
-    }
 
     const [activeTab, setActiveTab] = useState('reports');
-    
+
     // Reports State
     const [reports, setReports] = useState([]);
     const [loadingReports, setLoadingReports] = useState(true);
@@ -28,17 +27,26 @@ const AdminDashboard = () => {
     // Users State
     const [users, setUsers] = useState([]);
     const [loadingUsers, setLoadingUsers] = useState(true);
-    
+
+    // Analytics State
+    const [analytics, setAnalytics] = useState(null);
+    const [loadingAnalytics, setLoadingAnalytics] = useState(true);
+
     const [error, setError] = useState(null);
 
-    // Use environment variable for API URL
     const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'production' ? '' : 'http://localhost:5000');
 
     useEffect(() => {
         if (activeTab === 'reports') fetchReports();
         if (activeTab === 'suggestions') fetchSuggestions();
         if (activeTab === 'users') fetchUsers();
+        if (activeTab === 'analytics') fetchAnalytics();
     }, [activeTab]);
+
+    // Admin Check — after all hooks
+    if (!user || !hasRole(user.role, 'admin')) {
+        return <div className="admin-loading">Access Denied. Admins only.</div>;
+    }
 
     // --- Reports Logic ---
     const fetchReports = async () => {
@@ -69,7 +77,7 @@ const AdminDashboard = () => {
         setExpandedRows(prev => ({ ...prev, [id]: !prev[id] }));
     };
 
-    const filteredReports = reports.filter(r => 
+    const filteredReports = reports.filter(r =>
         filterStatus === 'all' ? true : r.status === filterStatus
     );
 
@@ -92,6 +100,29 @@ const AdminDashboard = () => {
             setError('Failed to load users.');
         } finally {
             setLoadingUsers(false);
+        }
+    };
+
+    const toggleUserStatus = async (id, currentStatus) => {
+        try {
+            if (!confirm(`Are you sure you want to ${currentStatus ? 'deactivate' : 'activate'} this user?`)) return;
+
+            const newStatus = !currentStatus;
+            await axios.patch(`${API_URL}/api/users/${id}/status`, { isActive: newStatus });
+            setUsers(prev => prev.map(u => u.id === id ? { ...u, isActive: newStatus } : u));
+        } catch (err) {
+            console.error('Error toggling user status:', err);
+            alert('Failed to update user status');
+        }
+    };
+
+    const updateUserRole = async (id, newRole) => {
+        try {
+            await axios.patch(`${API_URL}/api/users/${id}/role`, { role: newRole });
+            setUsers(prev => prev.map(u => u.id === id ? { ...u, role: newRole } : u));
+        } catch (err) {
+            console.error('Error updating role:', err);
+            alert('Failed to update role');
         }
     };
 
@@ -124,7 +155,7 @@ const AdminDashboard = () => {
         setExpandedSuggestions(prev => ({ ...prev, [id]: !prev[id] }));
     };
 
-    const filteredSuggestions = suggestions.filter(s => 
+    const filteredSuggestions = suggestions.filter(s =>
         suggestionFilter === 'all' ? true : s.status === suggestionFilter
     );
 
@@ -136,16 +167,18 @@ const AdminDashboard = () => {
         total: suggestions.length
     };
 
-    const toggleUserStatus = async (id, currentStatus) => {
+    // --- Analytics Logic ---
+    const fetchAnalytics = async () => {
         try {
-            if (!confirm(`Are you sure you want to ${currentStatus ? 'deactivate' : 'activate'} this user?`)) return;
-            
-            const newStatus = !currentStatus;
-            await axios.patch(`${API_URL}/api/users/${id}/status`, { isActive: newStatus });
-            setUsers(prev => prev.map(u => u.id === id ? { ...u, isActive: newStatus } : u));
+            setLoadingAnalytics(true);
+            const res = await axios.get(`${API_URL}/api/users/analytics?timestamp=${Date.now()}`);
+            setAnalytics(res.data);
+            setError(null);
         } catch (err) {
-            console.error('Error toggling user status:', err);
-            alert('Failed to update user status');
+            console.error('Error fetching analytics:', err);
+            setError('Failed to load analytics.');
+        } finally {
+            setLoadingAnalytics(false);
         }
     };
 
@@ -154,29 +187,40 @@ const AdminDashboard = () => {
             <header className="admin-header">
                 <h1>Admin Dashboard</h1>
                 <div className="admin-tabs">
-                    <button 
+                    <button
                         className={`tab-btn ${activeTab === 'reports' ? 'active' : ''}`}
                         onClick={() => setActiveTab('reports')}
                     >
                         Bug Reports
                     </button>
-                    <button 
+                    <button
                         className={`tab-btn ${activeTab === 'suggestions' ? 'active' : ''}`}
                         onClick={() => setActiveTab('suggestions')}
                     >
                         Suggestions
                     </button>
-                    <button 
-                        className={`tab-btn ${activeTab === 'users' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('users')}
-                    >
-                        User Management
-                    </button>
+                    {hasRole(user.role, 'manager') && (
+                        <button
+                            className={`tab-btn ${activeTab === 'users' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('users')}
+                        >
+                            User Management
+                        </button>
+                    )}
+                    {hasRole(user.role, 'co-owner') && (
+                        <button
+                            className={`tab-btn ${activeTab === 'analytics' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('analytics')}
+                        >
+                            Analytics
+                        </button>
+                    )}
                 </div>
                 <button onClick={() => {
                     if (activeTab === 'reports') fetchReports();
                     else if (activeTab === 'suggestions') fetchSuggestions();
-                    else fetchUsers();
+                    else if (activeTab === 'users') fetchUsers();
+                    else fetchAnalytics();
                 }} className="refresh-btn">Refresh</button>
             </header>
 
@@ -222,8 +266,8 @@ const AdminDashboard = () => {
                                                 <td><span className={`type-badge ${report.type}`}>{report.type}</span></td>
                                                 <td className="desc-cell">{report.description.substring(0, 100)}{report.description.length > 100 && '...'}</td>
                                                 <td>
-                                                    <select 
-                                                        value={report.status} 
+                                                    <select
+                                                        value={report.status}
                                                         onClick={(e) => e.stopPropagation()}
                                                         onChange={(e) => updateReportStatus(report.id, e.target.value)}
                                                         className={`status-select ${report.status}`}
@@ -321,8 +365,8 @@ const AdminDashboard = () => {
                                                 <td>{new Date(suggestion.createdAt).toLocaleDateString()} {new Date(suggestion.createdAt).toLocaleTimeString()}</td>
                                                 <td className="desc-cell">{suggestion.description.substring(0, 100)}{suggestion.description.length > 100 && '...'}</td>
                                                 <td>
-                                                    <select 
-                                                        value={suggestion.status} 
+                                                    <select
+                                                        value={suggestion.status}
                                                         onClick={(e) => e.stopPropagation()}
                                                         onChange={(e) => updateSuggestionStatus(suggestion.id, e.target.value)}
                                                         className={`status-select ${suggestion.status}`}
@@ -403,9 +447,21 @@ const AdminDashboard = () => {
                                             <td>{u.username || 'No Username'}</td>
                                             <td>{u.email}</td>
                                             <td>
-                                                <span className={`role-badge ${u.isAdmin ? 'admin' : 'user'}`}>
-                                                    {u.isAdmin ? 'Admin' : 'User'}
-                                                </span>
+                                                {user.role === 'owner' && u.id !== user.id ? (
+                                                    <select
+                                                        value={u.role}
+                                                        onChange={(e) => updateUserRole(u.id, e.target.value)}
+                                                        className={`role-select role-badge ${u.role}`}
+                                                    >
+                                                        <option value="user">user</option>
+                                                        <option value="admin">admin</option>
+                                                        <option value="manager">manager</option>
+                                                        <option value="co-owner">co-owner</option>
+                                                        <option value="owner">owner</option>
+                                                    </select>
+                                                ) : (
+                                                    <span className={`role-badge ${u.role}`}>{u.role}</span>
+                                                )}
                                             </td>
                                             <td>{new Date(u.createdAt).toLocaleDateString()}</td>
                                             <td>
@@ -414,9 +470,9 @@ const AdminDashboard = () => {
                                                 </span>
                                             </td>
                                             <td>
-                                                {!u.isAdmin && (
-                                                    <button 
-                                                        className={`action-btn ${u.isActive ? 'deactivate' : 'activate'}`} 
+                                                {u.id !== user.id && (
+                                                    <button
+                                                        className={`action-btn ${u.isActive ? 'deactivate' : 'activate'}`}
                                                         onClick={() => toggleUserStatus(u.id, u.isActive)}
                                                     >
                                                         {u.isActive ? 'Deactivate' : 'Activate'}
@@ -433,6 +489,74 @@ const AdminDashboard = () => {
                                 </tbody>
                             </table>
                         </div>
+                    )}
+                </>
+            )}
+            {activeTab === 'analytics' && (
+                <>
+                    {loadingAnalytics ? (
+                        <div className="admin-loading">Loading Analytics...</div>
+                    ) : analytics ? (
+                        <>
+                            <div className="analytics-stats">
+                                <div className="analytics-stat-card">
+                                    <h3>Total Users</h3>
+                                    <p>{analytics.totalUsers.toLocaleString()}</p>
+                                </div>
+                                <div className="analytics-stat-card">
+                                    <h3>New This Month</h3>
+                                    <p>{analytics.newUsersThisMonth.toLocaleString()}</p>
+                                </div>
+                                <div className="analytics-stat-card">
+                                    <h3>MAU (Registered)</h3>
+                                    <p>{analytics.mauRegistered.toLocaleString()}</p>
+                                </div>
+                                <div className="analytics-stat-card">
+                                    <h3>Unique Visitors (30d)</h3>
+                                    <p>{analytics.uniqueSessionsThisMonth.toLocaleString()}</p>
+                                </div>
+                            </div>
+
+                            <div className="analytics-chart-wrapper">
+                                <h4 className="chart-title">Daily Visits — Last 30 Days</h4>
+                                {(() => {
+                                    const maxVal = Math.max(...analytics.dailyVisits.map(d => d.sessions), 1);
+                                    return (
+                                        <>
+                                            <div className="analytics-chart">
+                                                {analytics.dailyVisits.map(day => (
+                                                    <div
+                                                        key={day.date}
+                                                        className="chart-col"
+                                                        title={`${day.date}: ${day.sessions} visits, ${day.registeredUsers} registered`}
+                                                    >
+                                                        <div className="chart-bars">
+                                                            <div className="chart-bar-total" style={{ height: `${Math.round((day.sessions / maxVal) * 140)}px` }} />
+                                                            <div className="chart-bar-registered" style={{ height: `${Math.round((day.registeredUsers / maxVal) * 140)}px` }} />
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div className="chart-x-labels">
+                                                {analytics.dailyVisits.map((day, i) => (
+                                                    <div key={day.date} className="chart-x-label">
+                                                        {i % 5 === 0
+                                                            ? new Date(day.date + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+                                                            : ''}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </>
+                                    );
+                                })()}
+                                <div className="chart-legend">
+                                    <span className="legend-total">&#9632; All Visitors</span>
+                                    <span className="legend-registered">&#9632; Registered Users</span>
+                                </div>
+                            </div>
+                        </>
+                    ) : (
+                        <div className="no-data">No analytics data available.</div>
                     )}
                 </>
             )}

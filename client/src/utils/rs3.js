@@ -50,7 +50,7 @@ export const parseHiscores = (csvData) => {
 // Target XPs for progress bars (Standard 99, 110, and 120)
 export const XP_TABLE = {
   99: 13034431,
-  110: 43599174,
+  110: 38737661,
   120: 104273167,
   
   // Max Levels for specific skills

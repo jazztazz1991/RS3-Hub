@@ -1,13 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Report } = require('../models');
-
-const ensureAdmin = (req, res, next) => {
-    if (req.isAuthenticated && req.isAuthenticated() && req.user.isAdmin) {
-        return next();
-    }
-    res.status(403).json({ message: 'Forbidden' });
-};
+const { requireRole, hasRole } = require('../utils/roles');
 
 // POST /api/reports - Create a new bug report (Public/Authenticated)
 router.post('/', async (req, res) => {
@@ -57,8 +51,8 @@ router.get('/', async (req, res) => {
             order: [['createdAt', 'DESC']]
         };
 
-        // If not admin, filter by user ID
-        if (!req.user.isAdmin) {
+        // If not admin-tier, filter by user ID
+        if (!hasRole(req.user.role, 'admin')) {
             queryOptions.where = { userId: req.user.id };
         }
 
@@ -73,8 +67,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-// PATCH /api/reports/:id/status - Update report status (Admin Only)
-router.patch('/:id/status', ensureAdmin, async (req, res) => {
+// PATCH /api/reports/:id/status - Update report status (admin+)
+router.patch('/:id/status', requireRole('admin'), async (req, res) => {
     try {
         const { status } = req.body;
         const report = await Report.findByPk(req.params.id);

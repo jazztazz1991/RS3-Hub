@@ -42,18 +42,24 @@ useEffect(() => {
     // (Standard Utils return Standard XP, so we override for Invention context if possible, 
     // or just accept mismatch until global util update).
     // For now, we will use local helpers that default to standard but can be patched.
+    // Invention uses its own XP scale: level 99 = 36,073,511 and level 120 = 80,618,654
+    const INV_99_XP = 36073511;
+    const INV_120_XP = 80618654;
+
     const getInvXp = (lvl) => {
-        // Simplified check for major milestones to prevent total confusion
-        if (lvl === 99) return 36073511;
-        if (lvl === 120) return 80618654;
-        if (lvl === 150) return 194927409;
-        return getXpAtLevel(lvl); // Fallback to standard
+        if (lvl <= 99) return INV_99_XP;
+        if (lvl >= 120) return INV_120_XP;
+        // Linear interpolation between level 99 and 120
+        return Math.round(INV_99_XP + (INV_120_XP - INV_99_XP) * (lvl - 99) / 21);
     };
 
     const getInvLevel = (xp) => {
-        if (xp >= 80618654) return 120;
-        if (xp >= 36073511 && xp < 37000000) return 99;
-        return getLevelAtXp(xp);
+        if (xp >= INV_120_XP) return 120;
+        if (xp >= INV_99_XP) {
+            // Linear interpolation between level 99 and 120
+            return Math.min(119, 99 + Math.floor((xp - INV_99_XP) / (INV_120_XP - INV_99_XP) * 21));
+        }
+        return Math.min(98, getLevelAtXp(xp));
     };
 
     // Load character data

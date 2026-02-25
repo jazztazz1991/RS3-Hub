@@ -21,13 +21,13 @@ const FEATURES = [
         icon: '📖',
         title: 'Training Guides',
         description:
-            'Step-by-step guides for P2P and Ironman players — organized by level range, not a wall of text. Covers all 24 meaningful skilling skills.',
+            'Step-by-step guides for P2P and Ironman players — organized by level range, not a wall of text. Covers all 25 skilling skills including Ranged.',
     },
     {
         icon: '📜',
         title: 'Quest Tracker',
         description:
-            '270 RS3 quests with full skill and quest requirement checking. Filter to see exactly which quests you can do right now based on your current stats.',
+            '270 RS3 quests with full skill and quest requirement checking. Each quest has a wiki-style guide with numbered steps, color-coded skill chips, and progress checkboxes.',
     },
 ];
 

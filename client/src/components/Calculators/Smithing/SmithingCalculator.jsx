@@ -50,7 +50,7 @@ useEffect(() => {
             const skill = characterData.find(s => s.name === "Smithing");
             if (skill) {
                 setCurrentXp(skill.xp);
-                setTargetLevel(skill.level < 99 ? 99 : 120);
+                setTargetLevel(skill.level < 99 ? 99 : 110);
             }
         }
     }, [characterData]);

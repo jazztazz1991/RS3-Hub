@@ -11,7 +11,8 @@ import './SlayerCalculator_Report.css';
 
 const SlayerCalculator = () => {
     const { characterData, selectedCharacter, updateBlockList } = useCharacter();
-    const { getStatsForMonster } = useSlayerLog();
+    const slayerLog = useSlayerLog();
+    const { getStatsForMonster } = slayerLog;
     const { updateReportContext, clearReportContext } = useReportCalls();
     
     // View Mode: 'calculator' or 'log'
@@ -205,7 +206,7 @@ const SlayerCalculator = () => {
             </div>
 
             {viewMode === 'log' ? (
-                <SlayerLog />
+                <SlayerLog {...slayerLog} />
             ) : (
                 <div className="calc-layout">
                     {/* 1. Stats Column */}

@@ -1,13 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Suggestion } = require('../models');
-
-const ensureAdmin = (req, res, next) => {
-    if (req.isAuthenticated && req.isAuthenticated() && req.user.isAdmin) {
-        return next();
-    }
-    res.status(403).json({ message: 'Forbidden' });
-};
+const { requireRole } = require('../utils/roles');
 
 // POST /api/suggestions - Create a new suggestion (Public/Authenticated)
 router.post('/', async (req, res) => {
@@ -59,8 +53,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-// PATCH /api/suggestions/:id/status - Update suggestion status (Admin Only)
-router.patch('/:id/status', ensureAdmin, async (req, res) => {
+// PATCH /api/suggestions/:id/status - Update suggestion status (admin+)
+router.patch('/:id/status', requireRole('admin'), async (req, res) => {
     try {
         const { status } = req.body;
         const suggestion = await Suggestion.findByPk(req.params.id);

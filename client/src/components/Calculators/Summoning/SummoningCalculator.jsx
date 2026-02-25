@@ -46,7 +46,7 @@ const SummoningCalculator = () => {
                 setCurrentLevel(summHelper.level);
                 
                 // Smart target default
-                const nextTarget = summHelper.level < 99 ? 99 : 120;
+                const nextTarget = 99;
                 setTargetLevel(nextTarget);
                 setTargetXp(getXpAtLevel(nextTarget));
             }

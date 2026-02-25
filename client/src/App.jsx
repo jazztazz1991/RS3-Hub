@@ -70,6 +70,7 @@ import RunecraftingGuide from './components/Guides/RunecraftingGuide';
 import HunterGuide from './components/Guides/HunterGuide';
 import InventionGuide from './components/Guides/InventionGuide';
 import DungeoneeringGuide from './components/Guides/DungeoneeringGuide';
+import RangedGuide from './components/Guides/Ranged/RangedGuide';
 
 function App() {
   const [serverStatus, setServerStatus] = useState('Checking server...');
@@ -140,6 +141,7 @@ function App() {
                 <Route path="/guides/hunter" element={<HunterGuide />} />
                 <Route path="/guides/invention" element={<InventionGuide />} />
                 <Route path="/guides/dungeoneering" element={<DungeoneeringGuide />} />
+                <Route path="/guides/ranged" element={<RangedGuide />} />
                 <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
                 <Route path="/calculators/mining" element={<MiningCalculator />} />
                 <Route path="/calculators/smithing" element={<SmithingCalculator />} />

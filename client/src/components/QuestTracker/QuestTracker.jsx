@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCharacter } from '../../context/CharacterContext';
 import { useReportCalls } from '../../context/ReportContext';
@@ -85,14 +85,19 @@ const QuestTracker = () => {
         });
     }, [search, hideCompleted, filterCanDo, completedQuests, statsMap]); // re-calc when inputs change
 
-    // Calc Totals
-    const totalQP = useMemo(() => {
-        let sum = 0;
+    // Calc Totals — only count/sum quests that exist in QUEST_DATA
+    // (RuneMetrics import may include titles that don't match our data)
+    const { totalQP, completedCount } = useMemo(() => {
+        let qp = 0;
+        let count = 0;
         completedQuests.forEach(title => {
             const q = QUEST_DATA.find(x => x.title === title);
-            if (q) sum += q.questPoints;
+            if (q) {
+                qp += q.questPoints;
+                count++;
+            }
         });
-        return sum;
+        return { totalQP: qp, completedCount: count };
     }, [completedQuests]);
 useEffect(() => {
         updateReportContext({
@@ -128,7 +133,7 @@ useEffect(() => {
             {/* Summary Stats */}
             <div className="qt-summary">
                 <div className="stat-box">
-                    <span className="count">{completedQuests.size} / {QUEST_DATA.length}</span>
+                    <span className="count">{completedCount} / {QUEST_DATA.length}</span>
                     <span className="label">Quests Completed</span>
                 </div>
                 <div className="stat-box">

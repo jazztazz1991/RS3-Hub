@@ -14,9 +14,9 @@ const makeAdmin = async (email) => {
             return;
         }
 
-        user.isAdmin = true;
+        user.role = 'owner';
         await user.save();
-        console.log(`Successfully made ${email} an admin!`);
+        console.log(`Successfully made ${email} an owner!`);
 
     } catch (err) {
         console.error('Error:', err);

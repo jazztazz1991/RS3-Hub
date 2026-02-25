@@ -208,8 +208,20 @@
     font-size: 0.8em;
     font-weight: bold;
 }
-.role-badge.admin { background-color: #8e44ad; color: white; }
 .role-badge.user { background-color: #7f8c8d; color: white; }
+.role-badge.admin { background-color: #3498db; color: white; }
+.role-badge.manager { background-color: #1abc9c; color: white; }
+.role-badge.co-owner { background-color: #9b59b6; color: white; }
+.role-badge.owner { background-color: #ffd700; color: #111; }
+
+.role-select {
+    border: none;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 .status-badge {
     padding: 2px 6px;
@@ -244,3 +256,115 @@
 .action-btn.deactivate:hover {
     background-color: #e74c3c;
 }
+
+/* Analytics Tab */
+.analytics-stats {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.analytics-stat-card {
+    background: #2c2c2c;
+    border-radius: 8px;
+    padding: 16px 22px;
+    min-width: 140px;
+    text-align: center;
+    border: 1px solid #3a3a3a;
+}
+
+.analytics-stat-card h3 {
+    font-size: 0.72rem;
+    color: #888;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.analytics-stat-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 0;
+}
+
+/* Bar Chart */
+.analytics-chart-wrapper {
+    background: #2c2c2c;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #3a3a3a;
+}
+
+.chart-title {
+    color: #ffd700;
+    margin: 0 0 16px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.analytics-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 140px;
+}
+
+.chart-col {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: 0;
+    height: 100%;
+    cursor: default;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    width: 100%;
+}
+
+.chart-bar-total {
+    flex: 1;
+    background: #b5960a;
+    border-radius: 2px 2px 0 0;
+    min-height: 2px;
+}
+
+.chart-bar-registered {
+    flex: 1;
+    background: #ffd700;
+    border-radius: 2px 2px 0 0;
+    min-height: 2px;
+}
+
+.chart-x-labels {
+    display: flex;
+    gap: 3px;
+    margin-top: 6px;
+}
+
+.chart-x-label {
+    flex: 1;
+    font-size: 0.6rem;
+    color: #777;
+    text-align: center;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 14px;
+    font-size: 0.8rem;
+}
+
+.legend-total { color: #b5960a; }
+.legend-registered { color: #ffd700; }

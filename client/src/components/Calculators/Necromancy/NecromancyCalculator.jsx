@@ -304,7 +304,7 @@ const NecromancyCalculator = () => {
                         </p>
                         <p>
                             <span>Method Rate:</span>
-                            <span>{selectedMethod?.xp} XP</span>
+                            <span>{selectedMethod?.xp ?? 0} XP</span>
                         </p>
                     </div>
                 </div>

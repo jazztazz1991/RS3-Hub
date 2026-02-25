@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useSlayerLog } from '../../../hooks/useSlayerLog';
 import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/skills/slayerData';
 import './SlayerLog.css';
 
-const SlayerLog = ({ onStatsUpdate }) => {
-    const { 
-        activeTask, 
-        history, 
-        startTask, 
-        stopTask, 
-        resumeTask, 
-        completeTask, 
-        cancelTask, 
-        deleteTask, // Added delete function
-        getStatsForMonster 
-    } = useSlayerLog();
+const SlayerLog = ({
+    activeTask,
+    history,
+    saveError,
+    startTask,
+    stopTask,
+    resumeTask,
+    completeTask,
+    cancelTask,
+    deleteTask,
+}) => {
 
     // Setup Form State
     const [selectedMaster, setSelectedMaster] = useState(SLAYER_MASTERS[0].id);
@@ -179,6 +177,9 @@ const SlayerLog = ({ onStatsUpdate }) => {
                         <button className="btn-success" onClick={handleComplete}>
                             Finish & Log
                         </button>
+                        {saveError && (
+                            <p className="slayer-save-error">{saveError}</p>
+                        )}
                     </div>
                 </div>
             )}

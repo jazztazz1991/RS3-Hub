@@ -7,6 +7,7 @@ const ACTIVE_TASK_KEY = 'rs3-hub-slayer-active';
 export const useSlayerLog = () => {
     const [history, setHistory] = useState([]);
     const [activeTask, setActiveTask] = useState(null);
+    const [saveError, setSaveError] = useState(null);
     const { user } = useAuth();
 
     // Load active task on mount (Keep local storage for resilience)
@@ -112,12 +113,13 @@ export const useSlayerLog = () => {
 
         if (user) {
             try {
+                setSaveError(null);
                 const res = await axios.post('/api/slayer/log', completedEntry);
                 setHistory(prev => [res.data, ...prev]);
                 setActiveTask(null);
             } catch (err) {
                 console.error("Failed to save slayer log", err);
-                alert("Error saving log to database. Check console for details.");
+                setSaveError("Failed to save task — check your connection and try again.");
             }
         } else {
             console.warn("User not logged in, cannot save to DB");
@@ -166,6 +168,7 @@ export const useSlayerLog = () => {
     return {
         activeTask,
         history,
+        saveError,
         startTask,
         stopTask,
         resumeTask,
@@ -173,6 +176,6 @@ export const useSlayerLog = () => {
         cancelTask,
         deleteTask,
         getStatsForMonster,
-        setActiveTask // Exposed for timer updates if needed, though mostly internal
+        setActiveTask
     };
 };

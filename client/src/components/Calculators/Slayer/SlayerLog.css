@@ -169,3 +169,9 @@
     padding: 1rem;
     font-style: italic;
 }
+
+.slayer-save-error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}

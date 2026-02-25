@@ -1,0 +1,77 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Ranged on an Ironman has two key challenges: obtaining ammunition and keeping up with gear upgrades without the Grand Exchange. Both are manageable with the right approach.",
+            "The good news is that Ironmen can self-sustain ammunition through Fletching (bows and arrows), Smithing (metal bolts), and Hunter (chinchompas). Gear comes from bossing, Slayer, Dungeoneering, and minigames.",
+            "A strong integration of Ranged with Slayer and Hunter is the backbone of Ironman Ranged training — train all three skills together to stay efficient."
+        ]
+    },
+    {
+        "title": "Obtaining Ammunition and Gear",
+        "content": [
+            "Ammunition sources for Ironmen:",
+            "- Arrows: Fletch from logs and arrowheads (mine and smelt the metal). Rune arrows require 75 Fletching",
+            "- Bolts: Smelt metal bars and fletch into bolts. Broad bolts are unlocked from Slayer masters for 35 Slayer points and are stocked by Slayer masters — an excellent mid-game bolt that hits well and never runs out",
+            "- Chinchompas: Catch with Hunter skill. Gray chins at 53 Hunter (Piscatoris), red chins at 63 Hunter (Feldip Hills). These are your best consistent ammo source mid-to-late game",
+            "- Bakriminel bolts: Crafted from Big Game Hunter on Anachronia (75 Hunter minimum). Excellent end-game ammunition",
+            "Weapon progression:",
+            "- Early: Fletch your own shortbows (normal/oak/willow/maple/yew/magic)",
+            "- Royal crossbow (level 70): Crafted from 4 crossbow pieces dropped by the QBD — fully craftable and best-in-slot for its level tier",
+            "- Chaotic crossbow (level 80): Purchased from Dungeoneering rewards for 200,000 tokens — strong and accessible",
+            "- Karil's crossbow (level 70): Obtained from Barrows — good mid-game option",
+            "- Noxious longbow (level 87): Crafted from Spider leg pieces dropped by Araxxor/Araxxi — fully craftable by Ironmen",
+            "- Seren godbow (level 80): Crafted from Telos drops — late game crafted weapon"
+        ]
+    },
+    {
+        "title": "Levels 1–50: Early Training",
+        "content": [
+            "Use self-fletched bows with matching arrows. Oak shortbow + iron arrows at level 1, upgrade as your Fletching and Mining progress.",
+            "Best training spots:",
+            "- Rock crabs (Rellekka coast): AFK-friendly, high HP, low aggression. Excellent from level 1 all the way to 60+",
+            "- Stronghold of Security (Barbarian Village): Densely packed enemies, free to reach",
+            "- Experiments (Creature of Fenkenstrain quest): High HP, no drops to manage, aggressive — great for AFK",
+            "Use the dwarf multicannon (Dwarf Cannon quest) early on to burn through these levels faster if you have cannonballs from Smithing.",
+            "From level 40: Ogre enclave near Castle Wars offers fast AFK XP. Bring a beast of burden familiar and top up your arrows regularly."
+        ]
+    },
+    {
+        "title": "Levels 50–80: Chinchompas and Slayer",
+        "content": [
+            "This is where Ironman Ranged starts to accelerate. Hunt your own chinchompas as your Hunter level allows.",
+            "Chinchompa training at Ape Atoll Underground (requires Monkey Madness): Equip a monkeyspeak amulet and gorilla greegree. The densely packed monkey skeletons are ideal AoE targets. Bring a full inventory of chins plus a beast of burden familiar for extended trips.",
+            "Slayer integration is critical here. Use Ranged on tasks weak to it:",
+            "- Dagannoth (Waterbirth Island): Drop bones, seeds, and hides. Weak to Ranged. Great XP and passive resources",
+            "- Aquanites (78 Slayer): Excellent charm drops for Summoning while training Ranged",
+            "- Waterfiends (64 Slayer): Strong charm drops — kill these with Ranged whenever assigned",
+            "- Nechryaels (80 Slayer): Herb drops support your Herblore. Use Ranged for fast kills",
+            "Broad bolts become available once you spend 35 Slayer points at any Slayer master — buy a large stock to sustain crossbow training through this range.",
+            "Prioritise getting your royal crossbow from the Queen Black Dragon at level 60 combat (requires Dragon Slayer quest). It is craftable from four crossbow pieces she drops and is one of the best weapons available to Ironmen at this stage."
+        ]
+    },
+    {
+        "title": "Levels 80–99+: Endgame Methods",
+        "content": [
+            "By 80+ Ranged you should have the chaotic crossbow from Dungeoneering (200,000 tokens) or Karil's from Barrows. Work towards the noxious longbow from Araxxor when ready.",
+            "Best endgame training methods:",
+            "- Slayer with Ranged: Continue using Ranged on favourable tasks. The Slayer helmet bonus (+12.5% Ranged damage on task) makes this very efficient",
+            "- Red/black chinchompas (Hunter 63/73+): Chinchompa training remains the fastest XP in the game. Catch your own and burn through 90–99",
+            "- Arch-Glacor (90 Ranged recommended): Use mechanics-off mode for consistent AFK training. Drops Frozen Core components for the Icy components in Invention",
+            "- Araxxor/Araxxi: Required for noxious longbow crafting. Good Ranged XP while farming for the spider leg pieces",
+            "- Elite Dungeons (ED1/2/3): Group or solo, very high XP/hr. Particularly good for dual-wielding crossbow users",
+            "- Wyverns (72 Slayer): Skeletal Wyverns are weak to Ranged, drop herbs and seeds — a self-sustaining task for Ironmen"
+        ]
+    },
+    {
+        "title": "Ironman Tips",
+        "content": [
+            "Track your ammo carefully. Run out of chinchompas mid-session? Keep a stack of broad bolts and a crossbow as a fallback at all times.",
+            "Big Game Hunter on Anachronia (75 Hunter) provides Bakriminel bolt tips as a crafting material — one of the best end-game bolt upgrades available to Ironmen without the GE.",
+            "Always pick up your arrows with Ava's alerter (upgraded Ava's attractor). The attractor is obtainable from Animal Magnetism quest. Upgrade it with the accumulator and then alerter as your Ranged level grows.",
+            "Charming imp: Buy from the Dungeoneering rewards shop (once unlocked) and always have it on you during combat — it automatically picks up charms for Summoning XP with zero effort.",
+            "Herb drops from Slayer tasks (Nechryaels, Aberrant Spectres, etc.) fuel your Herblore for potions. Use Ranged on these tasks to kill two birds with one stone.",
+            "Soul split (80 Prayer, Ancient Curses via Temple at Senntisten quest) removes almost all food costs during combat training — a high-priority unlock for any serious Ironman."
+        ]
+    }
+]

@@ -41,10 +41,6 @@ Since RS3-Hub plans to monetize, here are the most practical paths ranked by imp
 
 ## Priority 2 — Technical
 
-### Daily Tasks Content Accuracy
-
-The daily/weekly/monthly tasks list in `client/src/data/common/dailyTasksData.js` should be verified against current RS3 content — game updates may have changed reset timers or task availability.
-
 ### Google OAuth
 
 The code is already written and present in `server/routes/auth.js` (lines 48–62, currently commented out). Re-enabling requires:
@@ -52,22 +48,14 @@ The code is already written and present in `server/routes/auth.js` (lines 48–6
 2. Adding `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` to environment variables
 3. Uncommenting the passport Google strategy and callback route
 
-### Slayer Log DB Persistence
-
-The Slayer Log component and `SlayerTask` model exist. Confirm that task saves are working correctly end-to-end (frontend → API → database → reload) before launch.
-
-### Ranged Guide (Optional)
-
-Ranged can be trained actively via chinchompas, charming imps, and Anachronia. A guide is optional but would complete "all skills" coverage.
-
 ---
 
 ## Quick Wins (< 1 hour each)
 
-- [ ] Add a favicon if not already set
-- [ ] Add `<meta>` description tags to the HTML template for basic SEO
-- [ ] Confirm `robots.txt` and `sitemap.xml` are configured for Render deployment
-- [ ] Add `rel="noopener noreferrer"` to all external links (wiki links, etc.)
+- [x] Add a favicon if not already set
+- [x] Add `<meta>` description tags to the HTML template for basic SEO
+- [x] Confirm `robots.txt` and `sitemap.xml` are configured for Render deployment
+- [x] Add `rel="noopener noreferrer"` to all external links (wiki links, etc.)
 
 ---
 
@@ -87,12 +75,13 @@ Ranged can be trained actively via chinchompas, charming imps, and Anachronia. A
 ### Should-Have
 
 - [x] Guide quality pass (Divination P2P/Ironman rewritten, Firemaking P2P/Ironman rewritten)
+- [x] Daily tasks content verified and updated against current RS3
+- [x] Site changelog added (`/changelog` page + footer last-updated display)
 - [ ] At least one monetization path live (Patreon link minimum)
-- [ ] Daily tasks content verified against current RS3
 
 ### Nice-to-Have
 
 - [ ] Google OAuth re-enabled
-- [ ] Ranged guide
+- [x] Ranged guide
 - [ ] Pro tier / Stripe integration
-- [ ] SEO meta tags and sitemap
+- [x] SEO meta tags and sitemap

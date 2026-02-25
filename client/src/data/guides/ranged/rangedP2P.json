@@ -1,0 +1,91 @@
+[
+    {
+        "title": "Overview",
+        "content": [
+            "Ranged is a combat skill that lets you deal damage from a distance using bows, crossbows, thrown weapons, and chinchompas. It is one of the three primary combat styles and is essential for bossing, Slayer, and AoE training.",
+            "Ranged has two primary training approaches: fast XP via chinchompas in multi-combat areas, or sustained XP and profit via Slayer tasks. Most players mix both — using chinchompas to level quickly early on, then switching to Slayer for money and 99+.",
+            "The skill caps at level 99 for most content, but the virtual cap is 120. The max cape requires 99 in all skills."
+        ]
+    },
+    {
+        "title": "Gear Progression",
+        "content": [
+            "Upgrading your gear regularly has the largest impact on XP rates. Prioritise weapon upgrades over armour.",
+            "Weapons by tier:",
+            "- Levels 1–30: Shortbow or crossbow with bronze/iron/steel arrows/bolts",
+            "- Levels 30–50: Maple shortbow, rune crossbow",
+            "- Levels 50–70: Karil's crossbow (requires 70 Ranged), royal crossbow (70 Ranged, strong free-to-use weapon from Queen Black Dragon parts)",
+            "- Levels 70–85: Armadyl crossbow, dark bow, or magic shortbow (i)",
+            "- Levels 85+: Noxious longbow (87 Ranged) or Decimation (87 Ranged) — best-in-slot in their tier",
+            "- Levels 90+: Seren godbow, Bow of the Last Guardian (95 Ranged)",
+            "Armour by tier:",
+            "- Green/blue/black dragonhide (40/50/70 Defence) — standard training armour",
+            "- Armadyl armour (70 Defence): strong mid-game choice",
+            "- Pernix armour (80 Defence): best degradable option below T90",
+            "- Sirenic armour (90 Defence): T90 best-in-slot",
+            "Ammunition: Use the highest tier available. Broad bolts are excellent for Slayer tasks (cheap, effective). Ruby and diamond bolt (e) are strong for bossing. Bakriminel bolts are best-in-slot for bosses."
+        ]
+    },
+    {
+        "title": "Levels 1–40: Early Training",
+        "content": [
+            "Train on basic monsters while you set up your gear. XP rates are low at this stage but the methods are simple.",
+            "- Levels 1–10: Chickens (Lumbridge) or goblins — basic target practice",
+            "- Levels 10–30: Cows (Lumbridge), guards, or monks. Edgeville monks are accessible and have no drops to manage",
+            "- Levels 30–40: Rock crabs (Rellekka coast) become available and are excellent AFK targets with high HP and low aggression resets. Alternatively, Stronghold of Security monsters or Experiment cave (requires Creature of Fenkenstrain quest) offer good density",
+            "The dwarf multicannon (requires Dwarf Cannon quest) dramatically speeds up early levels if you have the cannonballs. Place it in a multi-combat zone for fast passive XP."
+        ]
+    },
+    {
+        "title": "Levels 40–70: Mid-Game Methods",
+        "content": [
+            "From level 40 onward you have access to meaningful gear upgrades and better training spots.",
+            "Rock crabs and sand crabs remain good AFK options throughout this range. Bring a beast of burden familiar for extended trips.",
+            "Ogres at the Castle Wars ogre enclave offer fast AFK Ranged XP from 40+. The ogres respawn quickly and are packed close together. Use a steel titan or pack yak to stay longer.",
+            "Slayer tasks with Ranged: Start doing Slayer tasks with Ranged from level 50+. Turael or Mazchna tasks are quick to complete at this stage. This passively trains Ranged while also advancing Slayer.",
+            "Waterfiends (level 64 Slayer required) are a popular mid-game Ranged training monster — they give very good charm drops for Summoning alongside decent Ranged XP.",
+            "Dagannoth (Lighthouse or Waterbirth Island): These are weak to Ranged and drop Dagannoth hides plus useful seeds. Good for players who want some passive profit while training."
+        ]
+    },
+    {
+        "title": "Levels 55–99: Chinchompas (Fast XP)",
+        "content": [
+            "Chinchompas are the fastest Ranged training method in the game due to their AoE multi-hit mechanic — each chinchompa hits up to 9 adjacent targets simultaneously.",
+            "Chinchompa tiers (caught via Hunter or bought from GE):",
+            "- Gray chinchompas (45 Ranged): Lowest tier, functional at lower levels",
+            "- Red chinchompas (55 Ranged): Significantly better, recommended from 55+",
+            "- Black chinchompas (65 Ranged): Best-in-slot; accessible in Wilderness (risk) or via Hunter on Feldip Hills",
+            "Best training location: The Ape Atoll Underground dungeon (requires Monkey Madness quest). The monkey skeletons and zombie monkeys are densely packed in multi-combat, ideal for AoE. Wear a monkeyspeak amulet and gorilla greegree to avoid being attacked by guards.",
+            "Alternative: Daemonheim resource dungeon for multi-combat targets, or any AoE Slayer task.",
+            "XP rates at red chins: ~400k–550k XP/hr from level 55–75. At black chins: ~600k–900k XP/hr from 75–99, depending on setup and monster density.",
+            "Chinchompas consume quickly — bring a beast of burden familiar to carry extras and extend trips."
+        ]
+    },
+    {
+        "title": "Levels 70–99: AFK and Slayer Methods",
+        "content": [
+            "If you prefer a more relaxed approach or want to earn money while training, Slayer tasks with Ranged are the go-to alternative to chinchompas.",
+            "Recommended Ranged-favourable Slayer targets:",
+            "- Armadyl GWD (Kree'arra): Weak to Ranged, high-value drops. Best with high combat and gear",
+            "- Abyssal Demons (85 Slayer): Can be chinchompa'd or used with ranged for fast tasks",
+            "- Glacors (96 Slayer): Extremely weak to water spells but the Glacytes can be Ranged effectively",
+            "- Wyverns (72 Slayer): Skeletal wyverns in Asgarnian Ice Dungeon — weak to Ranged, decent drops",
+            "- Aquanites (78 Slayer): Good charm drops and weak to Ranged",
+            "Arch-Glacor (90 Ranged recommended): An excellent endgame training option. Use the mechanics-off mode for consistent AFK Ranged XP and good drop potential including Frozen Cores.",
+            "Elite Dungeons (ED1, ED2, ED3): Ideal for high-level Ranged training in a group or solo. Very high XP/hr and good drops."
+        ]
+    },
+    {
+        "title": "Useful Items and Unlocks",
+        "content": [
+            "- Ava's alerter (attractor upgraded): Automatically picks up ammunition; reduces ammo cost significantly — strongly recommended",
+            "- Slayer helmet (full): +12.5% Ranged damage while on a Slayer task",
+            "- Ranged potions / overloads: Boost your Ranged level for higher max hits — essential at endgame",
+            "- Aggression potions: Pulls nearby monsters to attack you — enables true AFK training at any spot",
+            "- Charming imp: Automatically picks up and destroys charms for passive Summoning XP — very useful during any combat training",
+            "- Soul split: Reduces food consumption drastically once you have access to Ancient Curses (80 Prayer)",
+            "- Rigour / Desolation prayer: Tier 95 prayer that boosts Ranged accuracy and damage — significant DPS increase",
+            "- Invention perks: Precise 5 + Equilibrium 2 on weapon for consistent damage; Biting 4 + Crackling on armour"
+        ]
+    }
+]

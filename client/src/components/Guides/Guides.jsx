@@ -22,6 +22,7 @@ const GUIDES = [
     { name: 'Mining',        path: '/guides/mining' },
     { name: 'Necromancy',    path: '/guides/necromancy' },
     { name: 'Prayer',        path: '/guides/prayer' },
+    { name: 'Ranged',        path: '/guides/ranged' },
     { name: 'Runecrafting',  path: '/guides/runecrafting' },
     { name: 'Slayer',        path: '/guides/slayer' },
     { name: 'Smithing',      path: '/guides/smithing' },

@@ -61,7 +61,7 @@ const MiningCalculator = () => {
             const skill = characterData.find(s => s.name === "Mining");
             if (skill) {
                 setCurrentXp(skill.xp);
-                setTargetLevel(skill.level < 99 ? 99 : 120);
+                setTargetLevel(skill.level < 99 ? 99 : 110);
             }
         }
     }, [characterData]);
@@ -105,7 +105,6 @@ const MiningCalculator = () => {
             </div>
             
             <div className="calculator-content">
-            <h2>Mining Calculator</h2>
 
             {/* Modifiers placeholder */}
             <div className="modifiers">

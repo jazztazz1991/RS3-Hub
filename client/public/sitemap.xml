@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Public pages -->
+  <url>
+    <loc>https://rs3-efficiency-hub.onrender.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rs3-efficiency-hub.onrender.com/changelog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rs3-efficiency-hub.onrender.com/login</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rs3-efficiency-hub.onrender.com/register</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Guides hub -->
+  <url>
+    <loc>https://rs3-efficiency-hub.onrender.com/guides</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Individual guides -->
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/agility</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/archaeology</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/construction</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/cooking</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/crafting</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/divination</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/dungeoneering</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/farming</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/firemaking</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/fishing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/fletching</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/herblore</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/hunter</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/invention</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/magic</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/mining</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/necromancy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/prayer</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/ranged</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/runecrafting</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/slayer</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/smithing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/summoning</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/thieving</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://rs3-efficiency-hub.onrender.com/guides/woodcutting</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Calculators hub -->
+  <url>
+    <loc>https://rs3-efficiency-hub.onrender.com/calculators</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>

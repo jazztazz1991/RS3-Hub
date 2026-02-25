@@ -14,7 +14,7 @@ const GUIDE_SLUGS = {
     Dungeoneering: 'dungeoneering', Farming: 'farming', Firemaking: 'firemaking',
     Fishing: 'fishing', Fletching: 'fletching', Herblore: 'herblore',
     Hunter: 'hunter', Invention: 'invention', Magic: 'magic', Mining: 'mining',
-    Necromancy: 'necromancy', Prayer: 'prayer', Runecrafting: 'runecrafting',
+    Necromancy: 'necromancy', Prayer: 'prayer', Ranged: 'ranged', Runecrafting: 'runecrafting',
     Slayer: 'slayer', Smithing: 'smithing', Summoning: 'summoning',
     Thieving: 'thieving', Woodcutting: 'woodcutting'
 };
@@ -137,7 +137,7 @@ const SkillCard = ({ skill, isExpanded, onToggle }) => {
           )}
           <button
             className="skill-action-btn wiki"
-            onClick={() => window.open(`https://runescape.wiki/w/${skill.name.replace(/\s+/g, '_')}`, '_blank')}
+            onClick={() => window.open(`https://runescape.wiki/w/${skill.name.replace(/\s+/g, '_')}`, '_blank', 'noopener,noreferrer')}
             title={`${skill.name} on RS Wiki`}
           >
             Wiki ↗
@@ -311,7 +311,7 @@ const Dashboard = () => {
                      </div>
                  )}
 
-                 <div className="add-char-wrapper">
+                 <div className="add-char-wrapper" style={{ position: 'relative' }}>
                     <form onSubmit={handleAddCharacter} className="add-char-form">
                         <input 
                             type="text" 

@@ -34,9 +34,14 @@ const User = sequelize.define('User', {
     type: DataTypes.BOOLEAN,
     defaultValue: true
   },
-  isAdmin: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
+  role: {
+    type: DataTypes.ENUM('user', 'admin', 'manager', 'co-owner', 'owner'),
+    defaultValue: 'user',
+    allowNull: false,
+  },
+  last_active: {
+    type: DataTypes.DATE,
+    allowNull: true,
   }
 }, {
   timestamps: true,

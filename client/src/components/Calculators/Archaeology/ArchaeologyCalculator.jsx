@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { artefacts } from '../../../data/skills/artefacts';
-import { XP_TABLE, getLevelAtXp, getTargetXp } from '../../../utils/rs3';
+import { XP_TABLE, getLevelAtXp, getTargetXp, getXpAtLevel } from '../../../utils/rs3';
 import './ArchaeologyCalculator.css';
 
 const ArchaeologyCalculator = () => {
@@ -83,7 +83,7 @@ const ArchaeologyCalculator = () => {
         const xpGain = restorationList.reduce((acc, item) => acc + (item.artefact.xp || 0) * item.quantity, 0);
         const newXp = currentXp + xpGain;
         // Or manual calculation based on targetLevel
-        const manualTargetXp = XP_TABLE[targetLevel] || 0;
+        const manualTargetXp = getXpAtLevel(targetLevel);
         
         const remainingToTarget = Math.max(0, manualTargetXp - newXp);
 

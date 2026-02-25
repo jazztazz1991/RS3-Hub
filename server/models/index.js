@@ -5,6 +5,7 @@ const Report = require('./Report');
 const Suggestion = require('./Suggestion');
 const SlayerTask = require('./SlayerTask');
 const UserQuest = require('./UserQuest');
+const PageVisit = require('./PageVisit');
 
 
 // Define Associations
@@ -28,6 +29,10 @@ Report.belongsTo(User, { foreignKey: 'userId' });
 User.hasMany(Suggestion, { foreignKey: 'userId', as: 'suggestions' });
 Suggestion.belongsTo(User, { foreignKey: 'userId' });
 
+// PageVisit association
+User.hasMany(PageVisit, { foreignKey: 'user_id', as: 'pageVisits' });
+PageVisit.belongsTo(User, { foreignKey: 'user_id' });
+
 module.exports = {
   sequelize,
   User,
@@ -35,5 +40,6 @@ module.exports = {
   Report,
   Suggestion,
   SlayerTask,
-  UserQuest
+  UserQuest,
+  PageVisit
 };

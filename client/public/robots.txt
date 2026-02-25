@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rs3-efficiency-hub.onrender.com/sitemap.xml

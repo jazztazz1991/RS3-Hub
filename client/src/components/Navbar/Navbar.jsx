@@ -50,7 +50,7 @@ const Navbar = () => {
               <li><Link to="/guides" onClick={close}>Guides</Link></li>
               <li><Link to="/quests" onClick={close}>Quests</Link></li>
               <li><Link to="/daily-tasks" onClick={close}>Daily Tasks</Link></li>
-              {user.isAdmin ? (
+              {['admin', 'manager', 'co-owner', 'owner'].includes(user.role) ? (
                 <li><Link to="/admin" onClick={close}>Admin</Link></li>
               ) : (
                 <li><Link to="/support" onClick={close}>Support</Link></li>

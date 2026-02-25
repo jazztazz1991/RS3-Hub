@@ -3,6 +3,76 @@
 
 export const CHANGELOG = [
     {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'XP_TABLE[110] corrected from 43,599,174 to 38,737,661 — Mining and Smithing progress bars, XP-to-go displays, and calculator targets were all showing inflated values.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Slayer calculator: 21 task ID mismatches fixed across all masters (plural IDs like "desert_strykewyrms" now correctly resolve to monster data). Added missing iron, steel, and mithril dragon entries; fixed blood nihil and throwing muspah Slayer level requirements.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Archaeology calculator now correctly computes XP to target for any level — previously returned 0 XP remaining for any target other than exactly 99, 110, or 120.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Mining and Smithing calculators default target corrected from 120 to 110 (their actual level cap). Summoning calculator default target capped at 99.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Invention calculator level display corrected for XP in the 99–120 range — previously fell back to the standard XP formula, showing levels up to 10 off.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'UI',
+        description: 'Quest guide pages redesigned — wiki-style numbered checklist with circle counters, color-coded skill requirement chips (green/red based on your stats), cleaner quest requirement tree, and simplified item lists.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Feature',
+        description: 'Admin role hierarchy added — four tiers (admin, manager, co-owner, owner) with cumulative tab access. Owners can assign roles directly from the User Management panel.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Feature',
+        description: 'Analytics tab added to admin dashboard — tracks MAU (registered users active in last 30 days), unique visitor sessions, and a 30-day daily visits bar chart.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Guides',
+        description: 'Ranged guide added — P2P and Ironman variants covering gear progression, chinchompa AoE training, Slayer integration, and endgame methods.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Quest tracker quest count and quest points now correctly exclude RuneMetrics-imported titles that do not match local quest data.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Slayer Log dual hook instance fixed — completing a task now immediately updates calculator stats without a page refresh.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Bug Fix',
+        description: 'Vite dev proxy added — API calls now correctly reach the Express server on port 5000 during local development.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Quests',
+        description: 'Spirits of the Elid and Contact! quest guides cleaned — removed duplicated sub-steps and post-completion achievement debris.',
+    },
+    {
+        date: '2026-02-25',
+        category: 'Feature',
+        description: 'Quest guide image support added — steps can include optional inline images with lightbox zoom on click.',
+    },
+    {
         date: '2026-02-24',
         category: 'UI',
         description: 'Full mobile responsiveness pass — hamburger nav, calculator layouts, quest tracker, dashboard, and auth pages all fixed for 375px+.',

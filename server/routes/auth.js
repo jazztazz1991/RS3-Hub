@@ -1,6 +1,8 @@
 const express = require('express');
 const passport = require('passport');
 const User = require('../models/User');
+const { PageVisit } = require('../models');
+const { Op } = require('sequelize');
 const router = express.Router();
 
 // Register
@@ -75,6 +77,23 @@ router.get('/current_user', (req, res) => {
     res.json(req.user);
   } else {
     res.send(null);
+  }
+
+  // Fire-and-forget: log visit and update last_active (never blocks response)
+  PageVisit.create({
+    session_id: req.sessionID,
+    user_id: req.user?.id || null,
+    timestamp: new Date()
+  }).catch(() => {});
+
+  if (req.user) {
+    User.update({ last_active: new Date() }, { where: { id: req.user.id } }).catch(() => {});
+  }
+
+  // Occasional cleanup: remove visits older than 90 days (~1% of requests)
+  if (Math.random() < 0.01) {
+    const ninetyDaysAgo = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000);
+    PageVisit.destroy({ where: { timestamp: { [Op.lt]: ninetyDaysAgo } } }).catch(() => {});
   }
 });
 

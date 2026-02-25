@@ -167,8 +167,14 @@ if (process.env.NODE_ENV === 'production') {
 
 // Sync Database and Start Server
 sequelize.sync({ alter: true })
-  .then(() => {
+  .then(async () => {
     console.log('Database synced');
+
+    // One-time migration: promote all legacy isAdmin=true users to owner role
+    await sequelize.query(
+      "UPDATE users SET role = 'owner' WHERE \"isAdmin\" = true AND role = 'user'"
+    ).catch(err => console.warn('Role migration skipped (isAdmin column may not exist):', err.message));
+
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
