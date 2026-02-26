@@ -73,15 +73,7 @@ import DungeoneeringGuide from './components/Guides/DungeoneeringGuide';
 import RangedGuide from './components/Guides/Ranged/RangedGuide';
 
 function App() {
-  const [serverStatus, setServerStatus] = useState('Checking server...');
   const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'production' ? '' : 'http://localhost:5000');
-
-  useEffect(() => {
-    fetch(`${API_URL}/`)
-      .then(res => res.text())
-      .then(data => setServerStatus(data))
-      .catch(() => setServerStatus('Server is offline'));
-  }, []);
 
   return (
     <AuthProvider>
@@ -166,9 +158,6 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
             
-            <section className="status-bar">
-              <p>Backend Status: {serverStatus}</p>
-            </section>
           </main>
           <Footer />
         </div>
