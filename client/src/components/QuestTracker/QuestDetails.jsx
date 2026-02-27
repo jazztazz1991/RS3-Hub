@@ -91,6 +91,8 @@ const QuestDetails = () => {
         );
     };
 
+    const subQuests = QUEST_DATA.filter(q => q.title.startsWith(`${quest.title}: `));
+
     const hasQuestReqs = quest.questReqs && quest.questReqs.length > 0;
     const hasSkillReqs = quest.skillReqs && quest.skillReqs.length > 0;
     const hasItemReqs = quest.itemReqs && quest.itemReqs.length > 0 && !(quest.itemReqs.length === 1 && quest.itemReqs[0] === 'None');
@@ -203,6 +205,39 @@ const QuestDetails = () => {
                             {quest.recommendedItems.map((item, i) => <li key={i}>{item}</li>)}
                         </ul>
                     </>
+                )}
+
+                {/* Sub-quests */}
+                {subQuests.length > 0 && (
+                    <div className="qd-guide-panel" style={{ marginBottom: '1.5rem' }}>
+                        <h2 className="qd-section-header" style={{ marginTop: 0 }}>Sub-quests</h2>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                            {subQuests.map(sq => {
+                                const sqDone = completedQuests.has(sq.title);
+                                const shortName = sq.title.slice(quest.title.length + 2);
+                                return (
+                                    <li key={sq.title} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem 0', borderBottom: '1px solid #333' }}>
+                                        <span>
+                                            {sqDone && <span style={{ color: '#27ae60', marginRight: '0.25rem' }}>✓</span>}
+                                            <span
+                                                className="qreq-link"
+                                                onClick={() => navigate(`/quests/${encodeURIComponent(sq.title.replace(/ /g, '_'))}`)}
+                                            >
+                                                {shortName}
+                                            </span>
+                                            <span style={{ marginLeft: '0.5rem', fontSize: '0.8rem', color: '#aaa' }}>({sq.questPoints} QP)</span>
+                                        </span>
+                                        <button
+                                            className={`btn-toggle-main ${sqDone ? 'completed' : ''}`}
+                                            onClick={() => toggleQuest(sq.title, !sqDone)}
+                                        >
+                                            {sqDone ? '✓ Completed' : 'Mark Complete'}
+                                        </button>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
                 )}
 
                 {/* Quick Guide */}

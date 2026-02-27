@@ -65,6 +65,9 @@ const QuestTracker = () => {
     // Process Data
     const filteredQuests = useMemo(() => {
         return QUEST_DATA.filter(q => {
+            // Exclude sub-quests (shown inside parent quest detail pages instead)
+            if (q.title.includes(': ')) return false;
+
             // Text Search
             if (search && !q.title.toLowerCase().includes(search.toLowerCase())) return false;
             
@@ -87,6 +90,8 @@ const QuestTracker = () => {
 
     // Calc Totals — only count/sum quests that exist in QUEST_DATA
     // (RuneMetrics import may include titles that don't match our data)
+    // Sub-quests (title contains ': ') count toward QP but not quest count
+    const mainQuestCount = QUEST_DATA.filter(q => !q.title.includes(': ')).length;
     const { totalQP, completedCount } = useMemo(() => {
         let qp = 0;
         let count = 0;
@@ -94,7 +99,7 @@ const QuestTracker = () => {
             const q = QUEST_DATA.find(x => x.title === title);
             if (q) {
                 qp += q.questPoints;
-                count++;
+                if (!title.includes(': ')) count++;
             }
         });
         return { totalQP: qp, completedCount: count };
@@ -133,7 +138,7 @@ useEffect(() => {
             {/* Summary Stats */}
             <div className="qt-summary">
                 <div className="stat-box">
-                    <span className="count">{completedCount} / {QUEST_DATA.length}</span>
+                    <span className="count">{completedCount} / {mainQuestCount}</span>
                     <span className="label">Quests Completed</span>
                 </div>
                 <div className="stat-box">

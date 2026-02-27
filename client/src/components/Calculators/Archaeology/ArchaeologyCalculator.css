@@ -171,11 +171,99 @@
 
 .archaeology-calculator .material-name {
     color: var(--arch-text-label);
+    min-width: 0;
+    word-break: break-word;
 }
 
-.archaeology-calculator .material-qty {
+.archaeology-calculator .materials-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.archaeology-calculator .materials-header h3 {
+    margin: 0;
+}
+
+.archaeology-calculator .clear-storage-btn {
+    background: none;
+    border: 1px solid var(--arch-border-panel);
+    color: var(--arch-text-highlight);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.archaeology-calculator .clear-storage-btn:hover {
+    background: var(--arch-bg-hover);
+}
+
+.archaeology-calculator .materials-column-labels {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    color: var(--arch-text-table-header);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--arch-border-panel);
+    margin-bottom: 0.25rem;
+}
+
+.archaeology-calculator .material-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    background-color: var(--arch-bg-panel);
+    border-radius: 3px;
+    font-size: 0.85rem;
+    transition: background 0.15s;
+}
+
+.archaeology-calculator .material-item.mat-sufficient {
+    opacity: 0.55;
+}
+
+.archaeology-calculator .material-need {
     font-weight: bold;
     color: var(--arch-text-highlight);
+    text-align: right;
+    min-width: 36px;
+}
+
+.archaeology-calculator .material-have-input {
+    width: 56px;
+    background: var(--arch-bg-input);
+    border: 1px solid var(--arch-border-input);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+.archaeology-calculator .material-have-input:focus {
+    outline: none;
+    border-color: var(--arch-text-highlight);
+}
+
+.archaeology-calculator .material-left {
+    min-width: 32px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.archaeology-calculator .material-left.enough {
+    color: #66bb6a;
+}
+
+.archaeology-calculator .material-left.short {
+    color: var(--arch-text-danger);
 }
 
 /* XP Analysis Panel */

@@ -4439,7 +4439,7 @@ export const QUEST_DATA = [
         "isMembers": true,
         "length": "Short",
         "difficulty": "None",
-        "questPoints": 2,
+        "questPoints": 0,
         "series": "The Elder God Wars",
         "skillReqs": [],
         "questReqs": [
@@ -4832,7 +4832,7 @@ export const QUEST_DATA = [
         "isMembers": true,
         "length": "Very, Very Long",
         "difficulty": "NPC combat level 60–69",
-        "questPoints": 10,
+        "questPoints": 2,
         "series": "N/A",
         "skillReqs": [],
         "questReqs": [],
@@ -4871,6 +4871,205 @@ export const QUEST_DATA = [
             "Ring of life or 582 zemomarks"
         ],
         "recommendedItems": []
+    },
+    {
+        "title": "Dimension of Disaster: Coin of the Realm",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Novice",
+        "questPoints": 1,
+        "series": "Dimension of Disaster",
+        "skillReqs": [],
+        "questReqs": [],
+        "requirements": [],
+        "guide": [
+            "Talk to Aris in her tent southwest of Varrock Square.",
+            "Pay her 1 gold coin for a fortune telling to receive a special coin.",
+            "Interact with the coin and select 'flip coin' to transform it into a double-headed coin.",
+            "Return to Aris and receive instructions to throw the coin in the fountain.",
+            "Throw the double-headed coin into the Varrock Square fountain to open a dimensional portal.",
+            "Step through the portal to enter New Varrock. You will lose all prayer points upon entry.",
+            "Speak with the Image of Zemouregal. Quest complete."
+        ],
+        "itemReqs": [
+            "1 coin"
+        ],
+        "recommendedItems": []
+    },
+    {
+        "title": "Dimension of Disaster: Shield of Arrav",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Novice",
+        "questPoints": 1,
+        "series": "Dimension of Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Dimension of Disaster: Coin of the Realm",
+            "Shield of Arrav"
+        ],
+        "requirements": [],
+        "guide": [
+            "Speak to Orlando Smith at the New Varrock museum to learn that Zemouregal has hidden the Shield of Arrav pieces in the city banks.",
+            "For the Black Arm Gang path: Talk to Charlie the Tramp near the south gate, then visit the hideout and speak with Katrine. Defeat Jonny the Beard at the Blue Moon Inn to retrieve Katrine's arm, return to Katrine, then collect two forged documents from Moira.",
+            "For the Phoenix Gang path: Bribe Baraek with 2 zemomarks to locate Straven. Meet Straven at VTAM Corporation, retrieve a phoenix egg from Lowe's bow shop (avoid other eggs), return the egg to Straven, then collect two forged documents from Molly.",
+            "Visit each bank using one forged document each to retrieve both Shield of Arrav halves from the skeleton clerks.",
+            "Combine the two halves to form the complete Shield of Arrav.",
+            "Return the assembled shield to Orlando Smith to complete the quest."
+        ],
+        "itemReqs": [
+            "2 zemomarks (to bribe Baraek on the Phoenix Gang route)"
+        ],
+        "recommendedItems": []
+    },
+    {
+        "title": "Dimension of Disaster: Demon Slayer",
+        "isMembers": true,
+        "length": "Medium",
+        "difficulty": "Intermediate",
+        "questPoints": 3,
+        "series": "Dimension of Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Dimension of Disaster: Coin of the Realm",
+            "Demon Slayer",
+            "Shadow of the Storm"
+        ],
+        "requirements": [],
+        "guide": [
+            "Talk to Aris southwest of New Varrock Square to begin.",
+            "Visit Sir Prysin's house northwest of the church and search the drain south of the house to retrieve his key.",
+            "Descend the trapdoor in the church to reach the crypt. A magical barrier blocks the path — you need to appease three guardian spirits first.",
+            "Spirit of Body: Obtain a beer glass and sobriety potion ingredients via the Apothecary. Mix a sobriety potion and use it on a beer. Give the resulting drink to Dr Harlow at the Blue Moon Inn.",
+            "Spirit of Faith: Inspect the tombstone stack in the graveyard and shift it left or right until the spirit is satisfied.",
+            "Spirit of Mind: Inspect the bookcase in the house south of Sir Prysin's. Defeat the animated book that appears.",
+            "Retrieve Silverlight from the crypt. Obtain a vial and fill it from the blood fountain. Use a black mushroom on the vial to create black mushroom ink.",
+            "Use the ink on Silverlight to dye it black, creating Darklight.",
+            "Equip the black robes and pass through Evil Dave's barrier. Draw a blood circle on the ground and summon Delrith.",
+            "Defeat Delrith in combat, then immediately fight Agrith Naar. Avoid his incineration attacks and slay the four summoned demons he calls.",
+            "Return to Aris to complete the quest."
+        ],
+        "itemReqs": [
+            "Cabbage (obtainable in New Varrock)",
+            "Rotten tomato (obtainable in New Varrock)",
+            "Beer glass or beer (obtainable during quest)",
+            "Dog hair (obtainable during quest)",
+            "Black robe outfit (90 zemomarks) or New Varrock Cultist cosmetic override",
+            "Black mushroom (obtainable during quest)",
+            "Vial (obtainable during quest)"
+        ],
+        "recommendedItems": [
+            "Food (cakes or stews)",
+            "Iron armour or better",
+            "Amulet of Strength",
+            "A shield (Silverlight is two-handed)"
+        ]
+    },
+    {
+        "title": "Dimension of Disaster: Defender of Varrock",
+        "isMembers": true,
+        "length": "Medium",
+        "difficulty": "Experienced",
+        "questPoints": 2,
+        "series": "Dimension of Disaster",
+        "skillReqs": [
+            { "skill": "Magic", "level": 43 }
+        ],
+        "questReqs": [
+            "Dimension of Disaster: Coin of the Realm",
+            "Defender of Varrock",
+            "Shield of Arrav",
+            "The Knight's Sword",
+            "Family Crest",
+            "What Lies Below"
+        ],
+        "requirements": [],
+        "guide": [
+            "Talk to Reldo in the New Varrock Palace library.",
+            "Speak to Arrav in the palace garden and express interest in defeating Zemouregal.",
+            "Return to Reldo and search the bookshelves in the northwest corner for the book 'Matters of the Heart'.",
+            "Show the book to Reldo to learn about an obsidian artefact hidden upstairs.",
+            "Purchase the full zombie outfit (500 zemomarks) from Thessalia to use as a disguise.",
+            "Wearing the disguise, collect two vials from the castle kitchen.",
+            "Kill armoured zombies (level 42) upstairs and fill the vials with red mist.",
+            "Eavesdrop on Zemouregal from the balcony to learn about the code protection on the vault.",
+            "Find the decapitated tin soldier to the southwest. Obtain its head from the trial announcer.",
+            "Gather 3 tin ore, 4 fire runes, and 1 nature rune.",
+            "Use the Superheat Item spell on the tin soldier head, apply the ore, and use red mist to fully repair the tin soldier.",
+            "Kill another armoured zombie for an additional vial of red mist.",
+            "Navigate to the scrying pool room to the northwest via the Zilyana statue room.",
+            "Use the scrying pool to control the tin soldier. Navigate it past the human detection spell and into Zemouregal's lab to search the desk for the key code.",
+            "Collect decoder strips from the training dummy room crate.",
+            "Return to the vault, solve the decoder puzzle with the key code, and enter the vault.",
+            "Destroy the black prism inside the vault.",
+            "Exit and speak to Arrav in the courtyard. Quest complete."
+        ],
+        "itemReqs": [
+            "500 zemomarks for zombie outfit (mask, shirt, trousers, gloves, boots) — or cosmetic override if unlocked",
+            "3 tin ore",
+            "4 fire runes (or a fire staff)",
+            "1 nature rune",
+            "Vial (not needed if you already have a vial of red mist)"
+        ],
+        "recommendedItems": [
+            "Extra vials in case of mistakes",
+            "Spare runes and tin ore"
+        ]
+    },
+    {
+        "title": "Dimension of Disaster: Curse of Arrav",
+        "isMembers": true,
+        "length": "Long",
+        "difficulty": "Master",
+        "questPoints": 1,
+        "series": "Dimension of Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Dimension of Disaster: Coin of the Realm",
+            "Dimension of Disaster: Shield of Arrav",
+            "Dimension of Disaster: Demon Slayer",
+            "Dimension of Disaster: Defender of Varrock",
+            "The Curse of Arrav",
+            "The Tale of the Muspah",
+            "Missing My Mummy",
+            "Defender of Varrock",
+            "Temple of Ikov"
+        ],
+        "requirements": [],
+        "guide": [
+            "Talk to Arrav in the New Varrock Palace atrium.",
+            "Obtain an empty canopic jar from Ernie (north of Evil Dave's house) by showing him a completed cooking urn.",
+            "Get sacred oil from Father Lawrence at the church by activating the following prayers simultaneously: Ultimate Strength, Rapid Restore, Eagle Eye, Protect from Summoning, and Mystic Might.",
+            "Obtain a Ring of Life and collect dwellberries from Ambassador Ferrnook's corpse or armoured zombies.",
+            "Combine the dwellberries, sacred oil, and Ring of Life in the canopic jar, then show the prepared jar to Arrav.",
+            "Create orange mist: mix red mist with yellow dye (made from an onion and a vial of water).",
+            "Create purple mist: mix red mist with blue dye (made from delphinium flowers and a vial of water).",
+            "Use the orange mist to enter the north-west ground floor room and search the desk for the code key.",
+            "Wearing the zombie outfit, climb to the first floor. Use the purple mist to enter the north-east room and search the footlocker for the vault key.",
+            "Collect decoder strips from the south-eastern room.",
+            "Use the mithril grapple and crossbow to grapple across the light beams in the vault. Solve the decoder puzzle and retrieve Arrav's heart.",
+            "Show the heart to Arrav. Pickpocket Curator Haig Halen for the display cabinet key, then retrieve the Shield of Arrav.",
+            "Return to Arrav with Darklight and the Shield of Arrav unequipped.",
+            "Fight as Arrav against Sharathteerk (level 98). Defeat or spare him and collect the healing orb.",
+            "Climb to the roof and face Zemouregal (level 98). Destroy his three protection portals by luring explosive cows into them.",
+            "Use healing orbs and continue fighting until Zemouregal is defeated.",
+            "Return to Arrav in New Varrock Square to complete the quest."
+        ],
+        "itemReqs": [
+            "Ring of Life",
+            "Darklight",
+            "Complete zombie outfit (mask, shirt, trousers, gloves, boots)",
+            "Onion",
+            "2 vials of water",
+            "Mithril crossbow",
+            "Mithril grapple",
+            "Lockpick"
+        ],
+        "recommendedItems": [
+            "High-tier combat gear for Arrav's fights",
+            "Food and potions for the boss fights",
+            "Watering can (to grow delphinium flowers for blue dye)"
+        ]
     },
     {
         "title": "Dishonour among Thieves",
@@ -6509,7 +6708,7 @@ export const QUEST_DATA = [
         "isMembers": true,
         "length": "Short",
         "difficulty": "None",
-        "questPoints": 2,
+        "questPoints": 0,
         "series": "The Elder God Wars",
         "skillReqs": [
             {
@@ -6562,7 +6761,7 @@ export const QUEST_DATA = [
         "isMembers": true,
         "length": "Short",
         "difficulty": "None",
-        "questPoints": 2,
+        "questPoints": 0,
         "series": "The Elder God Wars",
         "skillReqs": [],
         "questReqs": [
@@ -13113,7 +13312,7 @@ export const QUEST_DATA = [
         "isMembers": true,
         "length": "Very, Very Long",
         "difficulty": "NPC combat level 90–99",
-        "questPoints": 10,
+        "questPoints": 0,
         "series": "N/A",
         "skillReqs": [
             {
@@ -13126,68 +13325,408 @@ export const QUEST_DATA = [
         ],
         "requirements": [],
         "guide": [
-            "Recipe for Disaster: Another Cook's Quest Cook's Assistant",
-            "Cook's Assistant",
-            "10 Cooking",
-            "1 Eye of newt",
-            "1 Greenman's ale",
-            "1 Rotten tomato",
-            "1 Ashes",
-            "1 Fruit blast (premade does not work)",
-            "1 Cocktail shaker",
-            "1 Cocktail glass",
-            "2 Lemons , 1 Pineapple , 1 Orange",
-            "Icefiend (Level 35) (Only if ice gloves are not already owned)",
-            "5 Mudskippers (Levels 33/35)",
-            "Crab (Levels 29/30)",
-            "Jubbly bird (Level 16)",
-            "Evil Chicken (Levels vary around 70, depending on player's level)",
-            "Black dragon (Level 100)",
-            "Big Snake (Level 64)",
-            "Without prayers or familiars Agrith-Na-Na (Level 89) Flambeed (Level 89) Karamel (Level 89) Dessourt (Level 92) Gelatinnoth Mother (Level 91) Culinaromancer (Level 98)",
-            "Agrith-Na-Na (Level 89)",
-            "Flambeed (Level 89)",
-            "Karamel (Level 89)",
-            "Dessourt (Level 92)",
-            "Gelatinnoth Mother (Level 91)",
-            "Culinaromancer (Level 98)",
-            "Recipe for Disaster Cook's Assistant Big Chompy Bird Hunting Desert Treasure The Dig Site Troll Stronghold Death Plateau Ability to enter Morytania Fishing Contest Gertrude's Cat Goblin Diplomacy Horror from the Deep Bar Crawl (miniquest) Partial completion of Legends' Quest Heroes' Quest Shield of Arrav Dragon Slayer Jungle Potion Lost City Monkey Madness The Grand Tree Tree Gnome Village Shadow of the Storm Demon Slayer The Golem",
-            "Cook's Assistant",
-            "Big Chompy Bird Hunting",
-            "Desert Treasure The Dig Site Troll Stronghold Death Plateau Ability to enter Morytania",
-            "Fishing Contest",
-            "Gertrude's Cat",
-            "Goblin Diplomacy",
-            "Horror from the Deep Bar Crawl (miniquest)",
-            "Partial completion of Legends' Quest Heroes' Quest Shield of Arrav Dragon Slayer Jungle Potion",
-            "Lost City",
-            "Monkey Madness The Grand Tree Tree Gnome Village",
-            "Shadow of the Storm Demon Slayer The Golem",
-            "The Dig Site",
-            "Troll Stronghold Death Plateau",
-            "Ability to enter Morytania",
-            "Death Plateau",
-            "Bar Crawl (miniquest)",
-            "Heroes' Quest Shield of Arrav Dragon Slayer",
-            "Jungle Potion",
-            "Shield of Arrav",
-            "Dragon Slayer",
-            "The Grand Tree",
-            "Tree Gnome Village",
-            "Demon Slayer",
-            "The Golem"
+            "Complete all 10 sub-quests."
         ],
         "itemReqs": [
-            "1 Eye of newt",
-            "1 Greenman's ale",
-            "1 Rotten tomato",
-            "1 Ashes",
-            "1 Fruit blast (premade does not work)",
-            "1 Cocktail shaker",
-            "1 Cocktail glass",
-            "2 Lemons , 1 Pineapple , 1 Orange"
         ],
         "recommendedItems": []
+    },
+    {
+        "title": "Recipe for Disaster: Another Cook's Quest",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Novice",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [{ "skill": "Cooking", "level": 10 }],
+        "questReqs": ["Cook's Assistant"],
+        "requirements": [],
+        "guide": [
+            "Speak to the Cook in Lumbridge Castle's kitchen to start the quest.",
+            "He asks for a Dirty blast — a Fruit Blast with ashes added.",
+            "Make a Fruit Blast: use a cocktail shaker with 2 lemons, a pineapple, and an orange, then pour into a cocktail glass.",
+            "Add ashes to the Fruit Blast to create a Dirty blast.",
+            "Obtain a rotten tomato, Greenman's ale, and eye of newt.",
+            "Give all items to the Cook to complete the quest."
+        ],
+        "itemReqs": [
+            "Eye of newt",
+            "Greenman's ale",
+            "Rotten tomato",
+            "Ashes",
+            "Cocktail shaker",
+            "Cocktail glass",
+            "2 lemons",
+            "Pineapple",
+            "Orange (to make Fruit Blast)"
+        ],
+        "recommendedItems": [
+            "Cat or kitten (begin raising one now — needed for Freeing Evil Dave, takes 2.5 hours to mature)"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing the Goblin Generals",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Novice",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Cook's Assistant",
+            "Goblin Diplomacy",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect either General Wartface or General Bentnoze in the Lumbridge Castle banquet hall.",
+            "Travel to Goblin Village north of Falador and speak with both generals about their food preferences.",
+            "Enter the building southeast of the generals and climb down to speak with Mudknuckles.",
+            "Give Mudknuckles a piece of charcoal; watch the explosion cutscene.",
+            "Prepare three ingredients: dye orange slices with green, blue, or purple dye; add spice to fishing bait for spicy maggots; apply water to bread for soggy bread.",
+            "Give all three prepared items to Mudknuckles to receive the Slop of compromise.",
+            "Return to Lumbridge Castle and use the Slop of compromise on the frozen goblin generals to free them."
+        ],
+        "itemReqs": [
+            "Charcoal",
+            "Spice or gnome spice",
+            "Fishing bait",
+            "Bucket, bowl, or jug of water",
+            "Bread",
+            "Orange",
+            "Green, blue, or purple dye (NOT red, yellow, orange, or pink)"
+        ],
+        "recommendedItems": [
+            "Goblin village sphere (for quick transport to Goblin Village)"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing the Mountain Dwarf",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Novice",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Cook's Assistant",
+            "Fishing Contest",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect the mountain dwarf in Lumbridge Castle's banquet hall.",
+            "Travel to the Falador pub (Rising Sun Inn) and pay Emily or Kaylee 200 coins to learn the Asgoldian ale recipe.",
+            "Buy 4–5 Asgarnian ales and use gold coins on each to make Asgoldian ales.",
+            "Travel through the White Wolf Mountain dwarven tunnel and find Rohak.",
+            "Give Rohak 4 Asgoldian ales to make him drunk.",
+            "Give him 100 coins and your baking ingredients (flour, egg, milk, bowl of water); he bakes a rock cake.",
+            "Cool the rock cake by equipping ice gloves when you pick it up, or by banking and withdrawing it.",
+            "Return to Lumbridge Castle and give the cooled rock cake to the mountain dwarf to free him."
+        ],
+        "itemReqs": [
+            "Pot of flour",
+            "Egg",
+            "Bucket of milk",
+            "Bowl of water",
+            "Ice gloves or combat bracelet",
+            "4 Asgarnian ales",
+            "200 coins (to learn the Asgoldian ale recipe)",
+            "100 coins (to pay Rohak for baking)"
+        ],
+        "recommendedItems": [
+            "Falador teleport",
+            "Ring of charos (a) (to reduce ale price from Rohak)",
+            "Completion of The Giant Dwarf for minecart access to White Wolf Mountain"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing Evil Dave",
+        "isMembers": true,
+        "length": "Medium",
+        "difficulty": "Intermediate",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [
+            { "skill": "Cooking", "level": 25 }
+        ],
+        "questReqs": [
+            "Cook's Assistant",
+            "Gertrude's Cat",
+            "Shadow of the Storm",
+            "Demon Slayer",
+            "The Golem",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect Evil Dave in the Lumbridge Castle banquet hall.",
+            "Travel to Edgeville and speak with Doris (Dave's mother) in the house south of the bank.",
+            "Enter the basement and talk to Evil Dave to learn about the evil stew recipe.",
+            "Use your cat to catch Hell-Rats in the basement; after catching several it transforms into a Hellcat.",
+            "Collect all four coloured spices (red, orange, brown, yellow) by killing Hell-Rats — each rat drops 1–3 doses of a random spice.",
+            "Add spices to a bowl of stew in varying amounts (1–3 doses per spice) and have Evil Dave taste it each time, using process of elimination to find the correct combination.",
+            "Once the correct combination is found, prepare the final evil stew.",
+            "Return to Lumbridge Castle and use the evil stew on frozen Evil Dave to free him."
+        ],
+        "itemReqs": [
+            "A cat (kitten, normal cat, wily cat, or lazy cat — overgrown cats will not work)",
+            "Up to 10 bowls of stew (purchasable at Forester's Arms for 20 coins each)"
+        ],
+        "recommendedItems": [
+            "Edgeville lodestone activation"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing the Lumbridge Sage",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Intermediate",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [
+            { "skill": "Cooking", "level": 40 }
+        ],
+        "questReqs": [
+            "Cook's Assistant",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect the Lumbridge Sage in the banquet hall.",
+            "Travel to the Wizards' Tower south of Draynor and speak with Wizard Traiborn on the first floor.",
+            "Complete the egg enchantment: correctly identify three NPCs from descriptions.",
+            "Complete the milk enchantment: correctly answer three RuneScape trivia questions.",
+            "Complete the flour enchantment: pass a memory test by identifying items shown in a set.",
+            "Combine the three enchanted ingredients with a cake tin to create raw guide cake.",
+            "Cook the raw guide cake on the range in Lumbridge Castle kitchen.",
+            "Use the finished guide cake on the frozen Lumbridge Sage to free him."
+        ],
+        "itemReqs": [
+            "Bucket of milk",
+            "Egg",
+            "Pot of flour",
+            "Cake tin"
+        ],
+        "recommendedItems": [
+            "Skills necklace or traveller's necklace (to reach Wizards' Tower quickly)"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing Pirate Pete",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Intermediate",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [
+            { "skill": "Cooking", "level": 31 }
+        ],
+        "questReqs": [
+            "Cook's Assistant",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect Pirate Pete in the Lumbridge Castle banquet hall.",
+            "Speak to the cook, then travel to Port Khazard and find Murphy on the docks.",
+            "Obtain diving apparatus and fishbowl helmet from Murphy; ensure your weight is under 27 kg.",
+            "Dive underwater and collect kelp from the seabed.",
+            "Kill mudskippers in the underwater cavern and collect 5 mudskipper hides.",
+            "Trade the hides to Nung for access to the crab pen; use needle and bronze wires to open the pen.",
+            "Kill a crab and collect the crab meat, then climb the anchor to return to the surface.",
+            "Grind kelp with a pestle and mortar; grind the raw cod; slice the bread into breadcrumbs.",
+            "Mix all ground ingredients together to create a raw fishcake, then cook it.",
+            "Return to the banquet hall and give the cooked fishcake to Pirate Pete to free him."
+        ],
+        "itemReqs": [
+            "Raw cod",
+            "Bread",
+            "Empty fishbowl",
+            "Needle (not tool belt version)",
+            "3 bronze wires"
+        ],
+        "recommendedItems": [
+            "Boots of lightness (keep weight under 27 kg for diving)",
+            "Extra raw cod and bread (in case fishcake burns)"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing Skrach Uglogwee",
+        "isMembers": true,
+        "length": "Medium",
+        "difficulty": "Intermediate",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [
+            { "skill": "Cooking", "level": 41 },
+            { "skill": "Firemaking", "level": 20 }
+        ],
+        "questReqs": [
+            "Cook's Assistant",
+            "Big Chompy Bird Hunting",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect Skrach Uglogwee in the Lumbridge Castle banquet hall.",
+            "Travel to Feldip Hills and find Rantz near his cave.",
+            "Use a hatchet on a nearby fallen tree twice to create a crude boat; use it to sail to Karamja.",
+            "On Karamja, locate a palm tree with an ogre arrow stuck in it.",
+            "Use your iron spit on the raw chompy and cook it on a fire made with logs.",
+            "Return to Rantz and create balloon toads: inflate the bellows, use on swamp bubbles, then attach wool to a swamp toad.",
+            "Use a balloon toad in a jubbly-populated area; when a jubbly lands, kill it with the ogre bow.",
+            "Cook the raw jubbly meat on a fire using the iron spit.",
+            "Return to Lumbridge Castle and give the cooked jubbly to Skrach Uglogwee to free him."
+        ],
+        "itemReqs": [
+            "Raw chompy",
+            "Iron spit",
+            "Ball of wool",
+            "Logs",
+            "Ogre bellows",
+            "Ogre bow or comp ogre bow",
+            "Ogre arrows or brutal arrows (bring extras)"
+        ],
+        "recommendedItems": [
+            "Karamja lodestone activation",
+            "Ardougne teleport",
+            "Fairy ring access (Dramen or Lunar staff)"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing Sir Amik Varze",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Experienced",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Cook's Assistant",
+            "Lost City",
+            "Heroes' Quest",
+            "Shield of Arrav",
+            "Dragon Slayer",
+            "Jungle Potion",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect Sir Amik Varze in the Lumbridge Castle banquet hall.",
+            "Combine bucket of milk with pot of cream to make a milky mixture.",
+            "Take sweetcorn to a windmill and grind it into cornflour; combine with the milky mixture.",
+            "Travel to Kharazi Jungle (requires partial Legends' Quest) and pick a vanilla pod; add to the mixture.",
+            "Equip ice gloves and lure the Evil Chicken (use raw chicken in Zanaris) to obtain an Evil Chicken egg; add to mixture.",
+            "Use a pestle and mortar on a dramen branch to create cinnamon; add to the mixture to make unfinished brulee.",
+            "Kill a black dragon for a dragon token; use the token to summon a fairy dragon.",
+            "Use the unfinished brulee on the fairy dragon to flambe it into a brulee supreme.",
+            "Return to Lumbridge Castle and use the brulee supreme on frozen Sir Amik Varze to free him."
+        ],
+        "itemReqs": [
+            "Bucket of milk",
+            "Pot of cream",
+            "Sweetcorn",
+            "Empty pot",
+            "Raw chicken",
+            "Dramen branch or cinnamon",
+            "Ice gloves"
+        ],
+        "recommendedItems": [
+            "Anti-dragon shield or super antifire potion",
+            "Combat food and gear for the Evil Chicken and black dragon"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Freeing King Awowogei",
+        "isMembers": true,
+        "length": "Long",
+        "difficulty": "Experienced",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [
+            { "skill": "Agility", "level": 48 },
+            { "skill": "Cooking", "level": 70 }
+        ],
+        "questReqs": [
+            "Cook's Assistant",
+            "Monkey Madness",
+            "The Grand Tree",
+            "Tree Gnome Village",
+            "Recipe for Disaster: Another Cook's Quest"
+        ],
+        "requirements": [],
+        "guide": [
+            "Inspect Awowogei in the Lumbridge Castle banquet hall.",
+            "Travel to Ape Atoll wearing your monkeyspeak amulet and an appropriate greegree.",
+            "Visit the Temple of Marimbo and speak with the three wise monkeys to learn the recipe.",
+            "Travel to Crash Island and kill Big Snakes (level 64) for snake corpses.",
+            "Return to Ape Atoll in gorilla form and collect the red banana from the tree in the western part of the island.",
+            "Enter the cave in ninja monkey form and collect tchiki monkey nuts from the ground.",
+            "Combine snake corpse, red banana, and tchiki monkey nuts to create raw stuffed snake.",
+            "Enter the Temple of Marimbo dungeon in zombie monkey form and cook the stuffed snake on the range inside.",
+            "Return to Lumbridge Castle and give the cooked stuffed snake to King Awowogei to free him."
+        ],
+        "itemReqs": [
+            "Monkeyspeak amulet",
+            "Gorilla greegree (or bearded/ancient gorilla variant)",
+            "Ninja monkey greegree (or small ninja variant)",
+            "Zombie monkey greegree",
+            "Banana",
+            "Monkey nuts",
+            "Rope",
+            "10+ coins"
+        ],
+        "recommendedItems": [
+            "Antipoison potions",
+            "Combat gear and food (lobsters or better) for level 64 Big Snakes",
+            "Cooking potion (if Cooking below 70)"
+        ]
+    },
+    {
+        "title": "Recipe for Disaster: Defeating the Culinaromancer",
+        "isMembers": true,
+        "length": "Short",
+        "difficulty": "Experienced",
+        "questPoints": 1,
+        "series": "Recipe for Disaster",
+        "skillReqs": [],
+        "questReqs": [
+            "Recipe for Disaster: Another Cook's Quest",
+            "Recipe for Disaster: Freeing the Goblin Generals",
+            "Recipe for Disaster: Freeing the Mountain Dwarf",
+            "Recipe for Disaster: Freeing Evil Dave",
+            "Recipe for Disaster: Freeing the Lumbridge Sage",
+            "Recipe for Disaster: Freeing Pirate Pete",
+            "Recipe for Disaster: Freeing Skrach Uglogwee",
+            "Recipe for Disaster: Freeing Sir Amik Varze",
+            "Recipe for Disaster: Freeing King Awowogei",
+            "Desert Treasure",
+            "Horror from the Deep"
+        ],
+        "requirements": [],
+        "guide": [
+            "Ensure all 9 freeing sub-quests are complete and all banquet guests are freed.",
+            "Enter the white portal in the Lumbridge Castle banquet hall.",
+            "Fight Agrith-Na-Na (level 89): uses melee and Fire Blast — weak to Ranged.",
+            "Fight Flambeed (level 89): wear ice gloves or fight unarmed — weak to water spells.",
+            "Fight Karamel (level 89): drains stats on hit — use a crush weapon and finish quickly.",
+            "Fight Dessourt (level 92): immune to melee — use Ranged or thrown weapons.",
+            "Fight the Gelatinnoth Mother (level 91): changes colour each phase (red=melee, orange=ranged, yellow=water, green=earth, blue=fire, white=any).",
+            "Fight the Culinaromancer (level 98): uses magic attacks — finish him off to complete the quest.",
+            "You may bank between boss fights to resupply food and gear.",
+            "Claim your reward from the Culinaromancer's Chest in the banquet hall."
+        ],
+        "itemReqs": [
+            "Ice gloves (required to fight Flambeed without fighting unarmed)"
+        ],
+        "recommendedItems": [
+            "High-healing food (sharks or better)",
+            "Ranged weapon and armour",
+            "Melee weapon and armour",
+            "Water spells (for Flambeed)",
+            "Crush weapon (for Karamel)"
+        ]
     },
     {
         "title": "Recruitment Drive",
@@ -14903,7 +15442,7 @@ export const QUEST_DATA = [
         "isMembers": true,
         "length": "Short",
         "difficulty": "None",
-        "questPoints": 2,
+        "questPoints": 0,
         "series": "The Elder God Wars",
         "skillReqs": [
             {

@@ -3,6 +3,16 @@
 
 export const CHANGELOG = [
     {
+        date: '2026-02-27',
+        category: 'Calculators',
+        description: 'Archaeology calculator now tracks your material storage — the Materials Required panel shows Need / Have / Left columns. Enter your current stock to instantly see what you\'re short on, with green checkmarks for covered materials. Stock persists across sessions via localStorage.',
+    },
+    {
+        date: '2026-02-27',
+        category: 'Content',
+        description: 'Two missing archaeology artefacts added to the database: Ekeleshuun blinder mask (level 76, Warforge) and Necromantic focus (level 86, Kharid-et).',
+    },
+    {
         date: '2026-02-25',
         category: 'Bug Fix',
         description: 'XP_TABLE[110] corrected from 43,599,174 to 38,737,661 — Mining and Smithing progress bars, XP-to-go displays, and calculator targets were all showing inflated values.',

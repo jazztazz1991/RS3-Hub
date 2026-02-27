@@ -27,7 +27,7 @@ const FEATURES = [
         icon: '📜',
         title: 'Quest Tracker',
         description:
-            '270 RS3 quests with full skill and quest requirement checking. Each quest has a wiki-style guide with numbered steps, color-coded skill chips, and progress checkboxes.',
+            '270 RS3 quests with full skill and quest requirement checking. Each quest has a wiki-style guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests for Recipe for Disaster and Dimension of Disaster are tracked individually with RuneMetrics import support.',
     },
 ];
 

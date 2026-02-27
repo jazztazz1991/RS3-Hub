@@ -1649,6 +1649,29 @@ export const artefacts = [
     ]
   },
   {
+    "name": "Ekeleshuun blinder mask",
+    "level": 76,
+    "xp": 6066.7,
+    "materials": {
+      "Vulcanised rubber": 24,
+      "Malachite green": 20,
+      "Vellum": 24
+    },
+    "site": "Warforge!",
+    "collections": [
+      "Museum",
+      "-",
+      "Bandosian",
+      "I",
+      "Hat",
+      "Problem",
+      "Green",
+      "Gobbo",
+      "Goodies",
+      "I"
+    ]
+  },
+  {
     "name": "Exploratory totem",
     "level": 77,
     "xp": 6300.0,
@@ -2100,6 +2123,30 @@ export const artefacts = [
       "III",
       "Magic",
       "Man",
+      "Imperial",
+      "Sorcery"
+    ]
+  },
+  {
+    "name": "Necromantic focus",
+    "level": 86,
+    "xp": 9333.3,
+    "materials": {
+      "Imperial steel": 20,
+      "Blood of Orcus": 26,
+      "Ancient vis": 30
+    },
+    "site": "Kharid-et",
+    "collections": [
+      "Zarosian",
+      "III",
+      "Museum",
+      "-",
+      "Zarosian",
+      "III",
+      "Knowledge",
+      "is",
+      "Power",
       "Imperial",
       "Sorcery"
     ]

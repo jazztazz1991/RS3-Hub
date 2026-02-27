@@ -14,6 +14,12 @@ const ArchaeologyCalculator = () => {
     const [targetLevel, setTargetLevel] = useState(99);
     const [searchTerm, setSearchTerm] = useState('');
     const [restorationList, setRestorationList] = useState([]);
+    const [materialStorage, setMaterialStorage] = useState(() => {
+        try {
+            const saved = localStorage.getItem('arch-material-storage');
+            return saved ? JSON.parse(saved) : {};
+        } catch { return {}; }
+    });
 
     // Initialize
     useEffect(() => {
@@ -39,6 +45,20 @@ const ArchaeologyCalculator = () => {
             }
         }
     }, [characterData]);
+
+    useEffect(() => {
+        localStorage.setItem('arch-material-storage', JSON.stringify(materialStorage));
+    }, [materialStorage]);
+
+    const setStorageQty = (name, value) => {
+        const qty = parseInt(value);
+        setMaterialStorage(prev => ({
+            ...prev,
+            [name]: isNaN(qty) || qty < 0 ? 0 : qty
+        }));
+    };
+
+    const clearStorage = () => setMaterialStorage({});
 
     const currentLevel = getLevelAtXp(currentXp);
 
@@ -211,14 +231,42 @@ const ArchaeologyCalculator = () => {
                         </div>
                     </div>
 
-                    <h3>Materials Required</h3>
+                    <div className="materials-header">
+                        <h3>Materials Required</h3>
+                        {materialTotals.length > 0 && Object.keys(materialStorage).length > 0 && (
+                            <button className="clear-storage-btn" onClick={clearStorage}>Clear Stock</button>
+                        )}
+                    </div>
+                    {materialTotals.length > 0 && (
+                        <div className="materials-column-labels">
+                            <span>Material</span>
+                            <span>Need</span>
+                            <span>Have</span>
+                            <span>Left</span>
+                        </div>
+                    )}
                     <div className="materials-list">
-                        {materialTotals.length > 0 ? materialTotals.map(([name, qty]) => (
-                            <div key={name} className="material-item">
-                                <span className="material-name">{name}</span>
-                                <span className="material-qty">{qty.toLocaleString()}</span>
-                            </div>
-                        )) : (
+                        {materialTotals.length > 0 ? materialTotals.map(([name, needed]) => {
+                            const have = materialStorage[name] || 0;
+                            const left = needed - have;
+                            return (
+                                <div key={name} className={`material-item ${left <= 0 ? 'mat-sufficient' : ''}`}>
+                                    <span className="material-name">{name}</span>
+                                    <span className="material-need">{needed.toLocaleString()}</span>
+                                    <input
+                                        className="material-have-input"
+                                        type="number"
+                                        min="0"
+                                        placeholder="0"
+                                        value={have || ''}
+                                        onChange={(e) => setStorageQty(name, e.target.value)}
+                                    />
+                                    <span className={`material-left ${left <= 0 ? 'enough' : 'short'}`}>
+                                        {left <= 0 ? '✓' : left.toLocaleString()}
+                                    </span>
+                                </div>
+                            );
+                        }) : (
                             <p style={{color: '#8d6e63', fontStyle: 'italic', fontSize: '0.9rem'}}>No materials needed yet.</p>
                         )}
                     </div>
