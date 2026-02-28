@@ -7,32 +7,30 @@ import './ArchaeologyCalculator.css';
 
 const MATERIAL_ZONES = {
     'Agnostic Materials': [
-        'Third Age iron', 'Samite silk', 'White oak', 'Leather scraps',
-        'Cadmium red', 'Carbon black', 'Cobalt blue', 'Goldrune',
-        'Malachite green', 'Tyrian purple', 'Vellum', 'White marble'
+        'Third Age iron', 'Samite silk', 'White oak', 'Goldrune', 'Orthenglass',
+        'Vellum', 'Leather scraps', 'Soapstone', 'Fossilised bone', 'Animal furs'
+        
+       
     ],
     'Armadylean Materials': [
-        'Armadylean yellow', 'Stormguard steel', 'Wings of War',
-        'Quintessence', 'Aetherium alloy'
+         'Stormguard steel', 'Wings of War', 'Armadylean yellow',
+         'Aetherium alloy', 'Quintessence'
     ],
     'Bandosian Materials': [
-        'Warforged bronze', "Yu'biusk clay", 'Mark of the Kyzaj',
-        'Vulcanised rubber', 'Fossilised bone'
+        'Malachite green', 'Mark of the Kyzaj', 'Vulcanised rubber', "Yu'biusk clay", 'Warforged bronze'
     ],
     'Dragonkin Materials': [
-        'Orgone', 'Dragon metal', 'Orthenglass', 'Dragonstone'
+        'Dragon metal', 'Orgone', 'Compass rose','Carbon black', 'Felt'
     ],
     'Saradominist Materials': [
-        'Everlight silvthril', 'Star of Saradomin', 'Keramos',
-        'Soapstone', 'White candle', 'Phoenix feather'
+        'Keramos', 'White marble', 'Cobalt blue', 'Everlight silvthril', 'Star of Saradomin',
+         'White candle'
     ],
     'Zamorakian Materials': [
-        'Eye of Dagon', 'Hellfire metal', 'Demonhide',
-        'Chaotic brimstone', 'Black mushroom ink'
+        'Cadmium red', 'Chaotic brimstone', 'Demonhide', 'Eye of Dagon', 'Hellfire metal'
     ],
     'Zarosian Materials': [
-        'Zarosian insignia', 'Imperial iron', 'Imperial steel',
-        'Ancient vis', 'Blood of Orcus', 'Compass rose', 'Purpleheart wood'
+        'Zarosian insignia', 'Imperial steel', 'Ancient vis', 'Blood of Orcus', 'Tyrian purple'
     ],
     'Other Items': []
 };
