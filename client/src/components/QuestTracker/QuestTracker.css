@@ -117,7 +117,6 @@
     letter-spacing: 0.5px;
     padding: 0.6rem 0.8rem;
     border-bottom: 2px solid #2c3e50;
-    text-align: left;
     white-space: nowrap;
 }
 
@@ -164,9 +163,10 @@
 
 /* Column sizing */
 .qt-col-status { width: 28px; text-align: center; padding-left: 0.5rem !important; }
-.qt-col-name   { font-weight: 500; }
-.qt-col-diff   { white-space: nowrap; color: #bdc3c7; }
-.qt-col-length { white-space: nowrap; color: #bdc3c7; }
+.qt-col-name   { font-weight: 500; text-align: left; }
+.qt-col-diff   { white-space: nowrap; color: #bdc3c7; text-align: center; }
+.qt-col-length { white-space: nowrap; color: #bdc3c7; text-align: center; }
+.qt-col-qp     { width: 40px; text-align: center; color: #f1c40f; font-weight: 600; }
 .qt-col-type   { width: 60px; text-align: center; }
 .qt-col-action { width: 70px; text-align: right; }
 
@@ -262,9 +262,10 @@
         width: 100%;
     }
 
-    /* Hide Difficulty and Length columns on mobile — show on quest detail page instead */
+    /* Hide Difficulty, Length, and QP columns on mobile — show on quest detail page instead */
     .qt-col-diff,
-    .qt-col-length {
+    .qt-col-length,
+    .qt-col-qp {
         display: none;
     }
 }

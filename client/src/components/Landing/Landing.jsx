@@ -15,7 +15,7 @@ const FEATURES = [
         icon: '⚡',
         title: 'Skill Calculators',
         description:
-            'Calculate exactly how many actions you need to hit your goal. Supports all meaningful skills with method selection, XP targets, and character hiscores integration.',
+            'Calculate exactly how many actions you need to hit your goal. Supports all meaningful skills with method selection, XP targets, and character hiscores integration. Archaeology calculator includes a material bank organized by zone.',
     },
     {
         icon: '📖',
@@ -27,7 +27,7 @@ const FEATURES = [
         icon: '📜',
         title: 'Quest Tracker',
         description:
-            '270 RS3 quests with full skill and quest requirement checking. Each quest has a wiki-style guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests for Recipe for Disaster and Dimension of Disaster are tracked individually with RuneMetrics import support.',
+            '270 RS3 quests with full skill and quest requirement checking, quest point tracking, and wiki-style alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests are tracked individually with RuneMetrics import support.',
     },
 ];
 

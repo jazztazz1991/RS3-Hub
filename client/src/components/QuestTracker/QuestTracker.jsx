@@ -24,6 +24,9 @@ const QuestTracker = () => {
 
     // --- Helpers ---
 
+    // Sort key: strip leading articles/punctuation to match RS3 wiki ordering
+    const sortKey = (title) => title.replace(/^(A |An |The |')/i, '').toLowerCase();
+
     // Convert character stats array to object for O(1) lookup
     const statsMap = useMemo(() => {
         if (!characterData) return {};
@@ -85,7 +88,7 @@ const QuestTracker = () => {
             }
 
             return true;
-        });
+        }).sort((a, b) => sortKey(a.title).localeCompare(sortKey(b.title)));
     }, [search, hideCompleted, filterCanDo, completedQuests, statsMap]); // re-calc when inputs change
 
     // Calc Totals — only count/sum quests that exist in QUEST_DATA
@@ -209,6 +212,7 @@ useEffect(() => {
                             <th className="qt-col-name">Quest</th>
                             <th className="qt-col-diff">Difficulty</th>
                             <th className="qt-col-length">Length</th>
+                            <th className="qt-col-qp">QP</th>
                             <th className="qt-col-type">Type</th>
                             <th className="qt-col-action"></th>
                         </tr>
@@ -235,6 +239,7 @@ useEffect(() => {
                                     <td className="qt-col-name qt-quest-name">{q.title}</td>
                                     <td className="qt-col-diff">{q.difficulty}</td>
                                     <td className="qt-col-length">{q.length}</td>
+                                    <td className="qt-col-qp">{q.questPoints}</td>
                                     <td className="qt-col-type">
                                         <span className={`tag ${q.isMembers ? 'members' : 'f2p'}`}>
                                             {q.isMembers ? 'M' : 'F2P'}

@@ -3,6 +3,16 @@
 
 export const CHANGELOG = [
     {
+        date: '2026-02-28',
+        category: 'Quests',
+        description: 'Quest list now sorts alphabetically the same way RS3 and the wiki do — leading "A", "An", "The", and apostrophes are ignored. Quest points column added to the quest table.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Calculators',
+        description: 'Archaeology material bank now groups materials by zone — Agnostic, Armadylean, Bandosian, Dragonkin, Saradominist, Zamorakian, and Zarosian — matching the in-game material storage journal. Each zone section is collapsible.',
+    },
+    {
         date: '2026-02-27',
         category: 'Bug Fix',
         description: 'Fixed a navigation bug where changing pages would update the URL but leave the old page visible until a manual refresh. Root cause: ReportContext functions were recreated on every render, causing an infinite re-render loop in calculators that used them as effect dependencies.',
