@@ -5,6 +5,46 @@ import { artefacts } from '../../../data/skills/artefacts';
 import { XP_TABLE, getLevelAtXp, getTargetXp, getXpAtLevel } from '../../../utils/rs3';
 import './ArchaeologyCalculator.css';
 
+const MATERIAL_ZONES = {
+    'Agnostic Materials': [
+        'Third Age iron', 'Samite silk', 'White oak', 'Leather scraps',
+        'Cadmium red', 'Carbon black', 'Cobalt blue', 'Goldrune',
+        'Malachite green', 'Tyrian purple', 'Vellum', 'White marble'
+    ],
+    'Armadylean Materials': [
+        'Armadylean yellow', 'Stormguard steel', 'Wings of War',
+        'Quintessence', 'Aetherium alloy'
+    ],
+    'Bandosian Materials': [
+        'Warforged bronze', "Yu'biusk clay", 'Mark of the Kyzaj',
+        'Vulcanised rubber', 'Fossilised bone'
+    ],
+    'Dragonkin Materials': [
+        'Orgone', 'Dragon metal', 'Orthenglass', 'Dragonstone'
+    ],
+    'Saradominist Materials': [
+        'Everlight silvthril', 'Star of Saradomin', 'Keramos',
+        'Soapstone', 'White candle', 'Phoenix feather'
+    ],
+    'Zamorakian Materials': [
+        'Eye of Dagon', 'Hellfire metal', 'Demonhide',
+        'Chaotic brimstone', 'Black mushroom ink'
+    ],
+    'Zarosian Materials': [
+        'Zarosian insignia', 'Imperial iron', 'Imperial steel',
+        'Ancient vis', 'Blood of Orcus', 'Compass rose', 'Purpleheart wood'
+    ],
+    'Other Items': []
+};
+
+const getZone = (materialName) => {
+    for (const [zone, mats] of Object.entries(MATERIAL_ZONES)) {
+        if (zone === 'Other Items') continue;
+        if (mats.includes(materialName)) return zone;
+    }
+    return 'Other Items';
+};
+
 const loadSavedState = () => {
     try {
         const saved = localStorage.getItem('arch-calculator-state');
@@ -43,6 +83,7 @@ const ArchaeologyCalculator = () => {
     });
     const [viewMode, setViewMode] = useState('calculator');
     const [bankSearch, setBankSearch] = useState('');
+    const [collapsedZones, setCollapsedZones] = useState({});
 
     // Initialize
     useEffect(() => {
@@ -243,6 +284,23 @@ const ArchaeologyCalculator = () => {
     }, [bankSearch, allUniqueMaterials, bankMaterials]);
 
     const stockedCount = Object.values(materialStorage).filter(v => v > 0).length;
+
+    const bankMaterialsByZone = useMemo(() => {
+        const grouped = {};
+        bankMaterials.forEach(name => {
+            const zone = getZone(name);
+            if (!grouped[zone]) grouped[zone] = [];
+            grouped[zone].push(name);
+        });
+        const zoneOrder = Object.keys(MATERIAL_ZONES);
+        return zoneOrder
+            .filter(zone => grouped[zone]?.length > 0)
+            .map(zone => ({ zone, materials: grouped[zone] }));
+    }, [bankMaterials]);
+
+    const toggleZone = (zone) => {
+        setCollapsedZones(prev => ({ ...prev, [zone]: !prev[zone] }));
+    };
 
     return (
         <div className="archaeology-calculator">
@@ -453,42 +511,65 @@ const ArchaeologyCalculator = () => {
                         )}
                     </div>
 
-                    {bankMaterials.length === 0 ? (
+                    {bankMaterialsByZone.length === 0 ? (
                         <p className="bank-empty">
                             No materials tracked yet. Add artefacts to your queue or search above to add materials.
                         </p>
                     ) : (
-                        <div className="bank-materials-grid">
-                            {bankMaterials.map(name => {
-                                const have = materialStorage[name] || 0;
-                                const needed = materialTotals.find(([n]) => n === name)?.[1] || 0;
-                                const isNeeded = needed > 0;
-                                const isSufficient = isNeeded && have >= needed;
-                                const isShort = isNeeded && have < needed;
-
+                        <div className="bank-zones">
+                            {bankMaterialsByZone.map(({ zone, materials }) => {
+                                const isCollapsed = collapsedZones[zone];
+                                const zoneComplete = materials.every(name => {
+                                    const needed = materialTotals.find(([n]) => n === name)?.[1] || 0;
+                                    return needed === 0 || (materialStorage[name] || 0) >= needed;
+                                });
                                 return (
-                                    <div
-                                        key={name}
-                                        className={`bank-material-card ${isSufficient ? 'sufficient' : ''} ${isShort ? 'short' : ''}`}
-                                    >
-                                        <div className="bank-mat-name">{name}</div>
-                                        <input
-                                            type="number"
-                                            min="0"
-                                            className="bank-mat-input"
-                                            value={have || ''}
-                                            placeholder="0"
-                                            onChange={(e) => setStorageQty(name, e.target.value)}
-                                        />
-                                        {isNeeded && (
-                                            <div className={`bank-mat-status ${isSufficient ? 'ok' : 'need'}`}>
-                                                {isSufficient
-                                                    ? `✓ ${(have - needed).toLocaleString()} spare`
-                                                    : `Need ${(needed - have).toLocaleString()} more`}
+                                    <div key={zone} className="bank-zone">
+                                        <button
+                                            className={`zone-header ${zoneComplete ? 'zone-complete' : ''}`}
+                                            onClick={() => toggleZone(zone)}
+                                        >
+                                            <span className="zone-toggle">{isCollapsed ? '▶' : '▼'}</span>
+                                            <span className="zone-name">{zone}</span>
+                                            <span className="zone-count">{materials.length}</span>
+                                        </button>
+                                        {!isCollapsed && (
+                                            <div className="bank-materials-grid">
+                                                {materials.map(name => {
+                                                    const have = materialStorage[name] || 0;
+                                                    const needed = materialTotals.find(([n]) => n === name)?.[1] || 0;
+                                                    const isNeeded = needed > 0;
+                                                    const isSufficient = isNeeded && have >= needed;
+                                                    const isShort = isNeeded && have < needed;
+
+                                                    return (
+                                                        <div
+                                                            key={name}
+                                                            className={`bank-material-card ${isSufficient ? 'sufficient' : ''} ${isShort ? 'short' : ''}`}
+                                                        >
+                                                            <div className="bank-mat-name">{name}</div>
+                                                            <input
+                                                                type="number"
+                                                                min="0"
+                                                                className="bank-mat-input"
+                                                                value={have || ''}
+                                                                placeholder="0"
+                                                                onChange={(e) => setStorageQty(name, e.target.value)}
+                                                            />
+                                                            {isNeeded && (
+                                                                <div className={`bank-mat-status ${isSufficient ? 'ok' : 'need'}`}>
+                                                                    {isSufficient
+                                                                        ? `✓ ${(have - needed).toLocaleString()} spare`
+                                                                        : `Need ${(needed - have).toLocaleString()} more`}
+                                                                </div>
+                                                            )}
+                                                            {!isNeeded && (
+                                                                <div className="bank-mat-status stocked">Stocked</div>
+                                                            )}
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
-                                        )}
-                                        {!isNeeded && (
-                                            <div className="bank-mat-status stocked">Stocked</div>
                                         )}
                                     </div>
                                 );

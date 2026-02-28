@@ -510,11 +510,67 @@
     font-style: italic;
 }
 
+/* ── Bank Zone Grouping ── */
+.bank-zones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.bank-zone {
+    border: 1px solid var(--arch-border-panel);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.zone-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: var(--arch-bg-input);
+    border: none;
+    color: var(--arch-text-label);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: left;
+    transition: background 0.15s;
+}
+
+.zone-header:hover {
+    background: var(--arch-bg-hover);
+}
+
+.zone-header.zone-complete {
+    opacity: 0.55;
+}
+
+.zone-toggle {
+    font-size: 0.65rem;
+    color: var(--arch-text-highlight);
+    width: 12px;
+}
+
+.zone-name {
+    flex: 1;
+}
+
+.zone-count {
+    font-size: 0.7rem;
+    color: var(--arch-text-highlight);
+    background: var(--arch-bg-panel);
+    padding: 0.1rem 0.45rem;
+    border-radius: 10px;
+}
+
 /* ── Bank Material Grid ── */
 .bank-materials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 10px;
+    padding: 10px;
 }
 
 .bank-material-card {
