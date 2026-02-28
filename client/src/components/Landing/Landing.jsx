@@ -65,7 +65,7 @@ const Landing = () => {
                 <div className="hero-content">
                     <p className="hero-eyebrow">RuneScape 3 Toolkit</p>
                     <h1 className="hero-title">
-                        RS3 <span className="hero-title-accent">Efficiency</span> Hub
+                        Rune<span className="hero-title-accent">Hub</span>
                     </h1>
                     <p className="hero-subtitle">
                         Skill calculators, training guides, and quest tracking — built for every type of player.

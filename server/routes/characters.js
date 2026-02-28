@@ -53,8 +53,8 @@ router.post('/', isAuthenticated, async (req, res) => {
 router.put('/:id', isAuthenticated, async (req, res) => {
   try {
     const { id } = req.params;
-    const { pinned_tasks, task_state, block_list } = req.body;
-    
+    const { pinned_tasks, task_state, block_list, arch_material_bank } = req.body;
+
     const character = await Character.findOne({
       where: { id, userId: req.user.id }
     });
@@ -66,6 +66,7 @@ router.put('/:id', isAuthenticated, async (req, res) => {
     if (pinned_tasks !== undefined) character.pinned_tasks = pinned_tasks;
     if (task_state !== undefined) character.task_state = task_state;
     if (block_list !== undefined) character.block_list = block_list;
+    if (arch_material_bank !== undefined) character.arch_material_bank = arch_material_bank;
 
     await character.save();
     res.json(character);

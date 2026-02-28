@@ -30,6 +30,11 @@ const Character = sequelize.define('Character', {
     allowNull: true,
     defaultValue: '[]'
   },
+  arch_material_bank: {
+    type: DataTypes.TEXT, // Stored as JSON string { materialName: quantity }
+    allowNull: true,
+    defaultValue: '{}'
+  },
   userId: {
     type: DataTypes.UUID,
     allowNull: false,

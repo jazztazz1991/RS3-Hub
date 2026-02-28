@@ -25,7 +25,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link to={user ? "/dashboard" : "/"} onClick={close}>RS3 Efficiency Hub</Link>
+          <Link to={user ? "/dashboard" : "/"} onClick={close}>RuneHub</Link>
         </div>
 
         {/* Hamburger */}

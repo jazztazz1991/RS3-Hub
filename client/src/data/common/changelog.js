@@ -4,6 +4,16 @@
 export const CHANGELOG = [
     {
         date: '2026-02-27',
+        category: 'Bug Fix',
+        description: 'Fixed a navigation bug where changing pages would update the URL but leave the old page visible until a manual refresh. Root cause: ReportContext functions were recreated on every render, causing an infinite re-render loop in calculators that used them as effect dependencies.',
+    },
+    {
+        date: '2026-02-27',
+        category: 'UI',
+        description: 'Site renamed from RS3 Efficiency Hub to RuneHub — updated across the browser tab, navbar, login/register pages, landing page, and footer.',
+    },
+    {
+        date: '2026-02-27',
         category: 'Calculators',
         description: 'Archaeology calculator now tracks your material storage — the Materials Required panel shows Need / Have / Left columns. Enter your current stock to instantly see what you\'re short on, with green checkmarks for covered materials. Stock persists across sessions via localStorage.',
     },

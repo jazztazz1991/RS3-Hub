@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <Link to="/" className="auth-brand">RS3 Efficiency Hub</Link>
+        <Link to="/" className="auth-brand">RuneHub</Link>
         <h2 className="auth-title">Welcome back</h2>
         <p className="auth-subtitle">Log in to your account</p>
 

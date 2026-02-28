@@ -150,7 +150,7 @@ export const CharacterProvider = ({ children }) => {
     const updateBlockList = async (id, blockList) => {
         try {
             const jsonString = JSON.stringify(blockList);
-            
+
             // Optimistic update
             const updatedChars = characters.map(c => {
                 if (c.id === id) {
@@ -171,6 +171,23 @@ export const CharacterProvider = ({ children }) => {
         }
     };
 
+    const updateArchMaterialBank = async (id, materialBank) => {
+        try {
+            const jsonString = JSON.stringify(materialBank);
+
+            // Optimistic update
+            setCharacters(prev => prev.map(c =>
+                c.id === id ? { ...c, arch_material_bank: jsonString } : c
+            ));
+
+            await axios.put(`/api/characters/${id}`, { arch_material_bank: jsonString });
+            return true;
+        } catch (err) {
+            console.error('Failed to update arch material bank', err);
+            return false;
+        }
+    };
+
     const value = {
         characters,
         selectedCharId,
@@ -184,6 +201,7 @@ export const CharacterProvider = ({ children }) => {
         deleteCharacter,
         updateCharacterTasks,
         updateBlockList,
+        updateArchMaterialBank,
         questSyncTime
     };
 

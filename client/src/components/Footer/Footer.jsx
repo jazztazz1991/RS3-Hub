@@ -20,7 +20,7 @@ const Footer = () => (
             <span className="footer-sep">·</span>
             <Link to="/changelog" className="footer-changelog-link">View Changelog</Link>
             <span className="footer-sep">·</span>
-            <span className="footer-copy">RS3 Efficiency Hub — fan site, not affiliated with Jagex</span>
+            <span className="footer-copy">RuneHub — fan site, not affiliated with Jagex</span>
         </div>
     </footer>
 );

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 import { AuthProvider } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
@@ -72,20 +72,14 @@ import InventionGuide from './components/Guides/InventionGuide';
 import DungeoneeringGuide from './components/Guides/DungeoneeringGuide';
 import RangedGuide from './components/Guides/Ranged/RangedGuide';
 
-function App() {
-  const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'production' ? '' : 'http://localhost:5000');
-
+function AppContent() {
+  const location = useLocation();
   return (
-    <AuthProvider>
-      <CharacterProvider>
-        <ReportProvider>
-        <Router>
-          <div className="app-container">
-            <WildyNotification />
-            <Navbar />
-            
-            <main>
-              <Routes>
+    <div className="app-container">
+      <WildyNotification />
+      <Navbar />
+      <main key={location.pathname}>
+        <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
@@ -157,15 +151,24 @@ function App() {
               {/* 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-            
-          </main>
-          <Footer />
-        </div>
-        </Router>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <CharacterProvider>
+        <ReportProvider>
+          <Router>
+            <AppContent />
+          </Router>
         </ReportProvider>
       </CharacterProvider>
     </AuthProvider>
-  )
+  );
 }
 
 export default App

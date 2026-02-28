@@ -42,7 +42,7 @@ const Changelog = () => {
             <div className="changelog-header">
                 <Link to={user ? '/dashboard' : '/'} className="changelog-back">← Back</Link>
                 <h1>Site Changelog</h1>
-                <p className="changelog-subtitle">A record of all updates, fixes, and new content added to RS3 Efficiency Hub.</p>
+                <p className="changelog-subtitle">A record of all updates, fixes, and new content added to RuneHub.</p>
             </div>
 
             <div className="changelog-body">

@@ -33,7 +33,7 @@ const Register = () => {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <Link to="/" className="auth-brand">RS3 Efficiency Hub</Link>
+        <Link to="/" className="auth-brand">RuneHub</Link>
         <h2 className="auth-title">Create an account</h2>
         <p className="auth-subtitle">Free to use — no subscription required</p>
 
