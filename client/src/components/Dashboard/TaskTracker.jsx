@@ -47,9 +47,9 @@ const TaskTracker = () => {
     }, [selectedCharacter]);
 
     // Save Logic Helper
-    const saveToCharacter = (newCompleted) => {
+    const saveToCharacter = (currentPinned, newCompleted) => {
         if (selectedCharacter) {
-            updateCharacterTasks(selectedCharacter.id, pinnedTasks, newCompleted);
+            updateCharacterTasks(selectedCharacter.id, currentPinned, newCompleted);
         }
     };
 
@@ -62,7 +62,7 @@ const TaskTracker = () => {
             newTasks[taskId] = Date.now(); // Check
         }
         setCompletedTasks(newTasks);
-        saveToCharacter(newTasks);
+        saveToCharacter(pinnedTasks, newTasks);
     };
 
     // --- RESET LOGIC ---
@@ -120,7 +120,7 @@ const TaskTracker = () => {
 
             if (hasChanges) {
                 setCompletedTasks(newTasks);
-                saveToCharacter(newTasks);
+                saveToCharacter(pinnedTasks, newTasks);
             }
         };
 

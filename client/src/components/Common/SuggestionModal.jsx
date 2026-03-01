@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './ReportModal.css'; // Reusing the same styles for now
+import './ReportModal.css';
 
 const SuggestionModal = ({ isOpen, onClose, contextData = {} }) => {
     const [description, setDescription] = useState('');

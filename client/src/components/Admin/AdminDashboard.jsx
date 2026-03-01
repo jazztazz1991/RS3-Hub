@@ -36,15 +36,17 @@ const AdminDashboard = () => {
 
     const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.MODE === 'production' ? '' : 'http://localhost:5000');
 
+    const isAdmin = user && hasRole(user.role, 'admin');
+
     useEffect(() => {
+        if (!isAdmin) return;
         if (activeTab === 'reports') fetchReports();
         if (activeTab === 'suggestions') fetchSuggestions();
         if (activeTab === 'users') fetchUsers();
         if (activeTab === 'analytics') fetchAnalytics();
-    }, [activeTab]);
+    }, [activeTab, isAdmin]);
 
-    // Admin Check — after all hooks
-    if (!user || !hasRole(user.role, 'admin')) {
+    if (!isAdmin) {
         return <div className="admin-loading">Access Denied. Admins only.</div>;
     }
 
@@ -105,7 +107,7 @@ const AdminDashboard = () => {
 
     const toggleUserStatus = async (id, currentStatus) => {
         try {
-            if (!confirm(`Are you sure you want to ${currentStatus ? 'deactivate' : 'activate'} this user?`)) return;
+            if (!window.confirm(`Are you sure you want to ${currentStatus ? 'deactivate' : 'activate'} this user?`)) return;
 
             const newStatus = !currentStatus;
             await axios.patch(`${API_URL}/api/users/${id}/status`, { isActive: newStatus });

@@ -14,13 +14,17 @@ const WildyTracker = () => {
         // Update every minute (align to start of minute for better precision visually)
         const now = new Date();
         const timeToNextMinute = (60 - now.getSeconds()) * 1000;
-        
+        let intervalId = null;
+
         const timer1 = setTimeout(() => {
             updateEvents();
-            setInterval(updateEvents, 60000);
+            intervalId = setInterval(updateEvents, 60000);
         }, timeToNextMinute);
 
-        return () => clearTimeout(timer1);
+        return () => {
+            clearTimeout(timer1);
+            if (intervalId) clearInterval(intervalId);
+        };
     }, []);
 
     if (!events) return <div>Loading Events...</div>;

@@ -14,7 +14,7 @@ const InventionCalculator = () => {
     const [currentXp, setCurrentXp] = useState(0);
     const [currentLevel, setCurrentLevel] = useState(1);
     const [targetLevel, setTargetLevel] = useState(99);
-    const [targetXp, setTargetXp] = useState(36073511); // Elite 99
+    const [targetXp, setTargetXp] = useState(13034431); // Level 99
     
     // Method settings
     const [action, setAction] = useState('siphon'); // 'siphon' | 'disassemble'
@@ -37,30 +37,9 @@ useEffect(() => {
         return () => clearReportContext();
     }, [currentLevel, targetLevel, action, itemLevel, selectedMethod, updateReportContext, clearReportContext]);
 
-    
-    // Elite Skill Curve Approximation or Hardcoded Milestones for UX
-    // (Standard Utils return Standard XP, so we override for Invention context if possible, 
-    // or just accept mismatch until global util update).
-    // For now, we will use local helpers that default to standard but can be patched.
-    // Invention uses its own XP scale: level 99 = 36,073,511 and level 120 = 80,618,654
-    const INV_99_XP = 36073511;
-    const INV_120_XP = 80618654;
-
-    const getInvXp = (lvl) => {
-        if (lvl <= 99) return INV_99_XP;
-        if (lvl >= 120) return INV_120_XP;
-        // Linear interpolation between level 99 and 120
-        return Math.round(INV_99_XP + (INV_120_XP - INV_99_XP) * (lvl - 99) / 21);
-    };
-
-    const getInvLevel = (xp) => {
-        if (xp >= INV_120_XP) return 120;
-        if (xp >= INV_99_XP) {
-            // Linear interpolation between level 99 and 120
-            return Math.min(119, 99 + Math.floor((xp - INV_99_XP) / (INV_120_XP - INV_99_XP) * 21));
-        }
-        return Math.min(98, getLevelAtXp(xp));
-    };
+    // Invention uses the standard RS3 XP curve (same as other skills)
+    const getInvXp = (lvl) => getXpAtLevel(lvl);
+    const getInvLevel = (xp) => getLevelAtXp(xp);
 
     // Load character data
     useEffect(() => {
@@ -71,7 +50,7 @@ useEffect(() => {
                 setCurrentLevel(skill.level);
                 // Default target
                 setTargetLevel(skill.level < 99 ? 99 : 120);
-                setTargetXp(skill.level < 99 ? 36073511 : 80618654);
+                setTargetXp(getXpAtLevel(skill.level < 99 ? 99 : 120));
             }
         }
     }, [characterData]);

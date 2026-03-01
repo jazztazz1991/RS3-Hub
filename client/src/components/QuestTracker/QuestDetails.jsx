@@ -1,13 +1,16 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import { useCharacter } from '../../context/CharacterContext';
 import { useQuestLog } from '../../hooks/useQuestLog';
 import { QUEST_DATA } from '../../data/quests/questData';
+import LoginBanner from '../Common/LoginBanner';
 import './QuestDetails.css';
 
 const QuestDetails = () => {
     const { questTitle } = useParams();
     const navigate = useNavigate();
+    const { user } = useAuth();
     const { characterData } = useCharacter();
     const { completedQuests, toggleQuest } = useQuestLog();
 
@@ -100,6 +103,7 @@ const QuestDetails = () => {
 
     return (
         <div className="quest-details-container">
+            {!user && <LoginBanner features="track quest completion and check skill requirements against your character" />}
             {lightbox && (
                 <div className="lightbox-overlay" onClick={() => setLightbox(null)}>
                     <button className="lightbox-close" onClick={() => setLightbox(null)} aria-label="Close">✕</button>
@@ -126,12 +130,12 @@ const QuestDetails = () => {
                     >
                         Wiki ↗
                     </a>
-                    <button
+                    {user && <button
                         className={`btn-toggle-main ${isCompleted ? 'completed' : ''}`}
                         onClick={() => toggleQuest(quest.title, !isCompleted)}
                     >
                         {isCompleted ? '✓ Completed' : 'Mark Complete'}
-                    </button>
+                    </button>}
                 </div>
             </div>
 
@@ -227,12 +231,12 @@ const QuestDetails = () => {
                                             </span>
                                             <span style={{ marginLeft: '0.5rem', fontSize: '0.8rem', color: '#aaa' }}>({sq.questPoints} QP)</span>
                                         </span>
-                                        <button
+                                        {user && <button
                                             className={`btn-toggle-main ${sqDone ? 'completed' : ''}`}
                                             onClick={() => toggleQuest(sq.title, !sqDone)}
                                         >
                                             {sqDone ? '✓ Completed' : 'Mark Complete'}
-                                        </button>
+                                        </button>}
                                     </li>
                                 );
                             })}

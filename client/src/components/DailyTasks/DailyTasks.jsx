@@ -24,7 +24,7 @@ const DailyTasks = () => {
             }
         });
         return () => clearReportContext();
-    }, [pinnedTasks, completedTasks]);
+    }, [pinnedTasks, completedTasks, updateReportContext, clearReportContext]);
 
     // Load from Selected Character when it changes
     useEffect(() => {

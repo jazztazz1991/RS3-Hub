@@ -177,7 +177,7 @@ useEffect(() => {
             }
         });
         return () => clearReportContext();
-    }, [search, hideCompleted, filterCanDo, completedQuests, totalQP]);
+    }, [search, hideCompleted, filterCanDo, completedQuests, totalQP, updateReportContext, clearReportContext]);
 
     
     const handleImport = async () => {
@@ -221,18 +221,18 @@ useEffect(() => {
                 />
                 
                 <div className="qt-filter-group">
-                    <button 
+                    {user && <button
                         className={`qt-filter-btn ${hideCompleted ? 'active' : ''}`}
                         onClick={() => setHideCompleted(!hideCompleted)}
                     >
                         Hide Completed
-                    </button>
-                    <button
+                    </button>}
+                    {user && <button
                         className={`qt-filter-btn ${filterCanDo ? 'active' : ''}`}
                         onClick={() => setFilterCanDo(!filterCanDo)}
                     >
                         Can Do Only
-                    </button>
+                    </button>}
                     <button
                         className={`qt-filter-btn ${groupBySeries ? 'active' : ''}`}
                         onClick={() => setGroupBySeries(!groupBySeries)}
@@ -241,11 +241,11 @@ useEffect(() => {
                     </button>
                 </div>
 
-                <div className="qt-import-section">
+                {user && <div className="qt-import-section">
                     <button className="btn-import" onClick={() => setShowImport(!showImport)}>
                         Sync from RuneMetrics
                     </button>
-                </div>
+                </div>}
             </div>
 
             {/* Import Modal Area */}
@@ -290,7 +290,7 @@ useEffect(() => {
                             <th className="qt-col-type qt-sortable" onClick={() => handleSort('type')}>
                                 Type {sortCol === 'type' && <span className="sort-arrow">{sortAsc ? '▲' : '▼'}</span>}
                             </th>
-                            <th className="qt-col-action"></th>
+                            {user && <th className="qt-col-action"></th>}
                         </tr>
                     </thead>
                     <tbody>
@@ -298,7 +298,7 @@ useEffect(() => {
                             questsBySeries.map(([series, quests]) => (
                                 <React.Fragment key={series}>
                                     <tr className="series-header-row">
-                                        <td colSpan={7}>
+                                        <td colSpan={user ? 7 : 6}>
                                             <span className="series-name">{series === 'N/A' ? 'Standalone Quests' : series}</span>
                                             <span className="series-count">{quests.filter(q => completedQuests.has(q.title)).length}/{quests.length}</span>
                                         </td>
@@ -322,12 +322,12 @@ useEffect(() => {
                                                 <td className="qt-col-type">
                                                     <span className={`tag ${q.isMembers ? 'members' : 'f2p'}`}>{q.isMembers ? 'M' : 'F2P'}</span>
                                                 </td>
-                                                <td className="qt-col-action" onClick={e => e.stopPropagation()}>
+                                                {user && <td className="qt-col-action" onClick={e => e.stopPropagation()}>
                                                     <button className={`btn-toggle ${isCompleted ? 'done' : ''}`}
                                                         onClick={() => toggleQuest(q.title, !isCompleted)}>
                                                         {isCompleted ? '✓' : 'Done'}
                                                     </button>
-                                                </td>
+                                                </td>}
                                             </tr>
                                         );
                                     })}
@@ -353,12 +353,12 @@ useEffect(() => {
                                         <td className="qt-col-type">
                                             <span className={`tag ${q.isMembers ? 'members' : 'f2p'}`}>{q.isMembers ? 'M' : 'F2P'}</span>
                                         </td>
-                                        <td className="qt-col-action" onClick={e => e.stopPropagation()}>
+                                        {user && <td className="qt-col-action" onClick={e => e.stopPropagation()}>
                                             <button className={`btn-toggle ${isCompleted ? 'done' : ''}`}
                                                 onClick={() => toggleQuest(q.title, !isCompleted)}>
                                                 {isCompleted ? '✓' : 'Done'}
                                             </button>
-                                        </td>
+                                        </td>}
                                     </tr>
                                 );
                             })

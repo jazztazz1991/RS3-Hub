@@ -173,7 +173,7 @@ const Dashboard = () => {
         }
     });
     return () => clearReportContext();
-}, [characters, selectedCharacter]);
+}, [characters, selectedCharacter, updateReportContext, clearReportContext]);
   
   // Add Char State
   const [newCharName, setNewCharName] = useState('');
@@ -237,7 +237,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <header className="dashboard-header">
+      <div className="dashboard-header">
          <div className="user-info">
              <h2>Welcome, {user.username}</h2>
             {selectedCharName && <span className="user-rank">Viewing: {selectedCharName}</span>}
@@ -269,7 +269,7 @@ const Dashboard = () => {
                 </div>
             </div>
          )}
-      </header>
+      </div>
        
        {/* Character Controls Section */}
        <div className="controls-section" style={{marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#333', padding: '1rem', borderRadius: '8px', flexWrap: 'wrap', gap: '1rem'}}> 

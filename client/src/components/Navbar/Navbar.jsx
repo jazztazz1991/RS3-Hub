@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useReportCalls } from '../../context/ReportContext';
 import { SIDEBAR_ITEMS } from '../../data/common/sidebarItems';
@@ -13,7 +13,6 @@ const Navbar = () => {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [isSuggestionModalOpen, setIsSuggestionModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const close = () => setMenuOpen(false);
 

@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { parseHiscores } from '../utils/rs3';
+import { useAuth } from './AuthContext';
 
 const CharacterContext = createContext();
 
 export const useCharacter = () => useContext(CharacterContext);
 
 export const CharacterProvider = ({ children }) => {
+    const { user } = useAuth();
     const [characters, setCharacters] = useState([]);
     const [selectedCharId, setSelectedCharId] = useState(null);
     const [characterData, setCharacterData] = useState([]); // Parsed skills
@@ -18,10 +20,17 @@ export const CharacterProvider = ({ children }) => {
 
     const selectedCharacter = characters.find(c => c.id === selectedCharId);
 
-    // Initial Fetch
+    // Initial Fetch — only when authenticated
     useEffect(() => {
-        fetchCharacters();
-    }, []);
+        if (user) {
+            fetchCharacters();
+        } else {
+            setCharacters([]);
+            setSelectedCharId(null);
+            setCharacterData([]);
+            setLoadingChars(false);
+        }
+    }, [user]);
 
     // Auto-select first character if none selected
     useEffect(() => {
@@ -30,15 +39,12 @@ export const CharacterProvider = ({ children }) => {
         }
     }, [characters, selectedCharId]);
 
-    // Fetch Hiscores & Quests when selected character changes
+    // Fetch Hiscores when selected character changes
     useEffect(() => {
         if (selectedCharId) {
-            // Find character in current state
             const char = characters.find(c => c.id === selectedCharId);
             if (char) {
-                // Only fetch if we have a valid character
                 fetchHiscores(char.name);
-                syncQuests(char.name);
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

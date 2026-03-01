@@ -74,7 +74,7 @@ export const getNextEvents = () => {
     };
 };
 
-export const checkNotification = (lastNotifiedTime) => {
+export const checkNotification = () => {
     const { nextEvent, nextEventTime } = getNextEvents();
     
     if (!nextEvent.isSpecial) return { shouldNotify: false };

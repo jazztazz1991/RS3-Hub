@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
 import { ReportProvider } from './context/ReportContext';
 
@@ -83,7 +83,6 @@ const RangedGuide = lazy(() => import('./components/Guides/Ranged/RangedGuide'))
 
 function AppContent() {
   const location = useLocation();
-  const { user } = useAuth();
   return (
     <div className="app-container">
       <WildyNotification />

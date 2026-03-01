@@ -46,13 +46,6 @@ const SupportDashboard = () => {
         });
     };
 
-    // Filter Suggestions: My Suggestions vs All Suggestions 
-    // OR just show list with "Mine" indicator
-    // User requested "users submissions for issues and suggestions as well as all suggestions"
-    // So for suggestions, show all, maybe tag mine.
-    const mySuggestions = suggestions.filter(s => s.userId === user.id);
-    const otherSuggestions = suggestions.filter(s => s.userId !== user.id);
-
     return (
         <div className="support-dashboard">
             <h2>Support & Feedback</h2>

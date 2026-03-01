@@ -4,6 +4,26 @@
 export const CHANGELOG = [
     {
         date: '2026-03-01',
+        category: 'Bug Fix',
+        description: 'Fixed quest tracker action column showing for logged-out users, interval memory leak in Wildy Tracker, admin dashboard fetching data before access check, and stale closure in dashboard task tracker.',
+    },
+    {
+        date: '2026-03-01',
+        category: 'Bug Fix',
+        description: 'Invention calculator now uses the correct RS3 XP curve instead of linear interpolation between levels 99–120.',
+    },
+    {
+        date: '2026-03-01',
+        category: 'Bug Fix',
+        description: 'Character data no longer fetched on anonymous page visits — eliminates unnecessary 401 errors for guest users.',
+    },
+    {
+        date: '2026-03-01',
+        category: 'Content',
+        description: 'Woodcutting and Fletching max level updated to 110 — Dashboard progress bars and Max Cape tracking now reflect the correct caps.',
+    },
+    {
+        date: '2026-03-01',
         category: 'Feature',
         description: 'Calculators, guides, and quest tracker are now accessible without logging in — browse freely, then sign up to save your progress.',
     },

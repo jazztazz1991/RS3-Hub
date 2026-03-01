@@ -63,8 +63,9 @@ export const XP_TABLE = {
       'Farming': 120,
       'Necromancy': 120,
       'Mining': 110,
-      'Smithing': 110
-      // Woodcutting & Fletching - Add here if updated to 110
+      'Smithing': 110,
+      'Woodcutting': 110,
+      'Fletching': 110
   }
 };
 

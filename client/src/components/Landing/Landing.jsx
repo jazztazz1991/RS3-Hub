@@ -4,7 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { QUEST_DATA } from '../../data/quests/questData';
 import './Landing.css';
 
-const NUM_CALCULATORS = 24;
+const NUM_CALCULATORS = 25;
 const NUM_GUIDES = 25;
 const NUM_SKILLS = 29;
 

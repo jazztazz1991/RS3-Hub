@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { mockSkills } from '../../data/common/mockData';
+import { SKILL_NAMES } from '../../utils/rs3';
 import SkillIcon from '../Common/SkillIcon';
 import './Calculators.css';
 
-const EXCLUDED = ['Attack', 'Defence', 'Strength', 'Constitution', 'Ranged'];
+const EXCLUDED = ['Overall', 'Attack', 'Defence', 'Strength', 'Constitution', 'Ranged'];
 
 const TOOLS = [
     { name: 'Urns Calculator', path: '/calculators/urns', icon: '⚗' },
 ];
 
-const skillCalcs = mockSkills.filter(s => !EXCLUDED.includes(s.name));
+const skillCalcs = SKILL_NAMES.filter(name => !EXCLUDED.includes(name));
 
 const Calculators = () => (
     <div className="calcs-hub">
@@ -21,15 +21,15 @@ const Calculators = () => (
         </div>
 
         <div className="calcs-hub-grid">
-            {skillCalcs.map(skill => (
+            {skillCalcs.map(name => (
                 <Link
-                    to={`/calculators/${skill.name.toLowerCase()}`}
-                    key={skill.id}
+                    to={`/calculators/${name.toLowerCase()}`}
+                    key={name}
                     className="calcs-hub-card"
                 >
-                    <SkillIcon skillName={skill.name} className="calcs-skill-icon" />
+                    <SkillIcon skillName={name} className="calcs-skill-icon" />
                     <div className="calcs-card-body">
-                        <span className="calcs-card-name">{skill.name}</span>
+                        <span className="calcs-card-name">{name}</span>
                         <span className="calcs-card-sub">XP &amp; Levels</span>
                     </div>
                 </Link>
