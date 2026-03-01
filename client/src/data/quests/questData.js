@@ -14755,7 +14755,8 @@ export const QUEST_DATA = [
             "Ascend the beam",
             "Chaos rune - Thick (spinning) red beam",
             "Air rune - Simple grey beam",
-            "Talk to Ariane ( 1 • 2 • 3 • 3 )"
+            "Talk to Ariane ( 1 • 2 • 3 • 3 )",
+            "Quest Complete"
         ],
         "itemReqs": [
             "14 backpack spaces"
