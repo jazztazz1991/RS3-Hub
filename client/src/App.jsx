@@ -1,76 +1,84 @@
-import { useState, useEffect } from 'react'
+import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
 import { AuthProvider } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
 import { ReportProvider } from './context/ReportContext';
-import Dashboard from './components/Dashboard/Dashboard';
-import DailyTasks from './components/DailyTasks/DailyTasks';
-import Calculators from './components/Calculators/Calculators';
-import ArchaeologyCalculator from './components/Calculators/Archaeology/ArchaeologyCalculator';
-import InventionCalculator from './components/Calculators/Invention/InventionCalculator';
-import PrayerCalculator from './components/Calculators/Prayer/PrayerCalculator';
-import MagicCalculator from './components/Calculators/Magic/MagicCalculator';
-import CookingCalculator from './components/Calculators/Cooking/CookingCalculator';
-import WoodcuttingCalculator from './components/Calculators/Woodcutting/WoodcuttingCalculator';
-import FletchingCalculator from './components/Calculators/Fletching/FletchingCalculator';
-import FishingCalculator from './components/Calculators/Fishing/FishingCalculator';
-import Guides from './components/Guides/Guides';
-import NecromancyGuide from './components/Guides/NecromancyGuide';
-import ThievingGuide from './components/Guides/ThievingGuide';
-import FarmingGuide from './components/Guides/Farming/FarmingGuide';
-import ArchaeologyGuide from './components/Guides/ArchaeologyGuide';
-import DivinationGuide from './components/Guides/DivinationGuide';
-import FishingGuide from './components/Guides/FishingGuide';
-import WoodcuttingGuide from './components/Guides/WoodcuttingGuide';
-import MiningGuide from './components/Guides/MiningGuide';
-import FiremakingGuide from './components/Guides/FiremakingGuide';
-import FiremakingCalculator from './components/Calculators/Firemaking/FiremakingCalculator';
-import MiningCalculator from './components/Calculators/Mining/MiningCalculator';
-import SmithingCalculator from './components/Calculators/Smithing/SmithingCalculator';
-import CraftingCalculator from './components/Calculators/Crafting/CraftingCalculator';
-import HerbloreCalculator from './components/Calculators/Herblore/HerbloreCalculator';
-import HerbloreGuide from './components/Guides/Herblore/HerbloreGuide';
-import AgilityGuide from './components/Guides/Agility/AgilityGuide';
-import ConstructionGuide from './components/Guides/Construction/ConstructionGuide';
-import CookingGuide from './components/Guides/Cooking/CookingGuide';
-import CraftingGuide from './components/Guides/Crafting/CraftingGuide';
-import FletchingGuide from './components/Guides/Fletching/FletchingGuide';
-import SlayerGuide from './components/Guides/Slayer/SlayerGuide';
-import AgilityCalculator from './components/Calculators/Agility/AgilityCalculator';
-import ThievingCalculator from './components/Calculators/Thieving/ThievingCalculator';
-import SlayerCalculator from './components/Calculators/Slayer/SlayerCalculator';
-import FarmingCalculator from './components/Calculators/Farming/FarmingCalculator';
-import RunecraftingCalculator from './components/Calculators/Runecrafting/RunecraftingCalculator';
-import HunterCalculator from './components/Calculators/Hunter/HunterCalculator';
-import ConstructionCalculator from './components/Calculators/Construction/ConstructionCalculator';
-import SummoningCalculator from './components/Calculators/Summoning/SummoningCalculator';
-import DungeoneeringCalculator from './components/Calculators/Dungeoneering/DungeoneeringCalculator';
-import DivinationCalculator from './components/Calculators/Divination/DivinationCalculator';
-import NecromancyCalculator from './components/Calculators/Necromancy/NecromancyCalculator';
-import UrnsCalculator from './components/Calculators/Tools/UrnsCalculator';
+
+// Shell components — always loaded
 import Navbar from './components/Navbar/Navbar';
-import Login from './components/Auth/Login';
-import Register from './components/Auth/Register';
+import Footer from './components/Footer/Footer';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 import WildyNotification from './components/WildyEvents/WildyNotification';
-import QuestTracker from './components/QuestTracker';
-import QuestDetails from './components/QuestTracker/QuestDetails';
-import AdminDashboard from './components/Admin/AdminDashboard';
-import SupportDashboard from './components/Support/SupportDashboard';
-import Landing from './components/Landing/Landing';
-import NotFound from './components/NotFound/NotFound';
-import Changelog from './components/Changelog/Changelog';
-import Footer from './components/Footer/Footer';
-import PrayerGuide from './components/Guides/PrayerGuide';
-import SummoningGuide from './components/Guides/SummoningGuide';
-import MagicGuide from './components/Guides/MagicGuide';
-import SmithingGuide from './components/Guides/SmithingGuide';
-import RunecraftingGuide from './components/Guides/RunecraftingGuide';
-import HunterGuide from './components/Guides/HunterGuide';
-import InventionGuide from './components/Guides/InventionGuide';
-import DungeoneeringGuide from './components/Guides/DungeoneeringGuide';
-import RangedGuide from './components/Guides/Ranged/RangedGuide';
+
+// Lazy-loaded route components
+const Landing = lazy(() => import('./components/Landing/Landing'));
+const Login = lazy(() => import('./components/Auth/Login'));
+const Register = lazy(() => import('./components/Auth/Register'));
+const Changelog = lazy(() => import('./components/Changelog/Changelog'));
+const NotFound = lazy(() => import('./components/NotFound/NotFound'));
+
+const Dashboard = lazy(() => import('./components/Dashboard/Dashboard'));
+const AdminDashboard = lazy(() => import('./components/Admin/AdminDashboard'));
+const SupportDashboard = lazy(() => import('./components/Support/SupportDashboard'));
+const DailyTasks = lazy(() => import('./components/DailyTasks/DailyTasks'));
+
+const QuestTracker = lazy(() => import('./components/QuestTracker'));
+const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
+
+const Calculators = lazy(() => import('./components/Calculators/Calculators'));
+const ArchaeologyCalculator = lazy(() => import('./components/Calculators/Archaeology/ArchaeologyCalculator'));
+const InventionCalculator = lazy(() => import('./components/Calculators/Invention/InventionCalculator'));
+const PrayerCalculator = lazy(() => import('./components/Calculators/Prayer/PrayerCalculator'));
+const MagicCalculator = lazy(() => import('./components/Calculators/Magic/MagicCalculator'));
+const CookingCalculator = lazy(() => import('./components/Calculators/Cooking/CookingCalculator'));
+const WoodcuttingCalculator = lazy(() => import('./components/Calculators/Woodcutting/WoodcuttingCalculator'));
+const FletchingCalculator = lazy(() => import('./components/Calculators/Fletching/FletchingCalculator'));
+const FishingCalculator = lazy(() => import('./components/Calculators/Fishing/FishingCalculator'));
+const FiremakingCalculator = lazy(() => import('./components/Calculators/Firemaking/FiremakingCalculator'));
+const MiningCalculator = lazy(() => import('./components/Calculators/Mining/MiningCalculator'));
+const SmithingCalculator = lazy(() => import('./components/Calculators/Smithing/SmithingCalculator'));
+const CraftingCalculator = lazy(() => import('./components/Calculators/Crafting/CraftingCalculator'));
+const HerbloreCalculator = lazy(() => import('./components/Calculators/Herblore/HerbloreCalculator'));
+const AgilityCalculator = lazy(() => import('./components/Calculators/Agility/AgilityCalculator'));
+const ThievingCalculator = lazy(() => import('./components/Calculators/Thieving/ThievingCalculator'));
+const SlayerCalculator = lazy(() => import('./components/Calculators/Slayer/SlayerCalculator'));
+const FarmingCalculator = lazy(() => import('./components/Calculators/Farming/FarmingCalculator'));
+const RunecraftingCalculator = lazy(() => import('./components/Calculators/Runecrafting/RunecraftingCalculator'));
+const HunterCalculator = lazy(() => import('./components/Calculators/Hunter/HunterCalculator'));
+const ConstructionCalculator = lazy(() => import('./components/Calculators/Construction/ConstructionCalculator'));
+const SummoningCalculator = lazy(() => import('./components/Calculators/Summoning/SummoningCalculator'));
+const DungeoneeringCalculator = lazy(() => import('./components/Calculators/Dungeoneering/DungeoneeringCalculator'));
+const DivinationCalculator = lazy(() => import('./components/Calculators/Divination/DivinationCalculator'));
+const NecromancyCalculator = lazy(() => import('./components/Calculators/Necromancy/NecromancyCalculator'));
+const UrnsCalculator = lazy(() => import('./components/Calculators/Tools/UrnsCalculator'));
+
+const Guides = lazy(() => import('./components/Guides/Guides'));
+const NecromancyGuide = lazy(() => import('./components/Guides/NecromancyGuide'));
+const ThievingGuide = lazy(() => import('./components/Guides/ThievingGuide'));
+const FarmingGuide = lazy(() => import('./components/Guides/Farming/FarmingGuide'));
+const ArchaeologyGuide = lazy(() => import('./components/Guides/ArchaeologyGuide'));
+const DivinationGuide = lazy(() => import('./components/Guides/DivinationGuide'));
+const FishingGuide = lazy(() => import('./components/Guides/FishingGuide'));
+const WoodcuttingGuide = lazy(() => import('./components/Guides/WoodcuttingGuide'));
+const MiningGuide = lazy(() => import('./components/Guides/MiningGuide'));
+const FiremakingGuide = lazy(() => import('./components/Guides/FiremakingGuide'));
+const HerbloreGuide = lazy(() => import('./components/Guides/Herblore/HerbloreGuide'));
+const AgilityGuide = lazy(() => import('./components/Guides/Agility/AgilityGuide'));
+const ConstructionGuide = lazy(() => import('./components/Guides/Construction/ConstructionGuide'));
+const CookingGuide = lazy(() => import('./components/Guides/Cooking/CookingGuide'));
+const CraftingGuide = lazy(() => import('./components/Guides/Crafting/CraftingGuide'));
+const FletchingGuide = lazy(() => import('./components/Guides/Fletching/FletchingGuide'));
+const SlayerGuide = lazy(() => import('./components/Guides/Slayer/SlayerGuide'));
+const PrayerGuide = lazy(() => import('./components/Guides/PrayerGuide'));
+const SummoningGuide = lazy(() => import('./components/Guides/SummoningGuide'));
+const MagicGuide = lazy(() => import('./components/Guides/MagicGuide'));
+const SmithingGuide = lazy(() => import('./components/Guides/SmithingGuide'));
+const RunecraftingGuide = lazy(() => import('./components/Guides/RunecraftingGuide'));
+const HunterGuide = lazy(() => import('./components/Guides/HunterGuide'));
+const InventionGuide = lazy(() => import('./components/Guides/InventionGuide'));
+const DungeoneeringGuide = lazy(() => import('./components/Guides/DungeoneeringGuide'));
+const RangedGuide = lazy(() => import('./components/Guides/Ranged/RangedGuide'));
 
 function AppContent() {
   const location = useLocation();
@@ -79,7 +87,8 @@ function AppContent() {
       <WildyNotification />
       <Navbar />
       <main key={location.pathname}>
-        <Routes>
+        <Suspense fallback={<div className="route-loading">Loading...</div>}>
+          <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
@@ -151,6 +160,7 @@ function AppContent() {
               {/* 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+        </Suspense>
       </main>
       <Footer />
     </div>

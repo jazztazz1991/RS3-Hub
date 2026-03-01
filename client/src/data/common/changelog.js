@@ -4,6 +4,56 @@
 export const CHANGELOG = [
     {
         date: '2026-02-28',
+        category: 'UI',
+        description: 'RuneHub logo added to the navbar with "Play your way" tagline.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Feature',
+        description: 'Test suite expanded — 4 new test files (changelog, urns, augmentable items, daily tasks) plus quest data test hardening. 642 total tests all passing.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Feature',
+        description: 'Route-level code-splitting with React.lazy() — initial JS bundle reduced from 2.3 MB to 302 KB. Each calculator, guide, and page loads on demand.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Quests',
+        description: 'Quest tracker "Group by Series" toggle — groups quests by their quest series (Desert, Elf, Myreque, etc.) with per-series completion counts.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Quests',
+        description: 'Quest table columns (Difficulty, Length, QP, Type) are now sortable — click any header to sort ascending/descending.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Quests',
+        description: 'Quest point summary now shows earned vs maximum possible (e.g. 120 / 464).',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Calculators',
+        description: 'Archaeology material bank: "Add All from Queue" button auto-populates the bank with every material needed by the current restoration queue.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'UI',
+        description: 'Landing page stats (calculator count, guide count, quest count, skills covered) are now derived from actual data instead of hardcoded values.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Calculators',
+        description: 'Archaeology bank search dropdown now shows the zone name next to each material for easier identification.',
+    },
+    {
+        date: '2026-02-28',
+        category: 'Quests',
+        description: 'Quest search now ignores leading articles (A, An, The) — searching for "chosen" finds "The Chosen Commander".',
+    },
+    {
+        date: '2026-02-28',
         category: 'Quests',
         description: 'Quest list now sorts alphabetically the same way RS3 and the wiki do — leading "A", "An", "The", and apostrophes are ignored. Quest points column added to the quest table.',
     },

@@ -25,7 +25,10 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-logo">
-          <Link to={user ? "/dashboard" : "/"} onClick={close}>RuneHub</Link>
+          <Link to={user ? "/dashboard" : "/"} onClick={close}>
+            <img src="/images/logos/Runehublogo.png" alt="RuneHub" className="navbar-logo-img" />
+            Play your way
+          </Link>
         </div>
 
         {/* Hamburger */}

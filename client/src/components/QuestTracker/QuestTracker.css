@@ -120,6 +120,22 @@
     white-space: nowrap;
 }
 
+.qt-sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+}
+
+.qt-sortable:hover {
+    color: #e67e22;
+}
+
+.sort-arrow {
+    font-size: 0.65rem;
+    margin-left: 3px;
+    color: #e67e22;
+}
+
 .qt-table tbody tr {
     border-bottom: 1px solid #1e272e;
     transition: background 0.15s;
@@ -226,6 +242,29 @@
     background: rgba(39, 174, 96, 0.15);
     border-color: #27ae60;
     color: #27ae60;
+}
+
+/* Series grouping */
+.series-header-row td {
+    background: #1a252f;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 2px solid #e67e22;
+    border-left: none;
+}
+
+.series-name {
+    font-weight: 700;
+    color: #e67e22;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.series-count {
+    margin-left: 0.6rem;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    font-weight: 400;
 }
 
 .qc-empty-state {

@@ -1,33 +1,31 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { QUEST_DATA } from '../../data/quests/questData';
 import './Landing.css';
 
-const STATS = [
-    { value: '24', label: 'Skill Calculators' },
-    { value: '24', label: 'Training Guides' },
-    { value: '270', label: 'Quests Tracked' },
-    { value: '29', label: 'Skills Covered' },
-];
+const NUM_CALCULATORS = 24;
+const NUM_GUIDES = 25;
+const NUM_SKILLS = 29;
 
-const FEATURES = [
+const FEATURES = (questCount) => [
     {
         icon: '⚡',
         title: 'Skill Calculators',
         description:
-            'Calculate exactly how many actions you need to hit your goal. Supports all meaningful skills with method selection, XP targets, and character hiscores integration. Archaeology calculator includes a material bank organized by zone.',
+            `Calculate exactly how many actions you need to hit your goal. ${NUM_CALCULATORS} skill calculators with method selection, XP targets, and character hiscores integration. Archaeology calculator includes a material bank organized by zone.`,
     },
     {
         icon: '📖',
         title: 'Training Guides',
         description:
-            'Step-by-step guides for P2P and Ironman players — organized by level range, not a wall of text. Covers all 25 skilling skills including Ranged.',
+            `Step-by-step guides for P2P and Ironman players — organized by level range, not a wall of text. Covers all ${NUM_GUIDES} skilling skills including Ranged.`,
     },
     {
         icon: '📜',
         title: 'Quest Tracker',
         description:
-            '270 RS3 quests with full skill and quest requirement checking, quest point tracking, and wiki-style alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests are tracked individually with RuneMetrics import support.',
+            `${questCount} RS3 quests with full skill and quest requirement checking, quest point tracking, and wiki-style alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests are tracked individually with RuneMetrics import support.`,
     },
 ];
 
@@ -49,6 +47,20 @@ const SECONDARY = [
 const Landing = () => {
     const { user, loading } = useAuth();
     const navigate = useNavigate();
+
+    const questCount = useMemo(
+        () => QUEST_DATA.filter(q => !q.title.includes(': ')).length,
+        []
+    );
+
+    const stats = useMemo(() => [
+        { value: String(NUM_CALCULATORS), label: 'Skill Calculators' },
+        { value: String(NUM_GUIDES), label: 'Training Guides' },
+        { value: String(questCount), label: 'Quests Tracked' },
+        { value: String(NUM_SKILLS), label: 'Skills Covered' },
+    ], [questCount]);
+
+    const features = useMemo(() => FEATURES(questCount), [questCount]);
 
     useEffect(() => {
         if (!loading && user) {
@@ -79,7 +91,7 @@ const Landing = () => {
 
             {/* Stats strip */}
             <section className="landing-stats">
-                {STATS.map(s => (
+                {stats.map(s => (
                     <div key={s.label} className="stat-item">
                         <span className="stat-value">{s.value}</span>
                         <span className="stat-label">{s.label}</span>
@@ -91,7 +103,7 @@ const Landing = () => {
             <section className="landing-features">
                 <h2 className="section-title">Everything you need in one place</h2>
                 <div className="features-grid">
-                    {FEATURES.map(f => (
+                    {features.map(f => (
                         <div key={f.title} className="feature-card">
                             <div className="feature-icon">{f.icon}</div>
                             <h3 className="feature-title">{f.title}</h3>

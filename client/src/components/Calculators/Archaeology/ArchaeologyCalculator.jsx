@@ -486,6 +486,26 @@ const ArchaeologyCalculator = () => {
                         )}
                     </div>
 
+                    {materialTotals.length > 0 && (
+                        <button
+                            className="import-queue-btn"
+                            onClick={() => {
+                                materialTotals.forEach(([name]) => {
+                                    if (!materialStorage[name]) setStorageQty(name, 0);
+                                });
+                                setMaterialStorage(prev => {
+                                    const updated = { ...prev };
+                                    materialTotals.forEach(([name]) => {
+                                        if (!(name in updated)) updated[name] = 0;
+                                    });
+                                    return updated;
+                                });
+                            }}
+                        >
+                            Add All from Queue
+                        </button>
+                    )}
+
                     <div className="bank-search-section">
                         <input
                             type="text"
@@ -502,7 +522,8 @@ const ArchaeologyCalculator = () => {
                                         className="bank-search-item"
                                         onClick={() => { setStorageQty(name, 1); setBankSearch(''); }}
                                     >
-                                        {name}
+                                        <span>{name}</span>
+                                        <span className="bank-search-zone">{getZone(name).replace(' Materials', '').replace(' Items', '')}</span>
                                     </div>
                                 ))}
                             </div>

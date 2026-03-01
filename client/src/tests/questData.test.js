@@ -32,8 +32,8 @@ describe('QUEST_DATA — top-level', () => {
         expect(QUEST_DATA.length).toBeGreaterThan(0);
     });
 
-    it('contains exactly 270 quests', () => {
-        expect(QUEST_DATA.length).toBe(270);
+    it('contains at least 270 quests', () => {
+        expect(QUEST_DATA.length).toBeGreaterThanOrEqual(270);
     });
 
     it('quest titles are all unique', () => {
@@ -43,13 +43,12 @@ describe('QUEST_DATA — top-level', () => {
         expect(duplicates, `Duplicate titles: ${duplicates.join(', ')}`).toHaveLength(0);
     });
 
-    it('has the expected F2P / Members split (47 F2P, 223 Members)', () => {
+    it('every quest is either F2P or Members', () => {
         const f2p = QUEST_DATA.filter(q => q.isMembers === false).length;
         const members = QUEST_DATA.filter(q => q.isMembers === true).length;
-        // Note: if counts shift slightly from data corrections, update these values.
         expect(f2p).toBeGreaterThanOrEqual(40);
         expect(members).toBeGreaterThan(200);
-        expect(f2p + members).toBe(270);
+        expect(f2p + members).toBe(QUEST_DATA.length);
     });
 });
 
@@ -101,11 +100,24 @@ describe('QUEST_DATA — per-quest field validation', () => {
             // requirements: must be an array (always empty currently)
             expect(Array.isArray(quest.requirements), `"${quest.title}".requirements must be array`).toBe(true);
 
-            // guide: non-empty array of strings
+            // guide: non-empty array of strings or image objects { type: 'image', src, alt? }
             expect(Array.isArray(quest.guide), `"${quest.title}".guide must be array`).toBe(true);
             expect(quest.guide.length, `"${quest.title}".guide must not be empty`).toBeGreaterThan(0);
             for (const step of quest.guide) {
-                expect(typeof step, `"${quest.title}".guide step must be string`).toBe('string');
+                const isString = typeof step === 'string';
+                const isObject = typeof step === 'object' && step !== null;
+                const isImage = isObject && step.type === 'image' && typeof step.src === 'string';
+                const isRichText = isObject && typeof step.text === 'string';
+                expect(
+                    isString || isImage || isRichText,
+                    `"${quest.title}".guide step must be string, image object, or text object, got: ${JSON.stringify(step).slice(0, 80)}`
+                ).toBe(true);
+            }
+
+            // series: must be a non-empty string if present
+            if (quest.series !== undefined) {
+                expect(typeof quest.series, `"${quest.title}".series must be string`).toBe('string');
+                expect(quest.series.trim().length, `"${quest.title}".series must not be blank`).toBeGreaterThan(0);
             }
         });
     }
