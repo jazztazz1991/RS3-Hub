@@ -1,13 +1,16 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import { useCharacter } from '../../context/CharacterContext';
 import { useReportCalls } from '../../context/ReportContext';
 import { useQuestLog } from '../../hooks/useQuestLog';
 import { QUEST_DATA } from '../../data/quests/questData';
+import LoginBanner from '../Common/LoginBanner';
 import './QuestTracker.css';
 
 const QuestTracker = () => {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const { characterData } = useCharacter();
     const { completedQuests, toggleQuest, importQuests } = useQuestLog();
     const { updateReportContext, clearReportContext } = useReportCalls();
@@ -192,6 +195,8 @@ useEffect(() => {
     return (
         <div className="quest-tracker">
             <h2>Quest Tracker</h2>
+
+            {!user && <LoginBanner features="track quest completion, import progress from RuneMetrics, and check skill requirements against your character" />}
 
             {/* Summary Stats */}
             <div className="qt-summary">

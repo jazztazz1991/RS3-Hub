@@ -2,12 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  height: 75px;
+  padding: 0 2rem;
   background-color: #1a1a1a;
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  margin-bottom: 2rem;
   position: relative;
   z-index: 100;
+}
+
+.navbar-logo {
+  align-self: stretch;
 }
 
 .navbar-logo a {
@@ -19,11 +23,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  height: 100%;
 }
 
 .navbar-logo-img {
-  height: 44px;
+  height: 100%;
   width: auto;
+  display: block;
 }
 
 .navbar-links {
@@ -96,6 +102,11 @@
 .user-greeting {
     color: #ffd700;
     font-weight: bold;
+}
+
+/* Sidebar items — hidden on desktop, shown in mobile hamburger */
+.sidebar-mobile-item {
+    display: none;
 }
 
 /* ── Hamburger Button ─────────────────────────────── */
@@ -190,5 +201,9 @@
         padding: 0.65rem 1rem;
         font-size: 0.85rem;
         border-top: 1px solid #2a2a2a;
+    }
+
+    .sidebar-mobile-item {
+        display: block;
     }
 }

@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useAuth } from '../../../context/AuthContext';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { artefacts } from '../../../data/skills/artefacts';
 import { XP_TABLE, getLevelAtXp, getTargetXp, getXpAtLevel } from '../../../utils/rs3';
+import LoginBanner from '../../Common/LoginBanner';
 import './ArchaeologyCalculator.css';
 
 const MATERIAL_ZONES = {
@@ -51,6 +53,7 @@ const loadSavedState = () => {
 };
 
 const ArchaeologyCalculator = () => {
+    const { user } = useAuth();
     const { characterData, selectedCharacter, selectedCharId, updateArchMaterialBank } = useCharacter();
     const { updateReportContext, clearReportContext } = useReportCalls();
 
@@ -303,6 +306,8 @@ const ArchaeologyCalculator = () => {
     return (
         <div className="archaeology-calculator">
             <h2>Archaeology Material Calculator</h2>
+
+            {!user && <LoginBanner features="save your material bank across sessions and sync it with your character" />}
 
             <div className="tab-navigation">
                 <button

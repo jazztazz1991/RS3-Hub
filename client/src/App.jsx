@@ -1,12 +1,13 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { CharacterProvider } from './context/CharacterContext';
 import { ReportProvider } from './context/ReportContext';
 
 // Shell components — always loaded
 import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 import WildyNotification from './components/WildyEvents/WildyNotification';
@@ -82,86 +83,96 @@ const RangedGuide = lazy(() => import('./components/Guides/Ranged/RangedGuide'))
 
 function AppContent() {
   const location = useLocation();
+  const { user } = useAuth();
   return (
     <div className="app-container">
       <WildyNotification />
       <Navbar />
-      <main key={location.pathname}>
-        <Suspense fallback={<div className="route-loading">Loading...</div>}>
-          <Routes>
+      <div className="app-body">
+        <Sidebar />
+        <main key={location.pathname}>
+          <Suspense fallback={<div className="route-loading">Loading...</div>}>
+            <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/changelog" element={<Changelog />} />
 
-              {/* Protected Routes */}
+              {/* Public — Calculators (stateless tools) */}
+              <Route path="/calculators" element={<Calculators />} />
+              <Route path="/calculators/archaeology" element={<ArchaeologyCalculator />} />
+              <Route path="/calculators/invention" element={<InventionCalculator />} />
+              <Route path="/calculators/prayer" element={<PrayerCalculator />} />
+              <Route path="/calculators/magic" element={<MagicCalculator />} />
+              <Route path="/calculators/cooking" element={<CookingCalculator />} />
+              <Route path="/calculators/woodcutting" element={<WoodcuttingCalculator />} />
+              <Route path="/calculators/fletching" element={<FletchingCalculator />} />
+              <Route path="/calculators/fishing" element={<FishingCalculator />} />
+              <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
+              <Route path="/calculators/mining" element={<MiningCalculator />} />
+              <Route path="/calculators/smithing" element={<SmithingCalculator />} />
+              <Route path="/calculators/crafting" element={<CraftingCalculator />} />
+              <Route path="/calculators/herblore" element={<HerbloreCalculator />} />
+              <Route path="/calculators/agility" element={<AgilityCalculator />} />
+              <Route path="/calculators/thieving" element={<ThievingCalculator />} />
+              <Route path="/calculators/slayer" element={<SlayerCalculator />} />
+              <Route path="/calculators/farming" element={<FarmingCalculator />} />
+              <Route path="/calculators/runecrafting" element={<RunecraftingCalculator />} />
+              <Route path="/calculators/hunter" element={<HunterCalculator />} />
+              <Route path="/calculators/construction" element={<ConstructionCalculator />} />
+              <Route path="/calculators/summoning" element={<SummoningCalculator />} />
+              <Route path="/calculators/dungeoneering" element={<DungeoneeringCalculator />} />
+              <Route path="/calculators/divination" element={<DivinationCalculator />} />
+              <Route path="/calculators/necromancy" element={<NecromancyCalculator />} />
+              <Route path="/calculators/urns" element={<UrnsCalculator />} />
+
+              {/* Public — Guides (static content) */}
+              <Route path="/guides" element={<Guides />} />
+              <Route path="/guides/necromancy" element={<NecromancyGuide />} />
+              <Route path="/guides/thieving" element={<ThievingGuide />} />
+              <Route path="/guides/farming" element={<FarmingGuide />} />
+              <Route path="/guides/archaeology" element={<ArchaeologyGuide />} />
+              <Route path="/guides/divination" element={<DivinationGuide />} />
+              <Route path="/guides/fishing" element={<FishingGuide />} />
+              <Route path="/guides/woodcutting" element={<WoodcuttingGuide />} />
+              <Route path="/guides/mining" element={<MiningGuide />} />
+              <Route path="/guides/firemaking" element={<FiremakingGuide />} />
+              <Route path="/guides/herblore" element={<HerbloreGuide />} />
+              <Route path="/guides/agility" element={<AgilityGuide />} />
+              <Route path="/guides/construction" element={<ConstructionGuide />} />
+              <Route path="/guides/cooking" element={<CookingGuide />} />
+              <Route path="/guides/crafting" element={<CraftingGuide />} />
+              <Route path="/guides/fletching" element={<FletchingGuide />} />
+              <Route path="/guides/slayer" element={<SlayerGuide />} />
+              <Route path="/guides/prayer" element={<PrayerGuide />} />
+              <Route path="/guides/summoning" element={<SummoningGuide />} />
+              <Route path="/guides/magic" element={<MagicGuide />} />
+              <Route path="/guides/smithing" element={<SmithingGuide />} />
+              <Route path="/guides/runecrafting" element={<RunecraftingGuide />} />
+              <Route path="/guides/hunter" element={<HunterGuide />} />
+              <Route path="/guides/invention" element={<InventionGuide />} />
+              <Route path="/guides/dungeoneering" element={<DungeoneeringGuide />} />
+              <Route path="/guides/ranged" element={<RangedGuide />} />
+
+              {/* Public — Quests (read-only browsing) */}
+              <Route path="/quests" element={<QuestTracker />} />
+              <Route path="/quests/:questTitle" element={<QuestDetails />} />
+
+              {/* Protected — features that save to database */}
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/support" element={<SupportDashboard />} />
-                <Route path="/quests" element={<QuestTracker />} />
-                <Route path="/quests/:questTitle" element={<QuestDetails />} />
-                <Route path="/calculators" element={<Calculators />} />
-                <Route path="/calculators/archaeology" element={<ArchaeologyCalculator />} />
-                <Route path="/calculators/invention" element={<InventionCalculator />} />
-                <Route path="/calculators/prayer" element={<PrayerCalculator />} />
-                <Route path="/calculators/magic" element={<MagicCalculator />} />
-                <Route path="/calculators/cooking" element={<CookingCalculator />} />
-                <Route path="/calculators/woodcutting" element={<WoodcuttingCalculator />} />
-                <Route path="/calculators/fletching" element={<FletchingCalculator />} />
-                <Route path="/calculators/fishing" element={<FishingCalculator />} />
-                <Route path="/guides" element={<Guides />} />
-                <Route path="/guides/necromancy" element={<NecromancyGuide />} />
-                <Route path="/guides/thieving" element={<ThievingGuide />} />
-                <Route path="/guides/farming" element={<FarmingGuide />} />
-                <Route path="/guides/archaeology" element={<ArchaeologyGuide />} />
-                <Route path="/guides/divination" element={<DivinationGuide />} />
-                <Route path="/guides/fishing" element={<FishingGuide />} />
-                <Route path="/guides/woodcutting" element={<WoodcuttingGuide />} />
-                <Route path="/guides/mining" element={<MiningGuide />} />
-                <Route path="/guides/firemaking" element={<FiremakingGuide />} />
-                <Route path="/guides/herblore" element={<HerbloreGuide />} />
-                <Route path="/guides/agility" element={<AgilityGuide />} />
-                <Route path="/guides/construction" element={<ConstructionGuide />} />
-                <Route path="/guides/cooking" element={<CookingGuide />} />
-                <Route path="/guides/crafting" element={<CraftingGuide />} />
-                <Route path="/guides/fletching" element={<FletchingGuide />} />
-                <Route path="/guides/slayer" element={<SlayerGuide />} />
-                <Route path="/guides/prayer" element={<PrayerGuide />} />
-                <Route path="/guides/summoning" element={<SummoningGuide />} />
-                <Route path="/guides/magic" element={<MagicGuide />} />
-                <Route path="/guides/smithing" element={<SmithingGuide />} />
-                <Route path="/guides/runecrafting" element={<RunecraftingGuide />} />
-                <Route path="/guides/hunter" element={<HunterGuide />} />
-                <Route path="/guides/invention" element={<InventionGuide />} />
-                <Route path="/guides/dungeoneering" element={<DungeoneeringGuide />} />
-                <Route path="/guides/ranged" element={<RangedGuide />} />
-                <Route path="/calculators/firemaking" element={<FiremakingCalculator />} />
-                <Route path="/calculators/mining" element={<MiningCalculator />} />
-                <Route path="/calculators/smithing" element={<SmithingCalculator />} />
-                <Route path="/calculators/crafting" element={<CraftingCalculator />} />
-                <Route path="/calculators/herblore" element={<HerbloreCalculator />} />
-                <Route path="/calculators/agility" element={<AgilityCalculator />} />
-                <Route path="/calculators/thieving" element={<ThievingCalculator />} />
-                <Route path="/calculators/slayer" element={<SlayerCalculator />} />
-                <Route path="/calculators/farming" element={<FarmingCalculator />} />
-                <Route path="/calculators/runecrafting" element={<RunecraftingCalculator />} />
-                <Route path="/calculators/hunter" element={<HunterCalculator />} />
-                <Route path="/calculators/construction" element={<ConstructionCalculator />} />
-                <Route path="/calculators/summoning" element={<SummoningCalculator />} />
-                <Route path="/calculators/dungeoneering" element={<DungeoneeringCalculator />} />
-                <Route path="/calculators/divination" element={<DivinationCalculator />} />
-                <Route path="/calculators/necromancy" element={<NecromancyCalculator />} />
-                <Route path="/calculators/urns" element={<UrnsCalculator />} />
                 <Route path="/daily-tasks" element={<DailyTasks />} />
               </Route>
 
               {/* 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-        </Suspense>
-      </main>
+          </Suspense>
+        </main>
+      </div>
       <Footer />
     </div>
   );

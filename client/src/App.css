@@ -19,6 +19,17 @@ body {
   flex-direction: column;
 }
 
+.app-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.app-body > main {
+  flex: 1;
+  min-width: 0;
+}
+
 header {
   /* Removed old header styles as we have a Navbar now */
   /* padding: 2rem 0;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useReportCalls } from '../../context/ReportContext';
+import { SIDEBAR_ITEMS } from '../../data/common/sidebarItems';
 import ReportModal from '../Common/ReportModal';
 import SuggestionModal from '../Common/SuggestionModal';
 import './Navbar.css';
@@ -44,15 +45,18 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar-links${menuOpen ? ' mobile-open' : ''}`}>
+          {/* Sidebar items — mobile hamburger only (filtered by auth) */}
+          {SIDEBAR_ITEMS
+            .filter(item => !item.auth || user)
+            .map(item => (
+              <li key={item.path} className="sidebar-mobile-item">
+                <Link to={item.path} onClick={close}>{item.icon} {item.label}</Link>
+              </li>
+            ))}
           {user ? (
             <>
               <li><button onClick={() => { setIsReportModalOpen(true); close(); }} className="report-btn">Report Issue</button></li>
               <li><button onClick={() => { setIsSuggestionModalOpen(true); close(); }} className="suggestion-btn">Suggestion</button></li>
-              <li><Link to="/dashboard" onClick={close}>Dashboard</Link></li>
-              <li><Link to="/calculators" onClick={close}>Calculators</Link></li>
-              <li><Link to="/guides" onClick={close}>Guides</Link></li>
-              <li><Link to="/quests" onClick={close}>Quests</Link></li>
-              <li><Link to="/daily-tasks" onClick={close}>Daily Tasks</Link></li>
               {['admin', 'manager', 'co-owner', 'owner'].includes(user.role) ? (
                 <li><Link to="/admin" onClick={close}>Admin</Link></li>
               ) : (

@@ -3,6 +3,21 @@
 
 export const CHANGELOG = [
     {
+        date: '2026-03-01',
+        category: 'Feature',
+        description: 'Calculators, guides, and quest tracker are now accessible without logging in — browse freely, then sign up to save your progress.',
+    },
+    {
+        date: '2026-03-01',
+        category: 'UI',
+        description: 'Login prompt banners added to Quest Tracker, Slayer Calculator, and Archaeology Calculator — highlights account benefits when browsing as a guest.',
+    },
+    {
+        date: '2026-03-01',
+        category: 'UI',
+        description: 'Side navigation added — Dashboard, Calculators, Guides, Quests, and Daily Tasks moved to a collapsible sidebar with active route highlighting. Top navbar now shows logo, report/suggestion, admin/support, and account controls.',
+    },
+    {
         date: '2026-02-28',
         category: 'UI',
         description: 'RuneHub logo added to the navbar with "Play your way" tagline.',

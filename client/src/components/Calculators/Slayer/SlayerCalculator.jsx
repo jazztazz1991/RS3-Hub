@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useAuth } from '../../../context/AuthContext';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { SLAYER_MASTERS, SLAYER_MONSTERS } from '../../../data/skills/slayerData';
 import { getXpAtLevel } from '../../../utils/rs3';
 import { useSlayerLog } from '../../../hooks/useSlayerLog';
 import SlayerLog from './SlayerLog';
+import LoginBanner from '../../Common/LoginBanner';
 import ReportModal from '../../Common/ReportModal';
 import './SlayerCalculator.css';
 import './SlayerCalculator_Report.css';
 
 const SlayerCalculator = () => {
+    const { user } = useAuth();
     const { characterData, selectedCharacter, updateBlockList } = useCharacter();
     const slayerLog = useSlayerLog();
     const { getStatsForMonster } = slayerLog;
@@ -189,7 +192,8 @@ const SlayerCalculator = () => {
 
     return (
         <div className="slayer-calculator">
-            
+            {!user && <LoginBanner features="save your slayer task log and block list across sessions" />}
+
             <div className="tab-navigation">
                 <button 
                     className={`tab-btn ${viewMode === 'calculator' ? 'active' : ''}`}
