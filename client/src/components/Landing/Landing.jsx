@@ -76,9 +76,7 @@ const Landing = () => {
             <section className="landing-hero">
                 <div className="hero-content">
                     <p className="hero-eyebrow">RuneScape 3 Toolkit</p>
-                    <h1 className="hero-title">
-                        Rune<span className="hero-title-accent">Hub</span>
-                    </h1>
+                    <img src="/images/logos/Runehublogo.png" alt="RuneHub" className="hero-logo" />
                     <p className="hero-subtitle">
                         Skill calculators, training guides, and quest tracking — built for every type of player.
                     </p>

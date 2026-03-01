@@ -6,7 +6,7 @@
 
 /* ── Hero ─────────────────────────────────────────────── */
 .landing-hero {
-    background: radial-gradient(ellipse at 50% 0%, #1e2a1e 0%, #242424 60%);
+    background: radial-gradient(ellipse at 50% 0%, #162a33 0%, #242424 65%);
     padding: 5rem 2rem 4rem;
     text-align: center;
     border-bottom: 1px solid #333;
@@ -25,16 +25,11 @@
     margin-bottom: 1rem;
 }
 
-.hero-title {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: #fff;
-    margin: 0 0 1rem;
-    line-height: 1.15;
-}
-
-.hero-title-accent {
-    color: #ffd700;
+.hero-logo {
+    height: clamp(100px, 20vw, 180px);
+    width: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 16px rgba(79, 195, 247, 0.45)) drop-shadow(0 0 6px rgba(79, 195, 247, 0.25));
 }
 
 .hero-subtitle {
@@ -226,7 +221,7 @@
 
 /* ── Bottom CTA ───────────────────────────────────────── */
 .landing-cta-bottom {
-    background: radial-gradient(ellipse at 50% 100%, #1e2a1e 0%, #242424 60%);
+    background: radial-gradient(ellipse at 50% 100%, #162a33 0%, #242424 65%);
     padding: 4rem 2rem;
     text-align: center;
     flex: 1;
