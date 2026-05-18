@@ -17,8 +17,25 @@ const reportRoutes = require('./routes/reports');
 const suggestionRoutes = require('./routes/suggestions');
 const userRoutes = require('./routes/users');
 const itemRoutes = require('./routes/items');
+const logger = require('./utils/logger');
+const requestLogger = require('./middleware/requestLogger');
+const errorHandler = require('./middleware/errorHandler');
 
 dotenv.config();
+
+// Process-level handlers. Unhandled rejections get logged but don't kill the
+// process. Uncaught exceptions are logged then the process exits (per Node
+// best practice — process state is unreliable after one and Render will
+// restart automatically).
+process.on('unhandledRejection', (reason, promise) => {
+  const err = reason instanceof Error ? reason : new Error(String(reason));
+  logger.error('UNHANDLED REJECTION', err, { promise: String(promise) });
+});
+process.on('uncaughtException', (err) => {
+  logger.error('UNCAUGHT EXCEPTION — process will exit', err);
+  // Flush stdout then exit. Render restarts on non-zero exit.
+  setTimeout(() => process.exit(1), 100);
+});
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -73,6 +90,9 @@ app.use(session({
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+// 5xx request logger — fires after the response finishes
+app.use(requestLogger);
 
 // Routes
 app.use('/auth', authRoutes);
@@ -150,6 +170,10 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+// Global error handler — mounted last so it catches anything propagated
+// via next(err) or thrown in async routes wrapped to call next.
+app.use(errorHandler);
+
 // Sync Database and Start Server
 sequelize.sync({ alter: true })
   .then(async () => {
@@ -158,12 +182,13 @@ sequelize.sync({ alter: true })
     // One-time migration: promote all legacy isAdmin=true users to owner role
     await sequelize.query(
       "UPDATE users SET role = 'owner' WHERE \"isAdmin\" = true AND role = 'user'"
-    ).catch(err => console.warn('Role migration skipped (isAdmin column may not exist):', err.message));
+    ).catch(err => logger.warn('Role migration skipped', { message: err.message }));
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   })
   .catch(err => {
-    console.error('Error syncing database:', err);
+    logger.error('Database sync failed — server will exit', err);
+    process.exit(1);
   });
