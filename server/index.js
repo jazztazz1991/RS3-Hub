@@ -20,6 +20,7 @@ const itemRoutes = require('./routes/items');
 const logger = require('./utils/logger');
 const requestLogger = require('./middleware/requestLogger');
 const errorHandler = require('./middleware/errorHandler');
+const { startScheduler } = require('./jobs/scheduler');
 
 dotenv.config();
 
@@ -186,6 +187,9 @@ sequelize.sync({ alter: true })
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
+      // Start in-process cron only after the HTTP server is listening so
+      // we don't accidentally trigger DB work mid-startup.
+      startScheduler();
     });
   })
   .catch(err => {

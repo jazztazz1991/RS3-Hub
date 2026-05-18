@@ -3,40 +3,40 @@
 // Strategy: batch up to 100 ids per WeirdGloop request (their endpoint
 // accepts pipe-separated lists). Throttle between batches at ~1 rps.
 //
-// Run locally:    node server/jobs/refreshPrices.js
-// Run on Render:  set up a Cron Job pointing at this script (see README).
+// Use:
+//   CLI:       node server/jobs/refreshPrices.js
+//   Scheduler: require this module and call refreshAllPrices()
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const { Op } = require('sequelize');
 const { sequelize, Item, ItemSyncLog } = require('../models');
 const gePriceClient = require('../services/gePriceClient');
+const logger = require('../utils/logger');
 
 const BATCH_SIZE = 100;
 const BATCH_DELAY_MS = 1100;
 
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
-async function main() {
-  console.log('Connecting...');
-  await sequelize.authenticate();
-
+// Core: refresh all known item prices. Returns a summary. Does NOT close
+// the Sequelize connection — callers (especially the internal scheduler)
+// share the same connection as the live server.
+async function refreshAllPrices() {
   const items = await Item.findAll({
     where: { ge_item_id: { [Op.not]: null } },
     attributes: ['id', 'name', 'ge_item_id'],
   });
-  console.log(`Found ${items.length} items with ge_item_id`);
-
-  if (!items.length) {
-    await sequelize.close();
-    return;
-  }
+  logger.info('Price refresh starting', { totalItems: items.length });
+  if (!items.length) return { updated: 0, missed: 0, failedBatches: 0 };
 
   let updated = 0, missed = 0, failedBatches = 0;
+  const totalBatches = Math.ceil(items.length / BATCH_SIZE);
 
   for (let i = 0; i < items.length; i += BATCH_SIZE) {
     const batch = items.slice(i, i + BATCH_SIZE);
     const ids = batch.map(it => it.ge_item_id);
+    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
     try {
       const prices = await gePriceClient.getLatestByIds(ids);
       const now = new Date();
@@ -50,10 +50,9 @@ async function main() {
         }, { where: { id: it.id } });
         updated++;
       }
-      console.log(`  batch ${Math.floor(i / BATCH_SIZE) + 1}: +${batch.length} (updated=${updated} missed=${missed})`);
     } catch (err) {
       failedBatches++;
-      console.error(`  batch ${Math.floor(i / BATCH_SIZE) + 1} failed:`, err.message);
+      logger.error(`Price refresh batch ${batchNum}/${totalBatches} failed`, err);
     }
     if (i + BATCH_SIZE < items.length) await sleep(BATCH_DELAY_MS);
   }
@@ -66,13 +65,23 @@ async function main() {
     error_message: failedBatches > 0 ? `${failedBatches} batches failed` : null,
   });
 
-  console.log(`\nDone. updated=${updated}, no-data=${missed}, failed_batches=${failedBatches}`);
+  logger.info('Price refresh done', { updated, missed, failedBatches });
+  return { updated, missed, failedBatches };
+}
+
+// CLI entry — owns its own connection lifecycle.
+async function runAsCli() {
+  console.log('Connecting...');
+  await sequelize.authenticate();
+  await refreshAllPrices();
   await sequelize.close();
 }
 
 if (require.main === module) {
-  main().catch(err => {
+  runAsCli().catch(err => {
     console.error('Fatal:', err);
     process.exit(1);
   });
 }
+
+module.exports = { refreshAllPrices };
