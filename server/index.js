@@ -16,6 +16,7 @@ const questRoutes = require('./routes/quests');
 const reportRoutes = require('./routes/reports');
 const suggestionRoutes = require('./routes/suggestions');
 const userRoutes = require('./routes/users');
+const itemRoutes = require('./routes/items');
 
 dotenv.config();
 
@@ -50,8 +51,8 @@ app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true
 }));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '1mb' }));
+app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 
 // Session Setup
 app.use(session({
@@ -60,7 +61,7 @@ app.use(session({
     tableName: 'session',
     createTableIfMissing: true
   }),
-  secret: process.env.SESSION_SECRET || 'super_secret_key',
+  secret: process.env.SESSION_SECRET || (process.env.NODE_ENV === 'production' ? (() => { throw new Error('SESSION_SECRET must be set in production'); })() : 'dev_secret_key'),
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -81,64 +82,49 @@ app.use('/api/quests', questRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/suggestions', suggestionRoutes);
 app.use('/api/users', require('./routes/users'));
+app.use('/api/items', itemRoutes);
 
-// Proxy route for Jagex Hiscores (with Caching)
-// https://secure.runescape.com/m=hiscore/index_lite.ws?player=X
+// Proxy route for Jagex Hiscores (with Caching for authenticated users)
 app.get('/api/hiscores/:player', async (req, res) => {
   const { player } = req.params;
-  
+
   try {
-    // 1. Try fetching live data
     const response = await axios.get(`https://secure.runescape.com/m=hiscore/index_lite.ws?player=${player}`);
-    
-    // 2. If successful, respond to client immediately
+
     res.send(response.data);
 
-    // 3. Background: Update specific character record if user is tracking it
-    // We only update if a user is logged in (req.user) OR we could search purely by name across all users,
-    // but usually we care about the authenticated user's context. 
-    // If the frontend is calling this, it probably means the user is looking at their "Dashboard".
+    // Only cache to DB if user is authenticated
     if (req.user) {
-        // Find the character linked to this user (Case-insensitive search for robustness)
-        // Note: Postgres matches are case sensitive by default, but Sequelize findOne usually exact match.
-        // We'll rely on the frontend passing the exact name stored in DB, or use ILIKE if needed.
-        // For simplicity, we assume exact string match or we grab the one they "own".
-        
         try {
-            // Find character by name and userId
-            const char = await Character.findOne({ 
-                where: { 
-                    userId: req.user.id,
-                    name: player 
-                } 
+            const char = await Character.findOne({
+                where: { userId: req.user.id, name: player }
             });
-
             if (char) {
-                // Update the stats cache
                 char.last_known_stats = response.data;
                 await char.save();
-                console.log(`Updated cache for character: ${player}`);
             }
         } catch (dbErr) {
             console.error("Failed to update character cache:", dbErr.message);
         }
     }
 
-  } catch (error) {
-    console.error('Error fetching live hiscores:', error.message);
+  } catch (err) {
+    const status = err.response?.status;
 
-    // 4. Fallback: If live fetch fails, try to retrieve from DB cache
+    // Player not found on Jagex hiscores
+    if (status === 404) {
+      return res.status(404).json({ error: 'Player not found on hiscores.' });
+    }
+
+    console.error('Error fetching live hiscores:', err.message);
+
+    // Fallback to cached data for authenticated users only
     if (req.user) {
         try {
-            const char = await Character.findOne({ 
-                where: { 
-                    userId: req.user.id,
-                    name: player
-                } 
+            const char = await Character.findOne({
+                where: { userId: req.user.id, name: player }
             });
-
             if (char && char.last_known_stats) {
-                console.log(`Serving cached stats for: ${player}`);
                 return res.send(char.last_known_stats);
             }
         } catch (dbErr) {
@@ -146,8 +132,7 @@ app.get('/api/hiscores/:player', async (req, res) => {
         }
     }
 
-    // 5. If no cache available, fail
-    res.status(500).json({ error: 'Failed to fetch hiscores and no cache available' });
+    res.status(502).json({ error: 'Jagex hiscores are currently unavailable. Please try again later.' });
   }
 });
 

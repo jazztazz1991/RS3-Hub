@@ -1,0 +1,235 @@
+/* Item detail page — mirrors the RS3 Wiki infobox + sections layout. */
+
+.idetail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    color: var(--text-primary, #e6e6e6);
+}
+
+.idetail-loading,
+.idetail-error {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary, #999);
+}
+
+.idetail-error {
+    color: #d97373;
+}
+
+.idetail-header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--accent, #0d8c8c);
+    padding-bottom: 0.5rem;
+}
+
+.idetail-description {
+    margin: 0.75rem 0 1.25rem;
+    color: var(--text-secondary, #aaa);
+    line-height: 1.5;
+}
+
+.idetail-body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (max-width: 880px) {
+    .idetail-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Infobox ─────────────────────────────────────────── */
+.idetail-infobox {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    overflow: hidden;
+}
+
+.idetail-infobox-header {
+    background: var(--accent-dark, #0a5757);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 0.75rem;
+    text-align: center;
+}
+
+.idetail-infobox-image {
+    text-align: center;
+    padding: 0.75rem;
+    background: var(--bg-tertiary, #111827);
+}
+
+.idetail-infobox-image img {
+    max-width: 80px;
+    max-height: 80px;
+    image-rendering: pixelated;
+}
+
+.idetail-infobox-group-header {
+    background: var(--accent-dark, #0a5757);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.idetail-infobox-group {
+    border-top: 1px solid var(--border-color, #374151);
+}
+
+.idetail-infobox-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid var(--border-color, #2a3a4f);
+}
+
+.idetail-infobox-row:last-child {
+    border-bottom: none;
+}
+
+.idetail-infobox-label {
+    color: var(--accent-light, #6cd5d5);
+    font-weight: 600;
+}
+
+.idetail-infobox-value {
+    color: var(--text-primary, #e6e6e6);
+}
+
+.yn-yes { color: #6ad07a; font-weight: 500; }
+.yn-no { color: #d97373; font-weight: 500; }
+.yn-unknown { color: var(--text-secondary, #888); }
+
+/* ── Main content sections ──────────────────────────── */
+.idetail-main {
+    min-width: 0;
+}
+
+.idetail-section {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.idetail-section-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+    color: var(--accent-light, #6cd5d5);
+    border-bottom: 1px solid var(--border-color, #2a3a4f);
+    padding-bottom: 0.4rem;
+}
+
+.idetail-empty {
+    margin: 0;
+    color: var(--text-secondary, #777);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.idetail-empty-inline {
+    color: var(--text-secondary, #777);
+    font-style: italic;
+}
+
+.idetail-recipe + .idetail-recipe {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color, #2a3a4f);
+}
+
+.idetail-recipe-variant {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-primary, #ccc);
+}
+
+.idetail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.idetail-table th,
+.idetail-table td {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-color, #2a3a4f);
+    vertical-align: top;
+}
+
+.idetail-table th {
+    color: var(--accent-light, #6cd5d5);
+    font-weight: 600;
+    width: 30%;
+    background: var(--bg-tertiary, #111827);
+}
+
+.idetail-table-wide th {
+    width: auto;
+    background: var(--accent-dark, #0a5757);
+    color: #fff;
+}
+
+.idetail-th-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.idetail-th-sortable:hover {
+    background: var(--accent, #0d8c8c);
+}
+
+.idetail-th-active {
+    background: var(--accent, #0d8c8c);
+}
+
+.idetail-sort-indicator {
+    display: inline-block;
+    margin-left: 0.3rem;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.idetail-th-active .idetail-sort-indicator {
+    opacity: 1;
+}
+
+.idetail-mat-list {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.idetail-mat-list li {
+    margin: 0.1rem 0;
+}
+
+.idetail-mat-cost {
+    color: var(--text-secondary, #888);
+    font-size: 0.85em;
+}
+
+.idetail-shop-req {
+    color: var(--text-secondary, #888);
+    font-size: 0.85em;
+}
+
+.idetail-table a {
+    color: var(--accent-light, #6cd5d5);
+    text-decoration: none;
+}
+
+.idetail-table a:hover {
+    text-decoration: underline;
+}

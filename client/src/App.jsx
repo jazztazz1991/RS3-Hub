@@ -54,6 +54,9 @@ const DivinationCalculator = lazy(() => import('./components/Calculators/Divinat
 const NecromancyCalculator = lazy(() => import('./components/Calculators/Necromancy/NecromancyCalculator'));
 const UrnsCalculator = lazy(() => import('./components/Calculators/Tools/UrnsCalculator'));
 
+const Items = lazy(() => import('./components/Items/Items'));
+const ItemDetail = lazy(() => import('./components/Items/ItemDetail'));
+
 const Guides = lazy(() => import('./components/Guides/Guides'));
 const NecromancyGuide = lazy(() => import('./components/Guides/NecromancyGuide'));
 const ThievingGuide = lazy(() => import('./components/Guides/ThievingGuide'));
@@ -157,6 +160,10 @@ function AppContent() {
               {/* Public — Quests (read-only browsing) */}
               <Route path="/quests" element={<QuestTracker />} />
               <Route path="/quests/:questTitle" element={<QuestDetails />} />
+
+              {/* Public — Items (catalog) */}
+              <Route path="/items" element={<Items />} />
+              <Route path="/items/:slug" element={<ItemDetail />} />
 
               {/* Protected — features that save to database */}
               <Route element={<ProtectedRoute />}>

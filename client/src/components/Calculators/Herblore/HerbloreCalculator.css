@@ -176,3 +176,576 @@
     display: block;
     margin: 0 auto 1rem auto;
 }
+
+/* ──────────── Mode tabs ──────────── */
+.herblore-mode-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--herb-border-heading);
+}
+
+.herblore-mode-tabs button {
+    background: transparent;
+    border: 1px solid transparent;
+    border-bottom: none;
+    color: var(--herb-text-dim);
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border-radius: 6px 6px 0 0;
+    transform: translateY(1px);
+}
+
+.herblore-mode-tabs button:hover {
+    color: var(--herb-text-main);
+}
+
+.herblore-mode-tabs button.active {
+    background: var(--herb-bg-card);
+    color: var(--herb-text-heading);
+    border-color: var(--herb-border-heading);
+}
+
+/* ──────────── Ironman Planner ──────────── */
+.herblore-planner {
+    color: var(--herb-text-main);
+    max-width: 900px;
+}
+
+.herblore-planner h3 {
+    color: var(--herb-text-heading);
+    margin: 0 0 0.5rem;
+}
+
+.planner-sub {
+    color: var(--herb-text-dim);
+    margin: 0 0 1.25rem;
+    font-size: 0.9rem;
+}
+
+.planner-sub-small {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.planner-section {
+    background: var(--herb-bg-card);
+    border: 1px solid var(--herb-border-heading);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.planner-label {
+    display: block;
+    color: var(--herb-text-label);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.planner-status,
+.planner-empty {
+    color: var(--herb-text-dim);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.planner-error {
+    color: #ff8a80;
+    font-size: 0.9rem;
+}
+
+/* Search + results */
+.planner-search {
+    width: 100%;
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-input);
+    color: var(--herb-text-main);
+    padding: 0.6rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.planner-search:focus {
+    outline: none;
+    border-color: var(--herb-border-active);
+}
+
+.planner-results {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-list);
+    border-radius: 6px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.planner-results li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.75rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--herb-border-list);
+}
+
+.planner-results li:last-child {
+    border-bottom: none;
+}
+
+.planner-results li:hover {
+    background: var(--herb-bg-hover);
+}
+
+.planner-results img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.planner-mem {
+    margin-left: auto;
+    color: #ffd866;
+    font-size: 0.7rem;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 0.05rem 0.35rem;
+    border-radius: 3px;
+}
+
+.planner-target-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-list);
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+}
+
+.planner-target-pill img {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.planner-target-pill button {
+    background: transparent;
+    border: 1px solid var(--herb-border-input);
+    color: var(--herb-text-dim);
+    border-radius: 4px;
+    padding: 0.15rem 0.55rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.planner-target-pill button:hover {
+    color: var(--herb-text-main);
+    border-color: var(--herb-border-active);
+}
+
+.planner-recipe-summary {
+    color: var(--herb-text-dim);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* Mode toggle (quantity/time) */
+.planner-mode-toggle {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.planner-mode-toggle button {
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-input);
+    color: var(--herb-text-dim);
+    padding: 0.4rem 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.planner-mode-toggle button.active {
+    background: var(--herb-bg-hover);
+    border-color: var(--herb-border-active);
+    color: var(--herb-text-btn);
+}
+
+.planner-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--herb-text-main);
+    font-size: 0.95rem;
+}
+
+.planner-input-row label {
+    color: var(--herb-text-dim);
+}
+
+.planner-input-row input {
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-input);
+    color: var(--herb-text-main);
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    width: 100px;
+    font-size: 0.95rem;
+}
+
+.planner-input-row input:focus {
+    outline: none;
+    border-color: var(--herb-border-active);
+}
+
+.planner-time-scope {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--herb-border-list);
+}
+
+.planner-time-scope-label {
+    color: var(--herb-text-dim);
+    font-size: 0.85rem;
+}
+
+.planner-time-scope .planner-hint {
+    margin-left: auto;
+}
+
+/* Boost checkboxes */
+.planner-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.planner-checks label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--herb-text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Inventory grid */
+.planner-inv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 0.5rem;
+}
+
+.planner-inv-row {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) 80px auto;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--herb-bg-dark);
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--herb-border-list);
+    min-height: 44px;
+}
+
+.planner-inv-row img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.planner-inv-image-placeholder {
+    color: var(--herb-text-dim);
+    text-align: center;
+}
+
+.planner-inv-name {
+    color: var(--herb-text-main);
+    font-size: 0.9rem;
+    line-height: 1.2;
+    word-break: break-word;
+}
+
+.planner-inv-row input {
+    background: var(--herb-bg-card);
+    border: 1px solid var(--herb-border-input);
+    color: var(--herb-text-main);
+    padding: 0.3rem 0.45rem;
+    border-radius: 3px;
+    text-align: right;
+    font-size: 0.85rem;
+    width: 70px;
+    box-sizing: border-box;
+}
+
+.planner-inv-need {
+    color: var(--herb-text-dim);
+    font-size: 0.85rem;
+}
+
+/* Shopping list */
+.planner-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.planner-table th,
+.planner-table td {
+    text-align: left;
+    padding: 0.45rem 0.65rem;
+    border-bottom: 1px solid var(--herb-border-list);
+}
+
+.planner-table th {
+    color: var(--herb-text-label);
+    background: var(--herb-bg-dark);
+    font-weight: 600;
+}
+
+.planner-table a {
+    color: var(--herb-text-xp);
+    text-decoration: none;
+}
+
+.planner-table a:hover {
+    text-decoration: underline;
+}
+
+.planner-row-image {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.planner-row-done {
+    opacity: 0.5;
+}
+
+.planner-need {
+    color: var(--herb-text-xp);
+    font-weight: 600;
+}
+
+.planner-need-zero {
+    color: var(--herb-text-dim);
+}
+
+/* Summary tile */
+.planner-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    background: var(--herb-bg-card);
+    border: 1px solid var(--herb-border-active);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.planner-summary > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.planner-summary-label {
+    color: var(--herb-text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.planner-summary-value {
+    color: var(--herb-text-xp);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.planner-summary-tip {
+    position: relative;
+    cursor: help;
+}
+
+.planner-info-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 13px;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--herb-bg-dark);
+    color: var(--herb-text-dim);
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
+    border: 1px solid var(--herb-border-list);
+}
+
+.planner-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.4rem;
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-active);
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--herb-text-main);
+    line-height: 1.4;
+    min-width: 220px;
+    max-width: 320px;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.15s, transform 0.15s;
+}
+
+.planner-summary-tip:hover .planner-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.planner-tooltip strong {
+    color: var(--herb-text-xp);
+}
+
+.planner-tooltip-note {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--herb-border-list);
+    color: var(--herb-text-dim);
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+/* Inventory header (label + detailed toggle on one line) */
+.planner-inv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.planner-inv-header .planner-label {
+    margin-bottom: 0;
+}
+
+.planner-detailed-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--herb-text-main);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.planner-hint {
+    color: var(--herb-text-dim);
+    font-size: 0.75rem;
+}
+
+/* Collapsible inventory groups */
+.planner-inv-group {
+    margin-top: 0.5rem;
+    background: var(--herb-bg-dark);
+    border: 1px solid var(--herb-border-list);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.planner-inv-group-summary {
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.55rem 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(46, 125, 50, 0.15);
+    transition: background 0.15s;
+}
+
+.planner-inv-group-summary::-webkit-details-marker {
+    display: none;
+}
+
+.planner-inv-group-summary::before {
+    content: '▸';
+    color: var(--herb-text-label);
+    font-size: 0.75rem;
+    transition: transform 0.15s;
+    margin-right: 0.3rem;
+}
+
+.planner-inv-group[open] > .planner-inv-group-summary::before {
+    transform: rotate(90deg);
+    display: inline-block;
+}
+
+.planner-inv-group-summary:hover {
+    background: rgba(46, 125, 50, 0.28);
+}
+
+.planner-inv-group-name {
+    color: var(--herb-text-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex: 1;
+}
+
+.planner-inv-group-count {
+    color: var(--herb-text-dim);
+    font-size: 0.8rem;
+}
+
+.planner-inv-group > .planner-inv-grid {
+    padding: 0.5rem;
+}
+
+.planner-inv-row-surplus {
+    border-color: #ffd866;
+    background: rgba(255, 215, 0, 0.06);
+}
+
+/* Surplus warning block under shopping list */
+.planner-warn {
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.85rem;
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 4px;
+    color: var(--herb-text-main);
+    font-size: 0.85rem;
+}
+
+.planner-warn strong {
+    color: #ffd866;
+}
+
+.planner-warn ul {
+    margin: 0.4rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.planner-warn li {
+    margin: 0.1rem 0;
+}

@@ -6,6 +6,13 @@ const Suggestion = require('./Suggestion');
 const SlayerTask = require('./SlayerTask');
 const UserQuest = require('./UserQuest');
 const PageVisit = require('./PageVisit');
+const Item = require('./Item');
+const ItemRecipe = require('./ItemRecipe');
+const ItemProduct = require('./ItemProduct');
+const ItemDisassembly = require('./ItemDisassembly');
+const ItemDrop = require('./ItemDrop');
+const ItemShop = require('./ItemShop');
+const ItemSyncLog = require('./ItemSyncLog');
 
 
 // Define Associations
@@ -33,6 +40,22 @@ Suggestion.belongsTo(User, { foreignKey: 'userId' });
 User.hasMany(PageVisit, { foreignKey: 'user_id', as: 'pageVisits' });
 PageVisit.belongsTo(User, { foreignKey: 'user_id' });
 
+// Item associations
+Item.hasMany(ItemRecipe, { foreignKey: 'itemId', as: 'recipes', onDelete: 'CASCADE' });
+ItemRecipe.belongsTo(Item, { foreignKey: 'itemId' });
+
+Item.hasMany(ItemProduct, { foreignKey: 'inputItemId', as: 'products', onDelete: 'CASCADE' });
+ItemProduct.belongsTo(Item, { foreignKey: 'inputItemId', as: 'inputItem' });
+
+Item.hasOne(ItemDisassembly, { foreignKey: 'itemId', as: 'disassembly', onDelete: 'CASCADE' });
+ItemDisassembly.belongsTo(Item, { foreignKey: 'itemId' });
+
+Item.hasMany(ItemDrop, { foreignKey: 'itemId', as: 'drops', onDelete: 'CASCADE' });
+ItemDrop.belongsTo(Item, { foreignKey: 'itemId' });
+
+Item.hasMany(ItemShop, { foreignKey: 'itemId', as: 'shops', onDelete: 'CASCADE' });
+ItemShop.belongsTo(Item, { foreignKey: 'itemId' });
+
 module.exports = {
   sequelize,
   User,
@@ -41,5 +64,12 @@ module.exports = {
   Suggestion,
   SlayerTask,
   UserQuest,
-  PageVisit
+  PageVisit,
+  Item,
+  ItemRecipe,
+  ItemProduct,
+  ItemDisassembly,
+  ItemDrop,
+  ItemShop,
+  ItemSyncLog,
 };

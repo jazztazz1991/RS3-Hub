@@ -4,17 +4,21 @@ import { useReportCalls } from '../../../context/ReportContext';
 import { HERBLORE_ITEMS as HERBLORE_METHODS } from '../../../data/skills/herbloreData';
 import { XP_TABLE, getLevelAtXp, getXpAtLevel } from '../../../utils/rs3';
 import SkillIcon from '../../Common/SkillIcon';
+import HerbloreIronmanPlanner from './HerbloreIronmanPlanner';
 import './HerbloreCalculator.css';
 
 const HerbloreCalculator = () => {
     const { characterData } = useCharacter();
     const { updateReportContext, clearReportContext } = useReportCalls();
     
+    // Mode toggle: 'level' = original level/XP calculator, 'planner' = Ironman gather planner
+    const [mode, setMode] = useState('level');
+
     // State
     const [currentXp, setCurrentXp] = useState(0);
     const [targetLevel, setTargetLevel] = useState(99);
     const [targetXp, setTargetXp] = useState(XP_TABLE[99]);
-    const [selectedMethodId, setSelectedMethodId] = useState(HERBLORE_METHODS[0]?.id || 'attack_pot'); 
+    const [selectedMethodId, setSelectedMethodId] = useState(HERBLORE_METHODS[0]?.id || 'attack_pot');
     const [categoryFilter, setCategoryFilter] = useState('All');
 
     // Initialize from Character Context
@@ -75,7 +79,21 @@ const HerbloreCalculator = () => {
     return (
         <div className="herblore-calculator">
             <h2>Herblore Calculator</h2>
-            
+
+            <div className="herblore-mode-tabs">
+                <button
+                    className={mode === 'level' ? 'active' : ''}
+                    onClick={() => setMode('level')}
+                >Level / XP</button>
+                <button
+                    className={mode === 'planner' ? 'active' : ''}
+                    onClick={() => setMode('planner')}
+                >Ironman planner</button>
+            </div>
+
+            {mode === 'planner' && <HerbloreIronmanPlanner />}
+
+            {mode === 'level' && (
             <div className="calc-layout">
                 {/* 1. Inputs */}
                 <div className="calc-inputs">
@@ -165,6 +183,7 @@ const HerbloreCalculator = () => {
                     </div>
                 </div>
             </div>
+            )}
         </div>
     );
 };

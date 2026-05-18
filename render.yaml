@@ -16,6 +16,24 @@ services:
         generateValue: true
     autoDeploy: true
 
+  # Nightly GE price refresh for seeded items.
+  # Runs at 04:00 UTC daily — well outside Jagex's daily GE recalc window.
+  - type: cron
+    name: rs3-efficiency-hub-prices
+    runtime: node
+    schedule: "0 4 * * *"
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm run refresh:prices
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: rs3hub-db
+          property: connectionString
+      - key: WIKI_USER_AGENT
+        value: "RS3-Efficiency-Hub/0.1 (https://rs3-efficiency-hub.onrender.com)"
+
 databases:
   - name: rs3hub-db
     plan: free
