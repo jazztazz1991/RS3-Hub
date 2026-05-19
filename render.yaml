@@ -22,8 +22,7 @@ services:
 # sleep after 15 min of inactivity, so external keepalive may be needed for
 # reliable daily refreshes.
 
-databases:
-  - name: rs3hub-db
-    plan: basic_256mb
-    databaseName: rs3hub
-    user: rs3hub_user
+# The rs3hub-db database is provisioned/managed manually in the Render
+# dashboard (not via this blueprint). The web service's DATABASE_URL above
+# references it by name through fromDatabase, which resolves against any
+# database in the same Render account.
