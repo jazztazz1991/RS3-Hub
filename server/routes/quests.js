@@ -90,12 +90,12 @@ router.post('/import', isAuthenticated, async (req, res) => {
         const response = await axios.get(rsApiUrl);
         const data = response.data;
 
-        if (!data.quests) {
+        if (!data.quests || !Array.isArray(data.quests)) {
             return res.status(404).json({ message: "No quest data found. Is profile public?" });
         }
 
         const completedQuests = data.quests
-            .filter(q => q.status === "COMPLETED")
+            .filter(q => q && q.title && q.status === "COMPLETED")
             .map(q => ({
                 userId: req.user.id,
                 characterId: character.id,

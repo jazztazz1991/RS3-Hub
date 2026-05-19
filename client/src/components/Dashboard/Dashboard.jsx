@@ -5,7 +5,6 @@ import { useReportCalls } from '../../context/ReportContext';
 import { getTargetXp, XP_TABLE } from '../../utils/rs3';
 import { useNavigate } from 'react-router-dom';
 import TaskTracker from './TaskTracker';
-import WildyTracker from '../WildyEvents/WildyTracker';
 import './Dashboard.css';
 
 const GUIDE_SLUGS = {
@@ -77,7 +76,6 @@ const SkillCard = ({ skill, isExpanded, onToggle }) => {
     <div
       className={`skill-card ${isAtLeast99 ? 'maxed' : ''} ${isExpanded ? 'expanded' : ''}`}
       onClick={onToggle}
-      style={{ cursor: 'pointer' }}
     >
       <div className="skill-header">
         <span className="skill-name">{skill.name}</span>
@@ -105,7 +103,7 @@ const SkillCard = ({ skill, isExpanded, onToggle }) => {
         ) : (
           <>
             {/* If Maxed (99) but chasing Comp (110/120), show mini badge or indicator? */}
-            {isAtLeast99 && <div className="completed-badge" style={{padding: '0.2rem', marginBottom: '0.3rem', fontSize: '0.8rem'}}>MAXED</div>}
+            {isAtLeast99 && <div className="completed-badge mini">MAXED</div>}
 
             <div className="detail-item">
                 <span className="label">{isAtLeast99 ? 'To Comp:' : 'To Go:'}</span>
@@ -235,6 +233,23 @@ const Dashboard = () => {
 
   }, [characterData]);
 
+  const sortedSkills = useMemo(() => {
+    if (!characterData.length) return [];
+    const skills = [...characterData.slice(1)];
+    if (sortMethod === 'level_desc') {
+      skills.sort((a, b) => b.xp - a.xp);
+    } else if (sortMethod === 'level_asc') {
+      skills.sort((a, b) => a.xp - b.xp);
+    } else if (sortMethod === 'percent_desc') {
+      skills.sort((a, b) => {
+        const pctA = (() => { const t = getTargetXp(a.name, a.xp); return t > 0 ? a.xp / t : 0; })();
+        const pctB = (() => { const t = getTargetXp(b.name, b.xp); return t > 0 ? b.xp / t : 0; })();
+        return pctB - pctA;
+      });
+    }
+    return skills;
+  }, [characterData, sortMethod]);
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
@@ -258,9 +273,8 @@ const Dashboard = () => {
                     className="stat-box clickable" 
                     onClick={() => setShowCompStats(!showCompStats)}
                     title="Click to toggle between Maxed (99) and True Max (120/110)"
-                    style={{ cursor: 'pointer', userSelect: 'none', minWidth: '120px' }}
                 >
-                    <div key={showCompStats ? 'comp' : 'max'} className="stat-anim-container" style={{animation: 'fadeIn 0.4s ease-out'}}>
+                    <div key={showCompStats ? 'comp' : 'max'} className="stat-anim-container">
                          <h3>{showCompStats ? 'Comped Skills' : 'Maxed Skills'}</h3>
                          <p>
                              {showCompStats ? globalStats.maxedCount : globalStats.count99} / {globalStats.totalSkills}
@@ -272,7 +286,7 @@ const Dashboard = () => {
       </div>
        
        {/* Character Controls Section */}
-       <div className="controls-section" style={{marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#333', padding: '1rem', borderRadius: '8px', flexWrap: 'wrap', gap: '1rem'}}> 
+       <div className="controls-section">
             <div className="character-selector">
                 {characters.map(char => (
                     <button 
@@ -292,11 +306,11 @@ const Dashboard = () => {
                 ))}
             </div>
 
-            <div className="controls-right" style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
+            <div className="controls-right">
                 {/* Sorting Dropdown */}
                  {characterData && characterData.length > 0 && (
                      <div className="sort-wrapper">
-                         <label htmlFor="sort-skills" style={{marginRight: '0.5rem', color: '#ccc', fontSize: '0.9rem'}}>Sort:</label>
+                         <label htmlFor="sort-skills" className="sort-label">Sort:</label>
                          <select 
                             id="sort-skills"
                             value={sortMethod}
@@ -311,7 +325,7 @@ const Dashboard = () => {
                      </div>
                  )}
 
-                 <div className="add-char-wrapper" style={{ position: 'relative' }}>
+                 <div className="add-char-wrapper">
                     <form onSubmit={handleAddCharacter} className="add-char-form">
                         <input 
                             type="text" 
@@ -322,7 +336,7 @@ const Dashboard = () => {
                         />
                         <button type="submit" className="add-char-btn">Add</button>
                     </form>
-                    {addError && <span className="error-message" style={{position: 'absolute', fontSize: '0.8rem', marginTop: '5px'}}>{addError}</span>}
+                    {addError && <span className="error-message add-char-error">{addError}</span>}
                  </div>
             </div>
        </div>
@@ -340,35 +354,16 @@ const Dashboard = () => {
                     {loadingData ? (
                         <div className="loading-container">Fetching Hiscores from Jagex...</div>
                     ) : (
-                        <div className="skills-grid"> 
+                        <div className="skills-grid">
                             {characterData.length > 0 ? (
-                                (() => {
-                                    // Make a copy to sort
-                                    let displayData = [...characterData.slice(1)];
-                                    
-                                    if (sortMethod === 'level_desc') {
-                                        displayData.sort((a,b) => b.xp - a.xp);
-                                    } else if (sortMethod === 'level_asc') {
-                                        displayData.sort((a,b) => a.xp - b.xp);
-                                    } else if (sortMethod === 'percent_desc') {
-                                        displayData.sort((a,b) => {
-                                            const getPercent = (skill) => {
-                                                const target = getTargetXp(skill.name, skill.xp);
-                                                return target > 0 ? skill.xp / target : 0;
-                                            };
-                                            return getPercent(b) - getPercent(a);
-                                        });
-                                    }
-
-                                    return displayData.map(skill => (
-                                        <SkillCard
-                                            key={skill.id}
-                                            skill={skill}
-                                            isExpanded={expandedSkill === skill.name}
-                                            onToggle={() => setExpandedSkill(prev => prev === skill.name ? null : skill.name)}
-                                        />
-                                    ));
-                                })()
+                                sortedSkills.map(skill => (
+                                    <SkillCard
+                                        key={skill.id}
+                                        skill={skill}
+                                        isExpanded={expandedSkill === skill.name}
+                                        onToggle={() => setExpandedSkill(prev => prev === skill.name ? null : skill.name)}
+                                    />
+                                ))
                             ) : (
                                 <div className="error-message">Could not load stats for this character. They may not be on the HiScores.</div>
                             )}
@@ -378,7 +373,6 @@ const Dashboard = () => {
                 {selectedCharacter && (
                     <div className="tracker-section">
                         <TaskTracker characterName={selectedCharacter.name} />
-                        <WildyTracker />
                     </div>
                 )}
             </div>

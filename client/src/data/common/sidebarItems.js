@@ -4,4 +4,6 @@ export const SIDEBAR_ITEMS = [
     { label: 'Guides',      path: '/guides',       icon: '\u{1F4D6}',    auth: false },
     { label: 'Quests',      path: '/quests',       icon: '\u2694\uFE0F', auth: false },
     { label: 'Daily Tasks', path: '/daily-tasks',  icon: '\u2714\uFE0F', auth: true },
+    { label: 'Loot Tracker', path: '/loot',        icon: '\u{1F4B0}',    auth: true },
+    { label: 'Skill Methods', path: '/methods',    icon: '⛏️', auth: false },
 ];

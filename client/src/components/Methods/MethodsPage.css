@@ -1,0 +1,64 @@
+.methods-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    color: var(--text-primary, #e6e6e6);
+}
+
+.methods-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--accent, #0d8c8c);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.methods-page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.methods-page-title h1 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.methods-page-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.methods-page-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.methods-page-switcher label {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.85rem;
+}
+
+.methods-page-switcher select {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.methods-page-sub {
+    color: var(--text-secondary, #aaa);
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+}
+
+.methods-page-source {
+    color: var(--accent-light, #6cd5d5);
+    font-style: italic;
+}

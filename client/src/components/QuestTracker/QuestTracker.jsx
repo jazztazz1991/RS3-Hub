@@ -5,8 +5,12 @@ import { useCharacter } from '../../context/CharacterContext';
 import { useReportCalls } from '../../context/ReportContext';
 import { useQuestLog } from '../../hooks/useQuestLog';
 import { QUEST_DATA } from '../../data/quests/questData';
+import { MAIN_QUEST_COUNT, TOTAL_QUEST_POINTS } from '../../data/quests/questMetadata';
 import LoginBanner from '../Common/LoginBanner';
 import './QuestTracker.css';
+
+const DIFF_ORDER = { 'Novice': 0, 'Intermediate': 1, 'Experienced': 2, 'Master': 3, 'Grandmaster': 4, 'Special': 5 };
+const LENGTH_ORDER = { 'Very Short': 0, 'Short': 1, 'Medium': 2, 'Long': 3, 'Very Long': 4 };
 
 const QuestTracker = () => {
     const navigate = useNavigate();
@@ -39,9 +43,6 @@ const QuestTracker = () => {
         if (sortCol === col) setSortAsc(!sortAsc);
         else { setSortCol(col); setSortAsc(true); }
     };
-
-    const DIFF_ORDER = { 'Novice': 0, 'Intermediate': 1, 'Experienced': 2, 'Master': 3, 'Grandmaster': 4, 'Special': 5 };
-    const LENGTH_ORDER = { 'Very Short': 0, 'Short': 1, 'Medium': 2, 'Long': 3, 'Very Long': 4 };
 
     // Convert character stats array to object for O(1) lookup
     const statsMap = useMemo(() => {
@@ -151,8 +152,6 @@ const QuestTracker = () => {
     // Calc Totals — only count/sum quests that exist in QUEST_DATA
     // (RuneMetrics import may include titles that don't match our data)
     // Sub-quests (title contains ': ') count toward QP but not quest count
-    const mainQuestCount = QUEST_DATA.filter(q => !q.title.includes(': ')).length;
-    const maxQP = useMemo(() => QUEST_DATA.reduce((sum, q) => sum + q.questPoints, 0), []);
     const { totalQP, completedCount } = useMemo(() => {
         let qp = 0;
         let count = 0;
@@ -201,11 +200,11 @@ useEffect(() => {
             {/* Summary Stats */}
             <div className="qt-summary">
                 <div className="stat-box">
-                    <span className="count">{completedCount} / {mainQuestCount}</span>
+                    <span className="count">{completedCount} / {MAIN_QUEST_COUNT}</span>
                     <span className="label">Quests Completed</span>
                 </div>
                 <div className="stat-box">
-                    <span className="count">{totalQP} / {maxQP}</span>
+                    <span className="count">{totalQP} / {TOTAL_QUEST_POINTS}</span>
                     <span className="label">Quest Points</span>
                 </div>
             </div>

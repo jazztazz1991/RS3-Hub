@@ -8,6 +8,7 @@ const EXCLUDED = ['Overall', 'Attack', 'Defence', 'Strength', 'Constitution', 'R
 
 const TOOLS = [
     { name: 'Urns Calculator', path: '/calculators/urns', icon: '⚗' },
+    { name: 'Endgame Goal Calculator', path: '/calculators/endgame', icon: '🏆', sub: 'Max / 120 all / 5.8B planner' },
 ];
 
 const skillCalcs = SKILL_NAMES.filter(name => !EXCLUDED.includes(name));
@@ -46,7 +47,7 @@ const Calculators = () => (
                     <span className="calcs-tool-icon">{tool.icon}</span>
                     <div className="calcs-card-body">
                         <span className="calcs-card-name">{tool.name}</span>
-                        <span className="calcs-card-sub">Utility</span>
+                        <span className="calcs-card-sub">{tool.sub || 'Utility'}</span>
                     </div>
                 </Link>
             ))}

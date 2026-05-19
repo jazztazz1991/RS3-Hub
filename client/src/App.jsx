@@ -10,7 +10,6 @@ import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import Footer from './components/Footer/Footer';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
-import WildyNotification from './components/WildyEvents/WildyNotification';
 
 // Lazy-loaded route components
 const Landing = lazy(() => import('./components/Landing/Landing'));
@@ -23,6 +22,8 @@ const Dashboard = lazy(() => import('./components/Dashboard/Dashboard'));
 const AdminDashboard = lazy(() => import('./components/Admin/AdminDashboard'));
 const SupportDashboard = lazy(() => import('./components/Support/SupportDashboard'));
 const DailyTasks = lazy(() => import('./components/DailyTasks/DailyTasks'));
+const LootTracker = lazy(() => import('./components/Loot/LootTracker'));
+const MethodsPage = lazy(() => import('./components/Methods/MethodsPage'));
 
 const QuestTracker = lazy(() => import('./components/QuestTracker'));
 const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
@@ -53,6 +54,7 @@ const DungeoneeringCalculator = lazy(() => import('./components/Calculators/Dung
 const DivinationCalculator = lazy(() => import('./components/Calculators/Divination/DivinationCalculator'));
 const NecromancyCalculator = lazy(() => import('./components/Calculators/Necromancy/NecromancyCalculator'));
 const UrnsCalculator = lazy(() => import('./components/Calculators/Tools/UrnsCalculator'));
+const GoalCalculator = lazy(() => import('./components/Calculators/Endgame/GoalCalculator'));
 
 const Items = lazy(() => import('./components/Items/Items'));
 const ItemDetail = lazy(() => import('./components/Items/ItemDetail'));
@@ -88,7 +90,6 @@ function AppContent() {
   const location = useLocation();
   return (
     <div className="app-container">
-      <WildyNotification />
       <Navbar />
       <div className="app-body">
         <Sidebar />
@@ -128,6 +129,7 @@ function AppContent() {
               <Route path="/calculators/divination" element={<DivinationCalculator />} />
               <Route path="/calculators/necromancy" element={<NecromancyCalculator />} />
               <Route path="/calculators/urns" element={<UrnsCalculator />} />
+              <Route path="/calculators/endgame" element={<GoalCalculator />} />
 
               {/* Public — Guides (static content) */}
               <Route path="/guides" element={<Guides />} />
@@ -165,12 +167,17 @@ function AppContent() {
               <Route path="/items" element={<Items />} />
               <Route path="/items/:slug" element={<ItemDetail />} />
 
+              {/* Public — Training methods per skill */}
+              <Route path="/methods" element={<MethodsPage />} />
+              <Route path="/methods/:skill" element={<MethodsPage />} />
+
               {/* Protected — features that save to database */}
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/support" element={<SupportDashboard />} />
                 <Route path="/daily-tasks" element={<DailyTasks />} />
+                <Route path="/loot" element={<LootTracker />} />
               </Route>
 
               {/* 404 */}

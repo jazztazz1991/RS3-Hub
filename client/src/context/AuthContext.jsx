@@ -34,19 +34,33 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const res = await axios.post('/auth/login', { email, password });
-    setUser(res.data.user);
-    return res.data;
+    try {
+      const res = await axios.post('/auth/login', { email, password });
+      setUser(res.data.user);
+      return res.data;
+    } catch (err) {
+      const message = err.response?.data?.message || 'Login failed. Please try again.';
+      throw new Error(message);
+    }
   };
 
   const register = async (username, email, password) => {
-    const res = await axios.post('/auth/register', { username, email, password });
-    setUser(res.data.user);
-    return res.data;
+    try {
+      const res = await axios.post('/auth/register', { username, email, password });
+      setUser(res.data.user);
+      return res.data;
+    } catch (err) {
+      const message = err.response?.data?.message || 'Registration failed. Please try again.';
+      throw new Error(message);
+    }
   };
 
   const logout = async () => {
-    await axios.post('/auth/logout');
+    try {
+      await axios.post('/auth/logout');
+    } catch (err) {
+      console.error('Logout failed:', err.message);
+    }
     setUser(null);
   };
 

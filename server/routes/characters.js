@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { Character } = require('../models');
 
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 // Middleware to check if user is authenticated
 const isAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
@@ -53,6 +55,7 @@ router.post('/', isAuthenticated, async (req, res) => {
 router.put('/:id', isAuthenticated, async (req, res) => {
   try {
     const { id } = req.params;
+    if (!UUID_RE.test(id)) return res.status(400).json({ message: 'Invalid character ID' });
     const { pinned_tasks, task_state, block_list, arch_material_bank } = req.body;
 
     const character = await Character.findOne({
@@ -79,6 +82,7 @@ router.put('/:id', isAuthenticated, async (req, res) => {
 router.delete('/:id', isAuthenticated, async (req, res) => {
   try {
     const { id } = req.params;
+    if (!UUID_RE.test(id)) return res.status(400).json({ message: 'Invalid character ID' });
     const deleted = await Character.destroy({
       where: { id, userId: req.user.id }
     });

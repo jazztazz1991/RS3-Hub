@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import axios from 'axios';
 import { parseHiscores } from '../utils/rs3';
 import { useAuth } from './AuthContext';
@@ -194,7 +194,7 @@ export const CharacterProvider = ({ children }) => {
         }
     };
 
-    const value = {
+    const value = useMemo(() => ({
         characters,
         selectedCharId,
         setSelectedCharId,
@@ -209,8 +209,7 @@ export const CharacterProvider = ({ children }) => {
         updateBlockList,
         updateArchMaterialBank,
         questSyncTime
-    };
-
+    }), [characters, selectedCharId, selectedCharacter, characterData, loadingChars, loadingData, questSyncTime]);
 
     return (
         <CharacterContext.Provider value={value}>

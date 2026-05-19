@@ -17,6 +17,8 @@ const reportRoutes = require('./routes/reports');
 const suggestionRoutes = require('./routes/suggestions');
 const userRoutes = require('./routes/users');
 const itemRoutes = require('./routes/items');
+const lootRoutes = require('./routes/loot');
+const trainingMethodsRoutes = require('./routes/trainingMethods');
 const logger = require('./utils/logger');
 const requestLogger = require('./middleware/requestLogger');
 const errorHandler = require('./middleware/errorHandler');
@@ -104,6 +106,8 @@ app.use('/api/reports', reportRoutes);
 app.use('/api/suggestions', suggestionRoutes);
 app.use('/api/users', require('./routes/users'));
 app.use('/api/items', itemRoutes);
+app.use('/api/loot', lootRoutes);
+app.use('/api/training-methods', trainingMethodsRoutes);
 
 // Proxy route for Jagex Hiscores (with Caching for authenticated users)
 app.get('/api/hiscores/:player', async (req, res) => {

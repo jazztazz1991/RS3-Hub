@@ -14,6 +14,7 @@ const DailyTasks = () => {
     // Pinned & Task State
     const [pinnedTasks, setPinnedTasks] = useState([]);
     const [completedTasks, setCompletedTasks] = useState({});
+    const [parseError, setParseError] = useState(false);
 
     useEffect(() => {
         updateReportContext({
@@ -30,25 +31,26 @@ const DailyTasks = () => {
     useEffect(() => {
         if (selectedCharacter) {
             try {
-                // Parse if string, otherwise assume object (or empty array/obj fallback)
-                const pinned = selectedCharacter.pinned_tasks 
-                    ? (typeof selectedCharacter.pinned_tasks === 'string' 
-                        ? JSON.parse(selectedCharacter.pinned_tasks) 
+                const pinned = selectedCharacter.pinned_tasks
+                    ? (typeof selectedCharacter.pinned_tasks === 'string'
+                        ? JSON.parse(selectedCharacter.pinned_tasks)
                         : selectedCharacter.pinned_tasks)
                     : [];
 
-                const tasks = selectedCharacter.task_state 
-                    ? (typeof selectedCharacter.task_state === 'string' 
-                        ? JSON.parse(selectedCharacter.task_state) 
+                const tasks = selectedCharacter.task_state
+                    ? (typeof selectedCharacter.task_state === 'string'
+                        ? JSON.parse(selectedCharacter.task_state)
                         : selectedCharacter.task_state)
                     : {};
 
                 setPinnedTasks(pinned);
                 setCompletedTasks(tasks);
+                setParseError(false);
             } catch (e) {
                 console.error("Failed to parse character tasks", e);
                 setPinnedTasks([]);
                 setCompletedTasks({});
+                setParseError(true);
             }
         }
     }, [selectedCharacter]);
@@ -197,6 +199,12 @@ const DailyTasks = () => {
                     <div className="clock-date">{formatUTCDate(currentTime)}</div>
                 </div>
             </div>
+
+            {parseError && (
+                <div className="parse-error-banner" style={{background: '#442222', border: '1px solid #ff4444', borderRadius: '6px', padding: '0.75rem 1rem', marginBottom: '1rem', color: '#ff8888', fontSize: '0.9rem'}}>
+                    Task data could not be loaded. Your progress has been reset for this session. Completing any task will save fresh data.
+                </div>
+            )}
 
             <div className="task-sections">
                 {renderTaskSection("Daily Tasks (Reset 00:00 UTC)", DAILY_TASKS)}

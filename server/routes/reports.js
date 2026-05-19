@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
         };
 
         // If user is logged in, attach their ID
-        if (req.isAuthenticated && req.isAuthenticated()) {
+        if (req.isAuthenticated()) {
             reportData.userId = req.user.id;
         }
 

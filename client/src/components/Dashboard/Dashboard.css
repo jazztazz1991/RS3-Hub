@@ -63,6 +63,8 @@
 .stat-box.clickable {
   transition: transform 0.2s ease, background-color 0.2s ease;
   cursor: pointer;
+  user-select: none;
+  min-width: 120px;
 }
 
 .stat-box.clickable:hover {
@@ -74,34 +76,8 @@
   transform: scale(0.95);
 }
 
-/* Flip Animation classes */
-.stat-content-wrapper {
-  position: relative;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.stat-content-enter {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.stat-content-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.stat-content-exit {
-  opacity: 1;
-  transform: translateY(0);
-  position: absolute; /* Take out of flow so new one can slide in */
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.stat-content-exit-active {
-  opacity: 0;
-  transform: translateY(10px);
+.stat-anim-container {
+  animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
@@ -111,7 +87,48 @@
 
 /* ---------- */
 
-/* Character Controls (New Bar) */
+/* Character Controls */
+.controls-section {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.controls-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sort-label {
+  margin-right: 0.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.add-char-wrapper {
+  position: relative;
+}
+
+.add-char-error {
+  position: absolute;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.completed-badge.mini {
+  padding: 0.2rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* Character Selector */
 .character-selector {
   display: flex;
   gap: 0.5rem;
@@ -219,6 +236,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: 1px solid #333;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
 }
 
 .skill-card:hover {

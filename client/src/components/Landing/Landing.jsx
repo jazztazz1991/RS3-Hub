@@ -1,14 +1,14 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { QUEST_DATA } from '../../data/quests/questData';
+import { MAIN_QUEST_COUNT } from '../../data/quests/questMetadata';
 import './Landing.css';
 
 const NUM_CALCULATORS = 25;
 const NUM_GUIDES = 25;
 const NUM_SKILLS = 29;
 
-const FEATURES = (questCount) => [
+const FEATURES = [
     {
         icon: '⚡',
         title: 'Skill Calculators',
@@ -25,7 +25,7 @@ const FEATURES = (questCount) => [
         icon: '📜',
         title: 'Quest Tracker',
         description:
-            `${questCount} RS3 quests with full skill and quest requirement checking, quest point tracking, and wiki-style alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests are tracked individually with RuneMetrics import support.`,
+            `${MAIN_QUEST_COUNT} RS3 quests with full skill and quest requirement checking, quest point tracking, and wiki-style alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests are tracked individually with RuneMetrics import support.`,
     },
 ];
 
@@ -48,19 +48,12 @@ const Landing = () => {
     const { user, loading } = useAuth();
     const navigate = useNavigate();
 
-    const questCount = useMemo(
-        () => QUEST_DATA.filter(q => !q.title.includes(': ')).length,
-        []
-    );
-
-    const stats = useMemo(() => [
+    const stats = [
         { value: String(NUM_CALCULATORS), label: 'Skill Calculators' },
         { value: String(NUM_GUIDES), label: 'Training Guides' },
-        { value: String(questCount), label: 'Quests Tracked' },
+        { value: String(MAIN_QUEST_COUNT), label: 'Quests Tracked' },
         { value: String(NUM_SKILLS), label: 'Skills Covered' },
-    ], [questCount]);
-
-    const features = useMemo(() => FEATURES(questCount), [questCount]);
+    ];
 
     useEffect(() => {
         if (!loading && user) {
@@ -101,7 +94,7 @@ const Landing = () => {
             <section className="landing-features">
                 <h2 className="section-title">Everything you need in one place</h2>
                 <div className="features-grid">
-                    {features.map(f => (
+                    {FEATURES.map(f => (
                         <div key={f.title} className="feature-card">
                             <div className="feature-icon">{f.icon}</div>
                             <h3 className="feature-title">{f.title}</h3>

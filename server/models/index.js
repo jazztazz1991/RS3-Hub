@@ -13,6 +13,8 @@ const ItemDisassembly = require('./ItemDisassembly');
 const ItemDrop = require('./ItemDrop');
 const ItemShop = require('./ItemShop');
 const ItemSyncLog = require('./ItemSyncLog');
+const LootActivity = require('./LootActivity');
+const LootDrop = require('./LootDrop');
 
 
 // Define Associations
@@ -56,6 +58,16 @@ ItemDrop.belongsTo(Item, { foreignKey: 'itemId' });
 Item.hasMany(ItemShop, { foreignKey: 'itemId', as: 'shops', onDelete: 'CASCADE' });
 ItemShop.belongsTo(Item, { foreignKey: 'itemId' });
 
+// Loot tracking
+Character.hasMany(LootActivity, { foreignKey: 'characterId', as: 'lootActivities', onDelete: 'CASCADE' });
+LootActivity.belongsTo(Character, { foreignKey: 'characterId' });
+
+LootActivity.hasMany(LootDrop, { foreignKey: 'activityId', as: 'drops', onDelete: 'CASCADE' });
+LootDrop.belongsTo(LootActivity, { foreignKey: 'activityId' });
+
+LootDrop.belongsTo(Item, { foreignKey: 'itemId', as: 'item' });
+Item.hasMany(LootDrop, { foreignKey: 'itemId' });
+
 module.exports = {
   sequelize,
   User,
@@ -72,4 +84,6 @@ module.exports = {
   ItemDrop,
   ItemShop,
   ItemSyncLog,
+  LootActivity,
+  LootDrop,
 };

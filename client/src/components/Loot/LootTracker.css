@@ -1,0 +1,310 @@
+.loot-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    color: var(--text-primary, #e6e6e6);
+}
+
+.loot-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 2px solid var(--accent, #0d8c8c);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.loot-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.loot-char {
+    color: var(--accent-light, #6cd5d5);
+    font-size: 0.95rem;
+}
+
+.loot-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.loot-filters {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.loot-chip {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-secondary, #aaa);
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.loot-chip:hover { color: var(--text-primary, #e6e6e6); }
+
+.loot-chip.active {
+    background: var(--accent-dark, #0a5757);
+    border-color: var(--accent, #0d8c8c);
+    color: #fff;
+}
+
+.loot-primary-btn,
+.loot-danger-btn,
+.loot-actions button,
+.loot-new-form button {
+    background: var(--accent-dark, #0a5757);
+    border: 1px solid var(--accent, #0d8c8c);
+    color: #fff;
+    padding: 0.45rem 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.loot-primary-btn:hover,
+.loot-actions button:hover { background: var(--accent, #0d8c8c); }
+
+.loot-danger-btn {
+    background: transparent;
+    border-color: #d97373;
+    color: #d97373;
+}
+.loot-danger-btn:hover { background: rgba(217, 115, 115, 0.15); }
+
+.loot-new-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.loot-new-form input,
+.loot-new-form select,
+.loot-actions input {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.5rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.loot-new-form input { flex: 1; min-width: 200px; }
+.loot-new-form input:focus,
+.loot-new-form select:focus,
+.loot-actions input:focus {
+    outline: none;
+    border-color: var(--accent, #0d8c8c);
+}
+
+.loot-error {
+    color: #d97373;
+    margin-bottom: 0.5rem;
+}
+
+.loot-status, .loot-empty {
+    color: var(--text-secondary, #888);
+    font-style: italic;
+}
+
+/* Card list */
+.loot-activities { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.loot-card {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.loot-card.expanded { border-color: var(--accent, #0d8c8c); }
+
+.loot-card-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.65rem 0.9rem;
+    cursor: pointer;
+}
+
+.loot-card-header:hover { background: rgba(13, 140, 140, 0.08); }
+
+.loot-cat-badge {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    color: #fff;
+}
+.loot-cat-badge.cat-boss { background: #b6446a; }
+.loot-cat-badge.cat-skilling { background: #4a7c3a; }
+.loot-cat-badge.cat-misc { background: #5566aa; }
+
+.loot-card-name {
+    font-weight: 500;
+    color: var(--text-primary, #e6e6e6);
+}
+
+.loot-card-stats {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary, #aaa);
+}
+
+.loot-card-stats strong {
+    color: var(--accent-light, #6cd5d5);
+    font-weight: 600;
+}
+
+.loot-card-stat-dim {
+    color: var(--text-secondary, #777);
+    font-style: italic;
+}
+
+.loot-card-chevron {
+    color: var(--text-secondary, #888);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .loot-card-header { grid-template-columns: auto 1fr auto; }
+    .loot-card-stats { grid-column: 1 / -1; flex-wrap: wrap; gap: 0.6rem; }
+}
+
+/* Detail */
+.loot-detail {
+    border-top: 1px solid var(--border-color, #374151);
+    padding: 0.85rem;
+    background: var(--bg-tertiary, #111827);
+}
+
+.loot-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    align-items: flex-end;
+}
+
+.loot-action-group {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.loot-action-group label {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+}
+
+.loot-action-group input { width: 80px; }
+.loot-action-drop input:not(.loot-drop-qty) { width: 240px; }
+.loot-drop-qty { width: 60px !important; }
+
+.loot-picked {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--accent, #0d8c8c);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.35rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+.loot-picked img { width: 22px; height: 22px; image-rendering: pixelated; }
+.loot-picked-clear {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-secondary, #aaa) !important;
+    padding: 0 !important;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.loot-search-results {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 4px;
+    max-height: 240px;
+    overflow-y: auto;
+}
+.loot-search-results li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color, #2a3a4f);
+    font-size: 0.85rem;
+}
+.loot-search-results li:last-child { border-bottom: none; }
+.loot-search-results li:hover { background: rgba(13, 140, 140, 0.15); }
+.loot-search-results img { width: 24px; height: 24px; image-rendering: pixelated; }
+.loot-search-price {
+    margin-left: auto;
+    color: var(--accent-light, #6cd5d5);
+    font-size: 0.8rem;
+}
+
+.loot-drops-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+.loot-drops-table th,
+.loot-drops-table td {
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--border-color, #2a3a4f);
+}
+.loot-drops-table th {
+    background: var(--accent-dark, #0a5757);
+    color: #fff;
+    font-weight: 600;
+}
+.loot-drops-table a {
+    color: var(--accent-light, #6cd5d5);
+    text-decoration: none;
+}
+.loot-drops-table a:hover { text-decoration: underline; }
+.loot-row-image { width: 22px; height: 22px; image-rendering: pixelated; }
+.loot-empty-row {
+    color: var(--text-secondary, #777);
+    font-style: italic;
+    text-align: center;
+}
+
+.loot-icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary, #888);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 0.3rem;
+}
+.loot-icon-btn:hover { color: #d97373; }
+
+.loot-detail-footer {
+    margin-top: 0.85rem;
+    text-align: right;
+}
