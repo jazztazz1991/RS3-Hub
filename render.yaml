@@ -24,6 +24,6 @@ services:
 
 databases:
   - name: rs3hub-db
-    plan: free
+    plan: basic_256mb
     databaseName: rs3hub
     user: rs3hub_user
