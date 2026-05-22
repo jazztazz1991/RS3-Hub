@@ -35,6 +35,13 @@ const Character = sequelize.define('Character', {
     allowNull: true,
     defaultValue: '{}'
   },
+  // Opt-in XP tracking. When true, the daily cron captures a snapshot
+  // of this character's hiscores into CharacterXpSnapshot.
+  xp_tracking_enabled: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
   userId: {
     type: DataTypes.UUID,
     allowNull: false,

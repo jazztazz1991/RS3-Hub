@@ -1,0 +1,695 @@
+{
+  "schema_version": 1,
+  "notes": "Auto-scraped from runescape.wiki. PoF animals from Category:Player-owned_farm; dinos from Anachronia Dinosaur Farm. Re-run server/jobs/scrapeFarmAnimals.js to refresh.",
+  "animals": [
+    {
+      "slug": "pof-rabbit",
+      "kind": "pof",
+      "name": "Rabbit",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Small",
+      "farming_level": 17,
+      "growth_stages": [
+        {
+          "stage": "Child",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 12
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 33
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 60
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Rabbit_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-chicken",
+      "kind": "pof",
+      "name": "Chicken",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Small",
+      "farming_level": 28,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 25
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 63
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 139
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 252
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Chicken_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-sheep",
+      "kind": "pof",
+      "name": "Sheep",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Medium",
+      "farming_level": 35,
+      "growth_stages": [
+        {
+          "stage": "Child",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 24
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 66
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 120
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Sheep_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-cow",
+      "kind": "pof",
+      "name": "Cow",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Large",
+      "farming_level": 49,
+      "growth_stages": [
+        {
+          "stage": "Child",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 72
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 198
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 360
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Cow_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-chinchompa",
+      "kind": "pof",
+      "name": "Chinchompa",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Small",
+      "farming_level": 54,
+      "growth_stages": [
+        {
+          "stage": "Child",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 504
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 1386
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 2520
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Chinchompa_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-spider",
+      "kind": "pof",
+      "name": "Spider",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Medium",
+      "farming_level": 64,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 151
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 378
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 832
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 1512
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Spider_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-yak",
+      "kind": "pof",
+      "name": "Yak",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Large",
+      "farming_level": 71,
+      "growth_stages": [
+        {
+          "stage": "Child",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 806
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 2218
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 4032
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Yak_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-zygomite",
+      "kind": "pof",
+      "name": "Zygomite",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Medium",
+      "farming_level": 81,
+      "growth_stages": [
+        {
+          "stage": "Child",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 1008
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 2772
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 5040
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Zygomite_(player-owned_farm)"
+    },
+    {
+      "slug": "pof-dragon",
+      "kind": "pof",
+      "name": "Dragon",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Large",
+      "farming_level": 92,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1008
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 2520
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 5544
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 10080
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Dragon_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-frog",
+      "kind": "dino",
+      "name": "Frog",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Small",
+      "farming_level": 42,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 72
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 180
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 396
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 720
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Frog_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-jadinko",
+      "kind": "dino",
+      "name": "Jadinko",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Medium",
+      "farming_level": 76,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 408
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 1020
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 2244
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 4080
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Jadinko_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-varanusaur",
+      "kind": "dino",
+      "name": "Varanusaur",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Medium",
+      "farming_level": 97,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 660
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 1650
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 3630
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 6600
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Varanusaur_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-arcane-apoterrasaur",
+      "kind": "dino",
+      "name": "Arcane apoterrasaur",
+      "image_url": "https://runescape.wiki/images/Arcane_apoterrasaur_%28player-owned_farm%29.png?8a379",
+      "pen_type": null,
+      "farming_level": 98,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1050
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 2628
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 5778
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 10506
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Arcane_apoterrasaur_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-brutish-dinosaur",
+      "kind": "dino",
+      "name": "Brutish dinosaur",
+      "image_url": "https://runescape.wiki/images/Brutish_dinosaur_%28player-owned_farm%29.png?ab99e",
+      "pen_type": null,
+      "farming_level": 100,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1080
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 2700
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 5940
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 10800
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Brutish_dinosaur_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-salamander",
+      "kind": "dino",
+      "name": "Salamander",
+      "image_url": "https://runescape.wiki/images/thumb/Farming-icon.png/21px-Farming-icon.png?a1230",
+      "pen_type": "Small",
+      "farming_level": 102,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 480
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 1200
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 2640
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 4800
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Salamander_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-scimitops",
+      "kind": "dino",
+      "name": "Scimitops",
+      "image_url": "https://runescape.wiki/images/Scimitops_%28player-owned_farm%29.png?1b364",
+      "pen_type": null,
+      "farming_level": 104,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1140
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 2850
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 6270
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 11400
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Scimitops_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-bagrada-rex",
+      "kind": "dino",
+      "name": "Bagrada rex",
+      "image_url": "https://runescape.wiki/images/Bagrada_rex_%28player-owned_farm%29.png?8bad6",
+      "pen_type": null,
+      "farming_level": 106,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1170
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 2928
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 6438
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 11706
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Bagrada_rex_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-spicati-apoterrasaur",
+      "kind": "dino",
+      "name": "Spicati apoterrasaur",
+      "image_url": "https://runescape.wiki/images/Spicati_apoterrasaur_%28player-owned_farm%29.png?9cbb5",
+      "pen_type": null,
+      "farming_level": 108,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1200
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 3000
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 6600
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 12000
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Spicati_apoterrasaur_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-asciatops",
+      "kind": "dino",
+      "name": "Asciatops",
+      "image_url": "https://runescape.wiki/images/Asciatops_%28player-owned_farm%29.png?b13a4",
+      "pen_type": null,
+      "farming_level": 110,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1290
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 3228
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 7098
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 12906
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Asciatops_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-corbicula-rex",
+      "kind": "dino",
+      "name": "Corbicula rex",
+      "image_url": "https://runescape.wiki/images/Corbicula_rex_%28player-owned_farm%29.png?5015b",
+      "pen_type": null,
+      "farming_level": 112,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1350
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 3378
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 7428
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 13506
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Corbicula_rex_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-oculi-apoterrasaur",
+      "kind": "dino",
+      "name": "Oculi apoterrasaur",
+      "image_url": "https://runescape.wiki/images/Oculi_apoterrasaur_%28player-owned_farm%29.png?07ecf",
+      "pen_type": null,
+      "farming_level": 115,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1440
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 3600
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 7920
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 14400
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Oculi_apoterrasaur_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-malletops",
+      "kind": "dino",
+      "name": "Malletops",
+      "image_url": "https://runescape.wiki/images/Malletops_%28player-owned_farm%29.png?e1f0b",
+      "pen_type": null,
+      "farming_level": 117,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1500
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 3750
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 8250
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 15000
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Malletops_(player-owned_farm)"
+    },
+    {
+      "slug": "dino-pavosaurus-rex",
+      "kind": "dino",
+      "name": "Pavosaurus rex",
+      "image_url": "https://runescape.wiki/images/Pavosaurus_rex_%28player-owned_farm%29.png?40fb5",
+      "pen_type": null,
+      "farming_level": 118,
+      "growth_stages": [
+        {
+          "stage": "Egg",
+          "minutes_from_start": 0
+        },
+        {
+          "stage": "Child",
+          "minutes_from_start": 1590
+        },
+        {
+          "stage": "Adolescent",
+          "minutes_from_start": 3978
+        },
+        {
+          "stage": "Adult",
+          "minutes_from_start": 8748
+        },
+        {
+          "stage": "Elder",
+          "minutes_from_start": 15906
+        }
+      ],
+      "source_url": "https://runescape.wiki/w/Pavosaurus_rex_(player-owned_farm)"
+    }
+  ]
+}

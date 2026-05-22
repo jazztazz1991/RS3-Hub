@@ -85,7 +85,7 @@
 /* Body grid */
 .qgp-body {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 360px 1fr;
     gap: 1.5rem;
     align-items: start;
 }
@@ -95,48 +95,163 @@
 
 /* Metadata sidebar */
 .qgp-meta {
-    background: var(--bg-secondary, #1f2937);
-    border: 1px solid var(--border-color, #374151);
-    border-radius: 6px;
-    padding: 1rem;
     position: sticky;
     top: 1rem;
     max-height: calc(100vh - 2rem);
     overflow-y: auto;
+    padding-right: 0.25rem;
 }
 
-.qgp-meta h3 {
-    margin: 0 0 0.6rem;
-    font-size: 1rem;
-    color: var(--accent-light, #6cd5d5);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    border-bottom: 1px solid var(--border-color, #2a3a4f);
-    padding-bottom: 0.35rem;
+/* Quick facts strip at top of sidebar */
+.qgp-meta-quick {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--accent, #0d8c8c);
+    border-radius: 6px;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.75rem;
 }
-.qgp-meta h3:not(:first-child) { margin-top: 1rem; }
 
-.qgp-field {
+.qgp-quick-fact {
     display: grid;
-    grid-template-columns: 95px 1fr;
+    grid-template-columns: 80px 1fr;
     gap: 0.5rem;
     padding: 0.35rem 0;
     font-size: 0.85rem;
     border-bottom: 1px solid var(--border-color, #2a3a4f);
 }
-.qgp-field:last-child { border-bottom: none; }
-.qgp-field-label {
+.qgp-quick-fact:last-child { border-bottom: none; }
+
+.qgp-quick-label {
     color: var(--accent-light, #6cd5d5);
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.72rem;
 }
-.qgp-field-value { color: var(--text-primary, #e6e6e6); }
-.qgp-field-wrap { grid-template-columns: 1fr; }
-.qgp-field-wrap .qgp-field-value {
-    margin-top: 0.2rem;
-    line-height: 1.4;
-    color: var(--text-secondary, #ccc);
+.qgp-quick-value {
+    color: var(--text-primary, #e6e6e6);
+    line-height: 1.35;
 }
 
+/* Collapsible fields (Combat / Items / Recommended / Requirements) */
+.qgp-collapse {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.qgp-collapse > header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.85rem;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(13, 140, 140, 0.05);
+}
+.qgp-collapse > header:hover {
+    background: rgba(13, 140, 140, 0.15);
+}
+
+.qgp-collapse-chevron {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.75rem;
+    width: 12px;
+}
+
+.qgp-collapse-label {
+    color: var(--accent-light, #6cd5d5);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.qgp-collapse-body {
+    padding: 0.6rem 0.85rem 0.75rem;
+    border-top: 1px solid var(--border-color, #2a3a4f);
+}
+
+/* Combat list */
+.qgp-combat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.qgp-combat-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem 0.5rem;
+    background: var(--bg-tertiary, #111827);
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+.qgp-combat-name {
+    color: var(--text-primary, #e6e6e6);
+}
+.qgp-combat-level {
+    background: rgba(217, 115, 115, 0.15);
+    color: #e8a06b;
+    border: 1px solid rgba(217, 115, 115, 0.3);
+    padding: 0.05rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+}
+
+/* Items / Recommended prose */
+.qgp-prose {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary, #ccc);
+}
+.qgp-prose-disclaimer {
+    color: var(--text-secondary, #777);
+    font-style: italic;
+    font-size: 0.78rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed var(--border-color, #2a3a4f);
+}
+.qgp-prose-body {
+    color: var(--text-primary, #e6e6e6);
+}
+
+/* Items / Recommended bullet list */
+.qgp-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.qgp-bullet-list li {
+    position: relative;
+    padding: 0.35rem 0.4rem 0.35rem 1.1rem;
+    background: var(--bg-tertiary, #111827);
+    border-radius: 3px;
+    color: var(--text-primary, #e6e6e6);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.qgp-bullet-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0.45rem;
+    top: 0.35rem;
+    color: var(--accent, #0d8c8c);
+    font-weight: 700;
+}
+
+/* Requirements list */
 .qgp-req-list {
     list-style: none;
     padding: 0;
@@ -145,11 +260,67 @@
     color: var(--text-secondary, #ccc);
 }
 .qgp-req-list li {
-    padding: 0.4rem 0;
+    padding: 0.35rem 0;
     border-bottom: 1px solid var(--border-color, #2a3a4f);
     line-height: 1.4;
 }
 .qgp-req-list li:last-child { border-bottom: none; }
+
+/* Requirements tree (Quests/Skills/Items, with nested prereqs) */
+.qgp-req-tree { display: flex; flex-direction: column; gap: 0.6rem; }
+.qgp-req-cat-label {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3rem;
+}
+.qgp-req-nodes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.83rem;
+    line-height: 1.4;
+}
+.qgp-req-nodes li {
+    position: relative;
+    padding: 0.2rem 0 0.2rem 0.85rem;
+    color: var(--text-primary, #e6e6e6);
+}
+.qgp-req-nodes li::before {
+    content: '';
+    position: absolute;
+    left: 0.2rem;
+    top: 0.65rem;
+    width: 0.4rem;
+    height: 1px;
+    background: var(--border-color, #2a3a4f);
+}
+.qgp-req-nodes.depth-0 > li::before { background: var(--accent, #0d8c8c); }
+
+/* Nested levels get more indent + tree connector */
+.qgp-req-nodes .qgp-req-nodes {
+    margin-left: 0.4rem;
+    border-left: 1px dashed var(--border-color, #2a3a4f);
+    padding-left: 0.4rem;
+    margin-top: 0.15rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary, #aaa);
+}
+
+.qgp-req-nodes a {
+    color: var(--accent-light, #6cd5d5);
+    text-decoration: none;
+}
+.qgp-req-nodes a:hover { text-decoration: underline; }
+
+.qgp-req-empty {
+    color: var(--text-secondary, #666);
+    font-size: 0.8rem;
+    font-style: italic;
+    padding: 0.2rem 0 0.2rem 0.5rem;
+}
 
 /* Sections */
 .qgp-main { min-width: 0; }

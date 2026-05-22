@@ -15,6 +15,9 @@ const ItemShop = require('./ItemShop');
 const ItemSyncLog = require('./ItemSyncLog');
 const LootActivity = require('./LootActivity');
 const LootDrop = require('./LootDrop');
+const CharacterXpSnapshot = require('./CharacterXpSnapshot');
+const FarmAnimal = require('./FarmAnimal');
+const UserAnimalTimer = require('./UserAnimalTimer');
 
 
 // Define Associations
@@ -68,6 +71,16 @@ LootDrop.belongsTo(LootActivity, { foreignKey: 'activityId' });
 LootDrop.belongsTo(Item, { foreignKey: 'itemId', as: 'item' });
 Item.hasMany(LootDrop, { foreignKey: 'itemId' });
 
+// XP tracker — character has many time-series snapshots
+Character.hasMany(CharacterXpSnapshot, { foreignKey: 'characterId', as: 'xpSnapshots', onDelete: 'CASCADE' });
+CharacterXpSnapshot.belongsTo(Character, { foreignKey: 'characterId' });
+
+// Farm timers — user can have many active timers, each references a catalog animal
+Character.hasMany(UserAnimalTimer, { foreignKey: 'characterId', as: 'animalTimers', onDelete: 'CASCADE' });
+UserAnimalTimer.belongsTo(Character, { foreignKey: 'characterId' });
+UserAnimalTimer.belongsTo(FarmAnimal, { foreignKey: 'animalId', as: 'animal' });
+FarmAnimal.hasMany(UserAnimalTimer, { foreignKey: 'animalId' });
+
 module.exports = {
   sequelize,
   User,
@@ -86,4 +99,7 @@ module.exports = {
   ItemSyncLog,
   LootActivity,
   LootDrop,
+  CharacterXpSnapshot,
+  FarmAnimal,
+  UserAnimalTimer,
 };

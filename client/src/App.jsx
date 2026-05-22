@@ -24,6 +24,8 @@ const SupportDashboard = lazy(() => import('./components/Support/SupportDashboar
 const DailyTasks = lazy(() => import('./components/DailyTasks/DailyTasks'));
 const LootTracker = lazy(() => import('./components/Loot/LootTracker'));
 const MethodsPage = lazy(() => import('./components/Methods/MethodsPage'));
+const XpTracker = lazy(() => import('./components/XpTracker/XpTracker'));
+const FarmTimers = lazy(() => import('./components/FarmTimers/FarmTimers'));
 
 const QuestTracker = lazy(() => import('./components/QuestTracker'));
 const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
@@ -183,6 +185,8 @@ function AppContent() {
                 <Route path="/support" element={<SupportDashboard />} />
                 <Route path="/daily-tasks" element={<DailyTasks />} />
                 <Route path="/loot" element={<LootTracker />} />
+                <Route path="/xp-tracker" element={<XpTracker />} />
+                <Route path="/farm-timers" element={<FarmTimers />} />
               </Route>
 
               {/* 404 */}

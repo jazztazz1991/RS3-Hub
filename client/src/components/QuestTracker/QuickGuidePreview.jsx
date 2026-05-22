@@ -70,35 +70,38 @@ export default function QuickGuidePreview() {
 
             <div className="qgp-body">
                 <aside className="qgp-meta">
-                    <h3>Quest details</h3>
-                    {data.metadata.start && (
-                        <Field label="Start">{data.metadata.start}</Field>
-                    )}
-                    {data.metadata.members && (
-                        <Field label="Members">{data.metadata.members}</Field>
-                    )}
-                    {data.metadata.length && (
-                        <Field label="Length">{data.metadata.length}</Field>
-                    )}
+                    <div className="qgp-meta-quick">
+                        {data.metadata.start && (
+                            <QuickFact label="Start" value={cleanShowOnMap(data.metadata.start)} />
+                        )}
+                        {data.metadata.members && (
+                            <QuickFact label="Members" value={data.metadata.members} />
+                        )}
+                        {data.metadata.length && (
+                            <QuickFact label="Length" value={data.metadata.length} />
+                        )}
+                    </div>
+
                     {data.metadata.kills && (
-                        <Field label="Combat">{data.metadata.kills}</Field>
+                        <CollapsibleField label="Combat">
+                            <CombatList raw={data.metadata.kills} />
+                        </CollapsibleField>
                     )}
-                    {data.metadata.items && (
-                        <Field label="Items needed" wrap>{data.metadata.items}</Field>
+                    {(data.metadata.items_list || data.metadata.items) && (
+                        <CollapsibleField label="Items needed">
+                            <ListOrProse list={data.metadata.items_list} raw={data.metadata.items} />
+                        </CollapsibleField>
                     )}
-                    {data.metadata.recommended && (
-                        <Field label="Recommended" wrap>{data.metadata.recommended}</Field>
+                    {(data.metadata.recommended_list || data.metadata.recommended) && (
+                        <CollapsibleField label="Recommended">
+                            <ListOrProse list={data.metadata.recommended_list} raw={data.metadata.recommended} />
+                        </CollapsibleField>
                     )}
 
                     {data.requirements?.length > 0 && (
-                        <>
-                            <h3>Requirements</h3>
-                            <ul className="qgp-req-list">
-                                {data.requirements.map((r, i) => (
-                                    <li key={i}>{r}</li>
-                                ))}
-                            </ul>
-                        </>
+                        <CollapsibleField label="Requirements">
+                            <RequirementsTree categories={data.requirements} />
+                        </CollapsibleField>
                     )}
                 </aside>
 
@@ -224,11 +227,137 @@ export default function QuickGuidePreview() {
     );
 }
 
-function Field({ label, children, wrap }) {
+// Quick facts: 3 compact rows at top of sidebar (Start / Members / Length)
+function QuickFact({ label, value }) {
     return (
-        <div className={`qgp-field ${wrap ? 'qgp-field-wrap' : ''}`}>
-            <span className="qgp-field-label">{label}</span>
-            <span className="qgp-field-value">{children}</span>
+        <div className="qgp-quick-fact">
+            <span className="qgp-quick-label">{label}</span>
+            <span className="qgp-quick-value">{value}</span>
         </div>
     );
+}
+
+// Collapsible field: long-form content (Combat, Items, Recommended, Requirements)
+// with a clickable header. Default open; user can collapse to compact the sidebar.
+function CollapsibleField({ label, children }) {
+    const [open, setOpen] = useState(true);
+    return (
+        <div className={`qgp-collapse ${open ? 'open' : ''}`}>
+            <header onClick={() => setOpen(o => !o)}>
+                <span className="qgp-collapse-chevron">{open ? '▾' : '▸'}</span>
+                <span className="qgp-collapse-label">{label}</span>
+            </header>
+            {open && <div className="qgp-collapse-body">{children}</div>}
+        </div>
+    );
+}
+
+// Combat list: wiki delivers as run-on prose ("Skeletons (level 70) Dried zombies (level 67) ...").
+// We split on the level-pattern so each monster gets its own row.
+function CombatList({ raw }) {
+    const entries = useMemo(() => parseCombatList(raw), [raw]);
+    if (!entries.length) return <div className="qgp-prose">{raw}</div>;
+    return (
+        <ul className="qgp-combat-list">
+            {entries.map((e, i) => (
+                <li key={i}>
+                    <span className="qgp-combat-name">{e.name}</span>
+                    {e.level && <span className="qgp-combat-level">lv {e.level}</span>}
+                </li>
+            ))}
+        </ul>
+    );
+}
+
+// Renders structured list when parser found a <ul>, otherwise falls back
+// to splitting prose. Disclaimer (wiki boilerplate <i> preamble) shown dim.
+function ListOrProse({ list, raw }) {
+    if (list && list.items?.length) {
+        return (
+            <div className="qgp-prose">
+                {list.disclaimer && (
+                    <div className="qgp-prose-disclaimer">{list.disclaimer}</div>
+                )}
+                <ul className="qgp-bullet-list">
+                    {list.items.map((it, i) => <li key={i}>{it}</li>)}
+                </ul>
+            </div>
+        );
+    }
+    // Fallback: legacy run-on prose with the boilerplate stripped off the front
+    const boilerplatePattern = /^Items from the tool belt are not listed unless[^.]+\.\s*/;
+    const match = raw?.match?.(boilerplatePattern);
+    const disclaimer = match ? match[0].trim() : null;
+    const body = disclaimer ? raw.slice(match[0].length).trim() : (raw || '').trim();
+    return (
+        <div className="qgp-prose">
+            {disclaimer && <div className="qgp-prose-disclaimer">{disclaimer}</div>}
+            <div className="qgp-prose-body">{body}</div>
+        </div>
+    );
+}
+
+// "Show on map" link text appears at the end of Start strings — drop it,
+// we already have wiki links elsewhere.
+function cleanShowOnMap(s) {
+    return String(s || '').replace(/\s*Show on map\s*$/i, '').trim();
+}
+
+// Requirements: render each category (Quests / Skills / Items) with its
+// nested prereq tree. The first item in a Quest-category tree is the quest
+// itself (self-link) — we skip that and show only the actual prereqs.
+function RequirementsTree({ categories }) {
+    return (
+        <div className="qgp-req-tree">
+            {categories.map((cat, ci) => {
+                // For "Quests" category, root item is the current quest itself; flatten to its children
+                const isQuests = /quest/i.test(cat.label);
+                const rootItems = isQuests && cat.items.length === 1
+                    ? cat.items[0].children
+                    : cat.items;
+                return (
+                    <div key={ci} className="qgp-req-cat">
+                        <div className="qgp-req-cat-label">{cat.label}</div>
+                        {rootItems.length === 0
+                            ? <div className="qgp-req-empty">None</div>
+                            : <ReqNodes nodes={rootItems} depth={0} />}
+                    </div>
+                );
+            })}
+        </div>
+    );
+}
+
+function ReqNodes({ nodes, depth }) {
+    return (
+        <ul className={`qgp-req-nodes depth-${depth}`}>
+            {nodes.map((n, i) => (
+                <li key={i}>
+                    {n.href
+                        ? <a href={`https://runescape.wiki${n.href}`} target="_blank" rel="noreferrer">{n.name}</a>
+                        : <span>{n.name}</span>}
+                    {n.children?.length > 0 && <ReqNodes nodes={n.children} depth={depth + 1} />}
+                </li>
+            ))}
+        </ul>
+    );
+}
+
+// Best-effort split of a Combat string into name+level pairs.
+function parseCombatList(raw) {
+    if (!raw) return [];
+    let text = String(raw);
+    // Strip the optional "Some of these types of monsters: " preamble
+    text = text.replace(/^.*?monsters?:\s*/i, '').trim();
+    // Match "<Name> (level <num>)" repeated; name is everything up to " ("
+    const re = /([A-Z][^(]*?)\s*\(level\s*([\d,–\- ]+)\)/g;
+    const out = [];
+    let m;
+    while ((m = re.exec(text)) !== null) {
+        out.push({
+            name: m[1].replace(/[,;]?\s*$/, '').trim(),
+            level: m[2].replace(/\s+/g, '').trim(),
+        });
+    }
+    return out;
 }

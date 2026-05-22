@@ -20,6 +20,9 @@ const itemRoutes = require('./routes/items');
 const lootRoutes = require('./routes/loot');
 const trainingMethodsRoutes = require('./routes/trainingMethods');
 const questGuideRoutes = require('./routes/questGuide');
+const xpTrackerRoutes = require('./routes/xpTracker');
+const farmTimerRoutes = require('./routes/farmTimers');
+const { seedFarmAnimals } = require('./services/farmAnimalsSeeder');
 const logger = require('./utils/logger');
 const requestLogger = require('./middleware/requestLogger');
 const errorHandler = require('./middleware/errorHandler');
@@ -110,6 +113,8 @@ app.use('/api/items', itemRoutes);
 app.use('/api/loot', lootRoutes);
 app.use('/api/training-methods', trainingMethodsRoutes);
 app.use('/api/quest-quick-guide', questGuideRoutes);
+app.use('/api/xp-tracker', xpTrackerRoutes);
+app.use('/api/farm-timers', farmTimerRoutes);
 
 // Proxy route for Jagex Hiscores (with Caching for authenticated users)
 app.get('/api/hiscores/:player', async (req, res) => {
@@ -191,11 +196,20 @@ sequelize.sync({ alter: true })
       "UPDATE users SET role = 'owner' WHERE \"isAdmin\" = true AND role = 'user'"
     ).catch(err => logger.warn('Role migration skipped', { message: err.message }));
 
+    // Defensive column adds — sequelize alter sometimes silently skips
+    // new columns. Run idempotent ALTER TABLEs so missing columns are
+    // guaranteed to exist before routes start serving traffic.
+    await sequelize.query(
+      'ALTER TABLE "Characters" ADD COLUMN IF NOT EXISTS xp_tracking_enabled BOOLEAN NOT NULL DEFAULT false'
+    ).catch(err => logger.warn('xp_tracking_enabled migration skipped', { message: err.message }));
+
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
       // Start in-process cron only after the HTTP server is listening so
       // we don't accidentally trigger DB work mid-startup.
       startScheduler();
+      // Seed the farm-animal catalogue (idempotent upsert).
+      seedFarmAnimals().catch(err => logger.error('Farm animal seed failed', err));
     });
   })
   .catch(err => {

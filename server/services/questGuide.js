@@ -28,6 +28,8 @@ const SKIP_SECTIONS = new Set([
 ]);
 
 // Pull rich metadata from `[data-attr-param]` cells inside the .questdetails table.
+// For list-shaped fields (items, recommended) we extract the <li> children
+// as an array so the UI can render a proper list instead of run-on prose.
 function extractMetadata($) {
   const box = $('table.questdetails').first();
   if (!box.length) return {};
@@ -37,27 +39,97 @@ function extractMetadata($) {
     const val = $(el).text().replace(/\s+/g, ' ').trim();
     out.raw[key] = val;
   });
+
+  // Helper: pull leading <i> "disclaimer" (italic preamble) + the <ul> items.
+  // Returns { disclaimer, items: [string] } when a UL is present, else null.
+  function extractListField(paramKey) {
+    const cell = box.find(`[data-attr-param="${paramKey}"]`).first();
+    if (!cell.length) return null;
+    const ul = cell.find('ul').first();
+    if (!ul.length) return null;
+    // Disclaimer: leading <i> sibling of the UL (or anywhere before it in the cell)
+    let disclaimer = null;
+    const $i = cell.find('i').first();
+    if ($i.length) disclaimer = $i.text().replace(/\s+/g, ' ').trim();
+    // List items
+    const items = [];
+    ul.children('li').each((_, li) => {
+      const text = $(li).text().replace(/\s+/g, ' ').trim();
+      if (text) items.push(text);
+    });
+    return { disclaimer, items };
+  }
+
   // Friendly aliases for the most commonly used ones
   out.start = out.raw.startDisp || null;
   out.members = out.raw.membersDisp || null;
   out.length = out.raw.length || null;
+  out.kills = out.raw.kills || null;
+  // Items + recommended: structured lists when available, raw text otherwise
+  out.items_list = extractListField('itemsDisp');
+  out.recommended_list = extractListField('recommendedDisp');
   out.items = out.raw.itemsDisp || null;
   out.recommended = out.raw.recommendedDisp || null;
-  out.kills = out.raw.kills || null;
   return out;
 }
 
-// `table.questreq` lists quest + skill prerequisites. Lines are usually
-// pipe/colon-separated; we split into an array of strings for the UI to render.
+// `table.questreq` lists prerequisites by category (Quests / Skills / Items).
+// Each <th> is a category label, followed by a <tr> containing a nested
+// <ul> tree of required quests (with their own sub-prereqs nested inside).
+// Returns: [{ label, items: [{ name, href, children: [...] }] }]
+function parseReqList($, $ul) {
+  const items = [];
+  $ul.children('li').each((_, li) => {
+    const $li = $(li);
+    // Pick the FIRST anchor in the li for the name + href (skip image-only links)
+    const $a = $li.find('> a, > span > a').first();
+    let name = '';
+    let href = null;
+    if ($a.length) {
+      name = $a.text().replace(/\s+/g, ' ').trim();
+      href = $a.attr('href') || null;
+    }
+    if (!name) {
+      // Fallback: take direct text only (avoiding any nested ul content)
+      const $clone = $li.clone();
+      $clone.find('ul').remove();
+      name = $clone.text().replace(/\s+/g, ' ').trim();
+    }
+    // Recurse into the nested ul (transitive prereqs)
+    const $nested = $li.children('ul').first();
+    const children = $nested.length ? parseReqList($, $nested) : [];
+    if (name) items.push({ name, href, children });
+  });
+  return items;
+}
+
 function extractRequirements($) {
   const tbl = $('table.questreq').first();
   if (!tbl.length) return [];
-  const lines = [];
+  const categories = [];
+  let pending = null;
   tbl.find('tr').each((_, tr) => {
-    const text = $(tr).text().replace(/\s+/g, ' ').trim();
-    if (text) lines.push(text);
+    const $tr = $(tr);
+    const $th = $tr.find('th').first();
+    if ($th.length) {
+      // Category label row (e.g. "Quests:")
+      const label = $th.text().replace(/\s+/g, ' ').trim().replace(/:\s*$/, '');
+      pending = { label, items: [] };
+      categories.push(pending);
+      return;
+    }
+    if (!pending) return;
+    const $ul = $tr.find('ul').first();
+    if ($ul.length) {
+      pending.items = parseReqList($, $ul);
+    } else {
+      // No nested list — single-row fact (e.g. an item line)
+      const text = $tr.text().replace(/\s+/g, ' ').trim();
+      if (text) pending.items.push({ name: text, href: null, children: [] });
+    }
   });
-  return lines;
+  // Drop empty categories
+  return categories.filter(c => c.items.length);
 }
 
 // Document-order DFS. Tracks the current section + the most recent prose
