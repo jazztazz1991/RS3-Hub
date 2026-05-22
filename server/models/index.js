@@ -18,6 +18,10 @@ const LootDrop = require('./LootDrop');
 const CharacterXpSnapshot = require('./CharacterXpSnapshot');
 const FarmAnimal = require('./FarmAnimal');
 const UserAnimalTimer = require('./UserAnimalTimer');
+const TrackedPlayer = require('./TrackedPlayer');
+const TrackedPlayerXpSnapshot = require('./TrackedPlayerXpSnapshot');
+const Group = require('./Group');
+const GroupMember = require('./GroupMember');
 
 
 // Define Associations
@@ -81,6 +85,20 @@ UserAnimalTimer.belongsTo(Character, { foreignKey: 'characterId' });
 UserAnimalTimer.belongsTo(FarmAnimal, { foreignKey: 'animalId', as: 'animal' });
 FarmAnimal.hasMany(UserAnimalTimer, { foreignKey: 'animalId' });
 
+// Group XP tracking — owner has many groups, each group has many members,
+// each member references one tracked player (a non-user RS3 name).
+User.hasMany(Group, { foreignKey: 'ownerId', as: 'groups' });
+Group.belongsTo(User, { foreignKey: 'ownerId', as: 'owner' });
+
+Group.hasMany(GroupMember, { foreignKey: 'groupId', as: 'members', onDelete: 'CASCADE' });
+GroupMember.belongsTo(Group, { foreignKey: 'groupId' });
+
+TrackedPlayer.hasMany(GroupMember, { foreignKey: 'trackedPlayerId', onDelete: 'CASCADE' });
+GroupMember.belongsTo(TrackedPlayer, { foreignKey: 'trackedPlayerId', as: 'trackedPlayer' });
+
+TrackedPlayer.hasMany(TrackedPlayerXpSnapshot, { foreignKey: 'trackedPlayerId', as: 'snapshots', onDelete: 'CASCADE' });
+TrackedPlayerXpSnapshot.belongsTo(TrackedPlayer, { foreignKey: 'trackedPlayerId' });
+
 module.exports = {
   sequelize,
   User,
@@ -102,4 +120,8 @@ module.exports = {
   CharacterXpSnapshot,
   FarmAnimal,
   UserAnimalTimer,
+  TrackedPlayer,
+  TrackedPlayerXpSnapshot,
+  Group,
+  GroupMember,
 };

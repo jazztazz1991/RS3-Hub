@@ -23,7 +23,6 @@ const SkillIcon = ({ skillName, className, style }) => {
     const iconSrc = skillIcons[iconPath];
 
     if (!iconSrc) {
-        console.warn(`Icon for skill "${skillName}" not found at ${iconPath}`);
         return <span className={className}>{skillName.charAt(0)}</span>;
     }
 

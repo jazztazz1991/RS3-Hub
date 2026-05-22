@@ -26,6 +26,9 @@ const LootTracker = lazy(() => import('./components/Loot/LootTracker'));
 const MethodsPage = lazy(() => import('./components/Methods/MethodsPage'));
 const XpTracker = lazy(() => import('./components/XpTracker/XpTracker'));
 const FarmTimers = lazy(() => import('./components/FarmTimers/FarmTimers'));
+const GroupsList = lazy(() => import('./components/Groups/GroupsList'));
+const GroupForm = lazy(() => import('./components/Groups/GroupForm'));
+const GroupDetail = lazy(() => import('./components/Groups/GroupDetail'));
 
 const QuestTracker = lazy(() => import('./components/QuestTracker'));
 const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
@@ -178,6 +181,9 @@ function AppContent() {
               <Route path="/methods" element={<MethodsPage />} />
               <Route path="/methods/:skill" element={<MethodsPage />} />
 
+              {/* Public — Shared group view (anyone with the link) */}
+              <Route path="/groups/share/:token" element={<GroupDetail mode="share" />} />
+
               {/* Protected — features that save to database */}
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
@@ -187,6 +193,9 @@ function AppContent() {
                 <Route path="/loot" element={<LootTracker />} />
                 <Route path="/xp-tracker" element={<XpTracker />} />
                 <Route path="/farm-timers" element={<FarmTimers />} />
+                <Route path="/groups" element={<GroupsList />} />
+                <Route path="/groups/new" element={<GroupForm />} />
+                <Route path="/groups/:id" element={<GroupDetail mode="owner" />} />
               </Route>
 
               {/* 404 */}
