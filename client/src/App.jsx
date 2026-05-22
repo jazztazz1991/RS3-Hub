@@ -27,6 +27,7 @@ const MethodsPage = lazy(() => import('./components/Methods/MethodsPage'));
 
 const QuestTracker = lazy(() => import('./components/QuestTracker'));
 const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
+const QuickGuidePreview = lazy(() => import('./components/QuestTracker/QuickGuidePreview'));
 
 const Calculators = lazy(() => import('./components/Calculators/Calculators'));
 const ArchaeologyCalculator = lazy(() => import('./components/Calculators/Archaeology/ArchaeologyCalculator'));
@@ -162,6 +163,10 @@ function AppContent() {
               {/* Public — Quests (read-only browsing) */}
               <Route path="/quests" element={<QuestTracker />} />
               <Route path="/quests/:questTitle" element={<QuestDetails />} />
+
+              {/* Quick guide preview (wiki-scraped — test page) */}
+              <Route path="/quest-preview" element={<QuickGuidePreview />} />
+              <Route path="/quest-preview/:quest" element={<QuickGuidePreview />} />
 
               {/* Public — Items (catalog) */}
               <Route path="/items" element={<Items />} />
