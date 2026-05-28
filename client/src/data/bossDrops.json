@@ -1,0 +1,886 @@
+{
+  "generated_at": "2026-05-27T19:23:12.089Z",
+  "note": "Drop rates + GE prices scraped from runescape.wiki. Kill/clear times are curated estimates. Re-run server/jobs/scrapeBossDrops.js to refresh.",
+  "bosses": [
+    {
+      "slug": "general-graardor",
+      "name": "General Graardor",
+      "category": "GWD1",
+      "encounter": "kill",
+      "defaultSeconds": 50,
+      "members": true,
+      "drops": [
+        {
+          "name": "Primal stone spirit",
+          "rate": 48761,
+          "value": 1497870
+        },
+        {
+          "name": "Bandos chestplate",
+          "rate": 384,
+          "value": 1440688
+        },
+        {
+          "name": "Bandos tassets",
+          "rate": 384,
+          "value": 1246121
+        },
+        {
+          "name": "Yew logs",
+          "rate": 49391,
+          "value": 538650
+        }
+      ]
+    },
+    {
+      "slug": "kril-tsutsaroth",
+      "name": "K'ril Tsutsaroth",
+      "category": "GWD1",
+      "encounter": "kill",
+      "defaultSeconds": 55,
+      "members": true,
+      "drops": [
+        {
+          "name": "Garb of subjugation",
+          "rate": 512,
+          "value": 3509954
+        },
+        {
+          "name": "Hood of subjugation",
+          "rate": 512,
+          "value": 3505352
+        },
+        {
+          "name": "Gloves of subjugation",
+          "rate": 512,
+          "value": 3502566
+        },
+        {
+          "name": "Boots of subjugation",
+          "rate": 512,
+          "value": 3502241
+        },
+        {
+          "name": "Gown of subjugation",
+          "rate": 512,
+          "value": 3456207
+        },
+        {
+          "name": "Zamorakian spear",
+          "rate": 512,
+          "value": 1795039
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 30965,
+          "value": 1497870
+        },
+        {
+          "name": "Huge plated rune salvage",
+          "rate": 43351,
+          "value": 696330
+        },
+        {
+          "name": "Zamorak hilt",
+          "rate": 512,
+          "value": 682721
+        },
+        {
+          "name": "Large blunt necronium salvage",
+          "rate": 43351,
+          "value": 637750
+        }
+      ]
+    },
+    {
+      "slug": "kreearra",
+      "name": "Kree'arra",
+      "category": "GWD1",
+      "encounter": "kill",
+      "defaultSeconds": 60,
+      "members": true,
+      "drops": [
+        {
+          "name": "Armadyl hilt",
+          "rate": 512,
+          "value": 6142389
+        },
+        {
+          "name": "Armadyl chainskirt",
+          "rate": 384,
+          "value": 5306288
+        },
+        {
+          "name": "Armadyl chestplate",
+          "rate": 384,
+          "value": 5303381
+        },
+        {
+          "name": "Armadyl boots",
+          "rate": 384,
+          "value": 3586764
+        },
+        {
+          "name": "Armadyl gloves",
+          "rate": 384,
+          "value": 3104810
+        },
+        {
+          "name": "Armadyl buckler",
+          "rate": 384,
+          "value": 3046071
+        },
+        {
+          "name": "Armadyl helmet",
+          "rate": 384,
+          "value": 3019062
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 48761,
+          "value": 1497870
+        }
+      ]
+    },
+    {
+      "slug": "commander-zilyana",
+      "name": "Commander Zilyana",
+      "category": "GWD1",
+      "encounter": "kill",
+      "defaultSeconds": 55,
+      "members": true,
+      "drops": [
+        {
+          "name": "Armadyl crossbow",
+          "rate": 640,
+          "value": 3128781
+        },
+        {
+          "name": "Saradomin hilt",
+          "rate": 512,
+          "value": 2700120
+        },
+        {
+          "name": "Off-hand Armadyl crossbow",
+          "rate": 640,
+          "value": 2591394
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 48761,
+          "value": 1497870
+        },
+        {
+          "name": "Saradomin sword",
+          "rate": 320,
+          "value": 615696
+        }
+      ]
+    },
+    {
+      "slug": "nex",
+      "name": "Nex",
+      "category": "GWD1",
+      "encounter": "kill",
+      "defaultSeconds": 110,
+      "members": true,
+      "drops": [
+        {
+          "name": "Virtus robe top",
+          "rate": 384,
+          "value": 70323195
+        },
+        {
+          "name": "Torva platebody",
+          "rate": 384,
+          "value": 60432190
+        },
+        {
+          "name": "Pernix body",
+          "rate": 384,
+          "value": 45467326
+        },
+        {
+          "name": "Virtus robe legs",
+          "rate": 384,
+          "value": 42114538
+        },
+        {
+          "name": "Torva platelegs",
+          "rate": 384,
+          "value": 34989433
+        },
+        {
+          "name": "Virtus mask",
+          "rate": 384,
+          "value": 27229293
+        },
+        {
+          "name": "Pernix chaps",
+          "rate": 384,
+          "value": 26863756
+        },
+        {
+          "name": "Torva full helm",
+          "rate": 384,
+          "value": 23540901
+        },
+        {
+          "name": "Pernix cowl",
+          "rate": 384,
+          "value": 17816794
+        },
+        {
+          "name": "Virtus gloves",
+          "rate": 384,
+          "value": 13399935
+        }
+      ]
+    },
+    {
+      "slug": "gregorovic",
+      "name": "Gregorovic",
+      "category": "GWD2",
+      "encounter": "kill",
+      "defaultSeconds": 95,
+      "members": true,
+      "drops": [
+        {
+          "name": "Crest of Sliske",
+          "rate": 512,
+          "value": 26643746
+        },
+        {
+          "name": "Off-hand shadow glaive",
+          "rate": 512,
+          "value": 12503548
+        },
+        {
+          "name": "Shadow glaive",
+          "rate": 512,
+          "value": 10718706
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 31207,
+          "value": 1497870
+        },
+        {
+          "name": "Huge plated rune salvage",
+          "rate": 43690,
+          "value": 696330
+        },
+        {
+          "name": "Large blunt necronium salvage",
+          "rate": 43690,
+          "value": 637750
+        },
+        {
+          "name": "Yew logs",
+          "rate": 32768,
+          "value": 538650
+        }
+      ]
+    },
+    {
+      "slug": "helwyr",
+      "name": "Helwyr",
+      "category": "GWD2",
+      "encounter": "kill",
+      "defaultSeconds": 85,
+      "members": true,
+      "drops": [
+        {
+          "name": "Crest of Seren",
+          "rate": 512,
+          "value": 20937687
+        },
+        {
+          "name": "Orb of the Cywir elders",
+          "rate": 512,
+          "value": 20115613
+        },
+        {
+          "name": "Wand of the Cywir elders",
+          "rate": 512,
+          "value": 17612782
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 31207,
+          "value": 1497870
+        },
+        {
+          "name": "Huge plated rune salvage",
+          "rate": 43690,
+          "value": 696330
+        },
+        {
+          "name": "Large blunt necronium salvage",
+          "rate": 43690,
+          "value": 637750
+        },
+        {
+          "name": "Yew logs",
+          "rate": 32768,
+          "value": 538650
+        }
+      ]
+    },
+    {
+      "slug": "twin-furies",
+      "name": "Twin Furies",
+      "category": "GWD2",
+      "encounter": "kill",
+      "defaultSeconds": 90,
+      "members": true,
+      "drops": [
+        {
+          "name": "Crest of Zamorak",
+          "rate": 512,
+          "value": 10742749
+        },
+        {
+          "name": "Zamorakian essence",
+          "rate": 128,
+          "value": 7766737
+        },
+        {
+          "name": "Blade of Avaryss",
+          "rate": 512,
+          "value": 5370615
+        },
+        {
+          "name": "Blade of Nymora",
+          "rate": 512,
+          "value": 5254780
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 31207,
+          "value": 1497870
+        },
+        {
+          "name": "Huge plated rune salvage",
+          "rate": 43690,
+          "value": 696330
+        },
+        {
+          "name": "Large blunt necronium salvage",
+          "rate": 43690,
+          "value": 637750
+        },
+        {
+          "name": "Yew logs",
+          "rate": 32768,
+          "value": 538650
+        }
+      ]
+    },
+    {
+      "slug": "kalphite-king",
+      "name": "Kalphite King",
+      "category": "Endgame",
+      "encounter": "kill",
+      "defaultSeconds": 90,
+      "members": true,
+      "drops": [
+        {
+          "name": "Drygore longsword",
+          "rate": 252,
+          "value": 25450963
+        },
+        {
+          "name": "Off-hand drygore longsword",
+          "rate": 252,
+          "value": 23607150
+        },
+        {
+          "name": "Off-hand drygore rapier",
+          "rate": 252,
+          "value": 22366944
+        },
+        {
+          "name": "Off-hand drygore mace",
+          "rate": 252,
+          "value": 21770384
+        },
+        {
+          "name": "Drygore rapier",
+          "rate": 252,
+          "value": 21751870
+        },
+        {
+          "name": "Drygore mace",
+          "rate": 252,
+          "value": 21536057
+        },
+        {
+          "name": "Primal stone spirit",
+          "rate": 24380,
+          "value": 1497870
+        },
+        {
+          "name": "Huge plated rune salvage",
+          "rate": 34133,
+          "value": 696330
+        },
+        {
+          "name": "Large blunt necronium salvage",
+          "rate": 34133,
+          "value": 637750
+        },
+        {
+          "name": "Yew logs",
+          "rate": 25600,
+          "value": 538650
+        }
+      ]
+    },
+    {
+      "slug": "vorago",
+      "name": "Vorago",
+      "category": "Endgame",
+      "encounter": "clear",
+      "defaultSeconds": 600,
+      "members": true,
+      "drops": [
+        {
+          "name": "Seismic singularity",
+          "rate": 400,
+          "value": 75722305
+        },
+        {
+          "name": "Seismic wand",
+          "rate": 400,
+          "value": 75012651
+        }
+      ]
+    },
+    {
+      "slug": "solak",
+      "name": "Solak",
+      "category": "Endgame",
+      "encounter": "clear",
+      "defaultSeconds": 360,
+      "members": true,
+      "drops": [
+        {
+          "name": "Erethdor's grimoire",
+          "rate": 200,
+          "value": 118885835
+        },
+        {
+          "name": "Torn grimoire page",
+          "rate": 200,
+          "value": 105776225
+        },
+        {
+          "name": "Blightbound crossbow",
+          "rate": 400,
+          "value": 73515598
+        },
+        {
+          "name": "Off-hand Blightbound crossbow",
+          "rate": 400,
+          "value": 72080289
+        },
+        {
+          "name": "Cinderbane gloves",
+          "rate": 1000,
+          "value": 37253095
+        },
+        {
+          "name": "Ancient elven ritual shard",
+          "rate": 1000,
+          "value": 5642916
+        },
+        {
+          "name": "Purple mushroom",
+          "rate": 500,
+          "value": 3544012
+        },
+        {
+          "name": "Merethiel's stave",
+          "rate": 500,
+          "value": 3316793
+        }
+      ]
+    },
+    {
+      "slug": "kerapac",
+      "name": "Kerapac, the Bound",
+      "category": "Modern",
+      "encounter": "kill",
+      "defaultSeconds": 170,
+      "members": true,
+      "drops": [
+        {
+          "name": "Fractured Staff of Armadyl component",
+          "rate": 400,
+          "value": 566001028
+        },
+        {
+          "name": "Greater Concentrated blast ability codex",
+          "rate": 768,
+          "value": 7967196
+        },
+        {
+          "name": "Scripture of Jas",
+          "rate": 768,
+          "value": 3157233
+        }
+      ]
+    },
+    {
+      "slug": "raksha",
+      "name": "Raksha, the Shadow Colossus",
+      "category": "Modern",
+      "encounter": "kill",
+      "defaultSeconds": 150,
+      "members": true,
+      "drops": [
+        {
+          "name": "Greater Chain ability codex",
+          "rate": 325,
+          "value": 306929105
+        },
+        {
+          "name": "Greater Ricochet ability codex",
+          "rate": 325,
+          "value": 300005661
+        },
+        {
+          "name": "Shadow spike",
+          "rate": 325,
+          "value": 67562698
+        },
+        {
+          "name": "Divert ability codex",
+          "rate": 325,
+          "value": 54786793
+        },
+        {
+          "name": "Fleeting boots",
+          "rate": 130,
+          "value": 1322415
+        }
+      ]
+    },
+    {
+      "slug": "arch-glacor",
+      "name": "Arch-Glacor",
+      "category": "Modern",
+      "encounter": "kill",
+      "defaultSeconds": 180,
+      "members": true,
+      "drops": [
+        {
+          "name": "Scripture of Wen",
+          "rate": 1725,
+          "value": 14390542
+        },
+        {
+          "name": "Uncut onyx",
+          "rate": 8000,
+          "value": 1068925
+        },
+        {
+          "name": "Hydrix bolt tips",
+          "rate": 8000,
+          "value": 769600
+        }
+      ]
+    },
+    {
+      "slug": "rasial",
+      "name": "Rasial, the First Necromancer",
+      "category": "Modern",
+      "encounter": "kill",
+      "defaultSeconds": 150,
+      "members": true,
+      "drops": [
+        {
+          "name": "Soulbound lantern",
+          "rate": 640,
+          "value": 402644589
+        },
+        {
+          "name": "Omni guard",
+          "rate": 640,
+          "value": 181245260
+        },
+        {
+          "name": "Robe top of the First Necromancer",
+          "rate": 640,
+          "value": 169092795
+        },
+        {
+          "name": "Robe bottom of the First Necromancer",
+          "rate": 640,
+          "value": 112669398
+        },
+        {
+          "name": "Foot wraps of the First Necromancer",
+          "rate": 640,
+          "value": 26439614
+        },
+        {
+          "name": "Crown of the First Necromancer",
+          "rate": 640,
+          "value": 22481667
+        },
+        {
+          "name": "Hand wrap of the First Necromancer",
+          "rate": 640,
+          "value": 5332335
+        }
+      ]
+    },
+    {
+      "slug": "croesus",
+      "name": "Croesus",
+      "category": "Modern",
+      "encounter": "clear",
+      "defaultSeconds": 300,
+      "members": true,
+      "drops": [
+        {
+          "name": "Cryptbloom top (incomplete)",
+          "rate": 5400,
+          "value": 541385705
+        },
+        {
+          "name": "Cryptbloom bottoms (incomplete)",
+          "rate": 5400,
+          "value": 484400318
+        },
+        {
+          "name": "Croesus sporehammer",
+          "rate": 5400,
+          "value": 376280392
+        },
+        {
+          "name": "Cryptbloom helm (incomplete)",
+          "rate": 5400,
+          "value": 372374976
+        },
+        {
+          "name": "Croesus foultorch",
+          "rate": 5400,
+          "value": 330512936
+        },
+        {
+          "name": "Cryptbloom boots (incomplete)",
+          "rate": 5400,
+          "value": 138232067
+        },
+        {
+          "name": "Scripture of Bik",
+          "rate": 5400,
+          "value": 95814916
+        },
+        {
+          "name": "Croesus spore sack",
+          "rate": 5400,
+          "value": 36436308
+        },
+        {
+          "name": "Cryptbloom gloves (incomplete)",
+          "rate": 5400,
+          "value": 24015475
+        }
+      ]
+    },
+    {
+      "slug": "the-magister",
+      "name": "The Magister",
+      "category": "Modern",
+      "encounter": "kill",
+      "defaultSeconds": 130,
+      "members": true,
+      "drops": [
+        {
+          "name": "Gloves of passage",
+          "rate": 500,
+          "value": 81585753
+        }
+      ]
+    },
+    {
+      "slug": "queen-black-dragon",
+      "name": "Queen Black Dragon",
+      "category": "Classic",
+      "encounter": "kill",
+      "defaultSeconds": 150,
+      "members": true,
+      "drops": [
+        {
+          "name": "Primal stone spirit",
+          "rate": 781,
+          "value": 1497870
+        },
+        {
+          "name": "Draconic visage",
+          "rate": 109,
+          "value": 1211320
+        },
+        {
+          "name": "Onyx bolt tips",
+          "rate": 2051,
+          "value": 1055970
+        },
+        {
+          "name": "Battlestaff",
+          "rate": 2051,
+          "value": 763920
+        },
+        {
+          "name": "Huge plated rune salvage",
+          "rate": 1094,
+          "value": 696330
+        },
+        {
+          "name": "Large blunt necronium salvage",
+          "rate": 1094,
+          "value": 637750
+        },
+        {
+          "name": "Soul rune",
+          "rate": 2051,
+          "value": 575100
+        },
+        {
+          "name": "Yew logs",
+          "rate": 820,
+          "value": 538650
+        }
+      ]
+    },
+    {
+      "slug": "corporeal-beast",
+      "name": "Corporeal Beast",
+      "category": "Classic",
+      "encounter": "kill",
+      "defaultSeconds": 200,
+      "members": true,
+      "drops": [
+        {
+          "name": "Arcane sigil",
+          "rate": 2560,
+          "value": 19795558
+        },
+        {
+          "name": "Elysian sigil",
+          "rate": 2560,
+          "value": 15831475
+        },
+        {
+          "name": "Divine sigil",
+          "rate": 2560,
+          "value": 10010465
+        },
+        {
+          "name": "Spectral sigil",
+          "rate": 1280,
+          "value": 7076964
+        },
+        {
+          "name": "Holy elixir",
+          "rate": 171,
+          "value": 813426
+        }
+      ]
+    },
+    {
+      "slug": "king-black-dragon",
+      "name": "King Black Dragon",
+      "category": "Classic",
+      "encounter": "kill",
+      "defaultSeconds": 75,
+      "members": true,
+      "drops": [
+        {
+          "name": "Draconic visage",
+          "rate": 5000,
+          "value": 1211320
+        }
+      ]
+    },
+    {
+      "slug": "dragonkin-laboratory",
+      "name": "Dragonkin Laboratory (full run)",
+      "category": "Elite Dungeon",
+      "encounter": "clear",
+      "defaultSeconds": 480,
+      "members": true,
+      "drops": [
+        {
+          "name": "Lucky dragonkin coin",
+          "rate": 50000,
+          "value": 6793760
+        },
+        {
+          "name": "Laboratory relic (rare)",
+          "rate": 400,
+          "value": 1000000
+        }
+      ]
+    },
+    {
+      "slug": "temple-of-aminishi",
+      "name": "Temple of Aminishi (full run)",
+      "category": "Elite Dungeon",
+      "encounter": "clear",
+      "defaultSeconds": 420,
+      "members": true,
+      "drops": [
+        {
+          "name": "Steadfast scale",
+          "rate": 10000,
+          "value": 3587174
+        },
+        {
+          "name": "Seasinger weapon upgrade kit",
+          "rate": 2000,
+          "value": 2884561
+        },
+        {
+          "name": "Ancient scale",
+          "rate": 10000,
+          "value": 586960
+        }
+      ]
+    },
+    {
+      "slug": "the-shadow-reef",
+      "name": "The Shadow Reef (full run)",
+      "category": "Elite Dungeon",
+      "encounter": "clear",
+      "defaultSeconds": 540,
+      "members": true,
+      "drops": [
+        {
+          "name": "Shadowy egg",
+          "rate": 50000,
+          "value": 382991026
+        },
+        {
+          "name": "Coins",
+          "rate": 200,
+          "value": 1000000
+        },
+        {
+          "name": "Reef relic (rare)",
+          "rate": 400,
+          "value": 1000000
+        },
+        {
+          "name": "Ancient scale",
+          "rate": 401,
+          "value": 586960
+        }
+      ]
+    }
+  ]
+}

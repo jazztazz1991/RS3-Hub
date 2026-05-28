@@ -29,6 +29,19 @@ const FarmTimers = lazy(() => import('./components/FarmTimers/FarmTimers'));
 const GroupsList = lazy(() => import('./components/Groups/GroupsList'));
 const GroupForm = lazy(() => import('./components/Groups/GroupForm'));
 const GroupDetail = lazy(() => import('./components/Groups/GroupDetail'));
+const WikiSandbox = lazy(() => import('./components/WikiSandbox/WikiSandbox'));
+const BossHunt = lazy(() => import('./components/BossHunt/BossHunt'));
+const WikiIndex = lazy(() => import('./components/Wiki/WikiIndex'));
+const CreaturesList = lazy(() => import('./components/Wiki/Creatures').then(m => ({ default: m.CreaturesList })));
+const CreatureDetail = lazy(() => import('./components/Wiki/Creatures').then(m => ({ default: m.CreatureDetail })));
+const NPCsList = lazy(() => import('./components/Wiki/NPCs').then(m => ({ default: m.NPCsList })));
+const NPCDetail = lazy(() => import('./components/Wiki/NPCs').then(m => ({ default: m.NPCDetail })));
+const AchievementsList = lazy(() => import('./components/Wiki/Achievements').then(m => ({ default: m.AchievementsList })));
+const AchievementDetail = lazy(() => import('./components/Wiki/Achievements').then(m => ({ default: m.AchievementDetail })));
+const LocationsList = lazy(() => import('./components/Wiki/Locations').then(m => ({ default: m.LocationsList })));
+const LocationDetail = lazy(() => import('./components/Wiki/Locations').then(m => ({ default: m.LocationDetail })));
+const ResourceNodesList = lazy(() => import('./components/Wiki/ResourceNodes').then(m => ({ default: m.ResourceNodesList })));
+const ResourceNodeDetail = lazy(() => import('./components/Wiki/ResourceNodes').then(m => ({ default: m.ResourceNodeDetail })));
 
 const QuestTracker = lazy(() => import('./components/QuestTracker'));
 const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
@@ -181,8 +194,27 @@ function AppContent() {
               <Route path="/methods" element={<MethodsPage />} />
               <Route path="/methods/:skill" element={<MethodsPage />} />
 
+              {/* Public — Boss rare-drop hunter calculator */}
+              <Route path="/boss-hunt" element={<BossHunt />} />
+
               {/* Public — Shared group view (anyone with the link) */}
               <Route path="/groups/share/:token" element={<GroupDetail mode="share" />} />
+
+              {/* Temp — wiki data sandbox */}
+              <Route path="/wiki-sandbox" element={<WikiSandbox />} />
+
+              {/* Wiki — browseable real pages backed by the sandbox catalogue */}
+              <Route path="/wiki" element={<WikiIndex />} />
+              <Route path="/wiki/creatures" element={<CreaturesList />} />
+              <Route path="/wiki/creatures/:slug" element={<CreatureDetail />} />
+              <Route path="/wiki/npcs" element={<NPCsList />} />
+              <Route path="/wiki/npcs/:slug" element={<NPCDetail />} />
+              <Route path="/wiki/achievements" element={<AchievementsList />} />
+              <Route path="/wiki/achievements/:slug" element={<AchievementDetail />} />
+              <Route path="/wiki/locations" element={<LocationsList />} />
+              <Route path="/wiki/locations/:slug" element={<LocationDetail />} />
+              <Route path="/wiki/resource-nodes" element={<ResourceNodesList />} />
+              <Route path="/wiki/resource-nodes/:slug" element={<ResourceNodeDetail />} />
 
               {/* Protected — features that save to database */}
               <Route element={<ProtectedRoute />}>

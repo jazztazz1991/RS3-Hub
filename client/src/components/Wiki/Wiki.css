@@ -1,0 +1,703 @@
+.wiki-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    color: var(--text-primary, #e6e6e6);
+}
+
+.wiki-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--accent, #0d8c8c);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.wiki-header h2 { margin: 0; }
+.wiki-sub {
+    margin: 0.25rem 0 0;
+    color: var(--text-secondary, #888);
+    font-size: 0.85rem;
+}
+.wiki-back {
+    color: var(--text-secondary, #aaa);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+.wiki-back:hover { color: var(--text-primary, #e6e6e6); }
+
+.wiki-empty, .wiki-error {
+    padding: 1.25rem;
+    font-style: italic;
+    color: var(--text-secondary, #888);
+    text-align: center;
+}
+.wiki-error { color: #d97373; }
+
+/* Index hub */
+.wiki-hub {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.85rem;
+}
+.wiki-hub-card {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.wiki-hub-card:hover { border-color: var(--accent, #0d8c8c); }
+.wiki-hub-card-title {
+    color: var(--accent-light, #6cd5d5);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.wiki-hub-card-blurb {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.wiki-hub-card-count {
+    color: var(--text-secondary, #888);
+    font-size: 0.78rem;
+    margin-top: auto;
+}
+
+/* List page toolbar */
+.wiki-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.wiki-search {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.45rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 280px;
+}
+.wiki-filter {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.4rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+.wiki-count {
+    color: var(--text-secondary, #888);
+    font-size: 0.82rem;
+    margin-left: auto;
+}
+
+/* List views */
+.wiki-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+}
+.wiki-card {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    padding: 0.75rem 0.9rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.wiki-card:hover { border-color: var(--accent, #0d8c8c); }
+.wiki-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+.wiki-card-title {
+    font-weight: 600;
+    color: var(--accent-light, #6cd5d5);
+    font-size: 0.95rem;
+}
+.wiki-card-badge {
+    background: var(--accent-dark, #0a5757);
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.wiki-card-row {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--text-secondary, #aaa);
+}
+.wiki-card-row strong { color: var(--text-primary, #e6e6e6); }
+.wiki-card-flags {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+.wiki-flag {
+    background: var(--bg-tertiary, #111827);
+    color: var(--text-secondary, #aaa);
+    padding: 0.1rem 0.45rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.wiki-flag-warn { color: #d97373; }
+.wiki-flag-p2p { background: rgba(255, 216, 102, 0.12); color: #ffd866; }
+.wiki-card-examine {
+    color: var(--text-secondary, #888);
+    font-style: italic;
+    font-size: 0.78rem;
+    line-height: 1.3;
+}
+
+/* Table-style list (NPCs, resource nodes) */
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.wiki-table th {
+    text-align: left;
+    background: var(--bg-tertiary, #111827);
+    color: var(--text-secondary, #aaa);
+    padding: 0.55rem 0.8rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--border-color, #374151);
+}
+.wiki-table td {
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid var(--border-color, #2a3441);
+    vertical-align: top;
+}
+.wiki-table tr:last-child td { border-bottom: none; }
+.wiki-table a {
+    color: var(--accent-light, #6cd5d5);
+    text-decoration: none;
+    font-weight: 500;
+}
+.wiki-table a:hover { text-decoration: underline; }
+
+/* Subtabs (resource node types) */
+.wiki-subtabs {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+}
+.wiki-subtab {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-secondary, #aaa);
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.83rem;
+    text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.wiki-subtab.active {
+    background: var(--accent-dark, #0a5757);
+    border-color: var(--accent, #0d8c8c);
+    color: #fff;
+}
+.wiki-subtab-count {
+    background: var(--bg-tertiary, #111827);
+    color: var(--text-secondary, #888);
+    font-size: 0.7rem;
+    padding: 0.05rem 0.4rem;
+    border-radius: 8px;
+}
+
+/* Achievement / location grouped list */
+.wiki-group { margin-bottom: 1rem; background: var(--bg-secondary, #1f2937); border: 1px solid var(--border-color, #374151); border-radius: 6px; padding: 0.85rem 1rem; }
+.wiki-group-head { margin: 0 0 0.55rem; color: var(--accent-light, #6cd5d5); font-size: 1rem; }
+.wiki-group-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+.wiki-group-item { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.35rem 0; border-bottom: 1px solid var(--border-color, #2a3441); }
+.wiki-group-item:last-child { border-bottom: none; }
+.wiki-group-item a { color: var(--text-primary, #e6e6e6); text-decoration: none; font-weight: 500; }
+.wiki-group-item a:hover { color: var(--accent-light, #6cd5d5); }
+
+/* Detail page split (mockup left, JSON right) */
+.wiki-detail-split {
+    display: grid;
+    grid-template-columns: minmax(360px, 1.3fr) minmax(280px, 1fr);
+    gap: 1rem;
+}
+@media (max-width: 960px) {
+    .wiki-detail-split { grid-template-columns: 1fr; }
+}
+.wiki-pane {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    padding: 1rem;
+}
+.wiki-pane-head {
+    margin: 0 0 0.75rem;
+    color: var(--accent-light, #6cd5d5);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.wiki-json {
+    margin: 0;
+    color: var(--text-primary, #e6e6e6);
+    font-family: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 75vh;
+    overflow: auto;
+}
+
+/* Detail-page mockup atoms (shared with the previous sandbox styling) */
+.wiki-hero {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-color, #2a3441);
+}
+.wiki-hero-img {
+    width: 64px;
+    height: 64px;
+    background: var(--accent-dark, #0a5757);
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.wiki-hero-npc { background: #4a5568; }
+.wiki-hero-loc { background: #6b46a3; font-size: 1.9rem; }
+.wiki-hero-res { background: #2d5e3e; font-size: 1.9rem; }
+.wiki-hero-ach { background: #b87513; font-size: 1.9rem; }
+
+.wiki-title { margin: 0 0 0.25rem; color: var(--text-primary, #e6e6e6); font-size: 1.5rem; }
+.wiki-examine { margin: 0; color: var(--text-secondary, #aaa); font-style: italic; font-size: 0.9rem; }
+
+.wiki-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.wiki-tag {
+    background: var(--bg-tertiary, #111827);
+    color: var(--text-secondary, #aaa);
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.wiki-tag-p2p { background: rgba(255, 216, 102, 0.15); color: #ffd866; }
+.wiki-tag-warn { background: rgba(217, 115, 115, 0.15); color: #d97373; }
+.wiki-tag-accent { background: rgba(108, 213, 213, 0.12); color: var(--accent-light, #6cd5d5); }
+
+.wiki-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.wiki-stat {
+    background: var(--bg-tertiary, #111827);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 4px;
+    padding: 0.55rem 0.7rem;
+}
+.wiki-stat-label {
+    color: var(--text-secondary, #888);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: block;
+}
+.wiki-stat-value {
+    color: var(--text-primary, #e6e6e6);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.wiki-infobox {
+    background: var(--bg-tertiary, #111827);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 4px;
+    padding: 0.3rem 0;
+    margin-bottom: 1rem;
+}
+.wiki-row { display: flex; justify-content: space-between; padding: 0.4rem 0.85rem; border-bottom: 1px solid var(--border-color, #2a3441); font-size: 0.86rem; }
+.wiki-row:last-child { border-bottom: none; }
+.wiki-row-label { color: var(--text-secondary, #aaa); text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.74rem; }
+.wiki-row-value { color: var(--text-primary, #e6e6e6); }
+
+.wiki-section { margin-bottom: 1rem; }
+.wiki-section h4 { margin: 0 0 0.4rem; font-size: 0.95rem; color: var(--accent-light, #6cd5d5); }
+.wiki-section p { margin: 0; color: var(--text-secondary, #aaa); font-size: 0.85rem; line-height: 1.45; }
+
+.wiki-data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.wiki-data-table th, .wiki-data-table td { text-align: left; padding: 0.3rem 0.65rem; border-bottom: 1px solid var(--border-color, #2a3441); }
+.wiki-data-table th { color: var(--text-secondary, #888); font-weight: 500; width: 40%; }
+.wiki-data-table td { color: var(--text-primary, #e6e6e6); word-break: break-word; }
+
+.wiki-wiki-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--accent-light, #6cd5d5);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+.wiki-wiki-link:hover { text-decoration: underline; }
+
+.wiki-diff {
+    padding: 0.2rem 0.65rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-left: 0.5rem;
+}
+.wiki-diff-easy { background: rgba(106, 208, 122, 0.15); color: #6ad07a; }
+.wiki-diff-medium { background: rgba(255, 216, 102, 0.15); color: #ffd866; }
+.wiki-diff-hard { background: rgba(217, 115, 115, 0.15); color: #d97373; }
+.wiki-diff-elite { background: rgba(186, 130, 217, 0.15); color: #ba82d9; }
+.wiki-diff-master { background: rgba(108, 213, 213, 0.15); color: var(--accent-light, #6cd5d5); }
+
+/* ============================================================
+   Creature detail page — proper bestiary layout
+   ============================================================ */
+.cr-hero {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: linear-gradient(120deg, rgba(13, 140, 140, 0.15), var(--bg-secondary, #1f2937));
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+.cr-hero-img {
+    width: 78px;
+    height: 78px;
+    background: var(--accent, #0d8c8c);
+    color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 0 24px rgba(13, 140, 140, 0.3);
+}
+.cr-hero-meta { flex: 1; }
+.cr-hero-name {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--text-primary, #e6e6e6);
+    letter-spacing: 0.01em;
+}
+.cr-hero-sub {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    color: var(--text-secondary, #aaa);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+.cr-hero-sub strong { color: var(--text-primary, #e6e6e6); }
+.cr-examine {
+    margin: 0.4rem 0 0;
+    color: var(--text-secondary, #888);
+    font-style: italic;
+    font-size: 0.88rem;
+}
+.cr-tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.cr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.cr-card {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+}
+.cr-card-title {
+    margin: 0 0 0.7rem;
+    font-size: 0.78rem;
+    color: var(--accent-light, #6cd5d5);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-color, #2a3441);
+}
+.cr-card-offense      { border-left: 3px solid #d97373; }
+.cr-card-defense      { border-left: 3px solid #82a4d9; }
+.cr-card-damage       { border-left: 3px solid #ffd866; }
+.cr-card-xp           { border-left: 3px solid #6ad07a; }
+.cr-card-slayer       { border-left: 3px solid #ba82d9; }
+.cr-card-identity     { border-left: 3px solid #ba82d9; }
+.cr-card-location     { border-left: 3px solid #82a4d9; }
+.cr-card-role         { border-left: 3px solid #6ad07a; }
+.cr-card-quest        { border-left: 3px solid #ffd866; }
+.cr-card-requirements { border-left: 3px solid #d97373; }
+.cr-card-rewards      { border-left: 3px solid #ffd866; }
+
+.cr-empty-soft {
+    margin: 0.4rem 0 0;
+    color: var(--text-secondary, #888);
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+/* Hero variants per entity type */
+.cr-hero-npc {
+    background: linear-gradient(120deg, rgba(186, 130, 217, 0.12), var(--bg-secondary, #1f2937));
+}
+.cr-hero-img-npc { background: #6b46a3; box-shadow: 0 0 24px rgba(186, 130, 217, 0.3); }
+
+.cr-hero-ach {
+    background: linear-gradient(120deg, rgba(184, 117, 19, 0.15), var(--bg-secondary, #1f2937));
+}
+.cr-hero-img-ach { background: #b87513; box-shadow: 0 0 24px rgba(184, 117, 19, 0.3); }
+.cr-hero-diff-master  { background: linear-gradient(120deg, rgba(108, 213, 213, 0.18), var(--bg-secondary, #1f2937)); }
+.cr-hero-diff-elite   { background: linear-gradient(120deg, rgba(186, 130, 217, 0.18), var(--bg-secondary, #1f2937)); }
+.cr-hero-diff-hard    { background: linear-gradient(120deg, rgba(217, 115, 115, 0.18), var(--bg-secondary, #1f2937)); }
+.cr-hero-diff-medium  { background: linear-gradient(120deg, rgba(255, 216, 102, 0.18), var(--bg-secondary, #1f2937)); }
+.cr-hero-diff-easy    { background: linear-gradient(120deg, rgba(106, 208, 122, 0.18), var(--bg-secondary, #1f2937)); }
+
+.cr-hero-loc-banner {
+    background: linear-gradient(120deg, rgba(107, 70, 163, 0.18), var(--bg-secondary, #1f2937));
+}
+.cr-hero-img-loc { background: #6b46a3; box-shadow: 0 0 24px rgba(107, 70, 163, 0.3); }
+
+.cr-hero-res { background: linear-gradient(120deg, rgba(45, 94, 62, 0.18), var(--bg-secondary, #1f2937)); }
+.cr-hero-img-res { background: #2d5e3e; box-shadow: 0 0 24px rgba(45, 94, 62, 0.3); }
+.cr-hero-res-tree         { background: linear-gradient(120deg, rgba(45, 94, 62, 0.22), var(--bg-secondary, #1f2937)); }
+.cr-hero-res-rock         { background: linear-gradient(120deg, rgba(150, 150, 150, 0.15), var(--bg-secondary, #1f2937)); }
+.cr-hero-res-fishing_spot { background: linear-gradient(120deg, rgba(130, 164, 217, 0.18), var(--bg-secondary, #1f2937)); }
+.cr-hero-res-farming_patch{ background: linear-gradient(120deg, rgba(184, 117, 19, 0.15), var(--bg-secondary, #1f2937)); }
+
+/* Achievement-page specifics */
+.ach-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.ach-desc {
+    margin: 0.5rem 0 0;
+    color: var(--text-secondary, #bbb);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+.ach-block {
+    margin: 0;
+    color: var(--text-primary, #e6e6e6);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+.ach-cta {
+    background: var(--accent, #0d8c8c);
+    color: #fff;
+    border: 1px solid var(--accent, #0d8c8c);
+    padding: 0.45rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+    opacity: 0.6;
+}
+.ach-cta:disabled { cursor: not-allowed; }
+
+/* Lead paragraph + hydrated section cards */
+.cr-card-about { border-left: 3px solid var(--accent-light, #6cd5d5); }
+.cr-prose p {
+    margin: 0 0 0.75rem;
+    color: var(--text-secondary, #d0d0d0);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+.cr-prose p:last-child { margin-bottom: 0; }
+
+.cr-kv {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--border-color, #2a3441);
+    font-size: 0.9rem;
+}
+.cr-kv:last-child { border-bottom: none; }
+.cr-kv-list .cr-kv:last-child { border-bottom: none; }
+.cr-kv-label {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.cr-kv-value {
+    color: var(--text-primary, #e6e6e6);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+.cr-kv-lp .cr-kv-value { color: #ff6b6b; font-size: 1.05rem; }
+
+.cr-section-label {
+    color: var(--text-secondary, #888);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0.5rem 0 0.35rem;
+}
+
+/* Offensive bars */
+.cr-bar {
+    margin-bottom: 0.55rem;
+}
+.cr-bar:last-child { margin-bottom: 0; }
+.cr-bar-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    margin-bottom: 0.2rem;
+}
+.cr-bar-label { color: var(--text-secondary, #aaa); }
+.cr-bar-value {
+    color: var(--text-primary, #e6e6e6);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+.cr-bar-track {
+    height: 6px;
+    background: var(--bg-tertiary, #111827);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.cr-bar-fill {
+    height: 100%;
+    transition: width 0.3s;
+}
+
+/* Affinity blocks */
+.cr-aff-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+.cr-aff {
+    flex: 1;
+    background: var(--bg-tertiary, #111827);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 0.4rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+}
+.cr-aff-label {
+    color: var(--text-secondary, #aaa);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.cr-aff-value {
+    color: var(--text-primary, #e6e6e6);
+    font-weight: 700;
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Damage cards */
+.cr-dmg-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+.cr-dmg {
+    flex: 1;
+    background: var(--bg-tertiary, #111827);
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 0.6rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+}
+.cr-dmg-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+.cr-dmg-value {
+    color: var(--text-primary, #e6e6e6);
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-variant-numeric: tabular-nums;
+}
+.cr-dmg-acc {
+    color: var(--text-secondary, #888);
+    font-size: 0.7rem;
+}
+
+/* Drops placeholder */
+.cr-drops {
+    margin-bottom: 1rem;
+}
+.cr-empty-drops {
+    margin: 0;
+    color: var(--text-secondary, #888);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+.cr-empty-drops strong {
+    color: var(--accent-light, #6cd5d5);
+    font-style: normal;
+}
+.cr-empty-drops em {
+    color: var(--text-primary, #e6e6e6);
+    font-style: normal;
+}

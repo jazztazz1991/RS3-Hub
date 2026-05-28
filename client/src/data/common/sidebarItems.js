@@ -9,4 +9,7 @@ export const SIDEBAR_ITEMS = [
     { label: 'Groups',       path: '/groups',      icon: '\u{1F465}',    auth: true },
     { label: 'Farm Timers',  path: '/farm-timers', icon: '\u{1F33E}',    auth: true },
     { label: 'Skill Methods', path: '/methods',    icon: '⛏️', auth: false },
+    { label: 'Boss Hunt',    path: '/boss-hunt',   icon: '\u{1F409}', auth: false },
+    { label: 'Wiki',          path: '/wiki',          icon: '\u{1F4DA}', auth: false },
+    { label: 'Wiki Sandbox',  path: '/wiki-sandbox',  icon: '\u{1F9EA}', auth: false },
 ];

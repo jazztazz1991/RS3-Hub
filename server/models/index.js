@@ -22,6 +22,12 @@ const TrackedPlayer = require('./TrackedPlayer');
 const TrackedPlayerXpSnapshot = require('./TrackedPlayerXpSnapshot');
 const Group = require('./Group');
 const GroupMember = require('./GroupMember');
+const Creature = require('./Creature');
+const NPC = require('./NPC');
+const Achievement = require('./Achievement');
+const WikiLocation = require('./WikiLocation');
+const ResourceNode = require('./ResourceNode');
+const WikiSyncLog = require('./WikiSyncLog');
 
 
 // Define Associations
@@ -124,4 +130,10 @@ module.exports = {
   TrackedPlayerXpSnapshot,
   Group,
   GroupMember,
+  Creature,
+  NPC,
+  Achievement,
+  WikiLocation,
+  ResourceNode,
+  WikiSyncLog,
 };

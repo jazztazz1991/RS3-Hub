@@ -23,6 +23,7 @@ const questGuideRoutes = require('./routes/questGuide');
 const xpTrackerRoutes = require('./routes/xpTracker');
 const farmTimerRoutes = require('./routes/farmTimers');
 const groupRoutes = require('./routes/groups');
+const wikiSandboxRoutes = require('./routes/wikiSandbox');
 const { seedFarmAnimals } = require('./services/farmAnimalsSeeder');
 const logger = require('./utils/logger');
 const requestLogger = require('./middleware/requestLogger');
@@ -117,6 +118,7 @@ app.use('/api/quest-quick-guide', questGuideRoutes);
 app.use('/api/xp-tracker', xpTrackerRoutes);
 app.use('/api/farm-timers', farmTimerRoutes);
 app.use('/api/groups', groupRoutes);
+app.use('/api/wiki-sandbox', wikiSandboxRoutes);
 
 // Proxy route for Jagex Hiscores (with Caching for authenticated users)
 app.get('/api/hiscores/:player', async (req, res) => {

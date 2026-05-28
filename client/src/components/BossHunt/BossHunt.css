@@ -1,0 +1,385 @@
+.bh-page {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 1.25rem;
+    color: var(--text-primary, #e6e6e6);
+}
+
+.bh-header {
+    border-bottom: 2px solid var(--accent, #0d8c8c);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.bh-header h2 { margin: 0; }
+.bh-sub {
+    margin: 0.25rem 0 0;
+    color: var(--text-secondary, #888);
+    font-size: 0.85rem;
+    max-width: 760px;
+}
+
+.bh-tabs {
+    display: flex;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--border-color, #374151);
+    margin-bottom: 1rem;
+}
+.bh-tabs button {
+    background: transparent;
+    border: 1px solid var(--border-color, #374151);
+    border-bottom: none;
+    color: var(--text-secondary, #aaa);
+    padding: 0.5rem 1rem;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.bh-tabs button.active {
+    background: var(--bg-secondary, #1f2937);
+    border-color: var(--accent, #0d8c8c);
+    color: var(--accent-light, #6cd5d5);
+}
+
+.bh-toolbar {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+}
+.bh-search {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.45rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 260px;
+}
+.bh-check {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-secondary, #aaa);
+    font-size: 0.85rem;
+}
+.bh-meta { color: var(--text-secondary, #888); font-size: 0.8rem; margin-left: auto; }
+
+/* Table */
+.bh-table-wrap {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.bh-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+.bh-table th {
+    text-align: left;
+    background: var(--bg-tertiary, #111827);
+    color: var(--text-secondary, #aaa);
+    padding: 0.55rem 0.75rem;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--border-color, #374151);
+}
+.bh-th { cursor: pointer; user-select: none; }
+.bh-th:hover { color: var(--text-primary, #e6e6e6); }
+.bh-th-active { color: var(--accent-light, #6cd5d5); }
+.bh-right { text-align: right; }
+.bh-table td {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid var(--border-color, #2a3441);
+    vertical-align: middle;
+}
+.bh-table tr:last-child td { border-bottom: none; }
+.bh-table tbody tr:hover { background: rgba(108, 213, 213, 0.04); }
+.bh-mono { font-variant-numeric: tabular-nums; }
+.bh-time { color: var(--accent-light, #6cd5d5); font-weight: 600; }
+.bh-gp { color: #ffd866; font-weight: 600; }
+
+.bh-boss-cell { color: var(--text-secondary, #ccc); }
+.bh-cat {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--text-secondary, #777);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.bh-row-pet { opacity: 0.85; }
+.bh-pet-tag {
+    margin-left: 0.4rem;
+    background: rgba(186, 130, 217, 0.15);
+    color: #ba82d9;
+    font-size: 0.65rem;
+    padding: 0.05rem 0.35rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* Inline time editor */
+.bh-time-editor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+.bh-minsec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+.bh-minsec input {
+    width: 2.6rem;
+    background: var(--bg-tertiary, #111827);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.2rem 0.3rem;
+    border-radius: 3px;
+    text-align: right;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+}
+.bh-time-custom .bh-minsec input { border-color: var(--accent, #0d8c8c); color: var(--accent-light, #6cd5d5); }
+.bh-time-unit { color: var(--text-secondary, #888); font-size: 0.78rem; }
+.bh-reset {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary, #888);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0 0.1rem;
+    line-height: 1;
+}
+.bh-reset:hover { color: var(--accent-light, #6cd5d5); }
+
+.bh-foot {
+    margin-top: 0.75rem;
+    color: var(--text-secondary, #888);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+.bh-foot strong { color: var(--accent-light, #6cd5d5); }
+.bh-foot em { color: var(--text-primary, #e6e6e6); font-style: normal; }
+
+/* Odds tab */
+.bh-odds-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.bh-odds-controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    color: var(--text-secondary, #aaa);
+    font-size: 0.82rem;
+}
+.bh-odds-controls select,
+.bh-odds-controls > label > input {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.45rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+.bh-time-input {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.bh-time-input input {
+    flex: 1;
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.45rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    min-width: 0;
+}
+.bh-time-input span { color: var(--text-secondary, #888); font-size: 0.82rem; }
+
+/* Estimate badge + banner */
+.bh-est {
+    margin-left: 0.4rem;
+    background: rgba(255, 216, 102, 0.15);
+    color: #ffd866;
+    font-size: 0.62rem;
+    padding: 0.05rem 0.35rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+    cursor: help;
+}
+.bh-est-banner {
+    background: rgba(255, 216, 102, 0.1);
+    border: 1px solid rgba(255, 216, 102, 0.4);
+    color: #ffd866;
+    border-radius: 4px;
+    padding: 0.5rem 0.85rem;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.bh-odds-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+@media (max-width: 720px) { .bh-odds-grid { grid-template-columns: 1fr; } }
+
+.bh-odds-big {
+    background: linear-gradient(135deg, rgba(13, 140, 140, 0.2), var(--bg-secondary, #1f2937));
+    border: 1px solid var(--accent, #0d8c8c);
+    border-radius: 6px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: center;
+}
+.bh-odds-label { color: var(--text-secondary, #aaa); font-size: 0.85rem; }
+.bh-odds-value { color: var(--accent-light, #6cd5d5); font-size: 2.6rem; font-weight: 700; line-height: 1; }
+.bh-odds-sub { color: var(--text-secondary, #888); font-size: 0.82rem; }
+
+.bh-odds-detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+.bh-stat {
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 4px;
+    padding: 0.6rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.bh-stat-label { color: var(--text-secondary, #888); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.bh-stat-value { color: var(--text-primary, #e6e6e6); font-size: 1.1rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.bh-milestone-head { font-size: 1rem; color: var(--accent-light, #6cd5d5); margin: 0 0 0.5rem; }
+.bh-milestone-table { max-width: 520px; }
+
+/* ---- Manual calculator ---- */
+.bh-calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+@media (max-width: 760px) { .bh-calc-grid { grid-template-columns: 1fr; } }
+
+.bh-calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    background: var(--bg-secondary, #1f2937);
+    border: 1px solid var(--border-color, #374151);
+    border-radius: 6px;
+    padding: 1rem;
+}
+.bh-calc-inputs label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    color: var(--text-secondary, #aaa);
+    font-size: 0.82rem;
+}
+.bh-calc-inputs input {
+    background: var(--bg-tertiary, #111827);
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-primary, #e6e6e6);
+    padding: 0.5rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+}
+.bh-calc-hint {
+    font-size: 0.74rem;
+    color: var(--text-secondary, #888);
+    font-variant-numeric: tabular-nums;
+}
+.bh-input-bad { border-color: #d97373 !important; }
+.bh-input-bad + .bh-calc-hint { color: #d97373; }
+.bh-calc-save {
+    margin-top: 0.3rem;
+    background: var(--accent, #0d8c8c);
+    color: #fff;
+    border: 1px solid var(--accent, #0d8c8c);
+    padding: 0.55rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.bh-calc-save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.bh-calc-results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.bh-calc-big {
+    background: linear-gradient(135deg, rgba(255, 216, 102, 0.18), var(--bg-secondary, #1f2937));
+    border: 1px solid #ffd866;
+    border-radius: 6px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.bh-calc-big-label { color: var(--text-secondary, #aaa); font-size: 0.85rem; }
+.bh-calc-big-value { color: #ffd866; font-size: 2.6rem; font-weight: 700; line-height: 1; }
+
+.bh-calc-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.bh-calc-history-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.bh-calc-history-head h3 { margin: 0; font-size: 1rem; color: var(--accent-light, #6cd5d5); }
+.bh-calc-clear {
+    background: transparent;
+    border: 1px solid var(--border-color, #374151);
+    color: var(--text-secondary, #aaa);
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.bh-calc-load {
+    background: none;
+    border: none;
+    color: var(--accent-light, #6cd5d5);
+    cursor: pointer;
+    font-size: 0.88rem;
+    padding: 0;
+    text-align: left;
+}
+.bh-calc-load:hover { text-decoration: underline; }
+.bh-calc-del {
+    background: none;
+    border: none;
+    color: var(--text-secondary, #777);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0 0.2rem;
+}
+.bh-calc-del:hover { color: #d97373; }
