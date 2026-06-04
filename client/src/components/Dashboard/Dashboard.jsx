@@ -149,16 +149,18 @@ const SkillCard = ({ skill, isExpanded, onToggle }) => {
 const Dashboard = () => {
     const { updateReportContext, clearReportContext } = useReportCalls();
   const { user } = useAuth();
-  const { 
-    characters, 
-    selectedCharId, 
-    setSelectedCharId, 
+  const {
+    characters,
+    selectedCharId,
+    setSelectedCharId,
     selectedCharacter,
-    characterData, 
-    loadingChars, 
+    primaryCharId,
+    setPrimaryChar,
+    characterData,
+    loadingChars,
     loadingData,
     addCharacter,
-    deleteCharacter 
+    deleteCharacter
   } = useCharacter();
 
   useEffect(() => {
@@ -288,22 +290,32 @@ const Dashboard = () => {
        {/* Character Controls Section */}
        <div className="controls-section">
             <div className="character-selector">
-                {characters.map(char => (
-                    <button 
-                        key={char.id} 
-                        className={`char-btn ${selectedCharId === char.id ? 'active' : ''}`}
-                        onClick={() => setSelectedCharId(char.id)}
-                    >
-                        {char.name}
-                         <span 
-                            className="delete-char-icon" 
-                            onClick={(e) => handleDeleteCharacter(char.id, e)}
-                            title="Remove Character"
+                {characters.map(char => {
+                    const isPrimary = primaryCharId === char.id;
+                    return (
+                        <button
+                            key={char.id}
+                            className={`char-btn ${selectedCharId === char.id ? 'active' : ''} ${isPrimary ? 'primary' : ''}`}
+                            onClick={() => setSelectedCharId(char.id)}
                         >
-                            ✕
-                        </span>
-                    </button>
-                ))}
+                            <span
+                                className={`char-star ${isPrimary ? 'set' : ''}`}
+                                onClick={e => { e.stopPropagation(); setPrimaryChar(char.id); }}
+                                title={isPrimary ? 'Primary character (loads by default)' : 'Set as primary character'}
+                            >
+                                {isPrimary ? '★' : '☆'}
+                            </span>
+                            {char.name}
+                            <span
+                                className="delete-char-icon"
+                                onClick={e => handleDeleteCharacter(char.id, e)}
+                                title="Remove Character"
+                            >
+                                ✕
+                            </span>
+                        </button>
+                    );
+                })}
             </div>
 
             <div className="controls-right">

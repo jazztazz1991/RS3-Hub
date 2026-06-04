@@ -155,9 +155,28 @@
 }
 
 .char-btn.active {
-  background-color: #006400; /* Dark Green */
+  background-color: #006400;
   color: white;
   border-color: #008000;
+}
+
+.char-btn.primary {
+  border-color: #c8a84b;
+}
+
+.char-star {
+  font-size: 0.85em;
+  color: #555;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.char-star:hover {
+  color: #c8a84b;
+}
+
+.char-star.set {
+  color: #c8a84b;
 }
 
 .delete-char-icon {

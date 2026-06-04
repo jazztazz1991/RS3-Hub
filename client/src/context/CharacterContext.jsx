@@ -11,14 +11,26 @@ export const CharacterProvider = ({ children }) => {
     const { user } = useAuth();
     const [characters, setCharacters] = useState([]);
     const [selectedCharId, setSelectedCharId] = useState(null);
+    const [primaryCharId, setPrimaryCharId] = useState(null);
     const [characterData, setCharacterData] = useState([]); // Parsed skills
     const [loadingChars, setLoadingChars] = useState(true);
     const [loadingData, setLoadingData] = useState(false);
     const [questSyncTime, setQuestSyncTime] = useState(0); // Timestamp of last quest sync
 
     // Derived state for the currently selected character object
-
     const selectedCharacter = characters.find(c => c.id === selectedCharId);
+
+    // Load primary character preference from localStorage when user is known
+    useEffect(() => {
+        if (user) {
+            try {
+                const saved = JSON.parse(localStorage.getItem(`rs3hub_primary_char_${user.id}`));
+                if (saved) setPrimaryCharId(saved);
+            } catch {}
+        } else {
+            setPrimaryCharId(null);
+        }
+    }, [user]);
 
     // Initial Fetch — only when authenticated
     useEffect(() => {
@@ -32,12 +44,13 @@ export const CharacterProvider = ({ children }) => {
         }
     }, [user]);
 
-    // Auto-select first character if none selected
+    // Auto-select on load: prefer primary character, fall back to first
     useEffect(() => {
         if (!selectedCharId && characters.length > 0) {
-            setSelectedCharId(characters[0].id);
+            const primaryExists = primaryCharId && characters.find(c => c.id === primaryCharId);
+            setSelectedCharId(primaryExists ? primaryCharId : characters[0].id);
         }
-    }, [characters, selectedCharId]);
+    }, [characters, selectedCharId, primaryCharId]);
 
     // Fetch Hiscores when selected character changes
     useEffect(() => {
@@ -94,6 +107,15 @@ export const CharacterProvider = ({ children }) => {
 
 
 
+    const setPrimaryChar = useCallback((id) => {
+        setPrimaryCharId(id);
+        setSelectedCharId(id);
+        if (user) {
+            try { localStorage.setItem(`rs3hub_primary_char_${user.id}`, JSON.stringify(id)); }
+            catch {}
+        }
+    }, [user]);
+
     const addCharacter = async (name) => {
         try {
             const res = await axios.post('/api/characters', { name });
@@ -117,6 +139,13 @@ export const CharacterProvider = ({ children }) => {
             if (selectedCharId === id) {
                 setSelectedCharId(newChars.length > 0 ? newChars[0].id : null);
                 if (newChars.length === 0) setCharacterData([]);
+            }
+            if (primaryCharId === id) {
+                setPrimaryCharId(null);
+                if (user) {
+                    try { localStorage.removeItem(`rs3hub_primary_char_${user.id}`); }
+                    catch {}
+                }
             }
             return true;
         } catch (err) {
@@ -199,6 +228,8 @@ export const CharacterProvider = ({ children }) => {
         selectedCharId,
         setSelectedCharId,
         selectedCharacter,
+        primaryCharId,
+        setPrimaryChar,
         characterData,
         loadingChars,
         loadingData,
@@ -209,7 +240,7 @@ export const CharacterProvider = ({ children }) => {
         updateBlockList,
         updateArchMaterialBank,
         questSyncTime
-    }), [characters, selectedCharId, selectedCharacter, characterData, loadingChars, loadingData, questSyncTime]);
+    }), [characters, selectedCharId, selectedCharacter, primaryCharId, setPrimaryChar, characterData, loadingChars, loadingData, questSyncTime]);
 
     return (
         <CharacterContext.Provider value={value}>
