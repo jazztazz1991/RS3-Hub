@@ -80,27 +80,12 @@ const UrnsCalculator = () => {
     }
     
     const totalBonusXp = urnsNeeded * bonusPerUrn;
-    
-    // Effective XP per Urn Cycle = fillXp (base) + bonusXp
-    // This implies that using urns effectively increases your XP rate.
-    // If goal is fixed XP (e.g. Level 99), then using urns doesn't reduce the "Base XP" needed to reach it directly 
-    // in the same way bonus XP usually works (Bonus XP is consumed).
-    // Actually, urn bonus XP is just extra XP.
-    // If I need 100k XP. I gain 4k base -> Urn fills -> I get 1k bonus. Total gain 5k.
-    // So efficient XP per urn = fillXp + bonusXp.
-    // Urns required = TargetXP / (FillXP + BonusXP)?
-    // No, usually calculators show how many urns you fill along the way of doing the base training.
-    // If you want to reach the goal FASTER using urns, that's different.
-    // Let's stick to: "If I do X amount of training (XP Needed), how many urns will I fill?"
-    // AND "How much EXTRA XP will I get?"
-    
-    // If the user treats "Target XP" as the goal including the bonus:
-    // Total Gain per urn = fill + bonus.
-    // Urns = XP Needed / (fill + bonus).
-    
-    // Most urn calculators assume you are going to grind the XP anyway, 
-    // and just want to know how many to buy to cover that grind.
-    // So Urns = XP Gap / Fill XP.
+
+    // Rate boost: extra XP % per urn cycle — answers "is it worth it?"
+    // e.g. mining urn (fill 3000, bonus 750) = +25%. With enhancer: +31.25%.
+    const rateBoostPct = selectedUrn.fillXp > 0
+        ? (bonusPerUrn / selectedUrn.fillXp) * 100
+        : 0;
     
     const handleSkillChange = (e) => {
         setSelectedSkill(e.target.value);
@@ -182,29 +167,28 @@ const UrnsCalculator = () => {
             </div>
 
             <div className="urns-results">
-                 <div className="urns-result-card">
-                    <h3>Review</h3>
-                    <p style={{fontSize: '1rem', color: '#ccc'}}>
-                        Gap: {xpNeeded.toLocaleString()} XP
-                    </p>
-                    <p style={{fontSize: '1rem', color: '#ccc'}}>
-                        Fills every: {selectedUrn.fillXp} XP
-                    </p>
-                </div>
-                
                 <div className="urns-result-card">
-                    <h3>Urns Needed</h3>
+                    <h3>Urns needed</h3>
                     <p>{urnsNeeded.toLocaleString()}</p>
+                    <span className="urns-result-sub">fills every {selectedUrn.fillXp.toLocaleString()} XP</span>
                 </div>
 
                 <div className="urns-result-card">
-                    <h3>Bonus XP Gained</h3>
+                    <h3>Bonus XP from urns</h3>
                     <p>{Math.floor(totalBonusXp).toLocaleString()}</p>
+                    <span className="urns-result-sub">extra XP on top of base training</span>
                 </div>
-                
+
                 <div className="urns-result-card">
-                    <h3>Total XP (Base + Bonus)</h3>
+                    <h3>XP rate boost</h3>
+                    <p>+{rateBoostPct.toFixed(1)}%</p>
+                    <span className="urns-result-sub">effective XP per action{useEnhancer ? ' (with enhancer)' : ''}</span>
+                </div>
+
+                <div className="urns-result-card">
+                    <h3>Total XP gain</h3>
                     <p>{Math.floor(xpNeeded + totalBonusXp).toLocaleString()}</p>
+                    <span className="urns-result-sub">{xpNeeded.toLocaleString()} base + {Math.floor(totalBonusXp).toLocaleString()} bonus</span>
                 </div>
             </div>
         </div>

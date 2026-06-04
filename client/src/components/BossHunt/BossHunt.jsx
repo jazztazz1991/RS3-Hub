@@ -80,19 +80,17 @@ export default function BossHunt() {
                     <h2>Drop rate calculator</h2>
                     <p className="bh-sub">
                         Enter a kill rate, drop rarity, and value to get the expected GP/hr and time-to-drop. Save
-                        calculations to compare bosses side by side. The boss tabs use live wiki data as a starting point.
+                        calculations to compare bosses side by side.
                     </p>
                 </div>
             </div>
 
             <div className="bh-tabs">
                 <button className={tab === 'calc' ? 'active' : ''} onClick={() => setTab('calc')}>Calculator</button>
-                <button className={tab === 'find' ? 'active' : ''} onClick={() => setTab('find')}>Find a boss</button>
                 <button className={tab === 'odds' ? 'active' : ''} onClick={() => setTab('odds')}>Session odds</button>
             </div>
 
             {tab === 'calc' && <CalcTab />}
-            {tab === 'find' && <FindTab secondsFor={secondsFor} setOverride={setOverride} clearOverride={clearOverride} overrides={overrides} />}
             {tab === 'odds' && <OddsTab secondsFor={secondsFor} setOverride={setOverride} clearOverride={clearOverride} overrides={overrides} />}
         </div>
     );
