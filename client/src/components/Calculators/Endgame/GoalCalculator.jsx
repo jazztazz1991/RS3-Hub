@@ -1,5 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
+import { useAuth } from '../../../context/AuthContext';
+import { parseHiscores } from '../../../utils/rs3';
 import SkillIcon from '../../Common/SkillIcon';
 import { DEFAULT_XP_PER_HOUR, GOAL_PRESETS, PLANNED_SKILLS, LANES, resolveSkillRate } from '../../../data/common/endgameGoals';
 import './GoalCalculator.css';
@@ -26,28 +28,80 @@ function fmtDate(daysFromNow) {
     return d.toLocaleDateString();
 }
 
-// Resolve target XP for a given skill under the chosen preset.
 function targetXpFor(preset, skillName) {
     if (preset.targetXpAll != null) return preset.targetXpAll;
     if (preset.targetXpPerSkill?.[skillName] != null) return preset.targetXpPerSkill[skillName];
     return preset.defaultTargetXp ?? 13034431;
 }
 
+function loadPrefs(lsKey) {
+    if (!lsKey) return {};
+    try { return JSON.parse(localStorage.getItem(lsKey) || '{}'); }
+    catch { return {}; }
+}
+
 export default function GoalCalculator() {
     const { characterData, selectedCharacter } = useCharacter();
-    const [presetId, setPresetId] = useState('max');
-    const [hoursPerDay, setHoursPerDay] = useState(4);
-    const [lane, setLane] = useState('standard');
-    const [rateOverrides, setRateOverrides] = useState({});
+    const { user } = useAuth();
+
+    // localStorage key — only set when logged in
+    const lsKey = user ? `rs3hub_endgame_${user.id}` : null;
+    const prefs = useRef(loadPrefs(lsKey)).current;
+
+    const [presetId, setPresetId] = useState(prefs.presetId ?? 'max');
+    const [hoursPerDay, setHoursPerDay] = useState(prefs.hoursPerDay ?? 4);
+    const [lane, setLane] = useState(prefs.lane ?? 'standard');
+    const [rateOverrides, setRateOverrides] = useState(prefs.rateOverrides ?? {});
     const [showOverrides, setShowOverrides] = useState(false);
+
+    // RSN lookup state (used when no character is linked)
+    const [rsnInput, setRsnInput] = useState('');
+    const [rsnData, setRsnData] = useState(null);
+    const [rsnName, setRsnName] = useState('');
+    const [rsnLoading, setRsnLoading] = useState(false);
+    const [rsnError, setRsnError] = useState('');
+
+    // Persist prefs to localStorage whenever they change (logged-in users only)
+    useEffect(() => {
+        if (!lsKey) return;
+        try {
+            localStorage.setItem(lsKey, JSON.stringify({ presetId, hoursPerDay, lane, rateOverrides }));
+        } catch {}
+    }, [presetId, hoursPerDay, lane, rateOverrides, lsKey]);
+
+    async function fetchRsn(e) {
+        e.preventDefault();
+        const rsn = rsnInput.trim();
+        if (!rsn) return;
+        setRsnLoading(true);
+        setRsnError('');
+        setRsnData(null);
+        try {
+            const res = await fetch(`/api/hiscores/${encodeURIComponent(rsn)}`);
+            if (!res.ok) {
+                const j = await res.json().catch(() => ({}));
+                throw new Error(j.error || 'Player not found on hiscores');
+            }
+            const csv = await res.text();
+            const parsed = parseHiscores(csv);
+            setRsnData(parsed);
+            setRsnName(rsn);
+        } catch (err) {
+            setRsnError(err.message);
+        } finally {
+            setRsnLoading(false);
+        }
+    }
+
+    // Character data takes priority; fall back to manually-looked-up RSN data
+    const effectiveData = characterData?.length ? characterData : rsnData;
+    const effectiveName = selectedCharacter?.name ?? (rsnData ? rsnName : null);
 
     const preset = GOAL_PRESETS.find(p => p.id === presetId) || GOAL_PRESETS[0];
 
-    // Build the per-skill plan rows
     const rows = useMemo(() => {
-        // Lookup current XP by skill name
         const xpBy = new Map();
-        for (const s of characterData || []) xpBy.set(s.name, s.xp || 0);
+        for (const s of effectiveData || []) xpBy.set(s.name, s.xp || 0);
 
         const data = PLANNED_SKILLS.map(skill => {
             const current = xpBy.get(skill) || 0;
@@ -59,12 +113,7 @@ export default function GoalCalculator() {
                 : resolved.rate;
             const hours = rate > 0 ? gap / rate : 0;
             return {
-                skill,
-                current,
-                target,
-                gap,
-                rate,
-                hours,
+                skill, current, target, gap, rate, hours,
                 complete: gap === 0,
                 method: resolved.method,
                 source: resolved.source,
@@ -74,7 +123,7 @@ export default function GoalCalculator() {
             };
         });
         return data.sort((a, b) => b.hours - a.hours);
-    }, [characterData, preset, rateOverrides, lane]);
+    }, [effectiveData, preset, rateOverrides, lane]);
 
     const totals = useMemo(() => {
         const totalGap = rows.reduce((s, r) => s + r.gap, 0);
@@ -86,21 +135,36 @@ export default function GoalCalculator() {
 
     const maxHours = Math.max(1, ...rows.map(r => r.hours));
 
-    if (!selectedCharacter) {
+    // Show RSN input when there's no usable data yet
+    if (!effectiveData) {
         return (
             <div className="goal-calc">
-                <h2>Endgame Goal Calculator</h2>
-                <p className="goal-empty">Select a character to plan your endgame goals.</p>
-            </div>
-        );
-    }
-    if (!characterData?.length) {
-        return (
-            <div className="goal-calc">
-                <h2>Endgame Goal Calculator</h2>
-                <p className="goal-empty">
-                    No hiscores data for <strong>{selectedCharacter.name}</strong> yet. Import from the Dashboard first.
-                </p>
+                <div className="goal-header">
+                    <h2>Endgame Goal Calculator</h2>
+                </div>
+                <form className="goal-rsn-form" onSubmit={fetchRsn}>
+                    <label className="goal-label">Enter a RuneScape username to get started</label>
+                    <div className="goal-rsn-row">
+                        <input
+                            className="goal-rsn-input"
+                            type="text"
+                            placeholder="e.g. Zezima"
+                            value={rsnInput}
+                            onChange={e => setRsnInput(e.target.value)}
+                            autoComplete="off"
+                            spellCheck={false}
+                        />
+                        <button className="goal-rsn-btn" type="submit" disabled={rsnLoading || !rsnInput.trim()}>
+                            {rsnLoading ? 'Looking up…' : 'Load stats'}
+                        </button>
+                    </div>
+                    {rsnError && <p className="goal-rsn-error">{rsnError}</p>}
+                    {!user && (
+                        <p className="goal-rsn-hint">
+                            <a href="/register">Create an account</a> to link your character and save your settings.
+                        </p>
+                    )}
+                </form>
             </div>
         );
     }
@@ -109,7 +173,17 @@ export default function GoalCalculator() {
         <div className="goal-calc">
             <div className="goal-header">
                 <h2>Endgame Goal Calculator</h2>
-                <span className="goal-char">{selectedCharacter.name}</span>
+                <div className="goal-header-right">
+                    <span className="goal-char">{effectiveName}</span>
+                    {!selectedCharacter && (
+                        <button
+                            className="goal-link-btn"
+                            onClick={() => { setRsnData(null); setRsnName(''); setRsnInput(''); }}
+                        >
+                            Change player
+                        </button>
+                    )}
+                </div>
             </div>
 
             {/* Preset chooser */}
