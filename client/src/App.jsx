@@ -19,6 +19,8 @@ const Changelog = lazy(() => import('./components/Changelog/Changelog'));
 const NotFound = lazy(() => import('./components/NotFound/NotFound'));
 const ComingSoon = lazy(() => import('./components/ComingSoon/ComingSoon'));
 
+const Dashboard = lazy(() => import('./components/Dashboard/Dashboard'));
+
 // Admin (internal, no sidebar link for regular users)
 const AdminDashboard = lazy(() => import('./components/Admin/AdminDashboard'));
 const SupportDashboard = lazy(() => import('./components/Support/SupportDashboard'));
@@ -108,14 +110,14 @@ function AppContent() {
               <Route path="/quests" element={<QuestTracker />} />
               <Route path="/quests/:questTitle" element={<QuestDetails />} />
 
-              {/* Internal admin (no sidebar link for regular users) */}
+              {/* Protected — requires login */}
               <Route element={<ProtectedRoute />}>
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/support" element={<SupportDashboard />} />
               </Route>
 
               {/* Hidden for launch — show Coming Soon */}
-              <Route path="/dashboard" element={<ComingSoon />} />
               <Route path="/guides/*" element={<ComingSoon />} />
               <Route path="/daily-tasks" element={<ComingSoon />} />
               <Route path="/loot" element={<ComingSoon />} />

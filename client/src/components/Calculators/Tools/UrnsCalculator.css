@@ -93,6 +93,29 @@
     margin-top: 0.35rem;
 }
 
+.urns-rec-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    color: #c8a84b;
+}
+
+.urns-rec-apply {
+    background: none;
+    border: 1px solid #c8a84b;
+    color: #c8a84b;
+    border-radius: 3px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.urns-rec-apply:hover {
+    background: rgba(200, 168, 75, 0.15);
+}
+
 .urns-enhancer-toggle {
     display: flex;
     align-items: center;

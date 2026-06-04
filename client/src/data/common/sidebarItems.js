@@ -1,11 +1,11 @@
 export const SIDEBAR_ITEMS = [
+    { label: 'Dashboard',   path: '/dashboard',   icon: '⌂',        auth: true  },
     { label: 'Calculators', path: '/calculators', icon: '\u{1F9EE}', auth: false },
     { label: 'Boss Hunt',   path: '/boss-hunt',   icon: '\u{1F409}', auth: false },
     { label: 'Quests',      path: '/quests',      icon: '⚔️', auth: false },
 ];
 
 // Hidden for launch — uncomment to re-enable:
-// { label: 'Dashboard',    path: '/dashboard',    icon: '⌂',        auth: true  },
 // { label: 'Guides',       path: '/guides',       icon: '\u{1F4D6}',    auth: false },
 // { label: 'Daily Tasks',  path: '/daily-tasks',  icon: '✔️', auth: true  },
 // { label: 'Loot Tracker', path: '/loot',         icon: '\u{1F4B0}',    auth: true  },

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { MAIN_QUEST_COUNT } from '../../data/quests/questMetadata';
 import './Landing.css';
@@ -28,7 +29,12 @@ const FEATURES = [
 ];
 
 const Landing = () => {
-    const { loading } = useAuth();
+    const { user, loading } = useAuth();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!loading && user) navigate('/dashboard', { replace: true });
+    }, [user, loading, navigate]);
 
     const stats = [
         { value: String(NUM_CALCULATORS), label: 'Skill Calculators' },

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { URN_DATA, URN_ENHANCER_BONUS } from '../../../data/items/urnsData';
 import { useCharacter } from '../../../context/CharacterContext.jsx';
 import { useReportCalls } from '../../../context/ReportContext';
-import { XP_TABLE, getXpAtLevel } from '../../../utils/rs3';
+import { XP_TABLE, getXpAtLevel, getLevelAtXp } from '../../../utils/rs3';
 import './UrnsCalculator.css';
 
 const UrnsCalculator = () => {
@@ -55,8 +55,22 @@ const UrnsCalculator = () => {
         setTargetXp(getXpAtLevel(targetLevel));
     }, [targetLevel]);
 
+    // Auto-select the highest-tier urn available at the current level
+    useEffect(() => {
+        const level = getLevelAtXp(currentXp);
+        const urns = URN_DATA[selectedSkill] || [];
+        let bestIdx = 0;
+        for (let i = 0; i < urns.length; i++) {
+            if (urns[i].level <= level) bestIdx = i;
+        }
+        setSelectedUrnIndex(bestIdx);
+    }, [selectedSkill, currentXp]);
+
     const activeUrns = URN_DATA[selectedSkill] || [];
     const selectedUrn = activeUrns[selectedUrnIndex] || activeUrns[0];
+    const currentLevel = getLevelAtXp(currentXp);
+    const bestUrnIndex = activeUrns.reduce((best, urn, i) => urn.level <= currentLevel ? i : best, 0);
+    const bestUrn = activeUrns[bestUrnIndex];
 
     // Calculations
     const xpNeeded = Math.max(0, targetXp - currentXp);
@@ -89,7 +103,6 @@ const UrnsCalculator = () => {
     
     const handleSkillChange = (e) => {
         setSelectedSkill(e.target.value);
-        setSelectedUrnIndex(0); // Reset urn selection
     };
 
     return (
@@ -111,16 +124,29 @@ const UrnsCalculator = () => {
                 {/* Urn Selection */}
                 <div className="urns-control-group">
                     <label>Urn Type</label>
-                    <select 
-                        value={selectedUrnIndex} 
+                    <select
+                        value={selectedUrnIndex}
                         onChange={(e) => setSelectedUrnIndex(Number(e.target.value))}
                     >
                         {activeUrns.map((urn, index) => (
                             <option key={index} value={index}>
-                                {urn.name} (Lvl {urn.level})
+                                {urn.name} (Lvl {urn.level}){index === bestUrnIndex ? ' ★' : ''}
                             </option>
                         ))}
                     </select>
+                    {bestUrn && (
+                        <span className="urns-rec-hint">
+                            ★ Best for level {currentLevel}: {bestUrn.name}
+                            {selectedUrnIndex !== bestUrnIndex && (
+                                <button
+                                    className="urns-rec-apply"
+                                    onClick={() => setSelectedUrnIndex(bestUrnIndex)}
+                                >
+                                    Use this
+                                </button>
+                            )}
+                        </span>
+                    )}
                 </div>
                 
                 {/* Enhancer Toggle */}
