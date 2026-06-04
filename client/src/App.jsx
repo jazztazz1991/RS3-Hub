@@ -17,35 +17,16 @@ const Login = lazy(() => import('./components/Auth/Login'));
 const Register = lazy(() => import('./components/Auth/Register'));
 const Changelog = lazy(() => import('./components/Changelog/Changelog'));
 const NotFound = lazy(() => import('./components/NotFound/NotFound'));
+const ComingSoon = lazy(() => import('./components/ComingSoon/ComingSoon'));
 
-const Dashboard = lazy(() => import('./components/Dashboard/Dashboard'));
+// Admin (internal, no sidebar link for regular users)
 const AdminDashboard = lazy(() => import('./components/Admin/AdminDashboard'));
 const SupportDashboard = lazy(() => import('./components/Support/SupportDashboard'));
-const DailyTasks = lazy(() => import('./components/DailyTasks/DailyTasks'));
-const LootTracker = lazy(() => import('./components/Loot/LootTracker'));
-const MethodsPage = lazy(() => import('./components/Methods/MethodsPage'));
-const XpTracker = lazy(() => import('./components/XpTracker/XpTracker'));
-const FarmTimers = lazy(() => import('./components/FarmTimers/FarmTimers'));
-const GroupsList = lazy(() => import('./components/Groups/GroupsList'));
-const GroupForm = lazy(() => import('./components/Groups/GroupForm'));
-const GroupDetail = lazy(() => import('./components/Groups/GroupDetail'));
-const WikiSandbox = lazy(() => import('./components/WikiSandbox/WikiSandbox'));
+
 const BossHunt = lazy(() => import('./components/BossHunt/BossHunt'));
-const WikiIndex = lazy(() => import('./components/Wiki/WikiIndex'));
-const CreaturesList = lazy(() => import('./components/Wiki/Creatures').then(m => ({ default: m.CreaturesList })));
-const CreatureDetail = lazy(() => import('./components/Wiki/Creatures').then(m => ({ default: m.CreatureDetail })));
-const NPCsList = lazy(() => import('./components/Wiki/NPCs').then(m => ({ default: m.NPCsList })));
-const NPCDetail = lazy(() => import('./components/Wiki/NPCs').then(m => ({ default: m.NPCDetail })));
-const AchievementsList = lazy(() => import('./components/Wiki/Achievements').then(m => ({ default: m.AchievementsList })));
-const AchievementDetail = lazy(() => import('./components/Wiki/Achievements').then(m => ({ default: m.AchievementDetail })));
-const LocationsList = lazy(() => import('./components/Wiki/Locations').then(m => ({ default: m.LocationsList })));
-const LocationDetail = lazy(() => import('./components/Wiki/Locations').then(m => ({ default: m.LocationDetail })));
-const ResourceNodesList = lazy(() => import('./components/Wiki/ResourceNodes').then(m => ({ default: m.ResourceNodesList })));
-const ResourceNodeDetail = lazy(() => import('./components/Wiki/ResourceNodes').then(m => ({ default: m.ResourceNodeDetail })));
 
 const QuestTracker = lazy(() => import('./components/QuestTracker'));
 const QuestDetails = lazy(() => import('./components/QuestTracker/QuestDetails'));
-const QuickGuidePreview = lazy(() => import('./components/QuestTracker/QuickGuidePreview'));
 
 const Calculators = lazy(() => import('./components/Calculators/Calculators'));
 const ArchaeologyCalculator = lazy(() => import('./components/Calculators/Archaeology/ArchaeologyCalculator'));
@@ -75,36 +56,6 @@ const NecromancyCalculator = lazy(() => import('./components/Calculators/Necroma
 const UrnsCalculator = lazy(() => import('./components/Calculators/Tools/UrnsCalculator'));
 const GoalCalculator = lazy(() => import('./components/Calculators/Endgame/GoalCalculator'));
 
-const Items = lazy(() => import('./components/Items/Items'));
-const ItemDetail = lazy(() => import('./components/Items/ItemDetail'));
-
-const Guides = lazy(() => import('./components/Guides/Guides'));
-const NecromancyGuide = lazy(() => import('./components/Guides/NecromancyGuide'));
-const ThievingGuide = lazy(() => import('./components/Guides/ThievingGuide'));
-const FarmingGuide = lazy(() => import('./components/Guides/Farming/FarmingGuide'));
-const ArchaeologyGuide = lazy(() => import('./components/Guides/ArchaeologyGuide'));
-const DivinationGuide = lazy(() => import('./components/Guides/DivinationGuide'));
-const FishingGuide = lazy(() => import('./components/Guides/FishingGuide'));
-const WoodcuttingGuide = lazy(() => import('./components/Guides/WoodcuttingGuide'));
-const MiningGuide = lazy(() => import('./components/Guides/MiningGuide'));
-const FiremakingGuide = lazy(() => import('./components/Guides/FiremakingGuide'));
-const HerbloreGuide = lazy(() => import('./components/Guides/Herblore/HerbloreGuide'));
-const AgilityGuide = lazy(() => import('./components/Guides/Agility/AgilityGuide'));
-const ConstructionGuide = lazy(() => import('./components/Guides/Construction/ConstructionGuide'));
-const CookingGuide = lazy(() => import('./components/Guides/Cooking/CookingGuide'));
-const CraftingGuide = lazy(() => import('./components/Guides/Crafting/CraftingGuide'));
-const FletchingGuide = lazy(() => import('./components/Guides/Fletching/FletchingGuide'));
-const SlayerGuide = lazy(() => import('./components/Guides/Slayer/SlayerGuide'));
-const PrayerGuide = lazy(() => import('./components/Guides/PrayerGuide'));
-const SummoningGuide = lazy(() => import('./components/Guides/SummoningGuide'));
-const MagicGuide = lazy(() => import('./components/Guides/MagicGuide'));
-const SmithingGuide = lazy(() => import('./components/Guides/SmithingGuide'));
-const RunecraftingGuide = lazy(() => import('./components/Guides/RunecraftingGuide'));
-const HunterGuide = lazy(() => import('./components/Guides/HunterGuide'));
-const InventionGuide = lazy(() => import('./components/Guides/InventionGuide'));
-const DungeoneeringGuide = lazy(() => import('./components/Guides/DungeoneeringGuide'));
-const RangedGuide = lazy(() => import('./components/Guides/Ranged/RangedGuide'));
-
 function AppContent() {
   const location = useLocation();
   return (
@@ -121,7 +72,7 @@ function AppContent() {
               <Route path="/register" element={<Register />} />
               <Route path="/changelog" element={<Changelog />} />
 
-              {/* Public — Calculators (stateless tools) */}
+              {/* Feature 1 — Calculators */}
               <Route path="/calculators" element={<Calculators />} />
               <Route path="/calculators/archaeology" element={<ArchaeologyCalculator />} />
               <Route path="/calculators/invention" element={<InventionCalculator />} />
@@ -150,85 +101,32 @@ function AppContent() {
               <Route path="/calculators/urns" element={<UrnsCalculator />} />
               <Route path="/calculators/endgame" element={<GoalCalculator />} />
 
-              {/* Public — Guides (static content) */}
-              <Route path="/guides" element={<Guides />} />
-              <Route path="/guides/necromancy" element={<NecromancyGuide />} />
-              <Route path="/guides/thieving" element={<ThievingGuide />} />
-              <Route path="/guides/farming" element={<FarmingGuide />} />
-              <Route path="/guides/archaeology" element={<ArchaeologyGuide />} />
-              <Route path="/guides/divination" element={<DivinationGuide />} />
-              <Route path="/guides/fishing" element={<FishingGuide />} />
-              <Route path="/guides/woodcutting" element={<WoodcuttingGuide />} />
-              <Route path="/guides/mining" element={<MiningGuide />} />
-              <Route path="/guides/firemaking" element={<FiremakingGuide />} />
-              <Route path="/guides/herblore" element={<HerbloreGuide />} />
-              <Route path="/guides/agility" element={<AgilityGuide />} />
-              <Route path="/guides/construction" element={<ConstructionGuide />} />
-              <Route path="/guides/cooking" element={<CookingGuide />} />
-              <Route path="/guides/crafting" element={<CraftingGuide />} />
-              <Route path="/guides/fletching" element={<FletchingGuide />} />
-              <Route path="/guides/slayer" element={<SlayerGuide />} />
-              <Route path="/guides/prayer" element={<PrayerGuide />} />
-              <Route path="/guides/summoning" element={<SummoningGuide />} />
-              <Route path="/guides/magic" element={<MagicGuide />} />
-              <Route path="/guides/smithing" element={<SmithingGuide />} />
-              <Route path="/guides/runecrafting" element={<RunecraftingGuide />} />
-              <Route path="/guides/hunter" element={<HunterGuide />} />
-              <Route path="/guides/invention" element={<InventionGuide />} />
-              <Route path="/guides/dungeoneering" element={<DungeoneeringGuide />} />
-              <Route path="/guides/ranged" element={<RangedGuide />} />
+              {/* Feature 2 — Boss Hunt */}
+              <Route path="/boss-hunt" element={<BossHunt />} />
 
-              {/* Public — Quests (read-only browsing) */}
+              {/* Feature 3 — Quests */}
               <Route path="/quests" element={<QuestTracker />} />
               <Route path="/quests/:questTitle" element={<QuestDetails />} />
 
-              {/* Quick guide preview (wiki-scraped — test page) */}
-              <Route path="/quest-preview" element={<QuickGuidePreview />} />
-              <Route path="/quest-preview/:quest" element={<QuickGuidePreview />} />
-
-              {/* Public — Items (catalog) */}
-              <Route path="/items" element={<Items />} />
-              <Route path="/items/:slug" element={<ItemDetail />} />
-
-              {/* Public — Training methods per skill */}
-              <Route path="/methods" element={<MethodsPage />} />
-              <Route path="/methods/:skill" element={<MethodsPage />} />
-
-              {/* Public — Boss rare-drop hunter calculator */}
-              <Route path="/boss-hunt" element={<BossHunt />} />
-
-              {/* Public — Shared group view (anyone with the link) */}
-              <Route path="/groups/share/:token" element={<GroupDetail mode="share" />} />
-
-              {/* Temp — wiki data sandbox */}
-              <Route path="/wiki-sandbox" element={<WikiSandbox />} />
-
-              {/* Wiki — browseable real pages backed by the sandbox catalogue */}
-              <Route path="/wiki" element={<WikiIndex />} />
-              <Route path="/wiki/creatures" element={<CreaturesList />} />
-              <Route path="/wiki/creatures/:slug" element={<CreatureDetail />} />
-              <Route path="/wiki/npcs" element={<NPCsList />} />
-              <Route path="/wiki/npcs/:slug" element={<NPCDetail />} />
-              <Route path="/wiki/achievements" element={<AchievementsList />} />
-              <Route path="/wiki/achievements/:slug" element={<AchievementDetail />} />
-              <Route path="/wiki/locations" element={<LocationsList />} />
-              <Route path="/wiki/locations/:slug" element={<LocationDetail />} />
-              <Route path="/wiki/resource-nodes" element={<ResourceNodesList />} />
-              <Route path="/wiki/resource-nodes/:slug" element={<ResourceNodeDetail />} />
-
-              {/* Protected — features that save to database */}
+              {/* Internal admin (no sidebar link for regular users) */}
               <Route element={<ProtectedRoute />}>
-                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/support" element={<SupportDashboard />} />
-                <Route path="/daily-tasks" element={<DailyTasks />} />
-                <Route path="/loot" element={<LootTracker />} />
-                <Route path="/xp-tracker" element={<XpTracker />} />
-                <Route path="/farm-timers" element={<FarmTimers />} />
-                <Route path="/groups" element={<GroupsList />} />
-                <Route path="/groups/new" element={<GroupForm />} />
-                <Route path="/groups/:id" element={<GroupDetail mode="owner" />} />
               </Route>
+
+              {/* Hidden for launch — show Coming Soon */}
+              <Route path="/dashboard" element={<ComingSoon />} />
+              <Route path="/guides/*" element={<ComingSoon />} />
+              <Route path="/daily-tasks" element={<ComingSoon />} />
+              <Route path="/loot" element={<ComingSoon />} />
+              <Route path="/xp-tracker" element={<ComingSoon />} />
+              <Route path="/farm-timers" element={<ComingSoon />} />
+              <Route path="/groups/*" element={<ComingSoon />} />
+              <Route path="/methods/*" element={<ComingSoon />} />
+              <Route path="/items/*" element={<ComingSoon />} />
+              <Route path="/wiki/*" element={<ComingSoon />} />
+              <Route path="/wiki-sandbox" element={<ComingSoon />} />
+              <Route path="/quest-preview/*" element={<ComingSoon />} />
 
               {/* 404 */}
               <Route path="*" element={<NotFound />} />

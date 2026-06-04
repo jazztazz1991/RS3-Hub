@@ -1,11 +1,9 @@
-import { useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { MAIN_QUEST_COUNT } from '../../data/quests/questMetadata';
 import './Landing.css';
 
 const NUM_CALCULATORS = 25;
-const NUM_GUIDES = 25;
 const NUM_SKILLS = 29;
 
 const FEATURES = [
@@ -13,53 +11,30 @@ const FEATURES = [
         icon: '⚡',
         title: 'Skill Calculators',
         description:
-            `Calculate exactly how many actions you need to hit your goal. ${NUM_CALCULATORS} skill calculators with method selection, XP targets, and character hiscores integration. Archaeology calculator includes a material bank organized by zone.`,
+            `Calculate exactly how many actions you need to hit your goal. ${NUM_CALCULATORS} skill calculators with method selection, XP targets, and hiscores integration. Includes an endgame planner for Max Cape and 120 All.`,
     },
     {
-        icon: '📖',
-        title: 'Training Guides',
+        icon: '🐉',
+        title: 'Boss Rare Hunter',
         description:
-            `Step-by-step guides for P2P and Ironman players — organized by level range, not a wall of text. Covers all ${NUM_GUIDES} skilling skills including Ranged.`,
+            'Enter your kills per hour, drop rate, and item value to calculate GP/hr and average time to drop. Compare multiple bosses and keep a history of your calculations.',
     },
     {
         icon: '📜',
         title: 'Quest Tracker',
         description:
-            `${MAIN_QUEST_COUNT} RS3 quests with full skill and quest requirement checking, quest point tracking, and wiki-style alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes. Sub-quests are tracked individually with RuneMetrics import support.`,
-    },
-];
-
-const SECONDARY = [
-    {
-        icon: '👤',
-        title: 'Character Tracking',
-        description:
-            'Link your RS3 hiscores username and track XP progress across every skill. See your Max Cape progression at a glance.',
-    },
-    {
-        icon: '📅',
-        title: 'Daily Tasks',
-        description:
-            'Keep on top of daily, weekly, and monthly in-game tasks with built-in reset tracking so nothing slips through the cracks.',
+            `${MAIN_QUEST_COUNT} RS3 quests with skill and quest requirement checking, quest point tracking, and alphabetical sorting. Each quest has a guide with numbered steps, color-coded skill chips, and progress checkboxes.`,
     },
 ];
 
 const Landing = () => {
-    const { user, loading } = useAuth();
-    const navigate = useNavigate();
+    const { loading } = useAuth();
 
     const stats = [
         { value: String(NUM_CALCULATORS), label: 'Skill Calculators' },
-        { value: String(NUM_GUIDES), label: 'Training Guides' },
         { value: String(MAIN_QUEST_COUNT), label: 'Quests Tracked' },
         { value: String(NUM_SKILLS), label: 'Skills Covered' },
     ];
-
-    useEffect(() => {
-        if (!loading && user) {
-            navigate('/dashboard', { replace: true });
-        }
-    }, [user, loading, navigate]);
 
     if (loading) return null;
 
@@ -71,7 +46,7 @@ const Landing = () => {
                     <p className="hero-eyebrow">RuneScape 3 Toolkit</p>
                     <img src="/images/logos/Runehublogo.png" alt="RuneHub" className="hero-logo" />
                     <p className="hero-subtitle">
-                        Skill calculators, training guides, and quest tracking — built for every type of player.
+                        Skill calculators, boss rare-drop hunting, and quest tracking — built for every type of player.
                     </p>
                     <div className="hero-cta">
                         <Link to="/register" className="cta-primary">Create Free Account</Link>
@@ -99,21 +74,6 @@ const Landing = () => {
                             <div className="feature-icon">{f.icon}</div>
                             <h3 className="feature-title">{f.title}</h3>
                             <p className="feature-desc">{f.description}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Secondary features */}
-            <section className="landing-secondary">
-                <div className="secondary-grid">
-                    {SECONDARY.map(f => (
-                        <div key={f.title} className="secondary-card">
-                            <div className="secondary-icon">{f.icon}</div>
-                            <div>
-                                <h3 className="secondary-title">{f.title}</h3>
-                                <p className="secondary-desc">{f.description}</p>
-                            </div>
                         </div>
                     ))}
                 </div>
