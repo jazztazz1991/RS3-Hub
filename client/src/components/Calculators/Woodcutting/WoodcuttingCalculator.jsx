@@ -111,8 +111,20 @@ const WoodcuttingCalculator = () => {
         }
     }
 
-    const toggleBoost = (id) =>
-        setActiveBoosts(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
+    const toggleBoost = (id) => {
+        const boost = WOODCUTTING_BOOSTS.find(b => b.id === id);
+        setActiveBoosts(prev => {
+            if (prev.includes(id)) return prev.filter(x => x !== id);
+            // Deselect any other boost in the same outfitGroup
+            const filtered = boost?.outfitGroup
+                ? prev.filter(x => {
+                    const b = WOODCUTTING_BOOSTS.find(b => b.id === x);
+                    return b?.outfitGroup !== boost.outfitGroup;
+                })
+                : [...prev];
+            return [...filtered, id];
+        });
+    };
 
     return (
         <div className="woodcutting-calculator">

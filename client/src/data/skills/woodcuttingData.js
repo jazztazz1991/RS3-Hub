@@ -35,12 +35,14 @@ export const WOODCUTTING_ITEMS = [
 
 // Urns are handled separately in the calculator (dropdown + advanced count input).
 //
-// Nature Sentinel is intentionally excluded from multiplier boosts:
-// its +7% is a success chance increase (more logs/hr) not an XP-per-log boost,
-// so it doesn't affect log count. It also passively grants the Lumberjack XP
-// bonus if owned — select Lumberjack below when wearing Nature Sentinel.
+// Lumberjack and Nature Sentinel are mutually exclusive (both body slot).
+// Nature Sentinel passively grants the Lumberjack +5% XP bonus when owned.
+// Its own +7% is a success chance boost (faster logs, not more XP per log)
+// so it does not affect log count — only the inherited +5% is applied here.
+// The calculator enforces mutual exclusivity between the two outfit options.
 export const WOODCUTTING_BOOSTS = [
-    { id: 'lumberjack',      name: 'Lumberjack Outfit',        multiplier: 0.05,   description: '+5% XP per log. Also applies when wearing Nature Sentinel (included passively if owned).' },
+    { id: 'lumberjack',      name: 'Lumberjack Outfit',        multiplier: 0.05,   description: '+5% XP per log.', outfitGroup: 'body' },
+    { id: 'nature_sentinel', name: 'Nature Sentinel Outfit',   multiplier: 0.05,   description: '+5% XP per log (via Lumberjack passive). Also gives +7% success chance which increases logs/hr but does not change logs needed.', outfitGroup: 'body' },
     { id: 'crystallise',     name: 'Crystallise (Light Form)', multiplier: 0.875,  description: '+87.5% XP (No logs caught)' },
     { id: 'clan_avatar',     name: 'Clan Avatar',              multiplier: 0.06,   description: '+6% XP' },
     { id: 'torstol',         name: 'Torstol Incense',          multiplier: 0.02,   description: '+2% XP' },
