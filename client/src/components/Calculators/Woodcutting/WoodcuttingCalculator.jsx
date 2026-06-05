@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useCharacter } from '../../../context/CharacterContext';
 import { useReportCalls } from '../../../context/ReportContext';
 import { WOODCUTTING_ITEMS, WOODCUTTING_BOOSTS } from '../../../data/skills/woodcuttingData';
@@ -95,21 +95,51 @@ const WoodcuttingCalculator = () => {
 
     if (selectedMethod && remainingXp > 0) {
         if (!selectedUrn) {
-            // No urns
             actionsNeeded = Math.ceil(remainingXp / xpPerAction);
         } else {
             const N = showAdvanced && urnsAvailable !== '' ? parseInt(urnsAvailable, 10) || 0 : Infinity;
-
-            // Max urns that would be needed to hit goal
             const urnsForGoal = Math.floor(remainingXp / (urnFill + urnBonus));
             urnsUsed = Math.min(N, urnsForGoal);
             bonusXpFromUrns = urnsUsed * urnBonus;
-
-            // Base XP the player must earn through actions
             const baseXpNeeded = remainingXp - bonusXpFromUrns;
             actionsNeeded = Math.ceil(baseXpNeeded / xpPerAction);
         }
     }
+
+    // XP tier breakdown — for methods where XP per log changes by level
+    const tierBreakdown = useMemo(() => {
+        if (!selectedMethod?.xpTiers || remainingXp <= 0) return null;
+
+        const segments = [];
+        let prevXp = getXpAtLevel(selectedMethod.level);
+        let totalActions = 0;
+
+        for (const tier of selectedMethod.xpTiers) {
+            const tierEndXp = getXpAtLevel(Math.min(tier.toLevel, 110));
+            const segStart = Math.max(currentXp, prevXp);
+            const segEnd = Math.min(targetXp, tierEndXp);
+            const segXp = Math.max(0, segEnd - segStart);
+
+            if (segXp > 0) {
+                const effectiveXp = getBaseXpPerAction(tier.xp);
+                const actions = Math.ceil(segXp / effectiveXp);
+                totalActions += actions;
+                const fromLvl = getLevelAtXp(segStart);
+                segments.push({
+                    label: `Lvl ${fromLvl} → ${tier.displayToLevel}`,
+                    xpNeeded: segXp,
+                    xpPerLog: tier.xp,
+                    actions,
+                    note: tier.note,
+                });
+            }
+
+            prevXp = tierEndXp;
+            if (segEnd >= targetXp) break;
+        }
+
+        return segments.length > 1 ? { segments, total: totalActions } : null;
+    }, [selectedMethod, currentXp, targetXp, activeBoosts]);
 
     const toggleBoost = (id) => {
         const boost = WOODCUTTING_BOOSTS.find(b => b.id === id);
@@ -307,6 +337,29 @@ const WoodcuttingCalculator = () => {
                             <p><span>Bonus XP from urns:</span><span>{Math.floor(bonusXpFromUrns).toLocaleString()}</span></p>
                         )}
                     </div>
+
+                    {tierBreakdown && (
+                        <div className="tier-breakdown">
+                            <div className="tier-breakdown-title">XP rate breakdown</div>
+                            {tierBreakdown.segments.map((seg, i) => (
+                                <div key={i} className="tier-row">
+                                    <div className="tier-label">
+                                        {seg.label}
+                                        {seg.note && (
+                                            <span className="estimated-marker" title={seg.note}>ⓘ</span>
+                                        )}
+                                    </div>
+                                    <div className="tier-detail">{seg.xpPerLog} XP/log</div>
+                                    <div className="tier-actions">{seg.actions.toLocaleString()} logs</div>
+                                </div>
+                            ))}
+                            <div className="tier-row tier-total">
+                                <div className="tier-label">Total</div>
+                                <div className="tier-detail"></div>
+                                <div className="tier-actions">{tierBreakdown.total.toLocaleString()} logs</div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
