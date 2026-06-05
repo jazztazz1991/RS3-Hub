@@ -34,6 +34,10 @@ const UserQuest = sequelize.define('UserQuest', {
   completedAt: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
+  },
+  source: {
+    type: DataTypes.STRING,
+    defaultValue: 'manual',
   }
 }, {
   indexes: [

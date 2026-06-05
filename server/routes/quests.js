@@ -40,15 +40,14 @@ router.post('/toggle', isAuthenticated, async (req, res) => {
         }
 
         if (completed) {
-            // Upsert
             await UserQuest.upsert({
                 userId: req.user.id,
                 characterId,
                 questTitle: title,
                 completed: true,
-                completedAt: new Date()
-            }, { 
-                // Using the specific conflict fields for upsert
+                completedAt: new Date(),
+                source: 'manual'
+            }, {
                 conflictFields: ['userId', 'characterId', 'questTitle']
             });
         } else {
@@ -101,48 +100,40 @@ router.post('/import', isAuthenticated, async (req, res) => {
                 characterId: character.id,
                 questTitle: q.title,
                 completed: true,
-                completedAt: new Date()
+                completedAt: new Date(),
+                source: 'runemetrics'
             }));
 
-        // Always sync the state - remove any quests that are NOT in the completed list from Runemetrics
-        // BUT ONLY FOR THIS CHARACTER
         const completedTitles = completedQuests.map(q => q.questTitle);
-        
+
         if (completedTitles.length > 0) {
+            // Only remove RuneMetrics-sourced rows that are no longer in the import.
+            // Manual completions (e.g. quests RuneMetrics omits) are left untouched.
             await UserQuest.destroy({
                 where: {
                     userId: req.user.id,
                     characterId: character.id,
+                    source: 'runemetrics',
                     questTitle: { [Op.notIn]: completedTitles }
                 }
             });
         } else {
-            // If no quests are completed in the import, clear all quests for the character
-            await UserQuest.destroy({
-                where: { 
-                    userId: req.user.id,
-                    characterId: character.id
-                }
-            });
+            return res.json({ message: "No completed quests found. Nothing changed." });
         }
 
-        if (completedQuests.length === 0) {
-             return res.json({ message: "No completed quests found. Cleared existing data." });
-        }
-
-        // Process sequentially to ensure unique constraint handling is robust
+        // Upsert each RuneMetrics completion — skip if already manually marked
         for (const q of completedQuests) {
-            const found = await UserQuest.findOne({
-                where: { 
-                    userId: q.userId, 
-                    characterId: q.characterId, // Add character filter
-                    questTitle: q.questTitle 
+            const existing = await UserQuest.findOne({
+                where: {
+                    userId: q.userId,
+                    characterId: q.characterId,
+                    questTitle: q.questTitle
                 }
             });
-            if (!found) {
+            if (!existing) {
                 await UserQuest.create(q);
-            } else {
-                await found.update(q);
+            } else if (existing.source !== 'manual') {
+                await existing.update(q);
             }
         }
 
