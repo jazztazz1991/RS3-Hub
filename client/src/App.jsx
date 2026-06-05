@@ -20,6 +20,7 @@ const NotFound = lazy(() => import('./components/NotFound/NotFound'));
 const ComingSoon = lazy(() => import('./components/ComingSoon/ComingSoon'));
 
 const Dashboard = lazy(() => import('./components/Dashboard/Dashboard'));
+const FarmTimers = lazy(() => import('./components/FarmTimers/FarmTimers'));
 
 // Admin (internal, no sidebar link for regular users)
 const AdminDashboard = lazy(() => import('./components/Admin/AdminDashboard'));
@@ -113,6 +114,7 @@ function AppContent() {
               {/* Protected — requires login */}
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/farm-timers" element={<FarmTimers />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/support" element={<SupportDashboard />} />
               </Route>
@@ -122,7 +124,6 @@ function AppContent() {
               <Route path="/daily-tasks" element={<ComingSoon />} />
               <Route path="/loot" element={<ComingSoon />} />
               <Route path="/xp-tracker" element={<ComingSoon />} />
-              <Route path="/farm-timers" element={<ComingSoon />} />
               <Route path="/groups/*" element={<ComingSoon />} />
               <Route path="/methods/*" element={<ComingSoon />} />
               <Route path="/items/*" element={<ComingSoon />} />

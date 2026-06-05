@@ -3,6 +3,7 @@ export const SIDEBAR_ITEMS = [
     { label: 'Calculators', path: '/calculators', icon: '\u{1F9EE}', auth: false },
     { label: 'Boss Hunt',   path: '/boss-hunt',   icon: '\u{1F409}', auth: false },
     { label: 'Quests',      path: '/quests',      icon: '⚔️', auth: false },
+    { label: 'Farm Timers', path: '/farm-timers', icon: '\u{1F33E}', auth: true  },
 ];
 
 // Hidden for launch — uncomment to re-enable:
