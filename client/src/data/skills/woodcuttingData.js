@@ -23,7 +23,7 @@ export const WOODCUTTING_ITEMS = [
     { id: 'bloodwood',    name: 'Bloodwood Tree',          level: 85, xp: 320,   category: 'Tree' },
     { id: 'elder',        name: 'Elder Tree',              level: 90, xp: 425,   category: 'Tree' },
     { id: 'crystal',      name: 'Crystal Tree',            level: 94, xp: 350,   category: 'Crystal' },
-    { id: 'eternal_magic',name: 'Eternal Magic Tree',      level: 100, xp: 635,  category: 'Tree' },
+    { id: 'eternal_magic',name: 'Eternal Magic Tree',      level: 100, xp: 647.7, category: 'Tree', estimated: true, estimateNote: 'XP scales with level: 635 at 100–102, 647.7 at 103+, with further bonuses at 109–110 (Perfect Cuts). Value shown is the level 103+ rate.' },
 
     // Arc (Bamboo)
     { id: 'bamboo',        name: 'Bamboo',                 level: 90, xp: 202.5, category: 'Arc' },
