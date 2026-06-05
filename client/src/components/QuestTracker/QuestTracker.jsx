@@ -255,9 +255,9 @@ useEffect(() => {
                         Enter your RuneScape username. Your RuneMetrics profile <strong>must</strong> be set to Public.
                     </p>
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
-                        <input 
-                            type="text" 
-                            style={{ flex: 1, padding: '0.5rem' }} 
+                        <input
+                            type="text"
+                            style={{ flex: 1, padding: '0.5rem' }}
                             placeholder="Username"
                             value={importUser}
                             onChange={e => setImportUser(e.target.value)}
@@ -265,6 +265,11 @@ useEffect(() => {
                         <button className="btn-import" onClick={handleImport}>Sync</button>
                     </div>
                     {importMsg && <p style={{ marginTop: '0.5rem', color: '#f1c40f' }}>{importMsg}</p>}
+                    <p style={{ fontSize: '0.8rem', color: '#888', marginTop: '0.75rem', lineHeight: '1.5' }}>
+                        ⚠ The RuneMetrics API omits some older quests (e.g. Wolf Whistle, Death Plateau) regardless of completion status — this is a Jagex-side limitation.
+                        If a quest you've completed is missing after syncing, click <strong>Done</strong> on it manually.
+                        Manual completions are never overwritten by future syncs.
+                    </p>
                 </div>
             )}
 
