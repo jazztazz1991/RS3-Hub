@@ -161,7 +161,12 @@ const WoodcuttingCalculator = () => {
                     {selectedMethod && (
                         <div className="selected-method-card">
                             <h3>{selectedMethod.name}</h3>
-                            <p className="method-xp">Base XP: {selectedMethod.xp}</p>
+                            <p className="method-xp">
+                                Base XP: {selectedMethod.xp}
+                                {selectedMethod.estimated && (
+                                    <span className="estimated-marker" title={selectedMethod.estimateNote}>ⓘ</span>
+                                )}
+                            </p>
                             <p className="method-xp-actual">
                                 Est. XP: {xpPerAction.toFixed(1)}
                             </p>
@@ -191,7 +196,16 @@ const WoodcuttingCalculator = () => {
                                 <div className="method-name">{method.name}</div>
                                 <div className="method-details">
                                     <span>Lvl {method.level}</span>
-                                    <span>{method.xp} XP</span>
+                                    <span>
+                                        {method.xp} XP
+                                        {method.estimated && (
+                                            <span
+                                                className="estimated-marker"
+                                                title={method.estimateNote}
+                                                onClick={e => e.stopPropagation()}
+                                            >ⓘ</span>
+                                        )}
+                                    </span>
                                 </div>
                             </button>
                         ))}

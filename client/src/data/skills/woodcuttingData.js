@@ -30,7 +30,7 @@ export const WOODCUTTING_ITEMS = [
     { id: 'golden_bamboo', name: 'Golden Bamboo',          level: 96, xp: 655.5, category: 'Arc' },
 
     // Croesus — XP per action unconfirmed on wiki; leaving at community estimate
-    { id: 'fungal_trove',  name: 'Timber Fungus (Croesus)', level: 88, xp: 1550, category: 'Boss' },
+    { id: 'fungal_trove',  name: 'Timber Fungus (Croesus)', level: 88, xp: 1550, category: 'Boss', estimated: true, estimateNote: 'XP per action not listed on the RS Wiki — community estimate only. Verify in-game before relying on this value.' },
 ];
 
 export const WOODCUTTING_BOOSTS = [

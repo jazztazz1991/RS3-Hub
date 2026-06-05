@@ -219,3 +219,13 @@
     color: var(--wc-text-dim);
 }
 
+
+.estimated-marker {
+    display: inline-block;
+    margin-left: 0.3em;
+    font-size: 0.75em;
+    color: #c8a84b;
+    cursor: help;
+    vertical-align: middle;
+    line-height: 1;
+}
