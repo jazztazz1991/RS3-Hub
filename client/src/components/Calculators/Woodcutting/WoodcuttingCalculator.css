@@ -34,6 +34,97 @@
     margin-bottom: 2rem;
 }
 
+/* Urn controls */
+.wc-urn-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 0.8rem;
+    background: var(--wc-bg-dark);
+    border-radius: 6px;
+    border-left: 4px solid #c8a84b;
+}
+
+.wc-urn-select-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wc-urn-label {
+    font-size: 0.88rem;
+    color: #c8a84b;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.wc-urn-select {
+    background: var(--wc-bg-panel);
+    border: 1px solid #c8a84b55;
+    color: var(--wc-text-main);
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    cursor: pointer;
+}
+
+.wc-enhancer-check {
+    font-size: 0.88rem;
+}
+
+.wc-advanced-toggle {
+    background: transparent;
+    border: 1px solid #555;
+    color: var(--wc-text-muted);
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    margin-left: auto;
+}
+.wc-advanced-toggle.active {
+    border-color: #c8a84b;
+    color: #c8a84b;
+}
+
+.wc-advanced-panel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.65rem 0.8rem;
+    background: var(--wc-bg-dark);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #c8a84b55;
+}
+
+.wc-advanced-panel label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--wc-text-muted);
+}
+
+.wc-advanced-panel input[type="number"] {
+    width: 110px;
+    background: var(--wc-bg-panel);
+    border: 1px solid var(--wc-border-input);
+    color: var(--wc-text-main);
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+}
+
+.wc-advanced-hint {
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+}
+
 /* Modifiers */
 .woodcutting-calculator .modifiers {
     display: flex;

@@ -33,11 +33,11 @@ export const WOODCUTTING_ITEMS = [
     { id: 'fungal_trove',  name: 'Timber Fungus (Croesus)', level: 88, xp: 1550, category: 'Boss', estimated: true, estimateNote: 'XP per action not listed on the RS Wiki — community estimate only. Verify in-game before relying on this value.' },
 ];
 
+// Urns are handled separately in the calculator (dropdown + advanced count input).
 export const WOODCUTTING_BOOSTS = [
-    { id: 'urns',            name: 'Woodcutting Urns',    multiplier: 0.2,    description: '+20% XP (Decorated tier and above)' },
-    { id: 'lumberjack',      name: 'Lumberjack Outfit',   multiplier: 0.05,   description: '+5% XP' },
-    { id: 'nature_sentinel', name: 'Nature Sentinel',     multiplier: 0.07,   description: '+7% XP' },
-    { id: 'crystallise',     name: 'Crystallise (Light Form)', multiplier: 0.875, description: '+87.5% XP (No logs caught)' },
-    { id: 'clan_avatar',     name: 'Clan Avatar',         multiplier: 0.06,   description: '+6% XP' },
-    { id: 'torstol',         name: 'Torstol Incense',     multiplier: 0.02,   description: '+2% XP' },
+    { id: 'lumberjack',      name: 'Lumberjack Outfit',        multiplier: 0.05,   description: '+5% XP' },
+    { id: 'nature_sentinel', name: 'Nature Sentinel',          multiplier: 0.07,   description: '+7% XP' },
+    { id: 'crystallise',     name: 'Crystallise (Light Form)', multiplier: 0.875,  description: '+87.5% XP (No logs caught)' },
+    { id: 'clan_avatar',     name: 'Clan Avatar',              multiplier: 0.06,   description: '+6% XP' },
+    { id: 'torstol',         name: 'Torstol Incense',          multiplier: 0.02,   description: '+2% XP' },
 ];
