@@ -20,18 +20,6 @@ export const CharacterProvider = ({ children }) => {
     // Derived state for the currently selected character object
     const selectedCharacter = characters.find(c => c.id === selectedCharId);
 
-    // Load primary character preference from localStorage when user is known
-    useEffect(() => {
-        if (user) {
-            try {
-                const saved = JSON.parse(localStorage.getItem(`rs3hub_primary_char_${user.id}`));
-                if (saved) setPrimaryCharId(saved);
-            } catch {}
-        } else {
-            setPrimaryCharId(null);
-        }
-    }, [user]);
-
     // Initial Fetch — only when authenticated
     useEffect(() => {
         if (user) {
@@ -44,14 +32,6 @@ export const CharacterProvider = ({ children }) => {
         }
     }, [user]);
 
-    // Auto-select on load: prefer primary character, fall back to first
-    useEffect(() => {
-        if (!selectedCharId && characters.length > 0) {
-            const primaryExists = primaryCharId && characters.find(c => c.id === primaryCharId);
-            setSelectedCharId(primaryExists ? primaryCharId : characters[0].id);
-        }
-    }, [characters, selectedCharId, primaryCharId]);
-
     // Fetch Hiscores when selected character changes
     useEffect(() => {
         if (selectedCharId) {
@@ -61,15 +41,26 @@ export const CharacterProvider = ({ children }) => {
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedCharId]); // Only run when ID changes, not when tasks update (which updates 'characters' array)
+    }, [selectedCharId]);
 
     const fetchCharacters = async () => {
         try {
             setLoadingChars(true);
             const res = await axios.get('/api/characters');
             setCharacters(res.data);
-            if (res.data.length > 0 && !selectedCharId) {
-                setSelectedCharId(res.data[0].id);
+            if (res.data.length > 0) {
+                // Read primary directly from localStorage here so both decisions happen
+                // in one synchronous step — avoids the race between the localStorage
+                // useEffect and the characters API response.
+                const primaryId = (() => {
+                    try { return JSON.parse(localStorage.getItem(`rs3hub_primary_char_${user?.id}`)); }
+                    catch { return null; }
+                })();
+                const target = (primaryId && res.data.find(c => c.id === primaryId))
+                    ? primaryId
+                    : res.data[0].id;
+                setPrimaryCharId(primaryId || null);
+                setSelectedCharId(target);
             }
         } catch (err) {
             console.error('Failed to fetch characters', err);
