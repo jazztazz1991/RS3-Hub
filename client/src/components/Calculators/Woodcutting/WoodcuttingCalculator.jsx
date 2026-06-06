@@ -188,7 +188,7 @@ const WoodcuttingCalculator = () => {
                     >
                         <option value={-1}>No urns</option>
                         {WC_URNS.map((urn, i) => (
-                            <option key={i} value={i}>{urn.name} (Lvl {urn.level})</option>
+                            <option key={i} value={i}>{urn.name} (Crafting {urn.level})</option>
                         ))}
                     </select>
                 </div>

@@ -55,13 +55,15 @@ const UrnsCalculator = () => {
         setTargetXp(getXpAtLevel(targetLevel));
     }, [targetLevel]);
 
-    // Auto-select the highest-tier urn available at the current level
+    // Auto-select the highest-tier urn that fills from the player's current level activities.
+    // useLevel = max activity level the urn fills from (null = any level fills it).
     useEffect(() => {
         const level = getLevelAtXp(currentXp);
         const urns = URN_DATA[selectedSkill] || [];
         let bestIdx = 0;
         for (let i = 0; i < urns.length; i++) {
-            if (urns[i].level <= level) bestIdx = i;
+            const urn = urns[i];
+            if (urn.useLevel === null || level <= urn.useLevel) bestIdx = i;
         }
         setSelectedUrnIndex(bestIdx);
     }, [selectedSkill, currentXp]);
@@ -130,12 +132,17 @@ const UrnsCalculator = () => {
                     >
                         {activeUrns.map((urn, index) => (
                             <option key={index} value={index}>
-                                {urn.name} (Lvl {urn.level}){index === bestUrnIndex ? ' ★' : ''}
+                                {urn.name} (Crafting {urn.level}){index === bestUrnIndex ? ' ★' : ''}
                             </option>
                         ))}
                     </select>
                     {bestUrn && (
-                        <span className="urns-rec-hint">
+                        <span
+                            className="urns-rec-hint"
+                            title={bestUrn.useLevel
+                                ? `Fills from activities up to level ${bestUrn.useLevel}`
+                                : 'Fills from any level activities'}
+                        >
                             ★ Best for level {currentLevel}: {bestUrn.name}
                             {selectedUrnIndex !== bestUrnIndex && (
                                 <button
